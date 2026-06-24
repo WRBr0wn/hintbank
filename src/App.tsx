@@ -1,16 +1,39 @@
 import { useMemo, useState } from 'react'
 import Setup from './screens/Setup'
 import PassToGiver from './screens/PassToGiver'
-import { createSession, currentGiver, type SessionState } from './engine'
+import GiverPlay from './screens/GiverPlay'
+import {
+  createGame,
+  createSession,
+  currentGiver,
+  isRotationComplete,
+  recordGame,
+  type GameState,
+  type SessionState,
+} from './engine'
+import pokemon from './data/pokemon.json'
 import type { Player } from './types'
 import styles from './App.module.css'
 
-type Phase = 'setup' | 'pass' | 'giver'
+type Phase = 'setup' | 'pass' | 'giver' | 'done'
+
+// Enough draws to land 10 answers even after a bank's worth of rerolls.
+const DECK_SIZE = 60
+
+function buildDeck(): string[] {
+  const names = pokemon.map((p) => p.name)
+  for (let i = names.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[names[i], names[j]] = [names[j], names[i]]
+  }
+  return names.slice(0, DECK_SIZE)
+}
 
 export default function App() {
   const [phase, setPhase] = useState<Phase>('setup')
   const [roster, setRoster] = useState<Player[]>([])
   const [session, setSession] = useState<SessionState | null>(null)
+  const [game, setGame] = useState<GameState | null>(null)
 
   const giver = useMemo(() => {
     if (!session) return null
@@ -23,9 +46,24 @@ export default function App() {
     setPhase('pass')
   }
 
+  function reveal() {
+    if (!giver) return
+    setGame(createGame({ players: roster.map((p) => p.id), giverId: giver.id, deck: buildDeck() }))
+    setPhase('giver')
+  }
+
+  function finishTurn(deltas: Record<string, number>) {
+    if (!session) return
+    const next = recordGame(session, deltas)
+    setSession(next)
+    setGame(null)
+    setPhase(isRotationComplete(next) ? 'done' : 'pass')
+  }
+
   function startOver() {
     setSession(null)
     setRoster([])
+    setGame(null)
     setPhase('setup')
   }
 
@@ -43,17 +81,19 @@ export default function App() {
             giver={giver}
             position={session.giverPosition + 1}
             total={roster.length}
-            onReady={() => setPhase('giver')}
+            onReady={reveal}
           />
         )}
 
-        {phase === 'giver' && giver && (
+        {phase === 'giver' && game && (
+          <GiverPlay game={game} roster={roster} onChange={setGame} onFinish={finishTurn} />
+        )}
+
+        {phase === 'done' && (
           <div className={styles.stub}>
-            <p className={styles.stubKicker}>
-              {giver.avatar} {giver.name}'s turn
-            </p>
-            <h2>Giver play screen</h2>
-            <p className={styles.stubNote}>Coming next — the answers and Hint Bank live here.</p>
+            <p className={styles.stubKicker}>Rotation complete</p>
+            <h2>Everyone has given a turn</h2>
+            <p className={styles.stubNote}>The session leaderboard and continue/start-over flow come next.</p>
             <button type="button" className={styles.link} onClick={startOver}>
               Start over
             </button>

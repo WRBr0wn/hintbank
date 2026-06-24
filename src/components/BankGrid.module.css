@@ -1,0 +1,63 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(72px, 1fr));
+  gap: 0.4rem;
+}
+
+.word,
+.wordOn,
+.marker,
+.empty {
+  height: 2.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.4rem;
+  font-size: 0.85rem;
+  border-radius: 0.55rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.word {
+  color: #e0e0e0;
+  background: #2a2a4a;
+  border: 1px solid #3a3a5c;
+  cursor: pointer;
+}
+
+.word:hover:not(:disabled) {
+  border-color: #f5c542;
+}
+
+.word:disabled {
+  cursor: default;
+  opacity: 0.7;
+}
+
+.wordOn {
+  color: #1a1a2e;
+  font-weight: 600;
+  background: #f5c542;
+  border: 1px solid #f5c542;
+  cursor: pointer;
+}
+
+.marker {
+  color: #6a6a82;
+  background: repeating-linear-gradient(
+    45deg,
+    #232342,
+    #232342 6px,
+    #262648 6px,
+    #262648 12px
+  );
+  border: 1px dashed #3a3a5c;
+  font-size: 1.1rem;
+}
+
+.empty {
+  background: #20203c;
+  border: 1px solid #28284a;
+}
