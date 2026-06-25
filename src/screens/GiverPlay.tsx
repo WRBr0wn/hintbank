@@ -85,7 +85,7 @@ export default function GiverPlay({ game, roster, onChange }: Props) {
     <div className={styles.play}>
       <div className={styles.progress}>
         <span>Answer {game.resolved + 1} of {ANSWERS_PER_GAME}</span>
-        <span>{game.hintCount} hints</span>
+        <span>{game.hintCount} {game.hintCount === 1 ? 'hint' : 'hints'}</span>
       </div>
       <div className={styles.bar}>
         <div className={styles.barFill} style={{ width: `${(game.resolved / ANSWERS_PER_GAME) * 100}%` }} />
