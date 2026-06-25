@@ -160,7 +160,7 @@ export default function GiverPlay({ game, roster, onChange }: Props) {
                     onClick={() => setOverguess((o) => ({ ...o, [p.id]: (o[p.id] ?? 0) + 1 }))}
                     aria-label={`Overguess for ${p.name}`}
                   >
-                    Guessed Twice (−1)
+                    Guessed x2 (−1)
                   </button>
                   <button type="button" className={styles.correct} onClick={() => handleCorrect(p.id)}>
                     Correct
@@ -170,7 +170,7 @@ export default function GiverPlay({ game, roster, onChange }: Props) {
             ))}
           </ul>
           <button type="button" className={styles.secondary} onClick={handleNoOne}>
-            No one — keep hinting
+            Keep Hinting!
           </button>
         </div>
       )}
