@@ -61,3 +61,41 @@
   background: #20203c;
   border: 1px solid #28284a;
 }
+
+/* Slot-index bands map to the giver's score: 25 − bank.length is healthy at the
+   start (green), escalates yellow -> orange -> red as it nears 0 at slot 25, and
+   goes neutral grey for the negative-score slots beyond. Each tints the cell's
+   left edge and washes the background so an empty slot still reads as its zone. */
+.bandGreen {
+  border-left: 3px solid #4caf7d;
+  background: linear-gradient(90deg, rgba(76, 175, 125, 0.18), transparent 60%), #20203c;
+}
+
+.bandYellow {
+  border-left: 3px solid #d9c45a;
+  background: linear-gradient(90deg, rgba(217, 196, 90, 0.18), transparent 60%), #20203c;
+}
+
+.bandOrange {
+  border-left: 3px solid #e0913f;
+  background: linear-gradient(90deg, rgba(224, 145, 63, 0.2), transparent 60%), #20203c;
+}
+
+.bandRed {
+  border-left: 3px solid #e0556a;
+  background: linear-gradient(90deg, rgba(224, 85, 106, 0.2), transparent 60%), #20203c;
+}
+
+.bandGrey {
+  border-left: 3px solid #7a7a8c;
+  background: linear-gradient(90deg, rgba(122, 122, 140, 0.22), transparent 60%), #20203c;
+}
+
+/* A selected word keeps the bank's signature highlight regardless of band. */
+.wordOn.bandGreen,
+.wordOn.bandYellow,
+.wordOn.bandOrange,
+.wordOn.bandRed,
+.wordOn.bandGrey {
+  background: #f5c542;
+}

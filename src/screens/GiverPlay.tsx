@@ -41,6 +41,7 @@ export default function GiverPlay({ game, roster, onChange }: Props) {
   const answer = currentAnswer(game)
   const full = isBankFull(game)
   const hinting = game.phase === 'hinting'
+  const avatarFor = (id: string) => roster.find((p) => p.id === id)?.avatar ?? '?'
 
   function toggleWord(i: number) {
     setSelection((s) => (s.includes(i) ? s.filter((x) => x !== i) : [...s, i]))
@@ -83,6 +84,7 @@ export default function GiverPlay({ game, roster, onChange }: Props) {
 
   return (
     <div className={styles.play}>
+      <div className={styles.main}>
       <div className={styles.progress}>
         <span>Answer {game.resolved + 1} of {ANSWERS_PER_GAME}</span>
         <span>{game.hintCount} {game.hintCount === 1 ? 'hint' : 'hints'}</span>
@@ -172,6 +174,23 @@ export default function GiverPlay({ game, roster, onChange }: Props) {
           </button>
         </div>
       )}
+      </div>
+
+      <aside className={styles.results}>
+        <h2 className={styles.resultsHead}>Landed</h2>
+        <ol className={styles.resultList}>
+          {Array.from({ length: ANSWERS_PER_GAME }, (_, i) => {
+            const result = game.results[i]
+            return (
+              <li key={i} className={result ? styles.resultRow : styles.resultPending}>
+                <span className={styles.resultNum}>{i + 1}</span>
+                <span className={styles.resultName}>{result ? pretty(result.answer) : ''}</span>
+                <span className={styles.resultAvatar}>{result ? avatarFor(result.guesserId) : ''}</span>
+              </li>
+            )
+          })}
+        </ol>
+      </aside>
     </div>
   )
 }

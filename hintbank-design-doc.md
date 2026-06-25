@@ -1,6 +1,6 @@
 # Hint Bank — Living Design Doc
 
-**Status:** Planning complete for v1. No code written yet.
+**Status:** v1 built (Mode A, Pokémon Edition) — engine, screens, and data in place.
 **Game:** Hint Bank · **v1 release:** Hint Bank — Pokémon Edition · **Repo:** `hintbank`
 **Owner:** ZenVolka
 **Purpose:** Single source of truth for the web adaptation of the YouTuber's Google-Slides + Discord party game. Diff against this as the build evolves to prevent drift.
@@ -92,7 +92,7 @@ The hint giver physically holds the device for their turn. Because guessers neve
 3. **Giver play screen:**
    - Current secret answer (1 of 10), with progress.
    - Hint Bank grid (up to 40), with **add word** (disabled at 40) and subset selection.
-   - **Give hint** → increments round/hint count.
+   - **Give hint** → increments the round/hint counter (display only — it does not affect scoring).
    - **Resolve:** which player guessed correctly (tag + advance), or **no one** (continue hinting), plus **overguess −1** control per guesser.
    - **Reroll** (enabled while bank < 40): swaps the current answer for a new random one and drops a non-usable `reroll` marker into the next bank slot.
    - **End Turn** (enabled only at bank = 40): −5, ends the turn.
