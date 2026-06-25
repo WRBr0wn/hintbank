@@ -157,6 +157,23 @@
   color: #6a6a82;
 }
 
+/* Small persistent button back to the draw tool, shown only in randomizer mode. */
+.randomizerLink {
+  align-self: flex-start;
+  padding: 0.45rem 0.8rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #e0e0e0;
+  background: #2a2a4a;
+  border: 1px solid #3a3a5c;
+  border-radius: 0.6rem;
+  text-decoration: none;
+}
+
+.randomizerLink:hover {
+  border-color: #f5c542;
+}
+
 .bankSection {
   display: flex;
   flex-direction: column;

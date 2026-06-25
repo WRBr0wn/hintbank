@@ -142,6 +142,18 @@ export default function Setup({ onStart }: { onStart: (players: Player[], mode: 
             )
           })}
         </div>
+        {mode === 'online-randomizer' && (
+          // The hinter opens this private tool to draw answers. It lives on its
+          // own page, so a plain new-tab link is all that is needed.
+          <a
+            href={`${import.meta.env.BASE_URL}randomizer/`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.randomizerLink}
+          >
+            Open randomizer
+          </a>
+        )}
       </section>
 
       <section className={styles.section}>

@@ -124,6 +124,19 @@ export default function HinterPlay({ game, roster, mode, onChange }: Props) {
         <div className={styles.barFill} style={{ width: `${(game.resolved / ANSWERS_PER_GAME) * 100}%` }} />
       </div>
 
+      {randomizer && (
+        // Randomizer answers come from the separate tool, so keep a way back to it
+        // visible the whole turn. New tab so it stays off the shared screen.
+        <a
+          href={`${import.meta.env.BASE_URL}randomizer/`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.randomizerLink}
+        >
+          Open randomizer
+        </a>
+      )}
+
       {answerPanel === 'plain' && (
         <div className={styles.answer}>
           <span className={styles.answerLabel}>Secret answer</span>

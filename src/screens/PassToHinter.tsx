@@ -35,6 +35,18 @@ export default function PassToHinter({ hinter, position, total, mode, onReady }:
           <button type="button" className={styles.reveal} onClick={onReady}>
             Start {hinter.name}'s turn
           </button>
+          {mode === 'online-randomizer' && (
+            // Randomizer has no dealt deck, so the hinter draws answers from this
+            // separate tool. New tab keeps it off the shared screen.
+            <a
+              href={`${import.meta.env.BASE_URL}randomizer/`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.randomizerLink}
+            >
+              Open randomizer
+            </a>
+          )}
         </>
       ) : (
         <>
