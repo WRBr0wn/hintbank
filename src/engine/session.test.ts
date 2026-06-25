@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest'
 import {
   continueSession,
   createSession,
-  currentGiver,
+  currentHinter,
   isRotationComplete,
   leaders,
   recordGame,
@@ -10,13 +10,13 @@ import {
 } from './session'
 
 describe('session rotation', () => {
-  it('rotates the giver through the roster in order', () => {
+  it('rotates the hinter through the roster in order', () => {
     let s = createSession(['a', 'b', 'c'])
-    expect(currentGiver(s)).toBe('a')
+    expect(currentHinter(s)).toBe('a')
     s = recordGame(s, { a: 5 })
-    expect(currentGiver(s)).toBe('b')
+    expect(currentHinter(s)).toBe('b')
     s = recordGame(s, { b: 5 })
-    expect(currentGiver(s)).toBe('c')
+    expect(currentHinter(s)).toBe('c')
   })
 
   it('flags rotation complete after everyone has given once', () => {
@@ -26,7 +26,7 @@ describe('session rotation', () => {
     s = recordGame(s, { b: 1 })
     expect(isRotationComplete(s)).toBe(true)
     expect(s.completedRotations).toBe(1)
-    expect(currentGiver(s)).toBeNull()
+    expect(currentHinter(s)).toBeNull()
     expect(() => recordGame(s, { a: 1 })).toThrow()
   })
 })
@@ -47,13 +47,13 @@ describe('session totals', () => {
 
     const kept = continueSession(s)
     expect(kept.totals).toEqual({ a: 13, b: 11 })
-    expect(currentGiver(kept)).toBe('a')
+    expect(currentHinter(kept)).toBe('a')
     expect(kept.completedRotations).toBe(1)
 
     const reset = startOver(s)
     expect(reset.totals).toEqual({ a: 0, b: 0 })
     expect(reset.completedRotations).toBe(0)
-    expect(currentGiver(reset)).toBe('a')
+    expect(currentHinter(reset)).toBe('a')
   })
 
   it('continue is only allowed once the rotation is finished', () => {

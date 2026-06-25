@@ -20,7 +20,7 @@ One player is the **hint giver** and holds 10 secret answers, revealed one at a 
 
 **Scoring:** the hint giver scores `25 − (Hint Bank entries)`, so a leaner bank = more points (it can go negative), and every reroll marker costs a point too. Each guesser scores +1 for every answer they personally landed. The hint giver rotates so everyone gives once per **session**, and totals carry across the session.
 
-**Stuck on an answer?** The giver can **reroll** it for a fresh random answer — but each reroll permanently burns one of the 40 Hint Bank slots, so it eats into your own vocabulary. Once the bank is full, the giver can **end the turn** (forfeiting the rest) for a points penalty.
+**Stuck on an answer?** The giver can **reroll** it for a fresh random answer, but each reroll permanently burns one of the 40 Hint Bank slots, so it eats into your own vocabulary. Once the bank is full, the giver can **end the turn** (forfeiting the rest) for a points penalty.
 
 ## Tech
 
@@ -28,11 +28,7 @@ One player is the **hint giver** and holds 10 secret answers, revealed one at a 
 - Pokémon data is bundled at build time from the PokéAPI GitHub mirror (see `scripts/`).
 - Static build, deployed via GitHub Pages.
 
-## Development
-
-Run `npm install` first on a fresh checkout (`node_modules` isn't committed), then `npm test -- --run` for the engine tests, or `npm run dev` to play locally.
-
-## Roadmap (high level)
+## Roadmap
 
 - **v1 (now):** single-device game-master tool, Pokémon Edition.
 - **Later:** public second screen, pass-and-play, full per-device multiplayer; more Pokémon-Edition categories (items, gym leaders, towns, badges, professors); future editions.

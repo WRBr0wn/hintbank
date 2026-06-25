@@ -16,7 +16,7 @@ import {
   type GameState,
 } from '../engine'
 import type { Player } from '../types'
-import styles from './GiverPlay.module.css'
+import styles from './HinterPlay.module.css'
 
 interface Props {
   game: GameState
@@ -32,12 +32,12 @@ function pretty(name: string): string {
     .join(' ')
 }
 
-export default function GiverPlay({ game, roster, onChange }: Props) {
+export default function HinterPlay({ game, roster, onChange }: Props) {
   const [selection, setSelection] = useState<number[]>([])
   const [draft, setDraft] = useState('')
   const [overguess, setOverguess] = useState<Record<string, number>>({})
 
-  const guessers = roster.filter((p) => p.id !== game.giverId)
+  const guessers = roster.filter((p) => p.id !== game.hinterId)
   const answer = currentAnswer(game)
   const full = isBankFull(game)
   const hinting = game.phase === 'hinting'

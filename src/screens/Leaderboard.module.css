@@ -104,3 +104,72 @@
   border-color: #9a9ab0;
   color: #e0e0e0;
 }
+
+/* Scale up on large screens — additive, min-width gated. */
+@media (min-width: 1200px) {
+  .board {
+    max-width: 600px;
+    gap: 0.9rem;
+  }
+
+  .kicker {
+    font-size: 0.9rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .row,
+  .leader {
+    grid-template-columns: 2.2rem 2.5rem 1fr auto;
+    padding: 0.9rem 1.1rem;
+  }
+
+  .avatar {
+    font-size: 1.7rem;
+  }
+
+  .name {
+    font-size: 1.2rem;
+  }
+
+  .total {
+    font-size: 1.45rem;
+  }
+
+  .continue {
+    font-size: 1.2rem;
+  }
+
+  .startOver {
+    font-size: 1.05rem;
+  }
+}
+
+@media (min-width: 1600px) {
+  .board {
+    max-width: 680px;
+  }
+
+  .title {
+    font-size: 2.4rem;
+  }
+
+  .row,
+  .leader {
+    grid-template-columns: 2.5rem 2.8rem 1fr auto;
+  }
+
+  .avatar {
+    font-size: 1.95rem;
+  }
+
+  .name {
+    font-size: 1.35rem;
+  }
+
+  .total {
+    font-size: 1.7rem;
+  }
+}

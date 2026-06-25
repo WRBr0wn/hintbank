@@ -9,7 +9,7 @@ import {
   endTurn,
   gameScores,
   giveHint,
-  giverScore,
+  hinterScore,
   guesserScore,
   isBankFull,
   reroll,
@@ -20,8 +20,8 @@ import { BANK_CAP } from './types'
 
 const deck = (n = 60) => Array.from({ length: n }, (_, i) => `a${i}`)
 
-const start = (players = ['g', 'b', 'c'], giverId = 'g', size = 60) =>
-  createGame({ players, giverId, deck: deck(size) })
+const start = (players = ['g', 'b', 'c'], hinterId = 'g', size = 60) =>
+  createGame({ players, hinterId, deck: deck(size) })
 
 // Add count words, returning the new state. Words must be unique-ish for clarity.
 const fillWords = (s: ReturnType<typeof start>, count: number) => {
@@ -74,14 +74,14 @@ describe('hints', () => {
 describe('reroll', () => {
   it('swaps the answer, drops a marker, is not a hint, but costs a bank slot', () => {
     const s0 = start()
-    expect(giverScore(s0)).toBe(25) // empty bank
+    expect(hinterScore(s0)).toBe(25) // empty bank
     const before = currentAnswer(s0)
     const s1 = reroll(s0)
     expect(currentAnswer(s1)).not.toBe(before)
     expect(s1.bank).toEqual([{ kind: 'reroll' }])
     expect(s1.hintCount).toBe(0) // not a hint
     expect(s1.resolved).toBe(0) // still have to land it
-    expect(giverScore(s1)).toBe(24) // the marker is one bank entry: -1
+    expect(hinterScore(s1)).toBe(24) // the marker is one bank entry: -1
   })
 })
 
@@ -96,7 +96,7 @@ describe('end turn', () => {
     expect(canEndTurn(s)).toBe(true)
   })
 
-  it('applies a flat -5 and ends the turn: giver = 25 - bank - 5', () => {
+  it('applies a flat -5 and ends the turn: hinter = 25 - bank - 5', () => {
     let s = fillWords(start(), BANK_CAP) // 40 entries
     for (let i = 0; i < 3; i++) {
       s = giveHint(s, [0])
@@ -105,7 +105,7 @@ describe('end turn', () => {
     s = endTurn(s)
     expect(s.status).toBe('complete')
     expect(s.endedEarly).toBe(true)
-    expect(giverScore(s)).toBe(25 - BANK_CAP - 5) // 25 - 40 - 5 = -20
+    expect(hinterScore(s)).toBe(25 - BANK_CAP - 5) // 25 - 40 - 5 = -20
   })
 })
 
@@ -135,14 +135,14 @@ describe('guess resolution', () => {
 })
 
 describe('scoring goes negative', () => {
-  it('drives the giver below zero as the bank grows, regardless of hints', () => {
+  it('drives the hinter below zero as the bank grows, regardless of hints', () => {
     let s = fillWords(start(), 30) // 30 bank entries
     for (let i = 0; i < 5; i++) {
       s = giveHint(s, [0])
       s = resolveHint(s) // hints must not move the score
     }
     expect(s.hintCount).toBe(5)
-    expect(giverScore(s)).toBe(25 - 30) // -5, bank size only
+    expect(hinterScore(s)).toBe(25 - 30) // -5, bank size only
   })
 
   it('drives a guesser below zero when overguesses outweigh corrects', () => {
@@ -159,14 +159,14 @@ describe('scoring goes negative', () => {
     s = giveHint(s, [0])
     s = resolveHint(s, { correctGuesserId: 'b' })
     const scores = gameScores(s)
-    expect(scores.g).toBe(giverScore(s)) // 25 - 1 bank entry = 24
+    expect(scores.g).toBe(hinterScore(s)) // 25 - 1 bank entry = 24
     expect(scores.b).toBe(1)
     expect(scores.c).toBe(0)
   })
 })
 
 describe('overguess with a correct guess in one call', () => {
-  it('nets the guesser and updates both tallies (the path GiverPlay takes)', () => {
+  it('nets the guesser and updates both tallies (the path HinterPlay takes)', () => {
     let s = addWord(start(), 'volt')
     s = giveHint(s, [0])
     // b guessed three times on this hint (two extra) and landed it on the third.

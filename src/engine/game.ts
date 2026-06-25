@@ -2,27 +2,27 @@ import {
   ANSWERS_PER_GAME,
   BANK_CAP,
   END_TURN_PENALTY,
-  GIVER_BASE,
+  HINTER_BASE,
   type Answer,
   type GameState,
 } from './types'
 
 interface NewGame {
   players: string[]
-  giverId: string
+  hinterId: string
   deck: Answer[]
 }
 
-export function createGame({ players, giverId, deck }: NewGame): GameState {
-  if (!players.includes(giverId)) {
-    throw new Error('giver must be one of the players')
+export function createGame({ players, hinterId, deck }: NewGame): GameState {
+  if (!players.includes(hinterId)) {
+    throw new Error('hinter must be one of the players')
   }
   if (deck.length < ANSWERS_PER_GAME) {
     throw new Error(`deck needs at least ${ANSWERS_PER_GAME} answers`)
   }
   return {
     players,
-    giverId,
+    hinterId,
     deck,
     cursor: 0,
     resolved: 0,
@@ -42,7 +42,7 @@ export const isBankFull = (s: GameState): boolean => s.bank.length >= BANK_CAP
 export const currentAnswer = (s: GameState): Answer | null =>
   s.status === 'playing' ? (s.deck[s.cursor] ?? null) : null
 
-// Slots the giver can actually select for a hint — words only, never markers.
+// Slots the hinter can actually select for a hint — words only, never markers.
 export const usableWords = (s: GameState): number[] =>
   s.bank.flatMap((entry, i) => (entry.kind === 'word' ? [i] : []))
 
@@ -102,7 +102,7 @@ export function resolveHint(s: GameState, outcome: Resolution = {}): GameState {
     return { ...s, overguesses, phase: 'hinting' }
   }
 
-  if (correctGuesserId === s.giverId) throw new Error('the giver cannot guess')
+  if (correctGuesserId === s.hinterId) throw new Error('the hinter cannot guess')
   if (!s.players.includes(correctGuesserId)) throw new Error('unknown guesser')
 
   const answer = s.deck[s.cursor]
@@ -138,8 +138,8 @@ export function endTurn(s: GameState): GameState {
 // Score is bank-size based: every occupied slot — added words and reroll markers
 // alike — costs 1, so a reroll's marker is a real -1. hintCount is only a round
 // counter for the UI and deliberately stays out of scoring.
-export function giverScore(s: GameState): number {
-  return GIVER_BASE - s.bank.length - (s.endedEarly ? END_TURN_PENALTY : 0)
+export function hinterScore(s: GameState): number {
+  return HINTER_BASE - s.bank.length - (s.endedEarly ? END_TURN_PENALTY : 0)
 }
 
 export function guesserScore(s: GameState, playerId: string): number {
@@ -149,7 +149,7 @@ export function guesserScore(s: GameState, playerId: string): number {
 export function gameScores(s: GameState): Record<string, number> {
   const scores: Record<string, number> = {}
   for (const pid of s.players) {
-    scores[pid] = pid === s.giverId ? giverScore(s) : guesserScore(s, pid)
+    scores[pid] = pid === s.hinterId ? hinterScore(s) : guesserScore(s, pid)
   }
   return scores
 }

@@ -4,7 +4,7 @@
 
 export const BANK_CAP = 40
 export const ANSWERS_PER_GAME = 10
-export const GIVER_BASE = 25
+export const HINTER_BASE = 25
 export const END_TURN_PENALTY = 5
 
 // An answer is an opaque token. The engine never inspects it; the UI maps it to
@@ -12,7 +12,7 @@ export const END_TURN_PENALTY = 5
 // keeps the engine category-agnostic.
 export type Answer = string
 
-// The bank holds words the giver added plus reroll markers. Markers occupy a
+// The bank holds words the hinter added plus reroll markers. Markers occupy a
 // slot toward the cap but can never be used as a hint word.
 export type BankEntry =
   | { kind: 'word'; word: string }
@@ -28,7 +28,7 @@ export interface GameResult {
 
 export interface GameState {
   players: string[]
-  giverId: string
+  hinterId: string
   // Pre-shuffled by the caller; the engine draws from the front. cursor points
   // at the current answer, so randomness stays out of the pure core.
   deck: Answer[]
@@ -47,8 +47,8 @@ export interface GameState {
 export interface SessionState {
   players: string[]
   totals: Record<string, number>
-  // Index into players for the current hint giver. Equal to players.length once
+  // Index into players for the current hint hinter. Equal to players.length once
   // every player has given in this rotation.
-  giverPosition: number
+  hinterPosition: number
   completedRotations: number
 }

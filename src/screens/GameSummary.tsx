@@ -1,7 +1,7 @@
 import {
   END_TURN_PENALTY,
-  GIVER_BASE,
-  giverScore,
+  HINTER_BASE,
+  hinterScore,
   guesserScore,
   type GameState,
 } from '../engine'
@@ -17,22 +17,22 @@ interface Props {
 const signed = (n: number) => (n >= 0 ? `+${n}` : `${n}`)
 
 export default function GameSummary({ game, roster, onContinue }: Props) {
-  const giver = roster.find((p) => p.id === game.giverId)
-  const guessers = roster.filter((p) => p.id !== game.giverId)
+  const hinter = roster.find((p) => p.id === game.hinterId)
+  const guessers = roster.filter((p) => p.id !== game.hinterId)
 
   const entries = game.bank.length
   const entryLabel = `${entries} ${entries === 1 ? 'entry' : 'entries'}`
-  const breakdown = `${GIVER_BASE} − ${entryLabel}${game.endedEarly ? ` − ${END_TURN_PENALTY} (ended early)` : ''}`
+  const breakdown = `${HINTER_BASE} − ${entryLabel}${game.endedEarly ? ` − ${END_TURN_PENALTY} (ended early)` : ''}`
 
   return (
     <div className={styles.summary}>
       <p className={styles.kicker}>Turn complete</p>
 
-      <div className={styles.giverCard}>
-        <span className={styles.giverName}>
-          {giver?.avatar} {giver?.name}
+      <div className={styles.hinterCard}>
+        <span className={styles.hinterName}>
+          {hinter?.avatar} {hinter?.name}
         </span>
-        <span className={styles.giverScore}>{giverScore(game)}</span>
+        <span className={styles.hinterScore}>{hinterScore(game)}</span>
         <span className={styles.breakdown}>{breakdown}</span>
       </div>
 

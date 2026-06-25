@@ -9,7 +9,7 @@ interface Props {
   onToggle: (index: number) => void
 }
 
-// Colour is the giver's fuel gauge: each filled slot is -1, so the bands track
+// Colour is the hinter's fuel gauge: each filled slot is -1, so the bands track
 // 25 − bank.length. Green while healthy, escalating yellow → orange → red as the
 // score nears 0 at slot 25, then neutral grey for the negative-score slots beyond.
 function bandFor(i: number): string {

@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react'
 import Setup from './screens/Setup'
-import PassToGiver from './screens/PassToGiver'
-import GiverPlay from './screens/GiverPlay'
+import PassToHinter from './screens/PassToHinter'
+import HinterPlay from './screens/HinterPlay'
 import GameSummary from './screens/GameSummary'
 import Leaderboard from './screens/Leaderboard'
 import ScoreBar from './components/ScoreBar'
@@ -9,7 +9,7 @@ import {
   continueSession,
   createGame,
   createSession,
-  currentGiver,
+  currentHinter,
   gameScores,
   isRotationComplete,
   recordGame,
@@ -20,7 +20,7 @@ import pokemon from './data/pokemon.json'
 import type { Player } from './types'
 import styles from './App.module.css'
 
-type Phase = 'setup' | 'pass' | 'giver' | 'leaderboard'
+type Phase = 'setup' | 'pass' | 'hinter' | 'leaderboard'
 
 // Enough draws to land 10 answers even after a bank's worth of rerolls.
 const DECK_SIZE = 60
@@ -40,9 +40,9 @@ export default function App() {
   const [session, setSession] = useState<SessionState | null>(null)
   const [game, setGame] = useState<GameState | null>(null)
 
-  const giver = useMemo(() => {
+  const hinter = useMemo(() => {
     if (!session) return null
-    return roster.find((p) => p.id === currentGiver(session)) ?? null
+    return roster.find((p) => p.id === currentHinter(session)) ?? null
   }, [session, roster])
 
   function handleStart(players: Player[]) {
@@ -52,9 +52,9 @@ export default function App() {
   }
 
   function reveal() {
-    if (!giver) return
-    setGame(createGame({ players: roster.map((p) => p.id), giverId: giver.id, deck: buildDeck() }))
-    setPhase('giver')
+    if (!hinter) return
+    setGame(createGame({ players: roster.map((p) => p.id), hinterId: hinter.id, deck: buildDeck() }))
+    setPhase('hinter')
   }
 
   function finishTurn() {
@@ -87,20 +87,20 @@ export default function App() {
       <main className={styles.main}>
         {phase === 'setup' && <Setup onStart={handleStart} />}
 
-        {phase === 'pass' && giver && session && (
-          <PassToGiver
-            giver={giver}
-            position={session.giverPosition + 1}
+        {phase === 'pass' && hinter && session && (
+          <PassToHinter
+            hinter={hinter}
+            position={session.hinterPosition + 1}
             total={roster.length}
             onReady={reveal}
           />
         )}
 
-        {phase === 'giver' && game && game.status === 'playing' && (
-          <GiverPlay game={game} roster={roster} onChange={setGame} />
+        {phase === 'hinter' && game && game.status === 'playing' && (
+          <HinterPlay game={game} roster={roster} onChange={setGame} />
         )}
 
-        {phase === 'giver' && game && game.status === 'complete' && (
+        {phase === 'hinter' && game && game.status === 'complete' && (
           <GameSummary game={game} roster={roster} onContinue={finishTurn} />
         )}
 
@@ -115,7 +115,7 @@ export default function App() {
       </main>
 
       {session && phase !== 'leaderboard' && game?.status !== 'complete' && (
-        <ScoreBar roster={roster} totals={session.totals} giverId={giver?.id ?? null} game={game} />
+        <ScoreBar roster={roster} totals={session.totals} hinterId={hinter?.id ?? null} game={game} />
       )}
     </div>
   )

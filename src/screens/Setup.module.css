@@ -231,3 +231,78 @@
   opacity: 0.4;
   cursor: not-allowed;
 }
+
+/* Scale up on large screens — additive, min-width gated. Kept modest: a single
+   form column shouldn't sprawl across an ultrawide. */
+@media (min-width: 1200px) {
+  .setup {
+    max-width: 680px;
+  }
+
+  .sectionHead h2 {
+    font-size: 1.25rem;
+  }
+
+  .count {
+    font-size: 0.95rem;
+  }
+
+  .avatarBtn {
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.6rem;
+  }
+
+  .name {
+    font-size: 1.05rem;
+    padding: 0.8rem 0.9rem;
+  }
+
+  .picker {
+    margin-left: 3.6rem;
+  }
+
+  .cat,
+  .catOn,
+  .catSoon {
+    font-size: 1.05rem;
+    padding: 0.65rem 1rem;
+  }
+
+  .note {
+    font-size: 0.95rem;
+  }
+
+  .start {
+    font-size: 1.2rem;
+    padding: 1rem;
+  }
+}
+
+@media (min-width: 1600px) {
+  .setup {
+    max-width: 760px;
+  }
+
+  .sectionHead h2 {
+    font-size: 1.35rem;
+  }
+
+  .avatarBtn {
+    width: 3.25rem;
+    height: 3.25rem;
+    font-size: 1.75rem;
+  }
+
+  .picker {
+    margin-left: 3.85rem;
+  }
+
+  .name {
+    font-size: 1.1rem;
+  }
+
+  .start {
+    font-size: 1.3rem;
+  }
+}
