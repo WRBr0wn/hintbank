@@ -16,7 +16,7 @@ Pick a mode at setup. It locks for the session.
 
 - **In Person: One Device** - the group is in the same room and the hinter holds the phone or tablet. They see the secret answer right on screen.
 - **Online: One Device** - built for Discord screen-share. The app still deals the answers, but the secret one stays covered until the hinter presses and holds to peek, so it never lands on the stream.
-- **Online: One Device + Randomizer** - the most faithful to the original video. The shared screen is a fully public board (Hint Bank, results, scores), the hinter pulls answers from somewhere private, and types each one in once it's guessed. Nothing secret ever touches the broadcast. A built-in [randomizer page](https://<your-username>.github.io/hintbank/randomizer/) can draw Pokémon for the hinter in a separate tab.
+- **Online: One Device + Randomizer** - the most faithful to the original video. The shared screen is a fully public board (Hint Bank, results, scores), the hinter pulls answers from somewhere private, and types each one in once it's guessed. Nothing secret ever touches the broadcast. A built-in [randomizer page](https://wrbr0wn.github.io/hintbank/randomizer/) can draw Pokémon for the hinter in a separate tab.
 
 Online multiplayer (one device per player) is on the roadmap.
 
