@@ -15,7 +15,8 @@ const CREATORS: PlayerAvatar[] = [
   { kind: 'image', src: `${base}avatars/bailey.jpg`, label: 'Bailey' },
   { kind: 'image', src: `${base}avatars/chrispiche.jpg`, label: 'Chris Piché' },
   { kind: 'image', src: `${base}avatars/deliciousjames.jpg`, label: 'Delicious James' },
-  { kind: 'image', src: `${base}avatars/zenvolka.jpg`, label: 'ZenVolka' },
+  { kind: 'image', src: `${base}avatars/scarecrow.jpg`, label: 'Scarecrow' },
+  { kind: 'image', src: `${base}avatars/zenvolka.png`, label: 'ZenVolka' },
 ]
 // A handful of recognizable mascots. The full sprite set is bundled in
 // public/sprites (see scripts/scrape-sprites.js). This is just the picker subset.
