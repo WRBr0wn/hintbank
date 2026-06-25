@@ -1,0 +1,51 @@
+import { leaders, type SessionState } from '../engine'
+import type { Player } from '../types'
+import styles from './Leaderboard.module.css'
+
+interface Props {
+  session: SessionState
+  roster: Player[]
+  onContinue: () => void
+  onStartOver: () => void
+}
+
+export default function Leaderboard({ session, roster, onContinue, onStartOver }: Props) {
+  const crowned = new Set(leaders(session))
+  const ranked = [...roster].sort(
+    (a, b) => (session.totals[b.id] ?? 0) - (session.totals[a.id] ?? 0),
+  )
+  const rotations = session.completedRotations
+
+  return (
+    <div className={styles.board}>
+      <p className={styles.kicker}>
+        {rotations} {rotations === 1 ? 'rotation' : 'rotations'} played
+      </p>
+      <h2 className={styles.title}>Leaderboard</h2>
+
+      <ol className={styles.list}>
+        {ranked.map((p) => {
+          const total = session.totals[p.id] ?? 0
+          const isLeader = crowned.has(p.id)
+          return (
+            <li key={p.id} className={isLeader ? styles.leader : styles.row}>
+              <span className={styles.crown}>{isLeader ? '👑' : ''}</span>
+              <span className={styles.avatar}>{p.avatar}</span>
+              <span className={styles.name}>{p.name}</span>
+              <span className={styles.total}>{total}</span>
+            </li>
+          )
+        })}
+      </ol>
+
+      <div className={styles.actions}>
+        <button type="button" className={styles.continue} onClick={onContinue}>
+          Continue · keep totals
+        </button>
+        <button type="button" className={styles.startOver} onClick={onStartOver}>
+          Start over
+        </button>
+      </div>
+    </div>
+  )
+}

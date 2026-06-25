@@ -2,10 +2,14 @@ import { useMemo, useState } from 'react'
 import Setup from './screens/Setup'
 import PassToGiver from './screens/PassToGiver'
 import GiverPlay from './screens/GiverPlay'
+import GameSummary from './screens/GameSummary'
+import Leaderboard from './screens/Leaderboard'
 import {
+  continueSession,
   createGame,
   createSession,
   currentGiver,
+  gameScores,
   isRotationComplete,
   recordGame,
   type GameState,
@@ -15,7 +19,7 @@ import pokemon from './data/pokemon.json'
 import type { Player } from './types'
 import styles from './App.module.css'
 
-type Phase = 'setup' | 'pass' | 'giver' | 'done'
+type Phase = 'setup' | 'pass' | 'giver' | 'leaderboard'
 
 // Enough draws to land 10 answers even after a bank's worth of rerolls.
 const DECK_SIZE = 60
@@ -52,12 +56,18 @@ export default function App() {
     setPhase('giver')
   }
 
-  function finishTurn(deltas: Record<string, number>) {
-    if (!session) return
-    const next = recordGame(session, deltas)
+  function finishTurn() {
+    if (!session || !game) return
+    const next = recordGame(session, gameScores(game))
     setSession(next)
     setGame(null)
-    setPhase(isRotationComplete(next) ? 'done' : 'pass')
+    setPhase(isRotationComplete(next) ? 'leaderboard' : 'pass')
+  }
+
+  function continueRotation() {
+    if (!session) return
+    setSession(continueSession(session))
+    setPhase('pass')
   }
 
   function startOver() {
@@ -85,19 +95,21 @@ export default function App() {
           />
         )}
 
-        {phase === 'giver' && game && (
-          <GiverPlay game={game} roster={roster} onChange={setGame} onFinish={finishTurn} />
+        {phase === 'giver' && game && game.status === 'playing' && (
+          <GiverPlay game={game} roster={roster} onChange={setGame} />
         )}
 
-        {phase === 'done' && (
-          <div className={styles.stub}>
-            <p className={styles.stubKicker}>Rotation complete</p>
-            <h2>Everyone has given a turn</h2>
-            <p className={styles.stubNote}>The session leaderboard and continue/start-over flow come next.</p>
-            <button type="button" className={styles.link} onClick={startOver}>
-              Start over
-            </button>
-          </div>
+        {phase === 'giver' && game && game.status === 'complete' && (
+          <GameSummary game={game} roster={roster} onContinue={finishTurn} />
+        )}
+
+        {phase === 'leaderboard' && session && (
+          <Leaderboard
+            session={session}
+            roster={roster}
+            onContinue={continueRotation}
+            onStartOver={startOver}
+          />
         )}
       </main>
     </div>

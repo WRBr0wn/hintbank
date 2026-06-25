@@ -9,9 +9,7 @@ import {
   canReroll,
   currentAnswer,
   endTurn,
-  gameScores,
   giveHint,
-  giverScore,
   isBankFull,
   resolveHint,
   reroll,
@@ -24,7 +22,6 @@ interface Props {
   game: GameState
   roster: Player[]
   onChange: (next: GameState) => void
-  onFinish: (deltas: Record<string, number>) => void
 }
 
 // PokeAPI identifiers are lowercase and hyphenated; tidy them for display only.
@@ -35,35 +32,12 @@ function pretty(name: string): string {
     .join(' ')
 }
 
-export default function GiverPlay({ game, roster, onChange, onFinish }: Props) {
+export default function GiverPlay({ game, roster, onChange }: Props) {
   const [selection, setSelection] = useState<number[]>([])
   const [draft, setDraft] = useState('')
   const [overguess, setOverguess] = useState<Record<string, number>>({})
 
   const guessers = roster.filter((p) => p.id !== game.giverId)
-
-  if (game.status === 'complete') {
-    const scores = gameScores(game)
-    return (
-      <div className={styles.done}>
-        <p className={styles.doneKicker}>Turn complete</p>
-        <p className={styles.doneScore}>{giverScore(game)}</p>
-        <p className={styles.doneLabel}>giver score · {game.hintCount} hints{game.endedEarly ? ' · ended early (−5)' : ''}</p>
-        <ul className={styles.deltas}>
-          {guessers.map((p) => (
-            <li key={p.id}>
-              <span>{p.avatar} {p.name}</span>
-              <span>{scores[p.id] >= 0 ? `+${scores[p.id]}` : scores[p.id]}</span>
-            </li>
-          ))}
-        </ul>
-        <button type="button" className={styles.primary} onClick={() => onFinish(scores)}>
-          Continue
-        </button>
-      </div>
-    )
-  }
-
   const answer = currentAnswer(game)
   const full = isBankFull(game)
   const hinting = game.phase === 'hinting'
