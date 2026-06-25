@@ -1,0 +1,68 @@
+.bar {
+  display: flex;
+  gap: 0.5rem;
+  align-items: stretch;
+  padding: 0.6rem 1rem;
+  border-top: 1px solid #3a3a5c;
+  background: #1d1d36;
+  overflow-x: auto;
+}
+
+.chip,
+.giver {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.7rem;
+  border-radius: 0.6rem;
+  border: 1px solid #3a3a5c;
+  background: #232342;
+}
+
+.giver {
+  border-color: #f5c542;
+  background: #2c2a16;
+}
+
+.avatar {
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.name {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+  color: #c9c9dd;
+  white-space: nowrap;
+}
+
+.badge {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+  color: #1a1a2e;
+  background: #f5c542;
+  border-radius: 0.3rem;
+  padding: 0.05rem 0.3rem;
+}
+
+.total {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #f5c542;
+}
+
+.pending {
+  color: #9a9ab0;
+  font-weight: 600;
+}

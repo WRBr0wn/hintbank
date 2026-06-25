@@ -99,3 +99,52 @@
 .wordOn.bandGrey {
   background: #f5c542;
 }
+
+/* On wide screens grow the cells themselves (bigger minmax floor) rather than
+   just packing in more tiny columns. Min-width gated, so narrow layouts are
+   untouched. */
+@media (min-width: 1200px) {
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(92px, 1fr));
+    gap: 0.5rem;
+  }
+
+  .word,
+  .wordOn,
+  .marker,
+  .empty {
+    height: 3rem;
+  }
+
+  .word,
+  .wordOn {
+    font-size: 0.95rem;
+  }
+
+  .marker {
+    font-size: 1.3rem;
+  }
+}
+
+@media (min-width: 1600px) {
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(108px, 1fr));
+    gap: 0.6rem;
+  }
+
+  .word,
+  .wordOn,
+  .marker,
+  .empty {
+    height: 3.4rem;
+  }
+
+  .word,
+  .wordOn {
+    font-size: 1.05rem;
+  }
+
+  .marker {
+    font-size: 1.5rem;
+  }
+}

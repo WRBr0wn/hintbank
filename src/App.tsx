@@ -4,6 +4,7 @@ import PassToGiver from './screens/PassToGiver'
 import GiverPlay from './screens/GiverPlay'
 import GameSummary from './screens/GameSummary'
 import Leaderboard from './screens/Leaderboard'
+import ScoreBar from './components/ScoreBar'
 import {
   continueSession,
   createGame,
@@ -112,6 +113,10 @@ export default function App() {
           />
         )}
       </main>
+
+      {session && phase !== 'leaderboard' && game?.status !== 'complete' && (
+        <ScoreBar roster={roster} totals={session.totals} giverId={giver?.id ?? null} game={game} />
+      )}
     </div>
   )
 }

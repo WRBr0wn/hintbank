@@ -351,3 +351,56 @@
 .correct:hover {
   background: #84e0aa;
 }
+
+/* Scale up on large screens. Purely additive above the existing layout — every
+   rule below is min-width gated, so small/medium and the 720px stacking are
+   left exactly as they were. The main column flexes to fill the extra width;
+   the results aside steps wider and the bank grid (BankGrid.module.css) grows
+   its cells to match. */
+@media (min-width: 1200px) {
+  .play {
+    max-width: 1200px;
+    gap: 2rem;
+  }
+
+  .results {
+    flex: 0 0 300px;
+  }
+
+  .answer {
+    padding: 2rem 1.5rem;
+  }
+
+  .answerName {
+    font-size: 2.4rem;
+  }
+
+  .bankHead h2,
+  .resultsHead {
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 1600px) {
+  .play {
+    max-width: 1440px;
+    gap: 2.5rem;
+  }
+
+  .results {
+    flex: 0 0 360px;
+  }
+
+  .answer {
+    padding: 2.5rem 2rem;
+  }
+
+  .answerName {
+    font-size: 3rem;
+  }
+
+  .bankHead h2,
+  .resultsHead {
+    font-size: 1.35rem;
+  }
+}
