@@ -16,9 +16,9 @@ export default function ScoreBar({ roster, totals, hinterId, game }: Props) {
       {roster.map((p) => {
         const isHinter = p.id === hinterId
         const base = totals[p.id] ?? 0
-        // Guessers tick up live as they land answers this turn; the hinter's total
-        // only moves once the turn is recorded, so it stays at the session base —
-        // shown with a pending "+ ?" while their turn is in progress.
+        // Guessers tick up live as they land answers this turn. The hinter's total
+        // only changes once the turn is recorded, so it stays at the session base
+        // and shows a pending "+ ?" while the turn is in progress.
         const total = isHinter || !game ? base : base + guesserScore(game, p.id)
         const pending = isHinter && game !== null
         return (

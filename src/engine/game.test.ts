@@ -173,7 +173,7 @@ describe('overguess with a correct guess in one call', () => {
     s = resolveHint(s, { correctGuesserId: 'b', overguesses: { b: 2 } })
     expect(s.correctGuesses.b).toBe(1)
     expect(s.overguesses.b).toBe(2)
-    expect(guesserScore(s, 'b')).toBe(-1) // +1 correct − 2 overguess
+    expect(guesserScore(s, 'b')).toBe(-1) // +1 correct, -2 overguess
     expect(s.resolved).toBe(1) // the answer still landed
   })
 })

@@ -111,7 +111,7 @@ export default function HinterPlay({ game, roster, onChange }: Props) {
         <BankGrid bank={game.bank} cap={BANK_CAP} selected={selection} interactive={hinting} onToggle={toggleWord} />
 
         {full ? (
-          <p className={styles.fullNote}>The bank is full — give hints from these words, or end the turn.</p>
+          <p className={styles.fullNote}>The bank is full. Give hints from these words, or end the turn.</p>
         ) : (
           <div className={styles.addRow}>
             <input

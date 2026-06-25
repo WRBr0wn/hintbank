@@ -91,7 +91,7 @@ describe('40-cap boundary (words + rerolls)', () => {
 })
 
 describe('40 rerolls, zero words', () => {
-  it('reaches an all-marker bank where only end turn is possible — not a dead end', () => {
+  it('reaches an all-marker bank where only end turn is possible, not a dead end', () => {
     let g = createGame({ players: ['g', 'x'], hinterId: 'g', deck: deck(60) })
     for (let i = 0; i < BANK_CAP; i++) g = reroll(g)
     expect(g.bank).toHaveLength(BANK_CAP)

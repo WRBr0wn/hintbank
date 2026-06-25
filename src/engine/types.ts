@@ -1,19 +1,19 @@
-// Engine domain types: headless game state, no React or presentation concerns.
-// UI presentation types (e.g. Player name/avatar) live in src/types.ts — don't
-// mix the two.
+// Engine domain types. Headless game state, no React or presentation concerns.
+// UI presentation types (player name, avatar) live in src/types.ts. Keep the two
+// apart.
 
 export const BANK_CAP = 40
 export const ANSWERS_PER_GAME = 10
 export const HINTER_BASE = 25
 export const END_TURN_PENALTY = 5
 
-// An answer is an opaque token. The engine never inspects it; the UI maps it to
-// whatever the edition bundles (a Pokemon name, an item, a town). This is what
+// An answer is an opaque token. The engine never inspects it. The UI maps it to
+// whatever the edition bundles (a Pokemon name, an item, a town). That's what
 // keeps the engine category-agnostic.
 export type Answer = string
 
-// The bank holds words the hinter added plus reroll markers. Markers occupy a
-// slot toward the cap but can never be used as a hint word.
+// The bank holds words the hinter added plus reroll markers. A marker takes up a
+// slot against the cap but can never be used as a hint word.
 export type BankEntry =
   | { kind: 'word'; word: string }
   | { kind: 'reroll' }
@@ -29,8 +29,8 @@ export interface GameResult {
 export interface GameState {
   players: string[]
   hinterId: string
-  // Pre-shuffled by the caller; the engine draws from the front. cursor points
-  // at the current answer, so randomness stays out of the pure core.
+  // The caller shuffles this; the engine just draws from the front. cursor marks
+  // the current answer, which keeps randomness out of the pure core.
   deck: Answer[]
   cursor: number
   resolved: number
@@ -47,8 +47,8 @@ export interface GameState {
 export interface SessionState {
   players: string[]
   totals: Record<string, number>
-  // Index into players for the current hint hinter. Equal to players.length once
-  // every player has given in this rotation.
+  // Index into players for the current hinter. Reaches players.length once
+  // everyone has hinted this rotation.
   hinterPosition: number
   completedRotations: number
 }

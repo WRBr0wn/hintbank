@@ -9,9 +9,9 @@ interface Props {
   onToggle: (index: number) => void
 }
 
-// Colour is the hinter's fuel gauge: each filled slot is -1, so the bands track
-// 25 − bank.length. Green while healthy, escalating yellow → orange → red as the
-// score nears 0 at slot 25, then neutral grey for the negative-score slots beyond.
+// Colour is the hinter's fuel gauge. Each filled slot is -1, so the bands track
+// 25 minus bank.length: green while healthy, then yellow, orange, and red as the
+// score nears 0 at slot 25, then grey for the negative-score slots past it.
 function bandFor(i: number): string {
   if (i < 10) return styles.bandGreen
   if (i < 15) return styles.bandYellow
@@ -36,7 +36,7 @@ export default function BankGrid({ bank, cap, selected, interactive, onToggle }:
             <span
               key={i}
               className={`${styles.marker} ${band}`}
-              title="Reroll marker — cannot be used as a hint word"
+              title="Reroll marker, cannot be used as a hint word"
             >
               ↻
             </span>

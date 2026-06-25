@@ -1,7 +1,7 @@
 // Builds src/data/pokemon.json from the PokeAPI GitHub mirror.
 // The live pokeapi.co API isn't reachable from the build environment, so this
 // reads the committed CSV data instead: species id is the National Dex number,
-// identifier is the name. Re-runnable; overwrites the JSON in place.
+// identifier is the name. Re-runnable. Overwrites the JSON in place.
 
 import { writeFile, mkdir } from 'node:fs/promises'
 import { fileURLToPath } from 'node:url'

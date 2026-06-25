@@ -18,7 +18,7 @@ const CREATORS: PlayerAvatar[] = [
   { kind: 'image', src: `${base}avatars/zenvolka.jpg`, label: 'ZenVolka' },
 ]
 // A handful of recognizable mascots. The full sprite set is bundled in
-// public/sprites (see scripts/scrape-sprites.js); this is just the picker subset.
+// public/sprites (see scripts/scrape-sprites.js). This is just the picker subset.
 const POKEMON: PlayerAvatar[] = (
   [
     [1, 'Bulbasaur'],

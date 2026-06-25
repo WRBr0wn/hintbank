@@ -42,7 +42,7 @@ export const isBankFull = (s: GameState): boolean => s.bank.length >= BANK_CAP
 export const currentAnswer = (s: GameState): Answer | null =>
   s.status === 'playing' ? (s.deck[s.cursor] ?? null) : null
 
-// Slots the hinter can actually select for a hint — words only, never markers.
+// Slots the hinter can actually pick for a hint: words only, never markers.
 export const usableWords = (s: GameState): number[] =>
   s.bank.flatMap((entry, i) => (entry.kind === 'word' ? [i] : []))
 
@@ -135,9 +135,9 @@ export function endTurn(s: GameState): GameState {
   return { ...s, endedEarly: true, status: 'complete' }
 }
 
-// Score is bank-size based: every occupied slot — added words and reroll markers
-// alike — costs 1, so a reroll's marker is a real -1. hintCount is only a round
-// counter for the UI and deliberately stays out of scoring.
+// Score is based on bank size. Every filled slot costs 1, words and reroll
+// markers alike, so a reroll's marker is a real -1. hintCount is just a round
+// counter for the UI and stays out of scoring on purpose.
 export function hinterScore(s: GameState): number {
   return HINTER_BASE - s.bank.length - (s.endedEarly ? END_TURN_PENALTY : 0)
 }
