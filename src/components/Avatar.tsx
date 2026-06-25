@@ -15,20 +15,25 @@ const cls = (...names: (string | false | undefined)[]) => names.filter(Boolean).
 export default function Avatar({ avatar, size, className }: Props) {
   if (avatar.kind === 'image') {
     return (
-      <img
-        className={cls(styles.img, size == null && styles.fill, className)}
-        src={avatar.src}
-        alt={avatar.label ?? ''}
+      <span
+        className={cls(styles.imgBox, !avatar.bare && styles.disc, size == null && styles.fill, className)}
         style={size != null ? { width: size, height: size } : undefined}
-        draggable={false}
-      />
+      >
+        <img
+          className={styles.img}
+          src={avatar.src}
+          alt={avatar.label ?? ''}
+          style={avatar.zoom ? { transform: `scale(${avatar.zoom})` } : undefined}
+          draggable={false}
+        />
+      </span>
     )
   }
 
   return (
     <span
       className={cls(styles.emoji, className)}
-      style={size != null ? { width: size, height: size, fontSize: Math.round(size * 0.86) } : undefined}
+      style={size != null ? { width: size, height: size, fontSize: Math.round(size * 0.94) } : undefined}
       role="img"
       aria-label={avatar.value}
     >

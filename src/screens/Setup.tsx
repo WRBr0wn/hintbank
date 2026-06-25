@@ -17,7 +17,26 @@ const CREATORS: PlayerAvatar[] = [
   { kind: 'image', src: `${base}avatars/deliciousjames.jpg`, label: 'Delicious James' },
   { kind: 'image', src: `${base}avatars/zenvolka.jpg`, label: 'ZenVolka' },
 ]
-const AVATARS: PlayerAvatar[] = [...EMOJI, ...CREATORS]
+// A handful of recognizable mascots. The full sprite set is bundled in
+// public/sprites (see scripts/scrape-sprites.js); this is just the picker subset.
+const POKEMON: PlayerAvatar[] = (
+  [
+    [1, 'Bulbasaur'],
+    [4, 'Charmander'],
+    [7, 'Squirtle'],
+    [25, 'Pikachu'],
+    [6, 'Charizard'],
+    [39, 'Jigglypuff'],
+    [94, 'Gengar'],
+    [133, 'Eevee'],
+    [143, 'Snorlax'],
+    [150, 'Mewtwo'],
+    [448, 'Lucario'],
+    [658, 'Greninja'],
+  ] as [number, string][]
+).map(([dex, label]) => ({ kind: 'image', src: `${base}sprites/${dex}.png`, label, zoom: 1.3, bare: true }))
+
+const AVATARS: PlayerAvatar[] = [...EMOJI, ...CREATORS, ...POKEMON]
 
 const avatarKey = (a: PlayerAvatar) => (a.kind === 'emoji' ? a.value : a.src)
 
@@ -107,7 +126,7 @@ export default function Setup({ onStart }: { onStart: (players: Player[]) => voi
                   onClick={() => setPickerFor((cur) => (cur === p.id ? null : p.id))}
                   aria-label="Change avatar"
                 >
-                  <Avatar avatar={p.avatar} size={30} />
+                  <Avatar avatar={p.avatar} size={36} />
                 </button>
                 <input
                   className={styles.name}
@@ -141,7 +160,7 @@ export default function Setup({ onStart }: { onStart: (players: Player[]) => voi
                           setPickerFor(null)
                         }}
                       >
-                        <Avatar avatar={a} size={28} />
+                        <Avatar avatar={a} size={32} />
                       </button>
                     )
                   })}

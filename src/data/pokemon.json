@@ -2,5126 +2,5126 @@
   {
     "name": "bulbasaur",
     "dexNumber": 1,
-    "sprite": null
+    "sprite": "sprites/1.png"
   },
   {
     "name": "ivysaur",
     "dexNumber": 2,
-    "sprite": null
+    "sprite": "sprites/2.png"
   },
   {
     "name": "venusaur",
     "dexNumber": 3,
-    "sprite": null
+    "sprite": "sprites/3.png"
   },
   {
     "name": "charmander",
     "dexNumber": 4,
-    "sprite": null
+    "sprite": "sprites/4.png"
   },
   {
     "name": "charmeleon",
     "dexNumber": 5,
-    "sprite": null
+    "sprite": "sprites/5.png"
   },
   {
     "name": "charizard",
     "dexNumber": 6,
-    "sprite": null
+    "sprite": "sprites/6.png"
   },
   {
     "name": "squirtle",
     "dexNumber": 7,
-    "sprite": null
+    "sprite": "sprites/7.png"
   },
   {
     "name": "wartortle",
     "dexNumber": 8,
-    "sprite": null
+    "sprite": "sprites/8.png"
   },
   {
     "name": "blastoise",
     "dexNumber": 9,
-    "sprite": null
+    "sprite": "sprites/9.png"
   },
   {
     "name": "caterpie",
     "dexNumber": 10,
-    "sprite": null
+    "sprite": "sprites/10.png"
   },
   {
     "name": "metapod",
     "dexNumber": 11,
-    "sprite": null
+    "sprite": "sprites/11.png"
   },
   {
     "name": "butterfree",
     "dexNumber": 12,
-    "sprite": null
+    "sprite": "sprites/12.png"
   },
   {
     "name": "weedle",
     "dexNumber": 13,
-    "sprite": null
+    "sprite": "sprites/13.png"
   },
   {
     "name": "kakuna",
     "dexNumber": 14,
-    "sprite": null
+    "sprite": "sprites/14.png"
   },
   {
     "name": "beedrill",
     "dexNumber": 15,
-    "sprite": null
+    "sprite": "sprites/15.png"
   },
   {
     "name": "pidgey",
     "dexNumber": 16,
-    "sprite": null
+    "sprite": "sprites/16.png"
   },
   {
     "name": "pidgeotto",
     "dexNumber": 17,
-    "sprite": null
+    "sprite": "sprites/17.png"
   },
   {
     "name": "pidgeot",
     "dexNumber": 18,
-    "sprite": null
+    "sprite": "sprites/18.png"
   },
   {
     "name": "rattata",
     "dexNumber": 19,
-    "sprite": null
+    "sprite": "sprites/19.png"
   },
   {
     "name": "raticate",
     "dexNumber": 20,
-    "sprite": null
+    "sprite": "sprites/20.png"
   },
   {
     "name": "spearow",
     "dexNumber": 21,
-    "sprite": null
+    "sprite": "sprites/21.png"
   },
   {
     "name": "fearow",
     "dexNumber": 22,
-    "sprite": null
+    "sprite": "sprites/22.png"
   },
   {
     "name": "ekans",
     "dexNumber": 23,
-    "sprite": null
+    "sprite": "sprites/23.png"
   },
   {
     "name": "arbok",
     "dexNumber": 24,
-    "sprite": null
+    "sprite": "sprites/24.png"
   },
   {
     "name": "pikachu",
     "dexNumber": 25,
-    "sprite": null
+    "sprite": "sprites/25.png"
   },
   {
     "name": "raichu",
     "dexNumber": 26,
-    "sprite": null
+    "sprite": "sprites/26.png"
   },
   {
     "name": "sandshrew",
     "dexNumber": 27,
-    "sprite": null
+    "sprite": "sprites/27.png"
   },
   {
     "name": "sandslash",
     "dexNumber": 28,
-    "sprite": null
+    "sprite": "sprites/28.png"
   },
   {
     "name": "nidoran-f",
     "dexNumber": 29,
-    "sprite": null
+    "sprite": "sprites/29.png"
   },
   {
     "name": "nidorina",
     "dexNumber": 30,
-    "sprite": null
+    "sprite": "sprites/30.png"
   },
   {
     "name": "nidoqueen",
     "dexNumber": 31,
-    "sprite": null
+    "sprite": "sprites/31.png"
   },
   {
     "name": "nidoran-m",
     "dexNumber": 32,
-    "sprite": null
+    "sprite": "sprites/32.png"
   },
   {
     "name": "nidorino",
     "dexNumber": 33,
-    "sprite": null
+    "sprite": "sprites/33.png"
   },
   {
     "name": "nidoking",
     "dexNumber": 34,
-    "sprite": null
+    "sprite": "sprites/34.png"
   },
   {
     "name": "clefairy",
     "dexNumber": 35,
-    "sprite": null
+    "sprite": "sprites/35.png"
   },
   {
     "name": "clefable",
     "dexNumber": 36,
-    "sprite": null
+    "sprite": "sprites/36.png"
   },
   {
     "name": "vulpix",
     "dexNumber": 37,
-    "sprite": null
+    "sprite": "sprites/37.png"
   },
   {
     "name": "ninetales",
     "dexNumber": 38,
-    "sprite": null
+    "sprite": "sprites/38.png"
   },
   {
     "name": "jigglypuff",
     "dexNumber": 39,
-    "sprite": null
+    "sprite": "sprites/39.png"
   },
   {
     "name": "wigglytuff",
     "dexNumber": 40,
-    "sprite": null
+    "sprite": "sprites/40.png"
   },
   {
     "name": "zubat",
     "dexNumber": 41,
-    "sprite": null
+    "sprite": "sprites/41.png"
   },
   {
     "name": "golbat",
     "dexNumber": 42,
-    "sprite": null
+    "sprite": "sprites/42.png"
   },
   {
     "name": "oddish",
     "dexNumber": 43,
-    "sprite": null
+    "sprite": "sprites/43.png"
   },
   {
     "name": "gloom",
     "dexNumber": 44,
-    "sprite": null
+    "sprite": "sprites/44.png"
   },
   {
     "name": "vileplume",
     "dexNumber": 45,
-    "sprite": null
+    "sprite": "sprites/45.png"
   },
   {
     "name": "paras",
     "dexNumber": 46,
-    "sprite": null
+    "sprite": "sprites/46.png"
   },
   {
     "name": "parasect",
     "dexNumber": 47,
-    "sprite": null
+    "sprite": "sprites/47.png"
   },
   {
     "name": "venonat",
     "dexNumber": 48,
-    "sprite": null
+    "sprite": "sprites/48.png"
   },
   {
     "name": "venomoth",
     "dexNumber": 49,
-    "sprite": null
+    "sprite": "sprites/49.png"
   },
   {
     "name": "diglett",
     "dexNumber": 50,
-    "sprite": null
+    "sprite": "sprites/50.png"
   },
   {
     "name": "dugtrio",
     "dexNumber": 51,
-    "sprite": null
+    "sprite": "sprites/51.png"
   },
   {
     "name": "meowth",
     "dexNumber": 52,
-    "sprite": null
+    "sprite": "sprites/52.png"
   },
   {
     "name": "persian",
     "dexNumber": 53,
-    "sprite": null
+    "sprite": "sprites/53.png"
   },
   {
     "name": "psyduck",
     "dexNumber": 54,
-    "sprite": null
+    "sprite": "sprites/54.png"
   },
   {
     "name": "golduck",
     "dexNumber": 55,
-    "sprite": null
+    "sprite": "sprites/55.png"
   },
   {
     "name": "mankey",
     "dexNumber": 56,
-    "sprite": null
+    "sprite": "sprites/56.png"
   },
   {
     "name": "primeape",
     "dexNumber": 57,
-    "sprite": null
+    "sprite": "sprites/57.png"
   },
   {
     "name": "growlithe",
     "dexNumber": 58,
-    "sprite": null
+    "sprite": "sprites/58.png"
   },
   {
     "name": "arcanine",
     "dexNumber": 59,
-    "sprite": null
+    "sprite": "sprites/59.png"
   },
   {
     "name": "poliwag",
     "dexNumber": 60,
-    "sprite": null
+    "sprite": "sprites/60.png"
   },
   {
     "name": "poliwhirl",
     "dexNumber": 61,
-    "sprite": null
+    "sprite": "sprites/61.png"
   },
   {
     "name": "poliwrath",
     "dexNumber": 62,
-    "sprite": null
+    "sprite": "sprites/62.png"
   },
   {
     "name": "abra",
     "dexNumber": 63,
-    "sprite": null
+    "sprite": "sprites/63.png"
   },
   {
     "name": "kadabra",
     "dexNumber": 64,
-    "sprite": null
+    "sprite": "sprites/64.png"
   },
   {
     "name": "alakazam",
     "dexNumber": 65,
-    "sprite": null
+    "sprite": "sprites/65.png"
   },
   {
     "name": "machop",
     "dexNumber": 66,
-    "sprite": null
+    "sprite": "sprites/66.png"
   },
   {
     "name": "machoke",
     "dexNumber": 67,
-    "sprite": null
+    "sprite": "sprites/67.png"
   },
   {
     "name": "machamp",
     "dexNumber": 68,
-    "sprite": null
+    "sprite": "sprites/68.png"
   },
   {
     "name": "bellsprout",
     "dexNumber": 69,
-    "sprite": null
+    "sprite": "sprites/69.png"
   },
   {
     "name": "weepinbell",
     "dexNumber": 70,
-    "sprite": null
+    "sprite": "sprites/70.png"
   },
   {
     "name": "victreebel",
     "dexNumber": 71,
-    "sprite": null
+    "sprite": "sprites/71.png"
   },
   {
     "name": "tentacool",
     "dexNumber": 72,
-    "sprite": null
+    "sprite": "sprites/72.png"
   },
   {
     "name": "tentacruel",
     "dexNumber": 73,
-    "sprite": null
+    "sprite": "sprites/73.png"
   },
   {
     "name": "geodude",
     "dexNumber": 74,
-    "sprite": null
+    "sprite": "sprites/74.png"
   },
   {
     "name": "graveler",
     "dexNumber": 75,
-    "sprite": null
+    "sprite": "sprites/75.png"
   },
   {
     "name": "golem",
     "dexNumber": 76,
-    "sprite": null
+    "sprite": "sprites/76.png"
   },
   {
     "name": "ponyta",
     "dexNumber": 77,
-    "sprite": null
+    "sprite": "sprites/77.png"
   },
   {
     "name": "rapidash",
     "dexNumber": 78,
-    "sprite": null
+    "sprite": "sprites/78.png"
   },
   {
     "name": "slowpoke",
     "dexNumber": 79,
-    "sprite": null
+    "sprite": "sprites/79.png"
   },
   {
     "name": "slowbro",
     "dexNumber": 80,
-    "sprite": null
+    "sprite": "sprites/80.png"
   },
   {
     "name": "magnemite",
     "dexNumber": 81,
-    "sprite": null
+    "sprite": "sprites/81.png"
   },
   {
     "name": "magneton",
     "dexNumber": 82,
-    "sprite": null
+    "sprite": "sprites/82.png"
   },
   {
     "name": "farfetchd",
     "dexNumber": 83,
-    "sprite": null
+    "sprite": "sprites/83.png"
   },
   {
     "name": "doduo",
     "dexNumber": 84,
-    "sprite": null
+    "sprite": "sprites/84.png"
   },
   {
     "name": "dodrio",
     "dexNumber": 85,
-    "sprite": null
+    "sprite": "sprites/85.png"
   },
   {
     "name": "seel",
     "dexNumber": 86,
-    "sprite": null
+    "sprite": "sprites/86.png"
   },
   {
     "name": "dewgong",
     "dexNumber": 87,
-    "sprite": null
+    "sprite": "sprites/87.png"
   },
   {
     "name": "grimer",
     "dexNumber": 88,
-    "sprite": null
+    "sprite": "sprites/88.png"
   },
   {
     "name": "muk",
     "dexNumber": 89,
-    "sprite": null
+    "sprite": "sprites/89.png"
   },
   {
     "name": "shellder",
     "dexNumber": 90,
-    "sprite": null
+    "sprite": "sprites/90.png"
   },
   {
     "name": "cloyster",
     "dexNumber": 91,
-    "sprite": null
+    "sprite": "sprites/91.png"
   },
   {
     "name": "gastly",
     "dexNumber": 92,
-    "sprite": null
+    "sprite": "sprites/92.png"
   },
   {
     "name": "haunter",
     "dexNumber": 93,
-    "sprite": null
+    "sprite": "sprites/93.png"
   },
   {
     "name": "gengar",
     "dexNumber": 94,
-    "sprite": null
+    "sprite": "sprites/94.png"
   },
   {
     "name": "onix",
     "dexNumber": 95,
-    "sprite": null
+    "sprite": "sprites/95.png"
   },
   {
     "name": "drowzee",
     "dexNumber": 96,
-    "sprite": null
+    "sprite": "sprites/96.png"
   },
   {
     "name": "hypno",
     "dexNumber": 97,
-    "sprite": null
+    "sprite": "sprites/97.png"
   },
   {
     "name": "krabby",
     "dexNumber": 98,
-    "sprite": null
+    "sprite": "sprites/98.png"
   },
   {
     "name": "kingler",
     "dexNumber": 99,
-    "sprite": null
+    "sprite": "sprites/99.png"
   },
   {
     "name": "voltorb",
     "dexNumber": 100,
-    "sprite": null
+    "sprite": "sprites/100.png"
   },
   {
     "name": "electrode",
     "dexNumber": 101,
-    "sprite": null
+    "sprite": "sprites/101.png"
   },
   {
     "name": "exeggcute",
     "dexNumber": 102,
-    "sprite": null
+    "sprite": "sprites/102.png"
   },
   {
     "name": "exeggutor",
     "dexNumber": 103,
-    "sprite": null
+    "sprite": "sprites/103.png"
   },
   {
     "name": "cubone",
     "dexNumber": 104,
-    "sprite": null
+    "sprite": "sprites/104.png"
   },
   {
     "name": "marowak",
     "dexNumber": 105,
-    "sprite": null
+    "sprite": "sprites/105.png"
   },
   {
     "name": "hitmonlee",
     "dexNumber": 106,
-    "sprite": null
+    "sprite": "sprites/106.png"
   },
   {
     "name": "hitmonchan",
     "dexNumber": 107,
-    "sprite": null
+    "sprite": "sprites/107.png"
   },
   {
     "name": "lickitung",
     "dexNumber": 108,
-    "sprite": null
+    "sprite": "sprites/108.png"
   },
   {
     "name": "koffing",
     "dexNumber": 109,
-    "sprite": null
+    "sprite": "sprites/109.png"
   },
   {
     "name": "weezing",
     "dexNumber": 110,
-    "sprite": null
+    "sprite": "sprites/110.png"
   },
   {
     "name": "rhyhorn",
     "dexNumber": 111,
-    "sprite": null
+    "sprite": "sprites/111.png"
   },
   {
     "name": "rhydon",
     "dexNumber": 112,
-    "sprite": null
+    "sprite": "sprites/112.png"
   },
   {
     "name": "chansey",
     "dexNumber": 113,
-    "sprite": null
+    "sprite": "sprites/113.png"
   },
   {
     "name": "tangela",
     "dexNumber": 114,
-    "sprite": null
+    "sprite": "sprites/114.png"
   },
   {
     "name": "kangaskhan",
     "dexNumber": 115,
-    "sprite": null
+    "sprite": "sprites/115.png"
   },
   {
     "name": "horsea",
     "dexNumber": 116,
-    "sprite": null
+    "sprite": "sprites/116.png"
   },
   {
     "name": "seadra",
     "dexNumber": 117,
-    "sprite": null
+    "sprite": "sprites/117.png"
   },
   {
     "name": "goldeen",
     "dexNumber": 118,
-    "sprite": null
+    "sprite": "sprites/118.png"
   },
   {
     "name": "seaking",
     "dexNumber": 119,
-    "sprite": null
+    "sprite": "sprites/119.png"
   },
   {
     "name": "staryu",
     "dexNumber": 120,
-    "sprite": null
+    "sprite": "sprites/120.png"
   },
   {
     "name": "starmie",
     "dexNumber": 121,
-    "sprite": null
+    "sprite": "sprites/121.png"
   },
   {
     "name": "mr-mime",
     "dexNumber": 122,
-    "sprite": null
+    "sprite": "sprites/122.png"
   },
   {
     "name": "scyther",
     "dexNumber": 123,
-    "sprite": null
+    "sprite": "sprites/123.png"
   },
   {
     "name": "jynx",
     "dexNumber": 124,
-    "sprite": null
+    "sprite": "sprites/124.png"
   },
   {
     "name": "electabuzz",
     "dexNumber": 125,
-    "sprite": null
+    "sprite": "sprites/125.png"
   },
   {
     "name": "magmar",
     "dexNumber": 126,
-    "sprite": null
+    "sprite": "sprites/126.png"
   },
   {
     "name": "pinsir",
     "dexNumber": 127,
-    "sprite": null
+    "sprite": "sprites/127.png"
   },
   {
     "name": "tauros",
     "dexNumber": 128,
-    "sprite": null
+    "sprite": "sprites/128.png"
   },
   {
     "name": "magikarp",
     "dexNumber": 129,
-    "sprite": null
+    "sprite": "sprites/129.png"
   },
   {
     "name": "gyarados",
     "dexNumber": 130,
-    "sprite": null
+    "sprite": "sprites/130.png"
   },
   {
     "name": "lapras",
     "dexNumber": 131,
-    "sprite": null
+    "sprite": "sprites/131.png"
   },
   {
     "name": "ditto",
     "dexNumber": 132,
-    "sprite": null
+    "sprite": "sprites/132.png"
   },
   {
     "name": "eevee",
     "dexNumber": 133,
-    "sprite": null
+    "sprite": "sprites/133.png"
   },
   {
     "name": "vaporeon",
     "dexNumber": 134,
-    "sprite": null
+    "sprite": "sprites/134.png"
   },
   {
     "name": "jolteon",
     "dexNumber": 135,
-    "sprite": null
+    "sprite": "sprites/135.png"
   },
   {
     "name": "flareon",
     "dexNumber": 136,
-    "sprite": null
+    "sprite": "sprites/136.png"
   },
   {
     "name": "porygon",
     "dexNumber": 137,
-    "sprite": null
+    "sprite": "sprites/137.png"
   },
   {
     "name": "omanyte",
     "dexNumber": 138,
-    "sprite": null
+    "sprite": "sprites/138.png"
   },
   {
     "name": "omastar",
     "dexNumber": 139,
-    "sprite": null
+    "sprite": "sprites/139.png"
   },
   {
     "name": "kabuto",
     "dexNumber": 140,
-    "sprite": null
+    "sprite": "sprites/140.png"
   },
   {
     "name": "kabutops",
     "dexNumber": 141,
-    "sprite": null
+    "sprite": "sprites/141.png"
   },
   {
     "name": "aerodactyl",
     "dexNumber": 142,
-    "sprite": null
+    "sprite": "sprites/142.png"
   },
   {
     "name": "snorlax",
     "dexNumber": 143,
-    "sprite": null
+    "sprite": "sprites/143.png"
   },
   {
     "name": "articuno",
     "dexNumber": 144,
-    "sprite": null
+    "sprite": "sprites/144.png"
   },
   {
     "name": "zapdos",
     "dexNumber": 145,
-    "sprite": null
+    "sprite": "sprites/145.png"
   },
   {
     "name": "moltres",
     "dexNumber": 146,
-    "sprite": null
+    "sprite": "sprites/146.png"
   },
   {
     "name": "dratini",
     "dexNumber": 147,
-    "sprite": null
+    "sprite": "sprites/147.png"
   },
   {
     "name": "dragonair",
     "dexNumber": 148,
-    "sprite": null
+    "sprite": "sprites/148.png"
   },
   {
     "name": "dragonite",
     "dexNumber": 149,
-    "sprite": null
+    "sprite": "sprites/149.png"
   },
   {
     "name": "mewtwo",
     "dexNumber": 150,
-    "sprite": null
+    "sprite": "sprites/150.png"
   },
   {
     "name": "mew",
     "dexNumber": 151,
-    "sprite": null
+    "sprite": "sprites/151.png"
   },
   {
     "name": "chikorita",
     "dexNumber": 152,
-    "sprite": null
+    "sprite": "sprites/152.png"
   },
   {
     "name": "bayleef",
     "dexNumber": 153,
-    "sprite": null
+    "sprite": "sprites/153.png"
   },
   {
     "name": "meganium",
     "dexNumber": 154,
-    "sprite": null
+    "sprite": "sprites/154.png"
   },
   {
     "name": "cyndaquil",
     "dexNumber": 155,
-    "sprite": null
+    "sprite": "sprites/155.png"
   },
   {
     "name": "quilava",
     "dexNumber": 156,
-    "sprite": null
+    "sprite": "sprites/156.png"
   },
   {
     "name": "typhlosion",
     "dexNumber": 157,
-    "sprite": null
+    "sprite": "sprites/157.png"
   },
   {
     "name": "totodile",
     "dexNumber": 158,
-    "sprite": null
+    "sprite": "sprites/158.png"
   },
   {
     "name": "croconaw",
     "dexNumber": 159,
-    "sprite": null
+    "sprite": "sprites/159.png"
   },
   {
     "name": "feraligatr",
     "dexNumber": 160,
-    "sprite": null
+    "sprite": "sprites/160.png"
   },
   {
     "name": "sentret",
     "dexNumber": 161,
-    "sprite": null
+    "sprite": "sprites/161.png"
   },
   {
     "name": "furret",
     "dexNumber": 162,
-    "sprite": null
+    "sprite": "sprites/162.png"
   },
   {
     "name": "hoothoot",
     "dexNumber": 163,
-    "sprite": null
+    "sprite": "sprites/163.png"
   },
   {
     "name": "noctowl",
     "dexNumber": 164,
-    "sprite": null
+    "sprite": "sprites/164.png"
   },
   {
     "name": "ledyba",
     "dexNumber": 165,
-    "sprite": null
+    "sprite": "sprites/165.png"
   },
   {
     "name": "ledian",
     "dexNumber": 166,
-    "sprite": null
+    "sprite": "sprites/166.png"
   },
   {
     "name": "spinarak",
     "dexNumber": 167,
-    "sprite": null
+    "sprite": "sprites/167.png"
   },
   {
     "name": "ariados",
     "dexNumber": 168,
-    "sprite": null
+    "sprite": "sprites/168.png"
   },
   {
     "name": "crobat",
     "dexNumber": 169,
-    "sprite": null
+    "sprite": "sprites/169.png"
   },
   {
     "name": "chinchou",
     "dexNumber": 170,
-    "sprite": null
+    "sprite": "sprites/170.png"
   },
   {
     "name": "lanturn",
     "dexNumber": 171,
-    "sprite": null
+    "sprite": "sprites/171.png"
   },
   {
     "name": "pichu",
     "dexNumber": 172,
-    "sprite": null
+    "sprite": "sprites/172.png"
   },
   {
     "name": "cleffa",
     "dexNumber": 173,
-    "sprite": null
+    "sprite": "sprites/173.png"
   },
   {
     "name": "igglybuff",
     "dexNumber": 174,
-    "sprite": null
+    "sprite": "sprites/174.png"
   },
   {
     "name": "togepi",
     "dexNumber": 175,
-    "sprite": null
+    "sprite": "sprites/175.png"
   },
   {
     "name": "togetic",
     "dexNumber": 176,
-    "sprite": null
+    "sprite": "sprites/176.png"
   },
   {
     "name": "natu",
     "dexNumber": 177,
-    "sprite": null
+    "sprite": "sprites/177.png"
   },
   {
     "name": "xatu",
     "dexNumber": 178,
-    "sprite": null
+    "sprite": "sprites/178.png"
   },
   {
     "name": "mareep",
     "dexNumber": 179,
-    "sprite": null
+    "sprite": "sprites/179.png"
   },
   {
     "name": "flaaffy",
     "dexNumber": 180,
-    "sprite": null
+    "sprite": "sprites/180.png"
   },
   {
     "name": "ampharos",
     "dexNumber": 181,
-    "sprite": null
+    "sprite": "sprites/181.png"
   },
   {
     "name": "bellossom",
     "dexNumber": 182,
-    "sprite": null
+    "sprite": "sprites/182.png"
   },
   {
     "name": "marill",
     "dexNumber": 183,
-    "sprite": null
+    "sprite": "sprites/183.png"
   },
   {
     "name": "azumarill",
     "dexNumber": 184,
-    "sprite": null
+    "sprite": "sprites/184.png"
   },
   {
     "name": "sudowoodo",
     "dexNumber": 185,
-    "sprite": null
+    "sprite": "sprites/185.png"
   },
   {
     "name": "politoed",
     "dexNumber": 186,
-    "sprite": null
+    "sprite": "sprites/186.png"
   },
   {
     "name": "hoppip",
     "dexNumber": 187,
-    "sprite": null
+    "sprite": "sprites/187.png"
   },
   {
     "name": "skiploom",
     "dexNumber": 188,
-    "sprite": null
+    "sprite": "sprites/188.png"
   },
   {
     "name": "jumpluff",
     "dexNumber": 189,
-    "sprite": null
+    "sprite": "sprites/189.png"
   },
   {
     "name": "aipom",
     "dexNumber": 190,
-    "sprite": null
+    "sprite": "sprites/190.png"
   },
   {
     "name": "sunkern",
     "dexNumber": 191,
-    "sprite": null
+    "sprite": "sprites/191.png"
   },
   {
     "name": "sunflora",
     "dexNumber": 192,
-    "sprite": null
+    "sprite": "sprites/192.png"
   },
   {
     "name": "yanma",
     "dexNumber": 193,
-    "sprite": null
+    "sprite": "sprites/193.png"
   },
   {
     "name": "wooper",
     "dexNumber": 194,
-    "sprite": null
+    "sprite": "sprites/194.png"
   },
   {
     "name": "quagsire",
     "dexNumber": 195,
-    "sprite": null
+    "sprite": "sprites/195.png"
   },
   {
     "name": "espeon",
     "dexNumber": 196,
-    "sprite": null
+    "sprite": "sprites/196.png"
   },
   {
     "name": "umbreon",
     "dexNumber": 197,
-    "sprite": null
+    "sprite": "sprites/197.png"
   },
   {
     "name": "murkrow",
     "dexNumber": 198,
-    "sprite": null
+    "sprite": "sprites/198.png"
   },
   {
     "name": "slowking",
     "dexNumber": 199,
-    "sprite": null
+    "sprite": "sprites/199.png"
   },
   {
     "name": "misdreavus",
     "dexNumber": 200,
-    "sprite": null
+    "sprite": "sprites/200.png"
   },
   {
     "name": "unown",
     "dexNumber": 201,
-    "sprite": null
+    "sprite": "sprites/201.png"
   },
   {
     "name": "wobbuffet",
     "dexNumber": 202,
-    "sprite": null
+    "sprite": "sprites/202.png"
   },
   {
     "name": "girafarig",
     "dexNumber": 203,
-    "sprite": null
+    "sprite": "sprites/203.png"
   },
   {
     "name": "pineco",
     "dexNumber": 204,
-    "sprite": null
+    "sprite": "sprites/204.png"
   },
   {
     "name": "forretress",
     "dexNumber": 205,
-    "sprite": null
+    "sprite": "sprites/205.png"
   },
   {
     "name": "dunsparce",
     "dexNumber": 206,
-    "sprite": null
+    "sprite": "sprites/206.png"
   },
   {
     "name": "gligar",
     "dexNumber": 207,
-    "sprite": null
+    "sprite": "sprites/207.png"
   },
   {
     "name": "steelix",
     "dexNumber": 208,
-    "sprite": null
+    "sprite": "sprites/208.png"
   },
   {
     "name": "snubbull",
     "dexNumber": 209,
-    "sprite": null
+    "sprite": "sprites/209.png"
   },
   {
     "name": "granbull",
     "dexNumber": 210,
-    "sprite": null
+    "sprite": "sprites/210.png"
   },
   {
     "name": "qwilfish",
     "dexNumber": 211,
-    "sprite": null
+    "sprite": "sprites/211.png"
   },
   {
     "name": "scizor",
     "dexNumber": 212,
-    "sprite": null
+    "sprite": "sprites/212.png"
   },
   {
     "name": "shuckle",
     "dexNumber": 213,
-    "sprite": null
+    "sprite": "sprites/213.png"
   },
   {
     "name": "heracross",
     "dexNumber": 214,
-    "sprite": null
+    "sprite": "sprites/214.png"
   },
   {
     "name": "sneasel",
     "dexNumber": 215,
-    "sprite": null
+    "sprite": "sprites/215.png"
   },
   {
     "name": "teddiursa",
     "dexNumber": 216,
-    "sprite": null
+    "sprite": "sprites/216.png"
   },
   {
     "name": "ursaring",
     "dexNumber": 217,
-    "sprite": null
+    "sprite": "sprites/217.png"
   },
   {
     "name": "slugma",
     "dexNumber": 218,
-    "sprite": null
+    "sprite": "sprites/218.png"
   },
   {
     "name": "magcargo",
     "dexNumber": 219,
-    "sprite": null
+    "sprite": "sprites/219.png"
   },
   {
     "name": "swinub",
     "dexNumber": 220,
-    "sprite": null
+    "sprite": "sprites/220.png"
   },
   {
     "name": "piloswine",
     "dexNumber": 221,
-    "sprite": null
+    "sprite": "sprites/221.png"
   },
   {
     "name": "corsola",
     "dexNumber": 222,
-    "sprite": null
+    "sprite": "sprites/222.png"
   },
   {
     "name": "remoraid",
     "dexNumber": 223,
-    "sprite": null
+    "sprite": "sprites/223.png"
   },
   {
     "name": "octillery",
     "dexNumber": 224,
-    "sprite": null
+    "sprite": "sprites/224.png"
   },
   {
     "name": "delibird",
     "dexNumber": 225,
-    "sprite": null
+    "sprite": "sprites/225.png"
   },
   {
     "name": "mantine",
     "dexNumber": 226,
-    "sprite": null
+    "sprite": "sprites/226.png"
   },
   {
     "name": "skarmory",
     "dexNumber": 227,
-    "sprite": null
+    "sprite": "sprites/227.png"
   },
   {
     "name": "houndour",
     "dexNumber": 228,
-    "sprite": null
+    "sprite": "sprites/228.png"
   },
   {
     "name": "houndoom",
     "dexNumber": 229,
-    "sprite": null
+    "sprite": "sprites/229.png"
   },
   {
     "name": "kingdra",
     "dexNumber": 230,
-    "sprite": null
+    "sprite": "sprites/230.png"
   },
   {
     "name": "phanpy",
     "dexNumber": 231,
-    "sprite": null
+    "sprite": "sprites/231.png"
   },
   {
     "name": "donphan",
     "dexNumber": 232,
-    "sprite": null
+    "sprite": "sprites/232.png"
   },
   {
     "name": "porygon2",
     "dexNumber": 233,
-    "sprite": null
+    "sprite": "sprites/233.png"
   },
   {
     "name": "stantler",
     "dexNumber": 234,
-    "sprite": null
+    "sprite": "sprites/234.png"
   },
   {
     "name": "smeargle",
     "dexNumber": 235,
-    "sprite": null
+    "sprite": "sprites/235.png"
   },
   {
     "name": "tyrogue",
     "dexNumber": 236,
-    "sprite": null
+    "sprite": "sprites/236.png"
   },
   {
     "name": "hitmontop",
     "dexNumber": 237,
-    "sprite": null
+    "sprite": "sprites/237.png"
   },
   {
     "name": "smoochum",
     "dexNumber": 238,
-    "sprite": null
+    "sprite": "sprites/238.png"
   },
   {
     "name": "elekid",
     "dexNumber": 239,
-    "sprite": null
+    "sprite": "sprites/239.png"
   },
   {
     "name": "magby",
     "dexNumber": 240,
-    "sprite": null
+    "sprite": "sprites/240.png"
   },
   {
     "name": "miltank",
     "dexNumber": 241,
-    "sprite": null
+    "sprite": "sprites/241.png"
   },
   {
     "name": "blissey",
     "dexNumber": 242,
-    "sprite": null
+    "sprite": "sprites/242.png"
   },
   {
     "name": "raikou",
     "dexNumber": 243,
-    "sprite": null
+    "sprite": "sprites/243.png"
   },
   {
     "name": "entei",
     "dexNumber": 244,
-    "sprite": null
+    "sprite": "sprites/244.png"
   },
   {
     "name": "suicune",
     "dexNumber": 245,
-    "sprite": null
+    "sprite": "sprites/245.png"
   },
   {
     "name": "larvitar",
     "dexNumber": 246,
-    "sprite": null
+    "sprite": "sprites/246.png"
   },
   {
     "name": "pupitar",
     "dexNumber": 247,
-    "sprite": null
+    "sprite": "sprites/247.png"
   },
   {
     "name": "tyranitar",
     "dexNumber": 248,
-    "sprite": null
+    "sprite": "sprites/248.png"
   },
   {
     "name": "lugia",
     "dexNumber": 249,
-    "sprite": null
+    "sprite": "sprites/249.png"
   },
   {
     "name": "ho-oh",
     "dexNumber": 250,
-    "sprite": null
+    "sprite": "sprites/250.png"
   },
   {
     "name": "celebi",
     "dexNumber": 251,
-    "sprite": null
+    "sprite": "sprites/251.png"
   },
   {
     "name": "treecko",
     "dexNumber": 252,
-    "sprite": null
+    "sprite": "sprites/252.png"
   },
   {
     "name": "grovyle",
     "dexNumber": 253,
-    "sprite": null
+    "sprite": "sprites/253.png"
   },
   {
     "name": "sceptile",
     "dexNumber": 254,
-    "sprite": null
+    "sprite": "sprites/254.png"
   },
   {
     "name": "torchic",
     "dexNumber": 255,
-    "sprite": null
+    "sprite": "sprites/255.png"
   },
   {
     "name": "combusken",
     "dexNumber": 256,
-    "sprite": null
+    "sprite": "sprites/256.png"
   },
   {
     "name": "blaziken",
     "dexNumber": 257,
-    "sprite": null
+    "sprite": "sprites/257.png"
   },
   {
     "name": "mudkip",
     "dexNumber": 258,
-    "sprite": null
+    "sprite": "sprites/258.png"
   },
   {
     "name": "marshtomp",
     "dexNumber": 259,
-    "sprite": null
+    "sprite": "sprites/259.png"
   },
   {
     "name": "swampert",
     "dexNumber": 260,
-    "sprite": null
+    "sprite": "sprites/260.png"
   },
   {
     "name": "poochyena",
     "dexNumber": 261,
-    "sprite": null
+    "sprite": "sprites/261.png"
   },
   {
     "name": "mightyena",
     "dexNumber": 262,
-    "sprite": null
+    "sprite": "sprites/262.png"
   },
   {
     "name": "zigzagoon",
     "dexNumber": 263,
-    "sprite": null
+    "sprite": "sprites/263.png"
   },
   {
     "name": "linoone",
     "dexNumber": 264,
-    "sprite": null
+    "sprite": "sprites/264.png"
   },
   {
     "name": "wurmple",
     "dexNumber": 265,
-    "sprite": null
+    "sprite": "sprites/265.png"
   },
   {
     "name": "silcoon",
     "dexNumber": 266,
-    "sprite": null
+    "sprite": "sprites/266.png"
   },
   {
     "name": "beautifly",
     "dexNumber": 267,
-    "sprite": null
+    "sprite": "sprites/267.png"
   },
   {
     "name": "cascoon",
     "dexNumber": 268,
-    "sprite": null
+    "sprite": "sprites/268.png"
   },
   {
     "name": "dustox",
     "dexNumber": 269,
-    "sprite": null
+    "sprite": "sprites/269.png"
   },
   {
     "name": "lotad",
     "dexNumber": 270,
-    "sprite": null
+    "sprite": "sprites/270.png"
   },
   {
     "name": "lombre",
     "dexNumber": 271,
-    "sprite": null
+    "sprite": "sprites/271.png"
   },
   {
     "name": "ludicolo",
     "dexNumber": 272,
-    "sprite": null
+    "sprite": "sprites/272.png"
   },
   {
     "name": "seedot",
     "dexNumber": 273,
-    "sprite": null
+    "sprite": "sprites/273.png"
   },
   {
     "name": "nuzleaf",
     "dexNumber": 274,
-    "sprite": null
+    "sprite": "sprites/274.png"
   },
   {
     "name": "shiftry",
     "dexNumber": 275,
-    "sprite": null
+    "sprite": "sprites/275.png"
   },
   {
     "name": "taillow",
     "dexNumber": 276,
-    "sprite": null
+    "sprite": "sprites/276.png"
   },
   {
     "name": "swellow",
     "dexNumber": 277,
-    "sprite": null
+    "sprite": "sprites/277.png"
   },
   {
     "name": "wingull",
     "dexNumber": 278,
-    "sprite": null
+    "sprite": "sprites/278.png"
   },
   {
     "name": "pelipper",
     "dexNumber": 279,
-    "sprite": null
+    "sprite": "sprites/279.png"
   },
   {
     "name": "ralts",
     "dexNumber": 280,
-    "sprite": null
+    "sprite": "sprites/280.png"
   },
   {
     "name": "kirlia",
     "dexNumber": 281,
-    "sprite": null
+    "sprite": "sprites/281.png"
   },
   {
     "name": "gardevoir",
     "dexNumber": 282,
-    "sprite": null
+    "sprite": "sprites/282.png"
   },
   {
     "name": "surskit",
     "dexNumber": 283,
-    "sprite": null
+    "sprite": "sprites/283.png"
   },
   {
     "name": "masquerain",
     "dexNumber": 284,
-    "sprite": null
+    "sprite": "sprites/284.png"
   },
   {
     "name": "shroomish",
     "dexNumber": 285,
-    "sprite": null
+    "sprite": "sprites/285.png"
   },
   {
     "name": "breloom",
     "dexNumber": 286,
-    "sprite": null
+    "sprite": "sprites/286.png"
   },
   {
     "name": "slakoth",
     "dexNumber": 287,
-    "sprite": null
+    "sprite": "sprites/287.png"
   },
   {
     "name": "vigoroth",
     "dexNumber": 288,
-    "sprite": null
+    "sprite": "sprites/288.png"
   },
   {
     "name": "slaking",
     "dexNumber": 289,
-    "sprite": null
+    "sprite": "sprites/289.png"
   },
   {
     "name": "nincada",
     "dexNumber": 290,
-    "sprite": null
+    "sprite": "sprites/290.png"
   },
   {
     "name": "ninjask",
     "dexNumber": 291,
-    "sprite": null
+    "sprite": "sprites/291.png"
   },
   {
     "name": "shedinja",
     "dexNumber": 292,
-    "sprite": null
+    "sprite": "sprites/292.png"
   },
   {
     "name": "whismur",
     "dexNumber": 293,
-    "sprite": null
+    "sprite": "sprites/293.png"
   },
   {
     "name": "loudred",
     "dexNumber": 294,
-    "sprite": null
+    "sprite": "sprites/294.png"
   },
   {
     "name": "exploud",
     "dexNumber": 295,
-    "sprite": null
+    "sprite": "sprites/295.png"
   },
   {
     "name": "makuhita",
     "dexNumber": 296,
-    "sprite": null
+    "sprite": "sprites/296.png"
   },
   {
     "name": "hariyama",
     "dexNumber": 297,
-    "sprite": null
+    "sprite": "sprites/297.png"
   },
   {
     "name": "azurill",
     "dexNumber": 298,
-    "sprite": null
+    "sprite": "sprites/298.png"
   },
   {
     "name": "nosepass",
     "dexNumber": 299,
-    "sprite": null
+    "sprite": "sprites/299.png"
   },
   {
     "name": "skitty",
     "dexNumber": 300,
-    "sprite": null
+    "sprite": "sprites/300.png"
   },
   {
     "name": "delcatty",
     "dexNumber": 301,
-    "sprite": null
+    "sprite": "sprites/301.png"
   },
   {
     "name": "sableye",
     "dexNumber": 302,
-    "sprite": null
+    "sprite": "sprites/302.png"
   },
   {
     "name": "mawile",
     "dexNumber": 303,
-    "sprite": null
+    "sprite": "sprites/303.png"
   },
   {
     "name": "aron",
     "dexNumber": 304,
-    "sprite": null
+    "sprite": "sprites/304.png"
   },
   {
     "name": "lairon",
     "dexNumber": 305,
-    "sprite": null
+    "sprite": "sprites/305.png"
   },
   {
     "name": "aggron",
     "dexNumber": 306,
-    "sprite": null
+    "sprite": "sprites/306.png"
   },
   {
     "name": "meditite",
     "dexNumber": 307,
-    "sprite": null
+    "sprite": "sprites/307.png"
   },
   {
     "name": "medicham",
     "dexNumber": 308,
-    "sprite": null
+    "sprite": "sprites/308.png"
   },
   {
     "name": "electrike",
     "dexNumber": 309,
-    "sprite": null
+    "sprite": "sprites/309.png"
   },
   {
     "name": "manectric",
     "dexNumber": 310,
-    "sprite": null
+    "sprite": "sprites/310.png"
   },
   {
     "name": "plusle",
     "dexNumber": 311,
-    "sprite": null
+    "sprite": "sprites/311.png"
   },
   {
     "name": "minun",
     "dexNumber": 312,
-    "sprite": null
+    "sprite": "sprites/312.png"
   },
   {
     "name": "volbeat",
     "dexNumber": 313,
-    "sprite": null
+    "sprite": "sprites/313.png"
   },
   {
     "name": "illumise",
     "dexNumber": 314,
-    "sprite": null
+    "sprite": "sprites/314.png"
   },
   {
     "name": "roselia",
     "dexNumber": 315,
-    "sprite": null
+    "sprite": "sprites/315.png"
   },
   {
     "name": "gulpin",
     "dexNumber": 316,
-    "sprite": null
+    "sprite": "sprites/316.png"
   },
   {
     "name": "swalot",
     "dexNumber": 317,
-    "sprite": null
+    "sprite": "sprites/317.png"
   },
   {
     "name": "carvanha",
     "dexNumber": 318,
-    "sprite": null
+    "sprite": "sprites/318.png"
   },
   {
     "name": "sharpedo",
     "dexNumber": 319,
-    "sprite": null
+    "sprite": "sprites/319.png"
   },
   {
     "name": "wailmer",
     "dexNumber": 320,
-    "sprite": null
+    "sprite": "sprites/320.png"
   },
   {
     "name": "wailord",
     "dexNumber": 321,
-    "sprite": null
+    "sprite": "sprites/321.png"
   },
   {
     "name": "numel",
     "dexNumber": 322,
-    "sprite": null
+    "sprite": "sprites/322.png"
   },
   {
     "name": "camerupt",
     "dexNumber": 323,
-    "sprite": null
+    "sprite": "sprites/323.png"
   },
   {
     "name": "torkoal",
     "dexNumber": 324,
-    "sprite": null
+    "sprite": "sprites/324.png"
   },
   {
     "name": "spoink",
     "dexNumber": 325,
-    "sprite": null
+    "sprite": "sprites/325.png"
   },
   {
     "name": "grumpig",
     "dexNumber": 326,
-    "sprite": null
+    "sprite": "sprites/326.png"
   },
   {
     "name": "spinda",
     "dexNumber": 327,
-    "sprite": null
+    "sprite": "sprites/327.png"
   },
   {
     "name": "trapinch",
     "dexNumber": 328,
-    "sprite": null
+    "sprite": "sprites/328.png"
   },
   {
     "name": "vibrava",
     "dexNumber": 329,
-    "sprite": null
+    "sprite": "sprites/329.png"
   },
   {
     "name": "flygon",
     "dexNumber": 330,
-    "sprite": null
+    "sprite": "sprites/330.png"
   },
   {
     "name": "cacnea",
     "dexNumber": 331,
-    "sprite": null
+    "sprite": "sprites/331.png"
   },
   {
     "name": "cacturne",
     "dexNumber": 332,
-    "sprite": null
+    "sprite": "sprites/332.png"
   },
   {
     "name": "swablu",
     "dexNumber": 333,
-    "sprite": null
+    "sprite": "sprites/333.png"
   },
   {
     "name": "altaria",
     "dexNumber": 334,
-    "sprite": null
+    "sprite": "sprites/334.png"
   },
   {
     "name": "zangoose",
     "dexNumber": 335,
-    "sprite": null
+    "sprite": "sprites/335.png"
   },
   {
     "name": "seviper",
     "dexNumber": 336,
-    "sprite": null
+    "sprite": "sprites/336.png"
   },
   {
     "name": "lunatone",
     "dexNumber": 337,
-    "sprite": null
+    "sprite": "sprites/337.png"
   },
   {
     "name": "solrock",
     "dexNumber": 338,
-    "sprite": null
+    "sprite": "sprites/338.png"
   },
   {
     "name": "barboach",
     "dexNumber": 339,
-    "sprite": null
+    "sprite": "sprites/339.png"
   },
   {
     "name": "whiscash",
     "dexNumber": 340,
-    "sprite": null
+    "sprite": "sprites/340.png"
   },
   {
     "name": "corphish",
     "dexNumber": 341,
-    "sprite": null
+    "sprite": "sprites/341.png"
   },
   {
     "name": "crawdaunt",
     "dexNumber": 342,
-    "sprite": null
+    "sprite": "sprites/342.png"
   },
   {
     "name": "baltoy",
     "dexNumber": 343,
-    "sprite": null
+    "sprite": "sprites/343.png"
   },
   {
     "name": "claydol",
     "dexNumber": 344,
-    "sprite": null
+    "sprite": "sprites/344.png"
   },
   {
     "name": "lileep",
     "dexNumber": 345,
-    "sprite": null
+    "sprite": "sprites/345.png"
   },
   {
     "name": "cradily",
     "dexNumber": 346,
-    "sprite": null
+    "sprite": "sprites/346.png"
   },
   {
     "name": "anorith",
     "dexNumber": 347,
-    "sprite": null
+    "sprite": "sprites/347.png"
   },
   {
     "name": "armaldo",
     "dexNumber": 348,
-    "sprite": null
+    "sprite": "sprites/348.png"
   },
   {
     "name": "feebas",
     "dexNumber": 349,
-    "sprite": null
+    "sprite": "sprites/349.png"
   },
   {
     "name": "milotic",
     "dexNumber": 350,
-    "sprite": null
+    "sprite": "sprites/350.png"
   },
   {
     "name": "castform",
     "dexNumber": 351,
-    "sprite": null
+    "sprite": "sprites/351.png"
   },
   {
     "name": "kecleon",
     "dexNumber": 352,
-    "sprite": null
+    "sprite": "sprites/352.png"
   },
   {
     "name": "shuppet",
     "dexNumber": 353,
-    "sprite": null
+    "sprite": "sprites/353.png"
   },
   {
     "name": "banette",
     "dexNumber": 354,
-    "sprite": null
+    "sprite": "sprites/354.png"
   },
   {
     "name": "duskull",
     "dexNumber": 355,
-    "sprite": null
+    "sprite": "sprites/355.png"
   },
   {
     "name": "dusclops",
     "dexNumber": 356,
-    "sprite": null
+    "sprite": "sprites/356.png"
   },
   {
     "name": "tropius",
     "dexNumber": 357,
-    "sprite": null
+    "sprite": "sprites/357.png"
   },
   {
     "name": "chimecho",
     "dexNumber": 358,
-    "sprite": null
+    "sprite": "sprites/358.png"
   },
   {
     "name": "absol",
     "dexNumber": 359,
-    "sprite": null
+    "sprite": "sprites/359.png"
   },
   {
     "name": "wynaut",
     "dexNumber": 360,
-    "sprite": null
+    "sprite": "sprites/360.png"
   },
   {
     "name": "snorunt",
     "dexNumber": 361,
-    "sprite": null
+    "sprite": "sprites/361.png"
   },
   {
     "name": "glalie",
     "dexNumber": 362,
-    "sprite": null
+    "sprite": "sprites/362.png"
   },
   {
     "name": "spheal",
     "dexNumber": 363,
-    "sprite": null
+    "sprite": "sprites/363.png"
   },
   {
     "name": "sealeo",
     "dexNumber": 364,
-    "sprite": null
+    "sprite": "sprites/364.png"
   },
   {
     "name": "walrein",
     "dexNumber": 365,
-    "sprite": null
+    "sprite": "sprites/365.png"
   },
   {
     "name": "clamperl",
     "dexNumber": 366,
-    "sprite": null
+    "sprite": "sprites/366.png"
   },
   {
     "name": "huntail",
     "dexNumber": 367,
-    "sprite": null
+    "sprite": "sprites/367.png"
   },
   {
     "name": "gorebyss",
     "dexNumber": 368,
-    "sprite": null
+    "sprite": "sprites/368.png"
   },
   {
     "name": "relicanth",
     "dexNumber": 369,
-    "sprite": null
+    "sprite": "sprites/369.png"
   },
   {
     "name": "luvdisc",
     "dexNumber": 370,
-    "sprite": null
+    "sprite": "sprites/370.png"
   },
   {
     "name": "bagon",
     "dexNumber": 371,
-    "sprite": null
+    "sprite": "sprites/371.png"
   },
   {
     "name": "shelgon",
     "dexNumber": 372,
-    "sprite": null
+    "sprite": "sprites/372.png"
   },
   {
     "name": "salamence",
     "dexNumber": 373,
-    "sprite": null
+    "sprite": "sprites/373.png"
   },
   {
     "name": "beldum",
     "dexNumber": 374,
-    "sprite": null
+    "sprite": "sprites/374.png"
   },
   {
     "name": "metang",
     "dexNumber": 375,
-    "sprite": null
+    "sprite": "sprites/375.png"
   },
   {
     "name": "metagross",
     "dexNumber": 376,
-    "sprite": null
+    "sprite": "sprites/376.png"
   },
   {
     "name": "regirock",
     "dexNumber": 377,
-    "sprite": null
+    "sprite": "sprites/377.png"
   },
   {
     "name": "regice",
     "dexNumber": 378,
-    "sprite": null
+    "sprite": "sprites/378.png"
   },
   {
     "name": "registeel",
     "dexNumber": 379,
-    "sprite": null
+    "sprite": "sprites/379.png"
   },
   {
     "name": "latias",
     "dexNumber": 380,
-    "sprite": null
+    "sprite": "sprites/380.png"
   },
   {
     "name": "latios",
     "dexNumber": 381,
-    "sprite": null
+    "sprite": "sprites/381.png"
   },
   {
     "name": "kyogre",
     "dexNumber": 382,
-    "sprite": null
+    "sprite": "sprites/382.png"
   },
   {
     "name": "groudon",
     "dexNumber": 383,
-    "sprite": null
+    "sprite": "sprites/383.png"
   },
   {
     "name": "rayquaza",
     "dexNumber": 384,
-    "sprite": null
+    "sprite": "sprites/384.png"
   },
   {
     "name": "jirachi",
     "dexNumber": 385,
-    "sprite": null
+    "sprite": "sprites/385.png"
   },
   {
     "name": "deoxys",
     "dexNumber": 386,
-    "sprite": null
+    "sprite": "sprites/386.png"
   },
   {
     "name": "turtwig",
     "dexNumber": 387,
-    "sprite": null
+    "sprite": "sprites/387.png"
   },
   {
     "name": "grotle",
     "dexNumber": 388,
-    "sprite": null
+    "sprite": "sprites/388.png"
   },
   {
     "name": "torterra",
     "dexNumber": 389,
-    "sprite": null
+    "sprite": "sprites/389.png"
   },
   {
     "name": "chimchar",
     "dexNumber": 390,
-    "sprite": null
+    "sprite": "sprites/390.png"
   },
   {
     "name": "monferno",
     "dexNumber": 391,
-    "sprite": null
+    "sprite": "sprites/391.png"
   },
   {
     "name": "infernape",
     "dexNumber": 392,
-    "sprite": null
+    "sprite": "sprites/392.png"
   },
   {
     "name": "piplup",
     "dexNumber": 393,
-    "sprite": null
+    "sprite": "sprites/393.png"
   },
   {
     "name": "prinplup",
     "dexNumber": 394,
-    "sprite": null
+    "sprite": "sprites/394.png"
   },
   {
     "name": "empoleon",
     "dexNumber": 395,
-    "sprite": null
+    "sprite": "sprites/395.png"
   },
   {
     "name": "starly",
     "dexNumber": 396,
-    "sprite": null
+    "sprite": "sprites/396.png"
   },
   {
     "name": "staravia",
     "dexNumber": 397,
-    "sprite": null
+    "sprite": "sprites/397.png"
   },
   {
     "name": "staraptor",
     "dexNumber": 398,
-    "sprite": null
+    "sprite": "sprites/398.png"
   },
   {
     "name": "bidoof",
     "dexNumber": 399,
-    "sprite": null
+    "sprite": "sprites/399.png"
   },
   {
     "name": "bibarel",
     "dexNumber": 400,
-    "sprite": null
+    "sprite": "sprites/400.png"
   },
   {
     "name": "kricketot",
     "dexNumber": 401,
-    "sprite": null
+    "sprite": "sprites/401.png"
   },
   {
     "name": "kricketune",
     "dexNumber": 402,
-    "sprite": null
+    "sprite": "sprites/402.png"
   },
   {
     "name": "shinx",
     "dexNumber": 403,
-    "sprite": null
+    "sprite": "sprites/403.png"
   },
   {
     "name": "luxio",
     "dexNumber": 404,
-    "sprite": null
+    "sprite": "sprites/404.png"
   },
   {
     "name": "luxray",
     "dexNumber": 405,
-    "sprite": null
+    "sprite": "sprites/405.png"
   },
   {
     "name": "budew",
     "dexNumber": 406,
-    "sprite": null
+    "sprite": "sprites/406.png"
   },
   {
     "name": "roserade",
     "dexNumber": 407,
-    "sprite": null
+    "sprite": "sprites/407.png"
   },
   {
     "name": "cranidos",
     "dexNumber": 408,
-    "sprite": null
+    "sprite": "sprites/408.png"
   },
   {
     "name": "rampardos",
     "dexNumber": 409,
-    "sprite": null
+    "sprite": "sprites/409.png"
   },
   {
     "name": "shieldon",
     "dexNumber": 410,
-    "sprite": null
+    "sprite": "sprites/410.png"
   },
   {
     "name": "bastiodon",
     "dexNumber": 411,
-    "sprite": null
+    "sprite": "sprites/411.png"
   },
   {
     "name": "burmy",
     "dexNumber": 412,
-    "sprite": null
+    "sprite": "sprites/412.png"
   },
   {
     "name": "wormadam",
     "dexNumber": 413,
-    "sprite": null
+    "sprite": "sprites/413.png"
   },
   {
     "name": "mothim",
     "dexNumber": 414,
-    "sprite": null
+    "sprite": "sprites/414.png"
   },
   {
     "name": "combee",
     "dexNumber": 415,
-    "sprite": null
+    "sprite": "sprites/415.png"
   },
   {
     "name": "vespiquen",
     "dexNumber": 416,
-    "sprite": null
+    "sprite": "sprites/416.png"
   },
   {
     "name": "pachirisu",
     "dexNumber": 417,
-    "sprite": null
+    "sprite": "sprites/417.png"
   },
   {
     "name": "buizel",
     "dexNumber": 418,
-    "sprite": null
+    "sprite": "sprites/418.png"
   },
   {
     "name": "floatzel",
     "dexNumber": 419,
-    "sprite": null
+    "sprite": "sprites/419.png"
   },
   {
     "name": "cherubi",
     "dexNumber": 420,
-    "sprite": null
+    "sprite": "sprites/420.png"
   },
   {
     "name": "cherrim",
     "dexNumber": 421,
-    "sprite": null
+    "sprite": "sprites/421.png"
   },
   {
     "name": "shellos",
     "dexNumber": 422,
-    "sprite": null
+    "sprite": "sprites/422.png"
   },
   {
     "name": "gastrodon",
     "dexNumber": 423,
-    "sprite": null
+    "sprite": "sprites/423.png"
   },
   {
     "name": "ambipom",
     "dexNumber": 424,
-    "sprite": null
+    "sprite": "sprites/424.png"
   },
   {
     "name": "drifloon",
     "dexNumber": 425,
-    "sprite": null
+    "sprite": "sprites/425.png"
   },
   {
     "name": "drifblim",
     "dexNumber": 426,
-    "sprite": null
+    "sprite": "sprites/426.png"
   },
   {
     "name": "buneary",
     "dexNumber": 427,
-    "sprite": null
+    "sprite": "sprites/427.png"
   },
   {
     "name": "lopunny",
     "dexNumber": 428,
-    "sprite": null
+    "sprite": "sprites/428.png"
   },
   {
     "name": "mismagius",
     "dexNumber": 429,
-    "sprite": null
+    "sprite": "sprites/429.png"
   },
   {
     "name": "honchkrow",
     "dexNumber": 430,
-    "sprite": null
+    "sprite": "sprites/430.png"
   },
   {
     "name": "glameow",
     "dexNumber": 431,
-    "sprite": null
+    "sprite": "sprites/431.png"
   },
   {
     "name": "purugly",
     "dexNumber": 432,
-    "sprite": null
+    "sprite": "sprites/432.png"
   },
   {
     "name": "chingling",
     "dexNumber": 433,
-    "sprite": null
+    "sprite": "sprites/433.png"
   },
   {
     "name": "stunky",
     "dexNumber": 434,
-    "sprite": null
+    "sprite": "sprites/434.png"
   },
   {
     "name": "skuntank",
     "dexNumber": 435,
-    "sprite": null
+    "sprite": "sprites/435.png"
   },
   {
     "name": "bronzor",
     "dexNumber": 436,
-    "sprite": null
+    "sprite": "sprites/436.png"
   },
   {
     "name": "bronzong",
     "dexNumber": 437,
-    "sprite": null
+    "sprite": "sprites/437.png"
   },
   {
     "name": "bonsly",
     "dexNumber": 438,
-    "sprite": null
+    "sprite": "sprites/438.png"
   },
   {
     "name": "mime-jr",
     "dexNumber": 439,
-    "sprite": null
+    "sprite": "sprites/439.png"
   },
   {
     "name": "happiny",
     "dexNumber": 440,
-    "sprite": null
+    "sprite": "sprites/440.png"
   },
   {
     "name": "chatot",
     "dexNumber": 441,
-    "sprite": null
+    "sprite": "sprites/441.png"
   },
   {
     "name": "spiritomb",
     "dexNumber": 442,
-    "sprite": null
+    "sprite": "sprites/442.png"
   },
   {
     "name": "gible",
     "dexNumber": 443,
-    "sprite": null
+    "sprite": "sprites/443.png"
   },
   {
     "name": "gabite",
     "dexNumber": 444,
-    "sprite": null
+    "sprite": "sprites/444.png"
   },
   {
     "name": "garchomp",
     "dexNumber": 445,
-    "sprite": null
+    "sprite": "sprites/445.png"
   },
   {
     "name": "munchlax",
     "dexNumber": 446,
-    "sprite": null
+    "sprite": "sprites/446.png"
   },
   {
     "name": "riolu",
     "dexNumber": 447,
-    "sprite": null
+    "sprite": "sprites/447.png"
   },
   {
     "name": "lucario",
     "dexNumber": 448,
-    "sprite": null
+    "sprite": "sprites/448.png"
   },
   {
     "name": "hippopotas",
     "dexNumber": 449,
-    "sprite": null
+    "sprite": "sprites/449.png"
   },
   {
     "name": "hippowdon",
     "dexNumber": 450,
-    "sprite": null
+    "sprite": "sprites/450.png"
   },
   {
     "name": "skorupi",
     "dexNumber": 451,
-    "sprite": null
+    "sprite": "sprites/451.png"
   },
   {
     "name": "drapion",
     "dexNumber": 452,
-    "sprite": null
+    "sprite": "sprites/452.png"
   },
   {
     "name": "croagunk",
     "dexNumber": 453,
-    "sprite": null
+    "sprite": "sprites/453.png"
   },
   {
     "name": "toxicroak",
     "dexNumber": 454,
-    "sprite": null
+    "sprite": "sprites/454.png"
   },
   {
     "name": "carnivine",
     "dexNumber": 455,
-    "sprite": null
+    "sprite": "sprites/455.png"
   },
   {
     "name": "finneon",
     "dexNumber": 456,
-    "sprite": null
+    "sprite": "sprites/456.png"
   },
   {
     "name": "lumineon",
     "dexNumber": 457,
-    "sprite": null
+    "sprite": "sprites/457.png"
   },
   {
     "name": "mantyke",
     "dexNumber": 458,
-    "sprite": null
+    "sprite": "sprites/458.png"
   },
   {
     "name": "snover",
     "dexNumber": 459,
-    "sprite": null
+    "sprite": "sprites/459.png"
   },
   {
     "name": "abomasnow",
     "dexNumber": 460,
-    "sprite": null
+    "sprite": "sprites/460.png"
   },
   {
     "name": "weavile",
     "dexNumber": 461,
-    "sprite": null
+    "sprite": "sprites/461.png"
   },
   {
     "name": "magnezone",
     "dexNumber": 462,
-    "sprite": null
+    "sprite": "sprites/462.png"
   },
   {
     "name": "lickilicky",
     "dexNumber": 463,
-    "sprite": null
+    "sprite": "sprites/463.png"
   },
   {
     "name": "rhyperior",
     "dexNumber": 464,
-    "sprite": null
+    "sprite": "sprites/464.png"
   },
   {
     "name": "tangrowth",
     "dexNumber": 465,
-    "sprite": null
+    "sprite": "sprites/465.png"
   },
   {
     "name": "electivire",
     "dexNumber": 466,
-    "sprite": null
+    "sprite": "sprites/466.png"
   },
   {
     "name": "magmortar",
     "dexNumber": 467,
-    "sprite": null
+    "sprite": "sprites/467.png"
   },
   {
     "name": "togekiss",
     "dexNumber": 468,
-    "sprite": null
+    "sprite": "sprites/468.png"
   },
   {
     "name": "yanmega",
     "dexNumber": 469,
-    "sprite": null
+    "sprite": "sprites/469.png"
   },
   {
     "name": "leafeon",
     "dexNumber": 470,
-    "sprite": null
+    "sprite": "sprites/470.png"
   },
   {
     "name": "glaceon",
     "dexNumber": 471,
-    "sprite": null
+    "sprite": "sprites/471.png"
   },
   {
     "name": "gliscor",
     "dexNumber": 472,
-    "sprite": null
+    "sprite": "sprites/472.png"
   },
   {
     "name": "mamoswine",
     "dexNumber": 473,
-    "sprite": null
+    "sprite": "sprites/473.png"
   },
   {
     "name": "porygon-z",
     "dexNumber": 474,
-    "sprite": null
+    "sprite": "sprites/474.png"
   },
   {
     "name": "gallade",
     "dexNumber": 475,
-    "sprite": null
+    "sprite": "sprites/475.png"
   },
   {
     "name": "probopass",
     "dexNumber": 476,
-    "sprite": null
+    "sprite": "sprites/476.png"
   },
   {
     "name": "dusknoir",
     "dexNumber": 477,
-    "sprite": null
+    "sprite": "sprites/477.png"
   },
   {
     "name": "froslass",
     "dexNumber": 478,
-    "sprite": null
+    "sprite": "sprites/478.png"
   },
   {
     "name": "rotom",
     "dexNumber": 479,
-    "sprite": null
+    "sprite": "sprites/479.png"
   },
   {
     "name": "uxie",
     "dexNumber": 480,
-    "sprite": null
+    "sprite": "sprites/480.png"
   },
   {
     "name": "mesprit",
     "dexNumber": 481,
-    "sprite": null
+    "sprite": "sprites/481.png"
   },
   {
     "name": "azelf",
     "dexNumber": 482,
-    "sprite": null
+    "sprite": "sprites/482.png"
   },
   {
     "name": "dialga",
     "dexNumber": 483,
-    "sprite": null
+    "sprite": "sprites/483.png"
   },
   {
     "name": "palkia",
     "dexNumber": 484,
-    "sprite": null
+    "sprite": "sprites/484.png"
   },
   {
     "name": "heatran",
     "dexNumber": 485,
-    "sprite": null
+    "sprite": "sprites/485.png"
   },
   {
     "name": "regigigas",
     "dexNumber": 486,
-    "sprite": null
+    "sprite": "sprites/486.png"
   },
   {
     "name": "giratina",
     "dexNumber": 487,
-    "sprite": null
+    "sprite": "sprites/487.png"
   },
   {
     "name": "cresselia",
     "dexNumber": 488,
-    "sprite": null
+    "sprite": "sprites/488.png"
   },
   {
     "name": "phione",
     "dexNumber": 489,
-    "sprite": null
+    "sprite": "sprites/489.png"
   },
   {
     "name": "manaphy",
     "dexNumber": 490,
-    "sprite": null
+    "sprite": "sprites/490.png"
   },
   {
     "name": "darkrai",
     "dexNumber": 491,
-    "sprite": null
+    "sprite": "sprites/491.png"
   },
   {
     "name": "shaymin",
     "dexNumber": 492,
-    "sprite": null
+    "sprite": "sprites/492.png"
   },
   {
     "name": "arceus",
     "dexNumber": 493,
-    "sprite": null
+    "sprite": "sprites/493.png"
   },
   {
     "name": "victini",
     "dexNumber": 494,
-    "sprite": null
+    "sprite": "sprites/494.png"
   },
   {
     "name": "snivy",
     "dexNumber": 495,
-    "sprite": null
+    "sprite": "sprites/495.png"
   },
   {
     "name": "servine",
     "dexNumber": 496,
-    "sprite": null
+    "sprite": "sprites/496.png"
   },
   {
     "name": "serperior",
     "dexNumber": 497,
-    "sprite": null
+    "sprite": "sprites/497.png"
   },
   {
     "name": "tepig",
     "dexNumber": 498,
-    "sprite": null
+    "sprite": "sprites/498.png"
   },
   {
     "name": "pignite",
     "dexNumber": 499,
-    "sprite": null
+    "sprite": "sprites/499.png"
   },
   {
     "name": "emboar",
     "dexNumber": 500,
-    "sprite": null
+    "sprite": "sprites/500.png"
   },
   {
     "name": "oshawott",
     "dexNumber": 501,
-    "sprite": null
+    "sprite": "sprites/501.png"
   },
   {
     "name": "dewott",
     "dexNumber": 502,
-    "sprite": null
+    "sprite": "sprites/502.png"
   },
   {
     "name": "samurott",
     "dexNumber": 503,
-    "sprite": null
+    "sprite": "sprites/503.png"
   },
   {
     "name": "patrat",
     "dexNumber": 504,
-    "sprite": null
+    "sprite": "sprites/504.png"
   },
   {
     "name": "watchog",
     "dexNumber": 505,
-    "sprite": null
+    "sprite": "sprites/505.png"
   },
   {
     "name": "lillipup",
     "dexNumber": 506,
-    "sprite": null
+    "sprite": "sprites/506.png"
   },
   {
     "name": "herdier",
     "dexNumber": 507,
-    "sprite": null
+    "sprite": "sprites/507.png"
   },
   {
     "name": "stoutland",
     "dexNumber": 508,
-    "sprite": null
+    "sprite": "sprites/508.png"
   },
   {
     "name": "purrloin",
     "dexNumber": 509,
-    "sprite": null
+    "sprite": "sprites/509.png"
   },
   {
     "name": "liepard",
     "dexNumber": 510,
-    "sprite": null
+    "sprite": "sprites/510.png"
   },
   {
     "name": "pansage",
     "dexNumber": 511,
-    "sprite": null
+    "sprite": "sprites/511.png"
   },
   {
     "name": "simisage",
     "dexNumber": 512,
-    "sprite": null
+    "sprite": "sprites/512.png"
   },
   {
     "name": "pansear",
     "dexNumber": 513,
-    "sprite": null
+    "sprite": "sprites/513.png"
   },
   {
     "name": "simisear",
     "dexNumber": 514,
-    "sprite": null
+    "sprite": "sprites/514.png"
   },
   {
     "name": "panpour",
     "dexNumber": 515,
-    "sprite": null
+    "sprite": "sprites/515.png"
   },
   {
     "name": "simipour",
     "dexNumber": 516,
-    "sprite": null
+    "sprite": "sprites/516.png"
   },
   {
     "name": "munna",
     "dexNumber": 517,
-    "sprite": null
+    "sprite": "sprites/517.png"
   },
   {
     "name": "musharna",
     "dexNumber": 518,
-    "sprite": null
+    "sprite": "sprites/518.png"
   },
   {
     "name": "pidove",
     "dexNumber": 519,
-    "sprite": null
+    "sprite": "sprites/519.png"
   },
   {
     "name": "tranquill",
     "dexNumber": 520,
-    "sprite": null
+    "sprite": "sprites/520.png"
   },
   {
     "name": "unfezant",
     "dexNumber": 521,
-    "sprite": null
+    "sprite": "sprites/521.png"
   },
   {
     "name": "blitzle",
     "dexNumber": 522,
-    "sprite": null
+    "sprite": "sprites/522.png"
   },
   {
     "name": "zebstrika",
     "dexNumber": 523,
-    "sprite": null
+    "sprite": "sprites/523.png"
   },
   {
     "name": "roggenrola",
     "dexNumber": 524,
-    "sprite": null
+    "sprite": "sprites/524.png"
   },
   {
     "name": "boldore",
     "dexNumber": 525,
-    "sprite": null
+    "sprite": "sprites/525.png"
   },
   {
     "name": "gigalith",
     "dexNumber": 526,
-    "sprite": null
+    "sprite": "sprites/526.png"
   },
   {
     "name": "woobat",
     "dexNumber": 527,
-    "sprite": null
+    "sprite": "sprites/527.png"
   },
   {
     "name": "swoobat",
     "dexNumber": 528,
-    "sprite": null
+    "sprite": "sprites/528.png"
   },
   {
     "name": "drilbur",
     "dexNumber": 529,
-    "sprite": null
+    "sprite": "sprites/529.png"
   },
   {
     "name": "excadrill",
     "dexNumber": 530,
-    "sprite": null
+    "sprite": "sprites/530.png"
   },
   {
     "name": "audino",
     "dexNumber": 531,
-    "sprite": null
+    "sprite": "sprites/531.png"
   },
   {
     "name": "timburr",
     "dexNumber": 532,
-    "sprite": null
+    "sprite": "sprites/532.png"
   },
   {
     "name": "gurdurr",
     "dexNumber": 533,
-    "sprite": null
+    "sprite": "sprites/533.png"
   },
   {
     "name": "conkeldurr",
     "dexNumber": 534,
-    "sprite": null
+    "sprite": "sprites/534.png"
   },
   {
     "name": "tympole",
     "dexNumber": 535,
-    "sprite": null
+    "sprite": "sprites/535.png"
   },
   {
     "name": "palpitoad",
     "dexNumber": 536,
-    "sprite": null
+    "sprite": "sprites/536.png"
   },
   {
     "name": "seismitoad",
     "dexNumber": 537,
-    "sprite": null
+    "sprite": "sprites/537.png"
   },
   {
     "name": "throh",
     "dexNumber": 538,
-    "sprite": null
+    "sprite": "sprites/538.png"
   },
   {
     "name": "sawk",
     "dexNumber": 539,
-    "sprite": null
+    "sprite": "sprites/539.png"
   },
   {
     "name": "sewaddle",
     "dexNumber": 540,
-    "sprite": null
+    "sprite": "sprites/540.png"
   },
   {
     "name": "swadloon",
     "dexNumber": 541,
-    "sprite": null
+    "sprite": "sprites/541.png"
   },
   {
     "name": "leavanny",
     "dexNumber": 542,
-    "sprite": null
+    "sprite": "sprites/542.png"
   },
   {
     "name": "venipede",
     "dexNumber": 543,
-    "sprite": null
+    "sprite": "sprites/543.png"
   },
   {
     "name": "whirlipede",
     "dexNumber": 544,
-    "sprite": null
+    "sprite": "sprites/544.png"
   },
   {
     "name": "scolipede",
     "dexNumber": 545,
-    "sprite": null
+    "sprite": "sprites/545.png"
   },
   {
     "name": "cottonee",
     "dexNumber": 546,
-    "sprite": null
+    "sprite": "sprites/546.png"
   },
   {
     "name": "whimsicott",
     "dexNumber": 547,
-    "sprite": null
+    "sprite": "sprites/547.png"
   },
   {
     "name": "petilil",
     "dexNumber": 548,
-    "sprite": null
+    "sprite": "sprites/548.png"
   },
   {
     "name": "lilligant",
     "dexNumber": 549,
-    "sprite": null
+    "sprite": "sprites/549.png"
   },
   {
     "name": "basculin",
     "dexNumber": 550,
-    "sprite": null
+    "sprite": "sprites/550.png"
   },
   {
     "name": "sandile",
     "dexNumber": 551,
-    "sprite": null
+    "sprite": "sprites/551.png"
   },
   {
     "name": "krokorok",
     "dexNumber": 552,
-    "sprite": null
+    "sprite": "sprites/552.png"
   },
   {
     "name": "krookodile",
     "dexNumber": 553,
-    "sprite": null
+    "sprite": "sprites/553.png"
   },
   {
     "name": "darumaka",
     "dexNumber": 554,
-    "sprite": null
+    "sprite": "sprites/554.png"
   },
   {
     "name": "darmanitan",
     "dexNumber": 555,
-    "sprite": null
+    "sprite": "sprites/555.png"
   },
   {
     "name": "maractus",
     "dexNumber": 556,
-    "sprite": null
+    "sprite": "sprites/556.png"
   },
   {
     "name": "dwebble",
     "dexNumber": 557,
-    "sprite": null
+    "sprite": "sprites/557.png"
   },
   {
     "name": "crustle",
     "dexNumber": 558,
-    "sprite": null
+    "sprite": "sprites/558.png"
   },
   {
     "name": "scraggy",
     "dexNumber": 559,
-    "sprite": null
+    "sprite": "sprites/559.png"
   },
   {
     "name": "scrafty",
     "dexNumber": 560,
-    "sprite": null
+    "sprite": "sprites/560.png"
   },
   {
     "name": "sigilyph",
     "dexNumber": 561,
-    "sprite": null
+    "sprite": "sprites/561.png"
   },
   {
     "name": "yamask",
     "dexNumber": 562,
-    "sprite": null
+    "sprite": "sprites/562.png"
   },
   {
     "name": "cofagrigus",
     "dexNumber": 563,
-    "sprite": null
+    "sprite": "sprites/563.png"
   },
   {
     "name": "tirtouga",
     "dexNumber": 564,
-    "sprite": null
+    "sprite": "sprites/564.png"
   },
   {
     "name": "carracosta",
     "dexNumber": 565,
-    "sprite": null
+    "sprite": "sprites/565.png"
   },
   {
     "name": "archen",
     "dexNumber": 566,
-    "sprite": null
+    "sprite": "sprites/566.png"
   },
   {
     "name": "archeops",
     "dexNumber": 567,
-    "sprite": null
+    "sprite": "sprites/567.png"
   },
   {
     "name": "trubbish",
     "dexNumber": 568,
-    "sprite": null
+    "sprite": "sprites/568.png"
   },
   {
     "name": "garbodor",
     "dexNumber": 569,
-    "sprite": null
+    "sprite": "sprites/569.png"
   },
   {
     "name": "zorua",
     "dexNumber": 570,
-    "sprite": null
+    "sprite": "sprites/570.png"
   },
   {
     "name": "zoroark",
     "dexNumber": 571,
-    "sprite": null
+    "sprite": "sprites/571.png"
   },
   {
     "name": "minccino",
     "dexNumber": 572,
-    "sprite": null
+    "sprite": "sprites/572.png"
   },
   {
     "name": "cinccino",
     "dexNumber": 573,
-    "sprite": null
+    "sprite": "sprites/573.png"
   },
   {
     "name": "gothita",
     "dexNumber": 574,
-    "sprite": null
+    "sprite": "sprites/574.png"
   },
   {
     "name": "gothorita",
     "dexNumber": 575,
-    "sprite": null
+    "sprite": "sprites/575.png"
   },
   {
     "name": "gothitelle",
     "dexNumber": 576,
-    "sprite": null
+    "sprite": "sprites/576.png"
   },
   {
     "name": "solosis",
     "dexNumber": 577,
-    "sprite": null
+    "sprite": "sprites/577.png"
   },
   {
     "name": "duosion",
     "dexNumber": 578,
-    "sprite": null
+    "sprite": "sprites/578.png"
   },
   {
     "name": "reuniclus",
     "dexNumber": 579,
-    "sprite": null
+    "sprite": "sprites/579.png"
   },
   {
     "name": "ducklett",
     "dexNumber": 580,
-    "sprite": null
+    "sprite": "sprites/580.png"
   },
   {
     "name": "swanna",
     "dexNumber": 581,
-    "sprite": null
+    "sprite": "sprites/581.png"
   },
   {
     "name": "vanillite",
     "dexNumber": 582,
-    "sprite": null
+    "sprite": "sprites/582.png"
   },
   {
     "name": "vanillish",
     "dexNumber": 583,
-    "sprite": null
+    "sprite": "sprites/583.png"
   },
   {
     "name": "vanilluxe",
     "dexNumber": 584,
-    "sprite": null
+    "sprite": "sprites/584.png"
   },
   {
     "name": "deerling",
     "dexNumber": 585,
-    "sprite": null
+    "sprite": "sprites/585.png"
   },
   {
     "name": "sawsbuck",
     "dexNumber": 586,
-    "sprite": null
+    "sprite": "sprites/586.png"
   },
   {
     "name": "emolga",
     "dexNumber": 587,
-    "sprite": null
+    "sprite": "sprites/587.png"
   },
   {
     "name": "karrablast",
     "dexNumber": 588,
-    "sprite": null
+    "sprite": "sprites/588.png"
   },
   {
     "name": "escavalier",
     "dexNumber": 589,
-    "sprite": null
+    "sprite": "sprites/589.png"
   },
   {
     "name": "foongus",
     "dexNumber": 590,
-    "sprite": null
+    "sprite": "sprites/590.png"
   },
   {
     "name": "amoonguss",
     "dexNumber": 591,
-    "sprite": null
+    "sprite": "sprites/591.png"
   },
   {
     "name": "frillish",
     "dexNumber": 592,
-    "sprite": null
+    "sprite": "sprites/592.png"
   },
   {
     "name": "jellicent",
     "dexNumber": 593,
-    "sprite": null
+    "sprite": "sprites/593.png"
   },
   {
     "name": "alomomola",
     "dexNumber": 594,
-    "sprite": null
+    "sprite": "sprites/594.png"
   },
   {
     "name": "joltik",
     "dexNumber": 595,
-    "sprite": null
+    "sprite": "sprites/595.png"
   },
   {
     "name": "galvantula",
     "dexNumber": 596,
-    "sprite": null
+    "sprite": "sprites/596.png"
   },
   {
     "name": "ferroseed",
     "dexNumber": 597,
-    "sprite": null
+    "sprite": "sprites/597.png"
   },
   {
     "name": "ferrothorn",
     "dexNumber": 598,
-    "sprite": null
+    "sprite": "sprites/598.png"
   },
   {
     "name": "klink",
     "dexNumber": 599,
-    "sprite": null
+    "sprite": "sprites/599.png"
   },
   {
     "name": "klang",
     "dexNumber": 600,
-    "sprite": null
+    "sprite": "sprites/600.png"
   },
   {
     "name": "klinklang",
     "dexNumber": 601,
-    "sprite": null
+    "sprite": "sprites/601.png"
   },
   {
     "name": "tynamo",
     "dexNumber": 602,
-    "sprite": null
+    "sprite": "sprites/602.png"
   },
   {
     "name": "eelektrik",
     "dexNumber": 603,
-    "sprite": null
+    "sprite": "sprites/603.png"
   },
   {
     "name": "eelektross",
     "dexNumber": 604,
-    "sprite": null
+    "sprite": "sprites/604.png"
   },
   {
     "name": "elgyem",
     "dexNumber": 605,
-    "sprite": null
+    "sprite": "sprites/605.png"
   },
   {
     "name": "beheeyem",
     "dexNumber": 606,
-    "sprite": null
+    "sprite": "sprites/606.png"
   },
   {
     "name": "litwick",
     "dexNumber": 607,
-    "sprite": null
+    "sprite": "sprites/607.png"
   },
   {
     "name": "lampent",
     "dexNumber": 608,
-    "sprite": null
+    "sprite": "sprites/608.png"
   },
   {
     "name": "chandelure",
     "dexNumber": 609,
-    "sprite": null
+    "sprite": "sprites/609.png"
   },
   {
     "name": "axew",
     "dexNumber": 610,
-    "sprite": null
+    "sprite": "sprites/610.png"
   },
   {
     "name": "fraxure",
     "dexNumber": 611,
-    "sprite": null
+    "sprite": "sprites/611.png"
   },
   {
     "name": "haxorus",
     "dexNumber": 612,
-    "sprite": null
+    "sprite": "sprites/612.png"
   },
   {
     "name": "cubchoo",
     "dexNumber": 613,
-    "sprite": null
+    "sprite": "sprites/613.png"
   },
   {
     "name": "beartic",
     "dexNumber": 614,
-    "sprite": null
+    "sprite": "sprites/614.png"
   },
   {
     "name": "cryogonal",
     "dexNumber": 615,
-    "sprite": null
+    "sprite": "sprites/615.png"
   },
   {
     "name": "shelmet",
     "dexNumber": 616,
-    "sprite": null
+    "sprite": "sprites/616.png"
   },
   {
     "name": "accelgor",
     "dexNumber": 617,
-    "sprite": null
+    "sprite": "sprites/617.png"
   },
   {
     "name": "stunfisk",
     "dexNumber": 618,
-    "sprite": null
+    "sprite": "sprites/618.png"
   },
   {
     "name": "mienfoo",
     "dexNumber": 619,
-    "sprite": null
+    "sprite": "sprites/619.png"
   },
   {
     "name": "mienshao",
     "dexNumber": 620,
-    "sprite": null
+    "sprite": "sprites/620.png"
   },
   {
     "name": "druddigon",
     "dexNumber": 621,
-    "sprite": null
+    "sprite": "sprites/621.png"
   },
   {
     "name": "golett",
     "dexNumber": 622,
-    "sprite": null
+    "sprite": "sprites/622.png"
   },
   {
     "name": "golurk",
     "dexNumber": 623,
-    "sprite": null
+    "sprite": "sprites/623.png"
   },
   {
     "name": "pawniard",
     "dexNumber": 624,
-    "sprite": null
+    "sprite": "sprites/624.png"
   },
   {
     "name": "bisharp",
     "dexNumber": 625,
-    "sprite": null
+    "sprite": "sprites/625.png"
   },
   {
     "name": "bouffalant",
     "dexNumber": 626,
-    "sprite": null
+    "sprite": "sprites/626.png"
   },
   {
     "name": "rufflet",
     "dexNumber": 627,
-    "sprite": null
+    "sprite": "sprites/627.png"
   },
   {
     "name": "braviary",
     "dexNumber": 628,
-    "sprite": null
+    "sprite": "sprites/628.png"
   },
   {
     "name": "vullaby",
     "dexNumber": 629,
-    "sprite": null
+    "sprite": "sprites/629.png"
   },
   {
     "name": "mandibuzz",
     "dexNumber": 630,
-    "sprite": null
+    "sprite": "sprites/630.png"
   },
   {
     "name": "heatmor",
     "dexNumber": 631,
-    "sprite": null
+    "sprite": "sprites/631.png"
   },
   {
     "name": "durant",
     "dexNumber": 632,
-    "sprite": null
+    "sprite": "sprites/632.png"
   },
   {
     "name": "deino",
     "dexNumber": 633,
-    "sprite": null
+    "sprite": "sprites/633.png"
   },
   {
     "name": "zweilous",
     "dexNumber": 634,
-    "sprite": null
+    "sprite": "sprites/634.png"
   },
   {
     "name": "hydreigon",
     "dexNumber": 635,
-    "sprite": null
+    "sprite": "sprites/635.png"
   },
   {
     "name": "larvesta",
     "dexNumber": 636,
-    "sprite": null
+    "sprite": "sprites/636.png"
   },
   {
     "name": "volcarona",
     "dexNumber": 637,
-    "sprite": null
+    "sprite": "sprites/637.png"
   },
   {
     "name": "cobalion",
     "dexNumber": 638,
-    "sprite": null
+    "sprite": "sprites/638.png"
   },
   {
     "name": "terrakion",
     "dexNumber": 639,
-    "sprite": null
+    "sprite": "sprites/639.png"
   },
   {
     "name": "virizion",
     "dexNumber": 640,
-    "sprite": null
+    "sprite": "sprites/640.png"
   },
   {
     "name": "tornadus",
     "dexNumber": 641,
-    "sprite": null
+    "sprite": "sprites/641.png"
   },
   {
     "name": "thundurus",
     "dexNumber": 642,
-    "sprite": null
+    "sprite": "sprites/642.png"
   },
   {
     "name": "reshiram",
     "dexNumber": 643,
-    "sprite": null
+    "sprite": "sprites/643.png"
   },
   {
     "name": "zekrom",
     "dexNumber": 644,
-    "sprite": null
+    "sprite": "sprites/644.png"
   },
   {
     "name": "landorus",
     "dexNumber": 645,
-    "sprite": null
+    "sprite": "sprites/645.png"
   },
   {
     "name": "kyurem",
     "dexNumber": 646,
-    "sprite": null
+    "sprite": "sprites/646.png"
   },
   {
     "name": "keldeo",
     "dexNumber": 647,
-    "sprite": null
+    "sprite": "sprites/647.png"
   },
   {
     "name": "meloetta",
     "dexNumber": 648,
-    "sprite": null
+    "sprite": "sprites/648.png"
   },
   {
     "name": "genesect",
     "dexNumber": 649,
-    "sprite": null
+    "sprite": "sprites/649.png"
   },
   {
     "name": "chespin",
     "dexNumber": 650,
-    "sprite": null
+    "sprite": "sprites/650.png"
   },
   {
     "name": "quilladin",
     "dexNumber": 651,
-    "sprite": null
+    "sprite": "sprites/651.png"
   },
   {
     "name": "chesnaught",
     "dexNumber": 652,
-    "sprite": null
+    "sprite": "sprites/652.png"
   },
   {
     "name": "fennekin",
     "dexNumber": 653,
-    "sprite": null
+    "sprite": "sprites/653.png"
   },
   {
     "name": "braixen",
     "dexNumber": 654,
-    "sprite": null
+    "sprite": "sprites/654.png"
   },
   {
     "name": "delphox",
     "dexNumber": 655,
-    "sprite": null
+    "sprite": "sprites/655.png"
   },
   {
     "name": "froakie",
     "dexNumber": 656,
-    "sprite": null
+    "sprite": "sprites/656.png"
   },
   {
     "name": "frogadier",
     "dexNumber": 657,
-    "sprite": null
+    "sprite": "sprites/657.png"
   },
   {
     "name": "greninja",
     "dexNumber": 658,
-    "sprite": null
+    "sprite": "sprites/658.png"
   },
   {
     "name": "bunnelby",
     "dexNumber": 659,
-    "sprite": null
+    "sprite": "sprites/659.png"
   },
   {
     "name": "diggersby",
     "dexNumber": 660,
-    "sprite": null
+    "sprite": "sprites/660.png"
   },
   {
     "name": "fletchling",
     "dexNumber": 661,
-    "sprite": null
+    "sprite": "sprites/661.png"
   },
   {
     "name": "fletchinder",
     "dexNumber": 662,
-    "sprite": null
+    "sprite": "sprites/662.png"
   },
   {
     "name": "talonflame",
     "dexNumber": 663,
-    "sprite": null
+    "sprite": "sprites/663.png"
   },
   {
     "name": "scatterbug",
     "dexNumber": 664,
-    "sprite": null
+    "sprite": "sprites/664.png"
   },
   {
     "name": "spewpa",
     "dexNumber": 665,
-    "sprite": null
+    "sprite": "sprites/665.png"
   },
   {
     "name": "vivillon",
     "dexNumber": 666,
-    "sprite": null
+    "sprite": "sprites/666.png"
   },
   {
     "name": "litleo",
     "dexNumber": 667,
-    "sprite": null
+    "sprite": "sprites/667.png"
   },
   {
     "name": "pyroar",
     "dexNumber": 668,
-    "sprite": null
+    "sprite": "sprites/668.png"
   },
   {
     "name": "flabebe",
     "dexNumber": 669,
-    "sprite": null
+    "sprite": "sprites/669.png"
   },
   {
     "name": "floette",
     "dexNumber": 670,
-    "sprite": null
+    "sprite": "sprites/670.png"
   },
   {
     "name": "florges",
     "dexNumber": 671,
-    "sprite": null
+    "sprite": "sprites/671.png"
   },
   {
     "name": "skiddo",
     "dexNumber": 672,
-    "sprite": null
+    "sprite": "sprites/672.png"
   },
   {
     "name": "gogoat",
     "dexNumber": 673,
-    "sprite": null
+    "sprite": "sprites/673.png"
   },
   {
     "name": "pancham",
     "dexNumber": 674,
-    "sprite": null
+    "sprite": "sprites/674.png"
   },
   {
     "name": "pangoro",
     "dexNumber": 675,
-    "sprite": null
+    "sprite": "sprites/675.png"
   },
   {
     "name": "furfrou",
     "dexNumber": 676,
-    "sprite": null
+    "sprite": "sprites/676.png"
   },
   {
     "name": "espurr",
     "dexNumber": 677,
-    "sprite": null
+    "sprite": "sprites/677.png"
   },
   {
     "name": "meowstic",
     "dexNumber": 678,
-    "sprite": null
+    "sprite": "sprites/678.png"
   },
   {
     "name": "honedge",
     "dexNumber": 679,
-    "sprite": null
+    "sprite": "sprites/679.png"
   },
   {
     "name": "doublade",
     "dexNumber": 680,
-    "sprite": null
+    "sprite": "sprites/680.png"
   },
   {
     "name": "aegislash",
     "dexNumber": 681,
-    "sprite": null
+    "sprite": "sprites/681.png"
   },
   {
     "name": "spritzee",
     "dexNumber": 682,
-    "sprite": null
+    "sprite": "sprites/682.png"
   },
   {
     "name": "aromatisse",
     "dexNumber": 683,
-    "sprite": null
+    "sprite": "sprites/683.png"
   },
   {
     "name": "swirlix",
     "dexNumber": 684,
-    "sprite": null
+    "sprite": "sprites/684.png"
   },
   {
     "name": "slurpuff",
     "dexNumber": 685,
-    "sprite": null
+    "sprite": "sprites/685.png"
   },
   {
     "name": "inkay",
     "dexNumber": 686,
-    "sprite": null
+    "sprite": "sprites/686.png"
   },
   {
     "name": "malamar",
     "dexNumber": 687,
-    "sprite": null
+    "sprite": "sprites/687.png"
   },
   {
     "name": "binacle",
     "dexNumber": 688,
-    "sprite": null
+    "sprite": "sprites/688.png"
   },
   {
     "name": "barbaracle",
     "dexNumber": 689,
-    "sprite": null
+    "sprite": "sprites/689.png"
   },
   {
     "name": "skrelp",
     "dexNumber": 690,
-    "sprite": null
+    "sprite": "sprites/690.png"
   },
   {
     "name": "dragalge",
     "dexNumber": 691,
-    "sprite": null
+    "sprite": "sprites/691.png"
   },
   {
     "name": "clauncher",
     "dexNumber": 692,
-    "sprite": null
+    "sprite": "sprites/692.png"
   },
   {
     "name": "clawitzer",
     "dexNumber": 693,
-    "sprite": null
+    "sprite": "sprites/693.png"
   },
   {
     "name": "helioptile",
     "dexNumber": 694,
-    "sprite": null
+    "sprite": "sprites/694.png"
   },
   {
     "name": "heliolisk",
     "dexNumber": 695,
-    "sprite": null
+    "sprite": "sprites/695.png"
   },
   {
     "name": "tyrunt",
     "dexNumber": 696,
-    "sprite": null
+    "sprite": "sprites/696.png"
   },
   {
     "name": "tyrantrum",
     "dexNumber": 697,
-    "sprite": null
+    "sprite": "sprites/697.png"
   },
   {
     "name": "amaura",
     "dexNumber": 698,
-    "sprite": null
+    "sprite": "sprites/698.png"
   },
   {
     "name": "aurorus",
     "dexNumber": 699,
-    "sprite": null
+    "sprite": "sprites/699.png"
   },
   {
     "name": "sylveon",
     "dexNumber": 700,
-    "sprite": null
+    "sprite": "sprites/700.png"
   },
   {
     "name": "hawlucha",
     "dexNumber": 701,
-    "sprite": null
+    "sprite": "sprites/701.png"
   },
   {
     "name": "dedenne",
     "dexNumber": 702,
-    "sprite": null
+    "sprite": "sprites/702.png"
   },
   {
     "name": "carbink",
     "dexNumber": 703,
-    "sprite": null
+    "sprite": "sprites/703.png"
   },
   {
     "name": "goomy",
     "dexNumber": 704,
-    "sprite": null
+    "sprite": "sprites/704.png"
   },
   {
     "name": "sliggoo",
     "dexNumber": 705,
-    "sprite": null
+    "sprite": "sprites/705.png"
   },
   {
     "name": "goodra",
     "dexNumber": 706,
-    "sprite": null
+    "sprite": "sprites/706.png"
   },
   {
     "name": "klefki",
     "dexNumber": 707,
-    "sprite": null
+    "sprite": "sprites/707.png"
   },
   {
     "name": "phantump",
     "dexNumber": 708,
-    "sprite": null
+    "sprite": "sprites/708.png"
   },
   {
     "name": "trevenant",
     "dexNumber": 709,
-    "sprite": null
+    "sprite": "sprites/709.png"
   },
   {
     "name": "pumpkaboo",
     "dexNumber": 710,
-    "sprite": null
+    "sprite": "sprites/710.png"
   },
   {
     "name": "gourgeist",
     "dexNumber": 711,
-    "sprite": null
+    "sprite": "sprites/711.png"
   },
   {
     "name": "bergmite",
     "dexNumber": 712,
-    "sprite": null
+    "sprite": "sprites/712.png"
   },
   {
     "name": "avalugg",
     "dexNumber": 713,
-    "sprite": null
+    "sprite": "sprites/713.png"
   },
   {
     "name": "noibat",
     "dexNumber": 714,
-    "sprite": null
+    "sprite": "sprites/714.png"
   },
   {
     "name": "noivern",
     "dexNumber": 715,
-    "sprite": null
+    "sprite": "sprites/715.png"
   },
   {
     "name": "xerneas",
     "dexNumber": 716,
-    "sprite": null
+    "sprite": "sprites/716.png"
   },
   {
     "name": "yveltal",
     "dexNumber": 717,
-    "sprite": null
+    "sprite": "sprites/717.png"
   },
   {
     "name": "zygarde",
     "dexNumber": 718,
-    "sprite": null
+    "sprite": "sprites/718.png"
   },
   {
     "name": "diancie",
     "dexNumber": 719,
-    "sprite": null
+    "sprite": "sprites/719.png"
   },
   {
     "name": "hoopa",
     "dexNumber": 720,
-    "sprite": null
+    "sprite": "sprites/720.png"
   },
   {
     "name": "volcanion",
     "dexNumber": 721,
-    "sprite": null
+    "sprite": "sprites/721.png"
   },
   {
     "name": "rowlet",
     "dexNumber": 722,
-    "sprite": null
+    "sprite": "sprites/722.png"
   },
   {
     "name": "dartrix",
     "dexNumber": 723,
-    "sprite": null
+    "sprite": "sprites/723.png"
   },
   {
     "name": "decidueye",
     "dexNumber": 724,
-    "sprite": null
+    "sprite": "sprites/724.png"
   },
   {
     "name": "litten",
     "dexNumber": 725,
-    "sprite": null
+    "sprite": "sprites/725.png"
   },
   {
     "name": "torracat",
     "dexNumber": 726,
-    "sprite": null
+    "sprite": "sprites/726.png"
   },
   {
     "name": "incineroar",
     "dexNumber": 727,
-    "sprite": null
+    "sprite": "sprites/727.png"
   },
   {
     "name": "popplio",
     "dexNumber": 728,
-    "sprite": null
+    "sprite": "sprites/728.png"
   },
   {
     "name": "brionne",
     "dexNumber": 729,
-    "sprite": null
+    "sprite": "sprites/729.png"
   },
   {
     "name": "primarina",
     "dexNumber": 730,
-    "sprite": null
+    "sprite": "sprites/730.png"
   },
   {
     "name": "pikipek",
     "dexNumber": 731,
-    "sprite": null
+    "sprite": "sprites/731.png"
   },
   {
     "name": "trumbeak",
     "dexNumber": 732,
-    "sprite": null
+    "sprite": "sprites/732.png"
   },
   {
     "name": "toucannon",
     "dexNumber": 733,
-    "sprite": null
+    "sprite": "sprites/733.png"
   },
   {
     "name": "yungoos",
     "dexNumber": 734,
-    "sprite": null
+    "sprite": "sprites/734.png"
   },
   {
     "name": "gumshoos",
     "dexNumber": 735,
-    "sprite": null
+    "sprite": "sprites/735.png"
   },
   {
     "name": "grubbin",
     "dexNumber": 736,
-    "sprite": null
+    "sprite": "sprites/736.png"
   },
   {
     "name": "charjabug",
     "dexNumber": 737,
-    "sprite": null
+    "sprite": "sprites/737.png"
   },
   {
     "name": "vikavolt",
     "dexNumber": 738,
-    "sprite": null
+    "sprite": "sprites/738.png"
   },
   {
     "name": "crabrawler",
     "dexNumber": 739,
-    "sprite": null
+    "sprite": "sprites/739.png"
   },
   {
     "name": "crabominable",
     "dexNumber": 740,
-    "sprite": null
+    "sprite": "sprites/740.png"
   },
   {
     "name": "oricorio",
     "dexNumber": 741,
-    "sprite": null
+    "sprite": "sprites/741.png"
   },
   {
     "name": "cutiefly",
     "dexNumber": 742,
-    "sprite": null
+    "sprite": "sprites/742.png"
   },
   {
     "name": "ribombee",
     "dexNumber": 743,
-    "sprite": null
+    "sprite": "sprites/743.png"
   },
   {
     "name": "rockruff",
     "dexNumber": 744,
-    "sprite": null
+    "sprite": "sprites/744.png"
   },
   {
     "name": "lycanroc",
     "dexNumber": 745,
-    "sprite": null
+    "sprite": "sprites/745.png"
   },
   {
     "name": "wishiwashi",
     "dexNumber": 746,
-    "sprite": null
+    "sprite": "sprites/746.png"
   },
   {
     "name": "mareanie",
     "dexNumber": 747,
-    "sprite": null
+    "sprite": "sprites/747.png"
   },
   {
     "name": "toxapex",
     "dexNumber": 748,
-    "sprite": null
+    "sprite": "sprites/748.png"
   },
   {
     "name": "mudbray",
     "dexNumber": 749,
-    "sprite": null
+    "sprite": "sprites/749.png"
   },
   {
     "name": "mudsdale",
     "dexNumber": 750,
-    "sprite": null
+    "sprite": "sprites/750.png"
   },
   {
     "name": "dewpider",
     "dexNumber": 751,
-    "sprite": null
+    "sprite": "sprites/751.png"
   },
   {
     "name": "araquanid",
     "dexNumber": 752,
-    "sprite": null
+    "sprite": "sprites/752.png"
   },
   {
     "name": "fomantis",
     "dexNumber": 753,
-    "sprite": null
+    "sprite": "sprites/753.png"
   },
   {
     "name": "lurantis",
     "dexNumber": 754,
-    "sprite": null
+    "sprite": "sprites/754.png"
   },
   {
     "name": "morelull",
     "dexNumber": 755,
-    "sprite": null
+    "sprite": "sprites/755.png"
   },
   {
     "name": "shiinotic",
     "dexNumber": 756,
-    "sprite": null
+    "sprite": "sprites/756.png"
   },
   {
     "name": "salandit",
     "dexNumber": 757,
-    "sprite": null
+    "sprite": "sprites/757.png"
   },
   {
     "name": "salazzle",
     "dexNumber": 758,
-    "sprite": null
+    "sprite": "sprites/758.png"
   },
   {
     "name": "stufful",
     "dexNumber": 759,
-    "sprite": null
+    "sprite": "sprites/759.png"
   },
   {
     "name": "bewear",
     "dexNumber": 760,
-    "sprite": null
+    "sprite": "sprites/760.png"
   },
   {
     "name": "bounsweet",
     "dexNumber": 761,
-    "sprite": null
+    "sprite": "sprites/761.png"
   },
   {
     "name": "steenee",
     "dexNumber": 762,
-    "sprite": null
+    "sprite": "sprites/762.png"
   },
   {
     "name": "tsareena",
     "dexNumber": 763,
-    "sprite": null
+    "sprite": "sprites/763.png"
   },
   {
     "name": "comfey",
     "dexNumber": 764,
-    "sprite": null
+    "sprite": "sprites/764.png"
   },
   {
     "name": "oranguru",
     "dexNumber": 765,
-    "sprite": null
+    "sprite": "sprites/765.png"
   },
   {
     "name": "passimian",
     "dexNumber": 766,
-    "sprite": null
+    "sprite": "sprites/766.png"
   },
   {
     "name": "wimpod",
     "dexNumber": 767,
-    "sprite": null
+    "sprite": "sprites/767.png"
   },
   {
     "name": "golisopod",
     "dexNumber": 768,
-    "sprite": null
+    "sprite": "sprites/768.png"
   },
   {
     "name": "sandygast",
     "dexNumber": 769,
-    "sprite": null
+    "sprite": "sprites/769.png"
   },
   {
     "name": "palossand",
     "dexNumber": 770,
-    "sprite": null
+    "sprite": "sprites/770.png"
   },
   {
     "name": "pyukumuku",
     "dexNumber": 771,
-    "sprite": null
+    "sprite": "sprites/771.png"
   },
   {
     "name": "type-null",
     "dexNumber": 772,
-    "sprite": null
+    "sprite": "sprites/772.png"
   },
   {
     "name": "silvally",
     "dexNumber": 773,
-    "sprite": null
+    "sprite": "sprites/773.png"
   },
   {
     "name": "minior",
     "dexNumber": 774,
-    "sprite": null
+    "sprite": "sprites/774.png"
   },
   {
     "name": "komala",
     "dexNumber": 775,
-    "sprite": null
+    "sprite": "sprites/775.png"
   },
   {
     "name": "turtonator",
     "dexNumber": 776,
-    "sprite": null
+    "sprite": "sprites/776.png"
   },
   {
     "name": "togedemaru",
     "dexNumber": 777,
-    "sprite": null
+    "sprite": "sprites/777.png"
   },
   {
     "name": "mimikyu",
     "dexNumber": 778,
-    "sprite": null
+    "sprite": "sprites/778.png"
   },
   {
     "name": "bruxish",
     "dexNumber": 779,
-    "sprite": null
+    "sprite": "sprites/779.png"
   },
   {
     "name": "drampa",
     "dexNumber": 780,
-    "sprite": null
+    "sprite": "sprites/780.png"
   },
   {
     "name": "dhelmise",
     "dexNumber": 781,
-    "sprite": null
+    "sprite": "sprites/781.png"
   },
   {
     "name": "jangmo-o",
     "dexNumber": 782,
-    "sprite": null
+    "sprite": "sprites/782.png"
   },
   {
     "name": "hakamo-o",
     "dexNumber": 783,
-    "sprite": null
+    "sprite": "sprites/783.png"
   },
   {
     "name": "kommo-o",
     "dexNumber": 784,
-    "sprite": null
+    "sprite": "sprites/784.png"
   },
   {
     "name": "tapu-koko",
     "dexNumber": 785,
-    "sprite": null
+    "sprite": "sprites/785.png"
   },
   {
     "name": "tapu-lele",
     "dexNumber": 786,
-    "sprite": null
+    "sprite": "sprites/786.png"
   },
   {
     "name": "tapu-bulu",
     "dexNumber": 787,
-    "sprite": null
+    "sprite": "sprites/787.png"
   },
   {
     "name": "tapu-fini",
     "dexNumber": 788,
-    "sprite": null
+    "sprite": "sprites/788.png"
   },
   {
     "name": "cosmog",
     "dexNumber": 789,
-    "sprite": null
+    "sprite": "sprites/789.png"
   },
   {
     "name": "cosmoem",
     "dexNumber": 790,
-    "sprite": null
+    "sprite": "sprites/790.png"
   },
   {
     "name": "solgaleo",
     "dexNumber": 791,
-    "sprite": null
+    "sprite": "sprites/791.png"
   },
   {
     "name": "lunala",
     "dexNumber": 792,
-    "sprite": null
+    "sprite": "sprites/792.png"
   },
   {
     "name": "nihilego",
     "dexNumber": 793,
-    "sprite": null
+    "sprite": "sprites/793.png"
   },
   {
     "name": "buzzwole",
     "dexNumber": 794,
-    "sprite": null
+    "sprite": "sprites/794.png"
   },
   {
     "name": "pheromosa",
     "dexNumber": 795,
-    "sprite": null
+    "sprite": "sprites/795.png"
   },
   {
     "name": "xurkitree",
     "dexNumber": 796,
-    "sprite": null
+    "sprite": "sprites/796.png"
   },
   {
     "name": "celesteela",
     "dexNumber": 797,
-    "sprite": null
+    "sprite": "sprites/797.png"
   },
   {
     "name": "kartana",
     "dexNumber": 798,
-    "sprite": null
+    "sprite": "sprites/798.png"
   },
   {
     "name": "guzzlord",
     "dexNumber": 799,
-    "sprite": null
+    "sprite": "sprites/799.png"
   },
   {
     "name": "necrozma",
     "dexNumber": 800,
-    "sprite": null
+    "sprite": "sprites/800.png"
   },
   {
     "name": "magearna",
     "dexNumber": 801,
-    "sprite": null
+    "sprite": "sprites/801.png"
   },
   {
     "name": "marshadow",
     "dexNumber": 802,
-    "sprite": null
+    "sprite": "sprites/802.png"
   },
   {
     "name": "poipole",
     "dexNumber": 803,
-    "sprite": null
+    "sprite": "sprites/803.png"
   },
   {
     "name": "naganadel",
     "dexNumber": 804,
-    "sprite": null
+    "sprite": "sprites/804.png"
   },
   {
     "name": "stakataka",
     "dexNumber": 805,
-    "sprite": null
+    "sprite": "sprites/805.png"
   },
   {
     "name": "blacephalon",
     "dexNumber": 806,
-    "sprite": null
+    "sprite": "sprites/806.png"
   },
   {
     "name": "zeraora",
     "dexNumber": 807,
-    "sprite": null
+    "sprite": "sprites/807.png"
   },
   {
     "name": "meltan",
     "dexNumber": 808,
-    "sprite": null
+    "sprite": "sprites/808.png"
   },
   {
     "name": "melmetal",
     "dexNumber": 809,
-    "sprite": null
+    "sprite": "sprites/809.png"
   },
   {
     "name": "grookey",
     "dexNumber": 810,
-    "sprite": null
+    "sprite": "sprites/810.png"
   },
   {
     "name": "thwackey",
     "dexNumber": 811,
-    "sprite": null
+    "sprite": "sprites/811.png"
   },
   {
     "name": "rillaboom",
     "dexNumber": 812,
-    "sprite": null
+    "sprite": "sprites/812.png"
   },
   {
     "name": "scorbunny",
     "dexNumber": 813,
-    "sprite": null
+    "sprite": "sprites/813.png"
   },
   {
     "name": "raboot",
     "dexNumber": 814,
-    "sprite": null
+    "sprite": "sprites/814.png"
   },
   {
     "name": "cinderace",
     "dexNumber": 815,
-    "sprite": null
+    "sprite": "sprites/815.png"
   },
   {
     "name": "sobble",
     "dexNumber": 816,
-    "sprite": null
+    "sprite": "sprites/816.png"
   },
   {
     "name": "drizzile",
     "dexNumber": 817,
-    "sprite": null
+    "sprite": "sprites/817.png"
   },
   {
     "name": "inteleon",
     "dexNumber": 818,
-    "sprite": null
+    "sprite": "sprites/818.png"
   },
   {
     "name": "skwovet",
     "dexNumber": 819,
-    "sprite": null
+    "sprite": "sprites/819.png"
   },
   {
     "name": "greedent",
     "dexNumber": 820,
-    "sprite": null
+    "sprite": "sprites/820.png"
   },
   {
     "name": "rookidee",
     "dexNumber": 821,
-    "sprite": null
+    "sprite": "sprites/821.png"
   },
   {
     "name": "corvisquire",
     "dexNumber": 822,
-    "sprite": null
+    "sprite": "sprites/822.png"
   },
   {
     "name": "corviknight",
     "dexNumber": 823,
-    "sprite": null
+    "sprite": "sprites/823.png"
   },
   {
     "name": "blipbug",
     "dexNumber": 824,
-    "sprite": null
+    "sprite": "sprites/824.png"
   },
   {
     "name": "dottler",
     "dexNumber": 825,
-    "sprite": null
+    "sprite": "sprites/825.png"
   },
   {
     "name": "orbeetle",
     "dexNumber": 826,
-    "sprite": null
+    "sprite": "sprites/826.png"
   },
   {
     "name": "nickit",
     "dexNumber": 827,
-    "sprite": null
+    "sprite": "sprites/827.png"
   },
   {
     "name": "thievul",
     "dexNumber": 828,
-    "sprite": null
+    "sprite": "sprites/828.png"
   },
   {
     "name": "gossifleur",
     "dexNumber": 829,
-    "sprite": null
+    "sprite": "sprites/829.png"
   },
   {
     "name": "eldegoss",
     "dexNumber": 830,
-    "sprite": null
+    "sprite": "sprites/830.png"
   },
   {
     "name": "wooloo",
     "dexNumber": 831,
-    "sprite": null
+    "sprite": "sprites/831.png"
   },
   {
     "name": "dubwool",
     "dexNumber": 832,
-    "sprite": null
+    "sprite": "sprites/832.png"
   },
   {
     "name": "chewtle",
     "dexNumber": 833,
-    "sprite": null
+    "sprite": "sprites/833.png"
   },
   {
     "name": "drednaw",
     "dexNumber": 834,
-    "sprite": null
+    "sprite": "sprites/834.png"
   },
   {
     "name": "yamper",
     "dexNumber": 835,
-    "sprite": null
+    "sprite": "sprites/835.png"
   },
   {
     "name": "boltund",
     "dexNumber": 836,
-    "sprite": null
+    "sprite": "sprites/836.png"
   },
   {
     "name": "rolycoly",
     "dexNumber": 837,
-    "sprite": null
+    "sprite": "sprites/837.png"
   },
   {
     "name": "carkol",
     "dexNumber": 838,
-    "sprite": null
+    "sprite": "sprites/838.png"
   },
   {
     "name": "coalossal",
     "dexNumber": 839,
-    "sprite": null
+    "sprite": "sprites/839.png"
   },
   {
     "name": "applin",
     "dexNumber": 840,
-    "sprite": null
+    "sprite": "sprites/840.png"
   },
   {
     "name": "flapple",
     "dexNumber": 841,
-    "sprite": null
+    "sprite": "sprites/841.png"
   },
   {
     "name": "appletun",
     "dexNumber": 842,
-    "sprite": null
+    "sprite": "sprites/842.png"
   },
   {
     "name": "silicobra",
     "dexNumber": 843,
-    "sprite": null
+    "sprite": "sprites/843.png"
   },
   {
     "name": "sandaconda",
     "dexNumber": 844,
-    "sprite": null
+    "sprite": "sprites/844.png"
   },
   {
     "name": "cramorant",
     "dexNumber": 845,
-    "sprite": null
+    "sprite": "sprites/845.png"
   },
   {
     "name": "arrokuda",
     "dexNumber": 846,
-    "sprite": null
+    "sprite": "sprites/846.png"
   },
   {
     "name": "barraskewda",
     "dexNumber": 847,
-    "sprite": null
+    "sprite": "sprites/847.png"
   },
   {
     "name": "toxel",
     "dexNumber": 848,
-    "sprite": null
+    "sprite": "sprites/848.png"
   },
   {
     "name": "toxtricity",
     "dexNumber": 849,
-    "sprite": null
+    "sprite": "sprites/849.png"
   },
   {
     "name": "sizzlipede",
     "dexNumber": 850,
-    "sprite": null
+    "sprite": "sprites/850.png"
   },
   {
     "name": "centiskorch",
     "dexNumber": 851,
-    "sprite": null
+    "sprite": "sprites/851.png"
   },
   {
     "name": "clobbopus",
     "dexNumber": 852,
-    "sprite": null
+    "sprite": "sprites/852.png"
   },
   {
     "name": "grapploct",
     "dexNumber": 853,
-    "sprite": null
+    "sprite": "sprites/853.png"
   },
   {
     "name": "sinistea",
     "dexNumber": 854,
-    "sprite": null
+    "sprite": "sprites/854.png"
   },
   {
     "name": "polteageist",
     "dexNumber": 855,
-    "sprite": null
+    "sprite": "sprites/855.png"
   },
   {
     "name": "hatenna",
     "dexNumber": 856,
-    "sprite": null
+    "sprite": "sprites/856.png"
   },
   {
     "name": "hattrem",
     "dexNumber": 857,
-    "sprite": null
+    "sprite": "sprites/857.png"
   },
   {
     "name": "hatterene",
     "dexNumber": 858,
-    "sprite": null
+    "sprite": "sprites/858.png"
   },
   {
     "name": "impidimp",
     "dexNumber": 859,
-    "sprite": null
+    "sprite": "sprites/859.png"
   },
   {
     "name": "morgrem",
     "dexNumber": 860,
-    "sprite": null
+    "sprite": "sprites/860.png"
   },
   {
     "name": "grimmsnarl",
     "dexNumber": 861,
-    "sprite": null
+    "sprite": "sprites/861.png"
   },
   {
     "name": "obstagoon",
     "dexNumber": 862,
-    "sprite": null
+    "sprite": "sprites/862.png"
   },
   {
     "name": "perrserker",
     "dexNumber": 863,
-    "sprite": null
+    "sprite": "sprites/863.png"
   },
   {
     "name": "cursola",
     "dexNumber": 864,
-    "sprite": null
+    "sprite": "sprites/864.png"
   },
   {
     "name": "sirfetchd",
     "dexNumber": 865,
-    "sprite": null
+    "sprite": "sprites/865.png"
   },
   {
     "name": "mr-rime",
     "dexNumber": 866,
-    "sprite": null
+    "sprite": "sprites/866.png"
   },
   {
     "name": "runerigus",
     "dexNumber": 867,
-    "sprite": null
+    "sprite": "sprites/867.png"
   },
   {
     "name": "milcery",
     "dexNumber": 868,
-    "sprite": null
+    "sprite": "sprites/868.png"
   },
   {
     "name": "alcremie",
     "dexNumber": 869,
-    "sprite": null
+    "sprite": "sprites/869.png"
   },
   {
     "name": "falinks",
     "dexNumber": 870,
-    "sprite": null
+    "sprite": "sprites/870.png"
   },
   {
     "name": "pincurchin",
     "dexNumber": 871,
-    "sprite": null
+    "sprite": "sprites/871.png"
   },
   {
     "name": "snom",
     "dexNumber": 872,
-    "sprite": null
+    "sprite": "sprites/872.png"
   },
   {
     "name": "frosmoth",
     "dexNumber": 873,
-    "sprite": null
+    "sprite": "sprites/873.png"
   },
   {
     "name": "stonjourner",
     "dexNumber": 874,
-    "sprite": null
+    "sprite": "sprites/874.png"
   },
   {
     "name": "eiscue",
     "dexNumber": 875,
-    "sprite": null
+    "sprite": "sprites/875.png"
   },
   {
     "name": "indeedee",
     "dexNumber": 876,
-    "sprite": null
+    "sprite": "sprites/876.png"
   },
   {
     "name": "morpeko",
     "dexNumber": 877,
-    "sprite": null
+    "sprite": "sprites/877.png"
   },
   {
     "name": "cufant",
     "dexNumber": 878,
-    "sprite": null
+    "sprite": "sprites/878.png"
   },
   {
     "name": "copperajah",
     "dexNumber": 879,
-    "sprite": null
+    "sprite": "sprites/879.png"
   },
   {
     "name": "dracozolt",
     "dexNumber": 880,
-    "sprite": null
+    "sprite": "sprites/880.png"
   },
   {
     "name": "arctozolt",
     "dexNumber": 881,
-    "sprite": null
+    "sprite": "sprites/881.png"
   },
   {
     "name": "dracovish",
     "dexNumber": 882,
-    "sprite": null
+    "sprite": "sprites/882.png"
   },
   {
     "name": "arctovish",
     "dexNumber": 883,
-    "sprite": null
+    "sprite": "sprites/883.png"
   },
   {
     "name": "duraludon",
     "dexNumber": 884,
-    "sprite": null
+    "sprite": "sprites/884.png"
   },
   {
     "name": "dreepy",
     "dexNumber": 885,
-    "sprite": null
+    "sprite": "sprites/885.png"
   },
   {
     "name": "drakloak",
     "dexNumber": 886,
-    "sprite": null
+    "sprite": "sprites/886.png"
   },
   {
     "name": "dragapult",
     "dexNumber": 887,
-    "sprite": null
+    "sprite": "sprites/887.png"
   },
   {
     "name": "zacian",
     "dexNumber": 888,
-    "sprite": null
+    "sprite": "sprites/888.png"
   },
   {
     "name": "zamazenta",
     "dexNumber": 889,
-    "sprite": null
+    "sprite": "sprites/889.png"
   },
   {
     "name": "eternatus",
     "dexNumber": 890,
-    "sprite": null
+    "sprite": "sprites/890.png"
   },
   {
     "name": "kubfu",
     "dexNumber": 891,
-    "sprite": null
+    "sprite": "sprites/891.png"
   },
   {
     "name": "urshifu",
     "dexNumber": 892,
-    "sprite": null
+    "sprite": "sprites/892.png"
   },
   {
     "name": "zarude",
     "dexNumber": 893,
-    "sprite": null
+    "sprite": "sprites/893.png"
   },
   {
     "name": "regieleki",
     "dexNumber": 894,
-    "sprite": null
+    "sprite": "sprites/894.png"
   },
   {
     "name": "regidrago",
     "dexNumber": 895,
-    "sprite": null
+    "sprite": "sprites/895.png"
   },
   {
     "name": "glastrier",
     "dexNumber": 896,
-    "sprite": null
+    "sprite": "sprites/896.png"
   },
   {
     "name": "spectrier",
     "dexNumber": 897,
-    "sprite": null
+    "sprite": "sprites/897.png"
   },
   {
     "name": "calyrex",
     "dexNumber": 898,
-    "sprite": null
+    "sprite": "sprites/898.png"
   },
   {
     "name": "wyrdeer",
     "dexNumber": 899,
-    "sprite": null
+    "sprite": "sprites/899.png"
   },
   {
     "name": "kleavor",
     "dexNumber": 900,
-    "sprite": null
+    "sprite": "sprites/900.png"
   },
   {
     "name": "ursaluna",
     "dexNumber": 901,
-    "sprite": null
+    "sprite": "sprites/901.png"
   },
   {
     "name": "basculegion",
     "dexNumber": 902,
-    "sprite": null
+    "sprite": "sprites/902.png"
   },
   {
     "name": "sneasler",
     "dexNumber": 903,
-    "sprite": null
+    "sprite": "sprites/903.png"
   },
   {
     "name": "overqwil",
     "dexNumber": 904,
-    "sprite": null
+    "sprite": "sprites/904.png"
   },
   {
     "name": "enamorus",
     "dexNumber": 905,
-    "sprite": null
+    "sprite": "sprites/905.png"
   },
   {
     "name": "sprigatito",
     "dexNumber": 906,
-    "sprite": null
+    "sprite": "sprites/906.png"
   },
   {
     "name": "floragato",
     "dexNumber": 907,
-    "sprite": null
+    "sprite": "sprites/907.png"
   },
   {
     "name": "meowscarada",
     "dexNumber": 908,
-    "sprite": null
+    "sprite": "sprites/908.png"
   },
   {
     "name": "fuecoco",
     "dexNumber": 909,
-    "sprite": null
+    "sprite": "sprites/909.png"
   },
   {
     "name": "crocalor",
     "dexNumber": 910,
-    "sprite": null
+    "sprite": "sprites/910.png"
   },
   {
     "name": "skeledirge",
     "dexNumber": 911,
-    "sprite": null
+    "sprite": "sprites/911.png"
   },
   {
     "name": "quaxly",
     "dexNumber": 912,
-    "sprite": null
+    "sprite": "sprites/912.png"
   },
   {
     "name": "quaxwell",
     "dexNumber": 913,
-    "sprite": null
+    "sprite": "sprites/913.png"
   },
   {
     "name": "quaquaval",
     "dexNumber": 914,
-    "sprite": null
+    "sprite": "sprites/914.png"
   },
   {
     "name": "lechonk",
     "dexNumber": 915,
-    "sprite": null
+    "sprite": "sprites/915.png"
   },
   {
     "name": "oinkologne",
     "dexNumber": 916,
-    "sprite": null
+    "sprite": "sprites/916.png"
   },
   {
     "name": "tarountula",
     "dexNumber": 917,
-    "sprite": null
+    "sprite": "sprites/917.png"
   },
   {
     "name": "spidops",
     "dexNumber": 918,
-    "sprite": null
+    "sprite": "sprites/918.png"
   },
   {
     "name": "nymble",
     "dexNumber": 919,
-    "sprite": null
+    "sprite": "sprites/919.png"
   },
   {
     "name": "lokix",
     "dexNumber": 920,
-    "sprite": null
+    "sprite": "sprites/920.png"
   },
   {
     "name": "pawmi",
     "dexNumber": 921,
-    "sprite": null
+    "sprite": "sprites/921.png"
   },
   {
     "name": "pawmo",
     "dexNumber": 922,
-    "sprite": null
+    "sprite": "sprites/922.png"
   },
   {
     "name": "pawmot",
     "dexNumber": 923,
-    "sprite": null
+    "sprite": "sprites/923.png"
   },
   {
     "name": "tandemaus",
     "dexNumber": 924,
-    "sprite": null
+    "sprite": "sprites/924.png"
   },
   {
     "name": "maushold",
     "dexNumber": 925,
-    "sprite": null
+    "sprite": "sprites/925.png"
   },
   {
     "name": "fidough",
     "dexNumber": 926,
-    "sprite": null
+    "sprite": "sprites/926.png"
   },
   {
     "name": "dachsbun",
     "dexNumber": 927,
-    "sprite": null
+    "sprite": "sprites/927.png"
   },
   {
     "name": "smoliv",
     "dexNumber": 928,
-    "sprite": null
+    "sprite": "sprites/928.png"
   },
   {
     "name": "dolliv",
     "dexNumber": 929,
-    "sprite": null
+    "sprite": "sprites/929.png"
   },
   {
     "name": "arboliva",
     "dexNumber": 930,
-    "sprite": null
+    "sprite": "sprites/930.png"
   },
   {
     "name": "squawkabilly",
     "dexNumber": 931,
-    "sprite": null
+    "sprite": "sprites/931.png"
   },
   {
     "name": "nacli",
     "dexNumber": 932,
-    "sprite": null
+    "sprite": "sprites/932.png"
   },
   {
     "name": "naclstack",
     "dexNumber": 933,
-    "sprite": null
+    "sprite": "sprites/933.png"
   },
   {
     "name": "garganacl",
     "dexNumber": 934,
-    "sprite": null
+    "sprite": "sprites/934.png"
   },
   {
     "name": "charcadet",
     "dexNumber": 935,
-    "sprite": null
+    "sprite": "sprites/935.png"
   },
   {
     "name": "armarouge",
     "dexNumber": 936,
-    "sprite": null
+    "sprite": "sprites/936.png"
   },
   {
     "name": "ceruledge",
     "dexNumber": 937,
-    "sprite": null
+    "sprite": "sprites/937.png"
   },
   {
     "name": "tadbulb",
     "dexNumber": 938,
-    "sprite": null
+    "sprite": "sprites/938.png"
   },
   {
     "name": "bellibolt",
     "dexNumber": 939,
-    "sprite": null
+    "sprite": "sprites/939.png"
   },
   {
     "name": "wattrel",
     "dexNumber": 940,
-    "sprite": null
+    "sprite": "sprites/940.png"
   },
   {
     "name": "kilowattrel",
     "dexNumber": 941,
-    "sprite": null
+    "sprite": "sprites/941.png"
   },
   {
     "name": "maschiff",
     "dexNumber": 942,
-    "sprite": null
+    "sprite": "sprites/942.png"
   },
   {
     "name": "mabosstiff",
     "dexNumber": 943,
-    "sprite": null
+    "sprite": "sprites/943.png"
   },
   {
     "name": "shroodle",
     "dexNumber": 944,
-    "sprite": null
+    "sprite": "sprites/944.png"
   },
   {
     "name": "grafaiai",
     "dexNumber": 945,
-    "sprite": null
+    "sprite": "sprites/945.png"
   },
   {
     "name": "bramblin",
     "dexNumber": 946,
-    "sprite": null
+    "sprite": "sprites/946.png"
   },
   {
     "name": "brambleghast",
     "dexNumber": 947,
-    "sprite": null
+    "sprite": "sprites/947.png"
   },
   {
     "name": "toedscool",
     "dexNumber": 948,
-    "sprite": null
+    "sprite": "sprites/948.png"
   },
   {
     "name": "toedscruel",
     "dexNumber": 949,
-    "sprite": null
+    "sprite": "sprites/949.png"
   },
   {
     "name": "klawf",
     "dexNumber": 950,
-    "sprite": null
+    "sprite": "sprites/950.png"
   },
   {
     "name": "capsakid",
     "dexNumber": 951,
-    "sprite": null
+    "sprite": "sprites/951.png"
   },
   {
     "name": "scovillain",
     "dexNumber": 952,
-    "sprite": null
+    "sprite": "sprites/952.png"
   },
   {
     "name": "rellor",
     "dexNumber": 953,
-    "sprite": null
+    "sprite": "sprites/953.png"
   },
   {
     "name": "rabsca",
     "dexNumber": 954,
-    "sprite": null
+    "sprite": "sprites/954.png"
   },
   {
     "name": "flittle",
     "dexNumber": 955,
-    "sprite": null
+    "sprite": "sprites/955.png"
   },
   {
     "name": "espathra",
     "dexNumber": 956,
-    "sprite": null
+    "sprite": "sprites/956.png"
   },
   {
     "name": "tinkatink",
     "dexNumber": 957,
-    "sprite": null
+    "sprite": "sprites/957.png"
   },
   {
     "name": "tinkatuff",
     "dexNumber": 958,
-    "sprite": null
+    "sprite": "sprites/958.png"
   },
   {
     "name": "tinkaton",
     "dexNumber": 959,
-    "sprite": null
+    "sprite": "sprites/959.png"
   },
   {
     "name": "wiglett",
     "dexNumber": 960,
-    "sprite": null
+    "sprite": "sprites/960.png"
   },
   {
     "name": "wugtrio",
     "dexNumber": 961,
-    "sprite": null
+    "sprite": "sprites/961.png"
   },
   {
     "name": "bombirdier",
     "dexNumber": 962,
-    "sprite": null
+    "sprite": "sprites/962.png"
   },
   {
     "name": "finizen",
     "dexNumber": 963,
-    "sprite": null
+    "sprite": "sprites/963.png"
   },
   {
     "name": "palafin",
     "dexNumber": 964,
-    "sprite": null
+    "sprite": "sprites/964.png"
   },
   {
     "name": "varoom",
     "dexNumber": 965,
-    "sprite": null
+    "sprite": "sprites/965.png"
   },
   {
     "name": "revavroom",
     "dexNumber": 966,
-    "sprite": null
+    "sprite": "sprites/966.png"
   },
   {
     "name": "cyclizar",
     "dexNumber": 967,
-    "sprite": null
+    "sprite": "sprites/967.png"
   },
   {
     "name": "orthworm",
     "dexNumber": 968,
-    "sprite": null
+    "sprite": "sprites/968.png"
   },
   {
     "name": "glimmet",
     "dexNumber": 969,
-    "sprite": null
+    "sprite": "sprites/969.png"
   },
   {
     "name": "glimmora",
     "dexNumber": 970,
-    "sprite": null
+    "sprite": "sprites/970.png"
   },
   {
     "name": "greavard",
     "dexNumber": 971,
-    "sprite": null
+    "sprite": "sprites/971.png"
   },
   {
     "name": "houndstone",
     "dexNumber": 972,
-    "sprite": null
+    "sprite": "sprites/972.png"
   },
   {
     "name": "flamigo",
     "dexNumber": 973,
-    "sprite": null
+    "sprite": "sprites/973.png"
   },
   {
     "name": "cetoddle",
     "dexNumber": 974,
-    "sprite": null
+    "sprite": "sprites/974.png"
   },
   {
     "name": "cetitan",
     "dexNumber": 975,
-    "sprite": null
+    "sprite": "sprites/975.png"
   },
   {
     "name": "veluza",
     "dexNumber": 976,
-    "sprite": null
+    "sprite": "sprites/976.png"
   },
   {
     "name": "dondozo",
     "dexNumber": 977,
-    "sprite": null
+    "sprite": "sprites/977.png"
   },
   {
     "name": "tatsugiri",
     "dexNumber": 978,
-    "sprite": null
+    "sprite": "sprites/978.png"
   },
   {
     "name": "annihilape",
     "dexNumber": 979,
-    "sprite": null
+    "sprite": "sprites/979.png"
   },
   {
     "name": "clodsire",
     "dexNumber": 980,
-    "sprite": null
+    "sprite": "sprites/980.png"
   },
   {
     "name": "farigiraf",
     "dexNumber": 981,
-    "sprite": null
+    "sprite": "sprites/981.png"
   },
   {
     "name": "dudunsparce",
     "dexNumber": 982,
-    "sprite": null
+    "sprite": "sprites/982.png"
   },
   {
     "name": "kingambit",
     "dexNumber": 983,
-    "sprite": null
+    "sprite": "sprites/983.png"
   },
   {
     "name": "great-tusk",
     "dexNumber": 984,
-    "sprite": null
+    "sprite": "sprites/984.png"
   },
   {
     "name": "scream-tail",
     "dexNumber": 985,
-    "sprite": null
+    "sprite": "sprites/985.png"
   },
   {
     "name": "brute-bonnet",
     "dexNumber": 986,
-    "sprite": null
+    "sprite": "sprites/986.png"
   },
   {
     "name": "flutter-mane",
     "dexNumber": 987,
-    "sprite": null
+    "sprite": "sprites/987.png"
   },
   {
     "name": "slither-wing",
     "dexNumber": 988,
-    "sprite": null
+    "sprite": "sprites/988.png"
   },
   {
     "name": "sandy-shocks",
     "dexNumber": 989,
-    "sprite": null
+    "sprite": "sprites/989.png"
   },
   {
     "name": "iron-treads",
     "dexNumber": 990,
-    "sprite": null
+    "sprite": "sprites/990.png"
   },
   {
     "name": "iron-bundle",
     "dexNumber": 991,
-    "sprite": null
+    "sprite": "sprites/991.png"
   },
   {
     "name": "iron-hands",
     "dexNumber": 992,
-    "sprite": null
+    "sprite": "sprites/992.png"
   },
   {
     "name": "iron-jugulis",
     "dexNumber": 993,
-    "sprite": null
+    "sprite": "sprites/993.png"
   },
   {
     "name": "iron-moth",
     "dexNumber": 994,
-    "sprite": null
+    "sprite": "sprites/994.png"
   },
   {
     "name": "iron-thorns",
     "dexNumber": 995,
-    "sprite": null
+    "sprite": "sprites/995.png"
   },
   {
     "name": "frigibax",
     "dexNumber": 996,
-    "sprite": null
+    "sprite": "sprites/996.png"
   },
   {
     "name": "arctibax",
     "dexNumber": 997,
-    "sprite": null
+    "sprite": "sprites/997.png"
   },
   {
     "name": "baxcalibur",
     "dexNumber": 998,
-    "sprite": null
+    "sprite": "sprites/998.png"
   },
   {
     "name": "gimmighoul",
     "dexNumber": 999,
-    "sprite": null
+    "sprite": "sprites/999.png"
   },
   {
     "name": "gholdengo",
     "dexNumber": 1000,
-    "sprite": null
+    "sprite": "sprites/1000.png"
   },
   {
     "name": "wo-chien",
     "dexNumber": 1001,
-    "sprite": null
+    "sprite": "sprites/1001.png"
   },
   {
     "name": "chien-pao",
     "dexNumber": 1002,
-    "sprite": null
+    "sprite": "sprites/1002.png"
   },
   {
     "name": "ting-lu",
     "dexNumber": 1003,
-    "sprite": null
+    "sprite": "sprites/1003.png"
   },
   {
     "name": "chi-yu",
     "dexNumber": 1004,
-    "sprite": null
+    "sprite": "sprites/1004.png"
   },
   {
     "name": "roaring-moon",
     "dexNumber": 1005,
-    "sprite": null
+    "sprite": "sprites/1005.png"
   },
   {
     "name": "iron-valiant",
     "dexNumber": 1006,
-    "sprite": null
+    "sprite": "sprites/1006.png"
   },
   {
     "name": "koraidon",
     "dexNumber": 1007,
-    "sprite": null
+    "sprite": "sprites/1007.png"
   },
   {
     "name": "miraidon",
     "dexNumber": 1008,
-    "sprite": null
+    "sprite": "sprites/1008.png"
   },
   {
     "name": "walking-wake",
     "dexNumber": 1009,
-    "sprite": null
+    "sprite": "sprites/1009.png"
   },
   {
     "name": "iron-leaves",
     "dexNumber": 1010,
-    "sprite": null
+    "sprite": "sprites/1010.png"
   },
   {
     "name": "dipplin",
     "dexNumber": 1011,
-    "sprite": null
+    "sprite": "sprites/1011.png"
   },
   {
     "name": "poltchageist",
     "dexNumber": 1012,
-    "sprite": null
+    "sprite": "sprites/1012.png"
   },
   {
     "name": "sinistcha",
     "dexNumber": 1013,
-    "sprite": null
+    "sprite": "sprites/1013.png"
   },
   {
     "name": "okidogi",
     "dexNumber": 1014,
-    "sprite": null
+    "sprite": "sprites/1014.png"
   },
   {
     "name": "munkidori",
     "dexNumber": 1015,
-    "sprite": null
+    "sprite": "sprites/1015.png"
   },
   {
     "name": "fezandipiti",
     "dexNumber": 1016,
-    "sprite": null
+    "sprite": "sprites/1016.png"
   },
   {
     "name": "ogerpon",
     "dexNumber": 1017,
-    "sprite": null
+    "sprite": "sprites/1017.png"
   },
   {
     "name": "archaludon",
     "dexNumber": 1018,
-    "sprite": null
+    "sprite": "sprites/1018.png"
   },
   {
     "name": "hydrapple",
     "dexNumber": 1019,
-    "sprite": null
+    "sprite": "sprites/1019.png"
   },
   {
     "name": "gouging-fire",
     "dexNumber": 1020,
-    "sprite": null
+    "sprite": "sprites/1020.png"
   },
   {
     "name": "raging-bolt",
     "dexNumber": 1021,
-    "sprite": null
+    "sprite": "sprites/1021.png"
   },
   {
     "name": "iron-boulder",
     "dexNumber": 1022,
-    "sprite": null
+    "sprite": "sprites/1022.png"
   },
   {
     "name": "iron-crown",
     "dexNumber": 1023,
-    "sprite": null
+    "sprite": "sprites/1023.png"
   },
   {
     "name": "terapagos",
     "dexNumber": 1024,
-    "sprite": null
+    "sprite": "sprites/1024.png"
   },
   {
     "name": "pecharunt",
     "dexNumber": 1025,
-    "sprite": null
+    "sprite": "sprites/1025.png"
   }
 ]
