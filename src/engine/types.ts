@@ -1,3 +1,7 @@
+// Engine domain types: headless game state, no React or presentation concerns.
+// UI presentation types (e.g. Player name/avatar) live in src/types.ts — don't
+// mix the two.
+
 export const BANK_CAP = 40
 export const ANSWERS_PER_GAME = 10
 export const GIVER_BASE = 25

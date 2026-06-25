@@ -20,8 +20,9 @@ export default function GameSummary({ game, roster, onContinue }: Props) {
   const giver = roster.find((p) => p.id === game.giverId)
   const guessers = roster.filter((p) => p.id !== game.giverId)
 
-  const hintLabel = `${game.hintCount} ${game.hintCount === 1 ? 'hint' : 'hints'}`
-  const breakdown = `${GIVER_BASE} − ${hintLabel}${game.endedEarly ? ` − ${END_TURN_PENALTY} (ended early)` : ''}`
+  const entries = game.bank.length
+  const entryLabel = `${entries} ${entries === 1 ? 'entry' : 'entries'}`
+  const breakdown = `${GIVER_BASE} − ${entryLabel}${game.endedEarly ? ` − ${END_TURN_PENALTY} (ended early)` : ''}`
 
   return (
     <div className={styles.summary}>

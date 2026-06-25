@@ -47,7 +47,7 @@ There is no "skip." Two mechanisms handle answers the giver can't land:
 - Discards the current answer (drawn-without-replacement; it does not return to the pool) and reveals a **new random** answer in the same slot.
 - You **still have to land it** — reroll keeps you going, it is not "skip and move on." It does not reduce the number of answers you must resolve.
 - **Cost: one bank slot.** A non-usable **`reroll` marker** is placed in the next slot, occupying it toward the 40 cap. The marker **cannot be selected as a hint word**. This shrinks the giver's usable vocabulary and pushes the bank toward full.
-- **No direct point penalty** — the cost is the lost capacity, nothing else. Reroll does **not** count as a hint.
+- **Point cost: −1**, like any bank entry — the `reroll` marker occupies a slot, and the giver's score deducts every slot (see §5). The cost is no longer just lost capacity. Reroll still does **not** count as a hint.
 
 **End Turn** — available **only once the bank is full (40)**, i.e. when the giver can neither add a word nor reroll.
 - Ends the giver's turn: all remaining unresolved answers are forfeited (awarded to nobody), and the giver takes a single flat **−5**.
@@ -61,12 +61,12 @@ There is no "skip." Two mechanisms handle answers the giver can't land:
 
 Per game:
 
-- **Hint giver:** `25 − (total hints given across all 10 answers) − (5 if the turn was ended early)`. Rerolls have **no direct point cost** (their cost is the consumed bank slot).
+- **Hint giver:** `25 − (number of entries in the hint bank) − (5 if the turn was ended early)`. Every occupied slot counts — both added words **and** `reroll` markers — so each reroll costs **−1** (the slot it fills). The number of hints given does **not** affect the score.
 - **Guesser:** `+1` per answer they personally guessed correctly.
 - **Overguess penalty:** if a guesser guesses more than once for a single hint, `−1` per extra guess. (Verbal mode: applied via the giver's judgment / a −1 button.)
 - **All scores can go negative.** No floor on giver score or guesser score.
 
-A "hint" = one round / one hint announcement (not per word). Counted across all 10 answers in the game.
+A "hint" = one round / one hint announcement (not per word). It's a round counter shown to the giver and **does not feed scoring** — only bank size does.
 
 ---
 
@@ -96,7 +96,7 @@ The hint giver physically holds the device for their turn. Because guessers neve
    - **Resolve:** which player guessed correctly (tag + advance), or **no one** (continue hinting), plus **overguess −1** control per guesser.
    - **Reroll** (enabled while bank < 40): swaps the current answer for a new random one and drops a non-usable `reroll` marker into the next bank slot.
    - **End Turn** (enabled only at bank = 40): −5, ends the turn.
-4. **Game summary** — giver `25 − hints − (5 if ended early)`; each guesser's count; per-game deltas.
+4. **Game summary** — giver `25 − bank entries − (5 if ended early)`; each guesser's count; per-game deltas.
 5. **Rotation handling** — advance to next giver until rotation complete.
 6. **Session leaderboard** — running totals + crown; **continue / start over** prompt.
 
@@ -133,6 +133,7 @@ This loop produces every asset and mechanic the later modes reuse.
 
 ## Changelog
 
+- **v0.5** — Corrected giver scoring to `25 − (hint-bank entries) − (5 if ended early)`: the deduction is total bank size — added words **and** reroll markers — not the number of hints given. Consequence: a reroll now costs **−1** (the slot it fills), retiring the earlier "reroll has no direct point cost" framing. `hintCount` survives only as a UI round counter.
 - **v0.4** — Locked **End Turn = (A)**: forfeits all remaining answers, single flat −5. Confirmed Pokémon pool = full National Dex (~1025), no curation toggle for v1. Removed stale "skip" wording.
 - **v0.3** — Replaced **Skip** with **Reroll** (swap current answer for a new one; cost = one bank slot filled with a non-usable `reroll` marker; no point penalty; still must land it) and **End Turn** (only at bank=40; −5; ends the turn). Updated giver scoring to `25 − hints − (5 if ended early)`. Matches the source video's reroll mechanic.
 - **v0.2** — Named the game **Hint Bank** (v1 = Pokémon Edition); repo `hintbank`. Framed as a general party game shipping as editions.

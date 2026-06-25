@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { ANSWERS_PER_GAME } from '../engine'
 import type { Player } from '../types'
 import styles from './Setup.module.css'
 
@@ -15,7 +16,6 @@ const CATEGORIES = [
 
 const MIN_PLAYERS = 2
 const MAX_PLAYERS = 8
-const ANSWERS_PER_TURN = 10
 
 function makePlayer(used: string[]): Player {
   const avatar = AVATARS.find((a) => !used.includes(a)) ?? AVATARS[0]
@@ -161,7 +161,7 @@ export default function Setup({ onStart }: { onStart: (players: Player[]) => voi
             )
           })}
         </div>
-        <p className={styles.note}>{ANSWERS_PER_TURN} answers per turn. Settings lock once you start.</p>
+        <p className={styles.note}>{ANSWERS_PER_GAME} answers per turn. Settings lock once you start.</p>
       </section>
 
       <div className={styles.footer}>

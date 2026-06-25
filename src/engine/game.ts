@@ -135,8 +135,11 @@ export function endTurn(s: GameState): GameState {
   return { ...s, endedEarly: true, status: 'complete' }
 }
 
+// Score is bank-size based: every occupied slot — added words and reroll markers
+// alike — costs 1, so a reroll's marker is a real -1. hintCount is only a round
+// counter for the UI and deliberately stays out of scoring.
 export function giverScore(s: GameState): number {
-  return GIVER_BASE - s.hintCount - (s.endedEarly ? END_TURN_PENALTY : 0)
+  return GIVER_BASE - s.bank.length - (s.endedEarly ? END_TURN_PENALTY : 0)
 }
 
 export function guesserScore(s: GameState, playerId: string): number {

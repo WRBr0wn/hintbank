@@ -50,15 +50,15 @@ describe('4-player rotation', () => {
       const giverId = players[session.giverPosition]
       const guessers = players.filter((p) => p !== giverId)
       const game = playAllLanded(giverId, guessers, players)
-      expect(giverScore(game)).toBe(15) // 25 - 10 hints
+      expect(giverScore(game)).toBe(24) // 25 - 1 bank entry (one word, no rerolls)
       expect(game.resolved).toBe(ANSWERS_PER_GAME)
       session = recordGame(session, gameScores(game))
       if (++safety > 10) throw new Error('rotation did not terminate')
     }
 
     expect(session.completedRotations).toBe(1)
-    // 4 givers * 15 + 4 games * 10 guesser points = 100, books balanced.
-    expect(Object.values(session.totals).reduce((s, n) => s + n, 0)).toBe(100)
+    // 4 givers * 24 + 4 games * 10 guesser points = 136, books balanced.
+    expect(Object.values(session.totals).reduce((s, n) => s + n, 0)).toBe(136)
 
     const next = continueSession(session)
     expect(next.giverPosition).toBe(0)
@@ -67,14 +67,14 @@ describe('4-player rotation', () => {
 })
 
 describe('40-cap boundary (words + rerolls)', () => {
-  it('locks add/reroll at 40, offers end turn, scores 25 - hints - 5', () => {
+  it('locks add/reroll at 40, offers end turn, scores 25 - bank - 5', () => {
     let g = createGame({ players: ['g', 'x'], giverId: 'g', deck: deck(60) })
     for (let i = 0; i < 20; i++) g = addWord(g, `w${i}`)
     for (let i = 0; i < 20; i++) {
       expect(canReroll(g)).toBe(true)
       g = reroll(g)
     }
-    expect(g.bank).toHaveLength(BANK_CAP)
+    expect(g.bank).toHaveLength(BANK_CAP) // 20 words + 20 markers
     expect(isBankFull(g)).toBe(true)
     expect(canReroll(g)).toBe(false)
     expect(canAddWord(g)).toBe(false)
@@ -86,7 +86,7 @@ describe('40-cap boundary (words + rerolls)', () => {
     }
     g = endTurn(g)
     expect(g.status).toBe('complete')
-    expect(giverScore(g)).toBe(25 - 3 - 5)
+    expect(giverScore(g)).toBe(25 - BANK_CAP - 5) // 25 - 40 - 5 = -20
   })
 })
 
@@ -101,7 +101,7 @@ describe('40 rerolls, zero words', () => {
     expect(canEndTurn(g)).toBe(true)
     expect(currentAnswer(g)).not.toBeNull()
     g = endTurn(g)
-    expect(giverScore(g)).toBe(25 - 0 - 5)
+    expect(giverScore(g)).toBe(25 - BANK_CAP - 5) // 40 markers each cost -1: 25 - 40 - 5 = -20
   })
 })
 

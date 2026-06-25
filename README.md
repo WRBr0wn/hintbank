@@ -18,7 +18,7 @@ One player is the **hint giver** and holds 10 secret answers, revealed one at a 
 4. Right answer → it's tagged with that player's name and the next answer is revealed. Nobody right → give another hint.
 5. After all 10 are resolved, scores are tallied.
 
-**Scoring:** the hint giver scores `25 − (hints given)`, so fewer hints = more points (it can go negative). Each guesser scores +1 for every answer they personally landed. The hint giver rotates so everyone gives once per **session**, and totals carry across the session.
+**Scoring:** the hint giver scores `25 − (Hint Bank entries)`, so a leaner bank = more points (it can go negative), and every reroll marker costs a point too. Each guesser scores +1 for every answer they personally landed. The hint giver rotates so everyone gives once per **session**, and totals carry across the session.
 
 **Stuck on an answer?** The giver can **reroll** it for a fresh random answer — but each reroll permanently burns one of the 40 Hint Bank slots, so it eats into your own vocabulary. Once the bank is full, the giver can **end the turn** (forfeiting the rest) for a points penalty.
 
@@ -27,6 +27,10 @@ One player is the **hint giver** and holds 10 secret answers, revealed one at a 
 - **React + Vite + TypeScript**, plain CSS Modules.
 - Pokémon data is bundled at build time from the PokéAPI GitHub mirror (see `scripts/`).
 - Static build, deployed via GitHub Pages.
+
+## Development
+
+Run `npm install` first on a fresh checkout (`node_modules` isn't committed), then `npm test -- --run` for the engine tests, or `npm run dev` to play locally.
 
 ## Roadmap (high level)
 
