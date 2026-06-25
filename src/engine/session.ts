@@ -38,8 +38,8 @@ export function startOver(s: SessionState): SessionState {
   return { ...s, totals, hinterPosition: 0, completedRotations: 0 }
 }
 
-// Players tied for the highest total. At session start everyone is on zero, so
-// everyone counts as a leader.
+// Players tied for the highest total. Everyone starts at zero, so a fresh session
+// ties all players.
 export function leaders(s: SessionState): string[] {
   let best = -Infinity
   for (const p of s.players) {

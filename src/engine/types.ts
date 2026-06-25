@@ -38,8 +38,8 @@ export interface GameResult {
 export interface GameState {
   players: string[]
   hinterId: string
-  // The caller shuffles this; the engine just draws from the front. cursor marks
-  // the current answer, which keeps randomness out of the pure core.
+  // Caller shuffles this; engine draws from the front. cursor marks the current
+  // answer, which keeps randomness out of the pure engine.
   deck: Answer[]
   cursor: number
   resolved: number

@@ -80,8 +80,8 @@ export default function HinterPlay({ game, roster, mode, onChange }: Props) {
   }
 
   function handleCorrect(pid: string) {
-    // In randomizer mode the host types the answer; in deck modes the engine
-    // reads it from the deck, so we leave answer undefined.
+    // Randomizer: host types the answer. Deck modes: engine reads it from the
+    // deck, so answer stays undefined.
     const typed = landed.trim()
     if (randomizer && !typed) return
     onChange(

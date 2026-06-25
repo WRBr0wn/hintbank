@@ -1,5 +1,5 @@
-// End-to-end walk of the loop through the spots most likely to break: a full
-// rotation, and the reroll / 40-cap / end-turn boundaries.
+// End-to-end coverage: a full rotation plus the reroll, 40-cap, and end-turn
+// boundaries.
 import { describe, expect, it } from 'vitest'
 import {
   ANSWERS_PER_GAME,

@@ -46,7 +46,6 @@ export const isBankFull = (s: GameState): boolean => s.bank.length >= BANK_CAP
 export const currentAnswer = (s: GameState): Answer | null =>
   s.status === 'playing' ? (s.deck[s.cursor] ?? null) : null
 
-// Slots the hinter can actually pick for a hint: words only, never markers.
 export const usableWords = (s: GameState): number[] =>
   s.bank.flatMap((entry, i) => (entry.kind === 'word' ? [i] : []))
 
@@ -85,8 +84,8 @@ interface Resolution {
   correctGuesserId?: string
   // Extra guesses per player in this one hint (beyond their first), each -1.
   overguesses?: Record<string, number>
-  // Host modes have no deck, so the host types the answer that just landed and
-  // we store it on the result. Omit it in deck modes to read from the deck.
+  // Host modes have no deck. The host types the answer that just landed; it is
+  // stored on the result. Omitted in deck modes, where the answer comes from the deck.
   answer?: string
 }
 
@@ -133,8 +132,8 @@ export function resolveHint(s: GameState, outcome: Resolution = {}): GameState {
 export function reroll(s: GameState): GameState {
   if (!canReroll(s)) throw new Error('cannot reroll: bank is full or a hint is awaiting resolution')
   const marker = { kind: 'reroll' as const }
-  // Host modes have no deck. The hinter rerolls against their own source, so we
-  // just drop the marker (which costs the slot, same -1) and leave the cursor be.
+  // Host modes have no deck. The hinter rerolls against their own source, so this
+  // only drops the marker (still costs the slot, same -1) and leaves the cursor be.
   if (s.deck.length === 0) {
     return { ...s, bank: [...s.bank, marker] }
   }

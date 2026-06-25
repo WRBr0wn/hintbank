@@ -15,8 +15,8 @@ However you play, the app is the board, the rulekeeper, and the scoreboard. Hint
 Pick a mode at setup. It locks for the session.
 
 - **In Person: One Device** - the group is in the same room and the hinter holds the phone or tablet. They see the secret answer right on screen.
-- **Online: One Device** - built for simple Discord screen-share. The app still deals the answers on the main screen, but the secret one stays covered until the hinter presses and holds to peek.
-- **Online: One Device + Randomizer** - the most faithful to the original video. The shared screen is a fully public board (Hint Bank, results, scores), the hinter pulls answers from somewhere private, and types each one in once it's guessed. Nothing secret ever touches the broadcast. A built-in [randomizer page](https://wrbr0wn.github.io/hintbank/randomizer/) can draw Pokémon for the hinter in a separate tab.
+- **Online: One Device** - built for simple, all included Discord screen-share. The app still deals the answers on the main screen, but the secret one stays covered until the hinter presses and holds to peek.
+- **Online: One Device + Randomizer** - the most faithful to the original video. The shared screen is a fully public board (Hint Bank, results, scores), the hinter pulls answers from somewhere private, and types each one in once it's guessed. Nothing secret ever touches the broadcast. A built-in [randomizer page](https://wrbr0wn.github.io/hintbank/randomizer/) can draw Pokémon for the hinter in a separate tab or different device.
 
 Online multiplayer (one device per player) is on the roadmap.
 
@@ -40,6 +40,7 @@ The hinter rotates so everyone hints once per **session**, and totals carry acro
 ## Tech
 
 - **React + Vite + TypeScript**, plain CSS Modules, no backend.
+- Light and dark themes, following your system setting by default and remembering your choice after that. The toggle works on every screen, including the randomizer.
 - The rules live in a small, self-contained engine (`src/engine/`) that's category-agnostic for future editions.
 - Pokémon names and sprites are bundled at build time from the PokéAPI GitHub mirror (see `scripts/`).
 - Static build, deployed via GitHub Pages.

@@ -1,7 +1,7 @@
 // Downloads the small front sprite for every National Dex entry from the PokeAPI
 // sprites mirror into public/sprites/<dex>.png, and records the local path on
-// each entry in pokemon.json. We bundle static assets at build time and never
-// hotlink them at runtime. Re-runnable: files already present are skipped, so a
+// each entry in pokemon.json. Static assets are bundled at build time, never
+// hotlinked at runtime. Re-runnable: files already present are skipped, so a
 // second run only fetches what's missing.
 
 import { readFile, writeFile, mkdir, access } from 'node:fs/promises'

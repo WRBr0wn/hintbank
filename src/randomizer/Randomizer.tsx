@@ -12,7 +12,7 @@ const base = import.meta.env.BASE_URL
 const spriteUrl = (e: Entry) => (e.sprite ? `${base}${e.sprite}` : undefined)
 
 // Copied from HinterPlay instead of imported, to keep this page decoupled from
-// the game app. PokeAPI identifiers are lowercase and hyphenated.
+// the game app.
 function pretty(name: string): string {
   return name
     .split('-')
@@ -20,7 +20,6 @@ function pretty(name: string): string {
     .join(' ')
 }
 
-// One turn is 10 answers, same as the game, so the hinter draws up to 10.
 const TURN_SIZE = 10
 
 export default function Randomizer() {
@@ -40,9 +39,7 @@ export default function Randomizer() {
 
   function reroll() {
     if (list.length === 0) return
-    // Swap the current draw for a different one, like the game's reroll. The
-    // count stays the same; only the latest Pokemon changes. Excluding every
-    // drawn entry keeps it off the new pick, so it never repeats the old one.
+    // Swap the current draw for a different one, like the game's reroll.
     const drawn = new Set(list.map((e) => e.dexNumber))
     const pool = DEX.filter((e) => !drawn.has(e.dexNumber))
     if (pool.length === 0) return
