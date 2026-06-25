@@ -8,15 +8,25 @@ Hint Bank is a **general party game that ships as editions.** This release is th
 
 One player is the **hinter** and holds 10 secret answers, revealed to them one at a time. They have to get everyone else to guess each answer, but they can only give hints using words from a **Hint Bank** capped at **40 words** for their whole turn. Words in the **Hint Bank** can be used as many times as the **Hinter** would like, even reusing the same hint to get the other players to try again.
 
-This is the **one-device** version: the group plays in person, the hinter holds the phone or tablet, and hints and guesses happen out loud. The app is the board, the rulekeeper, and the scoreboard.
+However you play, the app is the board, the rulekeeper, and the scoreboard. Hints and guesses happen out loud; the app tracks the Hint Bank, the score, and whose turn it is.
+
+## Ways to play
+
+Pick a mode at setup. It locks for the session.
+
+- **In Person: One Device** - the group is in the same room and the hinter holds the phone or tablet. They see the secret answer right on screen.
+- **Online: One Device** - built for Discord screen-share. The app still deals the answers, but the secret one stays covered until the hinter presses and holds to peek, so it never lands on the stream.
+- **Online: One Device + Randomizer** - the most faithful to the original video. The shared screen is a fully public board (Hint Bank, results, scores), the hinter pulls answers from somewhere private, and types each one in once it's guessed. Nothing secret ever touches the broadcast. A built-in [randomizer page](#) can draw Pokémon for the hinter in a separate tab.
+
+Online multiplayer (one device per player) is on the roadmap.
 
 ## How a game flows
 
-1. The hinter sees the current secret answer (1 of 10).
+1. The hinter knows the current secret answer (1 of 10) — shown on screen, or held privately, depending on the mode.
 2. They give a **hint**: any selection of one or more words from the Hint Bank, adding any number of new words first if there's room.
 3. Every other player gets **one guess**, out loud.
-4. Someone's right → the answer is tagged with that player and the next one is revealed. Nobody's right → the hinter gives another hint.
-5. After all 10 are resolved, scores are tallied and the device passes to the next hinter.
+4. Someone's right → the answer is tagged with that player and the next one comes up. Nobody's right → the hinter gives another hint.
+5. After all 10 are resolved, scores are tallied and the turn passes to the next hinter.
 
 **Stuck on an answer?** The hinter can **reroll** it for a fresh random one, but each reroll permanently burns one of the 40 Hint Bank slots. Once the bank is full, the hinter can **end the turn**, forfeiting the rest for a points penalty.
 
@@ -44,7 +54,7 @@ Run `npm install` first on a fresh checkout, then:
 
 ## Roadmap
 
-This release is the in-person, one-device game. Beyond it: a shared-screen mode (a TV shows the public board while the hinter uses a private phone), pass-and-play, and full per-device online multiplayer — plus more Pokémon-Edition categories and future editions behind the same engine.
+Three modes are live now: In Person, Online: One Device, and Online + Randomizer. Still ahead: full per-device online multiplayer (one screen per player, no passing), more Pokémon-Edition categories (items, gym leaders, towns, badges, professors), and future editions behind the same engine.
 
 ## Credit
 
