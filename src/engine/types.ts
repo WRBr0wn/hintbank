@@ -21,6 +21,15 @@ export type BankEntry =
 export type GamePhase = 'hinting' | 'resolving'
 export type GameStatus = 'playing' | 'complete'
 
+// The play mode, picked at setup and locked for the session. The engine never
+// branches on it. It only records how answers are sourced (a dealt deck versus a
+// host typing them) so the screens know what to show.
+export type GameMode =
+  | 'in-person'
+  | 'online-one-device'
+  | 'online-randomizer'
+  | 'online-multiplayer'
+
 export interface GameResult {
   answer: Answer
   guesserId: string
@@ -47,6 +56,8 @@ export interface GameState {
 export interface SessionState {
   players: string[]
   totals: Record<string, number>
+  // Locked for the whole session. Set once at createSession.
+  mode: GameMode
   // Index into players for the current hinter. Reaches players.length once
   // everyone has hinted this rotation.
   hinterPosition: number

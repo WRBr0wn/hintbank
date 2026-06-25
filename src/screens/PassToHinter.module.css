@@ -56,6 +56,23 @@
   background: #ffd95a;
 }
 
+/* Small button under the start button. Centered like the rest of this screen,
+   and styled to match the same link on the play board and setup. */
+.randomizerLink {
+  padding: 0.45rem 0.8rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #e0e0e0;
+  background: #2a2a4a;
+  border: 1px solid #3a3a5c;
+  border-radius: 0.6rem;
+  text-decoration: none;
+}
+
+.randomizerLink:hover {
+  border-color: #f5c542;
+}
+
 /* Scale the gate up on large screens — additive, min-width gated, so smaller
    viewports are unchanged. */
 @media (min-width: 1200px) {

@@ -10,14 +10,18 @@ import {
 interface NewGame {
   players: string[]
   hinterId: string
-  deck: Answer[]
+  // Deck modes pass a shuffled deck. Host-driven modes pass nothing: the host
+  // supplies each answer instead, so the game runs with an empty deck.
+  deck?: Answer[]
 }
 
-export function createGame({ players, hinterId, deck }: NewGame): GameState {
+export function createGame({ players, hinterId, deck = [] }: NewGame): GameState {
   if (!players.includes(hinterId)) {
     throw new Error('hinter must be one of the players')
   }
-  if (deck.length < ANSWERS_PER_GAME) {
+  // A dealt deck needs enough cards to land 10 answers even after a bank's worth
+  // of rerolls. An empty deck means a host mode, where there is nothing to draw.
+  if (deck.length > 0 && deck.length < ANSWERS_PER_GAME) {
     throw new Error(`deck needs at least ${ANSWERS_PER_GAME} answers`)
   }
   return {
@@ -81,6 +85,9 @@ interface Resolution {
   correctGuesserId?: string
   // Extra guesses per player in this one hint (beyond their first), each -1.
   overguesses?: Record<string, number>
+  // Host modes have no deck, so the host types the answer that just landed and
+  // we store it on the result. Omit it in deck modes to read from the deck.
+  answer?: string
 }
 
 export function resolveHint(s: GameState, outcome: Resolution = {}): GameState {
@@ -105,7 +112,7 @@ export function resolveHint(s: GameState, outcome: Resolution = {}): GameState {
   if (correctGuesserId === s.hinterId) throw new Error('the hinter cannot guess')
   if (!s.players.includes(correctGuesserId)) throw new Error('unknown guesser')
 
-  const answer = s.deck[s.cursor]
+  const answer = outcome.answer ?? s.deck[s.cursor]
   const resolved = s.resolved + 1
   const done = resolved >= ANSWERS_PER_GAME
   return {
@@ -125,9 +132,15 @@ export function resolveHint(s: GameState, outcome: Resolution = {}): GameState {
 
 export function reroll(s: GameState): GameState {
   if (!canReroll(s)) throw new Error('cannot reroll: bank is full or a hint is awaiting resolution')
+  const marker = { kind: 'reroll' as const }
+  // Host modes have no deck. The hinter rerolls against their own source, so we
+  // just drop the marker (which costs the slot, same -1) and leave the cursor be.
+  if (s.deck.length === 0) {
+    return { ...s, bank: [...s.bank, marker] }
+  }
   const next = s.cursor + 1
   if (next >= s.deck.length) throw new Error('deck exhausted; cannot reroll')
-  return { ...s, bank: [...s.bank, { kind: 'reroll' }], cursor: next }
+  return { ...s, bank: [...s.bank, marker], cursor: next }
 }
 
 export function endTurn(s: GameState): GameState {

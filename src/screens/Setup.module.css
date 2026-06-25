@@ -207,6 +207,25 @@
   color: #9a9ab0;
 }
 
+/* Small button for the optional draw tool. Matches the play board and pass
+   screen so the randomizer link looks the same wherever it shows up. */
+.randomizerLink {
+  align-self: flex-start;
+  margin-top: 0.4rem;
+  padding: 0.45rem 0.8rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #e0e0e0;
+  background: #2a2a4a;
+  border: 1px solid #3a3a5c;
+  border-radius: 0.6rem;
+  text-decoration: none;
+}
+
+.randomizerLink:hover {
+  border-color: #f5c542;
+}
+
 .footer {
   display: flex;
   flex-direction: column;

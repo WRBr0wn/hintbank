@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import Avatar from '../components/Avatar'
-import { ANSWERS_PER_GAME } from '../engine'
+import { ANSWERS_PER_GAME, type GameMode } from '../engine'
 import type { Player, PlayerAvatar } from '../types'
 import styles from './Setup.module.css'
 
@@ -40,6 +40,16 @@ const AVATARS: PlayerAvatar[] = [...EMOJI, ...CREATORS, ...POKEMON]
 
 const avatarKey = (a: PlayerAvatar) => (a.kind === 'emoji' ? a.value : a.src)
 
+// Single-select. Multiplayer ships later and shows as "soon". The online modes
+// keep the answer off a shared screen: one-device hides it behind hold-to-reveal,
+// randomizer is the host-driven board. In-person is the original private game.
+const MODES: { id: GameMode; label: string; ready: boolean }[] = [
+  { id: 'in-person', label: 'In Person: One Device', ready: true },
+  { id: 'online-one-device', label: 'Online: One Device', ready: true },
+  { id: 'online-randomizer', label: 'Online: One Device + Randomizer', ready: true },
+  { id: 'online-multiplayer', label: 'Online: Multiplayer', ready: false },
+]
+
 const CATEGORIES = [
   { id: 'pokemon', label: 'Pokémon', ready: true },
   { id: 'items', label: 'Items', ready: false },
@@ -57,13 +67,14 @@ function makePlayer(used: string[]): Player {
   return { id: crypto.randomUUID(), name: '', avatar }
 }
 
-export default function Setup({ onStart }: { onStart: (players: Player[]) => void }) {
+export default function Setup({ onStart }: { onStart: (players: Player[], mode: GameMode) => void }) {
   const [players, setPlayers] = useState<Player[]>(() => [
     makePlayer([]),
     makePlayer([avatarKey(AVATARS[0])]),
   ])
   const [pickerFor, setPickerFor] = useState<string | null>(null)
   const [selected, setSelected] = useState<Set<string>>(() => new Set(['pokemon']))
+  const [mode, setMode] = useState<GameMode>('in-person')
 
   function update(id: string, patch: Partial<Player>) {
     setPlayers((ps) => ps.map((p) => (p.id === id ? { ...p, ...patch } : p)))
@@ -103,11 +114,48 @@ export default function Setup({ onStart }: { onStart: (players: Player[]) => voi
 
   function start() {
     if (!ready) return
-    onStart(players.map((p) => ({ ...p, name: p.name.trim() })))
+    onStart(players.map((p) => ({ ...p, name: p.name.trim() })), mode)
   }
 
   return (
     <div className={styles.setup}>
+      <section className={styles.section}>
+        <div className={styles.sectionHead}>
+          <h2>Mode</h2>
+        </div>
+        <div className={styles.categories}>
+          {MODES.map((m) => {
+            const on = mode === m.id
+            const cls = !m.ready ? styles.catSoon : on ? styles.catOn : styles.cat
+            return (
+              <button
+                key={m.id}
+                type="button"
+                className={cls}
+                disabled={!m.ready}
+                aria-pressed={on}
+                onClick={() => m.ready && setMode(m.id)}
+              >
+                {m.label}
+                {!m.ready && <span className={styles.soon}>soon</span>}
+              </button>
+            )
+          })}
+        </div>
+        {mode === 'online-randomizer' && (
+          // The hinter opens this private tool to draw answers. It lives on its
+          // own page, so a plain new-tab link is all that is needed.
+          <a
+            href={`${import.meta.env.BASE_URL}randomizer/`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.randomizerLink}
+          >
+            Open randomizer
+          </a>
+        )}
+      </section>
+
       <section className={styles.section}>
         <div className={styles.sectionHead}>
           <h2>Players</h2>

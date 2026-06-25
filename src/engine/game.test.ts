@@ -199,3 +199,34 @@ describe('deck headroom', () => {
     expect(s.results.every((r) => r.answer !== undefined)).toBe(true)
   })
 })
+
+describe('host-supplied answers', () => {
+  it('stores the host-typed answer on the result when one is given', () => {
+    let s = createGame({ players: ['g', 'b'], hinterId: 'g', deck: [] })
+    s = addWord(s, 'shadow')
+    s = giveHint(s, [0])
+    s = resolveHint(s, { correctGuesserId: 'b', answer: 'gengar' })
+    expect(s.results).toEqual([{ answer: 'gengar', guesserId: 'b' }])
+    expect(s.resolved).toBe(1)
+    expect(s.correctGuesses.b).toBe(1)
+  })
+
+  it('falls back to the deck answer when none is supplied', () => {
+    let s = addWord(start(), 'fire')
+    const landed = currentAnswer(s)
+    s = giveHint(s, [0])
+    s = resolveHint(s, { correctGuesserId: 'b' })
+    expect(s.results).toEqual([{ answer: landed, guesserId: 'b' }])
+  })
+})
+
+describe('reroll without a deck', () => {
+  it('drops a marker and costs a slot with no deck to draw from', () => {
+    let s = createGame({ players: ['g', 'b'], hinterId: 'g', deck: [] })
+    expect(hinterScore(s)).toBe(25) // empty bank
+    s = reroll(s)
+    expect(s.bank).toEqual([{ kind: 'reroll' }])
+    expect(s.cursor).toBe(0) // no deck draw, cursor stays put
+    expect(hinterScore(s)).toBe(24) // the marker still costs one slot
+  })
+})

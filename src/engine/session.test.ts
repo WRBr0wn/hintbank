@@ -63,6 +63,21 @@ describe('session totals', () => {
   })
 })
 
+describe('mode', () => {
+  it('defaults to in-person and keeps the mode through a rotation', () => {
+    let s = createSession(['a', 'b'])
+    expect(s.mode).toBe('in-person')
+    s = recordGame(s, { a: 5 })
+    expect(s.mode).toBe('in-person')
+  })
+
+  it('locks the chosen mode for the session', () => {
+    const s = createSession(['a', 'b'], 'online-randomizer')
+    expect(s.mode).toBe('online-randomizer')
+    expect(continueSession(recordGame(recordGame(s, { a: 1 }), { b: 1 })).mode).toBe('online-randomizer')
+  })
+})
+
 describe('leaders', () => {
   it('returns the player with the highest total', () => {
     let s = createSession(['a', 'b', 'c'])
