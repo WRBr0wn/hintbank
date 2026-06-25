@@ -7,7 +7,7 @@
 .header {
   padding: 2rem;
   text-align: center;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid var(--divider);
 }
 
 .header h1 {
@@ -19,7 +19,7 @@
 .edition {
   margin-top: 0.25rem;
   font-size: 0.9rem;
-  color: #888;
+  color: var(--text-soft);
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }

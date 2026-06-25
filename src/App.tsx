@@ -5,6 +5,7 @@ import HinterPlay from './screens/HinterPlay'
 import GameSummary from './screens/GameSummary'
 import Leaderboard from './screens/Leaderboard'
 import ScoreBar from './components/ScoreBar'
+import ThemeToggle from './components/ThemeToggle'
 import {
   continueSession,
   createGame,
@@ -84,6 +85,7 @@ export default function App() {
 
   return (
     <div className={styles.app}>
+      <ThemeToggle />
       <header className={styles.header}>
         <h1>Hint Bank</h1>
         <p className={styles.edition}>Pokémon Edition</p>

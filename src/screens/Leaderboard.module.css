@@ -13,7 +13,7 @@
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #9a9ab0;
+  color: var(--text-muted);
 }
 
 .title {
@@ -38,16 +38,16 @@
   gap: 0.6rem;
   padding: 0.75rem 0.9rem;
   border-radius: 0.7rem;
-  border: 1px solid #3a3a5c;
+  border: 1px solid var(--border);
 }
 
 .row {
-  background: #232342;
+  background: var(--surface);
 }
 
 .leader {
-  background: #2c2a16;
-  border-color: #f5c542;
+  background: var(--accent-tint);
+  border-color: var(--accent);
 }
 
 .crown {
@@ -65,7 +65,7 @@
 .total {
   font-size: 1.2rem;
   font-weight: 700;
-  color: #f5c542;
+  color: var(--accent-ink);
 }
 
 .actions {
@@ -79,33 +79,33 @@
   padding: 0.95rem 1rem;
   font-size: 1.05rem;
   font-weight: 700;
-  color: #1a1a2e;
-  background: #f5c542;
+  color: var(--on-accent);
+  background: var(--accent);
   border: none;
   border-radius: 0.8rem;
   cursor: pointer;
 }
 
 .continue:hover {
-  background: #ffd95a;
+  background: var(--accent-hover);
 }
 
 .startOver {
   padding: 0.8rem 1rem;
   font-size: 0.95rem;
-  color: #c9c9dd;
+  color: var(--text-2);
   background: transparent;
-  border: 1px solid #3a3a5c;
+  border: 1px solid var(--border);
   border-radius: 0.8rem;
   cursor: pointer;
 }
 
 .startOver:hover {
-  border-color: #9a9ab0;
-  color: #e0e0e0;
+  border-color: var(--text-muted);
+  color: var(--text);
 }
 
-/* Scale up on large screens — additive, min-width gated. */
+/* Scale up on large screens â€” additive, min-width gated. */
 @media (min-width: 1200px) {
   .board {
     max-width: 600px;

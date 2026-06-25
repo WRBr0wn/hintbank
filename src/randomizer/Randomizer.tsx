@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import pokemon from '../data/pokemon.json'
+import ThemeToggle from '../components/ThemeToggle'
 import styles from './Randomizer.module.css'
 
 // The only thing shared with the game is this read-only Pokedex. Everything else
@@ -55,6 +56,7 @@ export default function Randomizer() {
 
   return (
     <div className={styles.page}>
+      <ThemeToggle />
       <header className={styles.header}>
         <h1>Hint Bank</h1>
         <p className={styles.kicker}>Randomizer</p>

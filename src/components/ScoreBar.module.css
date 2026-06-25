@@ -3,8 +3,8 @@
   gap: 0.5rem;
   align-items: stretch;
   padding: 0.6rem 1rem;
-  border-top: 1px solid #3a3a5c;
-  background: #1d1d36;
+  border-top: 1px solid var(--border);
+  background: var(--surface-sunken);
   overflow-x: auto;
 }
 
@@ -16,13 +16,13 @@
   gap: 0.5rem;
   padding: 0.4rem 0.7rem;
   border-radius: 0.6rem;
-  border: 1px solid #3a3a5c;
-  background: #232342;
+  border: 1px solid var(--border);
+  background: var(--surface);
 }
 
 .hinter {
-  border-color: #f5c542;
-  background: #2c2a16;
+  border-color: var(--accent);
+  background: var(--accent-tint);
 }
 
 .avatar {
@@ -41,7 +41,7 @@
   align-items: center;
   gap: 0.35rem;
   font-size: 0.85rem;
-  color: #c9c9dd;
+  color: var(--text-2);
   white-space: nowrap;
 }
 
@@ -50,8 +50,8 @@
   text-transform: uppercase;
   letter-spacing: 0.06em;
   font-weight: 700;
-  color: #1a1a2e;
-  background: #f5c542;
+  color: var(--on-accent);
+  background: var(--accent);
   border-radius: 0.3rem;
   padding: 0.05rem 0.3rem;
 }
@@ -59,15 +59,15 @@
 .total {
   font-size: 1.05rem;
   font-weight: 700;
-  color: #f5c542;
+  color: var(--accent-ink);
 }
 
 .pending {
-  color: #9a9ab0;
+  color: var(--text-muted);
   font-weight: 600;
 }
 
-/* Scale the strip up on large screens — additive, min-width gated. */
+/* Scale the strip up on large screens â€” additive, min-width gated. */
 @media (min-width: 1200px) {
   .bar {
     padding: 0.75rem 1.25rem;
