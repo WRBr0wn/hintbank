@@ -10,7 +10,7 @@
    Omitted for bare sprites, which float on a transparent box like an emoji. */
 .disc {
   border-radius: 50%;
-  background: #2a2a4a;
+  background: var(--surface-2);
 }
 
 .img {

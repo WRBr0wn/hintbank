@@ -21,14 +21,14 @@
 }
 
 .word {
-  color: #e0e0e0;
-  background: #2a2a4a;
-  border: 1px solid #3a3a5c;
+  color: var(--text);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
   cursor: pointer;
 }
 
 .word:hover:not(:disabled) {
-  border-color: #f5c542;
+  border-color: var(--accent);
 }
 
 .word:disabled {
@@ -37,58 +37,58 @@
 }
 
 .wordOn {
-  color: #1a1a2e;
+  color: var(--on-accent);
   font-weight: 600;
-  background: #f5c542;
-  border: 1px solid #f5c542;
+  background: var(--accent);
+  border: 1px solid var(--accent);
   cursor: pointer;
 }
 
 .marker {
-  color: #6a6a82;
+  color: var(--text-faint);
   background: repeating-linear-gradient(
     45deg,
-    #232342,
-    #232342 6px,
-    #262648 6px,
-    #262648 12px
+    var(--surface),
+    var(--surface) 6px,
+    var(--surface-stripe) 6px,
+    var(--surface-stripe) 12px
   );
-  border: 1px dashed #3a3a5c;
+  border: 1px dashed var(--border);
   font-size: 1.1rem;
 }
 
 .empty {
-  background: #20203c;
-  border: 1px solid #28284a;
+  background: var(--surface-empty);
+  border: 1px solid var(--surface-bar);
 }
 
-/* Slot-index bands map to the hinter's score: 25 − bank.length is healthy at the
+/* Slot-index bands map to the hinter's score: 25 âˆ’ bank.length is healthy at the
    start (green), escalates yellow -> orange -> red as it nears 0 at slot 25, and
    goes neutral grey for the negative-score slots beyond. Each tints the cell's
    left edge and washes the background so an empty slot still reads as its zone. */
 .bandGreen {
   border-left: 3px solid #4caf7d;
-  background: linear-gradient(90deg, rgba(76, 175, 125, 0.18), transparent 60%), #20203c;
+  background: linear-gradient(90deg, rgba(76, 175, 125, 0.18), transparent 60%), var(--surface-empty);
 }
 
 .bandYellow {
   border-left: 3px solid #d9c45a;
-  background: linear-gradient(90deg, rgba(217, 196, 90, 0.18), transparent 60%), #20203c;
+  background: linear-gradient(90deg, rgba(217, 196, 90, 0.18), transparent 60%), var(--surface-empty);
 }
 
 .bandOrange {
   border-left: 3px solid #e0913f;
-  background: linear-gradient(90deg, rgba(224, 145, 63, 0.2), transparent 60%), #20203c;
+  background: linear-gradient(90deg, rgba(224, 145, 63, 0.2), transparent 60%), var(--surface-empty);
 }
 
 .bandRed {
   border-left: 3px solid #e0556a;
-  background: linear-gradient(90deg, rgba(224, 85, 106, 0.2), transparent 60%), #20203c;
+  background: linear-gradient(90deg, rgba(224, 85, 106, 0.2), transparent 60%), var(--surface-empty);
 }
 
 .bandGrey {
   border-left: 3px solid #7a7a8c;
-  background: linear-gradient(90deg, rgba(122, 122, 140, 0.22), transparent 60%), #20203c;
+  background: linear-gradient(90deg, rgba(122, 122, 140, 0.22), transparent 60%), var(--surface-empty);
 }
 
 /* A selected word keeps the bank's signature highlight regardless of band. */
@@ -97,7 +97,7 @@
 .wordOn.bandOrange,
 .wordOn.bandRed,
 .wordOn.bandGrey {
-  background: #f5c542;
+  background: var(--accent);
 }
 
 /* On wide screens grow the cells themselves (bigger minmax floor) rather than

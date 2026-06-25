@@ -5,6 +5,16 @@
     <link rel="icon" type="image/svg+xml" href="/hintbank/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hint Bank</title>
+    <!-- Set the theme before paint so there is no dark/light flash on load. -->
+    <script>
+      try {
+        var t = localStorage.getItem('hintbank-theme')
+        if (t !== 'light' && t !== 'dark') {
+          t = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'
+        }
+        document.documentElement.dataset.theme = t
+      } catch (e) {}
+    </script>
   </head>
   <body>
     <div id="root"></div>
