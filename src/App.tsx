@@ -13,6 +13,7 @@ import {
   gameScores,
   isRotationComplete,
   recordGame,
+  type GameMode,
   type GameState,
   type SessionState,
 } from './engine'
@@ -45,15 +46,18 @@ export default function App() {
     return roster.find((p) => p.id === currentHinter(session)) ?? null
   }, [session, roster])
 
-  function handleStart(players: Player[]) {
+  function handleStart(players: Player[], mode: GameMode) {
     setRoster(players)
-    setSession(createSession(players.map((p) => p.id)))
+    setSession(createSession(players.map((p) => p.id), mode))
     setPhase('pass')
   }
 
   function reveal() {
-    if (!hinter) return
-    setGame(createGame({ players: roster.map((p) => p.id), hinterId: hinter.id, deck: buildDeck() }))
+    if (!hinter || !session) return
+    // Randomizer is host-driven with no dealt deck. The host supplies each answer,
+    // so the game runs deckless and nothing secret is ever put on the board.
+    const deck = session.mode === 'online-randomizer' ? [] : buildDeck()
+    setGame(createGame({ players: roster.map((p) => p.id), hinterId: hinter.id, deck }))
     setPhase('hinter')
   }
 
@@ -92,12 +96,13 @@ export default function App() {
             hinter={hinter}
             position={session.hinterPosition + 1}
             total={roster.length}
+            mode={session.mode}
             onReady={reveal}
           />
         )}
 
-        {phase === 'hinter' && game && game.status === 'playing' && (
-          <HinterPlay game={game} roster={roster} onChange={setGame} />
+        {phase === 'hinter' && game && session && game.status === 'playing' && (
+          <HinterPlay game={game} roster={roster} mode={session.mode} onChange={setGame} />
         )}
 
         {phase === 'hinter' && game && game.status === 'complete' && (

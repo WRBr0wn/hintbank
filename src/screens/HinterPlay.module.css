@@ -348,8 +348,13 @@
   background: #6fcf97;
 }
 
-.correct:hover {
+.correct:hover:not(:disabled) {
   background: #84e0aa;
+}
+
+.correct:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
 }
 
 /* Scale up on large screens. Purely additive above the existing layout — every

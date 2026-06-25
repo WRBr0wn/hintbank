@@ -1,10 +1,10 @@
-import type { SessionState } from './types'
+import type { GameMode, SessionState } from './types'
 
-export function createSession(players: string[]): SessionState {
+export function createSession(players: string[], mode: GameMode = 'in-person'): SessionState {
   if (players.length < 2) throw new Error('a session needs at least 2 players')
   const totals: Record<string, number> = {}
   for (const p of players) totals[p] = 0
-  return { players, totals, hinterPosition: 0, completedRotations: 0 }
+  return { players, totals, mode, hinterPosition: 0, completedRotations: 0 }
 }
 
 export const currentHinter = (s: SessionState): string | null =>

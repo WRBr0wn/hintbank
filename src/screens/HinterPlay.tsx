@@ -14,6 +14,7 @@ import {
   isBankFull,
   resolveHint,
   reroll,
+  type GameMode,
   type GameState,
 } from '../engine'
 import type { Player } from '../types'
@@ -22,6 +23,7 @@ import styles from './HinterPlay.module.css'
 interface Props {
   game: GameState
   roster: Player[]
+  mode: GameMode
   onChange: (next: GameState) => void
 }
 
@@ -33,11 +35,15 @@ function pretty(name: string): string {
     .join(' ')
 }
 
-export default function HinterPlay({ game, roster, onChange }: Props) {
+export default function HinterPlay({ game, roster, mode, onChange }: Props) {
   const [selection, setSelection] = useState<number[]>([])
   const [draft, setDraft] = useState('')
   const [overguess, setOverguess] = useState<Record<string, number>>({})
+  const [landed, setLanded] = useState('')
 
+  // Randomizer is the host-driven board: no dealt deck, nothing secret on screen.
+  // The host types the answer that lands instead of the app revealing it.
+  const randomizer = mode === 'online-randomizer'
   const guessers = roster.filter((p) => p.id !== game.hinterId)
   const answer = currentAnswer(game)
   const full = isBankFull(game)
@@ -62,14 +68,26 @@ export default function HinterPlay({ game, roster, onChange }: Props) {
   }
 
   function handleCorrect(pid: string) {
-    onChange(resolveHint(game, { correctGuesserId: pid, overguesses: overguess }))
+    // In randomizer mode the host types the answer; in deck modes the engine
+    // reads it from the deck, so we leave answer undefined.
+    const typed = landed.trim()
+    if (randomizer && !typed) return
+    onChange(
+      resolveHint(game, {
+        correctGuesserId: pid,
+        overguesses: overguess,
+        answer: randomizer ? typed : undefined,
+      }),
+    )
     setOverguess({})
     setSelection([])
+    setLanded('')
   }
 
   function handleNoOne() {
     onChange(resolveHint(game, { overguesses: overguess }))
     setOverguess({})
+    setLanded('')
   }
 
   function handleReroll() {
@@ -94,10 +112,12 @@ export default function HinterPlay({ game, roster, onChange }: Props) {
         <div className={styles.barFill} style={{ width: `${(game.resolved / ANSWERS_PER_GAME) * 100}%` }} />
       </div>
 
-      <div className={styles.answer}>
-        <span className={styles.answerLabel}>Secret answer</span>
-        <span className={styles.answerName}>{answer ? pretty(answer) : ''}</span>
-      </div>
+      {!randomizer && (
+        <div className={styles.answer}>
+          <span className={styles.answerLabel}>Secret answer</span>
+          <span className={styles.answerName}>{answer ? pretty(answer) : ''}</span>
+        </div>
+      )}
 
       <section className={styles.bankSection}>
         <div className={styles.bankHead}>
@@ -146,7 +166,18 @@ export default function HinterPlay({ game, roster, onChange }: Props) {
         </div>
       ) : (
         <div className={styles.resolve}>
-          <p className={styles.resolvePrompt}>Who guessed it?</p>
+          <p className={styles.resolvePrompt}>
+            {randomizer ? 'Who landed it? Type the answer, then mark them correct.' : 'Who guessed it?'}
+          </p>
+          {randomizer && (
+            <input
+              className={styles.addInput}
+              value={landed}
+              maxLength={32}
+              placeholder="Answer that just landed"
+              onChange={(e) => setLanded(e.target.value)}
+            />
+          )}
           <ul className={styles.guessers}>
             {guessers.map((p) => (
               <li key={p.id} className={styles.guesser}>
@@ -163,7 +194,12 @@ export default function HinterPlay({ game, roster, onChange }: Props) {
                   >
                     Guessed x2 (−1)
                   </button>
-                  <button type="button" className={styles.correct} onClick={() => handleCorrect(p.id)}>
+                  <button
+                    type="button"
+                    className={styles.correct}
+                    onClick={() => handleCorrect(p.id)}
+                    disabled={randomizer && landed.trim() === ''}
+                  >
                     Correct
                   </button>
                 </span>
