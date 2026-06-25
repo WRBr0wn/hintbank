@@ -1,0 +1,23 @@
+.img {
+  flex: 0 0 auto;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #2a2a4a;
+}
+
+/* Fill mode: the parent container sets the dimensions. */
+.fill {
+  width: 100%;
+  height: 100%;
+}
+
+.emoji {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  vertical-align: middle;
+}

@@ -1,3 +1,4 @@
+import Avatar from '../components/Avatar'
 import type { Player } from '../types'
 import styles from './PassToHinter.module.css'
 
@@ -14,7 +15,9 @@ export default function PassToHinter({ hinter, position, total, onReady }: Props
       <p className={styles.kicker}>
         Hinter {position} of {total}
       </p>
-      <div className={styles.avatar}>{hinter.avatar}</div>
+      <div className={styles.avatar}>
+        <Avatar avatar={hinter.avatar} />
+      </div>
       <h2 className={styles.name}>Pass the device to {hinter.name}</h2>
       <p className={styles.warn}>Everyone else, look away, the answers are secret.</p>
       <button type="button" className={styles.reveal} onClick={onReady}>

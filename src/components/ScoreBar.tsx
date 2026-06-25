@@ -1,4 +1,5 @@
 import { guesserScore, type GameState } from '../engine'
+import Avatar from './Avatar'
 import type { Player } from '../types'
 import styles from './ScoreBar.module.css'
 
@@ -22,7 +23,9 @@ export default function ScoreBar({ roster, totals, hinterId, game }: Props) {
         const pending = isHinter && game !== null
         return (
           <div key={p.id} className={isHinter ? styles.hinter : styles.chip}>
-            <span className={styles.avatar}>{p.avatar}</span>
+            <span className={styles.avatar}>
+              <Avatar avatar={p.avatar} size={24} />
+            </span>
             <span className={styles.info}>
               <span className={styles.name}>
                 {p.name}

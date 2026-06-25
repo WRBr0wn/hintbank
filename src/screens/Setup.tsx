@@ -1,9 +1,25 @@
 import { useState } from 'react'
+import Avatar from '../components/Avatar'
 import { ANSWERS_PER_GAME } from '../engine'
-import type { Player } from '../types'
+import type { Player, PlayerAvatar } from '../types'
 import styles from './Setup.module.css'
 
-const AVATARS = ['🦊', '🐢', '🐉', '🦉', '🐱', '🐰', '🐼', '🐧', '🦄', '🐸', '🦁', '🐙']
+const base = import.meta.env.BASE_URL
+const EMOJI: PlayerAvatar[] = ['🦊', '🐢', '🐉', '🦉', '🐱', '🐰', '🐼', '🐧', '🦄', '🐸', '🦁', '🐙'].map(
+  (value) => ({ kind: 'emoji', value }),
+)
+const CREATORS: PlayerAvatar[] = [
+  { kind: 'image', src: `${base}avatars/zanegames.jpg`, label: 'ZaneGames' },
+  { kind: 'image', src: `${base}avatars/peebr.jpg`, label: 'Peebr' },
+  { kind: 'image', src: `${base}avatars/cush.jpg`, label: 'Cush' },
+  { kind: 'image', src: `${base}avatars/bailey.jpg`, label: 'Bailey' },
+  { kind: 'image', src: `${base}avatars/chrispiche.jpg`, label: 'Chris Piché' },
+  { kind: 'image', src: `${base}avatars/deliciousjames.jpg`, label: 'Delicious James' },
+  { kind: 'image', src: `${base}avatars/zenvolka.jpg`, label: 'ZenVolka' },
+]
+const AVATARS: PlayerAvatar[] = [...EMOJI, ...CREATORS]
+
+const avatarKey = (a: PlayerAvatar) => (a.kind === 'emoji' ? a.value : a.src)
 
 const CATEGORIES = [
   { id: 'pokemon', label: 'Pokémon', ready: true },
@@ -18,12 +34,15 @@ const MIN_PLAYERS = 2
 const MAX_PLAYERS = 8
 
 function makePlayer(used: string[]): Player {
-  const avatar = AVATARS.find((a) => !used.includes(a)) ?? AVATARS[0]
+  const avatar = AVATARS.find((a) => !used.includes(avatarKey(a))) ?? AVATARS[0]
   return { id: crypto.randomUUID(), name: '', avatar }
 }
 
 export default function Setup({ onStart }: { onStart: (players: Player[]) => void }) {
-  const [players, setPlayers] = useState<Player[]>(() => [makePlayer([]), makePlayer(['🦊'])])
+  const [players, setPlayers] = useState<Player[]>(() => [
+    makePlayer([]),
+    makePlayer([avatarKey(AVATARS[0])]),
+  ])
   const [pickerFor, setPickerFor] = useState<string | null>(null)
   const [selected, setSelected] = useState<Set<string>>(() => new Set(['pokemon']))
 
@@ -33,7 +52,7 @@ export default function Setup({ onStart }: { onStart: (players: Player[]) => voi
 
   function add() {
     if (players.length >= MAX_PLAYERS) return
-    setPlayers((ps) => [...ps, makePlayer(ps.map((p) => p.avatar))])
+    setPlayers((ps) => [...ps, makePlayer(ps.map((p) => avatarKey(p.avatar)))])
   }
 
   function remove(id: string) {
@@ -88,7 +107,7 @@ export default function Setup({ onStart }: { onStart: (players: Player[]) => voi
                   onClick={() => setPickerFor((cur) => (cur === p.id ? null : p.id))}
                   aria-label="Change avatar"
                 >
-                  {p.avatar}
+                  <Avatar avatar={p.avatar} size={30} />
                 </button>
                 <input
                   className={styles.name}
@@ -109,19 +128,23 @@ export default function Setup({ onStart }: { onStart: (players: Player[]) => voi
               </div>
               {pickerFor === p.id && (
                 <div className={styles.picker}>
-                  {AVATARS.map((a) => (
-                    <button
-                      key={a}
-                      type="button"
-                      className={a === p.avatar ? styles.pickActive : styles.pick}
-                      onClick={() => {
-                        update(p.id, { avatar: a })
-                        setPickerFor(null)
-                      }}
-                    >
-                      {a}
-                    </button>
-                  ))}
+                  {AVATARS.map((a) => {
+                    const key = avatarKey(a)
+                    return (
+                      <button
+                        key={key}
+                        type="button"
+                        className={avatarKey(p.avatar) === key ? styles.pickActive : styles.pick}
+                        title={a.kind === 'image' ? a.label : undefined}
+                        onClick={() => {
+                          update(p.id, { avatar: a })
+                          setPickerFor(null)
+                        }}
+                      >
+                        <Avatar avatar={a} size={28} />
+                      </button>
+                    )
+                  })}
                 </div>
               )}
             </li>

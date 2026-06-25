@@ -45,6 +45,9 @@
 
 .avatarBtn {
   flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 2.75rem;
   height: 2.75rem;
   font-size: 1.4rem;
@@ -110,6 +113,9 @@
 
 .pick,
 .pickActive {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 2.3rem;
   height: 2.3rem;
   font-size: 1.25rem;

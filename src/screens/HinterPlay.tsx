@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Avatar from '../components/Avatar'
 import BankGrid from '../components/BankGrid'
 import {
   ANSWERS_PER_GAME,
@@ -41,7 +42,7 @@ export default function HinterPlay({ game, roster, onChange }: Props) {
   const answer = currentAnswer(game)
   const full = isBankFull(game)
   const hinting = game.phase === 'hinting'
-  const avatarFor = (id: string) => roster.find((p) => p.id === id)?.avatar ?? '?'
+  const avatarFor = (id: string) => roster.find((p) => p.id === id)?.avatar
 
   function toggleWord(i: number) {
     setSelection((s) => (s.includes(i) ? s.filter((x) => x !== i) : [...s, i]))
@@ -150,7 +151,7 @@ export default function HinterPlay({ game, roster, onChange }: Props) {
             {guessers.map((p) => (
               <li key={p.id} className={styles.guesser}>
                 <span className={styles.guesserName}>
-                  {p.avatar} {p.name}
+                  <Avatar avatar={p.avatar} size={22} /> {p.name}
                   {overguess[p.id] ? <span className={styles.penalty}> −{overguess[p.id]}</span> : null}
                 </span>
                 <span className={styles.guesserBtns}>
@@ -181,11 +182,12 @@ export default function HinterPlay({ game, roster, onChange }: Props) {
         <ol className={styles.resultList}>
           {Array.from({ length: ANSWERS_PER_GAME }, (_, i) => {
             const result = game.results[i]
+            const winner = result ? avatarFor(result.guesserId) : undefined
             return (
               <li key={i} className={result ? styles.resultRow : styles.resultPending}>
                 <span className={styles.resultNum}>{i + 1}</span>
                 <span className={styles.resultName}>{result ? pretty(result.answer) : ''}</span>
-                <span className={styles.resultAvatar}>{result ? avatarFor(result.guesserId) : ''}</span>
+                <span className={styles.resultAvatar}>{winner && <Avatar avatar={winner} size={20} />}</span>
               </li>
             )
           })}

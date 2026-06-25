@@ -1,4 +1,5 @@
 import { leaders, type SessionState } from '../engine'
+import Avatar from '../components/Avatar'
 import type { Player } from '../types'
 import styles from './Leaderboard.module.css'
 
@@ -30,7 +31,9 @@ export default function Leaderboard({ session, roster, onContinue, onStartOver }
           return (
             <li key={p.id} className={isLeader ? styles.leader : styles.row}>
               <span className={styles.crown}>{isLeader ? '👑' : ''}</span>
-              <span className={styles.avatar}>{p.avatar}</span>
+              <span className={styles.avatar}>
+                <Avatar avatar={p.avatar} size={26} />
+              </span>
               <span className={styles.name}>{p.name}</span>
               <span className={styles.total}>{total}</span>
             </li>

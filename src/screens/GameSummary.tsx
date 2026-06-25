@@ -5,6 +5,7 @@ import {
   guesserScore,
   type GameState,
 } from '../engine'
+import Avatar from '../components/Avatar'
 import type { Player } from '../types'
 import styles from './GameSummary.module.css'
 
@@ -30,7 +31,7 @@ export default function GameSummary({ game, roster, onContinue }: Props) {
 
       <div className={styles.hinterCard}>
         <span className={styles.hinterName}>
-          {hinter?.avatar} {hinter?.name}
+          {hinter && <Avatar avatar={hinter.avatar} size={24} />} {hinter?.name}
         </span>
         <span className={styles.hinterScore}>{hinterScore(game)}</span>
         <span className={styles.breakdown}>{breakdown}</span>
@@ -43,7 +44,7 @@ export default function GameSummary({ game, roster, onContinue }: Props) {
           return (
             <li key={p.id} className={styles.guesser}>
               <span className={styles.gName}>
-                {p.avatar} {p.name}
+                <Avatar avatar={p.avatar} size={22} /> {p.name}
               </span>
               <span className={styles.gDetail}>
                 {correct} correct
