@@ -40,10 +40,22 @@ export default function HinterPlay({ game, roster, mode, onChange }: Props) {
   const [draft, setDraft] = useState('')
   const [overguess, setOverguess] = useState<Record<string, number>>({})
   const [landed, setLanded] = useState('')
+  const [revealed, setRevealed] = useState(false)
 
   // Randomizer is the host-driven board: no dealt deck, nothing secret on screen.
   // The host types the answer that lands instead of the app revealing it.
   const randomizer = mode === 'online-randomizer'
+
+  // How the dealt answer is shown. Three modes, three behaviors:
+  //  plain  in-person, always visible because the device is private
+  //  hold   online-one-device, covered until held so a shared screen stays safe
+  //  none   randomizer, no panel at all (the host supplies answers on resolve)
+  const answerPanel: 'plain' | 'hold' | 'none' = randomizer
+    ? 'none'
+    : mode === 'online-one-device'
+      ? 'hold'
+      : 'plain'
+
   const guessers = roster.filter((p) => p.id !== game.hinterId)
   const answer = currentAnswer(game)
   const full = isBankFull(game)
@@ -112,10 +124,30 @@ export default function HinterPlay({ game, roster, mode, onChange }: Props) {
         <div className={styles.barFill} style={{ width: `${(game.resolved / ANSWERS_PER_GAME) * 100}%` }} />
       </div>
 
-      {!randomizer && (
+      {answerPanel === 'plain' && (
         <div className={styles.answer}>
           <span className={styles.answerLabel}>Secret answer</span>
           <span className={styles.answerName}>{answer ? pretty(answer) : ''}</span>
+        </div>
+      )}
+
+      {answerPanel === 'hold' && (
+        // Pointer events cover mouse, touch, and pen. Leave and cancel re-cover
+        // the answer if the press slides off or is interrupted, so it can never
+        // stay stuck revealed. The answer text is only in the DOM while held.
+        <div
+          className={`${styles.answer} ${styles.holdPanel}`}
+          onPointerDown={() => setRevealed(true)}
+          onPointerUp={() => setRevealed(false)}
+          onPointerLeave={() => setRevealed(false)}
+          onPointerCancel={() => setRevealed(false)}
+        >
+          <span className={styles.answerLabel}>{revealed ? 'Secret answer' : 'Hidden'}</span>
+          {revealed ? (
+            <span className={styles.answerName}>{answer ? pretty(answer) : ''}</span>
+          ) : (
+            <span className={styles.holdHint}>Hold to reveal answer</span>
+          )}
         </div>
       )}
 

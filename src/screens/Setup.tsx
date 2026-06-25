@@ -40,11 +40,12 @@ const AVATARS: PlayerAvatar[] = [...EMOJI, ...CREATORS, ...POKEMON]
 
 const avatarKey = (a: PlayerAvatar) => (a.kind === 'emoji' ? a.value : a.src)
 
-// Single-select. Two modes ship later and show as "soon". Randomizer is the
-// host-driven board for screen shares; in-person is the original one-device game.
+// Single-select. Multiplayer ships later and shows as "soon". The online modes
+// keep the answer off a shared screen: one-device hides it behind hold-to-reveal,
+// randomizer is the host-driven board. In-person is the original private game.
 const MODES: { id: GameMode; label: string; ready: boolean }[] = [
   { id: 'in-person', label: 'In Person: One Device', ready: true },
-  { id: 'online-one-device', label: 'Online: One Device', ready: false },
+  { id: 'online-one-device', label: 'Online: One Device', ready: true },
   { id: 'online-randomizer', label: 'Online: One Device + Randomizer', ready: true },
   { id: 'online-multiplayer', label: 'Online: Multiplayer', ready: false },
 ]
