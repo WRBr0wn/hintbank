@@ -33,6 +33,10 @@ export default function HinterPlay({ game, roster, mode, onChange }: Props) {
   const [overguess, setOverguess] = useState<Record<string, number>>({})
   const [landed, setLanded] = useState('')
   const [revealed, setRevealed] = useState(false)
+  // The resolving phase starts collapsed to a Resolve Guess / Keep hinting choice.
+  // The player list and the -1 overguess controls stay hidden until the hinter
+  // opts into resolving, so the penalty is never telegraphed on a shared screen.
+  const [resolving, setResolving] = useState(false)
 
   // Randomizer is the host-driven board: no dealt deck, nothing secret on screen.
   // The host types the answer that lands instead of the app revealing it.
@@ -70,6 +74,7 @@ export default function HinterPlay({ game, roster, mode, onChange }: Props) {
     // Keep the selection lit through the resolving phase so the hint words stay
     // readable on a shared screen. It clears when the hint resolves below.
     onChange(giveHint(game, selection))
+    setResolving(false)
   }
 
   function handleCorrect(pid: string) {
@@ -87,6 +92,7 @@ export default function HinterPlay({ game, roster, mode, onChange }: Props) {
     setOverguess({})
     setSelection([])
     setLanded('')
+    setResolving(false)
   }
 
   function handleNoOne() {
@@ -94,6 +100,7 @@ export default function HinterPlay({ game, roster, mode, onChange }: Props) {
     setOverguess({})
     setSelection([])
     setLanded('')
+    setResolving(false)
   }
 
   function handleReroll() {
@@ -205,49 +212,69 @@ export default function HinterPlay({ game, roster, mode, onChange }: Props) {
         </div>
       ) : (
         <div className={styles.resolve}>
-          <p className={styles.resolvePrompt}>
-            {randomizer ? 'Who landed it? Type the answer, then mark them correct.' : 'Who guessed it?'}
-          </p>
-          {randomizer && (
-            <input
-              className={styles.addInput}
-              value={landed}
-              maxLength={32}
-              placeholder="Answer that just landed"
-              onChange={(e) => setLanded(e.target.value)}
-            />
+          {resolving ? (
+            <>
+              <p className={styles.resolvePrompt}>
+                {randomizer ? 'Who landed it? Type the answer, then mark them correct.' : 'Who guessed it?'}
+              </p>
+              {randomizer && (
+                <input
+                  className={styles.addInput}
+                  value={landed}
+                  maxLength={32}
+                  placeholder="Answer that just landed"
+                  onChange={(e) => setLanded(e.target.value)}
+                />
+              )}
+              <ul className={styles.guessers}>
+                {guessers.map((p) => (
+                  <li key={p.id} className={styles.guesser}>
+                    <span className={styles.guesserName}>
+                      <Avatar avatar={p.avatar} size={22} /> {p.name}
+                      {overguess[p.id] ? <span className={styles.penalty}> −{overguess[p.id]}</span> : null}
+                    </span>
+                    <span className={styles.guesserBtns}>
+                      <button
+                        type="button"
+                        className={styles.minus}
+                        onClick={() => setOverguess((o) => ({ ...o, [p.id]: (o[p.id] ?? 0) + 1 }))}
+                        aria-label={`Overguess for ${p.name}`}
+                      >
+                        Guessed x2 (−1)
+                      </button>
+                      <button
+                        type="button"
+                        className={styles.correct}
+                        onClick={() => handleCorrect(p.id)}
+                        disabled={randomizer && landed.trim() === ''}
+                      >
+                        Correct
+                      </button>
+                    </span>
+                  </li>
+                ))}
+              </ul>
+              <button type="button" className={styles.secondary} onClick={handleNoOne}>
+                Keep Hinting!
+              </button>
+            </>
+          ) : (
+            // Collapsed default: no player list, no -1 controls on the shared
+            // screen until the hinter chooses to resolve a guess.
+            <div className={styles.escapes}>
+              <button
+                type="button"
+                className={styles.primary}
+                style={{ flex: 1 }}
+                onClick={() => setResolving(true)}
+              >
+                Resolve Guess
+              </button>
+              <button type="button" className={styles.secondary} onClick={handleNoOne}>
+                Keep hinting
+              </button>
+            </div>
           )}
-          <ul className={styles.guessers}>
-            {guessers.map((p) => (
-              <li key={p.id} className={styles.guesser}>
-                <span className={styles.guesserName}>
-                  <Avatar avatar={p.avatar} size={22} /> {p.name}
-                  {overguess[p.id] ? <span className={styles.penalty}> −{overguess[p.id]}</span> : null}
-                </span>
-                <span className={styles.guesserBtns}>
-                  <button
-                    type="button"
-                    className={styles.minus}
-                    onClick={() => setOverguess((o) => ({ ...o, [p.id]: (o[p.id] ?? 0) + 1 }))}
-                    aria-label={`Overguess for ${p.name}`}
-                  >
-                    Guessed x2 (−1)
-                  </button>
-                  <button
-                    type="button"
-                    className={styles.correct}
-                    onClick={() => handleCorrect(p.id)}
-                    disabled={randomizer && landed.trim() === ''}
-                  >
-                    Correct
-                  </button>
-                </span>
-              </li>
-            ))}
-          </ul>
-          <button type="button" className={styles.secondary} onClick={handleNoOne}>
-            Keep Hinting!
-          </button>
         </div>
       )}
       </div>
