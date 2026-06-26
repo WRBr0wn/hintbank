@@ -87,11 +87,14 @@
 @media (max-width: 720px) {
   .play {
     flex-direction: column;
+    /* Stretch the stacked columns to full width. The base align-items is
+       flex-start for the desktop side-by-side layout, which would otherwise leave
+       .main at its content width while .results spans wide. */
+    align-items: stretch;
   }
 
   .results {
     flex: 1 1 auto;
-    width: 100%;
     position: static;
   }
 

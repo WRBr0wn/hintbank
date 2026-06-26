@@ -39,7 +39,7 @@ Badges and Professors are coming. In Randomizer mode, categories are picked on t
 2. They give a **hint**: any selection of one or more words from the Hint Bank, adding any number of new words first if there's room.
 3. Every other player gets **one guess**, out loud.
 4. Someone's right → the answer is tagged with that player and the next one comes up. Nobody's right → the hinter gives another hint.
-5. After all 10 are resolved, scores are tallied and the turn passes to the next hinter.
+5. After all 10 are resolved, the finished board stays up to review, then the turn passes to the next hinter.
 
 **Stuck on an answer?** The hinter can **reroll** it for a fresh random one, but each reroll permanently burns one of the 40 Hint Bank slots. Once the bank is full, the hinter can **end the turn**, forfeiting the rest. A full bank already scores `25 − 40 = −15`, so a stalled turn is its own penalty.
 
