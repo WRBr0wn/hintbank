@@ -85,10 +85,7 @@ export default function Randomizer() {
         <p className={styles.kicker}>Randomizer</p>
       </header>
 
-      <p className={styles.note}>
-        Private to the hinter. Pick categories, draw an answer, read it, and type it into the
-        game board when guessed.
-      </p>
+      <p className={styles.note}>Private to the hinter. Draw answers to hint from.</p>
 
       <div className={styles.categories}>
         {CATEGORIES.map((c) => {
