@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import Avatar from '../components/Avatar'
+import Footer from '../components/Footer'
 import { ANSWERS_PER_GAME, type GameMode } from '../engine'
+import { CATEGORIES } from '../data/categories'
 import type { Player, PlayerAvatar } from '../types'
 import styles from './Setup.module.css'
 
@@ -51,15 +53,6 @@ const MODES: { id: GameMode; label: string; ready: boolean }[] = [
   { id: 'online-multiplayer', label: 'Online: Multiplayer', ready: false },
 ]
 
-const CATEGORIES = [
-  { id: 'pokemon', label: 'Pokémon', ready: true },
-  { id: 'items', label: 'Items', ready: false },
-  { id: 'leaders', label: 'Gym Leaders', ready: false },
-  { id: 'towns', label: 'Towns', ready: false },
-  { id: 'badges', label: 'Badges', ready: false },
-  { id: 'professors', label: 'Professors', ready: false },
-]
-
 const MIN_PLAYERS = 2
 const MAX_PLAYERS = 8
 
@@ -68,7 +61,11 @@ function makePlayer(used: string[]): Player {
   return { id: crypto.randomUUID(), name: '', avatar }
 }
 
-export default function Setup({ onStart }: { onStart: (players: Player[], mode: GameMode) => void }) {
+export default function Setup({
+  onStart,
+}: {
+  onStart: (players: Player[], mode: GameMode, categoryIds: string[]) => void
+}) {
   const [players, setPlayers] = useState<Player[]>(() => [
     makePlayer([]),
     makePlayer([avatarKey(AVATARS[0])]),
@@ -115,7 +112,7 @@ export default function Setup({ onStart }: { onStart: (players: Player[], mode: 
 
   function start() {
     if (!ready) return
-    onStart(players.map((p) => ({ ...p, name: p.name.trim() })), mode)
+    onStart(players.map((p) => ({ ...p, name: p.name.trim() })), mode, [...selected])
   }
 
   return (
@@ -143,18 +140,6 @@ export default function Setup({ onStart }: { onStart: (players: Player[], mode: 
             )
           })}
         </div>
-        {mode === 'online-randomizer' && (
-          // The hinter opens this private tool to draw answers. It lives on its
-          // own page, so a plain new-tab link is all that is needed.
-          <a
-            href={`${import.meta.env.BASE_URL}randomizer/`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.randomizerLink}
-          >
-            Open randomizer
-          </a>
-        )}
       </section>
 
       <section className={styles.section}>
@@ -231,28 +216,47 @@ export default function Setup({ onStart }: { onStart: (players: Player[], mode: 
 
       <section className={styles.section}>
         <div className={styles.sectionHead}>
-          <h2>Categories</h2>
+          <h2>{mode === 'online-randomizer' ? 'Answers' : 'Categories'}</h2>
         </div>
-        <div className={styles.categories}>
-          {CATEGORIES.map((c) => {
-            const on = selected.has(c.id)
-            const cls = !c.ready ? styles.catSoon : on ? styles.catOn : styles.cat
-            return (
-              <button
-                key={c.id}
-                type="button"
-                className={cls}
-                disabled={!c.ready}
-                aria-pressed={on}
-                onClick={() => c.ready && toggleCategory(c.id)}
-              >
-                {c.label}
-                {!c.ready && <span className={styles.soon}>soon</span>}
-              </button>
-            )
-          })}
-        </div>
-        <p className={styles.note}>{ANSWERS_PER_GAME} answers per turn. Settings lock once you start.</p>
+        {mode === 'online-randomizer' ? (
+          // Randomizer runs deckless, so the game's category toggles would do
+          // nothing. Answers are drawn on the randomizer page, which has its own
+          // category picker, so point there instead of showing dead toggles.
+          <>
+            <p className={styles.note}>Answers come from the randomizer page, which has its own category picker.</p>
+            <a
+              href={`${import.meta.env.BASE_URL}randomizer/`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.randomizerLink}
+            >
+              Open randomizer
+            </a>
+          </>
+        ) : (
+          <>
+            <div className={styles.categories}>
+              {CATEGORIES.map((c) => {
+                const on = selected.has(c.id)
+                const cls = !c.ready ? styles.catSoon : on ? styles.catOn : styles.cat
+                return (
+                  <button
+                    key={c.id}
+                    type="button"
+                    className={cls}
+                    disabled={!c.ready}
+                    aria-pressed={on}
+                    onClick={() => c.ready && toggleCategory(c.id)}
+                  >
+                    {c.label}
+                    {!c.ready && <span className={styles.soon}>soon</span>}
+                  </button>
+                )
+              })}
+            </div>
+            <p className={styles.note}>{ANSWERS_PER_GAME} answers per turn. Settings lock once you start.</p>
+          </>
+        )}
       </section>
 
       <div className={styles.footer}>
@@ -261,6 +265,8 @@ export default function Setup({ onStart }: { onStart: (players: Player[], mode: 
           Start
         </button>
       </div>
+
+      <Footer />
     </div>
   )
 }

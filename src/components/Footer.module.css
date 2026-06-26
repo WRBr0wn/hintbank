@@ -1,0 +1,36 @@
+.footer {
+  margin-top: auto;
+  padding: 1.5rem 1.25rem 1.75rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  text-align: center;
+}
+
+.disclaimer {
+  max-width: 40rem;
+  font-size: 0.72rem;
+  line-height: 1.5;
+  color: var(--text-faint);
+}
+
+.line {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.credit {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.link {
+  color: var(--accent-ink);
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}

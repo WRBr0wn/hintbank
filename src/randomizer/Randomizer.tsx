@@ -1,50 +1,76 @@
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 import pokemon from '../data/pokemon.json'
+import { CATEGORIES } from '../data/categories'
 import ThemeToggle from '../components/ThemeToggle'
 import styles from './Randomizer.module.css'
 
-// The only thing shared with the game is this read-only Pokedex. Everything else
-// here is self-contained so the tool can run in its own tab or on another device.
-type Entry = { name: string; dexNumber: number; sprite: string | null }
-const DEX = pokemon as Entry[]
+// Shares only read-only data with the game: the category manifest (which terms
+// exist) and pokemon.json (sprites). No session or game state is shared, so this
+// stays a standalone page with its own category picker.
+type Entry = { name: string; sprite?: string }
 
 const base = import.meta.env.BASE_URL
 const spriteUrl = (e: Entry) => (e.sprite ? `${base}${e.sprite}` : undefined)
 
-// Copied from HinterPlay instead of imported, to keep this page decoupled from
-// the game app.
-function pretty(name: string): string {
-  return name
-    .split('-')
-    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
-    .join(' ')
-}
+// Pokemon is the only category with sprites. The manifest exposes terms as plain
+// names, so map a Pokemon name back to its sprite here, keyed by display name.
+const POKEMON_SPRITE = new Map(pokemon.map((p) => [p.displayName, p.sprite] as const))
+
+const entriesFor = (id: string, terms: string[]): Entry[] =>
+  id === 'pokemon'
+    ? terms.map((name) => ({ name, sprite: POKEMON_SPRITE.get(name) ?? undefined }))
+    : terms.map((name) => ({ name }))
 
 const TURN_SIZE = 10
 
 export default function Randomizer() {
+  const [selected, setSelected] = useState<Set<string>>(() => new Set(['pokemon']))
   const [list, setList] = useState<Entry[]>([])
   const full = list.length >= TURN_SIZE
   const current = list[list.length - 1] ?? null
 
+  // Combined pool of the selected categories, the same mix the game's buildDeck
+  // makes. Rebuilt only when the selection changes.
+  const pool = useMemo(() => {
+    const out: Entry[] = []
+    for (const cat of CATEGORIES) {
+      if (selected.has(cat.id)) out.push(...entriesFor(cat.id, cat.terms))
+    }
+    return out
+  }, [selected])
+
+  // Pick a term not already in the list. Dedup keys on name so it works across
+  // categories, where only Pokemon have a dexNumber.
+  function pickUndrawn(): Entry | null {
+    const drawn = new Set(list.map((e) => e.name))
+    const options = pool.filter((e) => !drawn.has(e.name))
+    if (options.length === 0) return null
+    return options[Math.floor(Math.random() * options.length)]
+  }
+
+  function toggleCategory(id: string) {
+    setSelected((s) => {
+      const next = new Set(s)
+      if (next.has(id)) {
+        if (next.size > 1) next.delete(id)
+      } else {
+        next.add(id)
+      }
+      return next
+    })
+  }
+
   function draw() {
     if (full) return
-    // No repeats: pick only from entries not already drawn this turn.
-    const drawn = new Set(list.map((e) => e.dexNumber))
-    const pool = DEX.filter((e) => !drawn.has(e.dexNumber))
-    if (pool.length === 0) return
-    const pick = pool[Math.floor(Math.random() * pool.length)]
-    setList((l) => [...l, pick])
+    const pick = pickUndrawn()
+    if (pick) setList((l) => [...l, pick])
   }
 
   function reroll() {
     if (list.length === 0) return
-    // Swap the current draw for a different one, like the game's reroll.
-    const drawn = new Set(list.map((e) => e.dexNumber))
-    const pool = DEX.filter((e) => !drawn.has(e.dexNumber))
-    if (pool.length === 0) return
-    const pick = pool[Math.floor(Math.random() * pool.length)]
-    setList((l) => [...l.slice(0, -1), pick])
+    // Swap the latest draw for a different one, like the game's reroll.
+    const pick = pickUndrawn()
+    if (pick) setList((l) => [...l.slice(0, -1), pick])
   }
 
   function reset() {
@@ -60,9 +86,29 @@ export default function Randomizer() {
       </header>
 
       <p className={styles.note}>
-        Private to the hinter. Draw a Pokemon, read it, and type it into the game board when
-        guessed. Nothing here is linked directly to the game.
+        Private to the hinter. Pick categories, draw an answer, read it, and type it into the
+        game board when guessed. Nothing here is linked directly to the game.
       </p>
+
+      <div className={styles.categories}>
+        {CATEGORIES.map((c) => {
+          const on = selected.has(c.id)
+          const cls = !c.ready ? styles.catSoon : on ? styles.catOn : styles.cat
+          return (
+            <button
+              key={c.id}
+              type="button"
+              className={cls}
+              disabled={!c.ready}
+              aria-pressed={on}
+              onClick={() => c.ready && toggleCategory(c.id)}
+            >
+              {c.label}
+              {!c.ready && <span className={styles.soon}>soon</span>}
+            </button>
+          )
+        })}
+      </div>
 
       <div className={styles.current}>
         {current ? (
@@ -70,10 +116,10 @@ export default function Randomizer() {
             {spriteUrl(current) && (
               <img className={styles.currentSprite} src={spriteUrl(current)} alt="" draggable={false} />
             )}
-            <span className={styles.currentName}>{pretty(current.name)}</span>
+            <span className={styles.currentName}>{current.name}</span>
           </>
         ) : (
-          <span className={styles.placeholder}>Press Draw for your first Pokemon</span>
+          <span className={styles.placeholder}>Press Draw for your first answer</span>
         )}
       </div>
 
@@ -96,10 +142,10 @@ export default function Randomizer() {
 
       <ol className={styles.list}>
         {list.map((e, i) => (
-          <li key={e.dexNumber} className={styles.row}>
+          <li key={e.name} className={styles.row}>
             <span className={styles.index}>{i + 1}</span>
             {spriteUrl(e) && <img className={styles.rowSprite} src={spriteUrl(e)} alt="" draggable={false} />}
-            <span className={styles.rowName}>{pretty(e.name)}</span>
+            <span className={styles.rowName}>{e.name}</span>
           </li>
         ))}
       </ol>

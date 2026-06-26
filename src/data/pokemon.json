@@ -1,5126 +1,6151 @@
 [
   {
-    "name": "bulbasaur",
+    "id": "bulbasaur",
+    "displayName": "Bulbasaur",
     "dexNumber": 1,
     "sprite": "sprites/1.png"
   },
   {
-    "name": "ivysaur",
+    "id": "ivysaur",
+    "displayName": "Ivysaur",
     "dexNumber": 2,
     "sprite": "sprites/2.png"
   },
   {
-    "name": "venusaur",
+    "id": "venusaur",
+    "displayName": "Venusaur",
     "dexNumber": 3,
     "sprite": "sprites/3.png"
   },
   {
-    "name": "charmander",
+    "id": "charmander",
+    "displayName": "Charmander",
     "dexNumber": 4,
     "sprite": "sprites/4.png"
   },
   {
-    "name": "charmeleon",
+    "id": "charmeleon",
+    "displayName": "Charmeleon",
     "dexNumber": 5,
     "sprite": "sprites/5.png"
   },
   {
-    "name": "charizard",
+    "id": "charizard",
+    "displayName": "Charizard",
     "dexNumber": 6,
     "sprite": "sprites/6.png"
   },
   {
-    "name": "squirtle",
+    "id": "squirtle",
+    "displayName": "Squirtle",
     "dexNumber": 7,
     "sprite": "sprites/7.png"
   },
   {
-    "name": "wartortle",
+    "id": "wartortle",
+    "displayName": "Wartortle",
     "dexNumber": 8,
     "sprite": "sprites/8.png"
   },
   {
-    "name": "blastoise",
+    "id": "blastoise",
+    "displayName": "Blastoise",
     "dexNumber": 9,
     "sprite": "sprites/9.png"
   },
   {
-    "name": "caterpie",
+    "id": "caterpie",
+    "displayName": "Caterpie",
     "dexNumber": 10,
     "sprite": "sprites/10.png"
   },
   {
-    "name": "metapod",
+    "id": "metapod",
+    "displayName": "Metapod",
     "dexNumber": 11,
     "sprite": "sprites/11.png"
   },
   {
-    "name": "butterfree",
+    "id": "butterfree",
+    "displayName": "Butterfree",
     "dexNumber": 12,
     "sprite": "sprites/12.png"
   },
   {
-    "name": "weedle",
+    "id": "weedle",
+    "displayName": "Weedle",
     "dexNumber": 13,
     "sprite": "sprites/13.png"
   },
   {
-    "name": "kakuna",
+    "id": "kakuna",
+    "displayName": "Kakuna",
     "dexNumber": 14,
     "sprite": "sprites/14.png"
   },
   {
-    "name": "beedrill",
+    "id": "beedrill",
+    "displayName": "Beedrill",
     "dexNumber": 15,
     "sprite": "sprites/15.png"
   },
   {
-    "name": "pidgey",
+    "id": "pidgey",
+    "displayName": "Pidgey",
     "dexNumber": 16,
     "sprite": "sprites/16.png"
   },
   {
-    "name": "pidgeotto",
+    "id": "pidgeotto",
+    "displayName": "Pidgeotto",
     "dexNumber": 17,
     "sprite": "sprites/17.png"
   },
   {
-    "name": "pidgeot",
+    "id": "pidgeot",
+    "displayName": "Pidgeot",
     "dexNumber": 18,
     "sprite": "sprites/18.png"
   },
   {
-    "name": "rattata",
+    "id": "rattata",
+    "displayName": "Rattata",
     "dexNumber": 19,
     "sprite": "sprites/19.png"
   },
   {
-    "name": "raticate",
+    "id": "raticate",
+    "displayName": "Raticate",
     "dexNumber": 20,
     "sprite": "sprites/20.png"
   },
   {
-    "name": "spearow",
+    "id": "spearow",
+    "displayName": "Spearow",
     "dexNumber": 21,
     "sprite": "sprites/21.png"
   },
   {
-    "name": "fearow",
+    "id": "fearow",
+    "displayName": "Fearow",
     "dexNumber": 22,
     "sprite": "sprites/22.png"
   },
   {
-    "name": "ekans",
+    "id": "ekans",
+    "displayName": "Ekans",
     "dexNumber": 23,
     "sprite": "sprites/23.png"
   },
   {
-    "name": "arbok",
+    "id": "arbok",
+    "displayName": "Arbok",
     "dexNumber": 24,
     "sprite": "sprites/24.png"
   },
   {
-    "name": "pikachu",
+    "id": "pikachu",
+    "displayName": "Pikachu",
     "dexNumber": 25,
     "sprite": "sprites/25.png"
   },
   {
-    "name": "raichu",
+    "id": "raichu",
+    "displayName": "Raichu",
     "dexNumber": 26,
     "sprite": "sprites/26.png"
   },
   {
-    "name": "sandshrew",
+    "id": "sandshrew",
+    "displayName": "Sandshrew",
     "dexNumber": 27,
     "sprite": "sprites/27.png"
   },
   {
-    "name": "sandslash",
+    "id": "sandslash",
+    "displayName": "Sandslash",
     "dexNumber": 28,
     "sprite": "sprites/28.png"
   },
   {
-    "name": "nidoran-f",
+    "id": "nidoran-f",
+    "displayName": "Nidoran♀",
     "dexNumber": 29,
     "sprite": "sprites/29.png"
   },
   {
-    "name": "nidorina",
+    "id": "nidorina",
+    "displayName": "Nidorina",
     "dexNumber": 30,
     "sprite": "sprites/30.png"
   },
   {
-    "name": "nidoqueen",
+    "id": "nidoqueen",
+    "displayName": "Nidoqueen",
     "dexNumber": 31,
     "sprite": "sprites/31.png"
   },
   {
-    "name": "nidoran-m",
+    "id": "nidoran-m",
+    "displayName": "Nidoran♂",
     "dexNumber": 32,
     "sprite": "sprites/32.png"
   },
   {
-    "name": "nidorino",
+    "id": "nidorino",
+    "displayName": "Nidorino",
     "dexNumber": 33,
     "sprite": "sprites/33.png"
   },
   {
-    "name": "nidoking",
+    "id": "nidoking",
+    "displayName": "Nidoking",
     "dexNumber": 34,
     "sprite": "sprites/34.png"
   },
   {
-    "name": "clefairy",
+    "id": "clefairy",
+    "displayName": "Clefairy",
     "dexNumber": 35,
     "sprite": "sprites/35.png"
   },
   {
-    "name": "clefable",
+    "id": "clefable",
+    "displayName": "Clefable",
     "dexNumber": 36,
     "sprite": "sprites/36.png"
   },
   {
-    "name": "vulpix",
+    "id": "vulpix",
+    "displayName": "Vulpix",
     "dexNumber": 37,
     "sprite": "sprites/37.png"
   },
   {
-    "name": "ninetales",
+    "id": "ninetales",
+    "displayName": "Ninetales",
     "dexNumber": 38,
     "sprite": "sprites/38.png"
   },
   {
-    "name": "jigglypuff",
+    "id": "jigglypuff",
+    "displayName": "Jigglypuff",
     "dexNumber": 39,
     "sprite": "sprites/39.png"
   },
   {
-    "name": "wigglytuff",
+    "id": "wigglytuff",
+    "displayName": "Wigglytuff",
     "dexNumber": 40,
     "sprite": "sprites/40.png"
   },
   {
-    "name": "zubat",
+    "id": "zubat",
+    "displayName": "Zubat",
     "dexNumber": 41,
     "sprite": "sprites/41.png"
   },
   {
-    "name": "golbat",
+    "id": "golbat",
+    "displayName": "Golbat",
     "dexNumber": 42,
     "sprite": "sprites/42.png"
   },
   {
-    "name": "oddish",
+    "id": "oddish",
+    "displayName": "Oddish",
     "dexNumber": 43,
     "sprite": "sprites/43.png"
   },
   {
-    "name": "gloom",
+    "id": "gloom",
+    "displayName": "Gloom",
     "dexNumber": 44,
     "sprite": "sprites/44.png"
   },
   {
-    "name": "vileplume",
+    "id": "vileplume",
+    "displayName": "Vileplume",
     "dexNumber": 45,
     "sprite": "sprites/45.png"
   },
   {
-    "name": "paras",
+    "id": "paras",
+    "displayName": "Paras",
     "dexNumber": 46,
     "sprite": "sprites/46.png"
   },
   {
-    "name": "parasect",
+    "id": "parasect",
+    "displayName": "Parasect",
     "dexNumber": 47,
     "sprite": "sprites/47.png"
   },
   {
-    "name": "venonat",
+    "id": "venonat",
+    "displayName": "Venonat",
     "dexNumber": 48,
     "sprite": "sprites/48.png"
   },
   {
-    "name": "venomoth",
+    "id": "venomoth",
+    "displayName": "Venomoth",
     "dexNumber": 49,
     "sprite": "sprites/49.png"
   },
   {
-    "name": "diglett",
+    "id": "diglett",
+    "displayName": "Diglett",
     "dexNumber": 50,
     "sprite": "sprites/50.png"
   },
   {
-    "name": "dugtrio",
+    "id": "dugtrio",
+    "displayName": "Dugtrio",
     "dexNumber": 51,
     "sprite": "sprites/51.png"
   },
   {
-    "name": "meowth",
+    "id": "meowth",
+    "displayName": "Meowth",
     "dexNumber": 52,
     "sprite": "sprites/52.png"
   },
   {
-    "name": "persian",
+    "id": "persian",
+    "displayName": "Persian",
     "dexNumber": 53,
     "sprite": "sprites/53.png"
   },
   {
-    "name": "psyduck",
+    "id": "psyduck",
+    "displayName": "Psyduck",
     "dexNumber": 54,
     "sprite": "sprites/54.png"
   },
   {
-    "name": "golduck",
+    "id": "golduck",
+    "displayName": "Golduck",
     "dexNumber": 55,
     "sprite": "sprites/55.png"
   },
   {
-    "name": "mankey",
+    "id": "mankey",
+    "displayName": "Mankey",
     "dexNumber": 56,
     "sprite": "sprites/56.png"
   },
   {
-    "name": "primeape",
+    "id": "primeape",
+    "displayName": "Primeape",
     "dexNumber": 57,
     "sprite": "sprites/57.png"
   },
   {
-    "name": "growlithe",
+    "id": "growlithe",
+    "displayName": "Growlithe",
     "dexNumber": 58,
     "sprite": "sprites/58.png"
   },
   {
-    "name": "arcanine",
+    "id": "arcanine",
+    "displayName": "Arcanine",
     "dexNumber": 59,
     "sprite": "sprites/59.png"
   },
   {
-    "name": "poliwag",
+    "id": "poliwag",
+    "displayName": "Poliwag",
     "dexNumber": 60,
     "sprite": "sprites/60.png"
   },
   {
-    "name": "poliwhirl",
+    "id": "poliwhirl",
+    "displayName": "Poliwhirl",
     "dexNumber": 61,
     "sprite": "sprites/61.png"
   },
   {
-    "name": "poliwrath",
+    "id": "poliwrath",
+    "displayName": "Poliwrath",
     "dexNumber": 62,
     "sprite": "sprites/62.png"
   },
   {
-    "name": "abra",
+    "id": "abra",
+    "displayName": "Abra",
     "dexNumber": 63,
     "sprite": "sprites/63.png"
   },
   {
-    "name": "kadabra",
+    "id": "kadabra",
+    "displayName": "Kadabra",
     "dexNumber": 64,
     "sprite": "sprites/64.png"
   },
   {
-    "name": "alakazam",
+    "id": "alakazam",
+    "displayName": "Alakazam",
     "dexNumber": 65,
     "sprite": "sprites/65.png"
   },
   {
-    "name": "machop",
+    "id": "machop",
+    "displayName": "Machop",
     "dexNumber": 66,
     "sprite": "sprites/66.png"
   },
   {
-    "name": "machoke",
+    "id": "machoke",
+    "displayName": "Machoke",
     "dexNumber": 67,
     "sprite": "sprites/67.png"
   },
   {
-    "name": "machamp",
+    "id": "machamp",
+    "displayName": "Machamp",
     "dexNumber": 68,
     "sprite": "sprites/68.png"
   },
   {
-    "name": "bellsprout",
+    "id": "bellsprout",
+    "displayName": "Bellsprout",
     "dexNumber": 69,
     "sprite": "sprites/69.png"
   },
   {
-    "name": "weepinbell",
+    "id": "weepinbell",
+    "displayName": "Weepinbell",
     "dexNumber": 70,
     "sprite": "sprites/70.png"
   },
   {
-    "name": "victreebel",
+    "id": "victreebel",
+    "displayName": "Victreebel",
     "dexNumber": 71,
     "sprite": "sprites/71.png"
   },
   {
-    "name": "tentacool",
+    "id": "tentacool",
+    "displayName": "Tentacool",
     "dexNumber": 72,
     "sprite": "sprites/72.png"
   },
   {
-    "name": "tentacruel",
+    "id": "tentacruel",
+    "displayName": "Tentacruel",
     "dexNumber": 73,
     "sprite": "sprites/73.png"
   },
   {
-    "name": "geodude",
+    "id": "geodude",
+    "displayName": "Geodude",
     "dexNumber": 74,
     "sprite": "sprites/74.png"
   },
   {
-    "name": "graveler",
+    "id": "graveler",
+    "displayName": "Graveler",
     "dexNumber": 75,
     "sprite": "sprites/75.png"
   },
   {
-    "name": "golem",
+    "id": "golem",
+    "displayName": "Golem",
     "dexNumber": 76,
     "sprite": "sprites/76.png"
   },
   {
-    "name": "ponyta",
+    "id": "ponyta",
+    "displayName": "Ponyta",
     "dexNumber": 77,
     "sprite": "sprites/77.png"
   },
   {
-    "name": "rapidash",
+    "id": "rapidash",
+    "displayName": "Rapidash",
     "dexNumber": 78,
     "sprite": "sprites/78.png"
   },
   {
-    "name": "slowpoke",
+    "id": "slowpoke",
+    "displayName": "Slowpoke",
     "dexNumber": 79,
     "sprite": "sprites/79.png"
   },
   {
-    "name": "slowbro",
+    "id": "slowbro",
+    "displayName": "Slowbro",
     "dexNumber": 80,
     "sprite": "sprites/80.png"
   },
   {
-    "name": "magnemite",
+    "id": "magnemite",
+    "displayName": "Magnemite",
     "dexNumber": 81,
     "sprite": "sprites/81.png"
   },
   {
-    "name": "magneton",
+    "id": "magneton",
+    "displayName": "Magneton",
     "dexNumber": 82,
     "sprite": "sprites/82.png"
   },
   {
-    "name": "farfetchd",
+    "id": "farfetchd",
+    "displayName": "Farfetch’d",
     "dexNumber": 83,
     "sprite": "sprites/83.png"
   },
   {
-    "name": "doduo",
+    "id": "doduo",
+    "displayName": "Doduo",
     "dexNumber": 84,
     "sprite": "sprites/84.png"
   },
   {
-    "name": "dodrio",
+    "id": "dodrio",
+    "displayName": "Dodrio",
     "dexNumber": 85,
     "sprite": "sprites/85.png"
   },
   {
-    "name": "seel",
+    "id": "seel",
+    "displayName": "Seel",
     "dexNumber": 86,
     "sprite": "sprites/86.png"
   },
   {
-    "name": "dewgong",
+    "id": "dewgong",
+    "displayName": "Dewgong",
     "dexNumber": 87,
     "sprite": "sprites/87.png"
   },
   {
-    "name": "grimer",
+    "id": "grimer",
+    "displayName": "Grimer",
     "dexNumber": 88,
     "sprite": "sprites/88.png"
   },
   {
-    "name": "muk",
+    "id": "muk",
+    "displayName": "Muk",
     "dexNumber": 89,
     "sprite": "sprites/89.png"
   },
   {
-    "name": "shellder",
+    "id": "shellder",
+    "displayName": "Shellder",
     "dexNumber": 90,
     "sprite": "sprites/90.png"
   },
   {
-    "name": "cloyster",
+    "id": "cloyster",
+    "displayName": "Cloyster",
     "dexNumber": 91,
     "sprite": "sprites/91.png"
   },
   {
-    "name": "gastly",
+    "id": "gastly",
+    "displayName": "Gastly",
     "dexNumber": 92,
     "sprite": "sprites/92.png"
   },
   {
-    "name": "haunter",
+    "id": "haunter",
+    "displayName": "Haunter",
     "dexNumber": 93,
     "sprite": "sprites/93.png"
   },
   {
-    "name": "gengar",
+    "id": "gengar",
+    "displayName": "Gengar",
     "dexNumber": 94,
     "sprite": "sprites/94.png"
   },
   {
-    "name": "onix",
+    "id": "onix",
+    "displayName": "Onix",
     "dexNumber": 95,
     "sprite": "sprites/95.png"
   },
   {
-    "name": "drowzee",
+    "id": "drowzee",
+    "displayName": "Drowzee",
     "dexNumber": 96,
     "sprite": "sprites/96.png"
   },
   {
-    "name": "hypno",
+    "id": "hypno",
+    "displayName": "Hypno",
     "dexNumber": 97,
     "sprite": "sprites/97.png"
   },
   {
-    "name": "krabby",
+    "id": "krabby",
+    "displayName": "Krabby",
     "dexNumber": 98,
     "sprite": "sprites/98.png"
   },
   {
-    "name": "kingler",
+    "id": "kingler",
+    "displayName": "Kingler",
     "dexNumber": 99,
     "sprite": "sprites/99.png"
   },
   {
-    "name": "voltorb",
+    "id": "voltorb",
+    "displayName": "Voltorb",
     "dexNumber": 100,
     "sprite": "sprites/100.png"
   },
   {
-    "name": "electrode",
+    "id": "electrode",
+    "displayName": "Electrode",
     "dexNumber": 101,
     "sprite": "sprites/101.png"
   },
   {
-    "name": "exeggcute",
+    "id": "exeggcute",
+    "displayName": "Exeggcute",
     "dexNumber": 102,
     "sprite": "sprites/102.png"
   },
   {
-    "name": "exeggutor",
+    "id": "exeggutor",
+    "displayName": "Exeggutor",
     "dexNumber": 103,
     "sprite": "sprites/103.png"
   },
   {
-    "name": "cubone",
+    "id": "cubone",
+    "displayName": "Cubone",
     "dexNumber": 104,
     "sprite": "sprites/104.png"
   },
   {
-    "name": "marowak",
+    "id": "marowak",
+    "displayName": "Marowak",
     "dexNumber": 105,
     "sprite": "sprites/105.png"
   },
   {
-    "name": "hitmonlee",
+    "id": "hitmonlee",
+    "displayName": "Hitmonlee",
     "dexNumber": 106,
     "sprite": "sprites/106.png"
   },
   {
-    "name": "hitmonchan",
+    "id": "hitmonchan",
+    "displayName": "Hitmonchan",
     "dexNumber": 107,
     "sprite": "sprites/107.png"
   },
   {
-    "name": "lickitung",
+    "id": "lickitung",
+    "displayName": "Lickitung",
     "dexNumber": 108,
     "sprite": "sprites/108.png"
   },
   {
-    "name": "koffing",
+    "id": "koffing",
+    "displayName": "Koffing",
     "dexNumber": 109,
     "sprite": "sprites/109.png"
   },
   {
-    "name": "weezing",
+    "id": "weezing",
+    "displayName": "Weezing",
     "dexNumber": 110,
     "sprite": "sprites/110.png"
   },
   {
-    "name": "rhyhorn",
+    "id": "rhyhorn",
+    "displayName": "Rhyhorn",
     "dexNumber": 111,
     "sprite": "sprites/111.png"
   },
   {
-    "name": "rhydon",
+    "id": "rhydon",
+    "displayName": "Rhydon",
     "dexNumber": 112,
     "sprite": "sprites/112.png"
   },
   {
-    "name": "chansey",
+    "id": "chansey",
+    "displayName": "Chansey",
     "dexNumber": 113,
     "sprite": "sprites/113.png"
   },
   {
-    "name": "tangela",
+    "id": "tangela",
+    "displayName": "Tangela",
     "dexNumber": 114,
     "sprite": "sprites/114.png"
   },
   {
-    "name": "kangaskhan",
+    "id": "kangaskhan",
+    "displayName": "Kangaskhan",
     "dexNumber": 115,
     "sprite": "sprites/115.png"
   },
   {
-    "name": "horsea",
+    "id": "horsea",
+    "displayName": "Horsea",
     "dexNumber": 116,
     "sprite": "sprites/116.png"
   },
   {
-    "name": "seadra",
+    "id": "seadra",
+    "displayName": "Seadra",
     "dexNumber": 117,
     "sprite": "sprites/117.png"
   },
   {
-    "name": "goldeen",
+    "id": "goldeen",
+    "displayName": "Goldeen",
     "dexNumber": 118,
     "sprite": "sprites/118.png"
   },
   {
-    "name": "seaking",
+    "id": "seaking",
+    "displayName": "Seaking",
     "dexNumber": 119,
     "sprite": "sprites/119.png"
   },
   {
-    "name": "staryu",
+    "id": "staryu",
+    "displayName": "Staryu",
     "dexNumber": 120,
     "sprite": "sprites/120.png"
   },
   {
-    "name": "starmie",
+    "id": "starmie",
+    "displayName": "Starmie",
     "dexNumber": 121,
     "sprite": "sprites/121.png"
   },
   {
-    "name": "mr-mime",
+    "id": "mr-mime",
+    "displayName": "Mr. Mime",
     "dexNumber": 122,
     "sprite": "sprites/122.png"
   },
   {
-    "name": "scyther",
+    "id": "scyther",
+    "displayName": "Scyther",
     "dexNumber": 123,
     "sprite": "sprites/123.png"
   },
   {
-    "name": "jynx",
+    "id": "jynx",
+    "displayName": "Jynx",
     "dexNumber": 124,
     "sprite": "sprites/124.png"
   },
   {
-    "name": "electabuzz",
+    "id": "electabuzz",
+    "displayName": "Electabuzz",
     "dexNumber": 125,
     "sprite": "sprites/125.png"
   },
   {
-    "name": "magmar",
+    "id": "magmar",
+    "displayName": "Magmar",
     "dexNumber": 126,
     "sprite": "sprites/126.png"
   },
   {
-    "name": "pinsir",
+    "id": "pinsir",
+    "displayName": "Pinsir",
     "dexNumber": 127,
     "sprite": "sprites/127.png"
   },
   {
-    "name": "tauros",
+    "id": "tauros",
+    "displayName": "Tauros",
     "dexNumber": 128,
     "sprite": "sprites/128.png"
   },
   {
-    "name": "magikarp",
+    "id": "magikarp",
+    "displayName": "Magikarp",
     "dexNumber": 129,
     "sprite": "sprites/129.png"
   },
   {
-    "name": "gyarados",
+    "id": "gyarados",
+    "displayName": "Gyarados",
     "dexNumber": 130,
     "sprite": "sprites/130.png"
   },
   {
-    "name": "lapras",
+    "id": "lapras",
+    "displayName": "Lapras",
     "dexNumber": 131,
     "sprite": "sprites/131.png"
   },
   {
-    "name": "ditto",
+    "id": "ditto",
+    "displayName": "Ditto",
     "dexNumber": 132,
     "sprite": "sprites/132.png"
   },
   {
-    "name": "eevee",
+    "id": "eevee",
+    "displayName": "Eevee",
     "dexNumber": 133,
     "sprite": "sprites/133.png"
   },
   {
-    "name": "vaporeon",
+    "id": "vaporeon",
+    "displayName": "Vaporeon",
     "dexNumber": 134,
     "sprite": "sprites/134.png"
   },
   {
-    "name": "jolteon",
+    "id": "jolteon",
+    "displayName": "Jolteon",
     "dexNumber": 135,
     "sprite": "sprites/135.png"
   },
   {
-    "name": "flareon",
+    "id": "flareon",
+    "displayName": "Flareon",
     "dexNumber": 136,
     "sprite": "sprites/136.png"
   },
   {
-    "name": "porygon",
+    "id": "porygon",
+    "displayName": "Porygon",
     "dexNumber": 137,
     "sprite": "sprites/137.png"
   },
   {
-    "name": "omanyte",
+    "id": "omanyte",
+    "displayName": "Omanyte",
     "dexNumber": 138,
     "sprite": "sprites/138.png"
   },
   {
-    "name": "omastar",
+    "id": "omastar",
+    "displayName": "Omastar",
     "dexNumber": 139,
     "sprite": "sprites/139.png"
   },
   {
-    "name": "kabuto",
+    "id": "kabuto",
+    "displayName": "Kabuto",
     "dexNumber": 140,
     "sprite": "sprites/140.png"
   },
   {
-    "name": "kabutops",
+    "id": "kabutops",
+    "displayName": "Kabutops",
     "dexNumber": 141,
     "sprite": "sprites/141.png"
   },
   {
-    "name": "aerodactyl",
+    "id": "aerodactyl",
+    "displayName": "Aerodactyl",
     "dexNumber": 142,
     "sprite": "sprites/142.png"
   },
   {
-    "name": "snorlax",
+    "id": "snorlax",
+    "displayName": "Snorlax",
     "dexNumber": 143,
     "sprite": "sprites/143.png"
   },
   {
-    "name": "articuno",
+    "id": "articuno",
+    "displayName": "Articuno",
     "dexNumber": 144,
     "sprite": "sprites/144.png"
   },
   {
-    "name": "zapdos",
+    "id": "zapdos",
+    "displayName": "Zapdos",
     "dexNumber": 145,
     "sprite": "sprites/145.png"
   },
   {
-    "name": "moltres",
+    "id": "moltres",
+    "displayName": "Moltres",
     "dexNumber": 146,
     "sprite": "sprites/146.png"
   },
   {
-    "name": "dratini",
+    "id": "dratini",
+    "displayName": "Dratini",
     "dexNumber": 147,
     "sprite": "sprites/147.png"
   },
   {
-    "name": "dragonair",
+    "id": "dragonair",
+    "displayName": "Dragonair",
     "dexNumber": 148,
     "sprite": "sprites/148.png"
   },
   {
-    "name": "dragonite",
+    "id": "dragonite",
+    "displayName": "Dragonite",
     "dexNumber": 149,
     "sprite": "sprites/149.png"
   },
   {
-    "name": "mewtwo",
+    "id": "mewtwo",
+    "displayName": "Mewtwo",
     "dexNumber": 150,
     "sprite": "sprites/150.png"
   },
   {
-    "name": "mew",
+    "id": "mew",
+    "displayName": "Mew",
     "dexNumber": 151,
     "sprite": "sprites/151.png"
   },
   {
-    "name": "chikorita",
+    "id": "chikorita",
+    "displayName": "Chikorita",
     "dexNumber": 152,
     "sprite": "sprites/152.png"
   },
   {
-    "name": "bayleef",
+    "id": "bayleef",
+    "displayName": "Bayleef",
     "dexNumber": 153,
     "sprite": "sprites/153.png"
   },
   {
-    "name": "meganium",
+    "id": "meganium",
+    "displayName": "Meganium",
     "dexNumber": 154,
     "sprite": "sprites/154.png"
   },
   {
-    "name": "cyndaquil",
+    "id": "cyndaquil",
+    "displayName": "Cyndaquil",
     "dexNumber": 155,
     "sprite": "sprites/155.png"
   },
   {
-    "name": "quilava",
+    "id": "quilava",
+    "displayName": "Quilava",
     "dexNumber": 156,
     "sprite": "sprites/156.png"
   },
   {
-    "name": "typhlosion",
+    "id": "typhlosion",
+    "displayName": "Typhlosion",
     "dexNumber": 157,
     "sprite": "sprites/157.png"
   },
   {
-    "name": "totodile",
+    "id": "totodile",
+    "displayName": "Totodile",
     "dexNumber": 158,
     "sprite": "sprites/158.png"
   },
   {
-    "name": "croconaw",
+    "id": "croconaw",
+    "displayName": "Croconaw",
     "dexNumber": 159,
     "sprite": "sprites/159.png"
   },
   {
-    "name": "feraligatr",
+    "id": "feraligatr",
+    "displayName": "Feraligatr",
     "dexNumber": 160,
     "sprite": "sprites/160.png"
   },
   {
-    "name": "sentret",
+    "id": "sentret",
+    "displayName": "Sentret",
     "dexNumber": 161,
     "sprite": "sprites/161.png"
   },
   {
-    "name": "furret",
+    "id": "furret",
+    "displayName": "Furret",
     "dexNumber": 162,
     "sprite": "sprites/162.png"
   },
   {
-    "name": "hoothoot",
+    "id": "hoothoot",
+    "displayName": "Hoothoot",
     "dexNumber": 163,
     "sprite": "sprites/163.png"
   },
   {
-    "name": "noctowl",
+    "id": "noctowl",
+    "displayName": "Noctowl",
     "dexNumber": 164,
     "sprite": "sprites/164.png"
   },
   {
-    "name": "ledyba",
+    "id": "ledyba",
+    "displayName": "Ledyba",
     "dexNumber": 165,
     "sprite": "sprites/165.png"
   },
   {
-    "name": "ledian",
+    "id": "ledian",
+    "displayName": "Ledian",
     "dexNumber": 166,
     "sprite": "sprites/166.png"
   },
   {
-    "name": "spinarak",
+    "id": "spinarak",
+    "displayName": "Spinarak",
     "dexNumber": 167,
     "sprite": "sprites/167.png"
   },
   {
-    "name": "ariados",
+    "id": "ariados",
+    "displayName": "Ariados",
     "dexNumber": 168,
     "sprite": "sprites/168.png"
   },
   {
-    "name": "crobat",
+    "id": "crobat",
+    "displayName": "Crobat",
     "dexNumber": 169,
     "sprite": "sprites/169.png"
   },
   {
-    "name": "chinchou",
+    "id": "chinchou",
+    "displayName": "Chinchou",
     "dexNumber": 170,
     "sprite": "sprites/170.png"
   },
   {
-    "name": "lanturn",
+    "id": "lanturn",
+    "displayName": "Lanturn",
     "dexNumber": 171,
     "sprite": "sprites/171.png"
   },
   {
-    "name": "pichu",
+    "id": "pichu",
+    "displayName": "Pichu",
     "dexNumber": 172,
     "sprite": "sprites/172.png"
   },
   {
-    "name": "cleffa",
+    "id": "cleffa",
+    "displayName": "Cleffa",
     "dexNumber": 173,
     "sprite": "sprites/173.png"
   },
   {
-    "name": "igglybuff",
+    "id": "igglybuff",
+    "displayName": "Igglybuff",
     "dexNumber": 174,
     "sprite": "sprites/174.png"
   },
   {
-    "name": "togepi",
+    "id": "togepi",
+    "displayName": "Togepi",
     "dexNumber": 175,
     "sprite": "sprites/175.png"
   },
   {
-    "name": "togetic",
+    "id": "togetic",
+    "displayName": "Togetic",
     "dexNumber": 176,
     "sprite": "sprites/176.png"
   },
   {
-    "name": "natu",
+    "id": "natu",
+    "displayName": "Natu",
     "dexNumber": 177,
     "sprite": "sprites/177.png"
   },
   {
-    "name": "xatu",
+    "id": "xatu",
+    "displayName": "Xatu",
     "dexNumber": 178,
     "sprite": "sprites/178.png"
   },
   {
-    "name": "mareep",
+    "id": "mareep",
+    "displayName": "Mareep",
     "dexNumber": 179,
     "sprite": "sprites/179.png"
   },
   {
-    "name": "flaaffy",
+    "id": "flaaffy",
+    "displayName": "Flaaffy",
     "dexNumber": 180,
     "sprite": "sprites/180.png"
   },
   {
-    "name": "ampharos",
+    "id": "ampharos",
+    "displayName": "Ampharos",
     "dexNumber": 181,
     "sprite": "sprites/181.png"
   },
   {
-    "name": "bellossom",
+    "id": "bellossom",
+    "displayName": "Bellossom",
     "dexNumber": 182,
     "sprite": "sprites/182.png"
   },
   {
-    "name": "marill",
+    "id": "marill",
+    "displayName": "Marill",
     "dexNumber": 183,
     "sprite": "sprites/183.png"
   },
   {
-    "name": "azumarill",
+    "id": "azumarill",
+    "displayName": "Azumarill",
     "dexNumber": 184,
     "sprite": "sprites/184.png"
   },
   {
-    "name": "sudowoodo",
+    "id": "sudowoodo",
+    "displayName": "Sudowoodo",
     "dexNumber": 185,
     "sprite": "sprites/185.png"
   },
   {
-    "name": "politoed",
+    "id": "politoed",
+    "displayName": "Politoed",
     "dexNumber": 186,
     "sprite": "sprites/186.png"
   },
   {
-    "name": "hoppip",
+    "id": "hoppip",
+    "displayName": "Hoppip",
     "dexNumber": 187,
     "sprite": "sprites/187.png"
   },
   {
-    "name": "skiploom",
+    "id": "skiploom",
+    "displayName": "Skiploom",
     "dexNumber": 188,
     "sprite": "sprites/188.png"
   },
   {
-    "name": "jumpluff",
+    "id": "jumpluff",
+    "displayName": "Jumpluff",
     "dexNumber": 189,
     "sprite": "sprites/189.png"
   },
   {
-    "name": "aipom",
+    "id": "aipom",
+    "displayName": "Aipom",
     "dexNumber": 190,
     "sprite": "sprites/190.png"
   },
   {
-    "name": "sunkern",
+    "id": "sunkern",
+    "displayName": "Sunkern",
     "dexNumber": 191,
     "sprite": "sprites/191.png"
   },
   {
-    "name": "sunflora",
+    "id": "sunflora",
+    "displayName": "Sunflora",
     "dexNumber": 192,
     "sprite": "sprites/192.png"
   },
   {
-    "name": "yanma",
+    "id": "yanma",
+    "displayName": "Yanma",
     "dexNumber": 193,
     "sprite": "sprites/193.png"
   },
   {
-    "name": "wooper",
+    "id": "wooper",
+    "displayName": "Wooper",
     "dexNumber": 194,
     "sprite": "sprites/194.png"
   },
   {
-    "name": "quagsire",
+    "id": "quagsire",
+    "displayName": "Quagsire",
     "dexNumber": 195,
     "sprite": "sprites/195.png"
   },
   {
-    "name": "espeon",
+    "id": "espeon",
+    "displayName": "Espeon",
     "dexNumber": 196,
     "sprite": "sprites/196.png"
   },
   {
-    "name": "umbreon",
+    "id": "umbreon",
+    "displayName": "Umbreon",
     "dexNumber": 197,
     "sprite": "sprites/197.png"
   },
   {
-    "name": "murkrow",
+    "id": "murkrow",
+    "displayName": "Murkrow",
     "dexNumber": 198,
     "sprite": "sprites/198.png"
   },
   {
-    "name": "slowking",
+    "id": "slowking",
+    "displayName": "Slowking",
     "dexNumber": 199,
     "sprite": "sprites/199.png"
   },
   {
-    "name": "misdreavus",
+    "id": "misdreavus",
+    "displayName": "Misdreavus",
     "dexNumber": 200,
     "sprite": "sprites/200.png"
   },
   {
-    "name": "unown",
+    "id": "unown",
+    "displayName": "Unown",
     "dexNumber": 201,
     "sprite": "sprites/201.png"
   },
   {
-    "name": "wobbuffet",
+    "id": "wobbuffet",
+    "displayName": "Wobbuffet",
     "dexNumber": 202,
     "sprite": "sprites/202.png"
   },
   {
-    "name": "girafarig",
+    "id": "girafarig",
+    "displayName": "Girafarig",
     "dexNumber": 203,
     "sprite": "sprites/203.png"
   },
   {
-    "name": "pineco",
+    "id": "pineco",
+    "displayName": "Pineco",
     "dexNumber": 204,
     "sprite": "sprites/204.png"
   },
   {
-    "name": "forretress",
+    "id": "forretress",
+    "displayName": "Forretress",
     "dexNumber": 205,
     "sprite": "sprites/205.png"
   },
   {
-    "name": "dunsparce",
+    "id": "dunsparce",
+    "displayName": "Dunsparce",
     "dexNumber": 206,
     "sprite": "sprites/206.png"
   },
   {
-    "name": "gligar",
+    "id": "gligar",
+    "displayName": "Gligar",
     "dexNumber": 207,
     "sprite": "sprites/207.png"
   },
   {
-    "name": "steelix",
+    "id": "steelix",
+    "displayName": "Steelix",
     "dexNumber": 208,
     "sprite": "sprites/208.png"
   },
   {
-    "name": "snubbull",
+    "id": "snubbull",
+    "displayName": "Snubbull",
     "dexNumber": 209,
     "sprite": "sprites/209.png"
   },
   {
-    "name": "granbull",
+    "id": "granbull",
+    "displayName": "Granbull",
     "dexNumber": 210,
     "sprite": "sprites/210.png"
   },
   {
-    "name": "qwilfish",
+    "id": "qwilfish",
+    "displayName": "Qwilfish",
     "dexNumber": 211,
     "sprite": "sprites/211.png"
   },
   {
-    "name": "scizor",
+    "id": "scizor",
+    "displayName": "Scizor",
     "dexNumber": 212,
     "sprite": "sprites/212.png"
   },
   {
-    "name": "shuckle",
+    "id": "shuckle",
+    "displayName": "Shuckle",
     "dexNumber": 213,
     "sprite": "sprites/213.png"
   },
   {
-    "name": "heracross",
+    "id": "heracross",
+    "displayName": "Heracross",
     "dexNumber": 214,
     "sprite": "sprites/214.png"
   },
   {
-    "name": "sneasel",
+    "id": "sneasel",
+    "displayName": "Sneasel",
     "dexNumber": 215,
     "sprite": "sprites/215.png"
   },
   {
-    "name": "teddiursa",
+    "id": "teddiursa",
+    "displayName": "Teddiursa",
     "dexNumber": 216,
     "sprite": "sprites/216.png"
   },
   {
-    "name": "ursaring",
+    "id": "ursaring",
+    "displayName": "Ursaring",
     "dexNumber": 217,
     "sprite": "sprites/217.png"
   },
   {
-    "name": "slugma",
+    "id": "slugma",
+    "displayName": "Slugma",
     "dexNumber": 218,
     "sprite": "sprites/218.png"
   },
   {
-    "name": "magcargo",
+    "id": "magcargo",
+    "displayName": "Magcargo",
     "dexNumber": 219,
     "sprite": "sprites/219.png"
   },
   {
-    "name": "swinub",
+    "id": "swinub",
+    "displayName": "Swinub",
     "dexNumber": 220,
     "sprite": "sprites/220.png"
   },
   {
-    "name": "piloswine",
+    "id": "piloswine",
+    "displayName": "Piloswine",
     "dexNumber": 221,
     "sprite": "sprites/221.png"
   },
   {
-    "name": "corsola",
+    "id": "corsola",
+    "displayName": "Corsola",
     "dexNumber": 222,
     "sprite": "sprites/222.png"
   },
   {
-    "name": "remoraid",
+    "id": "remoraid",
+    "displayName": "Remoraid",
     "dexNumber": 223,
     "sprite": "sprites/223.png"
   },
   {
-    "name": "octillery",
+    "id": "octillery",
+    "displayName": "Octillery",
     "dexNumber": 224,
     "sprite": "sprites/224.png"
   },
   {
-    "name": "delibird",
+    "id": "delibird",
+    "displayName": "Delibird",
     "dexNumber": 225,
     "sprite": "sprites/225.png"
   },
   {
-    "name": "mantine",
+    "id": "mantine",
+    "displayName": "Mantine",
     "dexNumber": 226,
     "sprite": "sprites/226.png"
   },
   {
-    "name": "skarmory",
+    "id": "skarmory",
+    "displayName": "Skarmory",
     "dexNumber": 227,
     "sprite": "sprites/227.png"
   },
   {
-    "name": "houndour",
+    "id": "houndour",
+    "displayName": "Houndour",
     "dexNumber": 228,
     "sprite": "sprites/228.png"
   },
   {
-    "name": "houndoom",
+    "id": "houndoom",
+    "displayName": "Houndoom",
     "dexNumber": 229,
     "sprite": "sprites/229.png"
   },
   {
-    "name": "kingdra",
+    "id": "kingdra",
+    "displayName": "Kingdra",
     "dexNumber": 230,
     "sprite": "sprites/230.png"
   },
   {
-    "name": "phanpy",
+    "id": "phanpy",
+    "displayName": "Phanpy",
     "dexNumber": 231,
     "sprite": "sprites/231.png"
   },
   {
-    "name": "donphan",
+    "id": "donphan",
+    "displayName": "Donphan",
     "dexNumber": 232,
     "sprite": "sprites/232.png"
   },
   {
-    "name": "porygon2",
+    "id": "porygon2",
+    "displayName": "Porygon2",
     "dexNumber": 233,
     "sprite": "sprites/233.png"
   },
   {
-    "name": "stantler",
+    "id": "stantler",
+    "displayName": "Stantler",
     "dexNumber": 234,
     "sprite": "sprites/234.png"
   },
   {
-    "name": "smeargle",
+    "id": "smeargle",
+    "displayName": "Smeargle",
     "dexNumber": 235,
     "sprite": "sprites/235.png"
   },
   {
-    "name": "tyrogue",
+    "id": "tyrogue",
+    "displayName": "Tyrogue",
     "dexNumber": 236,
     "sprite": "sprites/236.png"
   },
   {
-    "name": "hitmontop",
+    "id": "hitmontop",
+    "displayName": "Hitmontop",
     "dexNumber": 237,
     "sprite": "sprites/237.png"
   },
   {
-    "name": "smoochum",
+    "id": "smoochum",
+    "displayName": "Smoochum",
     "dexNumber": 238,
     "sprite": "sprites/238.png"
   },
   {
-    "name": "elekid",
+    "id": "elekid",
+    "displayName": "Elekid",
     "dexNumber": 239,
     "sprite": "sprites/239.png"
   },
   {
-    "name": "magby",
+    "id": "magby",
+    "displayName": "Magby",
     "dexNumber": 240,
     "sprite": "sprites/240.png"
   },
   {
-    "name": "miltank",
+    "id": "miltank",
+    "displayName": "Miltank",
     "dexNumber": 241,
     "sprite": "sprites/241.png"
   },
   {
-    "name": "blissey",
+    "id": "blissey",
+    "displayName": "Blissey",
     "dexNumber": 242,
     "sprite": "sprites/242.png"
   },
   {
-    "name": "raikou",
+    "id": "raikou",
+    "displayName": "Raikou",
     "dexNumber": 243,
     "sprite": "sprites/243.png"
   },
   {
-    "name": "entei",
+    "id": "entei",
+    "displayName": "Entei",
     "dexNumber": 244,
     "sprite": "sprites/244.png"
   },
   {
-    "name": "suicune",
+    "id": "suicune",
+    "displayName": "Suicune",
     "dexNumber": 245,
     "sprite": "sprites/245.png"
   },
   {
-    "name": "larvitar",
+    "id": "larvitar",
+    "displayName": "Larvitar",
     "dexNumber": 246,
     "sprite": "sprites/246.png"
   },
   {
-    "name": "pupitar",
+    "id": "pupitar",
+    "displayName": "Pupitar",
     "dexNumber": 247,
     "sprite": "sprites/247.png"
   },
   {
-    "name": "tyranitar",
+    "id": "tyranitar",
+    "displayName": "Tyranitar",
     "dexNumber": 248,
     "sprite": "sprites/248.png"
   },
   {
-    "name": "lugia",
+    "id": "lugia",
+    "displayName": "Lugia",
     "dexNumber": 249,
     "sprite": "sprites/249.png"
   },
   {
-    "name": "ho-oh",
+    "id": "ho-oh",
+    "displayName": "Ho-Oh",
     "dexNumber": 250,
     "sprite": "sprites/250.png"
   },
   {
-    "name": "celebi",
+    "id": "celebi",
+    "displayName": "Celebi",
     "dexNumber": 251,
     "sprite": "sprites/251.png"
   },
   {
-    "name": "treecko",
+    "id": "treecko",
+    "displayName": "Treecko",
     "dexNumber": 252,
     "sprite": "sprites/252.png"
   },
   {
-    "name": "grovyle",
+    "id": "grovyle",
+    "displayName": "Grovyle",
     "dexNumber": 253,
     "sprite": "sprites/253.png"
   },
   {
-    "name": "sceptile",
+    "id": "sceptile",
+    "displayName": "Sceptile",
     "dexNumber": 254,
     "sprite": "sprites/254.png"
   },
   {
-    "name": "torchic",
+    "id": "torchic",
+    "displayName": "Torchic",
     "dexNumber": 255,
     "sprite": "sprites/255.png"
   },
   {
-    "name": "combusken",
+    "id": "combusken",
+    "displayName": "Combusken",
     "dexNumber": 256,
     "sprite": "sprites/256.png"
   },
   {
-    "name": "blaziken",
+    "id": "blaziken",
+    "displayName": "Blaziken",
     "dexNumber": 257,
     "sprite": "sprites/257.png"
   },
   {
-    "name": "mudkip",
+    "id": "mudkip",
+    "displayName": "Mudkip",
     "dexNumber": 258,
     "sprite": "sprites/258.png"
   },
   {
-    "name": "marshtomp",
+    "id": "marshtomp",
+    "displayName": "Marshtomp",
     "dexNumber": 259,
     "sprite": "sprites/259.png"
   },
   {
-    "name": "swampert",
+    "id": "swampert",
+    "displayName": "Swampert",
     "dexNumber": 260,
     "sprite": "sprites/260.png"
   },
   {
-    "name": "poochyena",
+    "id": "poochyena",
+    "displayName": "Poochyena",
     "dexNumber": 261,
     "sprite": "sprites/261.png"
   },
   {
-    "name": "mightyena",
+    "id": "mightyena",
+    "displayName": "Mightyena",
     "dexNumber": 262,
     "sprite": "sprites/262.png"
   },
   {
-    "name": "zigzagoon",
+    "id": "zigzagoon",
+    "displayName": "Zigzagoon",
     "dexNumber": 263,
     "sprite": "sprites/263.png"
   },
   {
-    "name": "linoone",
+    "id": "linoone",
+    "displayName": "Linoone",
     "dexNumber": 264,
     "sprite": "sprites/264.png"
   },
   {
-    "name": "wurmple",
+    "id": "wurmple",
+    "displayName": "Wurmple",
     "dexNumber": 265,
     "sprite": "sprites/265.png"
   },
   {
-    "name": "silcoon",
+    "id": "silcoon",
+    "displayName": "Silcoon",
     "dexNumber": 266,
     "sprite": "sprites/266.png"
   },
   {
-    "name": "beautifly",
+    "id": "beautifly",
+    "displayName": "Beautifly",
     "dexNumber": 267,
     "sprite": "sprites/267.png"
   },
   {
-    "name": "cascoon",
+    "id": "cascoon",
+    "displayName": "Cascoon",
     "dexNumber": 268,
     "sprite": "sprites/268.png"
   },
   {
-    "name": "dustox",
+    "id": "dustox",
+    "displayName": "Dustox",
     "dexNumber": 269,
     "sprite": "sprites/269.png"
   },
   {
-    "name": "lotad",
+    "id": "lotad",
+    "displayName": "Lotad",
     "dexNumber": 270,
     "sprite": "sprites/270.png"
   },
   {
-    "name": "lombre",
+    "id": "lombre",
+    "displayName": "Lombre",
     "dexNumber": 271,
     "sprite": "sprites/271.png"
   },
   {
-    "name": "ludicolo",
+    "id": "ludicolo",
+    "displayName": "Ludicolo",
     "dexNumber": 272,
     "sprite": "sprites/272.png"
   },
   {
-    "name": "seedot",
+    "id": "seedot",
+    "displayName": "Seedot",
     "dexNumber": 273,
     "sprite": "sprites/273.png"
   },
   {
-    "name": "nuzleaf",
+    "id": "nuzleaf",
+    "displayName": "Nuzleaf",
     "dexNumber": 274,
     "sprite": "sprites/274.png"
   },
   {
-    "name": "shiftry",
+    "id": "shiftry",
+    "displayName": "Shiftry",
     "dexNumber": 275,
     "sprite": "sprites/275.png"
   },
   {
-    "name": "taillow",
+    "id": "taillow",
+    "displayName": "Taillow",
     "dexNumber": 276,
     "sprite": "sprites/276.png"
   },
   {
-    "name": "swellow",
+    "id": "swellow",
+    "displayName": "Swellow",
     "dexNumber": 277,
     "sprite": "sprites/277.png"
   },
   {
-    "name": "wingull",
+    "id": "wingull",
+    "displayName": "Wingull",
     "dexNumber": 278,
     "sprite": "sprites/278.png"
   },
   {
-    "name": "pelipper",
+    "id": "pelipper",
+    "displayName": "Pelipper",
     "dexNumber": 279,
     "sprite": "sprites/279.png"
   },
   {
-    "name": "ralts",
+    "id": "ralts",
+    "displayName": "Ralts",
     "dexNumber": 280,
     "sprite": "sprites/280.png"
   },
   {
-    "name": "kirlia",
+    "id": "kirlia",
+    "displayName": "Kirlia",
     "dexNumber": 281,
     "sprite": "sprites/281.png"
   },
   {
-    "name": "gardevoir",
+    "id": "gardevoir",
+    "displayName": "Gardevoir",
     "dexNumber": 282,
     "sprite": "sprites/282.png"
   },
   {
-    "name": "surskit",
+    "id": "surskit",
+    "displayName": "Surskit",
     "dexNumber": 283,
     "sprite": "sprites/283.png"
   },
   {
-    "name": "masquerain",
+    "id": "masquerain",
+    "displayName": "Masquerain",
     "dexNumber": 284,
     "sprite": "sprites/284.png"
   },
   {
-    "name": "shroomish",
+    "id": "shroomish",
+    "displayName": "Shroomish",
     "dexNumber": 285,
     "sprite": "sprites/285.png"
   },
   {
-    "name": "breloom",
+    "id": "breloom",
+    "displayName": "Breloom",
     "dexNumber": 286,
     "sprite": "sprites/286.png"
   },
   {
-    "name": "slakoth",
+    "id": "slakoth",
+    "displayName": "Slakoth",
     "dexNumber": 287,
     "sprite": "sprites/287.png"
   },
   {
-    "name": "vigoroth",
+    "id": "vigoroth",
+    "displayName": "Vigoroth",
     "dexNumber": 288,
     "sprite": "sprites/288.png"
   },
   {
-    "name": "slaking",
+    "id": "slaking",
+    "displayName": "Slaking",
     "dexNumber": 289,
     "sprite": "sprites/289.png"
   },
   {
-    "name": "nincada",
+    "id": "nincada",
+    "displayName": "Nincada",
     "dexNumber": 290,
     "sprite": "sprites/290.png"
   },
   {
-    "name": "ninjask",
+    "id": "ninjask",
+    "displayName": "Ninjask",
     "dexNumber": 291,
     "sprite": "sprites/291.png"
   },
   {
-    "name": "shedinja",
+    "id": "shedinja",
+    "displayName": "Shedinja",
     "dexNumber": 292,
     "sprite": "sprites/292.png"
   },
   {
-    "name": "whismur",
+    "id": "whismur",
+    "displayName": "Whismur",
     "dexNumber": 293,
     "sprite": "sprites/293.png"
   },
   {
-    "name": "loudred",
+    "id": "loudred",
+    "displayName": "Loudred",
     "dexNumber": 294,
     "sprite": "sprites/294.png"
   },
   {
-    "name": "exploud",
+    "id": "exploud",
+    "displayName": "Exploud",
     "dexNumber": 295,
     "sprite": "sprites/295.png"
   },
   {
-    "name": "makuhita",
+    "id": "makuhita",
+    "displayName": "Makuhita",
     "dexNumber": 296,
     "sprite": "sprites/296.png"
   },
   {
-    "name": "hariyama",
+    "id": "hariyama",
+    "displayName": "Hariyama",
     "dexNumber": 297,
     "sprite": "sprites/297.png"
   },
   {
-    "name": "azurill",
+    "id": "azurill",
+    "displayName": "Azurill",
     "dexNumber": 298,
     "sprite": "sprites/298.png"
   },
   {
-    "name": "nosepass",
+    "id": "nosepass",
+    "displayName": "Nosepass",
     "dexNumber": 299,
     "sprite": "sprites/299.png"
   },
   {
-    "name": "skitty",
+    "id": "skitty",
+    "displayName": "Skitty",
     "dexNumber": 300,
     "sprite": "sprites/300.png"
   },
   {
-    "name": "delcatty",
+    "id": "delcatty",
+    "displayName": "Delcatty",
     "dexNumber": 301,
     "sprite": "sprites/301.png"
   },
   {
-    "name": "sableye",
+    "id": "sableye",
+    "displayName": "Sableye",
     "dexNumber": 302,
     "sprite": "sprites/302.png"
   },
   {
-    "name": "mawile",
+    "id": "mawile",
+    "displayName": "Mawile",
     "dexNumber": 303,
     "sprite": "sprites/303.png"
   },
   {
-    "name": "aron",
+    "id": "aron",
+    "displayName": "Aron",
     "dexNumber": 304,
     "sprite": "sprites/304.png"
   },
   {
-    "name": "lairon",
+    "id": "lairon",
+    "displayName": "Lairon",
     "dexNumber": 305,
     "sprite": "sprites/305.png"
   },
   {
-    "name": "aggron",
+    "id": "aggron",
+    "displayName": "Aggron",
     "dexNumber": 306,
     "sprite": "sprites/306.png"
   },
   {
-    "name": "meditite",
+    "id": "meditite",
+    "displayName": "Meditite",
     "dexNumber": 307,
     "sprite": "sprites/307.png"
   },
   {
-    "name": "medicham",
+    "id": "medicham",
+    "displayName": "Medicham",
     "dexNumber": 308,
     "sprite": "sprites/308.png"
   },
   {
-    "name": "electrike",
+    "id": "electrike",
+    "displayName": "Electrike",
     "dexNumber": 309,
     "sprite": "sprites/309.png"
   },
   {
-    "name": "manectric",
+    "id": "manectric",
+    "displayName": "Manectric",
     "dexNumber": 310,
     "sprite": "sprites/310.png"
   },
   {
-    "name": "plusle",
+    "id": "plusle",
+    "displayName": "Plusle",
     "dexNumber": 311,
     "sprite": "sprites/311.png"
   },
   {
-    "name": "minun",
+    "id": "minun",
+    "displayName": "Minun",
     "dexNumber": 312,
     "sprite": "sprites/312.png"
   },
   {
-    "name": "volbeat",
+    "id": "volbeat",
+    "displayName": "Volbeat",
     "dexNumber": 313,
     "sprite": "sprites/313.png"
   },
   {
-    "name": "illumise",
+    "id": "illumise",
+    "displayName": "Illumise",
     "dexNumber": 314,
     "sprite": "sprites/314.png"
   },
   {
-    "name": "roselia",
+    "id": "roselia",
+    "displayName": "Roselia",
     "dexNumber": 315,
     "sprite": "sprites/315.png"
   },
   {
-    "name": "gulpin",
+    "id": "gulpin",
+    "displayName": "Gulpin",
     "dexNumber": 316,
     "sprite": "sprites/316.png"
   },
   {
-    "name": "swalot",
+    "id": "swalot",
+    "displayName": "Swalot",
     "dexNumber": 317,
     "sprite": "sprites/317.png"
   },
   {
-    "name": "carvanha",
+    "id": "carvanha",
+    "displayName": "Carvanha",
     "dexNumber": 318,
     "sprite": "sprites/318.png"
   },
   {
-    "name": "sharpedo",
+    "id": "sharpedo",
+    "displayName": "Sharpedo",
     "dexNumber": 319,
     "sprite": "sprites/319.png"
   },
   {
-    "name": "wailmer",
+    "id": "wailmer",
+    "displayName": "Wailmer",
     "dexNumber": 320,
     "sprite": "sprites/320.png"
   },
   {
-    "name": "wailord",
+    "id": "wailord",
+    "displayName": "Wailord",
     "dexNumber": 321,
     "sprite": "sprites/321.png"
   },
   {
-    "name": "numel",
+    "id": "numel",
+    "displayName": "Numel",
     "dexNumber": 322,
     "sprite": "sprites/322.png"
   },
   {
-    "name": "camerupt",
+    "id": "camerupt",
+    "displayName": "Camerupt",
     "dexNumber": 323,
     "sprite": "sprites/323.png"
   },
   {
-    "name": "torkoal",
+    "id": "torkoal",
+    "displayName": "Torkoal",
     "dexNumber": 324,
     "sprite": "sprites/324.png"
   },
   {
-    "name": "spoink",
+    "id": "spoink",
+    "displayName": "Spoink",
     "dexNumber": 325,
     "sprite": "sprites/325.png"
   },
   {
-    "name": "grumpig",
+    "id": "grumpig",
+    "displayName": "Grumpig",
     "dexNumber": 326,
     "sprite": "sprites/326.png"
   },
   {
-    "name": "spinda",
+    "id": "spinda",
+    "displayName": "Spinda",
     "dexNumber": 327,
     "sprite": "sprites/327.png"
   },
   {
-    "name": "trapinch",
+    "id": "trapinch",
+    "displayName": "Trapinch",
     "dexNumber": 328,
     "sprite": "sprites/328.png"
   },
   {
-    "name": "vibrava",
+    "id": "vibrava",
+    "displayName": "Vibrava",
     "dexNumber": 329,
     "sprite": "sprites/329.png"
   },
   {
-    "name": "flygon",
+    "id": "flygon",
+    "displayName": "Flygon",
     "dexNumber": 330,
     "sprite": "sprites/330.png"
   },
   {
-    "name": "cacnea",
+    "id": "cacnea",
+    "displayName": "Cacnea",
     "dexNumber": 331,
     "sprite": "sprites/331.png"
   },
   {
-    "name": "cacturne",
+    "id": "cacturne",
+    "displayName": "Cacturne",
     "dexNumber": 332,
     "sprite": "sprites/332.png"
   },
   {
-    "name": "swablu",
+    "id": "swablu",
+    "displayName": "Swablu",
     "dexNumber": 333,
     "sprite": "sprites/333.png"
   },
   {
-    "name": "altaria",
+    "id": "altaria",
+    "displayName": "Altaria",
     "dexNumber": 334,
     "sprite": "sprites/334.png"
   },
   {
-    "name": "zangoose",
+    "id": "zangoose",
+    "displayName": "Zangoose",
     "dexNumber": 335,
     "sprite": "sprites/335.png"
   },
   {
-    "name": "seviper",
+    "id": "seviper",
+    "displayName": "Seviper",
     "dexNumber": 336,
     "sprite": "sprites/336.png"
   },
   {
-    "name": "lunatone",
+    "id": "lunatone",
+    "displayName": "Lunatone",
     "dexNumber": 337,
     "sprite": "sprites/337.png"
   },
   {
-    "name": "solrock",
+    "id": "solrock",
+    "displayName": "Solrock",
     "dexNumber": 338,
     "sprite": "sprites/338.png"
   },
   {
-    "name": "barboach",
+    "id": "barboach",
+    "displayName": "Barboach",
     "dexNumber": 339,
     "sprite": "sprites/339.png"
   },
   {
-    "name": "whiscash",
+    "id": "whiscash",
+    "displayName": "Whiscash",
     "dexNumber": 340,
     "sprite": "sprites/340.png"
   },
   {
-    "name": "corphish",
+    "id": "corphish",
+    "displayName": "Corphish",
     "dexNumber": 341,
     "sprite": "sprites/341.png"
   },
   {
-    "name": "crawdaunt",
+    "id": "crawdaunt",
+    "displayName": "Crawdaunt",
     "dexNumber": 342,
     "sprite": "sprites/342.png"
   },
   {
-    "name": "baltoy",
+    "id": "baltoy",
+    "displayName": "Baltoy",
     "dexNumber": 343,
     "sprite": "sprites/343.png"
   },
   {
-    "name": "claydol",
+    "id": "claydol",
+    "displayName": "Claydol",
     "dexNumber": 344,
     "sprite": "sprites/344.png"
   },
   {
-    "name": "lileep",
+    "id": "lileep",
+    "displayName": "Lileep",
     "dexNumber": 345,
     "sprite": "sprites/345.png"
   },
   {
-    "name": "cradily",
+    "id": "cradily",
+    "displayName": "Cradily",
     "dexNumber": 346,
     "sprite": "sprites/346.png"
   },
   {
-    "name": "anorith",
+    "id": "anorith",
+    "displayName": "Anorith",
     "dexNumber": 347,
     "sprite": "sprites/347.png"
   },
   {
-    "name": "armaldo",
+    "id": "armaldo",
+    "displayName": "Armaldo",
     "dexNumber": 348,
     "sprite": "sprites/348.png"
   },
   {
-    "name": "feebas",
+    "id": "feebas",
+    "displayName": "Feebas",
     "dexNumber": 349,
     "sprite": "sprites/349.png"
   },
   {
-    "name": "milotic",
+    "id": "milotic",
+    "displayName": "Milotic",
     "dexNumber": 350,
     "sprite": "sprites/350.png"
   },
   {
-    "name": "castform",
+    "id": "castform",
+    "displayName": "Castform",
     "dexNumber": 351,
     "sprite": "sprites/351.png"
   },
   {
-    "name": "kecleon",
+    "id": "kecleon",
+    "displayName": "Kecleon",
     "dexNumber": 352,
     "sprite": "sprites/352.png"
   },
   {
-    "name": "shuppet",
+    "id": "shuppet",
+    "displayName": "Shuppet",
     "dexNumber": 353,
     "sprite": "sprites/353.png"
   },
   {
-    "name": "banette",
+    "id": "banette",
+    "displayName": "Banette",
     "dexNumber": 354,
     "sprite": "sprites/354.png"
   },
   {
-    "name": "duskull",
+    "id": "duskull",
+    "displayName": "Duskull",
     "dexNumber": 355,
     "sprite": "sprites/355.png"
   },
   {
-    "name": "dusclops",
+    "id": "dusclops",
+    "displayName": "Dusclops",
     "dexNumber": 356,
     "sprite": "sprites/356.png"
   },
   {
-    "name": "tropius",
+    "id": "tropius",
+    "displayName": "Tropius",
     "dexNumber": 357,
     "sprite": "sprites/357.png"
   },
   {
-    "name": "chimecho",
+    "id": "chimecho",
+    "displayName": "Chimecho",
     "dexNumber": 358,
     "sprite": "sprites/358.png"
   },
   {
-    "name": "absol",
+    "id": "absol",
+    "displayName": "Absol",
     "dexNumber": 359,
     "sprite": "sprites/359.png"
   },
   {
-    "name": "wynaut",
+    "id": "wynaut",
+    "displayName": "Wynaut",
     "dexNumber": 360,
     "sprite": "sprites/360.png"
   },
   {
-    "name": "snorunt",
+    "id": "snorunt",
+    "displayName": "Snorunt",
     "dexNumber": 361,
     "sprite": "sprites/361.png"
   },
   {
-    "name": "glalie",
+    "id": "glalie",
+    "displayName": "Glalie",
     "dexNumber": 362,
     "sprite": "sprites/362.png"
   },
   {
-    "name": "spheal",
+    "id": "spheal",
+    "displayName": "Spheal",
     "dexNumber": 363,
     "sprite": "sprites/363.png"
   },
   {
-    "name": "sealeo",
+    "id": "sealeo",
+    "displayName": "Sealeo",
     "dexNumber": 364,
     "sprite": "sprites/364.png"
   },
   {
-    "name": "walrein",
+    "id": "walrein",
+    "displayName": "Walrein",
     "dexNumber": 365,
     "sprite": "sprites/365.png"
   },
   {
-    "name": "clamperl",
+    "id": "clamperl",
+    "displayName": "Clamperl",
     "dexNumber": 366,
     "sprite": "sprites/366.png"
   },
   {
-    "name": "huntail",
+    "id": "huntail",
+    "displayName": "Huntail",
     "dexNumber": 367,
     "sprite": "sprites/367.png"
   },
   {
-    "name": "gorebyss",
+    "id": "gorebyss",
+    "displayName": "Gorebyss",
     "dexNumber": 368,
     "sprite": "sprites/368.png"
   },
   {
-    "name": "relicanth",
+    "id": "relicanth",
+    "displayName": "Relicanth",
     "dexNumber": 369,
     "sprite": "sprites/369.png"
   },
   {
-    "name": "luvdisc",
+    "id": "luvdisc",
+    "displayName": "Luvdisc",
     "dexNumber": 370,
     "sprite": "sprites/370.png"
   },
   {
-    "name": "bagon",
+    "id": "bagon",
+    "displayName": "Bagon",
     "dexNumber": 371,
     "sprite": "sprites/371.png"
   },
   {
-    "name": "shelgon",
+    "id": "shelgon",
+    "displayName": "Shelgon",
     "dexNumber": 372,
     "sprite": "sprites/372.png"
   },
   {
-    "name": "salamence",
+    "id": "salamence",
+    "displayName": "Salamence",
     "dexNumber": 373,
     "sprite": "sprites/373.png"
   },
   {
-    "name": "beldum",
+    "id": "beldum",
+    "displayName": "Beldum",
     "dexNumber": 374,
     "sprite": "sprites/374.png"
   },
   {
-    "name": "metang",
+    "id": "metang",
+    "displayName": "Metang",
     "dexNumber": 375,
     "sprite": "sprites/375.png"
   },
   {
-    "name": "metagross",
+    "id": "metagross",
+    "displayName": "Metagross",
     "dexNumber": 376,
     "sprite": "sprites/376.png"
   },
   {
-    "name": "regirock",
+    "id": "regirock",
+    "displayName": "Regirock",
     "dexNumber": 377,
     "sprite": "sprites/377.png"
   },
   {
-    "name": "regice",
+    "id": "regice",
+    "displayName": "Regice",
     "dexNumber": 378,
     "sprite": "sprites/378.png"
   },
   {
-    "name": "registeel",
+    "id": "registeel",
+    "displayName": "Registeel",
     "dexNumber": 379,
     "sprite": "sprites/379.png"
   },
   {
-    "name": "latias",
+    "id": "latias",
+    "displayName": "Latias",
     "dexNumber": 380,
     "sprite": "sprites/380.png"
   },
   {
-    "name": "latios",
+    "id": "latios",
+    "displayName": "Latios",
     "dexNumber": 381,
     "sprite": "sprites/381.png"
   },
   {
-    "name": "kyogre",
+    "id": "kyogre",
+    "displayName": "Kyogre",
     "dexNumber": 382,
     "sprite": "sprites/382.png"
   },
   {
-    "name": "groudon",
+    "id": "groudon",
+    "displayName": "Groudon",
     "dexNumber": 383,
     "sprite": "sprites/383.png"
   },
   {
-    "name": "rayquaza",
+    "id": "rayquaza",
+    "displayName": "Rayquaza",
     "dexNumber": 384,
     "sprite": "sprites/384.png"
   },
   {
-    "name": "jirachi",
+    "id": "jirachi",
+    "displayName": "Jirachi",
     "dexNumber": 385,
     "sprite": "sprites/385.png"
   },
   {
-    "name": "deoxys",
+    "id": "deoxys",
+    "displayName": "Deoxys",
     "dexNumber": 386,
     "sprite": "sprites/386.png"
   },
   {
-    "name": "turtwig",
+    "id": "turtwig",
+    "displayName": "Turtwig",
     "dexNumber": 387,
     "sprite": "sprites/387.png"
   },
   {
-    "name": "grotle",
+    "id": "grotle",
+    "displayName": "Grotle",
     "dexNumber": 388,
     "sprite": "sprites/388.png"
   },
   {
-    "name": "torterra",
+    "id": "torterra",
+    "displayName": "Torterra",
     "dexNumber": 389,
     "sprite": "sprites/389.png"
   },
   {
-    "name": "chimchar",
+    "id": "chimchar",
+    "displayName": "Chimchar",
     "dexNumber": 390,
     "sprite": "sprites/390.png"
   },
   {
-    "name": "monferno",
+    "id": "monferno",
+    "displayName": "Monferno",
     "dexNumber": 391,
     "sprite": "sprites/391.png"
   },
   {
-    "name": "infernape",
+    "id": "infernape",
+    "displayName": "Infernape",
     "dexNumber": 392,
     "sprite": "sprites/392.png"
   },
   {
-    "name": "piplup",
+    "id": "piplup",
+    "displayName": "Piplup",
     "dexNumber": 393,
     "sprite": "sprites/393.png"
   },
   {
-    "name": "prinplup",
+    "id": "prinplup",
+    "displayName": "Prinplup",
     "dexNumber": 394,
     "sprite": "sprites/394.png"
   },
   {
-    "name": "empoleon",
+    "id": "empoleon",
+    "displayName": "Empoleon",
     "dexNumber": 395,
     "sprite": "sprites/395.png"
   },
   {
-    "name": "starly",
+    "id": "starly",
+    "displayName": "Starly",
     "dexNumber": 396,
     "sprite": "sprites/396.png"
   },
   {
-    "name": "staravia",
+    "id": "staravia",
+    "displayName": "Staravia",
     "dexNumber": 397,
     "sprite": "sprites/397.png"
   },
   {
-    "name": "staraptor",
+    "id": "staraptor",
+    "displayName": "Staraptor",
     "dexNumber": 398,
     "sprite": "sprites/398.png"
   },
   {
-    "name": "bidoof",
+    "id": "bidoof",
+    "displayName": "Bidoof",
     "dexNumber": 399,
     "sprite": "sprites/399.png"
   },
   {
-    "name": "bibarel",
+    "id": "bibarel",
+    "displayName": "Bibarel",
     "dexNumber": 400,
     "sprite": "sprites/400.png"
   },
   {
-    "name": "kricketot",
+    "id": "kricketot",
+    "displayName": "Kricketot",
     "dexNumber": 401,
     "sprite": "sprites/401.png"
   },
   {
-    "name": "kricketune",
+    "id": "kricketune",
+    "displayName": "Kricketune",
     "dexNumber": 402,
     "sprite": "sprites/402.png"
   },
   {
-    "name": "shinx",
+    "id": "shinx",
+    "displayName": "Shinx",
     "dexNumber": 403,
     "sprite": "sprites/403.png"
   },
   {
-    "name": "luxio",
+    "id": "luxio",
+    "displayName": "Luxio",
     "dexNumber": 404,
     "sprite": "sprites/404.png"
   },
   {
-    "name": "luxray",
+    "id": "luxray",
+    "displayName": "Luxray",
     "dexNumber": 405,
     "sprite": "sprites/405.png"
   },
   {
-    "name": "budew",
+    "id": "budew",
+    "displayName": "Budew",
     "dexNumber": 406,
     "sprite": "sprites/406.png"
   },
   {
-    "name": "roserade",
+    "id": "roserade",
+    "displayName": "Roserade",
     "dexNumber": 407,
     "sprite": "sprites/407.png"
   },
   {
-    "name": "cranidos",
+    "id": "cranidos",
+    "displayName": "Cranidos",
     "dexNumber": 408,
     "sprite": "sprites/408.png"
   },
   {
-    "name": "rampardos",
+    "id": "rampardos",
+    "displayName": "Rampardos",
     "dexNumber": 409,
     "sprite": "sprites/409.png"
   },
   {
-    "name": "shieldon",
+    "id": "shieldon",
+    "displayName": "Shieldon",
     "dexNumber": 410,
     "sprite": "sprites/410.png"
   },
   {
-    "name": "bastiodon",
+    "id": "bastiodon",
+    "displayName": "Bastiodon",
     "dexNumber": 411,
     "sprite": "sprites/411.png"
   },
   {
-    "name": "burmy",
+    "id": "burmy",
+    "displayName": "Burmy",
     "dexNumber": 412,
     "sprite": "sprites/412.png"
   },
   {
-    "name": "wormadam",
+    "id": "wormadam",
+    "displayName": "Wormadam",
     "dexNumber": 413,
     "sprite": "sprites/413.png"
   },
   {
-    "name": "mothim",
+    "id": "mothim",
+    "displayName": "Mothim",
     "dexNumber": 414,
     "sprite": "sprites/414.png"
   },
   {
-    "name": "combee",
+    "id": "combee",
+    "displayName": "Combee",
     "dexNumber": 415,
     "sprite": "sprites/415.png"
   },
   {
-    "name": "vespiquen",
+    "id": "vespiquen",
+    "displayName": "Vespiquen",
     "dexNumber": 416,
     "sprite": "sprites/416.png"
   },
   {
-    "name": "pachirisu",
+    "id": "pachirisu",
+    "displayName": "Pachirisu",
     "dexNumber": 417,
     "sprite": "sprites/417.png"
   },
   {
-    "name": "buizel",
+    "id": "buizel",
+    "displayName": "Buizel",
     "dexNumber": 418,
     "sprite": "sprites/418.png"
   },
   {
-    "name": "floatzel",
+    "id": "floatzel",
+    "displayName": "Floatzel",
     "dexNumber": 419,
     "sprite": "sprites/419.png"
   },
   {
-    "name": "cherubi",
+    "id": "cherubi",
+    "displayName": "Cherubi",
     "dexNumber": 420,
     "sprite": "sprites/420.png"
   },
   {
-    "name": "cherrim",
+    "id": "cherrim",
+    "displayName": "Cherrim",
     "dexNumber": 421,
     "sprite": "sprites/421.png"
   },
   {
-    "name": "shellos",
+    "id": "shellos",
+    "displayName": "Shellos",
     "dexNumber": 422,
     "sprite": "sprites/422.png"
   },
   {
-    "name": "gastrodon",
+    "id": "gastrodon",
+    "displayName": "Gastrodon",
     "dexNumber": 423,
     "sprite": "sprites/423.png"
   },
   {
-    "name": "ambipom",
+    "id": "ambipom",
+    "displayName": "Ambipom",
     "dexNumber": 424,
     "sprite": "sprites/424.png"
   },
   {
-    "name": "drifloon",
+    "id": "drifloon",
+    "displayName": "Drifloon",
     "dexNumber": 425,
     "sprite": "sprites/425.png"
   },
   {
-    "name": "drifblim",
+    "id": "drifblim",
+    "displayName": "Drifblim",
     "dexNumber": 426,
     "sprite": "sprites/426.png"
   },
   {
-    "name": "buneary",
+    "id": "buneary",
+    "displayName": "Buneary",
     "dexNumber": 427,
     "sprite": "sprites/427.png"
   },
   {
-    "name": "lopunny",
+    "id": "lopunny",
+    "displayName": "Lopunny",
     "dexNumber": 428,
     "sprite": "sprites/428.png"
   },
   {
-    "name": "mismagius",
+    "id": "mismagius",
+    "displayName": "Mismagius",
     "dexNumber": 429,
     "sprite": "sprites/429.png"
   },
   {
-    "name": "honchkrow",
+    "id": "honchkrow",
+    "displayName": "Honchkrow",
     "dexNumber": 430,
     "sprite": "sprites/430.png"
   },
   {
-    "name": "glameow",
+    "id": "glameow",
+    "displayName": "Glameow",
     "dexNumber": 431,
     "sprite": "sprites/431.png"
   },
   {
-    "name": "purugly",
+    "id": "purugly",
+    "displayName": "Purugly",
     "dexNumber": 432,
     "sprite": "sprites/432.png"
   },
   {
-    "name": "chingling",
+    "id": "chingling",
+    "displayName": "Chingling",
     "dexNumber": 433,
     "sprite": "sprites/433.png"
   },
   {
-    "name": "stunky",
+    "id": "stunky",
+    "displayName": "Stunky",
     "dexNumber": 434,
     "sprite": "sprites/434.png"
   },
   {
-    "name": "skuntank",
+    "id": "skuntank",
+    "displayName": "Skuntank",
     "dexNumber": 435,
     "sprite": "sprites/435.png"
   },
   {
-    "name": "bronzor",
+    "id": "bronzor",
+    "displayName": "Bronzor",
     "dexNumber": 436,
     "sprite": "sprites/436.png"
   },
   {
-    "name": "bronzong",
+    "id": "bronzong",
+    "displayName": "Bronzong",
     "dexNumber": 437,
     "sprite": "sprites/437.png"
   },
   {
-    "name": "bonsly",
+    "id": "bonsly",
+    "displayName": "Bonsly",
     "dexNumber": 438,
     "sprite": "sprites/438.png"
   },
   {
-    "name": "mime-jr",
+    "id": "mime-jr",
+    "displayName": "Mime Jr.",
     "dexNumber": 439,
     "sprite": "sprites/439.png"
   },
   {
-    "name": "happiny",
+    "id": "happiny",
+    "displayName": "Happiny",
     "dexNumber": 440,
     "sprite": "sprites/440.png"
   },
   {
-    "name": "chatot",
+    "id": "chatot",
+    "displayName": "Chatot",
     "dexNumber": 441,
     "sprite": "sprites/441.png"
   },
   {
-    "name": "spiritomb",
+    "id": "spiritomb",
+    "displayName": "Spiritomb",
     "dexNumber": 442,
     "sprite": "sprites/442.png"
   },
   {
-    "name": "gible",
+    "id": "gible",
+    "displayName": "Gible",
     "dexNumber": 443,
     "sprite": "sprites/443.png"
   },
   {
-    "name": "gabite",
+    "id": "gabite",
+    "displayName": "Gabite",
     "dexNumber": 444,
     "sprite": "sprites/444.png"
   },
   {
-    "name": "garchomp",
+    "id": "garchomp",
+    "displayName": "Garchomp",
     "dexNumber": 445,
     "sprite": "sprites/445.png"
   },
   {
-    "name": "munchlax",
+    "id": "munchlax",
+    "displayName": "Munchlax",
     "dexNumber": 446,
     "sprite": "sprites/446.png"
   },
   {
-    "name": "riolu",
+    "id": "riolu",
+    "displayName": "Riolu",
     "dexNumber": 447,
     "sprite": "sprites/447.png"
   },
   {
-    "name": "lucario",
+    "id": "lucario",
+    "displayName": "Lucario",
     "dexNumber": 448,
     "sprite": "sprites/448.png"
   },
   {
-    "name": "hippopotas",
+    "id": "hippopotas",
+    "displayName": "Hippopotas",
     "dexNumber": 449,
     "sprite": "sprites/449.png"
   },
   {
-    "name": "hippowdon",
+    "id": "hippowdon",
+    "displayName": "Hippowdon",
     "dexNumber": 450,
     "sprite": "sprites/450.png"
   },
   {
-    "name": "skorupi",
+    "id": "skorupi",
+    "displayName": "Skorupi",
     "dexNumber": 451,
     "sprite": "sprites/451.png"
   },
   {
-    "name": "drapion",
+    "id": "drapion",
+    "displayName": "Drapion",
     "dexNumber": 452,
     "sprite": "sprites/452.png"
   },
   {
-    "name": "croagunk",
+    "id": "croagunk",
+    "displayName": "Croagunk",
     "dexNumber": 453,
     "sprite": "sprites/453.png"
   },
   {
-    "name": "toxicroak",
+    "id": "toxicroak",
+    "displayName": "Toxicroak",
     "dexNumber": 454,
     "sprite": "sprites/454.png"
   },
   {
-    "name": "carnivine",
+    "id": "carnivine",
+    "displayName": "Carnivine",
     "dexNumber": 455,
     "sprite": "sprites/455.png"
   },
   {
-    "name": "finneon",
+    "id": "finneon",
+    "displayName": "Finneon",
     "dexNumber": 456,
     "sprite": "sprites/456.png"
   },
   {
-    "name": "lumineon",
+    "id": "lumineon",
+    "displayName": "Lumineon",
     "dexNumber": 457,
     "sprite": "sprites/457.png"
   },
   {
-    "name": "mantyke",
+    "id": "mantyke",
+    "displayName": "Mantyke",
     "dexNumber": 458,
     "sprite": "sprites/458.png"
   },
   {
-    "name": "snover",
+    "id": "snover",
+    "displayName": "Snover",
     "dexNumber": 459,
     "sprite": "sprites/459.png"
   },
   {
-    "name": "abomasnow",
+    "id": "abomasnow",
+    "displayName": "Abomasnow",
     "dexNumber": 460,
     "sprite": "sprites/460.png"
   },
   {
-    "name": "weavile",
+    "id": "weavile",
+    "displayName": "Weavile",
     "dexNumber": 461,
     "sprite": "sprites/461.png"
   },
   {
-    "name": "magnezone",
+    "id": "magnezone",
+    "displayName": "Magnezone",
     "dexNumber": 462,
     "sprite": "sprites/462.png"
   },
   {
-    "name": "lickilicky",
+    "id": "lickilicky",
+    "displayName": "Lickilicky",
     "dexNumber": 463,
     "sprite": "sprites/463.png"
   },
   {
-    "name": "rhyperior",
+    "id": "rhyperior",
+    "displayName": "Rhyperior",
     "dexNumber": 464,
     "sprite": "sprites/464.png"
   },
   {
-    "name": "tangrowth",
+    "id": "tangrowth",
+    "displayName": "Tangrowth",
     "dexNumber": 465,
     "sprite": "sprites/465.png"
   },
   {
-    "name": "electivire",
+    "id": "electivire",
+    "displayName": "Electivire",
     "dexNumber": 466,
     "sprite": "sprites/466.png"
   },
   {
-    "name": "magmortar",
+    "id": "magmortar",
+    "displayName": "Magmortar",
     "dexNumber": 467,
     "sprite": "sprites/467.png"
   },
   {
-    "name": "togekiss",
+    "id": "togekiss",
+    "displayName": "Togekiss",
     "dexNumber": 468,
     "sprite": "sprites/468.png"
   },
   {
-    "name": "yanmega",
+    "id": "yanmega",
+    "displayName": "Yanmega",
     "dexNumber": 469,
     "sprite": "sprites/469.png"
   },
   {
-    "name": "leafeon",
+    "id": "leafeon",
+    "displayName": "Leafeon",
     "dexNumber": 470,
     "sprite": "sprites/470.png"
   },
   {
-    "name": "glaceon",
+    "id": "glaceon",
+    "displayName": "Glaceon",
     "dexNumber": 471,
     "sprite": "sprites/471.png"
   },
   {
-    "name": "gliscor",
+    "id": "gliscor",
+    "displayName": "Gliscor",
     "dexNumber": 472,
     "sprite": "sprites/472.png"
   },
   {
-    "name": "mamoswine",
+    "id": "mamoswine",
+    "displayName": "Mamoswine",
     "dexNumber": 473,
     "sprite": "sprites/473.png"
   },
   {
-    "name": "porygon-z",
+    "id": "porygon-z",
+    "displayName": "Porygon-Z",
     "dexNumber": 474,
     "sprite": "sprites/474.png"
   },
   {
-    "name": "gallade",
+    "id": "gallade",
+    "displayName": "Gallade",
     "dexNumber": 475,
     "sprite": "sprites/475.png"
   },
   {
-    "name": "probopass",
+    "id": "probopass",
+    "displayName": "Probopass",
     "dexNumber": 476,
     "sprite": "sprites/476.png"
   },
   {
-    "name": "dusknoir",
+    "id": "dusknoir",
+    "displayName": "Dusknoir",
     "dexNumber": 477,
     "sprite": "sprites/477.png"
   },
   {
-    "name": "froslass",
+    "id": "froslass",
+    "displayName": "Froslass",
     "dexNumber": 478,
     "sprite": "sprites/478.png"
   },
   {
-    "name": "rotom",
+    "id": "rotom",
+    "displayName": "Rotom",
     "dexNumber": 479,
     "sprite": "sprites/479.png"
   },
   {
-    "name": "uxie",
+    "id": "uxie",
+    "displayName": "Uxie",
     "dexNumber": 480,
     "sprite": "sprites/480.png"
   },
   {
-    "name": "mesprit",
+    "id": "mesprit",
+    "displayName": "Mesprit",
     "dexNumber": 481,
     "sprite": "sprites/481.png"
   },
   {
-    "name": "azelf",
+    "id": "azelf",
+    "displayName": "Azelf",
     "dexNumber": 482,
     "sprite": "sprites/482.png"
   },
   {
-    "name": "dialga",
+    "id": "dialga",
+    "displayName": "Dialga",
     "dexNumber": 483,
     "sprite": "sprites/483.png"
   },
   {
-    "name": "palkia",
+    "id": "palkia",
+    "displayName": "Palkia",
     "dexNumber": 484,
     "sprite": "sprites/484.png"
   },
   {
-    "name": "heatran",
+    "id": "heatran",
+    "displayName": "Heatran",
     "dexNumber": 485,
     "sprite": "sprites/485.png"
   },
   {
-    "name": "regigigas",
+    "id": "regigigas",
+    "displayName": "Regigigas",
     "dexNumber": 486,
     "sprite": "sprites/486.png"
   },
   {
-    "name": "giratina",
+    "id": "giratina",
+    "displayName": "Giratina",
     "dexNumber": 487,
     "sprite": "sprites/487.png"
   },
   {
-    "name": "cresselia",
+    "id": "cresselia",
+    "displayName": "Cresselia",
     "dexNumber": 488,
     "sprite": "sprites/488.png"
   },
   {
-    "name": "phione",
+    "id": "phione",
+    "displayName": "Phione",
     "dexNumber": 489,
     "sprite": "sprites/489.png"
   },
   {
-    "name": "manaphy",
+    "id": "manaphy",
+    "displayName": "Manaphy",
     "dexNumber": 490,
     "sprite": "sprites/490.png"
   },
   {
-    "name": "darkrai",
+    "id": "darkrai",
+    "displayName": "Darkrai",
     "dexNumber": 491,
     "sprite": "sprites/491.png"
   },
   {
-    "name": "shaymin",
+    "id": "shaymin",
+    "displayName": "Shaymin",
     "dexNumber": 492,
     "sprite": "sprites/492.png"
   },
   {
-    "name": "arceus",
+    "id": "arceus",
+    "displayName": "Arceus",
     "dexNumber": 493,
     "sprite": "sprites/493.png"
   },
   {
-    "name": "victini",
+    "id": "victini",
+    "displayName": "Victini",
     "dexNumber": 494,
     "sprite": "sprites/494.png"
   },
   {
-    "name": "snivy",
+    "id": "snivy",
+    "displayName": "Snivy",
     "dexNumber": 495,
     "sprite": "sprites/495.png"
   },
   {
-    "name": "servine",
+    "id": "servine",
+    "displayName": "Servine",
     "dexNumber": 496,
     "sprite": "sprites/496.png"
   },
   {
-    "name": "serperior",
+    "id": "serperior",
+    "displayName": "Serperior",
     "dexNumber": 497,
     "sprite": "sprites/497.png"
   },
   {
-    "name": "tepig",
+    "id": "tepig",
+    "displayName": "Tepig",
     "dexNumber": 498,
     "sprite": "sprites/498.png"
   },
   {
-    "name": "pignite",
+    "id": "pignite",
+    "displayName": "Pignite",
     "dexNumber": 499,
     "sprite": "sprites/499.png"
   },
   {
-    "name": "emboar",
+    "id": "emboar",
+    "displayName": "Emboar",
     "dexNumber": 500,
     "sprite": "sprites/500.png"
   },
   {
-    "name": "oshawott",
+    "id": "oshawott",
+    "displayName": "Oshawott",
     "dexNumber": 501,
     "sprite": "sprites/501.png"
   },
   {
-    "name": "dewott",
+    "id": "dewott",
+    "displayName": "Dewott",
     "dexNumber": 502,
     "sprite": "sprites/502.png"
   },
   {
-    "name": "samurott",
+    "id": "samurott",
+    "displayName": "Samurott",
     "dexNumber": 503,
     "sprite": "sprites/503.png"
   },
   {
-    "name": "patrat",
+    "id": "patrat",
+    "displayName": "Patrat",
     "dexNumber": 504,
     "sprite": "sprites/504.png"
   },
   {
-    "name": "watchog",
+    "id": "watchog",
+    "displayName": "Watchog",
     "dexNumber": 505,
     "sprite": "sprites/505.png"
   },
   {
-    "name": "lillipup",
+    "id": "lillipup",
+    "displayName": "Lillipup",
     "dexNumber": 506,
     "sprite": "sprites/506.png"
   },
   {
-    "name": "herdier",
+    "id": "herdier",
+    "displayName": "Herdier",
     "dexNumber": 507,
     "sprite": "sprites/507.png"
   },
   {
-    "name": "stoutland",
+    "id": "stoutland",
+    "displayName": "Stoutland",
     "dexNumber": 508,
     "sprite": "sprites/508.png"
   },
   {
-    "name": "purrloin",
+    "id": "purrloin",
+    "displayName": "Purrloin",
     "dexNumber": 509,
     "sprite": "sprites/509.png"
   },
   {
-    "name": "liepard",
+    "id": "liepard",
+    "displayName": "Liepard",
     "dexNumber": 510,
     "sprite": "sprites/510.png"
   },
   {
-    "name": "pansage",
+    "id": "pansage",
+    "displayName": "Pansage",
     "dexNumber": 511,
     "sprite": "sprites/511.png"
   },
   {
-    "name": "simisage",
+    "id": "simisage",
+    "displayName": "Simisage",
     "dexNumber": 512,
     "sprite": "sprites/512.png"
   },
   {
-    "name": "pansear",
+    "id": "pansear",
+    "displayName": "Pansear",
     "dexNumber": 513,
     "sprite": "sprites/513.png"
   },
   {
-    "name": "simisear",
+    "id": "simisear",
+    "displayName": "Simisear",
     "dexNumber": 514,
     "sprite": "sprites/514.png"
   },
   {
-    "name": "panpour",
+    "id": "panpour",
+    "displayName": "Panpour",
     "dexNumber": 515,
     "sprite": "sprites/515.png"
   },
   {
-    "name": "simipour",
+    "id": "simipour",
+    "displayName": "Simipour",
     "dexNumber": 516,
     "sprite": "sprites/516.png"
   },
   {
-    "name": "munna",
+    "id": "munna",
+    "displayName": "Munna",
     "dexNumber": 517,
     "sprite": "sprites/517.png"
   },
   {
-    "name": "musharna",
+    "id": "musharna",
+    "displayName": "Musharna",
     "dexNumber": 518,
     "sprite": "sprites/518.png"
   },
   {
-    "name": "pidove",
+    "id": "pidove",
+    "displayName": "Pidove",
     "dexNumber": 519,
     "sprite": "sprites/519.png"
   },
   {
-    "name": "tranquill",
+    "id": "tranquill",
+    "displayName": "Tranquill",
     "dexNumber": 520,
     "sprite": "sprites/520.png"
   },
   {
-    "name": "unfezant",
+    "id": "unfezant",
+    "displayName": "Unfezant",
     "dexNumber": 521,
     "sprite": "sprites/521.png"
   },
   {
-    "name": "blitzle",
+    "id": "blitzle",
+    "displayName": "Blitzle",
     "dexNumber": 522,
     "sprite": "sprites/522.png"
   },
   {
-    "name": "zebstrika",
+    "id": "zebstrika",
+    "displayName": "Zebstrika",
     "dexNumber": 523,
     "sprite": "sprites/523.png"
   },
   {
-    "name": "roggenrola",
+    "id": "roggenrola",
+    "displayName": "Roggenrola",
     "dexNumber": 524,
     "sprite": "sprites/524.png"
   },
   {
-    "name": "boldore",
+    "id": "boldore",
+    "displayName": "Boldore",
     "dexNumber": 525,
     "sprite": "sprites/525.png"
   },
   {
-    "name": "gigalith",
+    "id": "gigalith",
+    "displayName": "Gigalith",
     "dexNumber": 526,
     "sprite": "sprites/526.png"
   },
   {
-    "name": "woobat",
+    "id": "woobat",
+    "displayName": "Woobat",
     "dexNumber": 527,
     "sprite": "sprites/527.png"
   },
   {
-    "name": "swoobat",
+    "id": "swoobat",
+    "displayName": "Swoobat",
     "dexNumber": 528,
     "sprite": "sprites/528.png"
   },
   {
-    "name": "drilbur",
+    "id": "drilbur",
+    "displayName": "Drilbur",
     "dexNumber": 529,
     "sprite": "sprites/529.png"
   },
   {
-    "name": "excadrill",
+    "id": "excadrill",
+    "displayName": "Excadrill",
     "dexNumber": 530,
     "sprite": "sprites/530.png"
   },
   {
-    "name": "audino",
+    "id": "audino",
+    "displayName": "Audino",
     "dexNumber": 531,
     "sprite": "sprites/531.png"
   },
   {
-    "name": "timburr",
+    "id": "timburr",
+    "displayName": "Timburr",
     "dexNumber": 532,
     "sprite": "sprites/532.png"
   },
   {
-    "name": "gurdurr",
+    "id": "gurdurr",
+    "displayName": "Gurdurr",
     "dexNumber": 533,
     "sprite": "sprites/533.png"
   },
   {
-    "name": "conkeldurr",
+    "id": "conkeldurr",
+    "displayName": "Conkeldurr",
     "dexNumber": 534,
     "sprite": "sprites/534.png"
   },
   {
-    "name": "tympole",
+    "id": "tympole",
+    "displayName": "Tympole",
     "dexNumber": 535,
     "sprite": "sprites/535.png"
   },
   {
-    "name": "palpitoad",
+    "id": "palpitoad",
+    "displayName": "Palpitoad",
     "dexNumber": 536,
     "sprite": "sprites/536.png"
   },
   {
-    "name": "seismitoad",
+    "id": "seismitoad",
+    "displayName": "Seismitoad",
     "dexNumber": 537,
     "sprite": "sprites/537.png"
   },
   {
-    "name": "throh",
+    "id": "throh",
+    "displayName": "Throh",
     "dexNumber": 538,
     "sprite": "sprites/538.png"
   },
   {
-    "name": "sawk",
+    "id": "sawk",
+    "displayName": "Sawk",
     "dexNumber": 539,
     "sprite": "sprites/539.png"
   },
   {
-    "name": "sewaddle",
+    "id": "sewaddle",
+    "displayName": "Sewaddle",
     "dexNumber": 540,
     "sprite": "sprites/540.png"
   },
   {
-    "name": "swadloon",
+    "id": "swadloon",
+    "displayName": "Swadloon",
     "dexNumber": 541,
     "sprite": "sprites/541.png"
   },
   {
-    "name": "leavanny",
+    "id": "leavanny",
+    "displayName": "Leavanny",
     "dexNumber": 542,
     "sprite": "sprites/542.png"
   },
   {
-    "name": "venipede",
+    "id": "venipede",
+    "displayName": "Venipede",
     "dexNumber": 543,
     "sprite": "sprites/543.png"
   },
   {
-    "name": "whirlipede",
+    "id": "whirlipede",
+    "displayName": "Whirlipede",
     "dexNumber": 544,
     "sprite": "sprites/544.png"
   },
   {
-    "name": "scolipede",
+    "id": "scolipede",
+    "displayName": "Scolipede",
     "dexNumber": 545,
     "sprite": "sprites/545.png"
   },
   {
-    "name": "cottonee",
+    "id": "cottonee",
+    "displayName": "Cottonee",
     "dexNumber": 546,
     "sprite": "sprites/546.png"
   },
   {
-    "name": "whimsicott",
+    "id": "whimsicott",
+    "displayName": "Whimsicott",
     "dexNumber": 547,
     "sprite": "sprites/547.png"
   },
   {
-    "name": "petilil",
+    "id": "petilil",
+    "displayName": "Petilil",
     "dexNumber": 548,
     "sprite": "sprites/548.png"
   },
   {
-    "name": "lilligant",
+    "id": "lilligant",
+    "displayName": "Lilligant",
     "dexNumber": 549,
     "sprite": "sprites/549.png"
   },
   {
-    "name": "basculin",
+    "id": "basculin",
+    "displayName": "Basculin",
     "dexNumber": 550,
     "sprite": "sprites/550.png"
   },
   {
-    "name": "sandile",
+    "id": "sandile",
+    "displayName": "Sandile",
     "dexNumber": 551,
     "sprite": "sprites/551.png"
   },
   {
-    "name": "krokorok",
+    "id": "krokorok",
+    "displayName": "Krokorok",
     "dexNumber": 552,
     "sprite": "sprites/552.png"
   },
   {
-    "name": "krookodile",
+    "id": "krookodile",
+    "displayName": "Krookodile",
     "dexNumber": 553,
     "sprite": "sprites/553.png"
   },
   {
-    "name": "darumaka",
+    "id": "darumaka",
+    "displayName": "Darumaka",
     "dexNumber": 554,
     "sprite": "sprites/554.png"
   },
   {
-    "name": "darmanitan",
+    "id": "darmanitan",
+    "displayName": "Darmanitan",
     "dexNumber": 555,
     "sprite": "sprites/555.png"
   },
   {
-    "name": "maractus",
+    "id": "maractus",
+    "displayName": "Maractus",
     "dexNumber": 556,
     "sprite": "sprites/556.png"
   },
   {
-    "name": "dwebble",
+    "id": "dwebble",
+    "displayName": "Dwebble",
     "dexNumber": 557,
     "sprite": "sprites/557.png"
   },
   {
-    "name": "crustle",
+    "id": "crustle",
+    "displayName": "Crustle",
     "dexNumber": 558,
     "sprite": "sprites/558.png"
   },
   {
-    "name": "scraggy",
+    "id": "scraggy",
+    "displayName": "Scraggy",
     "dexNumber": 559,
     "sprite": "sprites/559.png"
   },
   {
-    "name": "scrafty",
+    "id": "scrafty",
+    "displayName": "Scrafty",
     "dexNumber": 560,
     "sprite": "sprites/560.png"
   },
   {
-    "name": "sigilyph",
+    "id": "sigilyph",
+    "displayName": "Sigilyph",
     "dexNumber": 561,
     "sprite": "sprites/561.png"
   },
   {
-    "name": "yamask",
+    "id": "yamask",
+    "displayName": "Yamask",
     "dexNumber": 562,
     "sprite": "sprites/562.png"
   },
   {
-    "name": "cofagrigus",
+    "id": "cofagrigus",
+    "displayName": "Cofagrigus",
     "dexNumber": 563,
     "sprite": "sprites/563.png"
   },
   {
-    "name": "tirtouga",
+    "id": "tirtouga",
+    "displayName": "Tirtouga",
     "dexNumber": 564,
     "sprite": "sprites/564.png"
   },
   {
-    "name": "carracosta",
+    "id": "carracosta",
+    "displayName": "Carracosta",
     "dexNumber": 565,
     "sprite": "sprites/565.png"
   },
   {
-    "name": "archen",
+    "id": "archen",
+    "displayName": "Archen",
     "dexNumber": 566,
     "sprite": "sprites/566.png"
   },
   {
-    "name": "archeops",
+    "id": "archeops",
+    "displayName": "Archeops",
     "dexNumber": 567,
     "sprite": "sprites/567.png"
   },
   {
-    "name": "trubbish",
+    "id": "trubbish",
+    "displayName": "Trubbish",
     "dexNumber": 568,
     "sprite": "sprites/568.png"
   },
   {
-    "name": "garbodor",
+    "id": "garbodor",
+    "displayName": "Garbodor",
     "dexNumber": 569,
     "sprite": "sprites/569.png"
   },
   {
-    "name": "zorua",
+    "id": "zorua",
+    "displayName": "Zorua",
     "dexNumber": 570,
     "sprite": "sprites/570.png"
   },
   {
-    "name": "zoroark",
+    "id": "zoroark",
+    "displayName": "Zoroark",
     "dexNumber": 571,
     "sprite": "sprites/571.png"
   },
   {
-    "name": "minccino",
+    "id": "minccino",
+    "displayName": "Minccino",
     "dexNumber": 572,
     "sprite": "sprites/572.png"
   },
   {
-    "name": "cinccino",
+    "id": "cinccino",
+    "displayName": "Cinccino",
     "dexNumber": 573,
     "sprite": "sprites/573.png"
   },
   {
-    "name": "gothita",
+    "id": "gothita",
+    "displayName": "Gothita",
     "dexNumber": 574,
     "sprite": "sprites/574.png"
   },
   {
-    "name": "gothorita",
+    "id": "gothorita",
+    "displayName": "Gothorita",
     "dexNumber": 575,
     "sprite": "sprites/575.png"
   },
   {
-    "name": "gothitelle",
+    "id": "gothitelle",
+    "displayName": "Gothitelle",
     "dexNumber": 576,
     "sprite": "sprites/576.png"
   },
   {
-    "name": "solosis",
+    "id": "solosis",
+    "displayName": "Solosis",
     "dexNumber": 577,
     "sprite": "sprites/577.png"
   },
   {
-    "name": "duosion",
+    "id": "duosion",
+    "displayName": "Duosion",
     "dexNumber": 578,
     "sprite": "sprites/578.png"
   },
   {
-    "name": "reuniclus",
+    "id": "reuniclus",
+    "displayName": "Reuniclus",
     "dexNumber": 579,
     "sprite": "sprites/579.png"
   },
   {
-    "name": "ducklett",
+    "id": "ducklett",
+    "displayName": "Ducklett",
     "dexNumber": 580,
     "sprite": "sprites/580.png"
   },
   {
-    "name": "swanna",
+    "id": "swanna",
+    "displayName": "Swanna",
     "dexNumber": 581,
     "sprite": "sprites/581.png"
   },
   {
-    "name": "vanillite",
+    "id": "vanillite",
+    "displayName": "Vanillite",
     "dexNumber": 582,
     "sprite": "sprites/582.png"
   },
   {
-    "name": "vanillish",
+    "id": "vanillish",
+    "displayName": "Vanillish",
     "dexNumber": 583,
     "sprite": "sprites/583.png"
   },
   {
-    "name": "vanilluxe",
+    "id": "vanilluxe",
+    "displayName": "Vanilluxe",
     "dexNumber": 584,
     "sprite": "sprites/584.png"
   },
   {
-    "name": "deerling",
+    "id": "deerling",
+    "displayName": "Deerling",
     "dexNumber": 585,
     "sprite": "sprites/585.png"
   },
   {
-    "name": "sawsbuck",
+    "id": "sawsbuck",
+    "displayName": "Sawsbuck",
     "dexNumber": 586,
     "sprite": "sprites/586.png"
   },
   {
-    "name": "emolga",
+    "id": "emolga",
+    "displayName": "Emolga",
     "dexNumber": 587,
     "sprite": "sprites/587.png"
   },
   {
-    "name": "karrablast",
+    "id": "karrablast",
+    "displayName": "Karrablast",
     "dexNumber": 588,
     "sprite": "sprites/588.png"
   },
   {
-    "name": "escavalier",
+    "id": "escavalier",
+    "displayName": "Escavalier",
     "dexNumber": 589,
     "sprite": "sprites/589.png"
   },
   {
-    "name": "foongus",
+    "id": "foongus",
+    "displayName": "Foongus",
     "dexNumber": 590,
     "sprite": "sprites/590.png"
   },
   {
-    "name": "amoonguss",
+    "id": "amoonguss",
+    "displayName": "Amoonguss",
     "dexNumber": 591,
     "sprite": "sprites/591.png"
   },
   {
-    "name": "frillish",
+    "id": "frillish",
+    "displayName": "Frillish",
     "dexNumber": 592,
     "sprite": "sprites/592.png"
   },
   {
-    "name": "jellicent",
+    "id": "jellicent",
+    "displayName": "Jellicent",
     "dexNumber": 593,
     "sprite": "sprites/593.png"
   },
   {
-    "name": "alomomola",
+    "id": "alomomola",
+    "displayName": "Alomomola",
     "dexNumber": 594,
     "sprite": "sprites/594.png"
   },
   {
-    "name": "joltik",
+    "id": "joltik",
+    "displayName": "Joltik",
     "dexNumber": 595,
     "sprite": "sprites/595.png"
   },
   {
-    "name": "galvantula",
+    "id": "galvantula",
+    "displayName": "Galvantula",
     "dexNumber": 596,
     "sprite": "sprites/596.png"
   },
   {
-    "name": "ferroseed",
+    "id": "ferroseed",
+    "displayName": "Ferroseed",
     "dexNumber": 597,
     "sprite": "sprites/597.png"
   },
   {
-    "name": "ferrothorn",
+    "id": "ferrothorn",
+    "displayName": "Ferrothorn",
     "dexNumber": 598,
     "sprite": "sprites/598.png"
   },
   {
-    "name": "klink",
+    "id": "klink",
+    "displayName": "Klink",
     "dexNumber": 599,
     "sprite": "sprites/599.png"
   },
   {
-    "name": "klang",
+    "id": "klang",
+    "displayName": "Klang",
     "dexNumber": 600,
     "sprite": "sprites/600.png"
   },
   {
-    "name": "klinklang",
+    "id": "klinklang",
+    "displayName": "Klinklang",
     "dexNumber": 601,
     "sprite": "sprites/601.png"
   },
   {
-    "name": "tynamo",
+    "id": "tynamo",
+    "displayName": "Tynamo",
     "dexNumber": 602,
     "sprite": "sprites/602.png"
   },
   {
-    "name": "eelektrik",
+    "id": "eelektrik",
+    "displayName": "Eelektrik",
     "dexNumber": 603,
     "sprite": "sprites/603.png"
   },
   {
-    "name": "eelektross",
+    "id": "eelektross",
+    "displayName": "Eelektross",
     "dexNumber": 604,
     "sprite": "sprites/604.png"
   },
   {
-    "name": "elgyem",
+    "id": "elgyem",
+    "displayName": "Elgyem",
     "dexNumber": 605,
     "sprite": "sprites/605.png"
   },
   {
-    "name": "beheeyem",
+    "id": "beheeyem",
+    "displayName": "Beheeyem",
     "dexNumber": 606,
     "sprite": "sprites/606.png"
   },
   {
-    "name": "litwick",
+    "id": "litwick",
+    "displayName": "Litwick",
     "dexNumber": 607,
     "sprite": "sprites/607.png"
   },
   {
-    "name": "lampent",
+    "id": "lampent",
+    "displayName": "Lampent",
     "dexNumber": 608,
     "sprite": "sprites/608.png"
   },
   {
-    "name": "chandelure",
+    "id": "chandelure",
+    "displayName": "Chandelure",
     "dexNumber": 609,
     "sprite": "sprites/609.png"
   },
   {
-    "name": "axew",
+    "id": "axew",
+    "displayName": "Axew",
     "dexNumber": 610,
     "sprite": "sprites/610.png"
   },
   {
-    "name": "fraxure",
+    "id": "fraxure",
+    "displayName": "Fraxure",
     "dexNumber": 611,
     "sprite": "sprites/611.png"
   },
   {
-    "name": "haxorus",
+    "id": "haxorus",
+    "displayName": "Haxorus",
     "dexNumber": 612,
     "sprite": "sprites/612.png"
   },
   {
-    "name": "cubchoo",
+    "id": "cubchoo",
+    "displayName": "Cubchoo",
     "dexNumber": 613,
     "sprite": "sprites/613.png"
   },
   {
-    "name": "beartic",
+    "id": "beartic",
+    "displayName": "Beartic",
     "dexNumber": 614,
     "sprite": "sprites/614.png"
   },
   {
-    "name": "cryogonal",
+    "id": "cryogonal",
+    "displayName": "Cryogonal",
     "dexNumber": 615,
     "sprite": "sprites/615.png"
   },
   {
-    "name": "shelmet",
+    "id": "shelmet",
+    "displayName": "Shelmet",
     "dexNumber": 616,
     "sprite": "sprites/616.png"
   },
   {
-    "name": "accelgor",
+    "id": "accelgor",
+    "displayName": "Accelgor",
     "dexNumber": 617,
     "sprite": "sprites/617.png"
   },
   {
-    "name": "stunfisk",
+    "id": "stunfisk",
+    "displayName": "Stunfisk",
     "dexNumber": 618,
     "sprite": "sprites/618.png"
   },
   {
-    "name": "mienfoo",
+    "id": "mienfoo",
+    "displayName": "Mienfoo",
     "dexNumber": 619,
     "sprite": "sprites/619.png"
   },
   {
-    "name": "mienshao",
+    "id": "mienshao",
+    "displayName": "Mienshao",
     "dexNumber": 620,
     "sprite": "sprites/620.png"
   },
   {
-    "name": "druddigon",
+    "id": "druddigon",
+    "displayName": "Druddigon",
     "dexNumber": 621,
     "sprite": "sprites/621.png"
   },
   {
-    "name": "golett",
+    "id": "golett",
+    "displayName": "Golett",
     "dexNumber": 622,
     "sprite": "sprites/622.png"
   },
   {
-    "name": "golurk",
+    "id": "golurk",
+    "displayName": "Golurk",
     "dexNumber": 623,
     "sprite": "sprites/623.png"
   },
   {
-    "name": "pawniard",
+    "id": "pawniard",
+    "displayName": "Pawniard",
     "dexNumber": 624,
     "sprite": "sprites/624.png"
   },
   {
-    "name": "bisharp",
+    "id": "bisharp",
+    "displayName": "Bisharp",
     "dexNumber": 625,
     "sprite": "sprites/625.png"
   },
   {
-    "name": "bouffalant",
+    "id": "bouffalant",
+    "displayName": "Bouffalant",
     "dexNumber": 626,
     "sprite": "sprites/626.png"
   },
   {
-    "name": "rufflet",
+    "id": "rufflet",
+    "displayName": "Rufflet",
     "dexNumber": 627,
     "sprite": "sprites/627.png"
   },
   {
-    "name": "braviary",
+    "id": "braviary",
+    "displayName": "Braviary",
     "dexNumber": 628,
     "sprite": "sprites/628.png"
   },
   {
-    "name": "vullaby",
+    "id": "vullaby",
+    "displayName": "Vullaby",
     "dexNumber": 629,
     "sprite": "sprites/629.png"
   },
   {
-    "name": "mandibuzz",
+    "id": "mandibuzz",
+    "displayName": "Mandibuzz",
     "dexNumber": 630,
     "sprite": "sprites/630.png"
   },
   {
-    "name": "heatmor",
+    "id": "heatmor",
+    "displayName": "Heatmor",
     "dexNumber": 631,
     "sprite": "sprites/631.png"
   },
   {
-    "name": "durant",
+    "id": "durant",
+    "displayName": "Durant",
     "dexNumber": 632,
     "sprite": "sprites/632.png"
   },
   {
-    "name": "deino",
+    "id": "deino",
+    "displayName": "Deino",
     "dexNumber": 633,
     "sprite": "sprites/633.png"
   },
   {
-    "name": "zweilous",
+    "id": "zweilous",
+    "displayName": "Zweilous",
     "dexNumber": 634,
     "sprite": "sprites/634.png"
   },
   {
-    "name": "hydreigon",
+    "id": "hydreigon",
+    "displayName": "Hydreigon",
     "dexNumber": 635,
     "sprite": "sprites/635.png"
   },
   {
-    "name": "larvesta",
+    "id": "larvesta",
+    "displayName": "Larvesta",
     "dexNumber": 636,
     "sprite": "sprites/636.png"
   },
   {
-    "name": "volcarona",
+    "id": "volcarona",
+    "displayName": "Volcarona",
     "dexNumber": 637,
     "sprite": "sprites/637.png"
   },
   {
-    "name": "cobalion",
+    "id": "cobalion",
+    "displayName": "Cobalion",
     "dexNumber": 638,
     "sprite": "sprites/638.png"
   },
   {
-    "name": "terrakion",
+    "id": "terrakion",
+    "displayName": "Terrakion",
     "dexNumber": 639,
     "sprite": "sprites/639.png"
   },
   {
-    "name": "virizion",
+    "id": "virizion",
+    "displayName": "Virizion",
     "dexNumber": 640,
     "sprite": "sprites/640.png"
   },
   {
-    "name": "tornadus",
+    "id": "tornadus",
+    "displayName": "Tornadus",
     "dexNumber": 641,
     "sprite": "sprites/641.png"
   },
   {
-    "name": "thundurus",
+    "id": "thundurus",
+    "displayName": "Thundurus",
     "dexNumber": 642,
     "sprite": "sprites/642.png"
   },
   {
-    "name": "reshiram",
+    "id": "reshiram",
+    "displayName": "Reshiram",
     "dexNumber": 643,
     "sprite": "sprites/643.png"
   },
   {
-    "name": "zekrom",
+    "id": "zekrom",
+    "displayName": "Zekrom",
     "dexNumber": 644,
     "sprite": "sprites/644.png"
   },
   {
-    "name": "landorus",
+    "id": "landorus",
+    "displayName": "Landorus",
     "dexNumber": 645,
     "sprite": "sprites/645.png"
   },
   {
-    "name": "kyurem",
+    "id": "kyurem",
+    "displayName": "Kyurem",
     "dexNumber": 646,
     "sprite": "sprites/646.png"
   },
   {
-    "name": "keldeo",
+    "id": "keldeo",
+    "displayName": "Keldeo",
     "dexNumber": 647,
     "sprite": "sprites/647.png"
   },
   {
-    "name": "meloetta",
+    "id": "meloetta",
+    "displayName": "Meloetta",
     "dexNumber": 648,
     "sprite": "sprites/648.png"
   },
   {
-    "name": "genesect",
+    "id": "genesect",
+    "displayName": "Genesect",
     "dexNumber": 649,
     "sprite": "sprites/649.png"
   },
   {
-    "name": "chespin",
+    "id": "chespin",
+    "displayName": "Chespin",
     "dexNumber": 650,
     "sprite": "sprites/650.png"
   },
   {
-    "name": "quilladin",
+    "id": "quilladin",
+    "displayName": "Quilladin",
     "dexNumber": 651,
     "sprite": "sprites/651.png"
   },
   {
-    "name": "chesnaught",
+    "id": "chesnaught",
+    "displayName": "Chesnaught",
     "dexNumber": 652,
     "sprite": "sprites/652.png"
   },
   {
-    "name": "fennekin",
+    "id": "fennekin",
+    "displayName": "Fennekin",
     "dexNumber": 653,
     "sprite": "sprites/653.png"
   },
   {
-    "name": "braixen",
+    "id": "braixen",
+    "displayName": "Braixen",
     "dexNumber": 654,
     "sprite": "sprites/654.png"
   },
   {
-    "name": "delphox",
+    "id": "delphox",
+    "displayName": "Delphox",
     "dexNumber": 655,
     "sprite": "sprites/655.png"
   },
   {
-    "name": "froakie",
+    "id": "froakie",
+    "displayName": "Froakie",
     "dexNumber": 656,
     "sprite": "sprites/656.png"
   },
   {
-    "name": "frogadier",
+    "id": "frogadier",
+    "displayName": "Frogadier",
     "dexNumber": 657,
     "sprite": "sprites/657.png"
   },
   {
-    "name": "greninja",
+    "id": "greninja",
+    "displayName": "Greninja",
     "dexNumber": 658,
     "sprite": "sprites/658.png"
   },
   {
-    "name": "bunnelby",
+    "id": "bunnelby",
+    "displayName": "Bunnelby",
     "dexNumber": 659,
     "sprite": "sprites/659.png"
   },
   {
-    "name": "diggersby",
+    "id": "diggersby",
+    "displayName": "Diggersby",
     "dexNumber": 660,
     "sprite": "sprites/660.png"
   },
   {
-    "name": "fletchling",
+    "id": "fletchling",
+    "displayName": "Fletchling",
     "dexNumber": 661,
     "sprite": "sprites/661.png"
   },
   {
-    "name": "fletchinder",
+    "id": "fletchinder",
+    "displayName": "Fletchinder",
     "dexNumber": 662,
     "sprite": "sprites/662.png"
   },
   {
-    "name": "talonflame",
+    "id": "talonflame",
+    "displayName": "Talonflame",
     "dexNumber": 663,
     "sprite": "sprites/663.png"
   },
   {
-    "name": "scatterbug",
+    "id": "scatterbug",
+    "displayName": "Scatterbug",
     "dexNumber": 664,
     "sprite": "sprites/664.png"
   },
   {
-    "name": "spewpa",
+    "id": "spewpa",
+    "displayName": "Spewpa",
     "dexNumber": 665,
     "sprite": "sprites/665.png"
   },
   {
-    "name": "vivillon",
+    "id": "vivillon",
+    "displayName": "Vivillon",
     "dexNumber": 666,
     "sprite": "sprites/666.png"
   },
   {
-    "name": "litleo",
+    "id": "litleo",
+    "displayName": "Litleo",
     "dexNumber": 667,
     "sprite": "sprites/667.png"
   },
   {
-    "name": "pyroar",
+    "id": "pyroar",
+    "displayName": "Pyroar",
     "dexNumber": 668,
     "sprite": "sprites/668.png"
   },
   {
-    "name": "flabebe",
+    "id": "flabebe",
+    "displayName": "Flabebe",
     "dexNumber": 669,
     "sprite": "sprites/669.png"
   },
   {
-    "name": "floette",
+    "id": "floette",
+    "displayName": "Floette",
     "dexNumber": 670,
     "sprite": "sprites/670.png"
   },
   {
-    "name": "florges",
+    "id": "florges",
+    "displayName": "Florges",
     "dexNumber": 671,
     "sprite": "sprites/671.png"
   },
   {
-    "name": "skiddo",
+    "id": "skiddo",
+    "displayName": "Skiddo",
     "dexNumber": 672,
     "sprite": "sprites/672.png"
   },
   {
-    "name": "gogoat",
+    "id": "gogoat",
+    "displayName": "Gogoat",
     "dexNumber": 673,
     "sprite": "sprites/673.png"
   },
   {
-    "name": "pancham",
+    "id": "pancham",
+    "displayName": "Pancham",
     "dexNumber": 674,
     "sprite": "sprites/674.png"
   },
   {
-    "name": "pangoro",
+    "id": "pangoro",
+    "displayName": "Pangoro",
     "dexNumber": 675,
     "sprite": "sprites/675.png"
   },
   {
-    "name": "furfrou",
+    "id": "furfrou",
+    "displayName": "Furfrou",
     "dexNumber": 676,
     "sprite": "sprites/676.png"
   },
   {
-    "name": "espurr",
+    "id": "espurr",
+    "displayName": "Espurr",
     "dexNumber": 677,
     "sprite": "sprites/677.png"
   },
   {
-    "name": "meowstic",
+    "id": "meowstic",
+    "displayName": "Meowstic",
     "dexNumber": 678,
     "sprite": "sprites/678.png"
   },
   {
-    "name": "honedge",
+    "id": "honedge",
+    "displayName": "Honedge",
     "dexNumber": 679,
     "sprite": "sprites/679.png"
   },
   {
-    "name": "doublade",
+    "id": "doublade",
+    "displayName": "Doublade",
     "dexNumber": 680,
     "sprite": "sprites/680.png"
   },
   {
-    "name": "aegislash",
+    "id": "aegislash",
+    "displayName": "Aegislash",
     "dexNumber": 681,
     "sprite": "sprites/681.png"
   },
   {
-    "name": "spritzee",
+    "id": "spritzee",
+    "displayName": "Spritzee",
     "dexNumber": 682,
     "sprite": "sprites/682.png"
   },
   {
-    "name": "aromatisse",
+    "id": "aromatisse",
+    "displayName": "Aromatisse",
     "dexNumber": 683,
     "sprite": "sprites/683.png"
   },
   {
-    "name": "swirlix",
+    "id": "swirlix",
+    "displayName": "Swirlix",
     "dexNumber": 684,
     "sprite": "sprites/684.png"
   },
   {
-    "name": "slurpuff",
+    "id": "slurpuff",
+    "displayName": "Slurpuff",
     "dexNumber": 685,
     "sprite": "sprites/685.png"
   },
   {
-    "name": "inkay",
+    "id": "inkay",
+    "displayName": "Inkay",
     "dexNumber": 686,
     "sprite": "sprites/686.png"
   },
   {
-    "name": "malamar",
+    "id": "malamar",
+    "displayName": "Malamar",
     "dexNumber": 687,
     "sprite": "sprites/687.png"
   },
   {
-    "name": "binacle",
+    "id": "binacle",
+    "displayName": "Binacle",
     "dexNumber": 688,
     "sprite": "sprites/688.png"
   },
   {
-    "name": "barbaracle",
+    "id": "barbaracle",
+    "displayName": "Barbaracle",
     "dexNumber": 689,
     "sprite": "sprites/689.png"
   },
   {
-    "name": "skrelp",
+    "id": "skrelp",
+    "displayName": "Skrelp",
     "dexNumber": 690,
     "sprite": "sprites/690.png"
   },
   {
-    "name": "dragalge",
+    "id": "dragalge",
+    "displayName": "Dragalge",
     "dexNumber": 691,
     "sprite": "sprites/691.png"
   },
   {
-    "name": "clauncher",
+    "id": "clauncher",
+    "displayName": "Clauncher",
     "dexNumber": 692,
     "sprite": "sprites/692.png"
   },
   {
-    "name": "clawitzer",
+    "id": "clawitzer",
+    "displayName": "Clawitzer",
     "dexNumber": 693,
     "sprite": "sprites/693.png"
   },
   {
-    "name": "helioptile",
+    "id": "helioptile",
+    "displayName": "Helioptile",
     "dexNumber": 694,
     "sprite": "sprites/694.png"
   },
   {
-    "name": "heliolisk",
+    "id": "heliolisk",
+    "displayName": "Heliolisk",
     "dexNumber": 695,
     "sprite": "sprites/695.png"
   },
   {
-    "name": "tyrunt",
+    "id": "tyrunt",
+    "displayName": "Tyrunt",
     "dexNumber": 696,
     "sprite": "sprites/696.png"
   },
   {
-    "name": "tyrantrum",
+    "id": "tyrantrum",
+    "displayName": "Tyrantrum",
     "dexNumber": 697,
     "sprite": "sprites/697.png"
   },
   {
-    "name": "amaura",
+    "id": "amaura",
+    "displayName": "Amaura",
     "dexNumber": 698,
     "sprite": "sprites/698.png"
   },
   {
-    "name": "aurorus",
+    "id": "aurorus",
+    "displayName": "Aurorus",
     "dexNumber": 699,
     "sprite": "sprites/699.png"
   },
   {
-    "name": "sylveon",
+    "id": "sylveon",
+    "displayName": "Sylveon",
     "dexNumber": 700,
     "sprite": "sprites/700.png"
   },
   {
-    "name": "hawlucha",
+    "id": "hawlucha",
+    "displayName": "Hawlucha",
     "dexNumber": 701,
     "sprite": "sprites/701.png"
   },
   {
-    "name": "dedenne",
+    "id": "dedenne",
+    "displayName": "Dedenne",
     "dexNumber": 702,
     "sprite": "sprites/702.png"
   },
   {
-    "name": "carbink",
+    "id": "carbink",
+    "displayName": "Carbink",
     "dexNumber": 703,
     "sprite": "sprites/703.png"
   },
   {
-    "name": "goomy",
+    "id": "goomy",
+    "displayName": "Goomy",
     "dexNumber": 704,
     "sprite": "sprites/704.png"
   },
   {
-    "name": "sliggoo",
+    "id": "sliggoo",
+    "displayName": "Sliggoo",
     "dexNumber": 705,
     "sprite": "sprites/705.png"
   },
   {
-    "name": "goodra",
+    "id": "goodra",
+    "displayName": "Goodra",
     "dexNumber": 706,
     "sprite": "sprites/706.png"
   },
   {
-    "name": "klefki",
+    "id": "klefki",
+    "displayName": "Klefki",
     "dexNumber": 707,
     "sprite": "sprites/707.png"
   },
   {
-    "name": "phantump",
+    "id": "phantump",
+    "displayName": "Phantump",
     "dexNumber": 708,
     "sprite": "sprites/708.png"
   },
   {
-    "name": "trevenant",
+    "id": "trevenant",
+    "displayName": "Trevenant",
     "dexNumber": 709,
     "sprite": "sprites/709.png"
   },
   {
-    "name": "pumpkaboo",
+    "id": "pumpkaboo",
+    "displayName": "Pumpkaboo",
     "dexNumber": 710,
     "sprite": "sprites/710.png"
   },
   {
-    "name": "gourgeist",
+    "id": "gourgeist",
+    "displayName": "Gourgeist",
     "dexNumber": 711,
     "sprite": "sprites/711.png"
   },
   {
-    "name": "bergmite",
+    "id": "bergmite",
+    "displayName": "Bergmite",
     "dexNumber": 712,
     "sprite": "sprites/712.png"
   },
   {
-    "name": "avalugg",
+    "id": "avalugg",
+    "displayName": "Avalugg",
     "dexNumber": 713,
     "sprite": "sprites/713.png"
   },
   {
-    "name": "noibat",
+    "id": "noibat",
+    "displayName": "Noibat",
     "dexNumber": 714,
     "sprite": "sprites/714.png"
   },
   {
-    "name": "noivern",
+    "id": "noivern",
+    "displayName": "Noivern",
     "dexNumber": 715,
     "sprite": "sprites/715.png"
   },
   {
-    "name": "xerneas",
+    "id": "xerneas",
+    "displayName": "Xerneas",
     "dexNumber": 716,
     "sprite": "sprites/716.png"
   },
   {
-    "name": "yveltal",
+    "id": "yveltal",
+    "displayName": "Yveltal",
     "dexNumber": 717,
     "sprite": "sprites/717.png"
   },
   {
-    "name": "zygarde",
+    "id": "zygarde",
+    "displayName": "Zygarde",
     "dexNumber": 718,
     "sprite": "sprites/718.png"
   },
   {
-    "name": "diancie",
+    "id": "diancie",
+    "displayName": "Diancie",
     "dexNumber": 719,
     "sprite": "sprites/719.png"
   },
   {
-    "name": "hoopa",
+    "id": "hoopa",
+    "displayName": "Hoopa",
     "dexNumber": 720,
     "sprite": "sprites/720.png"
   },
   {
-    "name": "volcanion",
+    "id": "volcanion",
+    "displayName": "Volcanion",
     "dexNumber": 721,
     "sprite": "sprites/721.png"
   },
   {
-    "name": "rowlet",
+    "id": "rowlet",
+    "displayName": "Rowlet",
     "dexNumber": 722,
     "sprite": "sprites/722.png"
   },
   {
-    "name": "dartrix",
+    "id": "dartrix",
+    "displayName": "Dartrix",
     "dexNumber": 723,
     "sprite": "sprites/723.png"
   },
   {
-    "name": "decidueye",
+    "id": "decidueye",
+    "displayName": "Decidueye",
     "dexNumber": 724,
     "sprite": "sprites/724.png"
   },
   {
-    "name": "litten",
+    "id": "litten",
+    "displayName": "Litten",
     "dexNumber": 725,
     "sprite": "sprites/725.png"
   },
   {
-    "name": "torracat",
+    "id": "torracat",
+    "displayName": "Torracat",
     "dexNumber": 726,
     "sprite": "sprites/726.png"
   },
   {
-    "name": "incineroar",
+    "id": "incineroar",
+    "displayName": "Incineroar",
     "dexNumber": 727,
     "sprite": "sprites/727.png"
   },
   {
-    "name": "popplio",
+    "id": "popplio",
+    "displayName": "Popplio",
     "dexNumber": 728,
     "sprite": "sprites/728.png"
   },
   {
-    "name": "brionne",
+    "id": "brionne",
+    "displayName": "Brionne",
     "dexNumber": 729,
     "sprite": "sprites/729.png"
   },
   {
-    "name": "primarina",
+    "id": "primarina",
+    "displayName": "Primarina",
     "dexNumber": 730,
     "sprite": "sprites/730.png"
   },
   {
-    "name": "pikipek",
+    "id": "pikipek",
+    "displayName": "Pikipek",
     "dexNumber": 731,
     "sprite": "sprites/731.png"
   },
   {
-    "name": "trumbeak",
+    "id": "trumbeak",
+    "displayName": "Trumbeak",
     "dexNumber": 732,
     "sprite": "sprites/732.png"
   },
   {
-    "name": "toucannon",
+    "id": "toucannon",
+    "displayName": "Toucannon",
     "dexNumber": 733,
     "sprite": "sprites/733.png"
   },
   {
-    "name": "yungoos",
+    "id": "yungoos",
+    "displayName": "Yungoos",
     "dexNumber": 734,
     "sprite": "sprites/734.png"
   },
   {
-    "name": "gumshoos",
+    "id": "gumshoos",
+    "displayName": "Gumshoos",
     "dexNumber": 735,
     "sprite": "sprites/735.png"
   },
   {
-    "name": "grubbin",
+    "id": "grubbin",
+    "displayName": "Grubbin",
     "dexNumber": 736,
     "sprite": "sprites/736.png"
   },
   {
-    "name": "charjabug",
+    "id": "charjabug",
+    "displayName": "Charjabug",
     "dexNumber": 737,
     "sprite": "sprites/737.png"
   },
   {
-    "name": "vikavolt",
+    "id": "vikavolt",
+    "displayName": "Vikavolt",
     "dexNumber": 738,
     "sprite": "sprites/738.png"
   },
   {
-    "name": "crabrawler",
+    "id": "crabrawler",
+    "displayName": "Crabrawler",
     "dexNumber": 739,
     "sprite": "sprites/739.png"
   },
   {
-    "name": "crabominable",
+    "id": "crabominable",
+    "displayName": "Crabominable",
     "dexNumber": 740,
     "sprite": "sprites/740.png"
   },
   {
-    "name": "oricorio",
+    "id": "oricorio",
+    "displayName": "Oricorio",
     "dexNumber": 741,
     "sprite": "sprites/741.png"
   },
   {
-    "name": "cutiefly",
+    "id": "cutiefly",
+    "displayName": "Cutiefly",
     "dexNumber": 742,
     "sprite": "sprites/742.png"
   },
   {
-    "name": "ribombee",
+    "id": "ribombee",
+    "displayName": "Ribombee",
     "dexNumber": 743,
     "sprite": "sprites/743.png"
   },
   {
-    "name": "rockruff",
+    "id": "rockruff",
+    "displayName": "Rockruff",
     "dexNumber": 744,
     "sprite": "sprites/744.png"
   },
   {
-    "name": "lycanroc",
+    "id": "lycanroc",
+    "displayName": "Lycanroc",
     "dexNumber": 745,
     "sprite": "sprites/745.png"
   },
   {
-    "name": "wishiwashi",
+    "id": "wishiwashi",
+    "displayName": "Wishiwashi",
     "dexNumber": 746,
     "sprite": "sprites/746.png"
   },
   {
-    "name": "mareanie",
+    "id": "mareanie",
+    "displayName": "Mareanie",
     "dexNumber": 747,
     "sprite": "sprites/747.png"
   },
   {
-    "name": "toxapex",
+    "id": "toxapex",
+    "displayName": "Toxapex",
     "dexNumber": 748,
     "sprite": "sprites/748.png"
   },
   {
-    "name": "mudbray",
+    "id": "mudbray",
+    "displayName": "Mudbray",
     "dexNumber": 749,
     "sprite": "sprites/749.png"
   },
   {
-    "name": "mudsdale",
+    "id": "mudsdale",
+    "displayName": "Mudsdale",
     "dexNumber": 750,
     "sprite": "sprites/750.png"
   },
   {
-    "name": "dewpider",
+    "id": "dewpider",
+    "displayName": "Dewpider",
     "dexNumber": 751,
     "sprite": "sprites/751.png"
   },
   {
-    "name": "araquanid",
+    "id": "araquanid",
+    "displayName": "Araquanid",
     "dexNumber": 752,
     "sprite": "sprites/752.png"
   },
   {
-    "name": "fomantis",
+    "id": "fomantis",
+    "displayName": "Fomantis",
     "dexNumber": 753,
     "sprite": "sprites/753.png"
   },
   {
-    "name": "lurantis",
+    "id": "lurantis",
+    "displayName": "Lurantis",
     "dexNumber": 754,
     "sprite": "sprites/754.png"
   },
   {
-    "name": "morelull",
+    "id": "morelull",
+    "displayName": "Morelull",
     "dexNumber": 755,
     "sprite": "sprites/755.png"
   },
   {
-    "name": "shiinotic",
+    "id": "shiinotic",
+    "displayName": "Shiinotic",
     "dexNumber": 756,
     "sprite": "sprites/756.png"
   },
   {
-    "name": "salandit",
+    "id": "salandit",
+    "displayName": "Salandit",
     "dexNumber": 757,
     "sprite": "sprites/757.png"
   },
   {
-    "name": "salazzle",
+    "id": "salazzle",
+    "displayName": "Salazzle",
     "dexNumber": 758,
     "sprite": "sprites/758.png"
   },
   {
-    "name": "stufful",
+    "id": "stufful",
+    "displayName": "Stufful",
     "dexNumber": 759,
     "sprite": "sprites/759.png"
   },
   {
-    "name": "bewear",
+    "id": "bewear",
+    "displayName": "Bewear",
     "dexNumber": 760,
     "sprite": "sprites/760.png"
   },
   {
-    "name": "bounsweet",
+    "id": "bounsweet",
+    "displayName": "Bounsweet",
     "dexNumber": 761,
     "sprite": "sprites/761.png"
   },
   {
-    "name": "steenee",
+    "id": "steenee",
+    "displayName": "Steenee",
     "dexNumber": 762,
     "sprite": "sprites/762.png"
   },
   {
-    "name": "tsareena",
+    "id": "tsareena",
+    "displayName": "Tsareena",
     "dexNumber": 763,
     "sprite": "sprites/763.png"
   },
   {
-    "name": "comfey",
+    "id": "comfey",
+    "displayName": "Comfey",
     "dexNumber": 764,
     "sprite": "sprites/764.png"
   },
   {
-    "name": "oranguru",
+    "id": "oranguru",
+    "displayName": "Oranguru",
     "dexNumber": 765,
     "sprite": "sprites/765.png"
   },
   {
-    "name": "passimian",
+    "id": "passimian",
+    "displayName": "Passimian",
     "dexNumber": 766,
     "sprite": "sprites/766.png"
   },
   {
-    "name": "wimpod",
+    "id": "wimpod",
+    "displayName": "Wimpod",
     "dexNumber": 767,
     "sprite": "sprites/767.png"
   },
   {
-    "name": "golisopod",
+    "id": "golisopod",
+    "displayName": "Golisopod",
     "dexNumber": 768,
     "sprite": "sprites/768.png"
   },
   {
-    "name": "sandygast",
+    "id": "sandygast",
+    "displayName": "Sandygast",
     "dexNumber": 769,
     "sprite": "sprites/769.png"
   },
   {
-    "name": "palossand",
+    "id": "palossand",
+    "displayName": "Palossand",
     "dexNumber": 770,
     "sprite": "sprites/770.png"
   },
   {
-    "name": "pyukumuku",
+    "id": "pyukumuku",
+    "displayName": "Pyukumuku",
     "dexNumber": 771,
     "sprite": "sprites/771.png"
   },
   {
-    "name": "type-null",
+    "id": "type-null",
+    "displayName": "Type: Null",
     "dexNumber": 772,
     "sprite": "sprites/772.png"
   },
   {
-    "name": "silvally",
+    "id": "silvally",
+    "displayName": "Silvally",
     "dexNumber": 773,
     "sprite": "sprites/773.png"
   },
   {
-    "name": "minior",
+    "id": "minior",
+    "displayName": "Minior",
     "dexNumber": 774,
     "sprite": "sprites/774.png"
   },
   {
-    "name": "komala",
+    "id": "komala",
+    "displayName": "Komala",
     "dexNumber": 775,
     "sprite": "sprites/775.png"
   },
   {
-    "name": "turtonator",
+    "id": "turtonator",
+    "displayName": "Turtonator",
     "dexNumber": 776,
     "sprite": "sprites/776.png"
   },
   {
-    "name": "togedemaru",
+    "id": "togedemaru",
+    "displayName": "Togedemaru",
     "dexNumber": 777,
     "sprite": "sprites/777.png"
   },
   {
-    "name": "mimikyu",
+    "id": "mimikyu",
+    "displayName": "Mimikyu",
     "dexNumber": 778,
     "sprite": "sprites/778.png"
   },
   {
-    "name": "bruxish",
+    "id": "bruxish",
+    "displayName": "Bruxish",
     "dexNumber": 779,
     "sprite": "sprites/779.png"
   },
   {
-    "name": "drampa",
+    "id": "drampa",
+    "displayName": "Drampa",
     "dexNumber": 780,
     "sprite": "sprites/780.png"
   },
   {
-    "name": "dhelmise",
+    "id": "dhelmise",
+    "displayName": "Dhelmise",
     "dexNumber": 781,
     "sprite": "sprites/781.png"
   },
   {
-    "name": "jangmo-o",
+    "id": "jangmo-o",
+    "displayName": "Jangmo-o",
     "dexNumber": 782,
     "sprite": "sprites/782.png"
   },
   {
-    "name": "hakamo-o",
+    "id": "hakamo-o",
+    "displayName": "Hakamo-o",
     "dexNumber": 783,
     "sprite": "sprites/783.png"
   },
   {
-    "name": "kommo-o",
+    "id": "kommo-o",
+    "displayName": "Kommo-o",
     "dexNumber": 784,
     "sprite": "sprites/784.png"
   },
   {
-    "name": "tapu-koko",
+    "id": "tapu-koko",
+    "displayName": "Tapu Koko",
     "dexNumber": 785,
     "sprite": "sprites/785.png"
   },
   {
-    "name": "tapu-lele",
+    "id": "tapu-lele",
+    "displayName": "Tapu Lele",
     "dexNumber": 786,
     "sprite": "sprites/786.png"
   },
   {
-    "name": "tapu-bulu",
+    "id": "tapu-bulu",
+    "displayName": "Tapu Bulu",
     "dexNumber": 787,
     "sprite": "sprites/787.png"
   },
   {
-    "name": "tapu-fini",
+    "id": "tapu-fini",
+    "displayName": "Tapu Fini",
     "dexNumber": 788,
     "sprite": "sprites/788.png"
   },
   {
-    "name": "cosmog",
+    "id": "cosmog",
+    "displayName": "Cosmog",
     "dexNumber": 789,
     "sprite": "sprites/789.png"
   },
   {
-    "name": "cosmoem",
+    "id": "cosmoem",
+    "displayName": "Cosmoem",
     "dexNumber": 790,
     "sprite": "sprites/790.png"
   },
   {
-    "name": "solgaleo",
+    "id": "solgaleo",
+    "displayName": "Solgaleo",
     "dexNumber": 791,
     "sprite": "sprites/791.png"
   },
   {
-    "name": "lunala",
+    "id": "lunala",
+    "displayName": "Lunala",
     "dexNumber": 792,
     "sprite": "sprites/792.png"
   },
   {
-    "name": "nihilego",
+    "id": "nihilego",
+    "displayName": "Nihilego",
     "dexNumber": 793,
     "sprite": "sprites/793.png"
   },
   {
-    "name": "buzzwole",
+    "id": "buzzwole",
+    "displayName": "Buzzwole",
     "dexNumber": 794,
     "sprite": "sprites/794.png"
   },
   {
-    "name": "pheromosa",
+    "id": "pheromosa",
+    "displayName": "Pheromosa",
     "dexNumber": 795,
     "sprite": "sprites/795.png"
   },
   {
-    "name": "xurkitree",
+    "id": "xurkitree",
+    "displayName": "Xurkitree",
     "dexNumber": 796,
     "sprite": "sprites/796.png"
   },
   {
-    "name": "celesteela",
+    "id": "celesteela",
+    "displayName": "Celesteela",
     "dexNumber": 797,
     "sprite": "sprites/797.png"
   },
   {
-    "name": "kartana",
+    "id": "kartana",
+    "displayName": "Kartana",
     "dexNumber": 798,
     "sprite": "sprites/798.png"
   },
   {
-    "name": "guzzlord",
+    "id": "guzzlord",
+    "displayName": "Guzzlord",
     "dexNumber": 799,
     "sprite": "sprites/799.png"
   },
   {
-    "name": "necrozma",
+    "id": "necrozma",
+    "displayName": "Necrozma",
     "dexNumber": 800,
     "sprite": "sprites/800.png"
   },
   {
-    "name": "magearna",
+    "id": "magearna",
+    "displayName": "Magearna",
     "dexNumber": 801,
     "sprite": "sprites/801.png"
   },
   {
-    "name": "marshadow",
+    "id": "marshadow",
+    "displayName": "Marshadow",
     "dexNumber": 802,
     "sprite": "sprites/802.png"
   },
   {
-    "name": "poipole",
+    "id": "poipole",
+    "displayName": "Poipole",
     "dexNumber": 803,
     "sprite": "sprites/803.png"
   },
   {
-    "name": "naganadel",
+    "id": "naganadel",
+    "displayName": "Naganadel",
     "dexNumber": 804,
     "sprite": "sprites/804.png"
   },
   {
-    "name": "stakataka",
+    "id": "stakataka",
+    "displayName": "Stakataka",
     "dexNumber": 805,
     "sprite": "sprites/805.png"
   },
   {
-    "name": "blacephalon",
+    "id": "blacephalon",
+    "displayName": "Blacephalon",
     "dexNumber": 806,
     "sprite": "sprites/806.png"
   },
   {
-    "name": "zeraora",
+    "id": "zeraora",
+    "displayName": "Zeraora",
     "dexNumber": 807,
     "sprite": "sprites/807.png"
   },
   {
-    "name": "meltan",
+    "id": "meltan",
+    "displayName": "Meltan",
     "dexNumber": 808,
     "sprite": "sprites/808.png"
   },
   {
-    "name": "melmetal",
+    "id": "melmetal",
+    "displayName": "Melmetal",
     "dexNumber": 809,
     "sprite": "sprites/809.png"
   },
   {
-    "name": "grookey",
+    "id": "grookey",
+    "displayName": "Grookey",
     "dexNumber": 810,
     "sprite": "sprites/810.png"
   },
   {
-    "name": "thwackey",
+    "id": "thwackey",
+    "displayName": "Thwackey",
     "dexNumber": 811,
     "sprite": "sprites/811.png"
   },
   {
-    "name": "rillaboom",
+    "id": "rillaboom",
+    "displayName": "Rillaboom",
     "dexNumber": 812,
     "sprite": "sprites/812.png"
   },
   {
-    "name": "scorbunny",
+    "id": "scorbunny",
+    "displayName": "Scorbunny",
     "dexNumber": 813,
     "sprite": "sprites/813.png"
   },
   {
-    "name": "raboot",
+    "id": "raboot",
+    "displayName": "Raboot",
     "dexNumber": 814,
     "sprite": "sprites/814.png"
   },
   {
-    "name": "cinderace",
+    "id": "cinderace",
+    "displayName": "Cinderace",
     "dexNumber": 815,
     "sprite": "sprites/815.png"
   },
   {
-    "name": "sobble",
+    "id": "sobble",
+    "displayName": "Sobble",
     "dexNumber": 816,
     "sprite": "sprites/816.png"
   },
   {
-    "name": "drizzile",
+    "id": "drizzile",
+    "displayName": "Drizzile",
     "dexNumber": 817,
     "sprite": "sprites/817.png"
   },
   {
-    "name": "inteleon",
+    "id": "inteleon",
+    "displayName": "Inteleon",
     "dexNumber": 818,
     "sprite": "sprites/818.png"
   },
   {
-    "name": "skwovet",
+    "id": "skwovet",
+    "displayName": "Skwovet",
     "dexNumber": 819,
     "sprite": "sprites/819.png"
   },
   {
-    "name": "greedent",
+    "id": "greedent",
+    "displayName": "Greedent",
     "dexNumber": 820,
     "sprite": "sprites/820.png"
   },
   {
-    "name": "rookidee",
+    "id": "rookidee",
+    "displayName": "Rookidee",
     "dexNumber": 821,
     "sprite": "sprites/821.png"
   },
   {
-    "name": "corvisquire",
+    "id": "corvisquire",
+    "displayName": "Corvisquire",
     "dexNumber": 822,
     "sprite": "sprites/822.png"
   },
   {
-    "name": "corviknight",
+    "id": "corviknight",
+    "displayName": "Corviknight",
     "dexNumber": 823,
     "sprite": "sprites/823.png"
   },
   {
-    "name": "blipbug",
+    "id": "blipbug",
+    "displayName": "Blipbug",
     "dexNumber": 824,
     "sprite": "sprites/824.png"
   },
   {
-    "name": "dottler",
+    "id": "dottler",
+    "displayName": "Dottler",
     "dexNumber": 825,
     "sprite": "sprites/825.png"
   },
   {
-    "name": "orbeetle",
+    "id": "orbeetle",
+    "displayName": "Orbeetle",
     "dexNumber": 826,
     "sprite": "sprites/826.png"
   },
   {
-    "name": "nickit",
+    "id": "nickit",
+    "displayName": "Nickit",
     "dexNumber": 827,
     "sprite": "sprites/827.png"
   },
   {
-    "name": "thievul",
+    "id": "thievul",
+    "displayName": "Thievul",
     "dexNumber": 828,
     "sprite": "sprites/828.png"
   },
   {
-    "name": "gossifleur",
+    "id": "gossifleur",
+    "displayName": "Gossifleur",
     "dexNumber": 829,
     "sprite": "sprites/829.png"
   },
   {
-    "name": "eldegoss",
+    "id": "eldegoss",
+    "displayName": "Eldegoss",
     "dexNumber": 830,
     "sprite": "sprites/830.png"
   },
   {
-    "name": "wooloo",
+    "id": "wooloo",
+    "displayName": "Wooloo",
     "dexNumber": 831,
     "sprite": "sprites/831.png"
   },
   {
-    "name": "dubwool",
+    "id": "dubwool",
+    "displayName": "Dubwool",
     "dexNumber": 832,
     "sprite": "sprites/832.png"
   },
   {
-    "name": "chewtle",
+    "id": "chewtle",
+    "displayName": "Chewtle",
     "dexNumber": 833,
     "sprite": "sprites/833.png"
   },
   {
-    "name": "drednaw",
+    "id": "drednaw",
+    "displayName": "Drednaw",
     "dexNumber": 834,
     "sprite": "sprites/834.png"
   },
   {
-    "name": "yamper",
+    "id": "yamper",
+    "displayName": "Yamper",
     "dexNumber": 835,
     "sprite": "sprites/835.png"
   },
   {
-    "name": "boltund",
+    "id": "boltund",
+    "displayName": "Boltund",
     "dexNumber": 836,
     "sprite": "sprites/836.png"
   },
   {
-    "name": "rolycoly",
+    "id": "rolycoly",
+    "displayName": "Rolycoly",
     "dexNumber": 837,
     "sprite": "sprites/837.png"
   },
   {
-    "name": "carkol",
+    "id": "carkol",
+    "displayName": "Carkol",
     "dexNumber": 838,
     "sprite": "sprites/838.png"
   },
   {
-    "name": "coalossal",
+    "id": "coalossal",
+    "displayName": "Coalossal",
     "dexNumber": 839,
     "sprite": "sprites/839.png"
   },
   {
-    "name": "applin",
+    "id": "applin",
+    "displayName": "Applin",
     "dexNumber": 840,
     "sprite": "sprites/840.png"
   },
   {
-    "name": "flapple",
+    "id": "flapple",
+    "displayName": "Flapple",
     "dexNumber": 841,
     "sprite": "sprites/841.png"
   },
   {
-    "name": "appletun",
+    "id": "appletun",
+    "displayName": "Appletun",
     "dexNumber": 842,
     "sprite": "sprites/842.png"
   },
   {
-    "name": "silicobra",
+    "id": "silicobra",
+    "displayName": "Silicobra",
     "dexNumber": 843,
     "sprite": "sprites/843.png"
   },
   {
-    "name": "sandaconda",
+    "id": "sandaconda",
+    "displayName": "Sandaconda",
     "dexNumber": 844,
     "sprite": "sprites/844.png"
   },
   {
-    "name": "cramorant",
+    "id": "cramorant",
+    "displayName": "Cramorant",
     "dexNumber": 845,
     "sprite": "sprites/845.png"
   },
   {
-    "name": "arrokuda",
+    "id": "arrokuda",
+    "displayName": "Arrokuda",
     "dexNumber": 846,
     "sprite": "sprites/846.png"
   },
   {
-    "name": "barraskewda",
+    "id": "barraskewda",
+    "displayName": "Barraskewda",
     "dexNumber": 847,
     "sprite": "sprites/847.png"
   },
   {
-    "name": "toxel",
+    "id": "toxel",
+    "displayName": "Toxel",
     "dexNumber": 848,
     "sprite": "sprites/848.png"
   },
   {
-    "name": "toxtricity",
+    "id": "toxtricity",
+    "displayName": "Toxtricity",
     "dexNumber": 849,
     "sprite": "sprites/849.png"
   },
   {
-    "name": "sizzlipede",
+    "id": "sizzlipede",
+    "displayName": "Sizzlipede",
     "dexNumber": 850,
     "sprite": "sprites/850.png"
   },
   {
-    "name": "centiskorch",
+    "id": "centiskorch",
+    "displayName": "Centiskorch",
     "dexNumber": 851,
     "sprite": "sprites/851.png"
   },
   {
-    "name": "clobbopus",
+    "id": "clobbopus",
+    "displayName": "Clobbopus",
     "dexNumber": 852,
     "sprite": "sprites/852.png"
   },
   {
-    "name": "grapploct",
+    "id": "grapploct",
+    "displayName": "Grapploct",
     "dexNumber": 853,
     "sprite": "sprites/853.png"
   },
   {
-    "name": "sinistea",
+    "id": "sinistea",
+    "displayName": "Sinistea",
     "dexNumber": 854,
     "sprite": "sprites/854.png"
   },
   {
-    "name": "polteageist",
+    "id": "polteageist",
+    "displayName": "Polteageist",
     "dexNumber": 855,
     "sprite": "sprites/855.png"
   },
   {
-    "name": "hatenna",
+    "id": "hatenna",
+    "displayName": "Hatenna",
     "dexNumber": 856,
     "sprite": "sprites/856.png"
   },
   {
-    "name": "hattrem",
+    "id": "hattrem",
+    "displayName": "Hattrem",
     "dexNumber": 857,
     "sprite": "sprites/857.png"
   },
   {
-    "name": "hatterene",
+    "id": "hatterene",
+    "displayName": "Hatterene",
     "dexNumber": 858,
     "sprite": "sprites/858.png"
   },
   {
-    "name": "impidimp",
+    "id": "impidimp",
+    "displayName": "Impidimp",
     "dexNumber": 859,
     "sprite": "sprites/859.png"
   },
   {
-    "name": "morgrem",
+    "id": "morgrem",
+    "displayName": "Morgrem",
     "dexNumber": 860,
     "sprite": "sprites/860.png"
   },
   {
-    "name": "grimmsnarl",
+    "id": "grimmsnarl",
+    "displayName": "Grimmsnarl",
     "dexNumber": 861,
     "sprite": "sprites/861.png"
   },
   {
-    "name": "obstagoon",
+    "id": "obstagoon",
+    "displayName": "Obstagoon",
     "dexNumber": 862,
     "sprite": "sprites/862.png"
   },
   {
-    "name": "perrserker",
+    "id": "perrserker",
+    "displayName": "Perrserker",
     "dexNumber": 863,
     "sprite": "sprites/863.png"
   },
   {
-    "name": "cursola",
+    "id": "cursola",
+    "displayName": "Cursola",
     "dexNumber": 864,
     "sprite": "sprites/864.png"
   },
   {
-    "name": "sirfetchd",
+    "id": "sirfetchd",
+    "displayName": "Sirfetch’d",
     "dexNumber": 865,
     "sprite": "sprites/865.png"
   },
   {
-    "name": "mr-rime",
+    "id": "mr-rime",
+    "displayName": "Mr. Rime",
     "dexNumber": 866,
     "sprite": "sprites/866.png"
   },
   {
-    "name": "runerigus",
+    "id": "runerigus",
+    "displayName": "Runerigus",
     "dexNumber": 867,
     "sprite": "sprites/867.png"
   },
   {
-    "name": "milcery",
+    "id": "milcery",
+    "displayName": "Milcery",
     "dexNumber": 868,
     "sprite": "sprites/868.png"
   },
   {
-    "name": "alcremie",
+    "id": "alcremie",
+    "displayName": "Alcremie",
     "dexNumber": 869,
     "sprite": "sprites/869.png"
   },
   {
-    "name": "falinks",
+    "id": "falinks",
+    "displayName": "Falinks",
     "dexNumber": 870,
     "sprite": "sprites/870.png"
   },
   {
-    "name": "pincurchin",
+    "id": "pincurchin",
+    "displayName": "Pincurchin",
     "dexNumber": 871,
     "sprite": "sprites/871.png"
   },
   {
-    "name": "snom",
+    "id": "snom",
+    "displayName": "Snom",
     "dexNumber": 872,
     "sprite": "sprites/872.png"
   },
   {
-    "name": "frosmoth",
+    "id": "frosmoth",
+    "displayName": "Frosmoth",
     "dexNumber": 873,
     "sprite": "sprites/873.png"
   },
   {
-    "name": "stonjourner",
+    "id": "stonjourner",
+    "displayName": "Stonjourner",
     "dexNumber": 874,
     "sprite": "sprites/874.png"
   },
   {
-    "name": "eiscue",
+    "id": "eiscue",
+    "displayName": "Eiscue",
     "dexNumber": 875,
     "sprite": "sprites/875.png"
   },
   {
-    "name": "indeedee",
+    "id": "indeedee",
+    "displayName": "Indeedee",
     "dexNumber": 876,
     "sprite": "sprites/876.png"
   },
   {
-    "name": "morpeko",
+    "id": "morpeko",
+    "displayName": "Morpeko",
     "dexNumber": 877,
     "sprite": "sprites/877.png"
   },
   {
-    "name": "cufant",
+    "id": "cufant",
+    "displayName": "Cufant",
     "dexNumber": 878,
     "sprite": "sprites/878.png"
   },
   {
-    "name": "copperajah",
+    "id": "copperajah",
+    "displayName": "Copperajah",
     "dexNumber": 879,
     "sprite": "sprites/879.png"
   },
   {
-    "name": "dracozolt",
+    "id": "dracozolt",
+    "displayName": "Dracozolt",
     "dexNumber": 880,
     "sprite": "sprites/880.png"
   },
   {
-    "name": "arctozolt",
+    "id": "arctozolt",
+    "displayName": "Arctozolt",
     "dexNumber": 881,
     "sprite": "sprites/881.png"
   },
   {
-    "name": "dracovish",
+    "id": "dracovish",
+    "displayName": "Dracovish",
     "dexNumber": 882,
     "sprite": "sprites/882.png"
   },
   {
-    "name": "arctovish",
+    "id": "arctovish",
+    "displayName": "Arctovish",
     "dexNumber": 883,
     "sprite": "sprites/883.png"
   },
   {
-    "name": "duraludon",
+    "id": "duraludon",
+    "displayName": "Duraludon",
     "dexNumber": 884,
     "sprite": "sprites/884.png"
   },
   {
-    "name": "dreepy",
+    "id": "dreepy",
+    "displayName": "Dreepy",
     "dexNumber": 885,
     "sprite": "sprites/885.png"
   },
   {
-    "name": "drakloak",
+    "id": "drakloak",
+    "displayName": "Drakloak",
     "dexNumber": 886,
     "sprite": "sprites/886.png"
   },
   {
-    "name": "dragapult",
+    "id": "dragapult",
+    "displayName": "Dragapult",
     "dexNumber": 887,
     "sprite": "sprites/887.png"
   },
   {
-    "name": "zacian",
+    "id": "zacian",
+    "displayName": "Zacian",
     "dexNumber": 888,
     "sprite": "sprites/888.png"
   },
   {
-    "name": "zamazenta",
+    "id": "zamazenta",
+    "displayName": "Zamazenta",
     "dexNumber": 889,
     "sprite": "sprites/889.png"
   },
   {
-    "name": "eternatus",
+    "id": "eternatus",
+    "displayName": "Eternatus",
     "dexNumber": 890,
     "sprite": "sprites/890.png"
   },
   {
-    "name": "kubfu",
+    "id": "kubfu",
+    "displayName": "Kubfu",
     "dexNumber": 891,
     "sprite": "sprites/891.png"
   },
   {
-    "name": "urshifu",
+    "id": "urshifu",
+    "displayName": "Urshifu",
     "dexNumber": 892,
     "sprite": "sprites/892.png"
   },
   {
-    "name": "zarude",
+    "id": "zarude",
+    "displayName": "Zarude",
     "dexNumber": 893,
     "sprite": "sprites/893.png"
   },
   {
-    "name": "regieleki",
+    "id": "regieleki",
+    "displayName": "Regieleki",
     "dexNumber": 894,
     "sprite": "sprites/894.png"
   },
   {
-    "name": "regidrago",
+    "id": "regidrago",
+    "displayName": "Regidrago",
     "dexNumber": 895,
     "sprite": "sprites/895.png"
   },
   {
-    "name": "glastrier",
+    "id": "glastrier",
+    "displayName": "Glastrier",
     "dexNumber": 896,
     "sprite": "sprites/896.png"
   },
   {
-    "name": "spectrier",
+    "id": "spectrier",
+    "displayName": "Spectrier",
     "dexNumber": 897,
     "sprite": "sprites/897.png"
   },
   {
-    "name": "calyrex",
+    "id": "calyrex",
+    "displayName": "Calyrex",
     "dexNumber": 898,
     "sprite": "sprites/898.png"
   },
   {
-    "name": "wyrdeer",
+    "id": "wyrdeer",
+    "displayName": "Wyrdeer",
     "dexNumber": 899,
     "sprite": "sprites/899.png"
   },
   {
-    "name": "kleavor",
+    "id": "kleavor",
+    "displayName": "Kleavor",
     "dexNumber": 900,
     "sprite": "sprites/900.png"
   },
   {
-    "name": "ursaluna",
+    "id": "ursaluna",
+    "displayName": "Ursaluna",
     "dexNumber": 901,
     "sprite": "sprites/901.png"
   },
   {
-    "name": "basculegion",
+    "id": "basculegion",
+    "displayName": "Basculegion",
     "dexNumber": 902,
     "sprite": "sprites/902.png"
   },
   {
-    "name": "sneasler",
+    "id": "sneasler",
+    "displayName": "Sneasler",
     "dexNumber": 903,
     "sprite": "sprites/903.png"
   },
   {
-    "name": "overqwil",
+    "id": "overqwil",
+    "displayName": "Overqwil",
     "dexNumber": 904,
     "sprite": "sprites/904.png"
   },
   {
-    "name": "enamorus",
+    "id": "enamorus",
+    "displayName": "Enamorus",
     "dexNumber": 905,
     "sprite": "sprites/905.png"
   },
   {
-    "name": "sprigatito",
+    "id": "sprigatito",
+    "displayName": "Sprigatito",
     "dexNumber": 906,
     "sprite": "sprites/906.png"
   },
   {
-    "name": "floragato",
+    "id": "floragato",
+    "displayName": "Floragato",
     "dexNumber": 907,
     "sprite": "sprites/907.png"
   },
   {
-    "name": "meowscarada",
+    "id": "meowscarada",
+    "displayName": "Meowscarada",
     "dexNumber": 908,
     "sprite": "sprites/908.png"
   },
   {
-    "name": "fuecoco",
+    "id": "fuecoco",
+    "displayName": "Fuecoco",
     "dexNumber": 909,
     "sprite": "sprites/909.png"
   },
   {
-    "name": "crocalor",
+    "id": "crocalor",
+    "displayName": "Crocalor",
     "dexNumber": 910,
     "sprite": "sprites/910.png"
   },
   {
-    "name": "skeledirge",
+    "id": "skeledirge",
+    "displayName": "Skeledirge",
     "dexNumber": 911,
     "sprite": "sprites/911.png"
   },
   {
-    "name": "quaxly",
+    "id": "quaxly",
+    "displayName": "Quaxly",
     "dexNumber": 912,
     "sprite": "sprites/912.png"
   },
   {
-    "name": "quaxwell",
+    "id": "quaxwell",
+    "displayName": "Quaxwell",
     "dexNumber": 913,
     "sprite": "sprites/913.png"
   },
   {
-    "name": "quaquaval",
+    "id": "quaquaval",
+    "displayName": "Quaquaval",
     "dexNumber": 914,
     "sprite": "sprites/914.png"
   },
   {
-    "name": "lechonk",
+    "id": "lechonk",
+    "displayName": "Lechonk",
     "dexNumber": 915,
     "sprite": "sprites/915.png"
   },
   {
-    "name": "oinkologne",
+    "id": "oinkologne",
+    "displayName": "Oinkologne",
     "dexNumber": 916,
     "sprite": "sprites/916.png"
   },
   {
-    "name": "tarountula",
+    "id": "tarountula",
+    "displayName": "Tarountula",
     "dexNumber": 917,
     "sprite": "sprites/917.png"
   },
   {
-    "name": "spidops",
+    "id": "spidops",
+    "displayName": "Spidops",
     "dexNumber": 918,
     "sprite": "sprites/918.png"
   },
   {
-    "name": "nymble",
+    "id": "nymble",
+    "displayName": "Nymble",
     "dexNumber": 919,
     "sprite": "sprites/919.png"
   },
   {
-    "name": "lokix",
+    "id": "lokix",
+    "displayName": "Lokix",
     "dexNumber": 920,
     "sprite": "sprites/920.png"
   },
   {
-    "name": "pawmi",
+    "id": "pawmi",
+    "displayName": "Pawmi",
     "dexNumber": 921,
     "sprite": "sprites/921.png"
   },
   {
-    "name": "pawmo",
+    "id": "pawmo",
+    "displayName": "Pawmo",
     "dexNumber": 922,
     "sprite": "sprites/922.png"
   },
   {
-    "name": "pawmot",
+    "id": "pawmot",
+    "displayName": "Pawmot",
     "dexNumber": 923,
     "sprite": "sprites/923.png"
   },
   {
-    "name": "tandemaus",
+    "id": "tandemaus",
+    "displayName": "Tandemaus",
     "dexNumber": 924,
     "sprite": "sprites/924.png"
   },
   {
-    "name": "maushold",
+    "id": "maushold",
+    "displayName": "Maushold",
     "dexNumber": 925,
     "sprite": "sprites/925.png"
   },
   {
-    "name": "fidough",
+    "id": "fidough",
+    "displayName": "Fidough",
     "dexNumber": 926,
     "sprite": "sprites/926.png"
   },
   {
-    "name": "dachsbun",
+    "id": "dachsbun",
+    "displayName": "Dachsbun",
     "dexNumber": 927,
     "sprite": "sprites/927.png"
   },
   {
-    "name": "smoliv",
+    "id": "smoliv",
+    "displayName": "Smoliv",
     "dexNumber": 928,
     "sprite": "sprites/928.png"
   },
   {
-    "name": "dolliv",
+    "id": "dolliv",
+    "displayName": "Dolliv",
     "dexNumber": 929,
     "sprite": "sprites/929.png"
   },
   {
-    "name": "arboliva",
+    "id": "arboliva",
+    "displayName": "Arboliva",
     "dexNumber": 930,
     "sprite": "sprites/930.png"
   },
   {
-    "name": "squawkabilly",
+    "id": "squawkabilly",
+    "displayName": "Squawkabilly",
     "dexNumber": 931,
     "sprite": "sprites/931.png"
   },
   {
-    "name": "nacli",
+    "id": "nacli",
+    "displayName": "Nacli",
     "dexNumber": 932,
     "sprite": "sprites/932.png"
   },
   {
-    "name": "naclstack",
+    "id": "naclstack",
+    "displayName": "Naclstack",
     "dexNumber": 933,
     "sprite": "sprites/933.png"
   },
   {
-    "name": "garganacl",
+    "id": "garganacl",
+    "displayName": "Garganacl",
     "dexNumber": 934,
     "sprite": "sprites/934.png"
   },
   {
-    "name": "charcadet",
+    "id": "charcadet",
+    "displayName": "Charcadet",
     "dexNumber": 935,
     "sprite": "sprites/935.png"
   },
   {
-    "name": "armarouge",
+    "id": "armarouge",
+    "displayName": "Armarouge",
     "dexNumber": 936,
     "sprite": "sprites/936.png"
   },
   {
-    "name": "ceruledge",
+    "id": "ceruledge",
+    "displayName": "Ceruledge",
     "dexNumber": 937,
     "sprite": "sprites/937.png"
   },
   {
-    "name": "tadbulb",
+    "id": "tadbulb",
+    "displayName": "Tadbulb",
     "dexNumber": 938,
     "sprite": "sprites/938.png"
   },
   {
-    "name": "bellibolt",
+    "id": "bellibolt",
+    "displayName": "Bellibolt",
     "dexNumber": 939,
     "sprite": "sprites/939.png"
   },
   {
-    "name": "wattrel",
+    "id": "wattrel",
+    "displayName": "Wattrel",
     "dexNumber": 940,
     "sprite": "sprites/940.png"
   },
   {
-    "name": "kilowattrel",
+    "id": "kilowattrel",
+    "displayName": "Kilowattrel",
     "dexNumber": 941,
     "sprite": "sprites/941.png"
   },
   {
-    "name": "maschiff",
+    "id": "maschiff",
+    "displayName": "Maschiff",
     "dexNumber": 942,
     "sprite": "sprites/942.png"
   },
   {
-    "name": "mabosstiff",
+    "id": "mabosstiff",
+    "displayName": "Mabosstiff",
     "dexNumber": 943,
     "sprite": "sprites/943.png"
   },
   {
-    "name": "shroodle",
+    "id": "shroodle",
+    "displayName": "Shroodle",
     "dexNumber": 944,
     "sprite": "sprites/944.png"
   },
   {
-    "name": "grafaiai",
+    "id": "grafaiai",
+    "displayName": "Grafaiai",
     "dexNumber": 945,
     "sprite": "sprites/945.png"
   },
   {
-    "name": "bramblin",
+    "id": "bramblin",
+    "displayName": "Bramblin",
     "dexNumber": 946,
     "sprite": "sprites/946.png"
   },
   {
-    "name": "brambleghast",
+    "id": "brambleghast",
+    "displayName": "Brambleghast",
     "dexNumber": 947,
     "sprite": "sprites/947.png"
   },
   {
-    "name": "toedscool",
+    "id": "toedscool",
+    "displayName": "Toedscool",
     "dexNumber": 948,
     "sprite": "sprites/948.png"
   },
   {
-    "name": "toedscruel",
+    "id": "toedscruel",
+    "displayName": "Toedscruel",
     "dexNumber": 949,
     "sprite": "sprites/949.png"
   },
   {
-    "name": "klawf",
+    "id": "klawf",
+    "displayName": "Klawf",
     "dexNumber": 950,
     "sprite": "sprites/950.png"
   },
   {
-    "name": "capsakid",
+    "id": "capsakid",
+    "displayName": "Capsakid",
     "dexNumber": 951,
     "sprite": "sprites/951.png"
   },
   {
-    "name": "scovillain",
+    "id": "scovillain",
+    "displayName": "Scovillain",
     "dexNumber": 952,
     "sprite": "sprites/952.png"
   },
   {
-    "name": "rellor",
+    "id": "rellor",
+    "displayName": "Rellor",
     "dexNumber": 953,
     "sprite": "sprites/953.png"
   },
   {
-    "name": "rabsca",
+    "id": "rabsca",
+    "displayName": "Rabsca",
     "dexNumber": 954,
     "sprite": "sprites/954.png"
   },
   {
-    "name": "flittle",
+    "id": "flittle",
+    "displayName": "Flittle",
     "dexNumber": 955,
     "sprite": "sprites/955.png"
   },
   {
-    "name": "espathra",
+    "id": "espathra",
+    "displayName": "Espathra",
     "dexNumber": 956,
     "sprite": "sprites/956.png"
   },
   {
-    "name": "tinkatink",
+    "id": "tinkatink",
+    "displayName": "Tinkatink",
     "dexNumber": 957,
     "sprite": "sprites/957.png"
   },
   {
-    "name": "tinkatuff",
+    "id": "tinkatuff",
+    "displayName": "Tinkatuff",
     "dexNumber": 958,
     "sprite": "sprites/958.png"
   },
   {
-    "name": "tinkaton",
+    "id": "tinkaton",
+    "displayName": "Tinkaton",
     "dexNumber": 959,
     "sprite": "sprites/959.png"
   },
   {
-    "name": "wiglett",
+    "id": "wiglett",
+    "displayName": "Wiglett",
     "dexNumber": 960,
     "sprite": "sprites/960.png"
   },
   {
-    "name": "wugtrio",
+    "id": "wugtrio",
+    "displayName": "Wugtrio",
     "dexNumber": 961,
     "sprite": "sprites/961.png"
   },
   {
-    "name": "bombirdier",
+    "id": "bombirdier",
+    "displayName": "Bombirdier",
     "dexNumber": 962,
     "sprite": "sprites/962.png"
   },
   {
-    "name": "finizen",
+    "id": "finizen",
+    "displayName": "Finizen",
     "dexNumber": 963,
     "sprite": "sprites/963.png"
   },
   {
-    "name": "palafin",
+    "id": "palafin",
+    "displayName": "Palafin",
     "dexNumber": 964,
     "sprite": "sprites/964.png"
   },
   {
-    "name": "varoom",
+    "id": "varoom",
+    "displayName": "Varoom",
     "dexNumber": 965,
     "sprite": "sprites/965.png"
   },
   {
-    "name": "revavroom",
+    "id": "revavroom",
+    "displayName": "Revavroom",
     "dexNumber": 966,
     "sprite": "sprites/966.png"
   },
   {
-    "name": "cyclizar",
+    "id": "cyclizar",
+    "displayName": "Cyclizar",
     "dexNumber": 967,
     "sprite": "sprites/967.png"
   },
   {
-    "name": "orthworm",
+    "id": "orthworm",
+    "displayName": "Orthworm",
     "dexNumber": 968,
     "sprite": "sprites/968.png"
   },
   {
-    "name": "glimmet",
+    "id": "glimmet",
+    "displayName": "Glimmet",
     "dexNumber": 969,
     "sprite": "sprites/969.png"
   },
   {
-    "name": "glimmora",
+    "id": "glimmora",
+    "displayName": "Glimmora",
     "dexNumber": 970,
     "sprite": "sprites/970.png"
   },
   {
-    "name": "greavard",
+    "id": "greavard",
+    "displayName": "Greavard",
     "dexNumber": 971,
     "sprite": "sprites/971.png"
   },
   {
-    "name": "houndstone",
+    "id": "houndstone",
+    "displayName": "Houndstone",
     "dexNumber": 972,
     "sprite": "sprites/972.png"
   },
   {
-    "name": "flamigo",
+    "id": "flamigo",
+    "displayName": "Flamigo",
     "dexNumber": 973,
     "sprite": "sprites/973.png"
   },
   {
-    "name": "cetoddle",
+    "id": "cetoddle",
+    "displayName": "Cetoddle",
     "dexNumber": 974,
     "sprite": "sprites/974.png"
   },
   {
-    "name": "cetitan",
+    "id": "cetitan",
+    "displayName": "Cetitan",
     "dexNumber": 975,
     "sprite": "sprites/975.png"
   },
   {
-    "name": "veluza",
+    "id": "veluza",
+    "displayName": "Veluza",
     "dexNumber": 976,
     "sprite": "sprites/976.png"
   },
   {
-    "name": "dondozo",
+    "id": "dondozo",
+    "displayName": "Dondozo",
     "dexNumber": 977,
     "sprite": "sprites/977.png"
   },
   {
-    "name": "tatsugiri",
+    "id": "tatsugiri",
+    "displayName": "Tatsugiri",
     "dexNumber": 978,
     "sprite": "sprites/978.png"
   },
   {
-    "name": "annihilape",
+    "id": "annihilape",
+    "displayName": "Annihilape",
     "dexNumber": 979,
     "sprite": "sprites/979.png"
   },
   {
-    "name": "clodsire",
+    "id": "clodsire",
+    "displayName": "Clodsire",
     "dexNumber": 980,
     "sprite": "sprites/980.png"
   },
   {
-    "name": "farigiraf",
+    "id": "farigiraf",
+    "displayName": "Farigiraf",
     "dexNumber": 981,
     "sprite": "sprites/981.png"
   },
   {
-    "name": "dudunsparce",
+    "id": "dudunsparce",
+    "displayName": "Dudunsparce",
     "dexNumber": 982,
     "sprite": "sprites/982.png"
   },
   {
-    "name": "kingambit",
+    "id": "kingambit",
+    "displayName": "Kingambit",
     "dexNumber": 983,
     "sprite": "sprites/983.png"
   },
   {
-    "name": "great-tusk",
+    "id": "great-tusk",
+    "displayName": "Great Tusk",
     "dexNumber": 984,
     "sprite": "sprites/984.png"
   },
   {
-    "name": "scream-tail",
+    "id": "scream-tail",
+    "displayName": "Scream Tail",
     "dexNumber": 985,
     "sprite": "sprites/985.png"
   },
   {
-    "name": "brute-bonnet",
+    "id": "brute-bonnet",
+    "displayName": "Brute Bonnet",
     "dexNumber": 986,
     "sprite": "sprites/986.png"
   },
   {
-    "name": "flutter-mane",
+    "id": "flutter-mane",
+    "displayName": "Flutter Mane",
     "dexNumber": 987,
     "sprite": "sprites/987.png"
   },
   {
-    "name": "slither-wing",
+    "id": "slither-wing",
+    "displayName": "Slither Wing",
     "dexNumber": 988,
     "sprite": "sprites/988.png"
   },
   {
-    "name": "sandy-shocks",
+    "id": "sandy-shocks",
+    "displayName": "Sandy Shocks",
     "dexNumber": 989,
     "sprite": "sprites/989.png"
   },
   {
-    "name": "iron-treads",
+    "id": "iron-treads",
+    "displayName": "Iron Treads",
     "dexNumber": 990,
     "sprite": "sprites/990.png"
   },
   {
-    "name": "iron-bundle",
+    "id": "iron-bundle",
+    "displayName": "Iron Bundle",
     "dexNumber": 991,
     "sprite": "sprites/991.png"
   },
   {
-    "name": "iron-hands",
+    "id": "iron-hands",
+    "displayName": "Iron Hands",
     "dexNumber": 992,
     "sprite": "sprites/992.png"
   },
   {
-    "name": "iron-jugulis",
+    "id": "iron-jugulis",
+    "displayName": "Iron Jugulis",
     "dexNumber": 993,
     "sprite": "sprites/993.png"
   },
   {
-    "name": "iron-moth",
+    "id": "iron-moth",
+    "displayName": "Iron Moth",
     "dexNumber": 994,
     "sprite": "sprites/994.png"
   },
   {
-    "name": "iron-thorns",
+    "id": "iron-thorns",
+    "displayName": "Iron Thorns",
     "dexNumber": 995,
     "sprite": "sprites/995.png"
   },
   {
-    "name": "frigibax",
+    "id": "frigibax",
+    "displayName": "Frigibax",
     "dexNumber": 996,
     "sprite": "sprites/996.png"
   },
   {
-    "name": "arctibax",
+    "id": "arctibax",
+    "displayName": "Arctibax",
     "dexNumber": 997,
     "sprite": "sprites/997.png"
   },
   {
-    "name": "baxcalibur",
+    "id": "baxcalibur",
+    "displayName": "Baxcalibur",
     "dexNumber": 998,
     "sprite": "sprites/998.png"
   },
   {
-    "name": "gimmighoul",
+    "id": "gimmighoul",
+    "displayName": "Gimmighoul",
     "dexNumber": 999,
     "sprite": "sprites/999.png"
   },
   {
-    "name": "gholdengo",
+    "id": "gholdengo",
+    "displayName": "Gholdengo",
     "dexNumber": 1000,
     "sprite": "sprites/1000.png"
   },
   {
-    "name": "wo-chien",
+    "id": "wo-chien",
+    "displayName": "Wo-Chien",
     "dexNumber": 1001,
     "sprite": "sprites/1001.png"
   },
   {
-    "name": "chien-pao",
+    "id": "chien-pao",
+    "displayName": "Chien-Pao",
     "dexNumber": 1002,
     "sprite": "sprites/1002.png"
   },
   {
-    "name": "ting-lu",
+    "id": "ting-lu",
+    "displayName": "Ting-Lu",
     "dexNumber": 1003,
     "sprite": "sprites/1003.png"
   },
   {
-    "name": "chi-yu",
+    "id": "chi-yu",
+    "displayName": "Chi-Yu",
     "dexNumber": 1004,
     "sprite": "sprites/1004.png"
   },
   {
-    "name": "roaring-moon",
+    "id": "roaring-moon",
+    "displayName": "Roaring Moon",
     "dexNumber": 1005,
     "sprite": "sprites/1005.png"
   },
   {
-    "name": "iron-valiant",
+    "id": "iron-valiant",
+    "displayName": "Iron Valiant",
     "dexNumber": 1006,
     "sprite": "sprites/1006.png"
   },
   {
-    "name": "koraidon",
+    "id": "koraidon",
+    "displayName": "Koraidon",
     "dexNumber": 1007,
     "sprite": "sprites/1007.png"
   },
   {
-    "name": "miraidon",
+    "id": "miraidon",
+    "displayName": "Miraidon",
     "dexNumber": 1008,
     "sprite": "sprites/1008.png"
   },
   {
-    "name": "walking-wake",
+    "id": "walking-wake",
+    "displayName": "Walking Wake",
     "dexNumber": 1009,
     "sprite": "sprites/1009.png"
   },
   {
-    "name": "iron-leaves",
+    "id": "iron-leaves",
+    "displayName": "Iron Leaves",
     "dexNumber": 1010,
     "sprite": "sprites/1010.png"
   },
   {
-    "name": "dipplin",
+    "id": "dipplin",
+    "displayName": "Dipplin",
     "dexNumber": 1011,
     "sprite": "sprites/1011.png"
   },
   {
-    "name": "poltchageist",
+    "id": "poltchageist",
+    "displayName": "Poltchageist",
     "dexNumber": 1012,
     "sprite": "sprites/1012.png"
   },
   {
-    "name": "sinistcha",
+    "id": "sinistcha",
+    "displayName": "Sinistcha",
     "dexNumber": 1013,
     "sprite": "sprites/1013.png"
   },
   {
-    "name": "okidogi",
+    "id": "okidogi",
+    "displayName": "Okidogi",
     "dexNumber": 1014,
     "sprite": "sprites/1014.png"
   },
   {
-    "name": "munkidori",
+    "id": "munkidori",
+    "displayName": "Munkidori",
     "dexNumber": 1015,
     "sprite": "sprites/1015.png"
   },
   {
-    "name": "fezandipiti",
+    "id": "fezandipiti",
+    "displayName": "Fezandipiti",
     "dexNumber": 1016,
     "sprite": "sprites/1016.png"
   },
   {
-    "name": "ogerpon",
+    "id": "ogerpon",
+    "displayName": "Ogerpon",
     "dexNumber": 1017,
     "sprite": "sprites/1017.png"
   },
   {
-    "name": "archaludon",
+    "id": "archaludon",
+    "displayName": "Archaludon",
     "dexNumber": 1018,
     "sprite": "sprites/1018.png"
   },
   {
-    "name": "hydrapple",
+    "id": "hydrapple",
+    "displayName": "Hydrapple",
     "dexNumber": 1019,
     "sprite": "sprites/1019.png"
   },
   {
-    "name": "gouging-fire",
+    "id": "gouging-fire",
+    "displayName": "Gouging Fire",
     "dexNumber": 1020,
     "sprite": "sprites/1020.png"
   },
   {
-    "name": "raging-bolt",
+    "id": "raging-bolt",
+    "displayName": "Raging Bolt",
     "dexNumber": 1021,
     "sprite": "sprites/1021.png"
   },
   {
-    "name": "iron-boulder",
+    "id": "iron-boulder",
+    "displayName": "Iron Boulder",
     "dexNumber": 1022,
     "sprite": "sprites/1022.png"
   },
   {
-    "name": "iron-crown",
+    "id": "iron-crown",
+    "displayName": "Iron Crown",
     "dexNumber": 1023,
     "sprite": "sprites/1023.png"
   },
   {
-    "name": "terapagos",
+    "id": "terapagos",
+    "displayName": "Terapagos",
     "dexNumber": 1024,
     "sprite": "sprites/1024.png"
   },
   {
-    "name": "pecharunt",
+    "id": "pecharunt",
+    "displayName": "Pecharunt",
     "dexNumber": 1025,
     "sprite": "sprites/1025.png"
   }

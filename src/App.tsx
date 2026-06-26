@@ -18,7 +18,7 @@ import {
   type GameState,
   type SessionState,
 } from './engine'
-import pokemon from './data/pokemon.json'
+import { CATEGORIES } from './data/categories'
 import type { Player } from './types'
 import styles from './App.module.css'
 
@@ -27,13 +27,21 @@ type Phase = 'setup' | 'pass' | 'hinter' | 'leaderboard'
 // Enough draws to land 10 answers even after a bank's worth of rerolls.
 const DECK_SIZE = 60
 
-function buildDeck(): string[] {
-  const names = pokemon.map((p) => p.name)
-  for (let i = names.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1))
-    ;[names[i], names[j]] = [names[j], names[i]]
+// Combine the selected categories into one shuffled pool, then take the deck off
+// the front. Every category's terms are stored display-ready, so they go in as-is
+// and the board renders them verbatim.
+function buildDeck(categoryIds: string[]): string[] {
+  const pool: string[] = []
+  for (const id of categoryIds) {
+    const category = CATEGORIES.find((c) => c.id === id)
+    if (!category) continue
+    pool.push(...category.terms)
   }
-  return names.slice(0, DECK_SIZE)
+  for (let i = pool.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[pool[i], pool[j]] = [pool[j], pool[i]]
+  }
+  return pool.slice(0, DECK_SIZE)
 }
 
 export default function App() {
@@ -41,14 +49,18 @@ export default function App() {
   const [roster, setRoster] = useState<Player[]>([])
   const [session, setSession] = useState<SessionState | null>(null)
   const [game, setGame] = useState<GameState | null>(null)
+  // Selected answer categories, locked at setup. The engine never sees these; they
+  // only decide which terms buildDeck pools.
+  const [categoryIds, setCategoryIds] = useState<string[]>(['pokemon'])
 
   const hinter = useMemo(() => {
     if (!session) return null
     return roster.find((p) => p.id === currentHinter(session)) ?? null
   }, [session, roster])
 
-  function handleStart(players: Player[], mode: GameMode) {
+  function handleStart(players: Player[], mode: GameMode, ids: string[]) {
     setRoster(players)
+    setCategoryIds(ids)
     setSession(createSession(players.map((p) => p.id), mode))
     setPhase('pass')
   }
@@ -57,7 +69,7 @@ export default function App() {
     if (!hinter || !session) return
     // Randomizer is host-driven with no dealt deck. The host supplies each answer,
     // so the game runs deckless and nothing secret is ever put on the board.
-    const deck = session.mode === 'online-randomizer' ? [] : buildDeck()
+    const deck = session.mode === 'online-randomizer' ? [] : buildDeck(categoryIds)
     setGame(createGame({ players: roster.map((p) => p.id), hinterId: hinter.id, deck }))
     setPhase('hinter')
   }
@@ -80,6 +92,7 @@ export default function App() {
     setSession(null)
     setRoster([])
     setGame(null)
+    setCategoryIds(['pokemon'])
     setPhase('setup')
   }
 

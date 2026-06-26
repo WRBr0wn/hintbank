@@ -30,6 +30,54 @@
   text-align: center;
 }
 
+/* Category picker, same look as the game's Setup. Multi-select, "soon" disabled. */
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.cat,
+.catOn,
+.catSoon {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 0.85rem;
+  font-size: 0.9rem;
+  border-radius: 0.7rem;
+  border: 1px solid var(--border);
+  cursor: pointer;
+}
+
+.cat {
+  background: var(--surface);
+  color: var(--text-2);
+}
+
+.catOn {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-accent);
+  font-weight: 600;
+}
+
+.catSoon {
+  background: transparent;
+  color: var(--text-faint);
+  border-style: dashed;
+  cursor: not-allowed;
+}
+
+.soon {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  opacity: 0.8;
+}
+
 /* The current draw is the one the hinter reads, so it gets the spotlight. */
 .current {
   display: flex;

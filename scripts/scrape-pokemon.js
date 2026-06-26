@@ -1,7 +1,12 @@
-// Builds src/data/pokemon.json from the PokeAPI GitHub mirror.
-// The live pokeapi.co API isn't reachable from the build environment, so this
-// reads the committed CSV data instead: species id is the National Dex number,
-// identifier is the name. Re-runnable. Overwrites the JSON in place.
+// One-time generator, not part of the normal workflow. This produced the first
+// src/data/pokemon.json from the PokeAPI GitHub mirror (the live pokeapi.co API
+// is not reachable from the build environment, so it reads the committed CSV:
+// species id is the National Dex number, identifier is the raw lowercase name).
+//
+// pokemon.json is now hand-owned. It carries corrected displayName values
+// (Ho-Oh, Farfetch'd, Mr. Mime, the gendered Nidoran forms) that this script does
+// not produce. Re-running overwrites the file with the raw ids and drops those
+// corrections, so only regenerate if you re-apply them afterward.
 
 import { writeFile, mkdir } from 'node:fs/promises'
 import { fileURLToPath } from 'node:url'

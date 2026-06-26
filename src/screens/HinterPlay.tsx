@@ -27,14 +27,6 @@ interface Props {
   onChange: (next: GameState) => void
 }
 
-// PokeAPI identifiers are lowercase and hyphenated; tidy them for display only.
-function pretty(name: string): string {
-  return name
-    .split('-')
-    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
-    .join(' ')
-}
-
 export default function HinterPlay({ game, roster, mode, onChange }: Props) {
   const [selection, setSelection] = useState<number[]>([])
   const [draft, setDraft] = useState('')
@@ -140,7 +132,7 @@ export default function HinterPlay({ game, roster, mode, onChange }: Props) {
       {answerPanel === 'plain' && (
         <div className={styles.answer}>
           <span className={styles.answerLabel}>Secret answer</span>
-          <span className={styles.answerName}>{answer ? pretty(answer) : ''}</span>
+          <span className={styles.answerName}>{answer ?? ''}</span>
         </div>
       )}
 
@@ -157,7 +149,7 @@ export default function HinterPlay({ game, roster, mode, onChange }: Props) {
         >
           <span className={styles.answerLabel}>{revealed ? 'Secret answer' : 'Hidden'}</span>
           {revealed ? (
-            <span className={styles.answerName}>{answer ? pretty(answer) : ''}</span>
+            <span className={styles.answerName}>{answer ?? ''}</span>
           ) : (
             <span className={styles.holdHint}>Hold to reveal answer</span>
           )}
@@ -267,7 +259,7 @@ export default function HinterPlay({ game, roster, mode, onChange }: Props) {
             return (
               <li key={i} className={result ? styles.resultRow : styles.resultPending}>
                 <span className={styles.resultNum}>{i + 1}</span>
-                <span className={styles.resultName}>{result ? pretty(result.answer) : ''}</span>
+                <span className={styles.resultName}>{result ? result.answer : ''}</span>
                 <span className={styles.resultAvatar}>{winner && <Avatar avatar={winner} size={20} />}</span>
               </li>
             )
