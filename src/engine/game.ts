@@ -1,7 +1,6 @@
 import {
   ANSWERS_PER_GAME,
   BANK_CAP,
-  END_TURN_PENALTY,
   HINTER_BASE,
   type Answer,
   type GameState,
@@ -149,9 +148,10 @@ export function endTurn(s: GameState): GameState {
 
 // Score is based on bank size. Every filled slot costs 1, words and reroll
 // markers alike, so a reroll's marker is a real -1. hintCount is just a round
-// counter for the UI and stays out of scoring on purpose.
+// counter for the UI and stays out of scoring on purpose. Ending early is not
+// penalized: endedEarly is recorded but does not affect the score.
 export function hinterScore(s: GameState): number {
-  return HINTER_BASE - s.bank.length - (s.endedEarly ? END_TURN_PENALTY : 0)
+  return HINTER_BASE - s.bank.length
 }
 
 export function guesserScore(s: GameState, playerId: string): number {

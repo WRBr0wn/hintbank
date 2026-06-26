@@ -5,7 +5,6 @@
 export const BANK_CAP = 40
 export const ANSWERS_PER_GAME = 10
 export const HINTER_BASE = 25
-export const END_TURN_PENALTY = 5
 
 // An answer is an opaque token. The engine never inspects it. The UI maps it to
 // whatever the edition bundles (a Pokemon name, an item, a town). That's what

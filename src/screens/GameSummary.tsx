@@ -1,5 +1,4 @@
 import {
-  END_TURN_PENALTY,
   HINTER_BASE,
   hinterScore,
   guesserScore,
@@ -23,7 +22,7 @@ export default function GameSummary({ game, roster, onContinue }: Props) {
 
   const entries = game.bank.length
   const entryLabel = `${entries} ${entries === 1 ? 'entry' : 'entries'}`
-  const breakdown = `${HINTER_BASE} − ${entryLabel}${game.endedEarly ? ` − ${END_TURN_PENALTY} (ended early)` : ''}`
+  const breakdown = `${HINTER_BASE} − ${entryLabel}${game.endedEarly ? ' (ended early)' : ''}`
 
   return (
     <div className={styles.summary}>

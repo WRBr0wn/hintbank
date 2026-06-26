@@ -81,13 +81,13 @@ export default function Randomizer() {
     <div className={styles.page}>
       <ThemeToggle />
       <header className={styles.header}>
-        <h1>Hint Bank</h1>
+        <h1>Hint Bank · Pokémon Edition</h1>
         <p className={styles.kicker}>Randomizer</p>
       </header>
 
       <p className={styles.note}>
         Private to the hinter. Pick categories, draw an answer, read it, and type it into the
-        game board when guessed. Nothing here is linked directly to the game.
+        game board when guessed.
       </p>
 
       <div className={styles.categories}>

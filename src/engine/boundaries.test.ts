@@ -67,7 +67,7 @@ describe('4-player rotation', () => {
 })
 
 describe('40-cap boundary (words + rerolls)', () => {
-  it('locks add/reroll at 40, offers end turn, scores 25 - bank - 5', () => {
+  it('locks add/reroll at 40, offers end turn, scores 25 - bank', () => {
     let g = createGame({ players: ['g', 'x'], hinterId: 'g', deck: deck(60) })
     for (let i = 0; i < 20; i++) g = addWord(g, `w${i}`)
     for (let i = 0; i < 20; i++) {
@@ -86,7 +86,7 @@ describe('40-cap boundary (words + rerolls)', () => {
     }
     g = endTurn(g)
     expect(g.status).toBe('complete')
-    expect(hinterScore(g)).toBe(25 - BANK_CAP - 5) // 25 - 40 - 5 = -20
+    expect(hinterScore(g)).toBe(25 - BANK_CAP) // 25 - 40 = -15, ending early is not penalized
   })
 })
 
@@ -101,7 +101,7 @@ describe('40 rerolls, zero words', () => {
     expect(canEndTurn(g)).toBe(true)
     expect(currentAnswer(g)).not.toBeNull()
     g = endTurn(g)
-    expect(hinterScore(g)).toBe(25 - BANK_CAP - 5) // 40 markers each cost -1: 25 - 40 - 5 = -20
+    expect(hinterScore(g)).toBe(25 - BANK_CAP) // 40 markers each cost -1: 25 - 40 = -15
   })
 })
 

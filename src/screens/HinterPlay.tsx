@@ -197,7 +197,7 @@ export default function HinterPlay({ game, roster, mode, onChange }: Props) {
               Reroll
             </button>
             <button type="button" className={styles.danger} onClick={handleEndTurn} disabled={!canEndTurn(game)}>
-              End turn (−5)
+              Bank full? End turn
             </button>
           </div>
         </div>

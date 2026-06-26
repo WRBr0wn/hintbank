@@ -96,7 +96,7 @@ describe('end turn', () => {
     expect(canEndTurn(s)).toBe(true)
   })
 
-  it('applies a flat -5 and ends the turn: hinter = 25 - bank - 5', () => {
+  it('ends the turn early with no point penalty: hinter = 25 - bank', () => {
     let s = fillWords(start(), BANK_CAP) // 40 entries
     for (let i = 0; i < 3; i++) {
       s = giveHint(s, [0])
@@ -104,8 +104,8 @@ describe('end turn', () => {
     }
     s = endTurn(s)
     expect(s.status).toBe('complete')
-    expect(s.endedEarly).toBe(true)
-    expect(hinterScore(s)).toBe(25 - BANK_CAP - 5) // 25 - 40 - 5 = -20
+    expect(s.endedEarly).toBe(true) // still recorded, just not scored
+    expect(hinterScore(s)).toBe(25 - BANK_CAP) // 25 - 40 = -15, no end-turn penalty
   })
 })
 

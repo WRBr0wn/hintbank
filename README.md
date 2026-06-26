@@ -41,11 +41,11 @@ Badges and Professors are coming. In Randomizer mode, categories are picked on t
 4. Someone's right → the answer is tagged with that player and the next one comes up. Nobody's right → the hinter gives another hint.
 5. After all 10 are resolved, scores are tallied and the turn passes to the next hinter.
 
-**Stuck on an answer?** The hinter can **reroll** it for a fresh random one, but each reroll permanently burns one of the 40 Hint Bank slots. Once the bank is full, the hinter can **end the turn**, forfeiting the rest for a points penalty.
+**Stuck on an answer?** The hinter can **reroll** it for a fresh random one, but each reroll permanently burns one of the 40 Hint Bank slots. Once the bank is full, the hinter can **end the turn**, forfeiting the rest. A full bank already scores `25 − 40 = −15`, so a stalled turn is its own penalty.
 
 ## Scoring
 
-- **Hinter:** `25 − (Hint Bank entries) − (5 if the turn ended early)`. The less hint words and rerolls you have to use the more points you earn. Scores can go negative.
+- **Hinter:** `25 − (Hint Bank entries)`. The less hint words and rerolls you have to use the more points you earn. Scores can go negative.
 - **Guessers:** `+1` for every answer you personally land. Guessing more than once on a single hint costs `−1` per extra guess.
 
 The hinter rotates so everyone hints once per **session**, and totals carry across the session. Highest score takes the crown!
