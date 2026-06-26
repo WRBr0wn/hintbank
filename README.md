@@ -2,7 +2,7 @@
 
 A hint-giving party game for **2–8 players** — a web adaptation of the Google Slides game from **["Guess The Pokemon But Use The FEWEST Hints!"](https://www.youtube.com/watch?v=10x-S7t1Tq0)** (ZaneGames & guests Peebr, Cush, and Lockstin).
 
-Hint Bank is a **general party game that ships as editions.** The current edition is the **Pokémon Edition**, covering the full National Dex.
+Hint Bank is a **general party game that ships as editions.** The current edition is the **Pokémon Edition**, covering the full National Dex and other assorted categories.
 
 ## The idea
 
