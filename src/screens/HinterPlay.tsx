@@ -240,7 +240,7 @@ export default function HinterPlay({ game, roster, mode, onChange, onComplete }:
                   onChange={(e) => setLanded(e.target.value)}
                 />
               )}
-              <ul className={styles.guessers}>
+              <ul className={guessers.length >= 5 ? `${styles.guessers} ${styles.guessersGrid}` : styles.guessers}>
                 {guessers.map((p) => (
                   <li key={p.id} className={styles.guesser}>
                     <span className={styles.guesserName}>
@@ -254,7 +254,7 @@ export default function HinterPlay({ game, roster, mode, onChange, onComplete }:
                         onClick={() => setOverguess((o) => ({ ...o, [p.id]: (o[p.id] ?? 0) + 1 }))}
                         aria-label={`Overguess for ${p.name}`}
                       >
-                        Guessed x2 (−1)
+                        x2 (−1)
                       </button>
                       <button
                         type="button"

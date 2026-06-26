@@ -257,7 +257,24 @@
   cursor: not-allowed;
 }
 
-/* Scale up on large screens â€” additive, min-width gated. Kept modest: a single
+/* Two columns once there are 5+ players (the .playersGrid class is added in the
+   markup at that count), so a full roster does not push the rest of Setup
+   off-screen. Non-mobile only, since two half-width rows are too cramped on a
+   phone. The base .players gap carries over as the grid row and column gap.
+
+   Column-first fill: column 1 takes the first 4 players top to bottom, then the
+   rest overflow into column 2 (5 players reads as 4 and 1), rather than the
+   row-by-row reshuffle a plain two-column grid gives. */
+@media (min-width: 720px) {
+  .playersGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, auto);
+    grid-auto-flow: column;
+  }
+}
+
+/* Scale up on large screens. Additive, min-width gated. Kept modest: a single
    form column shouldn't sprawl across an ultrawide. */
 @media (min-width: 1200px) {
   .setup {

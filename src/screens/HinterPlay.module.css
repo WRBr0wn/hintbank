@@ -46,6 +46,11 @@
   padding: 0.45rem 0.6rem;
   border-radius: 0.6rem;
   font-size: 0.95rem;
+  /* Fixed taller rows so the list roughly matches the bank in the give-hint state
+     and stays that height, rather than resizing as the main column content
+     changes between giving a hint, resolving, and turn complete. Reset to the
+     compact height on mobile, where the columns stack and alignment is moot. */
+  min-height: 3.1rem;
 }
 
 .resultRow {
@@ -56,7 +61,6 @@
 .resultPending {
   background: var(--surface-sunken);
   border: 1px dashed var(--border-dashed);
-  min-height: 2.2rem;
 }
 
 .resultNum {
@@ -90,6 +94,11 @@
     width: 100%;
     position: static;
   }
+
+  .resultRow,
+  .resultPending {
+    min-height: 2.2rem;
+  }
 }
 
 .progress {
@@ -117,7 +126,9 @@
   flex-direction: column;
   align-items: center;
   gap: 0.35rem;
-  padding: 1.5rem 1rem;
+  /* Trimmed 1rem of total vertical padding (0.5rem each side, kept symmetric)
+     to keep the bottom scoreboard on-screen with 4 players in deck modes. */
+  padding: 1rem 1rem;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 1rem;
@@ -354,6 +365,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  /* Let the row shrink below its content width so a half-width grid cell does not
+     blow out; the name truncates instead. */
+  min-width: 0;
   padding: 0.5rem 0.6rem 0.5rem 0.8rem;
   background: var(--surface);
   border: 1px solid var(--border);
@@ -362,6 +376,11 @@
 
 .guesserName {
   font-size: 1rem;
+  /* Truncate a long name in a narrow column instead of pushing the buttons out. */
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .penalty {
@@ -372,6 +391,21 @@
 .guesserBtns {
   display: flex;
   gap: 0.5rem;
+  /* Keep the -1 and Correct buttons full size; the name absorbs any shrink. */
+  flex-shrink: 0;
+}
+
+/* Same column-first two-column fill as the Setup roster: with 5+ guessers, the
+   first 4 stack in column 1 and the rest overflow into column 2, so the resolve
+   list stays short and does not push the scoreboard off-screen. Non-mobile only;
+   the .guessersGrid class is added in the markup at 5+ guessers. */
+@media (min-width: 720px) {
+  .guessersGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, auto);
+    grid-auto-flow: column;
+  }
 }
 
 .minus,
@@ -407,7 +441,7 @@
   cursor: not-allowed;
 }
 
-/* Scale up on large screens. Purely additive above the existing layout â€” every
+/* Scale up on large screens. Purely additive above the existing layout. Every
    rule below is min-width gated, so small/medium and the 720px stacking are
    left exactly as they were. The main column flexes to fill the extra width;
    the results aside steps wider and the bank grid (BankGrid.module.css) grows
@@ -423,7 +457,8 @@
   }
 
   .answer {
-    padding: 2rem 1.5rem;
+    /* Same 1rem total trim as the base rule, kept symmetric. */
+    padding: 1.5rem 1.5rem;
   }
 
   .answerName {
@@ -447,7 +482,8 @@
   }
 
   .answer {
-    padding: 2.5rem 2rem;
+    /* Same 1rem total trim as the base rule, kept symmetric. */
+    padding: 2rem 2rem;
   }
 
   .answerName {

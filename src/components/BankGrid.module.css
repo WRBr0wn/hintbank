@@ -78,7 +78,7 @@
   border: 1px solid var(--surface-bar);
 }
 
-/* Slot-index bands map to the hinter's score: 25 âˆ’ bank.length is healthy at the
+/* Slot-index bands map to the hinter's score: 25 minus bank.length is healthy at the
    start (green), escalates yellow -> orange -> red as it nears 0 at slot 25, and
    goes neutral grey for the negative-score slots beyond. Each tints the cell's
    left edge and washes the background so an empty slot still reads as its zone. */

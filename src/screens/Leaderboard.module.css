@@ -105,7 +105,7 @@
   color: var(--text);
 }
 
-/* Scale up on large screens â€” additive, min-width gated. */
+/* Scale up on large screens. Additive, min-width gated. */
 @media (min-width: 1200px) {
   .board {
     max-width: 600px;

@@ -73,7 +73,7 @@
   border-color: var(--accent);
 }
 
-/* Scale the gate up on large screens â€” additive, min-width gated, so smaller
+/* Scale the gate up on large screens. Additive, min-width gated, so smaller
    viewports are unchanged. */
 @media (min-width: 1200px) {
   .screen {

@@ -150,7 +150,7 @@ export default function Setup({
           </span>
         </div>
 
-        <ul className={styles.players}>
+        <ul className={players.length >= 5 ? `${styles.players} ${styles.playersGrid}` : styles.players}>
           {players.map((p) => (
             <li key={p.id} className={styles.player}>
               <div className={styles.row}>
@@ -223,7 +223,7 @@ export default function Setup({
           // nothing. Answers are drawn on the randomizer page, which has its own
           // category picker, so point there instead of showing dead toggles.
           <>
-            <p className={styles.note}>Answers come from the randomizer page, which has its own category picker.</p>
+            <p className={styles.note}>Answers come from the randomizer page, or outside resources.</p>
             <a
               href={`${import.meta.env.BASE_URL}randomizer/`}
               target="_blank"
