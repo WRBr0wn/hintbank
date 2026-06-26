@@ -22,7 +22,7 @@ import { CATEGORIES } from './data/categories'
 import type { Player } from './types'
 import styles from './App.module.css'
 
-type Phase = 'setup' | 'pass' | 'hinter' | 'leaderboard'
+type Phase = 'setup' | 'pass' | 'hinter' | 'summary' | 'leaderboard'
 
 // Enough draws to land 10 answers even after a bank's worth of rerolls.
 const DECK_SIZE = 60
@@ -116,11 +116,20 @@ export default function App() {
           />
         )}
 
-        {phase === 'hinter' && game && session && game.status === 'playing' && (
-          <HinterPlay game={game} roster={roster} mode={session.mode} onChange={setGame} />
+        {phase === 'hinter' && game && session && (
+          // The board stays up after the 10th answer lands (game.status === 'complete')
+          // so the group can review it. HinterPlay shows a continue control then, which
+          // advances to the summary as an explicit step.
+          <HinterPlay
+            game={game}
+            roster={roster}
+            mode={session.mode}
+            onChange={setGame}
+            onComplete={() => setPhase('summary')}
+          />
         )}
 
-        {phase === 'hinter' && game && game.status === 'complete' && (
+        {phase === 'summary' && game && (
           <GameSummary game={game} roster={roster} onContinue={finishTurn} />
         )}
 

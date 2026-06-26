@@ -25,9 +25,12 @@ interface Props {
   roster: Player[]
   mode: GameMode
   onChange: (next: GameState) => void
+  // Called when the hinter advances off the completed board to the summary. The
+  // board stays up until then so the group can review the finished round.
+  onComplete: () => void
 }
 
-export default function HinterPlay({ game, roster, mode, onChange }: Props) {
+export default function HinterPlay({ game, roster, mode, onChange, onComplete }: Props) {
   const [selection, setSelection] = useState<number[]>([])
   const [draft, setDraft] = useState('')
   const [overguess, setOverguess] = useState<Record<string, number>>({})
@@ -56,6 +59,9 @@ export default function HinterPlay({ game, roster, mode, onChange }: Props) {
   const answer = currentAnswer(game)
   const full = isBankFull(game)
   const hinting = game.phase === 'hinting'
+  // Turn is over once the 10th answer lands. The board stays read-only and shows
+  // a continue control instead of play actions.
+  const complete = game.status === 'complete'
   const avatarFor = (id: string) => roster.find((p) => p.id === id)?.avatar
 
   function toggleWord(i: number) {
@@ -118,7 +124,7 @@ export default function HinterPlay({ game, roster, mode, onChange }: Props) {
     <div className={styles.play}>
       <div className={styles.main}>
       <div className={styles.progress}>
-        <span>Answer {game.resolved + 1} of {ANSWERS_PER_GAME}</span>
+        <span>{complete ? 'Turn complete' : `Answer ${game.resolved + 1} of ${ANSWERS_PER_GAME}`}</span>
         <span>{game.hintCount} {game.hintCount === 1 ? 'hint' : 'hints'}</span>
       </div>
       <div className={styles.bar}>
@@ -138,14 +144,14 @@ export default function HinterPlay({ game, roster, mode, onChange }: Props) {
         </a>
       )}
 
-      {answerPanel === 'plain' && (
+      {answerPanel === 'plain' && !complete && (
         <div className={styles.answer}>
           <span className={styles.answerLabel}>Secret answer</span>
           <span className={styles.answerName}>{answer ?? ''}</span>
         </div>
       )}
 
-      {answerPanel === 'hold' && (
+      {answerPanel === 'hold' && !complete && (
         // Pointer events cover mouse, touch, and pen. Leave and cancel re-cover
         // the answer if the press slides off or is interrupted, so it can never
         // stay stuck revealed. The answer text is only in the DOM while held.
@@ -174,29 +180,37 @@ export default function HinterPlay({ game, roster, mode, onChange }: Props) {
           </span>
         </div>
 
-        <BankGrid bank={game.bank} cap={BANK_CAP} selected={selection} interactive={hinting} onToggle={toggleWord} />
+        <BankGrid bank={game.bank} cap={BANK_CAP} selected={selection} interactive={hinting && !complete} onToggle={toggleWord} />
 
-        {full ? (
-          <p className={styles.fullNote}>The bank is full. Give hints from these words, or end the turn.</p>
-        ) : (
-          <div className={styles.addRow}>
-            <input
-              className={styles.addInput}
-              value={draft}
-              maxLength={24}
-              placeholder="Add a word to the bank"
-              disabled={!hinting}
-              onChange={(e) => setDraft(e.target.value)}
-              onKeyDown={(e) => e.key === 'Enter' && handleAdd()}
-            />
-            <button type="button" className={styles.add} onClick={handleAdd} disabled={!canAddWord(game) || draft.trim() === ''}>
-              Add
-            </button>
-          </div>
-        )}
+        {!complete &&
+          (full ? (
+            <p className={styles.fullNote}>The bank is full. Give hints from these words, or end the turn.</p>
+          ) : (
+            <div className={styles.addRow}>
+              <input
+                className={styles.addInput}
+                value={draft}
+                maxLength={24}
+                placeholder="Add a word to the bank"
+                disabled={!hinting}
+                onChange={(e) => setDraft(e.target.value)}
+                onKeyDown={(e) => e.key === 'Enter' && handleAdd()}
+              />
+              <button type="button" className={styles.add} onClick={handleAdd} disabled={!canAddWord(game) || draft.trim() === ''}>
+                Add
+              </button>
+            </div>
+          ))}
       </section>
 
-      {hinting ? (
+      {complete ? (
+        <div className={styles.actions}>
+          <p className={styles.resolvePrompt}>All 10 answers are in. Review the board, then continue.</p>
+          <button type="button" className={styles.primary} onClick={onComplete}>
+            Continue
+          </button>
+        </div>
+      ) : hinting ? (
         <div className={styles.actions}>
           <button type="button" className={styles.primary} onClick={handleGive} disabled={selection.length === 0}>
             Give hint
