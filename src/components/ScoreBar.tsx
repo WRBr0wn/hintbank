@@ -24,7 +24,7 @@ export default function ScoreBar({ roster, totals, hinterId, game }: Props) {
         return (
           <div key={p.id} className={isHinter ? styles.hinter : styles.chip}>
             <span className={styles.avatar}>
-              <Avatar avatar={p.avatar} size={24} />
+              <Avatar avatar={p.avatar} size={isHinter ? 48 : 44} />
             </span>
             <span className={styles.info}>
               <span className={styles.name}>

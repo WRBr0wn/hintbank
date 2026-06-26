@@ -2,7 +2,7 @@
 
 A hint-giving party game for **2–8 players** — a web adaptation of the Google Slides game from **["Guess The Pokemon But Use The FEWEST Hints!"](https://www.youtube.com/watch?v=10x-S7t1Tq0)** (ZaneGames & guests Peebr, Cush, and Lockstin).
 
-Hint Bank is a **general party game that ships as editions.** This release is the first version of the **Pokémon Edition**, covering the full National Dex.
+Hint Bank is a **general party game that ships as editions.** The current edition is the **Pokémon Edition**, covering the full National Dex.
 
 ## The idea
 
@@ -16,9 +16,22 @@ Pick a mode at setup. It locks for the session.
 
 - **In Person: One Device** - the group is in the same room and the hinter holds the phone or tablet. They see the secret answer right on screen.
 - **Online: One Device** - built for simple, all included Discord screen-share. The app still deals the answers on the main screen, but the secret one stays covered until the hinter presses and holds to peek.
-- **Online: One Device + Randomizer** - the most faithful to the original video. The shared screen is a fully public board (Hint Bank, results, scores), the hinter pulls answers from somewhere private, and types each one in once it's guessed. Nothing secret ever touches the broadcast. A built-in [randomizer page](https://wrbr0wn.github.io/hintbank/randomizer/) can draw Pokémon for the hinter in a separate tab or different device.
+- **Online: One Device + Randomizer** - the most faithful to the original video. The shared screen is a fully public board (Hint Bank, results, scores), the hinter pulls answers from somewhere private, and types each one in once it's guessed. Nothing secret ever touches the broadcast. A built-in [randomizer page](https://wrbr0wn.github.io/hintbank/randomizer/), with its own category picker, can draw answers for the hinter in a separate tab or different device.
 
 Online multiplayer (one device per player) is on the roadmap.
+
+## Categories
+
+Pick one or more answer categories at setup. They mix into a single pool, so a turn can pull from any of them. Live now:
+
+- **Pokémon** - the full National Dex.
+- **Gym Leaders**
+- **Towns & Cities**
+- **Games**
+- **Items**
+- **Routes & Areas**
+
+Badges and Professors are coming. In Randomizer mode, categories are picked on the randomizer page instead of at setup.
 
 ## How a game flows
 
@@ -42,7 +55,7 @@ The hinter rotates so everyone hints once per **session**, and totals carry acro
 - **React + Vite + TypeScript**, plain CSS Modules, no backend.
 - Light and dark themes, following your system setting by default and remembering your choice after that. The toggle works on every screen, including the randomizer.
 - The rules live in a small, self-contained engine (`src/engine/`) that's category-agnostic for future editions.
-- Pokémon names and sprites are bundled at build time from the PokéAPI GitHub mirror (see `scripts/`).
+- Pokémon names and sprites are bundled at build time from the PokéAPI GitHub mirror (see `scripts/`); the other categories are hand-curated bundled data.
 - Static build, deployed via GitHub Pages.
 
 ## Running it
@@ -55,7 +68,7 @@ Run `npm install` first on a fresh checkout, then:
 
 ## Roadmap
 
-Three modes are live now: In Person, Online: One Device, and Online + Randomizer. Still ahead: full per-device online multiplayer (one screen per player, no passing), more Pokémon-Edition categories (items, gym leaders, towns, badges, professors), and future editions behind the same engine.
+Three modes are live now: In Person, Online: One Device, and Online + Randomizer, across six answer categories. Still ahead: full per-device online multiplayer (one screen per player, no passing), more categories (Badges, Professors, and beyond), and future editions behind the same engine.
 
 ## Credit
 

@@ -1,8 +1,12 @@
 .bar {
   display: flex;
-  gap: 0.5rem;
+  /* Center the chips as a group so a 2-player game sits prominent in the middle
+     instead of huddled bottom-left. safe center falls back to start when the row
+     genuinely overflows, so the scroll fallback below still reaches every chip. */
+  justify-content: safe center;
+  gap: 0.7rem;
   align-items: stretch;
-  padding: 0.6rem 1rem;
+  padding: 0.7rem 1rem;
   border-top: 1px solid var(--border);
   background: var(--surface-sunken);
   overflow-x: auto;
@@ -13,20 +17,23 @@
   flex: 0 0 auto;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.4rem 0.7rem;
-  border-radius: 0.6rem;
+  gap: 0.7rem;
+  padding: 0.55rem 0.95rem;
+  border-radius: 0.7rem;
   border: 1px solid var(--border);
   background: var(--surface);
 }
 
+/* Current hinter: accent tint plus an accent ring (no height shift) so it is
+   obvious at a glance who is giving hints. */
 .hinter {
   border-color: var(--accent);
   background: var(--accent-tint);
+  box-shadow: 0 0 0 1px var(--accent);
 }
 
 .avatar {
-  font-size: 1.4rem;
+  display: inline-flex;
   line-height: 1;
 }
 
@@ -40,13 +47,13 @@
   display: flex;
   align-items: center;
   gap: 0.35rem;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   color: var(--text-2);
   white-space: nowrap;
 }
 
 .badge {
-  font-size: 0.6rem;
+  font-size: 0.62rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   font-weight: 700;
@@ -56,51 +63,35 @@
   padding: 0.05rem 0.3rem;
 }
 
+/* The live score is the at-a-glance info during play, so it is the loudest part
+   of the chip. */
 .total {
-  font-size: 1.05rem;
-  font-weight: 700;
+  font-size: 1.4rem;
+  font-weight: 800;
   color: var(--accent-ink);
+}
+
+.hinter .total {
+  font-size: 1.55rem;
 }
 
 .pending {
   color: var(--text-muted);
   font-weight: 600;
+  font-size: 0.85em;
 }
 
-/* Scale the strip up on large screens â€” additive, min-width gated. */
+/* Scale the strip up on large screens. Additive, min-width gated. */
 @media (min-width: 1200px) {
   .bar {
-    padding: 0.75rem 1.25rem;
-    gap: 0.6rem;
+    padding: 0.9rem 1.5rem;
+    gap: 1rem;
   }
 
   .chip,
   .hinter {
-    padding: 0.5rem 0.85rem;
-    gap: 0.6rem;
-  }
-
-  .avatar {
-    font-size: 1.65rem;
-  }
-
-  .name {
-    font-size: 0.95rem;
-  }
-
-  .total {
-    font-size: 1.2rem;
-  }
-}
-
-@media (min-width: 1600px) {
-  .chip,
-  .hinter {
-    padding: 0.6rem 1rem;
-  }
-
-  .avatar {
-    font-size: 1.9rem;
+    padding: 0.7rem 1.2rem;
+    gap: 0.85rem;
   }
 
   .name {
@@ -108,6 +99,34 @@
   }
 
   .total {
-    font-size: 1.35rem;
+    font-size: 1.75rem;
+  }
+
+  .hinter .total {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 1600px) {
+  .bar {
+    padding: 1.05rem 2rem;
+    gap: 1.25rem;
+  }
+
+  .chip,
+  .hinter {
+    padding: 0.8rem 1.45rem;
+  }
+
+  .name {
+    font-size: 1.15rem;
+  }
+
+  .total {
+    font-size: 2.1rem;
+  }
+
+  .hinter .total {
+    font-size: 2.4rem;
   }
 }
