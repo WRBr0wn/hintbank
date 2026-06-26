@@ -2,7 +2,6 @@ import { useMemo, useState } from 'react'
 import Setup from './screens/Setup'
 import PassToHinter from './screens/PassToHinter'
 import HinterPlay from './screens/HinterPlay'
-import GameSummary from './screens/GameSummary'
 import Leaderboard from './screens/Leaderboard'
 import ScoreBar from './components/ScoreBar'
 import ThemeToggle from './components/ThemeToggle'
@@ -22,7 +21,7 @@ import { CATEGORIES } from './data/categories'
 import type { Player } from './types'
 import styles from './App.module.css'
 
-type Phase = 'setup' | 'pass' | 'hinter' | 'summary' | 'leaderboard'
+type Phase = 'setup' | 'pass' | 'hinter' | 'leaderboard'
 
 // Enough draws to land 10 answers even after a bank's worth of rerolls.
 const DECK_SIZE = 60
@@ -118,19 +117,15 @@ export default function App() {
 
         {phase === 'hinter' && game && session && (
           // The board stays up after the 10th answer lands (game.status === 'complete')
-          // so the group can review it. HinterPlay shows a continue control then, which
-          // advances to the summary as an explicit step.
+          // so the group can review it as the turn recap. Continue records the turn
+          // and routes straight to the next pass, or the leaderboard at rotation end.
           <HinterPlay
             game={game}
             roster={roster}
             mode={session.mode}
             onChange={setGame}
-            onComplete={() => setPhase('summary')}
+            onComplete={finishTurn}
           />
-        )}
-
-        {phase === 'summary' && game && (
-          <GameSummary game={game} roster={roster} onContinue={finishTurn} />
         )}
 
         {phase === 'leaderboard' && session && (
@@ -143,7 +138,9 @@ export default function App() {
         )}
       </main>
 
-      {session && phase !== 'leaderboard' && game?.status !== 'complete' && (
+      {session && phase !== 'leaderboard' && (
+        // Shown through play and on the completed board so the group can review
+        // scores. Hidden on the leaderboard, which shows totals itself.
         <ScoreBar roster={roster} totals={session.totals} hinterId={hinter?.id ?? null} game={game} />
       )}
     </div>

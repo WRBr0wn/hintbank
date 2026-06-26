@@ -1,4 +1,4 @@
-import { guesserScore, type GameState } from '../engine'
+import { guesserScore, hinterScore, type GameState } from '../engine'
 import Avatar from './Avatar'
 import type { Player } from '../types'
 import styles from './ScoreBar.module.css'
@@ -20,7 +20,12 @@ export default function ScoreBar({ roster, totals, hinterId, game }: Props) {
         // only changes once the turn is recorded, so it stays at the session base
         // and shows a pending "+ ?" while the turn is in progress.
         const total = isHinter || !game ? base : base + guesserScore(game, p.id)
-        const pending = isHinter && game !== null
+        // The hinter's turn delta is unknown during play (shown as "+ ?") and
+        // resolves on the completed board into the actual score this turn
+        // (hinterScore: 25 minus bank entries, can be negative). Guessers score
+        // live, so they have no pending unknown.
+        const showPending = isHinter && game?.status === 'playing'
+        const delta = isHinter && game?.status === 'complete' ? hinterScore(game) : null
         return (
           <div key={p.id} className={isHinter ? styles.hinter : styles.chip}>
             <span className={styles.avatar}>
@@ -33,7 +38,10 @@ export default function ScoreBar({ roster, totals, hinterId, game }: Props) {
               </span>
               <span className={styles.total}>
                 {total}
-                {pending && <span className={styles.pending}> + ?</span>}
+                {showPending && <span className={styles.pending}> + ?</span>}
+                {delta !== null && (
+                  <span className={styles.pending}>{` ${delta < 0 ? '−' : '+'} ${Math.abs(delta)}`}</span>
+                )}
               </span>
             </span>
           </div>
