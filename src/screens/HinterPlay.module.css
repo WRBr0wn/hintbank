@@ -301,6 +301,18 @@
   cursor: not-allowed;
 }
 
+/* The two side-by-side resolve-choice buttons read as one matched pair, set apart
+   only by background color (gold Resolve Guess vs gray Keep hinting). Same width,
+   padding, font size, and weight. Defined after .primary and .secondary so it wins
+   the tie and overrides their differing sizing. Heights already match via the
+   row's align-items: stretch, so the .secondary border is left as is. */
+.choice {
+  flex: 1 1 auto;
+  padding: 0.95rem 1rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
 .danger {
   flex: 1 1 auto;
   padding: 0.8rem 1rem;

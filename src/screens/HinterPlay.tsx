@@ -264,13 +264,16 @@ export default function HinterPlay({ game, roster, mode, onChange }: Props) {
             <div className={styles.escapes}>
               <button
                 type="button"
-                className={styles.primary}
-                style={{ flex: 1 }}
+                className={`${styles.primary} ${styles.choice}`}
                 onClick={() => setResolving(true)}
               >
                 Resolve Guess
               </button>
-              <button type="button" className={styles.secondary} onClick={handleNoOne}>
+              <button
+                type="button"
+                className={`${styles.secondary} ${styles.choice}`}
+                onClick={handleNoOne}
+              >
                 Keep hinting
               </button>
             </div>
