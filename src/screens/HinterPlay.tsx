@@ -67,8 +67,9 @@ export default function HinterPlay({ game, roster, mode, onChange }: Props) {
 
   function handleGive() {
     if (selection.length === 0) return
+    // Keep the selection lit through the resolving phase so the hint words stay
+    // readable on a shared screen. It clears when the hint resolves below.
     onChange(giveHint(game, selection))
-    setSelection([])
   }
 
   function handleCorrect(pid: string) {
@@ -91,6 +92,7 @@ export default function HinterPlay({ game, roster, mode, onChange }: Props) {
   function handleNoOne() {
     onChange(resolveHint(game, { overguesses: overguess }))
     setOverguess({})
+    setSelection([])
     setLanded('')
   }
 

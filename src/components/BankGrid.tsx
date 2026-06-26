@@ -43,7 +43,11 @@ export default function BankGrid({ bank, cap, selected, interactive, onToggle }:
           )
         }
 
-        const isOn = selected.includes(i)
+        const pos = selected.indexOf(i)
+        const isOn = pos !== -1
+        // Number the words by pick order, but only when order is meaningful (2+
+        // selected). selected is already in click order, so pos + 1 is the rank.
+        const order = isOn && selected.length >= 2 ? pos + 1 : null
         return (
           <button
             key={i}
@@ -53,6 +57,11 @@ export default function BankGrid({ bank, cap, selected, interactive, onToggle }:
             aria-pressed={isOn}
             onClick={() => onToggle(i)}
           >
+            {order !== null && (
+              <span className={styles.order} aria-hidden>
+                {order}
+              </span>
+            )}
             {entry.word}
           </button>
         )
