@@ -92,18 +92,32 @@ function makePlayer(used: string[]): Player {
 export default function Setup({
   onStart,
   initialPlayers,
+  initialMode,
+  initialCategoryIds,
+  initialDifficultyBase,
+  initialAnswers,
 }: {
+  // Setup hands back the player's raw choices. The difficulty base is the raw
+  // preset (30/25/20), not the derived cutoff; App derives the cutoff and remembers
+  // the raw base so it can round-trip on return.
   onStart: (
     players: Player[],
     mode: GameMode,
     categoryIds: string[],
-    hinterBase: number,
+    difficultyBase: number,
     answersPerGame: number,
   ) => void
   // Seeds the roster when returning to Setup mid-game, so the same players carry
   // over (names and avatars intact) and stay fully editable. Omitted on a fresh
   // start, which falls back to two blank players.
   initialPlayers?: Player[]
+  // The rest of the prior choices, seeded the same way on return-to-setup so every
+  // control restores to what was picked. All omitted on a fresh start, where each
+  // falls back to the default below.
+  initialMode?: GameMode
+  initialCategoryIds?: string[]
+  initialDifficultyBase?: number
+  initialAnswers?: number
 }) {
   const [players, setPlayers] = useState<Player[]>(() =>
     initialPlayers && initialPlayers.length > 0
@@ -111,13 +125,15 @@ export default function Setup({
       : [makePlayer([]), makePlayer([avatarKey(AVATARS[0])])],
   )
   const [pickerFor, setPickerFor] = useState<string | null>(null)
-  const [selected, setSelected] = useState<Set<string>>(() => new Set(['pokemon']))
-  const [mode, setMode] = useState<GameMode>('in-person')
+  const [selected, setSelected] = useState<Set<string>>(() =>
+    new Set(initialCategoryIds && initialCategoryIds.length > 0 ? initialCategoryIds : ['pokemon']),
+  )
+  const [mode, setMode] = useState<GameMode>(initialMode ?? 'in-person')
   // Difficulty is stored as its base (the full-game cutoff), so a preset is "on"
   // when its base matches. The actual cutoff is derived from base and answer count
   // at start. Both lock into the session then, like mode.
-  const [difficultyBase, setDifficultyBase] = useState(HINTER_BASE)
-  const [answers, setAnswers] = useState(ANSWERS_PER_GAME)
+  const [difficultyBase, setDifficultyBase] = useState(initialDifficultyBase ?? HINTER_BASE)
+  const [answers, setAnswers] = useState(initialAnswers ?? ANSWERS_PER_GAME)
 
   function update(id: string, patch: Partial<Player>) {
     setPlayers((ps) => ps.map((p) => (p.id === id ? { ...p, ...patch } : p)))
@@ -162,8 +178,9 @@ export default function Setup({
 
   function start() {
     if (!ready) return
-    const cutoff = cutoffFor(difficultyBase, answers)
-    onStart(players.map((p) => ({ ...p, name: p.name.trim() })), mode, [...selected], cutoff, answers)
+    // Hand over the raw difficulty base; App derives the cutoff (and remembers the
+    // raw base for round-tripping on return-to-setup).
+    onStart(players.map((p) => ({ ...p, name: p.name.trim() })), mode, [...selected], difficultyBase, answers)
   }
 
   return (
@@ -201,46 +218,52 @@ export default function Setup({
           </button>
         </div>
 
-        <div className={styles.subLabel}>Difficulty</div>
-        <div className={styles.categories}>
-          {DIFFICULTIES.map((d) => {
-            const on = difficultyBase === d.base
-            return (
-              <button
-                key={d.id}
-                type="button"
-                className={on ? styles.catOn : styles.cat}
-                aria-pressed={on}
-                onClick={() => setDifficultyBase(d.base)}
-              >
-                {d.label}
-              </button>
-            )
-          })}
-        </div>
+        <div className={styles.gameControls}>
+          <div className={styles.controlGroup}>
+            <div className={styles.subLabel}>Difficulty</div>
+            <div className={styles.categories}>
+              {DIFFICULTIES.map((d) => {
+                const on = difficultyBase === d.base
+                return (
+                  <button
+                    key={d.id}
+                    type="button"
+                    className={on ? styles.catOn : styles.cat}
+                    aria-pressed={on}
+                    onClick={() => setDifficultyBase(d.base)}
+                  >
+                    {d.label}
+                  </button>
+                )
+              })}
+            </div>
+          </div>
 
-        <div className={styles.subLabel}>Answers per turn</div>
-        <div className={styles.stepper}>
-          <button
-            type="button"
-            className={styles.step}
-            onClick={() => setAnswers((n) => clampAnswers(n - 1))}
-            disabled={answers <= MIN_ANSWERS}
-            aria-label="Fewer answers"
-          >
-            −
-          </button>
-          <span className={styles.stepValue}>{answers}</span>
-          <button
-            type="button"
-            className={styles.step}
-            onClick={() => setAnswers((n) => clampAnswers(n + 1))}
-            disabled={answers >= MAX_ANSWERS}
-            aria-label="More answers"
-          >
-            +
-          </button>
-          <span className={styles.note}>{MIN_ANSWERS}–{MAX_ANSWERS} answers to land per turn.</span>
+          <div className={styles.controlGroup}>
+            <div className={styles.subLabel}>Answers per turn</div>
+            <div className={styles.stepper}>
+              <button
+                type="button"
+                className={styles.step}
+                onClick={() => setAnswers((n) => clampAnswers(n - 1))}
+                disabled={answers <= MIN_ANSWERS}
+                aria-label="Fewer answers"
+              >
+                −
+              </button>
+              <span className={styles.stepValue}>{answers}</span>
+              <button
+                type="button"
+                className={styles.step}
+                onClick={() => setAnswers((n) => clampAnswers(n + 1))}
+                disabled={answers >= MAX_ANSWERS}
+                aria-label="More answers"
+              >
+                +
+              </button>
+            </div>
+            <span className={styles.note}>{MIN_ANSWERS}–{MAX_ANSWERS} answers to land per turn.</span>
+          </div>
         </div>
       </section>
 

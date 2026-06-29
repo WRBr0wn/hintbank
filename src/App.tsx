@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react'
-import Setup from './screens/Setup'
+import Setup, { cutoffFor } from './screens/Setup'
 import PassToHinter from './screens/PassToHinter'
 import HinterPlay from './screens/HinterPlay'
 import Leaderboard from './screens/Leaderboard'
@@ -7,7 +7,9 @@ import ScoreBar from './components/ScoreBar'
 import ThemeToggle from './components/ThemeToggle'
 import ConfirmModal from './components/ConfirmModal'
 import {
+  ANSWERS_PER_GAME,
   BANK_CAP,
+  HINTER_BASE,
   canEditMode,
   continueSession,
   createGame,
@@ -56,6 +58,13 @@ export default function App() {
   // Selected answer categories, locked at setup. The engine never sees these; they
   // only decide which terms buildDeck pools.
   const [categoryIds, setCategoryIds] = useState<string[]>(['pokemon'])
+  // The rest of the raw setup choices, kept so return-to-setup can pre-fill every
+  // control. difficultyBase is the raw preset (30/25/20), not the derived cutoff:
+  // the session only stores the cutoff, so this is what lets the difficulty button
+  // round-trip without reverse-deriving it.
+  const [mode, setMode] = useState<GameMode>('in-person')
+  const [difficultyBase, setDifficultyBase] = useState(HINTER_BASE)
+  const [answers, setAnswers] = useState(ANSWERS_PER_GAME)
   // Confirm before the title returns to Setup mid-game.
   const [confirmReturn, setConfirmReturn] = useState(false)
 
@@ -66,14 +75,19 @@ export default function App() {
 
   function handleStart(
     players: Player[],
-    mode: GameMode,
+    chosenMode: GameMode,
     ids: string[],
-    hinterBase: number,
+    chosenDifficultyBase: number,
     answersPerGame: number,
   ) {
     setRoster(players)
     setCategoryIds(ids)
-    setSession(createSession(players.map((p) => p.id), mode, hinterBase, answersPerGame))
+    setMode(chosenMode)
+    setDifficultyBase(chosenDifficultyBase)
+    setAnswers(answersPerGame)
+    // The session stores the derived cutoff; App keeps the raw base above for return.
+    const hinterBase = cutoffFor(chosenDifficultyBase, answersPerGame)
+    setSession(createSession(players.map((p) => p.id), chosenMode, hinterBase, answersPerGame))
     setPhase('pass')
   }
 
@@ -116,17 +130,19 @@ export default function App() {
     setRoster([])
     setGame(null)
     setCategoryIds(['pokemon'])
+    setMode('in-person')
+    setDifficultyBase(HINTER_BASE)
+    setAnswers(ANSWERS_PER_GAME)
     setPhase('setup')
   }
 
-  // Title return: keep the roster so the same players carry into Setup, but drop
-  // the in-progress session, game, and scores. Categories reset here; mode and
-  // category selection are Setup-local and start fresh when it remounts. Unlike
-  // startOver, the roster is preserved (restart this group, not a full reset).
+  // Title return: keep the roster and every prior setup choice (mode, categories,
+  // difficulty, answers all persist in state and round-trip back into Setup), but
+  // drop the in-progress session, game, and scores. Unlike startOver, nothing
+  // resets to defaults: it restarts this group with their settings, ready to tweak.
   function returnToSetup() {
     setSession(null)
     setGame(null)
-    setCategoryIds(['pokemon'])
     setConfirmReturn(false)
     setPhase('setup')
   }
@@ -160,7 +176,14 @@ export default function App() {
       </header>
       <main className={styles.main}>
         {phase === 'setup' && (
-          <Setup onStart={handleStart} initialPlayers={roster.length ? roster : undefined} />
+          <Setup
+            onStart={handleStart}
+            initialPlayers={roster.length ? roster : undefined}
+            initialMode={mode}
+            initialCategoryIds={categoryIds}
+            initialDifficultyBase={difficultyBase}
+            initialAnswers={answers}
+          />
         )}
 
         {phase === 'pass' && hinter && session && (
