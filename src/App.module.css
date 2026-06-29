@@ -16,6 +16,16 @@
   letter-spacing: -0.02em;
 }
 
+/* During a game the title doubles as a "return to setup" control. */
+.titleAction {
+  cursor: pointer;
+  transition: color 0.15s ease;
+}
+
+.titleAction:hover {
+  color: var(--accent);
+}
+
 .edition {
   margin-top: 0.25rem;
   font-size: 0.9rem;

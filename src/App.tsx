@@ -5,7 +5,9 @@ import HinterPlay from './screens/HinterPlay'
 import Leaderboard from './screens/Leaderboard'
 import ScoreBar from './components/ScoreBar'
 import ThemeToggle from './components/ThemeToggle'
+import ConfirmModal from './components/ConfirmModal'
 import {
+  canEditMode,
   continueSession,
   createGame,
   createSession,
@@ -51,6 +53,8 @@ export default function App() {
   // Selected answer categories, locked at setup. The engine never sees these; they
   // only decide which terms buildDeck pools.
   const [categoryIds, setCategoryIds] = useState<string[]>(['pokemon'])
+  // Confirm before the title returns to Setup mid-game.
+  const [confirmReturn, setConfirmReturn] = useState(false)
 
   const hinter = useMemo(() => {
     if (!session) return null
@@ -95,15 +99,49 @@ export default function App() {
     setPhase('setup')
   }
 
+  // Title return: keep the roster so the same players carry into Setup, but drop
+  // the in-progress session, game, and scores. Categories reset here; mode and
+  // category selection are Setup-local and start fresh when it remounts. Unlike
+  // startOver, the roster is preserved (restart this group, not a full reset).
+  function returnToSetup() {
+    setSession(null)
+    setGame(null)
+    setCategoryIds(['pokemon'])
+    setConfirmReturn(false)
+    setPhase('setup')
+  }
+
+  // The title returns to Setup during a game, but on Setup there is nowhere to go.
+  const canReturn = phase !== 'setup'
+
   return (
     <div className={styles.app}>
       <ThemeToggle />
       <header className={styles.header}>
-        <h1>Hint Bank</h1>
+        {canReturn ? (
+          <h1
+            className={styles.titleAction}
+            role="button"
+            tabIndex={0}
+            onClick={() => setConfirmReturn(true)}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault()
+                setConfirmReturn(true)
+              }
+            }}
+          >
+            Hint Bank
+          </h1>
+        ) : (
+          <h1>Hint Bank</h1>
+        )}
         <p className={styles.edition}>Pokémon Edition</p>
       </header>
       <main className={styles.main}>
-        {phase === 'setup' && <Setup onStart={handleStart} />}
+        {phase === 'setup' && (
+          <Setup onStart={handleStart} initialPlayers={roster.length ? roster : undefined} />
+        )}
 
         {phase === 'pass' && hinter && session && (
           <PassToHinter
@@ -123,6 +161,7 @@ export default function App() {
             game={game}
             roster={roster}
             mode={session.mode}
+            canEdit={canEditMode(session.mode)}
             onChange={setGame}
             onComplete={finishTurn}
           />
@@ -142,6 +181,16 @@ export default function App() {
         // Shown through play and on the completed board so the group can review
         // scores. Hidden on the leaderboard, which shows totals itself.
         <ScoreBar roster={roster} totals={session.totals} hinterId={hinter?.id ?? null} game={game} />
+      )}
+
+      {confirmReturn && (
+        <ConfirmModal
+          message="Return to setup? The current game will be lost."
+          confirmLabel="Return to setup"
+          cancelLabel="Keep playing"
+          onConfirm={returnToSetup}
+          onCancel={() => setConfirmReturn(false)}
+        />
       )}
     </div>
   )

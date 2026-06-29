@@ -25,17 +25,28 @@ const CREATORS: PlayerAvatar[] = [
 const POKEMON: PlayerAvatar[] = (
   [
     [1, 'Bulbasaur'],
+    [3, 'Venusaur'],
     [4, 'Charmander'],
-    [7, 'Squirtle'],
-    [25, 'Pikachu'],
     [6, 'Charizard'],
+    [7, 'Squirtle'],
+    [9, 'Blastoise'],
+    [25, 'Pikachu'],
     [39, 'Jigglypuff'],
     [94, 'Gengar'],
     [133, 'Eevee'],
     [143, 'Snorlax'],
     [150, 'Mewtwo'],
+    [155, `Cyndaquil`],
+    [196, `Espeon`],
+    [197, `Umbreon`],
+    [390, 'Chimchar'],
+    [393, 'Piplup'],
+    [724, 'Decidueye'],
     [448, 'Lucario'],
+    [573, `Cinccino`],
     [658, 'Greninja'],
+    [670, 'Doublade'],
+    [909, 'Fuecoco']
   ] as [number, string][]
 ).map(([dex, label]) => ({ kind: 'image', src: `${base}sprites/${dex}.png`, label, zoom: 1.3, bare: true }))
 
@@ -63,13 +74,19 @@ function makePlayer(used: string[]): Player {
 
 export default function Setup({
   onStart,
+  initialPlayers,
 }: {
   onStart: (players: Player[], mode: GameMode, categoryIds: string[]) => void
+  // Seeds the roster when returning to Setup mid-game, so the same players carry
+  // over (names and avatars intact) and stay fully editable. Omitted on a fresh
+  // start, which falls back to two blank players.
+  initialPlayers?: Player[]
 }) {
-  const [players, setPlayers] = useState<Player[]>(() => [
-    makePlayer([]),
-    makePlayer([avatarKey(AVATARS[0])]),
-  ])
+  const [players, setPlayers] = useState<Player[]>(() =>
+    initialPlayers && initialPlayers.length > 0
+      ? initialPlayers
+      : [makePlayer([]), makePlayer([avatarKey(AVATARS[0])])],
+  )
   const [pickerFor, setPickerFor] = useState<string | null>(null)
   const [selected, setSelected] = useState<Set<string>>(() => new Set(['pokemon']))
   const [mode, setMode] = useState<GameMode>('in-person')

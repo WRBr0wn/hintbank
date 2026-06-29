@@ -29,6 +29,18 @@ export type GameMode =
   | 'online-randomizer'
   | 'online-multiplayer'
 
+// Editing hint words and landed answers is a trusted-context capability: it lets
+// the operator fix a typo without ever changing bank size, score, or rotation.
+// Every mode today runs on a single trusted device, so editing is safe and this
+// returns true. Online multiplayer will run across untrusted devices, where
+// retroactively editing a hint or answer is a cheating vector, so it returns false
+// there. This single seam gates every edit affordance in the UI; a future setup
+// "Allow edits" toggle can be folded in here (e.g. an override argument) without
+// rearchitecting the screens.
+export function canEditMode(mode: GameMode): boolean {
+  return mode !== 'online-multiplayer'
+}
+
 export interface GameResult {
   answer: Answer
   guesserId: string

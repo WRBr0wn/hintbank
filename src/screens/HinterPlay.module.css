@@ -84,6 +84,23 @@
   font-size: 1.15rem;
 }
 
+/* Per-row pencil to fix a host-typed randomizer answer. Quiet so it sits behind
+   the answer text until the host reaches for it. */
+.resultEdit {
+  flex: 0 0 auto;
+  padding: 0.15rem 0.35rem;
+  font-size: 0.8rem;
+  line-height: 1;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid var(--border);
+}
+
+.resultEdit:hover {
+  border-color: var(--accent);
+}
+
 @media (max-width: 720px) {
   .play {
     flex-direction: column;
@@ -203,6 +220,35 @@
 .bankHead h2 {
   font-size: 1.05rem;
   font-weight: 600;
+}
+
+.bankHeadRight {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+/* Pencil toggle that opens word-fixing. Quiet by default, highlighted when edit
+   mode is on so the swapped "Tap a word to fix it" header is clearly the reason. */
+.pencil,
+.pencilOn {
+  flex: 0 0 auto;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.95rem;
+  line-height: 1;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+}
+
+.pencil:hover {
+  border-color: var(--accent);
+}
+
+.pencilOn {
+  background: var(--accent);
+  border-color: var(--accent);
 }
 
 .bankCount {

@@ -17,8 +17,14 @@
   font-size: 0.85rem;
   border-radius: 0.55rem;
   overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+}
+
+/* The word's font is sized to its cell in JS (see FitText in BankGrid.tsx); this
+   only lets a long word break across two lines once it reaches the minimum size. */
+.fit {
+  overflow-wrap: anywhere;
+  line-height: 1.15;
+  text-align: center;
 }
 
 /* Pick-order number, shown in the corner only when 2+ words are selected, since

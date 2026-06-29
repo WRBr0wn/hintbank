@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Avatar from '../components/Avatar'
 import BankGrid from '../components/BankGrid'
+import EditModal from '../components/EditModal'
 import {
   ANSWERS_PER_GAME,
   BANK_CAP,
@@ -9,6 +10,8 @@ import {
   canEndTurn,
   canReroll,
   currentAnswer,
+  editResult,
+  editWord,
   endTurn,
   giveHint,
   isBankFull,
@@ -24,13 +27,22 @@ interface Props {
   game: GameState
   roster: Player[]
   mode: GameMode
+  // Whether typo-fixing is reachable, derived from the mode via canEditMode in App.
+  // False in untrusted multiplayer; when false every edit affordance below is absent.
+  canEdit: boolean
   onChange: (next: GameState) => void
   // Called when the hinter advances off the completed board to the summary. The
   // board stays up until then so the group can review the finished round.
   onComplete: () => void
 }
 
-export default function HinterPlay({ game, roster, mode, onChange, onComplete }: Props) {
+// What the edit modal is fixing: a hint word in the bank, or a landed answer. Both
+// carry the slot index and the current text to pre-fill the field.
+type EditTarget =
+  | { kind: 'word'; index: number; value: string }
+  | { kind: 'result'; index: number; value: string }
+
+export default function HinterPlay({ game, roster, mode, canEdit, onChange, onComplete }: Props) {
   const [selection, setSelection] = useState<number[]>([])
   const [draft, setDraft] = useState('')
   const [overguess, setOverguess] = useState<Record<string, number>>({})
@@ -40,6 +52,10 @@ export default function HinterPlay({ game, roster, mode, onChange, onComplete }:
   // The player list and the -1 overguess controls stay hidden until the hinter
   // opts into resolving, so the penalty is never telegraphed on a shared screen.
   const [resolving, setResolving] = useState(false)
+  // Pencil-driven edit mode for fixing a banked word, and the open edit modal (a
+  // word or a landed answer). Both are inert unless canEdit is true.
+  const [editMode, setEditMode] = useState(false)
+  const [editTarget, setEditTarget] = useState<EditTarget | null>(null)
 
   // Randomizer is the host-driven board: no dealt deck, nothing secret on screen.
   // The host types the answer that lands instead of the app revealing it.
@@ -64,8 +80,31 @@ export default function HinterPlay({ game, roster, mode, onChange, onComplete }:
   const complete = game.status === 'complete'
   const avatarFor = (id: string) => roster.find((p) => p.id === id)?.avatar
 
+  // Word-fixing is only reachable during normal hinting, never while resolving or
+  // after the board completes, so a stale editMode can never bleed into them.
+  const editing = canEdit && editMode && hinting && !complete
+
   function toggleWord(i: number) {
+    // In edit mode a word click opens the fix modal instead of selecting. Markers
+    // are spans with no handler, so only words reach here.
+    if (editing) {
+      const entry = game.bank[i]
+      if (entry?.kind === 'word') setEditTarget({ kind: 'word', index: i, value: entry.word })
+      return
+    }
     setSelection((s) => (s.includes(i) ? s.filter((x) => x !== i) : [...s, i]))
+  }
+
+  function saveEdit(value: string) {
+    if (!editTarget) return
+    onChange(
+      editTarget.kind === 'word'
+        ? editWord(game, editTarget.index, value)
+        : editResult(game, editTarget.index, value),
+    )
+    setEditTarget(null)
+    // Confirming a word fix exits edit mode; a landed-answer fix never turned it on.
+    setEditMode(false)
   }
 
   function handleAdd() {
@@ -81,6 +120,7 @@ export default function HinterPlay({ game, roster, mode, onChange, onComplete }:
     // readable on a shared screen. It clears when the hint resolves below.
     onChange(giveHint(game, selection))
     setResolving(false)
+    setEditMode(false)
   }
 
   function handleCorrect(pid: string) {
@@ -173,11 +213,26 @@ export default function HinterPlay({ game, roster, mode, onChange, onComplete }:
 
       <section className={styles.bankSection}>
         <div className={styles.bankHead}>
-          <h2>Hint Bank</h2>
-          <span className={full ? styles.bankFull : styles.bankCount}>
-            {game.bank.length} / {BANK_CAP}
-            {full && ' · bank full'}
-          </span>
+          <h2>{editing ? 'Tap a word to fix it' : 'Hint Bank'}</h2>
+          <div className={styles.bankHeadRight}>
+            {canEdit && hinting && !complete && (
+              // Pencil toggles edit mode. Tapping it again leaves without editing.
+              <button
+                type="button"
+                className={editMode ? styles.pencilOn : styles.pencil}
+                onClick={() => setEditMode((v) => !v)}
+                aria-pressed={editMode}
+                aria-label={editMode ? 'Done fixing words' : 'Fix a typo'}
+                title={editMode ? 'Done fixing words' : 'Fix a typo'}
+              >
+                ✏️
+              </button>
+            )}
+            <span className={full ? styles.bankFull : styles.bankCount}>
+              {game.bank.length} / {BANK_CAP}
+              {full && ' · bank full'}
+            </span>
+          </div>
         </div>
 
         <BankGrid bank={game.bank} cap={BANK_CAP} selected={selection} interactive={hinting && !complete} onToggle={toggleWord} />
@@ -307,11 +362,37 @@ export default function HinterPlay({ game, roster, mode, onChange, onComplete }:
                 <span className={styles.resultNum}>{i + 1}</span>
                 <span className={styles.resultName}>{result ? result.answer : ''}</span>
                 <span className={styles.resultAvatar}>{winner && <Avatar avatar={winner} size={20} />}</span>
+                {canEdit && randomizer && result && (
+                  // Randomizer answers are host-typed, so let the host fix one after
+                  // the fact. Deck-mode answers come from the dataset, so no pencil.
+                  <button
+                    type="button"
+                    className={styles.resultEdit}
+                    onClick={() => setEditTarget({ kind: 'result', index: i, value: result.answer })}
+                    aria-label={`Fix answer ${i + 1}`}
+                    title="Fix this answer"
+                  >
+                    ✏️
+                  </button>
+                )}
               </li>
             )
           })}
         </ol>
       </aside>
+
+      {editTarget && (
+        <EditModal
+          label={editTarget.kind === 'word' ? 'Fix this hint word' : 'Fix this answer'}
+          initialValue={editTarget.value}
+          maxLength={editTarget.kind === 'word' ? 24 : 32}
+          confirmLabel="Save"
+          cancelLabel="Cancel"
+          onConfirm={saveEdit}
+          // Cancel and backdrop dismiss the modal but stay in edit mode for the next fix.
+          onCancel={() => setEditTarget(null)}
+        />
+      )}
     </div>
   )
 }

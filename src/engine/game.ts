@@ -128,6 +128,29 @@ export function resolveHint(s: GameState, outcome: Resolution = {}): GameState {
   }
 }
 
+// Pure text fixes for typos. Both keep the array length and every score-bearing
+// field identical, so bank size, scores, and rotation are untouched (the
+// append-only rule still holds). They are mode-agnostic; the UI decides whether
+// editing is reachable via canEditMode.
+export function editWord(s: GameState, index: number, text: string): GameState {
+  const trimmed = text.trim()
+  if (!trimmed) throw new Error('a hint word cannot be empty')
+  const entry = s.bank[index]
+  if (!entry) throw new Error(`no bank slot at index ${index}`)
+  if (entry.kind !== 'word') throw new Error('only hint words can be edited, not reroll markers')
+  const bank = s.bank.map((e, i) => (i === index ? { kind: 'word' as const, word: trimmed } : e))
+  return { ...s, bank }
+}
+
+export function editResult(s: GameState, index: number, text: string): GameState {
+  const trimmed = text.trim()
+  if (!trimmed) throw new Error('a landed answer cannot be empty')
+  const result = s.results[index]
+  if (!result) throw new Error(`no result at index ${index}`)
+  const results = s.results.map((r, i) => (i === index ? { ...r, answer: trimmed } : r))
+  return { ...s, results }
+}
+
 export function reroll(s: GameState): GameState {
   if (!canReroll(s)) throw new Error('cannot reroll: bank is full or a hint is awaiting resolution')
   const marker = { kind: 'reroll' as const }

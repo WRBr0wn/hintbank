@@ -1,0 +1,85 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.dialog {
+  width: 100%;
+  max-width: 22rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+}
+
+.message {
+  font-size: 1.05rem;
+  line-height: 1.4;
+  color: var(--text);
+  text-align: center;
+}
+
+/* Pre-filled text field for the EditModal typo fix. Matches the bank's add input. */
+.input {
+  padding: 0.7rem 0.8rem;
+  font-size: 1rem;
+  color: var(--text);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 0.7rem;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.actions {
+  display: flex;
+  gap: 0.7rem;
+}
+
+.cancel,
+.confirm {
+  flex: 1 1 auto;
+  padding: 0.8rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 0.7rem;
+  cursor: pointer;
+}
+
+.cancel {
+  color: var(--text);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+}
+
+.cancel:hover {
+  border-color: var(--accent);
+}
+
+.confirm {
+  color: var(--on-accent);
+  background: var(--accent);
+}
+
+.confirm:hover:not(:disabled) {
+  background: var(--accent-hover);
+}
+
+.confirm:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}

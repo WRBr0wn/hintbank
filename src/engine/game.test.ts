@@ -6,6 +6,8 @@ import {
   canReroll,
   createGame,
   currentAnswer,
+  editResult,
+  editWord,
   endTurn,
   gameScores,
   giveHint,
@@ -228,5 +230,50 @@ describe('reroll without a deck', () => {
     expect(s.bank).toEqual([{ kind: 'reroll' }])
     expect(s.cursor).toBe(0) // no deck draw, cursor stays put
     expect(hinterScore(s)).toBe(24) // the marker still costs one slot
+  })
+})
+
+describe('editWord (typo fix)', () => {
+  it('replaces the word text, leaving bank size and scores identical', () => {
+    let s = fillWords(start(), 3)
+    s = addWord(s, 'thunderbot') // typo at index 3
+    const before = gameScores(s)
+    const size = s.bank.length
+    s = editWord(s, 3, '  thunderbolt  ') // trims surrounding space
+    expect(s.bank[3]).toEqual({ kind: 'word', word: 'thunderbolt' })
+    expect(s.bank).toHaveLength(size)
+    expect(gameScores(s)).toEqual(before)
+    expect(hinterScore(s)).toBe(25 - size)
+  })
+
+  it('rejects empty text, out-of-range, and a reroll-marker index', () => {
+    let s = addWord(start(), 'fire')
+    s = reroll(s) // marker lands at index 1
+    expect(() => editWord(s, 0, '   ')).toThrow() // empty after trim
+    expect(() => editWord(s, 9, 'nope')).toThrow() // out of range
+    expect(() => editWord(s, 1, 'spark')).toThrow(/marker/) // markers are not editable
+    expect(s.bank[0]).toEqual({ kind: 'word', word: 'fire' }) // unchanged
+  })
+})
+
+describe('editResult (typo fix)', () => {
+  it('replaces the answer text, same guesser, scores and result count unchanged', () => {
+    let s = createGame({ players: ['g', 'b'], hinterId: 'g', deck: [] })
+    s = addWord(s, 'shadow')
+    s = giveHint(s, [0])
+    s = resolveHint(s, { correctGuesserId: 'b', answer: 'gengr' }) // host typo
+    const before = gameScores(s)
+    s = editResult(s, 0, '  Gengar  ')
+    expect(s.results[0]).toEqual({ answer: 'Gengar', guesserId: 'b' })
+    expect(s.results).toHaveLength(1)
+    expect(gameScores(s)).toEqual(before)
+  })
+
+  it('rejects empty text and out-of-range', () => {
+    let s = addWord(start(), 'w')
+    s = giveHint(s, [0])
+    s = resolveHint(s, { correctGuesserId: 'b' })
+    expect(() => editResult(s, 0, '   ')).toThrow() // empty after trim
+    expect(() => editResult(s, 5, 'nope')).toThrow() // out of range
   })
 })
