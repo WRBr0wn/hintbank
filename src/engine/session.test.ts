@@ -78,6 +78,23 @@ describe('mode', () => {
   })
 })
 
+describe('difficulty and answers settings', () => {
+  it('defaults to a Regular cutoff of 25 and 10 answers', () => {
+    const s = createSession(['a', 'b'])
+    expect(s.hinterBase).toBe(25)
+    expect(s.answersPerGame).toBe(10)
+  })
+
+  it('locks custom settings for the whole session', () => {
+    const s = createSession(['a', 'b'], 'in-person', 20, 7)
+    expect(s.hinterBase).toBe(20)
+    expect(s.answersPerGame).toBe(7)
+    const after = continueSession(recordGame(recordGame(s, { a: 1 }), { b: 1 }))
+    expect(after.hinterBase).toBe(20) // carried through a rotation and continue
+    expect(after.answersPerGame).toBe(7)
+  })
+})
+
 describe('leaders', () => {
   it('returns the player with the highest total', () => {
     let s = createSession(['a', 'b', 'c'])

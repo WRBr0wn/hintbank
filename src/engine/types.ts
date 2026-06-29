@@ -2,6 +2,10 @@
 // UI presentation types (player name, avatar) live in src/types.ts. Keep the two
 // apart.
 
+// BANK_CAP is fixed for every game and is never a setting. HINTER_BASE and
+// ANSWERS_PER_GAME are the defaults for the two per-session settings (the
+// difficulty cutoff and the answers-per-turn count); callers that omit them, and
+// the existing tests, fall back to these values.
 export const BANK_CAP = 40
 export const ANSWERS_PER_GAME = 10
 export const HINTER_BASE = 25
@@ -62,6 +66,12 @@ export interface GameState {
   endedEarly: boolean
   phase: GamePhase
   status: GameStatus
+  // Copied from the session at createGame and locked for the game. Every score and
+  // completion check reads these instead of the module-level defaults. hinterBase
+  // is the clue cutoff (the hinter's starting score); answersPerGame is how many
+  // answers land before the turn ends.
+  hinterBase: number
+  answersPerGame: number
 }
 
 export interface SessionState {
@@ -69,6 +79,11 @@ export interface SessionState {
   totals: Record<string, number>
   // Locked for the whole session. Set once at createSession.
   mode: GameMode
+  // Also locked for the session, chosen at setup. hinterBase is the difficulty
+  // cutoff (Easy 30 / Regular 25 / Hard 20); answersPerGame is the per-turn answer
+  // count (5 to 15). Passed into each createGame.
+  hinterBase: number
+  answersPerGame: number
   // Index into players for the current hinter. Reaches players.length once
   // everyone has hinted this rotation.
   hinterPosition: number

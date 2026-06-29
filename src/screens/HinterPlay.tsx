@@ -3,7 +3,6 @@ import Avatar from '../components/Avatar'
 import BankGrid from '../components/BankGrid'
 import EditModal from '../components/EditModal'
 import {
-  ANSWERS_PER_GAME,
   BANK_CAP,
   addWord,
   canAddWord,
@@ -164,11 +163,11 @@ export default function HinterPlay({ game, roster, mode, canEdit, onChange, onCo
     <div className={styles.play}>
       <div className={styles.main}>
       <div className={styles.progress}>
-        <span>{complete ? 'Turn complete' : `Answer ${game.resolved + 1} of ${ANSWERS_PER_GAME}`}</span>
+        <span>{complete ? 'Turn complete' : `Answer ${game.resolved + 1} of ${game.answersPerGame}`}</span>
         <span>{game.hintCount} {game.hintCount === 1 ? 'hint' : 'hints'}</span>
       </div>
       <div className={styles.bar}>
-        <div className={styles.barFill} style={{ width: `${(game.resolved / ANSWERS_PER_GAME) * 100}%` }} />
+        <div className={styles.barFill} style={{ width: `${(game.resolved / game.answersPerGame) * 100}%` }} />
       </div>
 
       {randomizer && (
@@ -235,7 +234,7 @@ export default function HinterPlay({ game, roster, mode, canEdit, onChange, onCo
           </div>
         </div>
 
-        <BankGrid bank={game.bank} cap={BANK_CAP} selected={selection} interactive={hinting && !complete} onToggle={toggleWord} />
+        <BankGrid bank={game.bank} cap={BANK_CAP} cutoff={game.hinterBase} selected={selection} interactive={hinting && !complete} onToggle={toggleWord} />
 
         {!complete &&
           (full ? (
@@ -260,7 +259,7 @@ export default function HinterPlay({ game, roster, mode, canEdit, onChange, onCo
 
       {complete ? (
         <div className={styles.actions}>
-          <p className={styles.resolvePrompt}>All 10 answers are in. Review the board, then continue.</p>
+          <p className={styles.resolvePrompt}>All {game.answersPerGame} answers are in. Review the board, then continue.</p>
           <button type="button" className={styles.primary} onClick={onComplete}>
             Continue
           </button>
@@ -354,7 +353,7 @@ export default function HinterPlay({ game, roster, mode, canEdit, onChange, onCo
       <aside className={styles.results}>
         <h2 className={styles.resultsHead}>Landed</h2>
         <ol className={styles.resultList}>
-          {Array.from({ length: ANSWERS_PER_GAME }, (_, i) => {
+          {Array.from({ length: game.answersPerGame }, (_, i) => {
             const result = game.results[i]
             const winner = result ? avatarFor(result.guesserId) : undefined
             return (

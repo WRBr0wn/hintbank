@@ -7,6 +7,7 @@ import ScoreBar from './components/ScoreBar'
 import ThemeToggle from './components/ThemeToggle'
 import ConfirmModal from './components/ConfirmModal'
 import {
+  BANK_CAP,
   canEditMode,
   continueSession,
   createGame,
@@ -25,13 +26,15 @@ import styles from './App.module.css'
 
 type Phase = 'setup' | 'pass' | 'hinter' | 'leaderboard'
 
-// Enough draws to land 10 answers even after a bank's worth of rerolls.
-const DECK_SIZE = 60
+// Worst case a turn draws answersPerGame lands plus a full bank of rerolls, so the
+// deck needs that many cards. Derived from the settings rather than a magic number,
+// and slice naturally caps it at the pool size when a category is short.
+const deckSizeFor = (answersPerGame: number) => answersPerGame + BANK_CAP
 
 // Combine the selected categories into one shuffled pool, then take the deck off
 // the front. Every category's terms are stored display-ready, so they go in as-is
 // and the board renders them verbatim.
-function buildDeck(categoryIds: string[]): string[] {
+function buildDeck(categoryIds: string[], deckSize: number): string[] {
   const pool: string[] = []
   for (const id of categoryIds) {
     const category = CATEGORIES.find((c) => c.id === id)
@@ -42,7 +45,7 @@ function buildDeck(categoryIds: string[]): string[] {
     const j = Math.floor(Math.random() * (i + 1))
     ;[pool[i], pool[j]] = [pool[j], pool[i]]
   }
-  return pool.slice(0, DECK_SIZE)
+  return pool.slice(0, deckSize)
 }
 
 export default function App() {
@@ -61,10 +64,16 @@ export default function App() {
     return roster.find((p) => p.id === currentHinter(session)) ?? null
   }, [session, roster])
 
-  function handleStart(players: Player[], mode: GameMode, ids: string[]) {
+  function handleStart(
+    players: Player[],
+    mode: GameMode,
+    ids: string[],
+    hinterBase: number,
+    answersPerGame: number,
+  ) {
     setRoster(players)
     setCategoryIds(ids)
-    setSession(createSession(players.map((p) => p.id), mode))
+    setSession(createSession(players.map((p) => p.id), mode, hinterBase, answersPerGame))
     setPhase('pass')
   }
 
@@ -72,8 +81,19 @@ export default function App() {
     if (!hinter || !session) return
     // Randomizer is host-driven with no dealt deck. The host supplies each answer,
     // so the game runs deckless and nothing secret is ever put on the board.
-    const deck = session.mode === 'online-randomizer' ? [] : buildDeck(categoryIds)
-    setGame(createGame({ players: roster.map((p) => p.id), hinterId: hinter.id, deck }))
+    const deck =
+      session.mode === 'online-randomizer'
+        ? []
+        : buildDeck(categoryIds, deckSizeFor(session.answersPerGame))
+    setGame(
+      createGame({
+        players: roster.map((p) => p.id),
+        hinterId: hinter.id,
+        deck,
+        hinterBase: session.hinterBase,
+        answersPerGame: session.answersPerGame,
+      }),
+    )
     setPhase('hinter')
   }
 

@@ -233,6 +233,35 @@ describe('reroll without a deck', () => {
   })
 })
 
+describe('per-game settings (difficulty and answers per turn)', () => {
+  it('defaults to a Regular cutoff of 25 and 10 answers when settings are omitted', () => {
+    const s = createGame({ players: ['g', 'b'], hinterId: 'g', deck: deck(60) })
+    expect(s.hinterBase).toBe(25)
+    expect(s.answersPerGame).toBe(10)
+    expect(hinterScore(s)).toBe(25) // empty bank, default base
+  })
+
+  it('uses a Hard cutoff of 20 and completes after a custom 7 answers', () => {
+    let s = createGame({ players: ['g', 'b'], hinterId: 'g', deck: deck(60), hinterBase: 20, answersPerGame: 7 })
+    expect(hinterScore(s)).toBe(20) // empty bank, base 20 not 25
+    s = addWord(s, 'spark')
+    for (let i = 0; i < 7; i++) {
+      expect(s.status).toBe('playing') // not done before the 7th lands
+      s = giveHint(s, [0])
+      s = resolveHint(s, { correctGuesserId: 'b' })
+    }
+    expect(s.status).toBe('complete') // done after 7, not 10
+    expect(s.resolved).toBe(7)
+    expect(hinterScore(s)).toBe(20 - 1) // base 20 minus the one banked word
+  })
+
+  it('sizes the deck guard to the custom answer count', () => {
+    // answersPerGame 7 needs at least 7 cards; 6 is too few, 7 is enough.
+    expect(() => createGame({ players: ['g', 'b'], hinterId: 'g', deck: deck(6), answersPerGame: 7 })).toThrow(/at least 7/)
+    expect(() => createGame({ players: ['g', 'b'], hinterId: 'g', deck: deck(7), answersPerGame: 7 })).not.toThrow()
+  })
+})
+
 describe('editWord (typo fix)', () => {
   it('replaces the word text, leaving bank size and scores identical', () => {
     let s = fillWords(start(), 3)

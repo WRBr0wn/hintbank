@@ -5,6 +5,9 @@ import styles from './BankGrid.module.css'
 interface Props {
   bank: BankEntry[]
   cap: number
+  // The clue cutoff (the hinter's starting score, game.hinterBase). The colour
+  // bands scale to it so the gauge reads true at any difficulty/answer-count.
+  cutoff: number
   selected: number[]
   interactive: boolean
   onToggle: (index: number) => void
@@ -81,23 +84,26 @@ function FitText({ text }: { text: string }) {
   )
 }
 
-// Colour is the hinter's fuel gauge. Each filled slot is -1, so the bands track
-// 25 minus bank.length: green while healthy, then yellow, orange, and red as the
-// score nears 0 at slot 25, then grey for the negative-score slots past it.
-function bandFor(i: number): string {
-  if (i < 10) return styles.bandGreen
-  if (i < 15) return styles.bandYellow
-  if (i < 20) return styles.bandOrange
-  if (i < 25) return styles.bandRed
-  return styles.bandGrey
+// Colour is the hinter's fuel gauge. Every filled slot is -1, so the score reaches
+// zero at the cutoff (the hinter's starting score). The four colour bands span
+// slots 0 -> cutoff, with red landing on the last slots right at the cutoff; slots
+// past it are negative-score territory and go grey. The breakpoints scale with the
+// cutoff (40/60/80/100%), so a cutoff of 25 reproduces the original 10/15/20/25
+// bands exactly and any other cutoff rescales the ramp to match.
+function bandFor(i: number, cutoff: number): string {
+  if (i >= cutoff) return styles.bandGrey
+  if (i < Math.round(cutoff * 0.4)) return styles.bandGreen
+  if (i < Math.round(cutoff * 0.6)) return styles.bandYellow
+  if (i < Math.round(cutoff * 0.8)) return styles.bandOrange
+  return styles.bandRed
 }
 
-export default function BankGrid({ bank, cap, selected, interactive, onToggle }: Props) {
+export default function BankGrid({ bank, cap, cutoff, selected, interactive, onToggle }: Props) {
   return (
     <div className={styles.grid}>
       {Array.from({ length: cap }, (_, i) => {
         const entry = bank[i]
-        const band = bandFor(i)
+        const band = bandFor(i, cutoff)
 
         if (!entry) {
           return <span key={i} className={`${styles.empty} ${band}`} aria-hidden />
