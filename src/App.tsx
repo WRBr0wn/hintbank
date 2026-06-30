@@ -23,8 +23,7 @@ import {
   type GameState,
   type SessionState,
 } from './engine'
-import { CATEGORIES } from './data/categories'
-import { editionById } from './editions'
+import { editionById, type Category } from './editions'
 import type { Player } from './types'
 import styles from './App.module.css'
 
@@ -36,12 +35,13 @@ type Phase = 'setup' | 'pass' | 'hinter' | 'leaderboard'
 const deckSizeFor = (answersPerGame: number) => answersPerGame + BANK_CAP
 
 // Combine the selected categories into one shuffled pool, then take the deck off
-// the front. Every category's terms are stored display-ready, so they go in as-is
+// the front. Categories come from the active edition, so the platform holds no
+// global list. Every category's terms are stored display-ready, so they go in as-is
 // and the board renders them verbatim.
-function buildDeck(categoryIds: string[], deckSize: number): string[] {
+function buildDeck(categories: Category[], categoryIds: string[], deckSize: number): string[] {
   const pool: string[] = []
   for (const id of categoryIds) {
-    const category = CATEGORIES.find((c) => c.id === id)
+    const category = categories.find((c) => c.id === id)
     if (!category) continue
     pool.push(...category.terms)
   }
@@ -114,13 +114,13 @@ export default function App() {
   }
 
   function reveal() {
-    if (!hinter || !session) return
+    if (!hinter || !session || !edition) return
     // Randomizer is host-driven with no dealt deck. The host supplies each answer,
     // so the game runs deckless and nothing secret is ever put on the board.
     const deck =
       session.mode === 'online-randomizer'
         ? []
-        : buildDeck(categoryIds, deckSizeFor(session.answersPerGame))
+        : buildDeck(edition.categories, categoryIds, deckSizeFor(session.answersPerGame))
     setGame(
       createGame({
         players: roster.map((p) => p.id),
@@ -213,6 +213,7 @@ export default function App() {
           <Setup
             onStart={handleStart}
             credits={edition.credits}
+            categories={edition.categories}
             initialPlayers={roster.length ? roster : undefined}
             initialMode={mode}
             initialCategoryIds={categoryIds}

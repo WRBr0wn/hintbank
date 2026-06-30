@@ -1,9 +1,8 @@
 import { useState } from 'react'
 import Avatar from '../components/Avatar'
 import Footer from '../components/Footer'
-import type { EditionCredits } from '../editions'
+import type { Category, EditionCredits } from '../editions'
 import { ANSWERS_PER_GAME, HINTER_BASE, type GameMode } from '../engine'
-import { CATEGORIES } from '../data/categories'
 import type { Player, PlayerAvatar } from '../types'
 import styles from './Setup.module.css'
 
@@ -93,6 +92,7 @@ function makePlayer(used: string[]): Player {
 export default function Setup({
   onStart,
   credits,
+  categories,
   initialPlayers,
   initialMode,
   initialCategoryIds,
@@ -111,6 +111,9 @@ export default function Setup({
   ) => void
   // The active edition's footer credits, passed straight through to the Footer.
   credits: EditionCredits
+  // The active edition's answer categories, rendered as the picker. Passed in so
+  // Setup never reaches into edition data itself.
+  categories: Category[]
   // Seeds the roster when returning to Setup mid-game, so the same players carry
   // over (names and avatars intact) and stay fully editable. Omitted on a fresh
   // start, which falls back to two blank players.
@@ -365,7 +368,7 @@ export default function Setup({
         ) : (
           <>
             <div className={styles.categories}>
-              {CATEGORIES.map((c) => {
+              {categories.map((c) => {
                 const on = selected.has(c.id)
                 const cls = !c.ready ? styles.catSoon : on ? styles.catOn : styles.cat
                 return (

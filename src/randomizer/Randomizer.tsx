@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
-import pokemon from '../data/pokemon.json'
-import { CATEGORIES } from '../data/categories'
+import pokemon from '../editions/pokemon/data/pokemon.json'
+import { CATEGORIES } from '../editions/pokemon/data/categories'
 import ThemeToggle from '../components/ThemeToggle'
 import styles from './Randomizer.module.css'
 
