@@ -2,6 +2,12 @@
 // drops in the same way the category manifest does: add the object here and it
 // shows up in the menu. Access is always by id (editionById), never by index, so
 // per-edition URLs can be added later without reworking callers.
+import { CATEGORIES, type Category } from './pokemon/data/categories'
+
+// Re-exported so the platform refers to category types through the edition module
+// rather than reaching into an edition's data folder.
+export type { Category, Term } from './pokemon/data/categories'
+export { termPasses } from './terms'
 
 export interface CreditLink {
   label: string
@@ -38,6 +44,13 @@ export interface Edition {
   hasIP: boolean
   // Audience marker, e.g. 'everyone'. Declarative; no gating logic consumes it yet.
   contentRating: string
+  // The edition's answer categories. The platform reads these off the active
+  // edition, so each edition owns its own content. Soon editions have none yet.
+  categories: Category[]
+  // Optional secondary tag that subsets categories at setup. The edition supplies
+  // only the label (Pokémon: Generation, geography later: Region); the values live
+  // in the term data as gens. Omitted means the edition has no secondary filter.
+  secondaryTag?: { label: string }
   credits: EditionCredits
 }
 
@@ -55,6 +68,8 @@ export const EDITIONS: Edition[] = [
     status: 'live',
     hasIP: true,
     contentRating: 'everyone',
+    categories: CATEGORIES,
+    secondaryTag: { label: 'Generation' },
     credits: {
       disclaimer:
         'Hint Bank: Pokémon Edition is an unofficial fan project, not affiliated with Nintendo, Game Freak, or The Pokémon Company. Pokémon names and sprites are property of their respective owners.',
@@ -75,6 +90,7 @@ export const EDITIONS: Edition[] = [
     status: 'soon',
     hasIP: false,
     contentRating: 'everyone',
+    categories: [],
     credits: EMPTY_CREDITS,
   },
   {
@@ -84,6 +100,7 @@ export const EDITIONS: Edition[] = [
     status: 'soon',
     hasIP: false,
     contentRating: 'everyone',
+    categories: [],
     credits: EMPTY_CREDITS,
   },
   {
@@ -93,6 +110,7 @@ export const EDITIONS: Edition[] = [
     status: 'soon',
     hasIP: true,
     contentRating: 'everyone',
+    categories: [],
     credits: EMPTY_CREDITS,
   },
 ]

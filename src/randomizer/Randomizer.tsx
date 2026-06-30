@@ -1,12 +1,13 @@
 import { useMemo, useState } from 'react'
-import pokemon from '../data/pokemon.json'
-import { CATEGORIES } from '../data/categories'
+import pokemon from '../editions/pokemon/data/pokemon.json'
+import { CATEGORIES } from '../editions/pokemon/data/categories'
+import { editionById, termPasses } from '../editions'
 import ThemeToggle from '../components/ThemeToggle'
 import styles from './Randomizer.module.css'
 
 // Shares only read-only data with the game: the category manifest (which terms
 // exist) and pokemon.json (sprites). No session or game state is shared, so this
-// stays a standalone page with its own category picker.
+// stays a standalone page with its own category and generation pickers.
 type Entry = { name: string; sprite?: string }
 
 const base = import.meta.env.BASE_URL
@@ -16,28 +17,65 @@ const spriteUrl = (e: Entry) => (e.sprite ? `${base}${e.sprite}` : undefined)
 // names, so map a Pokemon name back to its sprite here, keyed by display name.
 const POKEMON_SPRITE = new Map(pokemon.map((p) => [p.displayName, p.sprite] as const))
 
-const entriesFor = (id: string, terms: string[]): Entry[] =>
-  id === 'pokemon'
-    ? terms.map((name) => ({ name, sprite: POKEMON_SPRITE.get(name) ?? undefined }))
-    : terms.map((name) => ({ name }))
+// The randomizer only ever plays the Pokemon edition, so read its secondary tag
+// (Generation) straight off the manifest.
+const secondaryTag = editionById('pokemon')?.secondaryTag
 
-const TURN_SIZE = 10
+// The answer target is a soft hint, matching the game's 5 to 10 range. The board
+// enforces the real limit; here it only drives the count and the full note.
+const MIN_TARGET = 5
+const MAX_TARGET = 10
+const clampTarget = (n: number) => Math.max(MIN_TARGET, Math.min(MAX_TARGET, n))
 
 export default function Randomizer() {
   const [selected, setSelected] = useState<Set<string>>(() => new Set(['pokemon']))
+  const [gens, setGens] = useState<Set<number>>(() => new Set())
+  // The committed target drives full and the count; the raw input string is what
+  // the field edits, so typing and backspacing are not clamped mid-entry.
+  const [target, setTarget] = useState(MAX_TARGET)
+  const [targetInput, setTargetInput] = useState(String(MAX_TARGET))
   const [list, setList] = useState<Entry[]>([])
-  const full = list.length >= TURN_SIZE
+  const full = list.length >= target
   const current = list[list.length - 1] ?? null
 
-  // Combined pool of the selected categories, the same mix the game's buildDeck
-  // makes. Rebuilt only when the selection changes.
+  // Generation options offered by the chosen categories: the union of gens across
+  // their terms. Data-driven, so the selector only shows what is actually present.
+  const secondaryOptions = useMemo(() => {
+    const values = new Set<number>()
+    for (const cat of CATEGORIES) {
+      if (!selected.has(cat.id)) continue
+      for (const t of cat.terms) {
+        if (t.gens) for (const g of t.gens) values.add(g)
+      }
+    }
+    return [...values].sort((a, b) => a - b)
+  }, [selected])
+
+  // What is both picked and still on offer, so deselecting a category drops its
+  // generations without filtering on a value the hinter can no longer see.
+  const secondaryValues = useMemo(
+    () => secondaryOptions.filter((v) => gens.has(v)),
+    [secondaryOptions, gens],
+  )
+  const showSecondary = Boolean(secondaryTag) && secondaryOptions.length > 0
+
+  // Combined, generation-filtered pool of the selected categories. Rebuilt when the
+  // category or generation selection changes.
   const pool = useMemo(() => {
     const out: Entry[] = []
     for (const cat of CATEGORIES) {
-      if (selected.has(cat.id)) out.push(...entriesFor(cat.id, cat.terms))
+      if (!selected.has(cat.id)) continue
+      for (const t of cat.terms) {
+        if (!termPasses(t, secondaryValues)) continue
+        out.push(
+          cat.id === 'pokemon'
+            ? { name: t.name, sprite: POKEMON_SPRITE.get(t.name) ?? undefined }
+            : { name: t.name },
+        )
+      }
     }
     return out
-  }, [selected])
+  }, [selected, secondaryValues])
 
   // Pick a term not already in the list. Dedup keys on name so it works across
   // categories, where only Pokemon have a dexNumber.
@@ -60,6 +98,15 @@ export default function Randomizer() {
     })
   }
 
+  function toggleGen(value: number) {
+    setGens((s) => {
+      const next = new Set(s)
+      if (next.has(value)) next.delete(value)
+      else next.add(value)
+      return next
+    })
+  }
+
   function draw() {
     if (full) return
     const pick = pickUndrawn()
@@ -75,6 +122,15 @@ export default function Randomizer() {
 
   function reset() {
     setList([])
+  }
+
+  // Clamp only when editing finishes. Empty or non-numeric falls back to the
+  // default, then the field shows the committed value.
+  function commitTarget() {
+    const n = Number(targetInput)
+    const next = targetInput.trim() !== '' && Number.isFinite(n) ? clampTarget(n) : MAX_TARGET
+    setTarget(next)
+    setTargetInput(String(next))
   }
 
   return (
@@ -107,12 +163,37 @@ export default function Randomizer() {
         })}
       </div>
 
+      {showSecondary && secondaryTag && (
+        <div className={styles.secondary}>
+          <div className={styles.subLabel}>{secondaryTag.label}</div>
+          <div className={styles.categories}>
+            {secondaryOptions.map((v) => {
+              const on = gens.has(v)
+              return (
+                <button
+                  key={v}
+                  type="button"
+                  className={on ? styles.catOn : styles.cat}
+                  aria-pressed={on}
+                  onClick={() => toggleGen(v)}
+                >
+                  {v}
+                </button>
+              )
+            })}
+          </div>
+          <p className={styles.note}>Pick one or more, or none for all.</p>
+        </div>
+      )}
+
       <div className={styles.current}>
         {current ? (
           <>
-            {spriteUrl(current) && (
-              <img className={styles.currentSprite} src={spriteUrl(current)} alt="" draggable={false} />
-            )}
+            <div className={styles.spriteSlot}>
+              {spriteUrl(current) && (
+                <img className={styles.currentSprite} src={spriteUrl(current)} alt="" draggable={false} />
+              )}
+            </div>
             <span className={styles.currentName}>{current.name}</span>
           </>
         ) : (
@@ -131,11 +212,20 @@ export default function Randomizer() {
           Reset
         </button>
         <span className={styles.count}>
-          {list.length} / {TURN_SIZE}
+          {list.length} /{' '}
+          <input
+            className={styles.target}
+            type="number"
+            min={MIN_TARGET}
+            max={MAX_TARGET}
+            value={targetInput}
+            onChange={(e) => setTargetInput(e.target.value)}
+            onBlur={commitTarget}
+            onKeyDown={(e) => e.key === 'Enter' && commitTarget()}
+            aria-label="Answer target"
+          />
         </span>
       </div>
-
-      {full && <p className={styles.fullNote}>Turn full. Reset for the next hinter.</p>}
 
       <ol className={styles.list}>
         {list.map((e, i) => (

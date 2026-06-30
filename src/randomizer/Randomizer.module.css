@@ -78,18 +78,46 @@
   opacity: 0.8;
 }
 
-/* The current draw is the one the hinter reads, so it gets the spotlight. */
+/* Generation selector, sat under the category toggles. */
+.secondary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.subLabel {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+/* The current draw is the one the hinter reads, so it gets the spotlight. Fixed
+   height, not min-height, so the box never resizes between the placeholder, a
+   sprite draw, and a name-only draw. Sized to hold the sprite slot, name, gap, and
+   padding without clipping. */
 .current {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  min-height: 12rem;
+  height: 14.5rem;
   padding: 1.5rem;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 1rem;
+}
+
+/* Always reserve the sprite's space so a name-only draw keeps the name in the same
+   position as a sprite draw. Empty when the draw has no sprite. */
+.spriteSlot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 8rem;
 }
 
 .currentSprite {
@@ -165,10 +193,30 @@
   color: var(--text-muted);
 }
 
-.fullNote {
-  font-size: 0.9rem;
-  color: var(--accent-ink);
+/* Inline, quiet editable answer target. Reads like the count text until focused,
+   so it stays out of the way of the Draw and Reroll buttons. */
+.target {
+  width: 2.4ch;
+  padding: 0;
+  font: inherit;
+  color: var(--text-muted);
   text-align: center;
+  background: transparent;
+  border: none;
+  border-bottom: 1px dashed var(--border);
+  -moz-appearance: textfield;
+}
+
+.target:focus {
+  outline: none;
+  color: var(--text);
+  border-bottom-color: var(--accent);
+}
+
+.target::-webkit-inner-spin-button,
+.target::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .list {

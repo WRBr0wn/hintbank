@@ -114,7 +114,7 @@ When a session wraps you now get three clear choices: Continue, Play Again, or R
 
 ### Hint Bank v3.0.0 - Hint Bank Complete, Editions
 
-The big one. Hint Bank was always meant to be a general party game that ships as editions, not a Pokémon app with that idea bolted on. This release makes it real: the app now opens on a main menu where you pick an edition, and Pokémon is the first one built out. Everything you already play is intact - it just lives inside an edition now, with room for more alongside it.
+The big one. Hint Bank was always meant to be a general party game that ships as editions, not a Pokémon app with that idea bolted on. This release lays the foundation: the app now opens on a main menu where you pick an edition, and Pokémon is the first one built out. Everything you already play is intact, with room for more editions alongside it.
 
 ### Pick an edition
 
@@ -122,9 +122,9 @@ The big one. Hint Bank was always meant to be a general party game that ships as
 - **Pokémon is live.** The full edition - every category, every mode, the National Dex - is right where it was, just one tap further in.
 - **More on the way.** Geography, Books, and Marvel show on the menu as "soon," the same way Professors sits as a coming category inside the Pokémon edition. They are placeholders for now, marking where the next editions land.
 
-### What an edition actually is
+### What an edition is
 
-Each edition is self-contained: it brings its own answers and categories, its own name, and its own credits and disclaimers. The rules engine underneath knows nothing about Pokémon or any other subject, so a new edition is a drop-in rather than a rewrite. This is the groundwork that lets editions built from scratch - geography, books - exist without any of the Pokémon-specific baggage.
+An edition owns its identity: its name, its tagline on the menu, and its own credits and disclaimers. The rules engine underneath knows nothing about Pokémon or any other subject, so the platform renders whatever the active edition declares. This release lays the foundation - the menu, the edition identity, and the credit scoping. An edition owning its own answers and categories is the next step, coming in the next release.
 
 ### Credits moved where they belong
 
@@ -134,3 +134,28 @@ The Nintendo disclaimer and the PokéAPI attribution used to sit at the bottom o
 
 - Pokémon sprites moved into the edition's own folder, so each edition keeps its assets to itself. The retired sprite scraper scripts are gone for good; the data is hand-owned now.
 - The randomizer follows the new sprite location and plays the same as ever.
+
+
+### Hint Bank v3.1.0 - Editions Own Their Content, and Generations
+
+Last release gave editions their own identity. This one finishes the job: an edition now owns its answers and categories too, so it is a self-contained bundle rather than a name wrapped around shared data. On top of that foundation, the Pokémon edition gets its first content filter - play by generation.
+
+### Editions are self-contained now
+
+The Pokémon edition's answers and categories used to live in a shared spot the whole app reached into. They now live inside the edition itself. Nothing changes in how you play, but editions can no longer interact in any unintended ways.
+
+### Play by generation
+
+A new "Generation" filter at setup lets you narrow the Pokémon pool to the generations you want. Pick one, a few, or leave it alone for all of them.
+
+- **It is built generically.** Generation is the Pokémon edition's version of a broader idea: a secondary tag that subsets a category. A future edition could subset by region, era, or anything else using the same machinery - Generation is just what it is called here.
+- **It works wherever the data does.** Pokémon answers carry their generation, and so do Gym Leaders and Badges. Categories without that tag (like Games or Items right now) just pass through, so the filter never empties your pool unexpectedly. The selector only appears when the categories you have chosen actually carry generations.
+- **Add it where you like.** Because the filter keys off the data, tagging more answers with a generation later is a drop-in - they start showing up in the filter automatically.
+
+### The randomizer keeps up
+
+The randomizer page gained the same Generation filter, drawing from the exact same rules as the game so the two can never drift apart. While there, two smaller fixes: the number of answers per turn is now editable right on the counter (click the total and set it from 5 to 10), and the current-draw panel holds a steady size instead of jumping when an answer appears.
+
+### Setup tidy-up
+
+- The "Settings lock once you start" note moved down next to the Start button, where it applies to every mode, and dropped the redundant answer count it used to repeat.

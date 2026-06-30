@@ -216,6 +216,14 @@
   color: var(--text-muted);
 }
 
+/* Secondary-tag selector (Generation), sat under the category toggles. */
+.secondary {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.9rem;
+}
+
 /* Quiet text button in the Game section head; returns the settings to defaults. */
 .reset {
   font-size: 0.85rem;
@@ -246,6 +254,16 @@
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
+}
+
+/* Stepper and its note. On narrow widths the note wraps under the stepper rather
+   than overflowing. To compare placements, swap the two flex lines below. */
+.stepperRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1rem;
+
+  flex-direction: row; align-items: center;
 }
 
 .stepper {
