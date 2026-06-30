@@ -90,6 +90,23 @@
   background: var(--accent-hover);
 }
 
+/* The middle action: more present than the bare Start over, quieter than the solid
+   Continue, so the three read keep-going / replay-fresh / wipe top to bottom. */
+.playAgain {
+  padding: 0.85rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 0.8rem;
+  cursor: pointer;
+}
+
+.playAgain:hover {
+  border-color: var(--accent);
+}
+
 .startOver {
   padding: 0.8rem 1rem;
   font-size: 0.95rem;
@@ -140,6 +157,10 @@
 
   .continue {
     font-size: 1.2rem;
+  }
+
+  .playAgain {
+    font-size: 1.1rem;
   }
 
   .startOver {

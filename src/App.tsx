@@ -136,10 +136,12 @@ export default function App() {
     setPhase('setup')
   }
 
-  // Title return: keep the roster and every prior setup choice (mode, categories,
-  // difficulty, answers all persist in state and round-trip back into Setup), but
-  // drop the in-progress session, game, and scores. Unlike startOver, nothing
-  // resets to defaults: it restarts this group with their settings, ready to tweak.
+  // Shared by the title return and the leaderboard's "Play again": keep the roster
+  // and every prior setup choice (mode, categories, difficulty, answers all persist
+  // in state and round-trip back into Setup), but drop the in-progress session,
+  // game, and scores. Unlike startOver, nothing resets to defaults: it restarts this
+  // group with their settings, ready to tweak. The next Start builds a fresh session,
+  // so totals reset to zero.
   function returnToSetup() {
     setSession(null)
     setGame(null)
@@ -215,6 +217,7 @@ export default function App() {
             session={session}
             roster={roster}
             onContinue={continueRotation}
+            onPlayAgain={returnToSetup}
             onStartOver={startOver}
           />
         )}
