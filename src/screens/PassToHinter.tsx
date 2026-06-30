@@ -8,10 +8,12 @@ interface Props {
   position: number
   total: number
   mode: GameMode
+  // The active edition's randomizer page, opened in randomizer mode.
+  randomizerUrl: string
   onReady: () => void
 }
 
-export default function PassToHinter({ hinter, position, total, mode, onReady }: Props) {
+export default function PassToHinter({ hinter, position, total, mode, randomizerUrl, onReady }: Props) {
   // Both online modes run on a shared screen, so the answer is protected by the
   // play screen (hold-to-reveal or host-typed), not by passing the device away.
   // They get a neutral turn marker; only in-person keeps the secrecy framing.
@@ -39,7 +41,7 @@ export default function PassToHinter({ hinter, position, total, mode, onReady }:
             // Randomizer has no dealt deck, so the hinter draws answers from this
             // separate tool. New tab keeps it off the shared screen.
             <a
-              href={`${import.meta.env.BASE_URL}randomizer/`}
+              href={randomizerUrl}
               target="_blank"
               rel="noopener noreferrer"
               className={styles.randomizerLink}

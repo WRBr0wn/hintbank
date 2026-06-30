@@ -29,6 +29,8 @@ interface Props {
   // Whether typo-fixing is reachable, derived from the mode via canEditMode in App.
   // False in untrusted multiplayer; when false every edit affordance below is absent.
   canEdit: boolean
+  // The active edition's randomizer page, kept reachable in randomizer mode.
+  randomizerUrl: string
   onChange: (next: GameState) => void
   // Called when the hinter advances off the completed board to the summary. The
   // board stays up until then so the group can review the finished round.
@@ -41,7 +43,7 @@ type EditTarget =
   | { kind: 'word'; index: number; value: string }
   | { kind: 'result'; index: number; value: string }
 
-export default function HinterPlay({ game, roster, mode, canEdit, onChange, onComplete }: Props) {
+export default function HinterPlay({ game, roster, mode, canEdit, randomizerUrl, onChange, onComplete }: Props) {
   const [selection, setSelection] = useState<number[]>([])
   const [draft, setDraft] = useState('')
   const [overguess, setOverguess] = useState<Record<string, number>>({})
@@ -174,7 +176,7 @@ export default function HinterPlay({ game, roster, mode, canEdit, onChange, onCo
         // Randomizer answers come from the separate tool, so keep a way back to it
         // visible the whole turn. New tab so it stays off the shared screen.
         <a
-          href={`${import.meta.env.BASE_URL}randomizer/`}
+          href={randomizerUrl}
           target="_blank"
           rel="noopener noreferrer"
           className={styles.randomizerLink}

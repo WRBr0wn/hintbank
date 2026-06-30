@@ -1,34 +1,34 @@
 import { useMemo, useState } from 'react'
-import pokemon from '../editions/pokemon/data/pokemon.json'
-import { CATEGORIES } from '../editions/pokemon/data/categories'
 import { editionById, termPasses } from '../editions'
 import ThemeToggle from '../components/ThemeToggle'
 import styles from './Randomizer.module.css'
 
-// Shares only read-only data with the game: the category manifest (which terms
-// exist) and pokemon.json (sprites). No session or game state is shared, so this
-// stays a standalone page with its own category and generation pickers.
+// A standalone draw tool with no link to the game's session state. It draws from
+// one edition's categories and reads everything edition-specific (categories, the
+// generation tag, sprites) off that edition.
 type Entry = { name: string; sprite?: string }
 
 const base = import.meta.env.BASE_URL
 const spriteUrl = (e: Entry) => (e.sprite ? `${base}${e.sprite}` : undefined)
 
-// Pokemon is the only category with sprites. The manifest exposes terms as plain
-// names, so map a Pokemon name back to its sprite here, keyed by display name.
-const POKEMON_SPRITE = new Map(pokemon.map((p) => [p.displayName, p.sprite] as const))
-
-// The randomizer only ever plays the Pokemon edition, so read its secondary tag
-// (Generation) straight off the manifest.
-const secondaryTag = editionById('pokemon')?.secondaryTag
-
 // The answer target is a soft hint, matching the game's 5 to 10 range. The board
-// enforces the real limit; here it only drives the count and the full note.
+// enforces the real limit; here it only drives the count and the full state.
 const MIN_TARGET = 5
 const MAX_TARGET = 10
-const clampTarget = (n: number) => Math.max(MIN_TARGET, Math.min(MAX_TARGET, n))
+// Truncate toward zero first so the target is a whole count, then clamp the range.
+const clampTarget = (n: number) => Math.max(MIN_TARGET, Math.min(MAX_TARGET, Math.trunc(n)))
 
-export default function Randomizer() {
-  const [selected, setSelected] = useState<Set<string>>(() => new Set(['pokemon']))
+// The edition is supplied by the page entry, so this component is reusable across
+// editions and reads everything edition-specific off the one it is given.
+export default function Randomizer({ editionId }: { editionId: string }) {
+  const edition = editionById(editionId)
+  const categories = edition?.categories ?? []
+  const secondaryTag = edition?.secondaryTag
+
+  const [selected, setSelected] = useState<Set<string>>(() => {
+    const first = categories.find((c) => c.ready)?.id
+    return new Set(first ? [first] : [])
+  })
   const [gens, setGens] = useState<Set<number>>(() => new Set())
   // The committed target drives full and the count; the raw input string is what
   // the field edits, so typing and backspacing are not clamped mid-entry.
@@ -42,7 +42,7 @@ export default function Randomizer() {
   // their terms. Data-driven, so the selector only shows what is actually present.
   const secondaryOptions = useMemo(() => {
     const values = new Set<number>()
-    for (const cat of CATEGORIES) {
+    for (const cat of categories) {
       if (!selected.has(cat.id)) continue
       for (const t of cat.terms) {
         if (t.gens) for (const g of t.gens) values.add(g)
@@ -63,15 +63,13 @@ export default function Randomizer() {
   // category or generation selection changes.
   const pool = useMemo(() => {
     const out: Entry[] = []
-    for (const cat of CATEGORIES) {
+    for (const cat of categories) {
       if (!selected.has(cat.id)) continue
       for (const t of cat.terms) {
         if (!termPasses(t, secondaryValues)) continue
-        out.push(
-          cat.id === 'pokemon'
-            ? { name: t.name, sprite: POKEMON_SPRITE.get(t.name) ?? undefined }
-            : { name: t.name },
-        )
+        // Sprite comes straight off the term, so an edition without sprite data
+        // just yields a name and the draw panel shows no image.
+        out.push({ name: t.name, sprite: t.sprite })
       }
     }
     return out
@@ -144,7 +142,7 @@ export default function Randomizer() {
       <p className={styles.note}>Private to the hinter. Draw answers to hint from.</p>
 
       <div className={styles.categories}>
-        {CATEGORIES.map((c) => {
+        {categories.map((c) => {
           const on = selected.has(c.id)
           const cls = !c.ready ? styles.catSoon : on ? styles.catOn : styles.cat
           return (

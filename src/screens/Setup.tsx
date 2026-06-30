@@ -94,6 +94,7 @@ export default function Setup({
   credits,
   categories,
   secondaryTag,
+  randomizerUrl,
   initialPlayers,
   initialMode,
   initialCategoryIds,
@@ -120,6 +121,8 @@ export default function Setup({
   // The edition's secondary tag, if it has one. Just a label; the values come from
   // the selected categories' term data. Absent means no secondary selector.
   secondaryTag?: { label: string }
+  // The active edition's randomizer page, linked from randomizer mode.
+  randomizerUrl: string
   // Seeds the roster when returning to Setup mid-game, so the same players carry
   // over (names and avatars intact) and stay fully editable. Omitted on a fresh
   // start, which falls back to two blank players.
@@ -399,7 +402,7 @@ export default function Setup({
           <>
             <p className={styles.note}>Answers come from the randomizer page, or outside resources.</p>
             <a
-              href={`${import.meta.env.BASE_URL}randomizer/`}
+              href={randomizerUrl}
               target="_blank"
               rel="noopener noreferrer"
               className={styles.randomizerLink}

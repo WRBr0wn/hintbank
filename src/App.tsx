@@ -23,7 +23,7 @@ import {
   type GameState,
   type SessionState,
 } from './engine'
-import { editionById, termPasses, type Category } from './editions'
+import { editionById, randomizerPath, termPasses, type Category } from './editions'
 import type { Player } from './types'
 import styles from './App.module.css'
 
@@ -80,6 +80,9 @@ export default function App() {
   const [confirmReturn, setConfirmReturn] = useState(false)
 
   const edition = activeEditionId ? editionById(activeEditionId) : null
+  // The active edition's randomizer page, handed to the in-game launch links so they
+  // open the right edition directly with no reselect.
+  const randomizerUrl = edition ? randomizerPath(edition.id) : ''
 
   const hinter = useMemo(() => {
     if (!session) return null
@@ -222,6 +225,7 @@ export default function App() {
             credits={edition.credits}
             categories={edition.categories}
             secondaryTag={edition.secondaryTag}
+            randomizerUrl={randomizerUrl}
             initialPlayers={roster.length ? roster : undefined}
             initialMode={mode}
             initialCategoryIds={categoryIds}
@@ -237,6 +241,7 @@ export default function App() {
             position={session.hinterPosition + 1}
             total={roster.length}
             mode={session.mode}
+            randomizerUrl={randomizerUrl}
             onReady={reveal}
           />
         )}
@@ -250,6 +255,7 @@ export default function App() {
             roster={roster}
             mode={session.mode}
             canEdit={canEditMode(session.mode)}
+            randomizerUrl={randomizerUrl}
             onChange={setGame}
             onComplete={finishTurn}
           />

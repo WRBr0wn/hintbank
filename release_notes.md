@@ -138,7 +138,7 @@ The Nintendo disclaimer and the PokéAPI attribution used to sit at the bottom o
 
 ### Hint Bank v3.1.0 - Editions Own Their Content, and Generations
 
-Last release gave editions their own identity. This one finishes the job: an edition now owns its answers and categories too, so it is a self-contained bundle rather than a name wrapped around shared data. On top of that foundation, the Pokémon edition gets its first content filter - play by generation.
+Last release gave editions their own identity. This one finishes the job: an edition now owns its answers and categories too, so it is a self-contained bundle rather than a name wrapped around shared data. On top of that foundation, the Pokémon edition gets another content filter - play by generation.
 
 ### Editions are self-contained now
 
@@ -148,7 +148,7 @@ The Pokémon edition's answers and categories used to live in a shared spot the 
 
 A new "Generation" filter at setup lets you narrow the Pokémon pool to the generations you want. Pick one, a few, or leave it alone for all of them.
 
-- **It is built generically.** Generation is the Pokémon edition's version of a broader idea: a secondary tag that subsets a category. A future edition could subset by region, era, or anything else using the same machinery - Generation is just what it is called here.
+- **It is built generically.** Generation is the Pokémon edition's version of a broader idea: a secondary tag that subsets a category. A future edition could subset by region, era, or anything else using the same machinery.
 - **It works wherever the data does.** Pokémon answers carry their generation, and so do Gym Leaders and Badges. Categories without that tag (like Games or Items right now) just pass through, so the filter never empties your pool unexpectedly. The selector only appears when the categories you have chosen actually carry generations.
 - **Add it where you like.** Because the filter keys off the data, tagging more answers with a generation later is a drop-in - they start showing up in the filter automatically.
 
@@ -159,3 +159,18 @@ The randomizer page gained the same Generation filter, drawing from the exact sa
 ### Setup tidy-up
 
 - The "Settings lock once you start" note moved down next to the Start button, where it applies to every mode, and dropped the redundant answer count it used to repeat.
+
+
+### Hint Bank v3.2.0 - Per-Edition Randomizer
+
+Routing Refactor. The randomizer was still hardwired to Pokémon under the hood; this release makes it edition-aware and gives it a proper home in the URL, so future editions can each have their own. Day to day it plays exactly the same - the change is in how it is wired and where it lives.
+
+### The randomizer belongs to its edition now
+
+- **Its own address.** The Pokémon randomizer now lives at `/pokemon-edition/randomizer/`, nested under the edition it belongs to, instead of at the bare `/randomizer/`.
+- **Open randomizer goes straight there.** Every "Open randomizer" link - from setup, from the pass screen, and during play - now opens that edition's randomizer directly, with no extra step.
+- **A picker at the old address.** Visiting `/randomizer/` on its own now shows an edition picker, the same way the main menu does. Pokémon is selectable; the soon editions sit there as placeholders.
+
+### Why it matters
+
+The randomizer used to assume Pokémon in its own code. It now reads whichever edition it is serving (categories, generations, sprites and all) from that edition's data, through the same rules the game uses. None of that is visible while playing, but it is the piece that lets a future edition ship its own randomizer as a drop-in rather than a rewrite.
