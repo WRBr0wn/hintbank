@@ -48,7 +48,7 @@ const POKEMON: PlayerAvatar[] = (
     [670, 'Doublade'],
     [909, 'Fuecoco']
   ] as [number, string][]
-).map(([dex, label]) => ({ kind: 'image', src: `${base}sprites/${dex}.png`, label, zoom: 1.3, bare: true }))
+).map(([dex, label]) => ({ kind: 'image', src: `${base}editions/pokemon/sprites/${dex}.png`, label, zoom: 1.3, bare: true }))
 
 const AVATARS: PlayerAvatar[] = [...EMOJI, ...CREATORS, ...POKEMON]
 

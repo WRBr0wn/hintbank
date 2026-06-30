@@ -65,7 +65,7 @@ The hinter rotates so everyone hints once per **session**, and totals carry acro
 - **React + Vite + TypeScript**, plain CSS Modules, no backend.
 - Light and dark themes, following your system setting by default and remembering your choice after that. The toggle works on every screen, including the randomizer.
 - The rules live in a small, self-contained engine (`src/engine/`) that's category-agnostic for future editions.
-- Pokémon names and sprites are bundled at build time from the PokéAPI GitHub mirror (see `scripts/`); the other categories are hand-curated bundled data.
+- Pokémon names and sprites are bundled locally; the other categories are hand-curated bundled data.
 - Static build, deployed via GitHub Pages.
 
 ## Running it
