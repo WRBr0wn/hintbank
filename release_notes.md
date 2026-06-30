@@ -84,3 +84,29 @@ Click the "Hint Bank" title mid-game to return to setup. It asks first, and it k
 ### Display polish
 - Hint words size themselves to fit. Long words shrink to stay readable instead of getting cut off, and only shrink as much as they need to - short words stay full size.
 - Better mobile board. The Hint Bank and answer card now span the full width on phones, matching the rest of the board.
+
+
+### Hint Bank v2.5.0 - Setup Settings & Accessibility
+
+This release puts the game's difficulty in your hands. Before, every turn was a fixed 25-point cutoff over 10 answers; now you pick how hard and how long a turn runs at setup, and the scoring scales to match. Plus a category goes live and the modals get proper keyboard support.
+
+### Tune the game at setup
+- **Difficulty preset.** Pick Easy, Regular, or Hard. Each sets the hinter's starting cutoff for a full turn - 30, 25, or 20. Regular is the original 25, so nothing changes if you leave it alone.
+- **Answers per turn.** Set how many answers a hinter holds, anywhere from 5 to 10, for shorter or longer turns.
+- **The cutoff scales with turn length.** The preset is the cutoff for a full 10-answer turn; a shorter turn scales it down in proportion, so a 5-answer Regular turn isn't secretly easier than a 10-answer one. The Hint Bank is still a hard 40 words either way, cutoff determining how easily the hinter gets points.
+
+### A truer fuel gauge
+The Hint Bank's color bands now scale to your actual cutoff instead of the old fixed 25. Green, yellow, orange, then red as you spend toward the cutoff, with slots past it going grey for negative-score territory. A Regular game looks exactly like it always did; any other difficulty rescales the ramp so the colors always read true.
+
+### New category: Badges
+Gym Badges are now a live category you can pick at setup, alongside Pokémon, Gym Leaders, Towns & Cities, Games, Items, and Routes & Areas. That's seven categories live. Professors are still to come.
+
+### Smoother return to setup
+Clicking the title to go back to setup now keeps everything, not just your players - your mode, categories, difficulty, and answer count all come back exactly as you left them, so you can tweak one thing and start again.
+
+### What's next at the end of a game
+When a session wraps you now get three clear choices: Continue, Play Again, or Reset Session. Play Again keeps the same group but starts fresh scores and drops you back into setup, so you can change difficulty or categories between games without re-entering everyone.
+
+### Accessibility
+- **Keyboard-friendly modals.** The confirm and edit dialogs now trap focus while open, so Tab and Shift+Tab cycle inside the dialog instead of wandering off behind it. Focus moves into the dialog when it opens and returns to whatever you were on when it closes, and Escape still cancels.
+- Both dialogs now carry an accessible name for screen readers.
