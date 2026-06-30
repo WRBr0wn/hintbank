@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Avatar from '../components/Avatar'
 import Footer from '../components/Footer'
+import type { EditionCredits } from '../editions'
 import { ANSWERS_PER_GAME, HINTER_BASE, type GameMode } from '../engine'
 import { CATEGORIES } from '../data/categories'
 import type { Player, PlayerAvatar } from '../types'
@@ -91,6 +92,7 @@ function makePlayer(used: string[]): Player {
 
 export default function Setup({
   onStart,
+  credits,
   initialPlayers,
   initialMode,
   initialCategoryIds,
@@ -107,6 +109,8 @@ export default function Setup({
     difficultyBase: number,
     answersPerGame: number,
   ) => void
+  // The active edition's footer credits, passed straight through to the Footer.
+  credits: EditionCredits
   // Seeds the roster when returning to Setup mid-game, so the same players carry
   // over (names and avatars intact) and stay fully editable. Omitted on a fresh
   // start, which falls back to two blank players.
@@ -391,7 +395,7 @@ export default function Setup({
         </button>
       </div>
 
-      <Footer />
+      <Footer credits={credits} />
     </div>
   )
 }
