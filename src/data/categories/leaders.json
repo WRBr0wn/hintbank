@@ -1,152 +1,650 @@
 [
   {
-    "name": "Brock"
+    "name": "Blaine",
+    "gens": [
+      1
+    ],
+    "type": "Fire",
+    "badge": "Volcano Badge",
+    "city": "Cinnabar Island"
   },
   {
-    "name": "Misty"
+    "name": "Brock",
+    "gens": [
+      1
+    ],
+    "type": "Rock",
+    "badge": "Boulder Badge",
+    "city": "Pewter City"
   },
   {
-    "name": "Lt. Surge"
+    "name": "Erika",
+    "gens": [
+      1
+    ],
+    "type": "Grass",
+    "badge": "Rainbow Badge",
+    "city": "Celadon City"
   },
   {
-    "name": "Erika"
+    "name": "Giovanni",
+    "gens": [
+      1
+    ],
+    "type": "Ground",
+    "badge": "Earth Badge",
+    "city": "Viridian City"
   },
   {
-    "name": "Koga"
+    "name": "Koga",
+    "gens": [
+      1
+    ],
+    "type": "Poison",
+    "badge": "Soul Badge",
+    "city": "Fuchsia City"
   },
   {
-    "name": "Sabrina"
+    "name": "Lt. Surge",
+    "gens": [
+      1
+    ],
+    "type": "Electric",
+    "badge": "Thunder Badge",
+    "city": "Vermilion City"
   },
   {
-    "name": "Blaine"
+    "name": "Misty",
+    "gens": [
+      1
+    ],
+    "type": "Water",
+    "badge": "Cascade Badge",
+    "city": "Cerulean City"
   },
   {
-    "name": "Giovanni"
+    "name": "Sabrina",
+    "gens": [
+      1
+    ],
+    "type": "Psychic",
+    "badge": "Marsh Badge",
+    "city": "Saffron City"
   },
   {
-    "name": "Falkner"
+    "name": "Bugsy",
+    "gens": [
+      2
+    ],
+    "type": "Bug",
+    "badge": "Hive Badge",
+    "city": "Azalea Town"
   },
   {
-    "name": "Bugsy"
+    "name": "Chuck",
+    "gens": [
+      2
+    ],
+    "type": "Fighting",
+    "badge": "Storm Badge",
+    "city": "Cianwood City"
   },
   {
-    "name": "Whitney"
+    "name": "Clair",
+    "gens": [
+      2
+    ],
+    "type": "Dragon",
+    "badge": "Rising Badge",
+    "city": "Blackthorn City"
   },
   {
-    "name": "Morty"
+    "name": "Falkner",
+    "gens": [
+      2
+    ],
+    "type": "Flying",
+    "badge": "Zephyr Badge",
+    "city": "Violet City"
   },
   {
-    "name": "Chuck"
+    "name": "Jasmine",
+    "gens": [
+      2
+    ],
+    "type": "Steel",
+    "badge": "Mineral Badge",
+    "city": "Olivine City"
   },
   {
-    "name": "Jasmine"
+    "name": "Morty",
+    "gens": [
+      2
+    ],
+    "type": "Ghost",
+    "badge": "Fog Badge",
+    "city": "Ecruteak City"
   },
   {
-    "name": "Pryce"
+    "name": "Pryce",
+    "gens": [
+      2
+    ],
+    "type": "Ice",
+    "badge": "Glacier Badge",
+    "city": "Mahogany Town"
   },
   {
-    "name": "Clair"
+    "name": "Whitney",
+    "gens": [
+      2
+    ],
+    "type": "Normal",
+    "badge": "Plain Badge",
+    "city": "Goldenrod City"
   },
   {
-    "name": "Roxanne"
+    "name": "Brawly",
+    "gens": [
+      3
+    ],
+    "type": "Fighting",
+    "badge": "Knuckle Badge",
+    "city": "Dewford Town"
   },
   {
-    "name": "Brawly"
+    "name": "Flannery",
+    "gens": [
+      3
+    ],
+    "type": "Fire",
+    "badge": "Heat Badge",
+    "city": "Lavaridge Town"
   },
   {
-    "name": "Wattson"
+    "name": "Norman",
+    "gens": [
+      3
+    ],
+    "type": "Normal",
+    "badge": "Balance Badge",
+    "city": "Petalburg City"
   },
   {
-    "name": "Flannery"
+    "name": "Roxanne",
+    "gens": [
+      3
+    ],
+    "type": "Rock",
+    "badge": "Stone Badge",
+    "city": "Rustboro City"
   },
   {
-    "name": "Norman"
+    "name": "Tate and Liza",
+    "gens": [
+      3
+    ],
+    "type": "Psychic",
+    "badge": "Mind Badge",
+    "city": "Mossdeep City"
   },
   {
-    "name": "Winona"
+    "name": "Wallace",
+    "gens": [
+      3
+    ],
+    "type": "Water",
+    "badge": "Rain Badge",
+    "city": "Sootopolis City"
   },
   {
-    "name": "Tate and Liza"
+    "name": "Wattson",
+    "gens": [
+      3
+    ],
+    "type": "Electric",
+    "badge": "Dynamo Badge",
+    "city": "Mauville City"
   },
   {
-    "name": "Wallace"
+    "name": "Winona",
+    "gens": [
+      3
+    ],
+    "type": "Flying",
+    "badge": "Feather Badge",
+    "city": "Fortree City"
   },
   {
-    "name": "Roark"
+    "name": "Byron",
+    "gens": [
+      4
+    ],
+    "type": "Steel",
+    "badge": "Mine Badge",
+    "city": "Canalave City"
   },
   {
-    "name": "Gardenia"
+    "name": "Candice",
+    "gens": [
+      4
+    ],
+    "type": "Ice",
+    "badge": "Icicle Badge",
+    "city": "Snowpoint City"
   },
   {
-    "name": "Maylene"
+    "name": "Crasher Wake",
+    "gens": [
+      4
+    ],
+    "type": "Water",
+    "badge": "Fen Badge",
+    "city": "Pastoria City"
   },
   {
-    "name": "Crasher Wake"
+    "name": "Fantina",
+    "gens": [
+      4
+    ],
+    "type": "Ghost",
+    "badge": "Relic Badge",
+    "city": "Hearthome City"
   },
   {
-    "name": "Fantina"
+    "name": "Gardenia",
+    "gens": [
+      4
+    ],
+    "type": "Grass",
+    "badge": "Forest Badge",
+    "city": "Eterna City"
   },
   {
-    "name": "Byron"
+    "name": "Maylene",
+    "gens": [
+      4
+    ],
+    "type": "Fighting",
+    "badge": "Cobble Badge",
+    "city": "Veilstone City"
   },
   {
-    "name": "Candice"
+    "name": "Roark",
+    "gens": [
+      4
+    ],
+    "type": "Rock",
+    "badge": "Coal Badge",
+    "city": "Oreburgh City"
   },
   {
-    "name": "Volkner"
+    "name": "Volkner",
+    "gens": [
+      4
+    ],
+    "type": "Electric",
+    "badge": "Beacon Badge",
+    "city": "Sunyshore City"
   },
   {
-    "name": "Viola"
+    "name": "Brycen",
+    "gens": [
+      5
+    ],
+    "type": "Ice",
+    "badge": "Freeze Badge",
+    "city": "Icirrus City"
   },
   {
-    "name": "Grant"
+    "name": "Burgh",
+    "gens": [
+      5
+    ],
+    "type": "Bug",
+    "badge": "Insect Badge",
+    "city": "Castelia City"
   },
   {
-    "name": "Korrina"
+    "name": "Cheren",
+    "gens": [
+      5
+    ],
+    "type": "Normal",
+    "badge": "Basic Badge",
+    "city": "Aspertia City"
   },
   {
-    "name": "Ramos"
+    "name": "Chili",
+    "gens": [
+      5
+    ],
+    "type": "Fire",
+    "badge": "Trio Badge",
+    "city": "Striaton City"
   },
   {
-    "name": "Clemont"
+    "name": "Cilan",
+    "gens": [
+      5
+    ],
+    "type": "Grass",
+    "badge": "Trio Badge",
+    "city": "Striaton City"
   },
   {
-    "name": "Valerie"
+    "name": "Clay",
+    "gens": [
+      5
+    ],
+    "type": "Ground",
+    "badge": "Quake Badge",
+    "city": "Driftveil City"
   },
   {
-    "name": "Olympia"
+    "name": "Cress",
+    "gens": [
+      5
+    ],
+    "type": "Water",
+    "badge": "Trio Badge",
+    "city": "Striaton City"
   },
   {
-    "name": "Wulfric"
+    "name": "Drayden",
+    "gens": [
+      5
+    ],
+    "type": "Dragon",
+    "badge": "Legend Badge",
+    "city": "Opelucid City"
   },
   {
-    "name": "Milo"
+    "name": "Elesa",
+    "gens": [
+      5
+    ],
+    "type": "Electric",
+    "badge": "Bolt Badge",
+    "city": "Nimbasa City"
   },
   {
-    "name": "Nessa"
+    "name": "Iris",
+    "gens": [
+      5
+    ],
+    "type": "Dragon",
+    "badge": "Legend Badge",
+    "city": "Opelucid City"
   },
   {
-    "name": "Kabu"
+    "name": "Lenora",
+    "gens": [
+      5
+    ],
+    "type": "Normal",
+    "badge": "Basic Badge",
+    "city": "Nacrene City"
   },
   {
-    "name": "Bea"
+    "name": "Marlon",
+    "gens": [
+      5
+    ],
+    "type": "Water",
+    "badge": "Wave Badge",
+    "city": "Humilau City"
   },
   {
-    "name": "Allister"
+    "name": "Roxie",
+    "gens": [
+      5
+    ],
+    "type": "Poison",
+    "badge": "Toxic Badge",
+    "city": "Virbank City"
   },
   {
-    "name": "Opal"
+    "name": "Skyla",
+    "gens": [
+      5
+    ],
+    "type": "Flying",
+    "badge": "Jet Badge",
+    "city": "Mistralton City"
   },
   {
-    "name": "Gordie"
+    "name": "Clemont",
+    "gens": [
+      6
+    ],
+    "type": "Electric",
+    "badge": "Voltage Badge",
+    "city": "Lumiose City"
   },
   {
-    "name": "Melony"
+    "name": "Grant",
+    "gens": [
+      6
+    ],
+    "type": "Rock",
+    "badge": "Cliff Badge",
+    "city": "Cyllage City"
   },
   {
-    "name": "Piers"
+    "name": "Korrina",
+    "gens": [
+      6
+    ],
+    "type": "Fighting",
+    "badge": "Rumble Badge",
+    "city": "Shalour City"
   },
   {
-    "name": "Raihan"
+    "name": "Olympia",
+    "gens": [
+      6
+    ],
+    "type": "Psychic",
+    "badge": "Psychic Badge",
+    "city": "Anistar City"
+  },
+  {
+    "name": "Ramos",
+    "gens": [
+      6
+    ],
+    "type": "Grass",
+    "badge": "Plant Badge",
+    "city": "Coumarine City"
+  },
+  {
+    "name": "Valerie",
+    "gens": [
+      6
+    ],
+    "type": "Fairy",
+    "badge": "Fairy Badge",
+    "city": "Laverre City"
+  },
+  {
+    "name": "Viola",
+    "gens": [
+      6
+    ],
+    "type": "Bug",
+    "badge": "Bug Badge",
+    "city": "Santalune City"
+  },
+  {
+    "name": "Wulfric",
+    "gens": [
+      6
+    ],
+    "type": "Ice",
+    "badge": "Iceberg Badge",
+    "city": "Snowbelle City"
+  },
+  {
+    "name": "Allister",
+    "gens": [
+      8
+    ],
+    "type": "Ghost",
+    "badge": "Ghost Badge",
+    "city": "Stow-on-Side"
+  },
+  {
+    "name": "Bea",
+    "gens": [
+      8
+    ],
+    "type": "Fighting",
+    "badge": "Fighting Badge",
+    "city": "Stow-on-Side"
+  },
+  {
+    "name": "Gordie",
+    "gens": [
+      8
+    ],
+    "type": "Rock",
+    "badge": "Rock Badge",
+    "city": "Circhester"
+  },
+  {
+    "name": "Kabu",
+    "gens": [
+      8
+    ],
+    "type": "Fire",
+    "badge": "Fire Badge",
+    "city": "Motostoke"
+  },
+  {
+    "name": "Melony",
+    "gens": [
+      8
+    ],
+    "type": "Ice",
+    "badge": "Ice Badge",
+    "city": "Circhester"
+  },
+  {
+    "name": "Milo",
+    "gens": [
+      8
+    ],
+    "type": "Grass",
+    "badge": "Grass Badge",
+    "city": "Turffield"
+  },
+  {
+    "name": "Nessa",
+    "gens": [
+      8
+    ],
+    "type": "Water",
+    "badge": "Water Badge",
+    "city": "Hulbury"
+  },
+  {
+    "name": "Opal",
+    "gens": [
+      8
+    ],
+    "type": "Fairy",
+    "badge": "Fairy Badge",
+    "city": "Ballonlea"
+  },
+  {
+    "name": "Piers",
+    "gens": [
+      8
+    ],
+    "type": "Dark",
+    "badge": "Dark Badge",
+    "city": "Spikemuth"
+  },
+  {
+    "name": "Raihan",
+    "gens": [
+      8
+    ],
+    "type": "Dragon",
+    "badge": "Dragon Badge",
+    "city": "Hammerlocke"
+  },
+  {
+    "name": "Brassius",
+    "gens": [
+      9
+    ],
+    "type": "Grass",
+    "badge": "Grass Badge",
+    "city": "Artazon"
+  },
+  {
+    "name": "Grusha",
+    "gens": [
+      9
+    ],
+    "type": "Ice",
+    "badge": "Ice Badge",
+    "city": "Glaseado Mountain"
+  },
+  {
+    "name": "Iono",
+    "gens": [
+      9
+    ],
+    "type": "Electric",
+    "badge": "Electric Badge",
+    "city": "Levincia"
+  },
+  {
+    "name": "Katy",
+    "gens": [
+      9
+    ],
+    "type": "Bug",
+    "badge": "Bug Badge",
+    "city": "Cortondo"
+  },
+  {
+    "name": "Kofu",
+    "gens": [
+      9
+    ],
+    "type": "Water",
+    "badge": "Water Badge",
+    "city": "Cascarrafa"
+  },
+  {
+    "name": "Larry",
+    "gens": [
+      9
+    ],
+    "type": "Normal",
+    "badge": "Normal Badge",
+    "city": "Medali"
+  },
+  {
+    "name": "Ryme",
+    "gens": [
+      9
+    ],
+    "type": "Ghost",
+    "badge": "Ghost Badge",
+    "city": "Montenevera"
+  },
+  {
+    "name": "Tulip",
+    "gens": [
+      9
+    ],
+    "type": "Psychic",
+    "badge": "Psychic Badge",
+    "city": "Alfornada"
   }
 ]

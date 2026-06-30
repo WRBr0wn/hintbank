@@ -1,0 +1,368 @@
+[
+  {
+    "name": "Volcano Badge",
+    "gens": [
+      1
+    ]
+  },
+  {
+    "name": "Boulder Badge",
+    "gens": [
+      1
+    ]
+  },
+  {
+    "name": "Rainbow Badge",
+    "gens": [
+      1
+    ]
+  },
+  {
+    "name": "Earth Badge",
+    "gens": [
+      1
+    ]
+  },
+  {
+    "name": "Soul Badge",
+    "gens": [
+      1
+    ]
+  },
+  {
+    "name": "Thunder Badge",
+    "gens": [
+      1
+    ]
+  },
+  {
+    "name": "Cascade Badge",
+    "gens": [
+      1
+    ]
+  },
+  {
+    "name": "Marsh Badge",
+    "gens": [
+      1
+    ]
+  },
+  {
+    "name": "Hive Badge",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Storm Badge",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Rising Badge",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Zephyr Badge",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Mineral Badge",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Fog Badge",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Glacier Badge",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Plain Badge",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Knuckle Badge",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Heat Badge",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Balance Badge",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Stone Badge",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Mind Badge",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Rain Badge",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Dynamo Badge",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Feather Badge",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Mine Badge",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Icicle Badge",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Fen Badge",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Relic Badge",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Forest Badge",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Cobble Badge",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Coal Badge",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Beacon Badge",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Freeze Badge",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Insect Badge",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Basic Badge",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Trio Badge",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Quake Badge",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Legend Badge",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Bolt Badge",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Wave Badge",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Toxic Badge",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Jet Badge",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Voltage Badge",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Cliff Badge",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Rumble Badge",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Psychic Badge",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Plant Badge",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Fairy Badge",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Bug Badge",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Iceberg Badge",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Ghost Badge",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Fighting Badge",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Rock Badge",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Fire Badge",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Ice Badge",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Grass Badge",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Water Badge",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Dark Badge",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Dragon Badge",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Electric Badge",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Normal Badge",
+    "gens": [
+      9
+    ]
+  }
+]
