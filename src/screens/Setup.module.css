@@ -216,6 +216,14 @@
   color: var(--text-muted);
 }
 
+/* Secondary-tag selector (Generation), sat under the category toggles. */
+.secondary {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.9rem;
+}
+
 /* Quiet text button in the Game section head; returns the settings to defaults. */
 .reset {
   font-size: 0.85rem;

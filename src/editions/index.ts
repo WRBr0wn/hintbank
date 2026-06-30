@@ -46,6 +46,10 @@ export interface Edition {
   // The edition's answer categories. The platform reads these off the active
   // edition, so each edition owns its own content. Soon editions have none yet.
   categories: Category[]
+  // Optional secondary tag that subsets categories at setup. The edition supplies
+  // only the label (Pokémon: Generation, geography later: Region); the values live
+  // in the term data as gens. Omitted means the edition has no secondary filter.
+  secondaryTag?: { label: string }
   credits: EditionCredits
 }
 
@@ -64,6 +68,7 @@ export const EDITIONS: Edition[] = [
     hasIP: true,
     contentRating: 'everyone',
     categories: CATEGORIES,
+    secondaryTag: { label: 'Generation' },
     credits: {
       disclaimer:
         'Hint Bank: Pokémon Edition is an unofficial fan project, not affiliated with Nintendo, Game Freak, or The Pokémon Company. Pokémon names and sprites are property of their respective owners.',

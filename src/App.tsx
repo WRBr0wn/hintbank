@@ -23,7 +23,7 @@ import {
   type GameState,
   type SessionState,
 } from './engine'
-import { editionById, type Category } from './editions'
+import { editionById, type Category, type Term } from './editions'
 import type { Player } from './types'
 import styles from './App.module.css'
 
@@ -34,16 +34,26 @@ type Phase = 'setup' | 'pass' | 'hinter' | 'leaderboard'
 // and slice naturally caps it at the pool size when a category is short.
 const deckSizeFor = (answersPerGame: number) => answersPerGame + BANK_CAP
 
+// A term is in the pool when no tag values are selected (filter off), when it
+// carries a selected value, or when it has no tag values at all. The last case is
+// pass-through: untagged terms stay in alongside a tagged selection.
+function termPasses(term: Term, tagValues: number[]): boolean {
+  if (tagValues.length === 0) return true
+  if (!term.gens || term.gens.length === 0) return true
+  return term.gens.some((g) => tagValues.includes(g))
+}
+
 // Combine the selected categories into one shuffled pool, then take the deck off
 // the front. Categories come from the active edition, so the platform holds no
-// global list. Every category's terms are stored display-ready, so they go in as-is
-// and the board renders them verbatim.
-function buildDeck(categories: Category[], categoryIds: string[], deckSize: number): string[] {
+// global list. The deck is names only; the board renders them verbatim.
+function buildDeck(categories: Category[], categoryIds: string[], tagValues: number[], deckSize: number): string[] {
   const pool: string[] = []
   for (const id of categoryIds) {
     const category = categories.find((c) => c.id === id)
     if (!category) continue
-    pool.push(...category.terms)
+    for (const term of category.terms) {
+      if (termPasses(term, tagValues)) pool.push(term.name)
+    }
   }
   for (let i = pool.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1))
@@ -72,6 +82,9 @@ export default function App() {
   const [mode, setMode] = useState<GameMode>('in-person')
   const [difficultyBase, setDifficultyBase] = useState(HINTER_BASE)
   const [answers, setAnswers] = useState(ANSWERS_PER_GAME)
+  // Selected secondary-tag values (generations), locked at setup. Empty means no
+  // filter, deal from all. Like the other choices, kept so return-to-setup pre-fills.
+  const [secondaryValues, setSecondaryValues] = useState<number[]>([])
   // Confirm before the title returns to Setup mid-game.
   const [confirmReturn, setConfirmReturn] = useState(false)
 
@@ -101,12 +114,14 @@ export default function App() {
     ids: string[],
     chosenDifficultyBase: number,
     answersPerGame: number,
+    chosenSecondaryValues: number[],
   ) {
     setRoster(players)
     setCategoryIds(ids)
     setMode(chosenMode)
     setDifficultyBase(chosenDifficultyBase)
     setAnswers(answersPerGame)
+    setSecondaryValues(chosenSecondaryValues)
     // The session stores the derived cutoff; App keeps the raw base above for return.
     const hinterBase = cutoffFor(chosenDifficultyBase, answersPerGame)
     setSession(createSession(players.map((p) => p.id), chosenMode, hinterBase, answersPerGame))
@@ -120,7 +135,7 @@ export default function App() {
     const deck =
       session.mode === 'online-randomizer'
         ? []
-        : buildDeck(edition.categories, categoryIds, deckSizeFor(session.answersPerGame))
+        : buildDeck(edition.categories, categoryIds, secondaryValues, deckSizeFor(session.answersPerGame))
     setGame(
       createGame({
         players: roster.map((p) => p.id),
@@ -155,6 +170,7 @@ export default function App() {
     setMode('in-person')
     setDifficultyBase(HINTER_BASE)
     setAnswers(ANSWERS_PER_GAME)
+    setSecondaryValues([])
     setPhase('setup')
   }
 
@@ -214,11 +230,13 @@ export default function App() {
             onStart={handleStart}
             credits={edition.credits}
             categories={edition.categories}
+            secondaryTag={edition.secondaryTag}
             initialPlayers={roster.length ? roster : undefined}
             initialMode={mode}
             initialCategoryIds={categoryIds}
             initialDifficultyBase={difficultyBase}
             initialAnswers={answers}
+            initialSecondaryValues={secondaryValues}
           />
         )}
 

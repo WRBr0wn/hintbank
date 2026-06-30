@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import pokemon from '../editions/pokemon/data/pokemon.json'
-import { CATEGORIES } from '../editions/pokemon/data/categories'
+import { CATEGORIES, type Term } from '../editions/pokemon/data/categories'
 import ThemeToggle from '../components/ThemeToggle'
 import styles from './Randomizer.module.css'
 
@@ -16,10 +16,10 @@ const spriteUrl = (e: Entry) => (e.sprite ? `${base}${e.sprite}` : undefined)
 // names, so map a Pokemon name back to its sprite here, keyed by display name.
 const POKEMON_SPRITE = new Map(pokemon.map((p) => [p.displayName, p.sprite] as const))
 
-const entriesFor = (id: string, terms: string[]): Entry[] =>
+const entriesFor = (id: string, terms: Term[]): Entry[] =>
   id === 'pokemon'
-    ? terms.map((name) => ({ name, sprite: POKEMON_SPRITE.get(name) ?? undefined }))
-    : terms.map((name) => ({ name }))
+    ? terms.map((t) => ({ name: t.name, sprite: POKEMON_SPRITE.get(t.name) ?? undefined }))
+    : terms.map((t) => ({ name: t.name }))
 
 const TURN_SIZE = 10
 

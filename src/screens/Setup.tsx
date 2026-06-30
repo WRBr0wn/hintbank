@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 import Avatar from '../components/Avatar'
 import Footer from '../components/Footer'
 import type { Category, EditionCredits } from '../editions'
@@ -93,11 +93,13 @@ export default function Setup({
   onStart,
   credits,
   categories,
+  secondaryTag,
   initialPlayers,
   initialMode,
   initialCategoryIds,
   initialDifficultyBase,
   initialAnswers,
+  initialSecondaryValues,
 }: {
   // Setup hands back the player's raw choices. The difficulty base is the raw
   // preset (30/25/20), not the derived cutoff; App derives the cutoff and remembers
@@ -108,12 +110,16 @@ export default function Setup({
     categoryIds: string[],
     difficultyBase: number,
     answersPerGame: number,
+    secondaryValues: number[],
   ) => void
   // The active edition's footer credits, passed straight through to the Footer.
   credits: EditionCredits
   // The active edition's answer categories, rendered as the picker. Passed in so
   // Setup never reaches into edition data itself.
   categories: Category[]
+  // The edition's secondary tag, if it has one. Just a label; the values come from
+  // the selected categories' term data. Absent means no secondary selector.
+  secondaryTag?: { label: string }
   // Seeds the roster when returning to Setup mid-game, so the same players carry
   // over (names and avatars intact) and stay fully editable. Omitted on a fresh
   // start, which falls back to two blank players.
@@ -125,6 +131,7 @@ export default function Setup({
   initialCategoryIds?: string[]
   initialDifficultyBase?: number
   initialAnswers?: number
+  initialSecondaryValues?: number[]
 }) {
   const [players, setPlayers] = useState<Player[]>(() =>
     initialPlayers && initialPlayers.length > 0
@@ -141,6 +148,30 @@ export default function Setup({
   // at start. Both lock into the session then, like mode.
   const [difficultyBase, setDifficultyBase] = useState(initialDifficultyBase ?? HINTER_BASE)
   const [answers, setAnswers] = useState(initialAnswers ?? ANSWERS_PER_GAME)
+  // Chosen secondary-tag values. Held as a set; what actually applies is the
+  // intersection with the values currently available (see secondaryValues below),
+  // so deselecting a category drops its values without losing the rest.
+  const [secondaryPicks, setSecondaryPicks] = useState<Set<number>>(
+    () => new Set(initialSecondaryValues ?? []),
+  )
+
+  // The values offered by the chosen categories: the union of gens across their
+  // terms. Data-driven, so only generations actually present show, and the selector
+  // hides entirely when nothing tagged is selected.
+  const secondaryOptions = useMemo(() => {
+    const values = new Set<number>()
+    for (const c of categories) {
+      if (!selected.has(c.id)) continue
+      for (const t of c.terms) {
+        if (t.gens) for (const g of t.gens) values.add(g)
+      }
+    }
+    return [...values].sort((a, b) => a - b)
+  }, [categories, selected])
+
+  // What is both picked and still on offer. Passed to onStart and shown as active.
+  const secondaryValues = secondaryOptions.filter((v) => secondaryPicks.has(v))
+  const showSecondary = Boolean(secondaryTag) && secondaryOptions.length > 0
 
   function update(id: string, patch: Partial<Player>) {
     setPlayers((ps) => ps.map((p) => (p.id === id ? { ...p, ...patch } : p)))
@@ -168,6 +199,15 @@ export default function Setup({
     })
   }
 
+  function toggleSecondary(value: number) {
+    setSecondaryPicks((s) => {
+      const next = new Set(s)
+      if (next.has(value)) next.delete(value)
+      else next.add(value)
+      return next
+    })
+  }
+
   const names = players.map((p) => p.name.trim())
   const hasBlank = names.some((n) => n === '')
   const hasDupes = new Set(names.map((n) => n.toLowerCase())).size !== names.length
@@ -187,7 +227,7 @@ export default function Setup({
     if (!ready) return
     // Hand over the raw difficulty base; App derives the cutoff (and remembers the
     // raw base for round-tripping on return-to-setup).
-    onStart(players.map((p) => ({ ...p, name: p.name.trim() })), mode, [...selected], difficultyBase, answers)
+    onStart(players.map((p) => ({ ...p, name: p.name.trim() })), mode, [...selected], difficultyBase, answers, secondaryValues)
   }
 
   return (
@@ -386,6 +426,28 @@ export default function Setup({
                 )
               })}
             </div>
+            {showSecondary && secondaryTag && (
+              <div className={styles.secondary}>
+                <div className={styles.subLabel}>{secondaryTag.label}</div>
+                <div className={styles.categories}>
+                  {secondaryOptions.map((v) => {
+                    const on = secondaryPicks.has(v)
+                    return (
+                      <button
+                        key={v}
+                        type="button"
+                        className={on ? styles.catOn : styles.cat}
+                        aria-pressed={on}
+                        onClick={() => toggleSecondary(v)}
+                      >
+                        {v}
+                      </button>
+                    )
+                  })}
+                </div>
+                <p className={styles.note}>Pick one or more, or none for all.</p>
+              </div>
+            )}
             <p className={styles.note}>{answers} answers per turn. Settings lock once you start.</p>
           </>
         )}

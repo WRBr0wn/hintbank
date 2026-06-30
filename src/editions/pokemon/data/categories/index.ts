@@ -9,15 +9,13 @@ import items from './items.json'
 import routes from './routes.json'
 import badges from './badges.json'
 
-// Uniform term shape. Only name is read today; term extraction (the names helper
-// below) reads name and ignores everything else, so a category whose entries carry
-// extra fields drops in unchanged. sprite, gen, and gens are reserved so a future
-// per-term sprite or generation filter is pure data, no structural change. gen/gens
-// are arrays because a term can span multiple generations.
+// A dealt term: the display name plus its secondary-tag values (gens) when the
+// source entry carries them. The board only ever renders name; gens drive the
+// optional generation filter. A term without gens passes any filter through, so a
+// category drops in tagged or untagged with no config, the presence of the data in
+// the source is the only switch.
 export interface Term {
   name: string
-  sprite?: string
-  gen?: number[]
   gens?: number[]
 }
 
@@ -25,18 +23,22 @@ export interface Category {
   id: string
   label: string
   ready: boolean
-  terms: string[]
+  terms: Term[]
 }
 
-const names = (terms: Term[]) => terms.map((t) => t.name)
+// Pull each source entry down to a dealt term: its name, and gens only when the
+// entry has them. Entries may carry extra fields (type, city, ...); they are
+// ignored here.
+const terms = (entries: { name: string; gens?: number[] }[]): Term[] =>
+  entries.map((e) => (e.gens ? { name: e.name, gens: e.gens } : { name: e.name }))
 
 export const CATEGORIES: Category[] = [
-  { id: 'pokemon', label: 'Pokémon', ready: true, terms: pokemon.map((p) => p.displayName) },
-  { id: 'leaders', label: 'Gym Leaders', ready: true, terms: names(leaders) },
-  { id: 'towns', label: 'Towns & Cities', ready: true, terms: names(towns) },
-  { id: 'games', label: 'Games', ready: true, terms: names(games) },
-  { id: 'items', label: 'Items', ready: true, terms: names(items) },
-  { id: 'routes', label: 'Routes & Areas', ready: true, terms: names(routes) },
-  { id: 'badges', label: 'Badges', ready: true, terms: names(badges) },
+  { id: 'pokemon', label: 'Pokémon', ready: true, terms: pokemon.map((p) => ({ name: p.displayName, gens: p.gens })) },
+  { id: 'leaders', label: 'Gym Leaders', ready: true, terms: terms(leaders) },
+  { id: 'towns', label: 'Towns & Cities', ready: true, terms: terms(towns) },
+  { id: 'games', label: 'Games', ready: true, terms: terms(games) },
+  { id: 'items', label: 'Items', ready: true, terms: terms(items) },
+  { id: 'routes', label: 'Routes & Areas', ready: true, terms: terms(routes) },
+  { id: 'badges', label: 'Badges', ready: true, terms: terms(badges) },
   { id: 'professors', label: 'Professors', ready: false, terms: [] },
 ]
