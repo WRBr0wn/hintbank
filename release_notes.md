@@ -138,7 +138,7 @@ The Nintendo disclaimer and the PokéAPI attribution used to sit at the bottom o
 
 ### Hint Bank v3.1.0 - Editions Own Their Content, and Generations
 
-Last release gave editions their own identity. This one finishes the job: an edition now owns its answers and categories too, so it is a self-contained bundle rather than a name wrapped around shared data. On top of that foundation, the Pokémon edition gets its first content filter - play by generation.
+Last release gave editions their own identity. This one finishes the job: an edition now owns its answers and categories too, so it is a self-contained bundle rather than a name wrapped around shared data. On top of that foundation, the Pokémon edition gets another content filter - play by generation.
 
 ### Editions are self-contained now
 
@@ -148,7 +148,7 @@ The Pokémon edition's answers and categories used to live in a shared spot the 
 
 A new "Generation" filter at setup lets you narrow the Pokémon pool to the generations you want. Pick one, a few, or leave it alone for all of them.
 
-- **It is built generically.** Generation is the Pokémon edition's version of a broader idea: a secondary tag that subsets a category. A future edition could subset by region, era, or anything else using the same machinery - Generation is just what it is called here.
+- **It is built generically.** Generation is the Pokémon edition's version of a broader idea: a secondary tag that subsets a category. A future edition could subset by region, era, or anything else using the same machinery.
 - **It works wherever the data does.** Pokémon answers carry their generation, and so do Gym Leaders and Badges. Categories without that tag (like Games or Items right now) just pass through, so the filter never empties your pool unexpectedly. The selector only appears when the categories you have chosen actually carry generations.
 - **Add it where you like.** Because the filter keys off the data, tagging more answers with a generation later is a drop-in - they start showing up in the filter automatically.
 
