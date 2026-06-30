@@ -6,7 +6,7 @@ Hint Bank is a **general party game that ships as editions.** The current editio
 
 ## The idea
 
-One player is the **hinter** and holds 10 secret answers, revealed to them one at a time. They have to get everyone else to guess each answer, but they can only give hints using words from a **Hint Bank** capped at **40 words** for their whole turn. Words in the **Hint Bank** can be used as many times as the **Hinter** would like, even reusing the same hint to get the other players to try again.
+One player is the **hinter** and holds a set of secret answers (5 to 10, your call), revealed to them one at a time. They have to get everyone else to guess each answer, but they can only give hints using words from a **Hint Bank** capped at **40 words** for their whole turn. Words in the **Hint Bank** can be used as many times as the **Hinter** would like, even reusing the same hint to get the other players to try again.
 
 However you play, the app is the board, the rulekeeper, and the scoreboard. Hints and guesses happen out loud; the app tracks the Hint Bank, the score, and whose turn it is.
 
@@ -30,22 +30,32 @@ Pick one or more answer categories at setup. They mix into a single pool, so a t
 - **Games**
 - **Items**
 - **Routes & Areas**
+- **Badges**
 
-Badges and Professors are coming. In Randomizer mode, categories are picked on the randomizer page instead of at setup.
+Professors are coming. In Randomizer mode, categories are picked on the randomizer page instead of at setup.
+
+## Difficulty & turn length
+
+Two more dials at setup, both optional - the defaults are the original game.
+
+- **Difficulty** picks the hinter's starting cutoff for a full turn: **Easy (30)**, **Regular (25)**, or **Hard (20)**. The lower the cutoff, the sooner the score drains toward zero, so a sharper bank matters more.
+- **Answers per turn** sets how many answers a hinter holds, from **5 to 10**, for shorter or longer turns.
+
+The cutoff scales with turn length: the difficulty is the cutoff for a full 10-answer turn, and a shorter turn scales it down in proportion, so a 5-answer turn isn't secretly easier than a 10-answer one. The Hint Bank stays a hard 40 words either way - the cutoff is the lever, not the bank. The Hint Bank's color bands scale to your chosen cutoff, so the gauge always reads true.
 
 ## How a game flows
 
-1. The hinter knows the current secret answer (1 of 10) — shown on screen, or held privately, depending on the mode.
+1. The hinter knows the current secret answer (1 of however many you set) — shown on screen, or held privately, depending on the mode.
 2. They give a **hint**: any selection of one or more words from the Hint Bank, adding any number of new words first if there's room.
 3. Every other player gets **one guess**, out loud.
 4. Someone's right → the answer is tagged with that player and the next one comes up. Nobody's right → the hinter gives another hint.
-5. After all 10 are resolved, the finished board stays up to review, then the turn passes to the next hinter.
+5. After every answer is resolved, the finished board stays up to review, then the turn passes to the next hinter.
 
-**Stuck on an answer?** The hinter can **reroll** it for a fresh random one, but each reroll permanently burns one of the 40 Hint Bank slots. Once the bank is full, the hinter can **end the turn**, forfeiting the rest. A full bank already scores `25 − 40 = −15`, so a stalled turn is its own penalty.
+**Stuck on an answer?** The hinter can **reroll** it for a fresh random one, but each reroll permanently burns one of the 40 Hint Bank slots. Once the bank is full, the hinter can **end the turn**, forfeiting the rest. A full bank already scores `cutoff − 40` (on Regular, `25 − 40 = −15`), so a stalled turn is its own penalty.
 
 ## Scoring
 
-- **Hinter:** `25 − (Hint Bank entries)`. The less hint words and rerolls you have to use the more points you earn. Scores can go negative.
+- **Hinter:** `cutoff − (Hint Bank entries)`, where the cutoff comes from your difficulty (Regular is `25`). The less hint words and rerolls you have to use the more points you earn. Scores can go negative.
 - **Guessers:** `+1` for every answer you personally land. Guessing more than once on a single hint costs `−1` per extra guess.
 
 The hinter rotates so everyone hints once per **session**, and totals carry across the session. Highest score takes the crown!
@@ -68,7 +78,7 @@ Run `npm install` first on a fresh checkout, then:
 
 ## Roadmap
 
-Three modes are live now: In Person, Online: One Device, and Online + Randomizer, across six answer categories. Still ahead: full per-device online multiplayer (one screen per player, no passing), more categories (Badges, Professors, and beyond), and future editions behind the same engine.
+Three modes are live now: In Person, Online: One Device, and Online + Randomizer, across seven answer categories. Still ahead: full per-device online multiplayer (one screen per player, no passing), more categories (Professors and beyond), and future editions behind the same engine.
 
 ## Credit
 
