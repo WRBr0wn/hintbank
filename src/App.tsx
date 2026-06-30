@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react'
-import Setup from './screens/Setup'
+import Setup, { cutoffFor } from './screens/Setup'
 import PassToHinter from './screens/PassToHinter'
 import HinterPlay from './screens/HinterPlay'
 import Leaderboard from './screens/Leaderboard'
@@ -7,6 +7,9 @@ import ScoreBar from './components/ScoreBar'
 import ThemeToggle from './components/ThemeToggle'
 import ConfirmModal from './components/ConfirmModal'
 import {
+  ANSWERS_PER_GAME,
+  BANK_CAP,
+  HINTER_BASE,
   canEditMode,
   continueSession,
   createGame,
@@ -25,13 +28,15 @@ import styles from './App.module.css'
 
 type Phase = 'setup' | 'pass' | 'hinter' | 'leaderboard'
 
-// Enough draws to land 10 answers even after a bank's worth of rerolls.
-const DECK_SIZE = 60
+// Worst case a turn draws answersPerGame lands plus a full bank of rerolls, so the
+// deck needs that many cards. Derived from the settings rather than a magic number,
+// and slice naturally caps it at the pool size when a category is short.
+const deckSizeFor = (answersPerGame: number) => answersPerGame + BANK_CAP
 
 // Combine the selected categories into one shuffled pool, then take the deck off
 // the front. Every category's terms are stored display-ready, so they go in as-is
 // and the board renders them verbatim.
-function buildDeck(categoryIds: string[]): string[] {
+function buildDeck(categoryIds: string[], deckSize: number): string[] {
   const pool: string[] = []
   for (const id of categoryIds) {
     const category = CATEGORIES.find((c) => c.id === id)
@@ -42,7 +47,7 @@ function buildDeck(categoryIds: string[]): string[] {
     const j = Math.floor(Math.random() * (i + 1))
     ;[pool[i], pool[j]] = [pool[j], pool[i]]
   }
-  return pool.slice(0, DECK_SIZE)
+  return pool.slice(0, deckSize)
 }
 
 export default function App() {
@@ -53,6 +58,13 @@ export default function App() {
   // Selected answer categories, locked at setup. The engine never sees these; they
   // only decide which terms buildDeck pools.
   const [categoryIds, setCategoryIds] = useState<string[]>(['pokemon'])
+  // The rest of the raw setup choices, kept so return-to-setup can pre-fill every
+  // control. difficultyBase is the raw preset (30/25/20), not the derived cutoff:
+  // the session only stores the cutoff, so this is what lets the difficulty button
+  // round-trip without reverse-deriving it.
+  const [mode, setMode] = useState<GameMode>('in-person')
+  const [difficultyBase, setDifficultyBase] = useState(HINTER_BASE)
+  const [answers, setAnswers] = useState(ANSWERS_PER_GAME)
   // Confirm before the title returns to Setup mid-game.
   const [confirmReturn, setConfirmReturn] = useState(false)
 
@@ -61,10 +73,21 @@ export default function App() {
     return roster.find((p) => p.id === currentHinter(session)) ?? null
   }, [session, roster])
 
-  function handleStart(players: Player[], mode: GameMode, ids: string[]) {
+  function handleStart(
+    players: Player[],
+    chosenMode: GameMode,
+    ids: string[],
+    chosenDifficultyBase: number,
+    answersPerGame: number,
+  ) {
     setRoster(players)
     setCategoryIds(ids)
-    setSession(createSession(players.map((p) => p.id), mode))
+    setMode(chosenMode)
+    setDifficultyBase(chosenDifficultyBase)
+    setAnswers(answersPerGame)
+    // The session stores the derived cutoff; App keeps the raw base above for return.
+    const hinterBase = cutoffFor(chosenDifficultyBase, answersPerGame)
+    setSession(createSession(players.map((p) => p.id), chosenMode, hinterBase, answersPerGame))
     setPhase('pass')
   }
 
@@ -72,8 +95,19 @@ export default function App() {
     if (!hinter || !session) return
     // Randomizer is host-driven with no dealt deck. The host supplies each answer,
     // so the game runs deckless and nothing secret is ever put on the board.
-    const deck = session.mode === 'online-randomizer' ? [] : buildDeck(categoryIds)
-    setGame(createGame({ players: roster.map((p) => p.id), hinterId: hinter.id, deck }))
+    const deck =
+      session.mode === 'online-randomizer'
+        ? []
+        : buildDeck(categoryIds, deckSizeFor(session.answersPerGame))
+    setGame(
+      createGame({
+        players: roster.map((p) => p.id),
+        hinterId: hinter.id,
+        deck,
+        hinterBase: session.hinterBase,
+        answersPerGame: session.answersPerGame,
+      }),
+    )
     setPhase('hinter')
   }
 
@@ -96,17 +130,21 @@ export default function App() {
     setRoster([])
     setGame(null)
     setCategoryIds(['pokemon'])
+    setMode('in-person')
+    setDifficultyBase(HINTER_BASE)
+    setAnswers(ANSWERS_PER_GAME)
     setPhase('setup')
   }
 
-  // Title return: keep the roster so the same players carry into Setup, but drop
-  // the in-progress session, game, and scores. Categories reset here; mode and
-  // category selection are Setup-local and start fresh when it remounts. Unlike
-  // startOver, the roster is preserved (restart this group, not a full reset).
+  // Shared by the title return and the leaderboard's "Play again": keep the roster
+  // and every prior setup choice (mode, categories, difficulty, answers all persist
+  // in state and round-trip back into Setup), but drop the in-progress session,
+  // game, and scores. Unlike startOver, nothing resets to defaults: it restarts this
+  // group with their settings, ready to tweak. The next Start builds a fresh session,
+  // so totals reset to zero.
   function returnToSetup() {
     setSession(null)
     setGame(null)
-    setCategoryIds(['pokemon'])
     setConfirmReturn(false)
     setPhase('setup')
   }
@@ -140,7 +178,14 @@ export default function App() {
       </header>
       <main className={styles.main}>
         {phase === 'setup' && (
-          <Setup onStart={handleStart} initialPlayers={roster.length ? roster : undefined} />
+          <Setup
+            onStart={handleStart}
+            initialPlayers={roster.length ? roster : undefined}
+            initialMode={mode}
+            initialCategoryIds={categoryIds}
+            initialDifficultyBase={difficultyBase}
+            initialAnswers={answers}
+          />
         )}
 
         {phase === 'pass' && hinter && session && (
@@ -172,6 +217,7 @@ export default function App() {
             session={session}
             roster={roster}
             onContinue={continueRotation}
+            onPlayAgain={returnToSetup}
             onStartOver={startOver}
           />
         )}

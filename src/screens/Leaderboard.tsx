@@ -7,10 +7,11 @@ interface Props {
   session: SessionState
   roster: Player[]
   onContinue: () => void
+  onPlayAgain: () => void
   onStartOver: () => void
 }
 
-export default function Leaderboard({ session, roster, onContinue, onStartOver }: Props) {
+export default function Leaderboard({ session, roster, onContinue, onPlayAgain, onStartOver }: Props) {
   const crowned = new Set(leaders(session))
   const ranked = [...roster].sort(
     (a, b) => (session.totals[b.id] ?? 0) - (session.totals[a.id] ?? 0),
@@ -43,10 +44,13 @@ export default function Leaderboard({ session, roster, onContinue, onStartOver }
 
       <div className={styles.actions}>
         <button type="button" className={styles.continue} onClick={onContinue}>
-          Continue · keep totals
+          Continue
+        </button>
+        <button type="button" className={styles.playAgain} onClick={onPlayAgain}>
+          Play Again
         </button>
         <button type="button" className={styles.startOver} onClick={onStartOver}>
-          Start over
+          Reset Session
         </button>
       </div>
     </div>

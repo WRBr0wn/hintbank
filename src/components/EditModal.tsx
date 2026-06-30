@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react'
+import { useId, useState } from 'react'
+import { useModalFocus } from '../hooks/useModalFocus'
 import styles from './ConfirmModal.module.css'
 
 interface Props {
@@ -24,14 +25,8 @@ export default function EditModal({
   onCancel,
 }: Props) {
   const [value, setValue] = useState(initialValue)
-
-  useEffect(() => {
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onCancel()
-    }
-    document.addEventListener('keydown', onKey)
-    return () => document.removeEventListener('keydown', onKey)
-  }, [onCancel])
+  const dialogRef = useModalFocus(onCancel)
+  const labelId = useId()
 
   const submit = () => {
     if (value.trim()) onConfirm(value)
@@ -39,13 +34,20 @@ export default function EditModal({
 
   return (
     <div className={styles.backdrop} onClick={onCancel}>
-      <div className={styles.dialog} role="dialog" aria-modal="true" onClick={(e) => e.stopPropagation()}>
-        <p className={styles.message}>{label}</p>
+      <div
+        ref={dialogRef}
+        className={styles.dialog}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby={labelId}
+        tabIndex={-1}
+        onClick={(e) => e.stopPropagation()}
+      >
+        <p id={labelId} className={styles.message}>{label}</p>
         <input
           className={styles.input}
           value={value}
           maxLength={maxLength}
-          autoFocus
           onChange={(e) => setValue(e.target.value)}
           onKeyDown={(e) => e.key === 'Enter' && submit()}
         />

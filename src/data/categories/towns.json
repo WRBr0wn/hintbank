@@ -3,31 +3,55 @@
     "name": "Pallet Town"
   },
   {
-    "name": "Viridian City"
+    "name": "Viridian City",
+    "gens": [
+      1
+    ]
   },
   {
-    "name": "Pewter City"
+    "name": "Pewter City",
+    "gens": [
+      1
+    ]
   },
   {
-    "name": "Cerulean City"
+    "name": "Cerulean City",
+    "gens": [
+      1
+    ]
   },
   {
-    "name": "Vermilion City"
+    "name": "Vermilion City",
+    "gens": [
+      1
+    ]
   },
   {
     "name": "Lavender Town"
   },
   {
-    "name": "Celadon City"
+    "name": "Celadon City",
+    "gens": [
+      1
+    ]
   },
   {
-    "name": "Fuchsia City"
+    "name": "Fuchsia City",
+    "gens": [
+      1
+    ]
   },
   {
-    "name": "Saffron City"
+    "name": "Saffron City",
+    "gens": [
+      1
+    ]
   },
   {
-    "name": "Cinnabar Island"
+    "name": "Cinnabar Island",
+    "gens": [
+      1
+    ]
   },
   {
     "name": "New Bark Town"
@@ -36,19 +60,34 @@
     "name": "Cherrygrove City"
   },
   {
-    "name": "Violet City"
+    "name": "Violet City",
+    "gens": [
+      2
+    ]
   },
   {
-    "name": "Goldenrod City"
+    "name": "Goldenrod City",
+    "gens": [
+      2
+    ]
   },
   {
-    "name": "Ecruteak City"
+    "name": "Ecruteak City",
+    "gens": [
+      2
+    ]
   },
   {
-    "name": "Olivine City"
+    "name": "Olivine City",
+    "gens": [
+      2
+    ]
   },
   {
-    "name": "Blackthorn City"
+    "name": "Blackthorn City",
+    "gens": [
+      2
+    ]
   },
   {
     "name": "Littleroot Town"
@@ -57,13 +96,22 @@
     "name": "Oldale Town"
   },
   {
-    "name": "Petalburg City"
+    "name": "Petalburg City",
+    "gens": [
+      3
+    ]
   },
   {
-    "name": "Rustboro City"
+    "name": "Rustboro City",
+    "gens": [
+      3
+    ]
   },
   {
-    "name": "Mauville City"
+    "name": "Mauville City",
+    "gens": [
+      3
+    ]
   },
   {
     "name": "Slateport City"
@@ -72,10 +120,16 @@
     "name": "Lilycove City"
   },
   {
-    "name": "Fortree City"
+    "name": "Fortree City",
+    "gens": [
+      3
+    ]
   },
   {
-    "name": "Sootopolis City"
+    "name": "Sootopolis City",
+    "gens": [
+      3
+    ]
   },
   {
     "name": "Twinleaf Town"
@@ -87,30 +141,303 @@
     "name": "Sandgem Town"
   },
   {
-    "name": "Eterna City"
+    "name": "Eterna City",
+    "gens": [
+      4
+    ]
   },
   {
-    "name": "Hearthome City"
+    "name": "Hearthome City",
+    "gens": [
+      4
+    ]
   },
   {
-    "name": "Snowpoint City"
+    "name": "Snowpoint City",
+    "gens": [
+      4
+    ]
   },
   {
-    "name": "Sunyshore City"
+    "name": "Sunyshore City",
+    "gens": [
+      4
+    ]
   },
   {
-    "name": "Castelia City"
+    "name": "Castelia City",
+    "gens": [
+      5
+    ]
   },
   {
-    "name": "Nimbasa City"
+    "name": "Nimbasa City",
+    "gens": [
+      5
+    ]
   },
   {
-    "name": "Lumiose City"
+    "name": "Lumiose City",
+    "gens": [
+      6
+    ]
   },
   {
     "name": "Hau'oli City"
   },
   {
     "name": "Iki Town"
+  },
+  {
+    "name": "Alfornada",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Anistar City",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Artazon",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Aspertia City",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Azalea Town",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Ballonlea",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Canalave City",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Cascarrafa",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Cianwood City",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Circhester",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Cortondo",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Coumarine City",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Cyllage City",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Dewford Town",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Driftveil City",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Glaseado Mountain",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Hammerlocke",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Hulbury",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Humilau City",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Icirrus City",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Lavaridge Town",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Laverre City",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Levincia",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Mahogany Town",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Medali",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Mistralton City",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Montenevera",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Mossdeep City",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Motostoke",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Nacrene City",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Opelucid City",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Oreburgh City",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Pastoria City",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Santalune City",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Shalour City",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Snowbelle City",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Spikemuth",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Stow-on-Side",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Striaton City",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Turffield",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Veilstone City",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Virbank City",
+    "gens": [
+      5
+    ]
   }
 ]

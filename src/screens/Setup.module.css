@@ -207,6 +207,82 @@
   color: var(--text-muted);
 }
 
+/* Small section sub-heading for the two Game settings (Difficulty, Answers). */
+.subLabel {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+/* Quiet text button in the Game section head; returns the settings to defaults. */
+.reset {
+  font-size: 0.85rem;
+  color: var(--text-2);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.reset:hover {
+  color: var(--accent-ink);
+  text-decoration: underline;
+}
+
+/* The two Game controls sit side-by-side when there is room and wrap to a stack
+   when the screen is too narrow, so no fixed breakpoint is needed. flex-start keeps
+   the groups top-aligned even when one is taller. */
+.gameControls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 0.85rem 2rem;
+}
+
+/* One control group: its sub-label stacked above its control (and any note). */
+.controlGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.stepper {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.step {
+  flex: 0 0 auto;
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1.3rem;
+  line-height: 1;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.7rem;
+  cursor: pointer;
+}
+
+.step:hover:not(:disabled) {
+  border-color: var(--accent);
+}
+
+.step:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.stepValue {
+  min-width: 2ch;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-align: center;
+}
+
 /* Small button for the optional draw tool. Matches the play board and pass
    screen so the randomizer link looks the same wherever it shows up. */
 .randomizerLink {

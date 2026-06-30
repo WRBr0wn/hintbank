@@ -7,14 +7,18 @@ import towns from './towns.json'
 import games from './games.json'
 import items from './items.json'
 import routes from './routes.json'
+import badges from './badges.json'
 
-// Uniform term shape. Only name is read today. sprite and gen are reserved so a
-// future per-term sprite or generation filter is pure data, no structural change.
-// gen is an array because a term can span multiple generations.
+// Uniform term shape. Only name is read today; term extraction (the names helper
+// below) reads name and ignores everything else, so a category whose entries carry
+// extra fields drops in unchanged. sprite, gen, and gens are reserved so a future
+// per-term sprite or generation filter is pure data, no structural change. gen/gens
+// are arrays because a term can span multiple generations.
 export interface Term {
   name: string
   sprite?: string
   gen?: number[]
+  gens?: number[]
 }
 
 export interface Category {
@@ -33,6 +37,6 @@ export const CATEGORIES: Category[] = [
   { id: 'games', label: 'Games', ready: true, terms: names(games) },
   { id: 'items', label: 'Items', ready: true, terms: names(items) },
   { id: 'routes', label: 'Routes & Areas', ready: true, terms: names(routes) },
-  { id: 'badges', label: 'Badges', ready: false, terms: [] },
+  { id: 'badges', label: 'Badges', ready: true, terms: names(badges) },
   { id: 'professors', label: 'Professors', ready: false, terms: [] },
 ]

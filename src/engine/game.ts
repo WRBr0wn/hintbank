@@ -12,16 +12,26 @@ interface NewGame {
   // Deck modes pass a shuffled deck. Host-driven modes pass nothing: the host
   // supplies each answer instead, so the game runs with an empty deck.
   deck?: Answer[]
+  // Per-session settings, locked into the game. Omitted by callers and tests that
+  // want the defaults (a Regular cutoff and 10 answers).
+  hinterBase?: number
+  answersPerGame?: number
 }
 
-export function createGame({ players, hinterId, deck = [] }: NewGame): GameState {
+export function createGame({
+  players,
+  hinterId,
+  deck = [],
+  hinterBase = HINTER_BASE,
+  answersPerGame = ANSWERS_PER_GAME,
+}: NewGame): GameState {
   if (!players.includes(hinterId)) {
     throw new Error('hinter must be one of the players')
   }
-  // A dealt deck needs enough cards to land 10 answers even after a bank's worth
+  // A dealt deck needs enough cards to land every answer even after a bank's worth
   // of rerolls. An empty deck means a host mode, where there is nothing to draw.
-  if (deck.length > 0 && deck.length < ANSWERS_PER_GAME) {
-    throw new Error(`deck needs at least ${ANSWERS_PER_GAME} answers`)
+  if (deck.length > 0 && deck.length < answersPerGame) {
+    throw new Error(`deck needs at least ${answersPerGame} answers`)
   }
   return {
     players,
@@ -37,6 +47,8 @@ export function createGame({ players, hinterId, deck = [] }: NewGame): GameState
     endedEarly: false,
     phase: 'hinting',
     status: 'playing',
+    hinterBase,
+    answersPerGame,
   }
 }
 
@@ -112,7 +124,7 @@ export function resolveHint(s: GameState, outcome: Resolution = {}): GameState {
 
   const answer = outcome.answer ?? s.deck[s.cursor]
   const resolved = s.resolved + 1
-  const done = resolved >= ANSWERS_PER_GAME
+  const done = resolved >= s.answersPerGame
   return {
     ...s,
     overguesses,
@@ -174,7 +186,7 @@ export function endTurn(s: GameState): GameState {
 // counter for the UI and stays out of scoring on purpose. Ending early is not
 // penalized: endedEarly is recorded but does not affect the score.
 export function hinterScore(s: GameState): number {
-  return HINTER_BASE - s.bank.length
+  return s.hinterBase - s.bank.length
 }
 
 export function guesserScore(s: GameState, playerId: string): number {

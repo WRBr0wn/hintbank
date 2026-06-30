@@ -1,10 +1,17 @@
-import type { GameMode, SessionState } from './types'
+import { ANSWERS_PER_GAME, HINTER_BASE, type GameMode, type SessionState } from './types'
 
-export function createSession(players: string[], mode: GameMode = 'in-person'): SessionState {
+export function createSession(
+  players: string[],
+  mode: GameMode = 'in-person',
+  // Difficulty cutoff and answers per turn, chosen at setup. Default to a Regular
+  // cutoff and 10 answers, the original behavior, when a caller omits them.
+  hinterBase: number = HINTER_BASE,
+  answersPerGame: number = ANSWERS_PER_GAME,
+): SessionState {
   if (players.length < 2) throw new Error('a session needs at least 2 players')
   const totals: Record<string, number> = {}
   for (const p of players) totals[p] = 0
-  return { players, totals, mode, hinterPosition: 0, completedRotations: 0 }
+  return { players, totals, mode, hinterBase, answersPerGame, hinterPosition: 0, completedRotations: 0 }
 }
 
 export const currentHinter = (s: SessionState): string | null =>

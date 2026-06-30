@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Avatar from '../components/Avatar'
 import Footer from '../components/Footer'
-import { ANSWERS_PER_GAME, type GameMode } from '../engine'
+import { ANSWERS_PER_GAME, HINTER_BASE, type GameMode } from '../engine'
 import { CATEGORIES } from '../data/categories'
 import type { Player, PlayerAvatar } from '../types'
 import styles from './Setup.module.css'
@@ -67,6 +67,23 @@ const MODES: { id: GameMode; label: string; ready: boolean }[] = [
 const MIN_PLAYERS = 2
 const MAX_PLAYERS = 8
 
+// Difficulty picks a base: the clue cutoff for a full 10-answer game. The player
+// picks a preset, not a raw number; Regular is the default and the original 25.
+const DIFFICULTIES: { id: string; label: string; base: number }[] = [
+  { id: 'easy', label: 'Easy', base: 30 },
+  { id: 'regular', label: 'Regular', base: 25 },
+  { id: 'hard', label: 'Hard', base: 20 },
+]
+
+const MIN_ANSWERS = 5
+const MAX_ANSWERS = 10
+const clampAnswers = (n: number) => Math.max(MIN_ANSWERS, Math.min(MAX_ANSWERS, n))
+
+// The cutoff scales with answer count: the base is the cutoff for a full 10-answer
+// game, and a shorter game scales it down in proportion (round-half-up). A full
+// game leaves the base unchanged, so the defaults still pass 25.
+export const cutoffFor = (base: number, answers: number) => Math.round(base * (answers / ANSWERS_PER_GAME))
+
 function makePlayer(used: string[]): Player {
   const avatar = AVATARS.find((a) => !used.includes(avatarKey(a))) ?? AVATARS[0]
   return { id: crypto.randomUUID(), name: '', avatar }
@@ -75,12 +92,32 @@ function makePlayer(used: string[]): Player {
 export default function Setup({
   onStart,
   initialPlayers,
+  initialMode,
+  initialCategoryIds,
+  initialDifficultyBase,
+  initialAnswers,
 }: {
-  onStart: (players: Player[], mode: GameMode, categoryIds: string[]) => void
+  // Setup hands back the player's raw choices. The difficulty base is the raw
+  // preset (30/25/20), not the derived cutoff; App derives the cutoff and remembers
+  // the raw base so it can round-trip on return.
+  onStart: (
+    players: Player[],
+    mode: GameMode,
+    categoryIds: string[],
+    difficultyBase: number,
+    answersPerGame: number,
+  ) => void
   // Seeds the roster when returning to Setup mid-game, so the same players carry
   // over (names and avatars intact) and stay fully editable. Omitted on a fresh
   // start, which falls back to two blank players.
   initialPlayers?: Player[]
+  // The rest of the prior choices, seeded the same way on return-to-setup so every
+  // control restores to what was picked. All omitted on a fresh start, where each
+  // falls back to the default below.
+  initialMode?: GameMode
+  initialCategoryIds?: string[]
+  initialDifficultyBase?: number
+  initialAnswers?: number
 }) {
   const [players, setPlayers] = useState<Player[]>(() =>
     initialPlayers && initialPlayers.length > 0
@@ -88,8 +125,15 @@ export default function Setup({
       : [makePlayer([]), makePlayer([avatarKey(AVATARS[0])])],
   )
   const [pickerFor, setPickerFor] = useState<string | null>(null)
-  const [selected, setSelected] = useState<Set<string>>(() => new Set(['pokemon']))
-  const [mode, setMode] = useState<GameMode>('in-person')
+  const [selected, setSelected] = useState<Set<string>>(() =>
+    new Set(initialCategoryIds && initialCategoryIds.length > 0 ? initialCategoryIds : ['pokemon']),
+  )
+  const [mode, setMode] = useState<GameMode>(initialMode ?? 'in-person')
+  // Difficulty is stored as its base (the full-game cutoff), so a preset is "on"
+  // when its base matches. The actual cutoff is derived from base and answer count
+  // at start. Both lock into the session then, like mode.
+  const [difficultyBase, setDifficultyBase] = useState(initialDifficultyBase ?? HINTER_BASE)
+  const [answers, setAnswers] = useState(initialAnswers ?? ANSWERS_PER_GAME)
 
   function update(id: string, patch: Partial<Player>) {
     setPlayers((ps) => ps.map((p) => (p.id === id ? { ...p, ...patch } : p)))
@@ -127,9 +171,16 @@ export default function Setup({
       : null
   const ready = !problem && selected.size > 0
 
+  function resetDefaults() {
+    setDifficultyBase(HINTER_BASE)
+    setAnswers(ANSWERS_PER_GAME)
+  }
+
   function start() {
     if (!ready) return
-    onStart(players.map((p) => ({ ...p, name: p.name.trim() })), mode, [...selected])
+    // Hand over the raw difficulty base; App derives the cutoff (and remembers the
+    // raw base for round-tripping on return-to-setup).
+    onStart(players.map((p) => ({ ...p, name: p.name.trim() })), mode, [...selected], difficultyBase, answers)
   }
 
   return (
@@ -156,6 +207,63 @@ export default function Setup({
               </button>
             )
           })}
+        </div>
+      </section>
+
+      <section className={styles.section}>
+        <div className={styles.sectionHead}>
+          <h2>Game</h2>
+          <button type="button" className={styles.reset} onClick={resetDefaults}>
+            Reset to defaults
+          </button>
+        </div>
+
+        <div className={styles.gameControls}>
+          <div className={styles.controlGroup}>
+            <div className={styles.subLabel}>Difficulty</div>
+            <div className={styles.categories}>
+              {DIFFICULTIES.map((d) => {
+                const on = difficultyBase === d.base
+                return (
+                  <button
+                    key={d.id}
+                    type="button"
+                    className={on ? styles.catOn : styles.cat}
+                    aria-pressed={on}
+                    onClick={() => setDifficultyBase(d.base)}
+                  >
+                    {d.label}
+                  </button>
+                )
+              })}
+            </div>
+          </div>
+
+          <div className={styles.controlGroup}>
+            <div className={styles.subLabel}>Answers per turn</div>
+            <div className={styles.stepper}>
+              <button
+                type="button"
+                className={styles.step}
+                onClick={() => setAnswers((n) => clampAnswers(n - 1))}
+                disabled={answers <= MIN_ANSWERS}
+                aria-label="Fewer answers"
+              >
+                −
+              </button>
+              <span className={styles.stepValue}>{answers}</span>
+              <button
+                type="button"
+                className={styles.step}
+                onClick={() => setAnswers((n) => clampAnswers(n + 1))}
+                disabled={answers >= MAX_ANSWERS}
+                aria-label="More answers"
+              >
+                +
+              </button>
+            </div>
+            <span className={styles.note}>{MIN_ANSWERS}–{MAX_ANSWERS} answers to land per turn.</span>
+          </div>
         </div>
       </section>
 
@@ -271,7 +379,7 @@ export default function Setup({
                 )
               })}
             </div>
-            <p className={styles.note}>{ANSWERS_PER_GAME} answers per turn. Settings lock once you start.</p>
+            <p className={styles.note}>{answers} answers per turn. Settings lock once you start.</p>
           </>
         )}
       </section>
