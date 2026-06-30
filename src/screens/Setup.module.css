@@ -256,6 +256,16 @@
   gap: 0.6rem;
 }
 
+/* Stepper and its note. On narrow widths the note wraps under the stepper rather
+   than overflowing. To compare placements, swap the two flex lines below. */
+.stepperRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1rem;
+
+  flex-direction: row; align-items: center;
+}
+
 .stepper {
   display: flex;
   align-items: center;

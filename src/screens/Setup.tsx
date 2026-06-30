@@ -288,28 +288,30 @@ export default function Setup({
 
           <div className={styles.controlGroup}>
             <div className={styles.subLabel}>Answers per turn</div>
-            <div className={styles.stepper}>
-              <button
-                type="button"
-                className={styles.step}
-                onClick={() => setAnswers((n) => clampAnswers(n - 1))}
-                disabled={answers <= MIN_ANSWERS}
-                aria-label="Fewer answers"
-              >
-                −
-              </button>
-              <span className={styles.stepValue}>{answers}</span>
-              <button
-                type="button"
-                className={styles.step}
-                onClick={() => setAnswers((n) => clampAnswers(n + 1))}
-                disabled={answers >= MAX_ANSWERS}
-                aria-label="More answers"
-              >
-                +
-              </button>
+            <div className={styles.stepperRow}>
+              <div className={styles.stepper}>
+                <button
+                  type="button"
+                  className={styles.step}
+                  onClick={() => setAnswers((n) => clampAnswers(n - 1))}
+                  disabled={answers <= MIN_ANSWERS}
+                  aria-label="Fewer answers"
+                >
+                  −
+                </button>
+                <span className={styles.stepValue}>{answers}</span>
+                <button
+                  type="button"
+                  className={styles.step}
+                  onClick={() => setAnswers((n) => clampAnswers(n + 1))}
+                  disabled={answers >= MAX_ANSWERS}
+                  aria-label="More answers"
+                >
+                  +
+                </button>
+              </div>
+              <span className={styles.note}>{MIN_ANSWERS}–{MAX_ANSWERS} answers to land per turn.</span>
             </div>
-            <span className={styles.note}>{MIN_ANSWERS}–{MAX_ANSWERS} answers to land per turn.</span>
           </div>
         </div>
       </section>
@@ -448,7 +450,7 @@ export default function Setup({
                 <p className={styles.note}>Pick one or more, or none for all.</p>
               </div>
             )}
-            <p className={styles.note}>{answers} answers per turn. Settings lock once you start.</p>
+            <p className={styles.note}>Settings lock once you start.</p>
           </>
         )}
       </section>

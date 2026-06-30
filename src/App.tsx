@@ -23,7 +23,7 @@ import {
   type GameState,
   type SessionState,
 } from './engine'
-import { editionById, type Category, type Term } from './editions'
+import { editionById, termPasses, type Category } from './editions'
 import type { Player } from './types'
 import styles from './App.module.css'
 
@@ -33,15 +33,6 @@ type Phase = 'setup' | 'pass' | 'hinter' | 'leaderboard'
 // deck needs that many cards. Derived from the settings rather than a magic number,
 // and slice naturally caps it at the pool size when a category is short.
 const deckSizeFor = (answersPerGame: number) => answersPerGame + BANK_CAP
-
-// A term is in the pool when no tag values are selected (filter off), when it
-// carries a selected value, or when it has no tag values at all. The last case is
-// pass-through: untagged terms stay in alongside a tagged selection.
-function termPasses(term: Term, tagValues: number[]): boolean {
-  if (tagValues.length === 0) return true
-  if (!term.gens || term.gens.length === 0) return true
-  return term.gens.some((g) => tagValues.includes(g))
-}
 
 // Combine the selected categories into one shuffled pool, then take the deck off
 // the front. Categories come from the active edition, so the platform holds no

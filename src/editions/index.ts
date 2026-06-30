@@ -7,6 +7,7 @@ import { CATEGORIES, type Category } from './pokemon/data/categories'
 // Re-exported so the platform refers to category types through the edition module
 // rather than reaching into an edition's data folder.
 export type { Category, Term } from './pokemon/data/categories'
+export { termPasses } from './terms'
 
 export interface CreditLink {
   label: string
