@@ -114,7 +114,7 @@ When a session wraps you now get three clear choices: Continue, Play Again, or R
 
 ### Hint Bank v3.0.0 - Hint Bank Complete, Editions
 
-The big one. Hint Bank was always meant to be a general party game that ships as editions, not a Pokémon app with that idea bolted on. This release makes it real: the app now opens on a main menu where you pick an edition, and Pokémon is the first one built out. Everything you already play is intact - it just lives inside an edition now, with room for more alongside it.
+The big one. Hint Bank was always meant to be a general party game that ships as editions, not a Pokémon app with that idea bolted on. This release lays the foundation: the app now opens on a main menu where you pick an edition, and Pokémon is the first one built out. Everything you already play is intact, with room for more editions alongside it.
 
 ### Pick an edition
 
@@ -122,9 +122,9 @@ The big one. Hint Bank was always meant to be a general party game that ships as
 - **Pokémon is live.** The full edition - every category, every mode, the National Dex - is right where it was, just one tap further in.
 - **More on the way.** Geography, Books, and Marvel show on the menu as "soon," the same way Professors sits as a coming category inside the Pokémon edition. They are placeholders for now, marking where the next editions land.
 
-### What an edition actually is
+### What an edition is
 
-Each edition is self-contained: it brings its own answers and categories, its own name, and its own credits and disclaimers. The rules engine underneath knows nothing about Pokémon or any other subject, so a new edition is a drop-in rather than a rewrite. This is the groundwork that lets editions built from scratch - geography, books - exist without any of the Pokémon-specific baggage.
+An edition owns its identity: its name, its tagline on the menu, and its own credits and disclaimers. The rules engine underneath knows nothing about Pokémon or any other subject, so the platform renders whatever the active edition declares. This release lays the foundation - the menu, the edition identity, and the credit scoping. An edition owning its own answers and categories is the next step, coming in the next release.
 
 ### Credits moved where they belong
 
