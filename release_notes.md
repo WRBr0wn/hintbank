@@ -110,3 +110,27 @@ When a session wraps you now get three clear choices: Continue, Play Again, or R
 ### Accessibility
 - **Keyboard-friendly modals.** The confirm and edit dialogs now trap focus while open, so Tab and Shift+Tab cycle inside the dialog instead of wandering off behind it. Focus moves into the dialog when it opens and returns to whatever you were on when it closes, and Escape still cancels.
 - Both dialogs now carry an accessible name for screen readers.
+
+
+### Hint Bank v3.0.0 - Hint Bank Complete, Editions
+
+The big one. Hint Bank was always meant to be a general party game that ships as editions, not a Pokémon app with that idea bolted on. This release makes it real: the app now opens on a main menu where you pick an edition, and Pokémon is the first one built out. Everything you already play is intact - it just lives inside an edition now, with room for more alongside it.
+
+### Pick an edition
+
+- **A main menu up front.** The app opens on a "Hint Bank Complete" menu instead of dropping straight into Pokémon setup. Pick an edition, then set up your game as usual.
+- **Pokémon is live.** The full edition - every category, every mode, the National Dex - is right where it was, just one tap further in.
+- **More on the way.** Geography, Books, and Marvel show on the menu as "soon," the same way Professors sits as a coming category inside the Pokémon edition. They are placeholders for now, marking where the next editions land.
+
+### What an edition actually is
+
+Each edition is self-contained: it brings its own answers and categories, its own name, and its own credits and disclaimers. The rules engine underneath knows nothing about Pokémon or any other subject, so a new edition is a drop-in rather than a rewrite. This is the groundwork that lets editions built from scratch - geography, books - exist without any of the Pokémon-specific baggage.
+
+### Credits moved where they belong
+
+The Nintendo disclaimer and the PokéAPI attribution used to sit at the bottom of the whole app. They now belong to the Pokémon edition specifically, because that is what they are about. An edition built from scratch carries its own credits, or none. You will see this on the Pokémon setup screen exactly as before - same text, now edition-driven rather than hardcoded.
+
+### Tidying up
+
+- Pokémon sprites moved into the edition's own folder, so each edition keeps its assets to itself. The retired sprite scraper scripts are gone for good; the data is hand-owned now.
+- The randomizer follows the new sprite location and plays the same as ever.

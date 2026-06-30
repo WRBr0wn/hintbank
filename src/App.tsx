@@ -202,7 +202,9 @@ export default function App() {
             Hint Bank
           </h1>
         )}
-        {edition && <p className={styles.edition}>{edition.displayName} Edition</p>}
+        {/* Same tag treatment across the app: each edition's name in-game, and
+            "Complete" on the menu, the product that sits over all editions. */}
+        <p className={styles.edition}>{edition ? `${edition.displayName} Edition` : 'Complete'}</p>
       </header>
       <main className={styles.main}>
         {!edition && <Menu onSelect={selectEdition} />}
