@@ -11,21 +11,20 @@ type Entry = { name: string; sprite?: string }
 const base = import.meta.env.BASE_URL
 const spriteUrl = (e: Entry) => (e.sprite ? `${base}${e.sprite}` : undefined)
 
-// The single place the edition is chosen. The next step derives this from the URL;
-// for now the randomizer always plays the Pokemon edition. Everything below reads
-// from this edition, so nothing else mentions Pokemon by name.
-const EDITION_ID = 'pokemon'
-const edition = editionById(EDITION_ID)
-const categories = edition?.categories ?? []
-const secondaryTag = edition?.secondaryTag
-
 // The answer target is a soft hint, matching the game's 5 to 10 range. The board
 // enforces the real limit; here it only drives the count and the full state.
 const MIN_TARGET = 5
 const MAX_TARGET = 10
-const clampTarget = (n: number) => Math.max(MIN_TARGET, Math.min(MAX_TARGET, n))
+// Truncate toward zero first so the target is a whole count, then clamp the range.
+const clampTarget = (n: number) => Math.max(MIN_TARGET, Math.min(MAX_TARGET, Math.trunc(n)))
 
-export default function Randomizer() {
+// The edition is supplied by the page entry, so this component is reusable across
+// editions and reads everything edition-specific off the one it is given.
+export default function Randomizer({ editionId }: { editionId: string }) {
+  const edition = editionById(editionId)
+  const categories = edition?.categories ?? []
+  const secondaryTag = edition?.secondaryTag
+
   const [selected, setSelected] = useState<Set<string>>(() => {
     const first = categories.find((c) => c.ready)?.id
     return new Set(first ? [first] : [])

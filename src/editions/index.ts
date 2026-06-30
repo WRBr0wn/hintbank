@@ -118,3 +118,10 @@ export const EDITIONS: Edition[] = [
 export function editionById(id: string): Edition | undefined {
   return EDITIONS.find((e) => e.id === id)
 }
+
+// The randomizer page path for an edition, e.g. /hintbank/pokemon-edition/randomizer/.
+// One convention, shared by the selector and the in-game launch links, so adding an
+// edition's randomizer is just its HTML entry plus a tile that lands here.
+export function randomizerPath(editionId: string): string {
+  return `${import.meta.env.BASE_URL}${editionId}-edition/randomizer/`
+}

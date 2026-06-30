@@ -3,10 +3,10 @@ import { createRoot } from 'react-dom/client'
 import '../index.css'
 import Randomizer from './Randomizer'
 
-// Second Vite entry point. This page is a standalone tool with no link to the
-// game app: it only draws Pokemon for the hinter to read aloud and type in.
+// Pokemon randomizer entry. The edition is fixed by which page this is and passed
+// into the shared Randomizer component. A new edition adds its own entry like this.
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <Randomizer />
+    <Randomizer editionId="pokemon" />
   </StrictMode>,
 )
