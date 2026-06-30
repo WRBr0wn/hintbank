@@ -1,15 +1,13 @@
 {
   "name": "hintbank",
   "private": true,
-  "version": "2.5.0",
+  "version": "3.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
-    "test": "vitest",
-    "scrape": "node scripts/scrape-pokemon.js",
-    "scrape:sprites": "node scripts/scrape-sprites.js"
+    "test": "vitest"
   },
   "dependencies": {
     "react": "^19.1.0",

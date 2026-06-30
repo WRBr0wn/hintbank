@@ -3,6150 +3,6150 @@
     "id": "bulbasaur",
     "displayName": "Bulbasaur",
     "dexNumber": 1,
-    "sprite": "sprites/1.png"
+    "sprite": "editions/pokemon/sprites/1.png"
   },
   {
     "id": "ivysaur",
     "displayName": "Ivysaur",
     "dexNumber": 2,
-    "sprite": "sprites/2.png"
+    "sprite": "editions/pokemon/sprites/2.png"
   },
   {
     "id": "venusaur",
     "displayName": "Venusaur",
     "dexNumber": 3,
-    "sprite": "sprites/3.png"
+    "sprite": "editions/pokemon/sprites/3.png"
   },
   {
     "id": "charmander",
     "displayName": "Charmander",
     "dexNumber": 4,
-    "sprite": "sprites/4.png"
+    "sprite": "editions/pokemon/sprites/4.png"
   },
   {
     "id": "charmeleon",
     "displayName": "Charmeleon",
     "dexNumber": 5,
-    "sprite": "sprites/5.png"
+    "sprite": "editions/pokemon/sprites/5.png"
   },
   {
     "id": "charizard",
     "displayName": "Charizard",
     "dexNumber": 6,
-    "sprite": "sprites/6.png"
+    "sprite": "editions/pokemon/sprites/6.png"
   },
   {
     "id": "squirtle",
     "displayName": "Squirtle",
     "dexNumber": 7,
-    "sprite": "sprites/7.png"
+    "sprite": "editions/pokemon/sprites/7.png"
   },
   {
     "id": "wartortle",
     "displayName": "Wartortle",
     "dexNumber": 8,
-    "sprite": "sprites/8.png"
+    "sprite": "editions/pokemon/sprites/8.png"
   },
   {
     "id": "blastoise",
     "displayName": "Blastoise",
     "dexNumber": 9,
-    "sprite": "sprites/9.png"
+    "sprite": "editions/pokemon/sprites/9.png"
   },
   {
     "id": "caterpie",
     "displayName": "Caterpie",
     "dexNumber": 10,
-    "sprite": "sprites/10.png"
+    "sprite": "editions/pokemon/sprites/10.png"
   },
   {
     "id": "metapod",
     "displayName": "Metapod",
     "dexNumber": 11,
-    "sprite": "sprites/11.png"
+    "sprite": "editions/pokemon/sprites/11.png"
   },
   {
     "id": "butterfree",
     "displayName": "Butterfree",
     "dexNumber": 12,
-    "sprite": "sprites/12.png"
+    "sprite": "editions/pokemon/sprites/12.png"
   },
   {
     "id": "weedle",
     "displayName": "Weedle",
     "dexNumber": 13,
-    "sprite": "sprites/13.png"
+    "sprite": "editions/pokemon/sprites/13.png"
   },
   {
     "id": "kakuna",
     "displayName": "Kakuna",
     "dexNumber": 14,
-    "sprite": "sprites/14.png"
+    "sprite": "editions/pokemon/sprites/14.png"
   },
   {
     "id": "beedrill",
     "displayName": "Beedrill",
     "dexNumber": 15,
-    "sprite": "sprites/15.png"
+    "sprite": "editions/pokemon/sprites/15.png"
   },
   {
     "id": "pidgey",
     "displayName": "Pidgey",
     "dexNumber": 16,
-    "sprite": "sprites/16.png"
+    "sprite": "editions/pokemon/sprites/16.png"
   },
   {
     "id": "pidgeotto",
     "displayName": "Pidgeotto",
     "dexNumber": 17,
-    "sprite": "sprites/17.png"
+    "sprite": "editions/pokemon/sprites/17.png"
   },
   {
     "id": "pidgeot",
     "displayName": "Pidgeot",
     "dexNumber": 18,
-    "sprite": "sprites/18.png"
+    "sprite": "editions/pokemon/sprites/18.png"
   },
   {
     "id": "rattata",
     "displayName": "Rattata",
     "dexNumber": 19,
-    "sprite": "sprites/19.png"
+    "sprite": "editions/pokemon/sprites/19.png"
   },
   {
     "id": "raticate",
     "displayName": "Raticate",
     "dexNumber": 20,
-    "sprite": "sprites/20.png"
+    "sprite": "editions/pokemon/sprites/20.png"
   },
   {
     "id": "spearow",
     "displayName": "Spearow",
     "dexNumber": 21,
-    "sprite": "sprites/21.png"
+    "sprite": "editions/pokemon/sprites/21.png"
   },
   {
     "id": "fearow",
     "displayName": "Fearow",
     "dexNumber": 22,
-    "sprite": "sprites/22.png"
+    "sprite": "editions/pokemon/sprites/22.png"
   },
   {
     "id": "ekans",
     "displayName": "Ekans",
     "dexNumber": 23,
-    "sprite": "sprites/23.png"
+    "sprite": "editions/pokemon/sprites/23.png"
   },
   {
     "id": "arbok",
     "displayName": "Arbok",
     "dexNumber": 24,
-    "sprite": "sprites/24.png"
+    "sprite": "editions/pokemon/sprites/24.png"
   },
   {
     "id": "pikachu",
     "displayName": "Pikachu",
     "dexNumber": 25,
-    "sprite": "sprites/25.png"
+    "sprite": "editions/pokemon/sprites/25.png"
   },
   {
     "id": "raichu",
     "displayName": "Raichu",
     "dexNumber": 26,
-    "sprite": "sprites/26.png"
+    "sprite": "editions/pokemon/sprites/26.png"
   },
   {
     "id": "sandshrew",
     "displayName": "Sandshrew",
     "dexNumber": 27,
-    "sprite": "sprites/27.png"
+    "sprite": "editions/pokemon/sprites/27.png"
   },
   {
     "id": "sandslash",
     "displayName": "Sandslash",
     "dexNumber": 28,
-    "sprite": "sprites/28.png"
+    "sprite": "editions/pokemon/sprites/28.png"
   },
   {
     "id": "nidoran-f",
     "displayName": "Nidoran♀",
     "dexNumber": 29,
-    "sprite": "sprites/29.png"
+    "sprite": "editions/pokemon/sprites/29.png"
   },
   {
     "id": "nidorina",
     "displayName": "Nidorina",
     "dexNumber": 30,
-    "sprite": "sprites/30.png"
+    "sprite": "editions/pokemon/sprites/30.png"
   },
   {
     "id": "nidoqueen",
     "displayName": "Nidoqueen",
     "dexNumber": 31,
-    "sprite": "sprites/31.png"
+    "sprite": "editions/pokemon/sprites/31.png"
   },
   {
     "id": "nidoran-m",
     "displayName": "Nidoran♂",
     "dexNumber": 32,
-    "sprite": "sprites/32.png"
+    "sprite": "editions/pokemon/sprites/32.png"
   },
   {
     "id": "nidorino",
     "displayName": "Nidorino",
     "dexNumber": 33,
-    "sprite": "sprites/33.png"
+    "sprite": "editions/pokemon/sprites/33.png"
   },
   {
     "id": "nidoking",
     "displayName": "Nidoking",
     "dexNumber": 34,
-    "sprite": "sprites/34.png"
+    "sprite": "editions/pokemon/sprites/34.png"
   },
   {
     "id": "clefairy",
     "displayName": "Clefairy",
     "dexNumber": 35,
-    "sprite": "sprites/35.png"
+    "sprite": "editions/pokemon/sprites/35.png"
   },
   {
     "id": "clefable",
     "displayName": "Clefable",
     "dexNumber": 36,
-    "sprite": "sprites/36.png"
+    "sprite": "editions/pokemon/sprites/36.png"
   },
   {
     "id": "vulpix",
     "displayName": "Vulpix",
     "dexNumber": 37,
-    "sprite": "sprites/37.png"
+    "sprite": "editions/pokemon/sprites/37.png"
   },
   {
     "id": "ninetales",
     "displayName": "Ninetales",
     "dexNumber": 38,
-    "sprite": "sprites/38.png"
+    "sprite": "editions/pokemon/sprites/38.png"
   },
   {
     "id": "jigglypuff",
     "displayName": "Jigglypuff",
     "dexNumber": 39,
-    "sprite": "sprites/39.png"
+    "sprite": "editions/pokemon/sprites/39.png"
   },
   {
     "id": "wigglytuff",
     "displayName": "Wigglytuff",
     "dexNumber": 40,
-    "sprite": "sprites/40.png"
+    "sprite": "editions/pokemon/sprites/40.png"
   },
   {
     "id": "zubat",
     "displayName": "Zubat",
     "dexNumber": 41,
-    "sprite": "sprites/41.png"
+    "sprite": "editions/pokemon/sprites/41.png"
   },
   {
     "id": "golbat",
     "displayName": "Golbat",
     "dexNumber": 42,
-    "sprite": "sprites/42.png"
+    "sprite": "editions/pokemon/sprites/42.png"
   },
   {
     "id": "oddish",
     "displayName": "Oddish",
     "dexNumber": 43,
-    "sprite": "sprites/43.png"
+    "sprite": "editions/pokemon/sprites/43.png"
   },
   {
     "id": "gloom",
     "displayName": "Gloom",
     "dexNumber": 44,
-    "sprite": "sprites/44.png"
+    "sprite": "editions/pokemon/sprites/44.png"
   },
   {
     "id": "vileplume",
     "displayName": "Vileplume",
     "dexNumber": 45,
-    "sprite": "sprites/45.png"
+    "sprite": "editions/pokemon/sprites/45.png"
   },
   {
     "id": "paras",
     "displayName": "Paras",
     "dexNumber": 46,
-    "sprite": "sprites/46.png"
+    "sprite": "editions/pokemon/sprites/46.png"
   },
   {
     "id": "parasect",
     "displayName": "Parasect",
     "dexNumber": 47,
-    "sprite": "sprites/47.png"
+    "sprite": "editions/pokemon/sprites/47.png"
   },
   {
     "id": "venonat",
     "displayName": "Venonat",
     "dexNumber": 48,
-    "sprite": "sprites/48.png"
+    "sprite": "editions/pokemon/sprites/48.png"
   },
   {
     "id": "venomoth",
     "displayName": "Venomoth",
     "dexNumber": 49,
-    "sprite": "sprites/49.png"
+    "sprite": "editions/pokemon/sprites/49.png"
   },
   {
     "id": "diglett",
     "displayName": "Diglett",
     "dexNumber": 50,
-    "sprite": "sprites/50.png"
+    "sprite": "editions/pokemon/sprites/50.png"
   },
   {
     "id": "dugtrio",
     "displayName": "Dugtrio",
     "dexNumber": 51,
-    "sprite": "sprites/51.png"
+    "sprite": "editions/pokemon/sprites/51.png"
   },
   {
     "id": "meowth",
     "displayName": "Meowth",
     "dexNumber": 52,
-    "sprite": "sprites/52.png"
+    "sprite": "editions/pokemon/sprites/52.png"
   },
   {
     "id": "persian",
     "displayName": "Persian",
     "dexNumber": 53,
-    "sprite": "sprites/53.png"
+    "sprite": "editions/pokemon/sprites/53.png"
   },
   {
     "id": "psyduck",
     "displayName": "Psyduck",
     "dexNumber": 54,
-    "sprite": "sprites/54.png"
+    "sprite": "editions/pokemon/sprites/54.png"
   },
   {
     "id": "golduck",
     "displayName": "Golduck",
     "dexNumber": 55,
-    "sprite": "sprites/55.png"
+    "sprite": "editions/pokemon/sprites/55.png"
   },
   {
     "id": "mankey",
     "displayName": "Mankey",
     "dexNumber": 56,
-    "sprite": "sprites/56.png"
+    "sprite": "editions/pokemon/sprites/56.png"
   },
   {
     "id": "primeape",
     "displayName": "Primeape",
     "dexNumber": 57,
-    "sprite": "sprites/57.png"
+    "sprite": "editions/pokemon/sprites/57.png"
   },
   {
     "id": "growlithe",
     "displayName": "Growlithe",
     "dexNumber": 58,
-    "sprite": "sprites/58.png"
+    "sprite": "editions/pokemon/sprites/58.png"
   },
   {
     "id": "arcanine",
     "displayName": "Arcanine",
     "dexNumber": 59,
-    "sprite": "sprites/59.png"
+    "sprite": "editions/pokemon/sprites/59.png"
   },
   {
     "id": "poliwag",
     "displayName": "Poliwag",
     "dexNumber": 60,
-    "sprite": "sprites/60.png"
+    "sprite": "editions/pokemon/sprites/60.png"
   },
   {
     "id": "poliwhirl",
     "displayName": "Poliwhirl",
     "dexNumber": 61,
-    "sprite": "sprites/61.png"
+    "sprite": "editions/pokemon/sprites/61.png"
   },
   {
     "id": "poliwrath",
     "displayName": "Poliwrath",
     "dexNumber": 62,
-    "sprite": "sprites/62.png"
+    "sprite": "editions/pokemon/sprites/62.png"
   },
   {
     "id": "abra",
     "displayName": "Abra",
     "dexNumber": 63,
-    "sprite": "sprites/63.png"
+    "sprite": "editions/pokemon/sprites/63.png"
   },
   {
     "id": "kadabra",
     "displayName": "Kadabra",
     "dexNumber": 64,
-    "sprite": "sprites/64.png"
+    "sprite": "editions/pokemon/sprites/64.png"
   },
   {
     "id": "alakazam",
     "displayName": "Alakazam",
     "dexNumber": 65,
-    "sprite": "sprites/65.png"
+    "sprite": "editions/pokemon/sprites/65.png"
   },
   {
     "id": "machop",
     "displayName": "Machop",
     "dexNumber": 66,
-    "sprite": "sprites/66.png"
+    "sprite": "editions/pokemon/sprites/66.png"
   },
   {
     "id": "machoke",
     "displayName": "Machoke",
     "dexNumber": 67,
-    "sprite": "sprites/67.png"
+    "sprite": "editions/pokemon/sprites/67.png"
   },
   {
     "id": "machamp",
     "displayName": "Machamp",
     "dexNumber": 68,
-    "sprite": "sprites/68.png"
+    "sprite": "editions/pokemon/sprites/68.png"
   },
   {
     "id": "bellsprout",
     "displayName": "Bellsprout",
     "dexNumber": 69,
-    "sprite": "sprites/69.png"
+    "sprite": "editions/pokemon/sprites/69.png"
   },
   {
     "id": "weepinbell",
     "displayName": "Weepinbell",
     "dexNumber": 70,
-    "sprite": "sprites/70.png"
+    "sprite": "editions/pokemon/sprites/70.png"
   },
   {
     "id": "victreebel",
     "displayName": "Victreebel",
     "dexNumber": 71,
-    "sprite": "sprites/71.png"
+    "sprite": "editions/pokemon/sprites/71.png"
   },
   {
     "id": "tentacool",
     "displayName": "Tentacool",
     "dexNumber": 72,
-    "sprite": "sprites/72.png"
+    "sprite": "editions/pokemon/sprites/72.png"
   },
   {
     "id": "tentacruel",
     "displayName": "Tentacruel",
     "dexNumber": 73,
-    "sprite": "sprites/73.png"
+    "sprite": "editions/pokemon/sprites/73.png"
   },
   {
     "id": "geodude",
     "displayName": "Geodude",
     "dexNumber": 74,
-    "sprite": "sprites/74.png"
+    "sprite": "editions/pokemon/sprites/74.png"
   },
   {
     "id": "graveler",
     "displayName": "Graveler",
     "dexNumber": 75,
-    "sprite": "sprites/75.png"
+    "sprite": "editions/pokemon/sprites/75.png"
   },
   {
     "id": "golem",
     "displayName": "Golem",
     "dexNumber": 76,
-    "sprite": "sprites/76.png"
+    "sprite": "editions/pokemon/sprites/76.png"
   },
   {
     "id": "ponyta",
     "displayName": "Ponyta",
     "dexNumber": 77,
-    "sprite": "sprites/77.png"
+    "sprite": "editions/pokemon/sprites/77.png"
   },
   {
     "id": "rapidash",
     "displayName": "Rapidash",
     "dexNumber": 78,
-    "sprite": "sprites/78.png"
+    "sprite": "editions/pokemon/sprites/78.png"
   },
   {
     "id": "slowpoke",
     "displayName": "Slowpoke",
     "dexNumber": 79,
-    "sprite": "sprites/79.png"
+    "sprite": "editions/pokemon/sprites/79.png"
   },
   {
     "id": "slowbro",
     "displayName": "Slowbro",
     "dexNumber": 80,
-    "sprite": "sprites/80.png"
+    "sprite": "editions/pokemon/sprites/80.png"
   },
   {
     "id": "magnemite",
     "displayName": "Magnemite",
     "dexNumber": 81,
-    "sprite": "sprites/81.png"
+    "sprite": "editions/pokemon/sprites/81.png"
   },
   {
     "id": "magneton",
     "displayName": "Magneton",
     "dexNumber": 82,
-    "sprite": "sprites/82.png"
+    "sprite": "editions/pokemon/sprites/82.png"
   },
   {
     "id": "farfetchd",
     "displayName": "Farfetch’d",
     "dexNumber": 83,
-    "sprite": "sprites/83.png"
+    "sprite": "editions/pokemon/sprites/83.png"
   },
   {
     "id": "doduo",
     "displayName": "Doduo",
     "dexNumber": 84,
-    "sprite": "sprites/84.png"
+    "sprite": "editions/pokemon/sprites/84.png"
   },
   {
     "id": "dodrio",
     "displayName": "Dodrio",
     "dexNumber": 85,
-    "sprite": "sprites/85.png"
+    "sprite": "editions/pokemon/sprites/85.png"
   },
   {
     "id": "seel",
     "displayName": "Seel",
     "dexNumber": 86,
-    "sprite": "sprites/86.png"
+    "sprite": "editions/pokemon/sprites/86.png"
   },
   {
     "id": "dewgong",
     "displayName": "Dewgong",
     "dexNumber": 87,
-    "sprite": "sprites/87.png"
+    "sprite": "editions/pokemon/sprites/87.png"
   },
   {
     "id": "grimer",
     "displayName": "Grimer",
     "dexNumber": 88,
-    "sprite": "sprites/88.png"
+    "sprite": "editions/pokemon/sprites/88.png"
   },
   {
     "id": "muk",
     "displayName": "Muk",
     "dexNumber": 89,
-    "sprite": "sprites/89.png"
+    "sprite": "editions/pokemon/sprites/89.png"
   },
   {
     "id": "shellder",
     "displayName": "Shellder",
     "dexNumber": 90,
-    "sprite": "sprites/90.png"
+    "sprite": "editions/pokemon/sprites/90.png"
   },
   {
     "id": "cloyster",
     "displayName": "Cloyster",
     "dexNumber": 91,
-    "sprite": "sprites/91.png"
+    "sprite": "editions/pokemon/sprites/91.png"
   },
   {
     "id": "gastly",
     "displayName": "Gastly",
     "dexNumber": 92,
-    "sprite": "sprites/92.png"
+    "sprite": "editions/pokemon/sprites/92.png"
   },
   {
     "id": "haunter",
     "displayName": "Haunter",
     "dexNumber": 93,
-    "sprite": "sprites/93.png"
+    "sprite": "editions/pokemon/sprites/93.png"
   },
   {
     "id": "gengar",
     "displayName": "Gengar",
     "dexNumber": 94,
-    "sprite": "sprites/94.png"
+    "sprite": "editions/pokemon/sprites/94.png"
   },
   {
     "id": "onix",
     "displayName": "Onix",
     "dexNumber": 95,
-    "sprite": "sprites/95.png"
+    "sprite": "editions/pokemon/sprites/95.png"
   },
   {
     "id": "drowzee",
     "displayName": "Drowzee",
     "dexNumber": 96,
-    "sprite": "sprites/96.png"
+    "sprite": "editions/pokemon/sprites/96.png"
   },
   {
     "id": "hypno",
     "displayName": "Hypno",
     "dexNumber": 97,
-    "sprite": "sprites/97.png"
+    "sprite": "editions/pokemon/sprites/97.png"
   },
   {
     "id": "krabby",
     "displayName": "Krabby",
     "dexNumber": 98,
-    "sprite": "sprites/98.png"
+    "sprite": "editions/pokemon/sprites/98.png"
   },
   {
     "id": "kingler",
     "displayName": "Kingler",
     "dexNumber": 99,
-    "sprite": "sprites/99.png"
+    "sprite": "editions/pokemon/sprites/99.png"
   },
   {
     "id": "voltorb",
     "displayName": "Voltorb",
     "dexNumber": 100,
-    "sprite": "sprites/100.png"
+    "sprite": "editions/pokemon/sprites/100.png"
   },
   {
     "id": "electrode",
     "displayName": "Electrode",
     "dexNumber": 101,
-    "sprite": "sprites/101.png"
+    "sprite": "editions/pokemon/sprites/101.png"
   },
   {
     "id": "exeggcute",
     "displayName": "Exeggcute",
     "dexNumber": 102,
-    "sprite": "sprites/102.png"
+    "sprite": "editions/pokemon/sprites/102.png"
   },
   {
     "id": "exeggutor",
     "displayName": "Exeggutor",
     "dexNumber": 103,
-    "sprite": "sprites/103.png"
+    "sprite": "editions/pokemon/sprites/103.png"
   },
   {
     "id": "cubone",
     "displayName": "Cubone",
     "dexNumber": 104,
-    "sprite": "sprites/104.png"
+    "sprite": "editions/pokemon/sprites/104.png"
   },
   {
     "id": "marowak",
     "displayName": "Marowak",
     "dexNumber": 105,
-    "sprite": "sprites/105.png"
+    "sprite": "editions/pokemon/sprites/105.png"
   },
   {
     "id": "hitmonlee",
     "displayName": "Hitmonlee",
     "dexNumber": 106,
-    "sprite": "sprites/106.png"
+    "sprite": "editions/pokemon/sprites/106.png"
   },
   {
     "id": "hitmonchan",
     "displayName": "Hitmonchan",
     "dexNumber": 107,
-    "sprite": "sprites/107.png"
+    "sprite": "editions/pokemon/sprites/107.png"
   },
   {
     "id": "lickitung",
     "displayName": "Lickitung",
     "dexNumber": 108,
-    "sprite": "sprites/108.png"
+    "sprite": "editions/pokemon/sprites/108.png"
   },
   {
     "id": "koffing",
     "displayName": "Koffing",
     "dexNumber": 109,
-    "sprite": "sprites/109.png"
+    "sprite": "editions/pokemon/sprites/109.png"
   },
   {
     "id": "weezing",
     "displayName": "Weezing",
     "dexNumber": 110,
-    "sprite": "sprites/110.png"
+    "sprite": "editions/pokemon/sprites/110.png"
   },
   {
     "id": "rhyhorn",
     "displayName": "Rhyhorn",
     "dexNumber": 111,
-    "sprite": "sprites/111.png"
+    "sprite": "editions/pokemon/sprites/111.png"
   },
   {
     "id": "rhydon",
     "displayName": "Rhydon",
     "dexNumber": 112,
-    "sprite": "sprites/112.png"
+    "sprite": "editions/pokemon/sprites/112.png"
   },
   {
     "id": "chansey",
     "displayName": "Chansey",
     "dexNumber": 113,
-    "sprite": "sprites/113.png"
+    "sprite": "editions/pokemon/sprites/113.png"
   },
   {
     "id": "tangela",
     "displayName": "Tangela",
     "dexNumber": 114,
-    "sprite": "sprites/114.png"
+    "sprite": "editions/pokemon/sprites/114.png"
   },
   {
     "id": "kangaskhan",
     "displayName": "Kangaskhan",
     "dexNumber": 115,
-    "sprite": "sprites/115.png"
+    "sprite": "editions/pokemon/sprites/115.png"
   },
   {
     "id": "horsea",
     "displayName": "Horsea",
     "dexNumber": 116,
-    "sprite": "sprites/116.png"
+    "sprite": "editions/pokemon/sprites/116.png"
   },
   {
     "id": "seadra",
     "displayName": "Seadra",
     "dexNumber": 117,
-    "sprite": "sprites/117.png"
+    "sprite": "editions/pokemon/sprites/117.png"
   },
   {
     "id": "goldeen",
     "displayName": "Goldeen",
     "dexNumber": 118,
-    "sprite": "sprites/118.png"
+    "sprite": "editions/pokemon/sprites/118.png"
   },
   {
     "id": "seaking",
     "displayName": "Seaking",
     "dexNumber": 119,
-    "sprite": "sprites/119.png"
+    "sprite": "editions/pokemon/sprites/119.png"
   },
   {
     "id": "staryu",
     "displayName": "Staryu",
     "dexNumber": 120,
-    "sprite": "sprites/120.png"
+    "sprite": "editions/pokemon/sprites/120.png"
   },
   {
     "id": "starmie",
     "displayName": "Starmie",
     "dexNumber": 121,
-    "sprite": "sprites/121.png"
+    "sprite": "editions/pokemon/sprites/121.png"
   },
   {
     "id": "mr-mime",
     "displayName": "Mr. Mime",
     "dexNumber": 122,
-    "sprite": "sprites/122.png"
+    "sprite": "editions/pokemon/sprites/122.png"
   },
   {
     "id": "scyther",
     "displayName": "Scyther",
     "dexNumber": 123,
-    "sprite": "sprites/123.png"
+    "sprite": "editions/pokemon/sprites/123.png"
   },
   {
     "id": "jynx",
     "displayName": "Jynx",
     "dexNumber": 124,
-    "sprite": "sprites/124.png"
+    "sprite": "editions/pokemon/sprites/124.png"
   },
   {
     "id": "electabuzz",
     "displayName": "Electabuzz",
     "dexNumber": 125,
-    "sprite": "sprites/125.png"
+    "sprite": "editions/pokemon/sprites/125.png"
   },
   {
     "id": "magmar",
     "displayName": "Magmar",
     "dexNumber": 126,
-    "sprite": "sprites/126.png"
+    "sprite": "editions/pokemon/sprites/126.png"
   },
   {
     "id": "pinsir",
     "displayName": "Pinsir",
     "dexNumber": 127,
-    "sprite": "sprites/127.png"
+    "sprite": "editions/pokemon/sprites/127.png"
   },
   {
     "id": "tauros",
     "displayName": "Tauros",
     "dexNumber": 128,
-    "sprite": "sprites/128.png"
+    "sprite": "editions/pokemon/sprites/128.png"
   },
   {
     "id": "magikarp",
     "displayName": "Magikarp",
     "dexNumber": 129,
-    "sprite": "sprites/129.png"
+    "sprite": "editions/pokemon/sprites/129.png"
   },
   {
     "id": "gyarados",
     "displayName": "Gyarados",
     "dexNumber": 130,
-    "sprite": "sprites/130.png"
+    "sprite": "editions/pokemon/sprites/130.png"
   },
   {
     "id": "lapras",
     "displayName": "Lapras",
     "dexNumber": 131,
-    "sprite": "sprites/131.png"
+    "sprite": "editions/pokemon/sprites/131.png"
   },
   {
     "id": "ditto",
     "displayName": "Ditto",
     "dexNumber": 132,
-    "sprite": "sprites/132.png"
+    "sprite": "editions/pokemon/sprites/132.png"
   },
   {
     "id": "eevee",
     "displayName": "Eevee",
     "dexNumber": 133,
-    "sprite": "sprites/133.png"
+    "sprite": "editions/pokemon/sprites/133.png"
   },
   {
     "id": "vaporeon",
     "displayName": "Vaporeon",
     "dexNumber": 134,
-    "sprite": "sprites/134.png"
+    "sprite": "editions/pokemon/sprites/134.png"
   },
   {
     "id": "jolteon",
     "displayName": "Jolteon",
     "dexNumber": 135,
-    "sprite": "sprites/135.png"
+    "sprite": "editions/pokemon/sprites/135.png"
   },
   {
     "id": "flareon",
     "displayName": "Flareon",
     "dexNumber": 136,
-    "sprite": "sprites/136.png"
+    "sprite": "editions/pokemon/sprites/136.png"
   },
   {
     "id": "porygon",
     "displayName": "Porygon",
     "dexNumber": 137,
-    "sprite": "sprites/137.png"
+    "sprite": "editions/pokemon/sprites/137.png"
   },
   {
     "id": "omanyte",
     "displayName": "Omanyte",
     "dexNumber": 138,
-    "sprite": "sprites/138.png"
+    "sprite": "editions/pokemon/sprites/138.png"
   },
   {
     "id": "omastar",
     "displayName": "Omastar",
     "dexNumber": 139,
-    "sprite": "sprites/139.png"
+    "sprite": "editions/pokemon/sprites/139.png"
   },
   {
     "id": "kabuto",
     "displayName": "Kabuto",
     "dexNumber": 140,
-    "sprite": "sprites/140.png"
+    "sprite": "editions/pokemon/sprites/140.png"
   },
   {
     "id": "kabutops",
     "displayName": "Kabutops",
     "dexNumber": 141,
-    "sprite": "sprites/141.png"
+    "sprite": "editions/pokemon/sprites/141.png"
   },
   {
     "id": "aerodactyl",
     "displayName": "Aerodactyl",
     "dexNumber": 142,
-    "sprite": "sprites/142.png"
+    "sprite": "editions/pokemon/sprites/142.png"
   },
   {
     "id": "snorlax",
     "displayName": "Snorlax",
     "dexNumber": 143,
-    "sprite": "sprites/143.png"
+    "sprite": "editions/pokemon/sprites/143.png"
   },
   {
     "id": "articuno",
     "displayName": "Articuno",
     "dexNumber": 144,
-    "sprite": "sprites/144.png"
+    "sprite": "editions/pokemon/sprites/144.png"
   },
   {
     "id": "zapdos",
     "displayName": "Zapdos",
     "dexNumber": 145,
-    "sprite": "sprites/145.png"
+    "sprite": "editions/pokemon/sprites/145.png"
   },
   {
     "id": "moltres",
     "displayName": "Moltres",
     "dexNumber": 146,
-    "sprite": "sprites/146.png"
+    "sprite": "editions/pokemon/sprites/146.png"
   },
   {
     "id": "dratini",
     "displayName": "Dratini",
     "dexNumber": 147,
-    "sprite": "sprites/147.png"
+    "sprite": "editions/pokemon/sprites/147.png"
   },
   {
     "id": "dragonair",
     "displayName": "Dragonair",
     "dexNumber": 148,
-    "sprite": "sprites/148.png"
+    "sprite": "editions/pokemon/sprites/148.png"
   },
   {
     "id": "dragonite",
     "displayName": "Dragonite",
     "dexNumber": 149,
-    "sprite": "sprites/149.png"
+    "sprite": "editions/pokemon/sprites/149.png"
   },
   {
     "id": "mewtwo",
     "displayName": "Mewtwo",
     "dexNumber": 150,
-    "sprite": "sprites/150.png"
+    "sprite": "editions/pokemon/sprites/150.png"
   },
   {
     "id": "mew",
     "displayName": "Mew",
     "dexNumber": 151,
-    "sprite": "sprites/151.png"
+    "sprite": "editions/pokemon/sprites/151.png"
   },
   {
     "id": "chikorita",
     "displayName": "Chikorita",
     "dexNumber": 152,
-    "sprite": "sprites/152.png"
+    "sprite": "editions/pokemon/sprites/152.png"
   },
   {
     "id": "bayleef",
     "displayName": "Bayleef",
     "dexNumber": 153,
-    "sprite": "sprites/153.png"
+    "sprite": "editions/pokemon/sprites/153.png"
   },
   {
     "id": "meganium",
     "displayName": "Meganium",
     "dexNumber": 154,
-    "sprite": "sprites/154.png"
+    "sprite": "editions/pokemon/sprites/154.png"
   },
   {
     "id": "cyndaquil",
     "displayName": "Cyndaquil",
     "dexNumber": 155,
-    "sprite": "sprites/155.png"
+    "sprite": "editions/pokemon/sprites/155.png"
   },
   {
     "id": "quilava",
     "displayName": "Quilava",
     "dexNumber": 156,
-    "sprite": "sprites/156.png"
+    "sprite": "editions/pokemon/sprites/156.png"
   },
   {
     "id": "typhlosion",
     "displayName": "Typhlosion",
     "dexNumber": 157,
-    "sprite": "sprites/157.png"
+    "sprite": "editions/pokemon/sprites/157.png"
   },
   {
     "id": "totodile",
     "displayName": "Totodile",
     "dexNumber": 158,
-    "sprite": "sprites/158.png"
+    "sprite": "editions/pokemon/sprites/158.png"
   },
   {
     "id": "croconaw",
     "displayName": "Croconaw",
     "dexNumber": 159,
-    "sprite": "sprites/159.png"
+    "sprite": "editions/pokemon/sprites/159.png"
   },
   {
     "id": "feraligatr",
     "displayName": "Feraligatr",
     "dexNumber": 160,
-    "sprite": "sprites/160.png"
+    "sprite": "editions/pokemon/sprites/160.png"
   },
   {
     "id": "sentret",
     "displayName": "Sentret",
     "dexNumber": 161,
-    "sprite": "sprites/161.png"
+    "sprite": "editions/pokemon/sprites/161.png"
   },
   {
     "id": "furret",
     "displayName": "Furret",
     "dexNumber": 162,
-    "sprite": "sprites/162.png"
+    "sprite": "editions/pokemon/sprites/162.png"
   },
   {
     "id": "hoothoot",
     "displayName": "Hoothoot",
     "dexNumber": 163,
-    "sprite": "sprites/163.png"
+    "sprite": "editions/pokemon/sprites/163.png"
   },
   {
     "id": "noctowl",
     "displayName": "Noctowl",
     "dexNumber": 164,
-    "sprite": "sprites/164.png"
+    "sprite": "editions/pokemon/sprites/164.png"
   },
   {
     "id": "ledyba",
     "displayName": "Ledyba",
     "dexNumber": 165,
-    "sprite": "sprites/165.png"
+    "sprite": "editions/pokemon/sprites/165.png"
   },
   {
     "id": "ledian",
     "displayName": "Ledian",
     "dexNumber": 166,
-    "sprite": "sprites/166.png"
+    "sprite": "editions/pokemon/sprites/166.png"
   },
   {
     "id": "spinarak",
     "displayName": "Spinarak",
     "dexNumber": 167,
-    "sprite": "sprites/167.png"
+    "sprite": "editions/pokemon/sprites/167.png"
   },
   {
     "id": "ariados",
     "displayName": "Ariados",
     "dexNumber": 168,
-    "sprite": "sprites/168.png"
+    "sprite": "editions/pokemon/sprites/168.png"
   },
   {
     "id": "crobat",
     "displayName": "Crobat",
     "dexNumber": 169,
-    "sprite": "sprites/169.png"
+    "sprite": "editions/pokemon/sprites/169.png"
   },
   {
     "id": "chinchou",
     "displayName": "Chinchou",
     "dexNumber": 170,
-    "sprite": "sprites/170.png"
+    "sprite": "editions/pokemon/sprites/170.png"
   },
   {
     "id": "lanturn",
     "displayName": "Lanturn",
     "dexNumber": 171,
-    "sprite": "sprites/171.png"
+    "sprite": "editions/pokemon/sprites/171.png"
   },
   {
     "id": "pichu",
     "displayName": "Pichu",
     "dexNumber": 172,
-    "sprite": "sprites/172.png"
+    "sprite": "editions/pokemon/sprites/172.png"
   },
   {
     "id": "cleffa",
     "displayName": "Cleffa",
     "dexNumber": 173,
-    "sprite": "sprites/173.png"
+    "sprite": "editions/pokemon/sprites/173.png"
   },
   {
     "id": "igglybuff",
     "displayName": "Igglybuff",
     "dexNumber": 174,
-    "sprite": "sprites/174.png"
+    "sprite": "editions/pokemon/sprites/174.png"
   },
   {
     "id": "togepi",
     "displayName": "Togepi",
     "dexNumber": 175,
-    "sprite": "sprites/175.png"
+    "sprite": "editions/pokemon/sprites/175.png"
   },
   {
     "id": "togetic",
     "displayName": "Togetic",
     "dexNumber": 176,
-    "sprite": "sprites/176.png"
+    "sprite": "editions/pokemon/sprites/176.png"
   },
   {
     "id": "natu",
     "displayName": "Natu",
     "dexNumber": 177,
-    "sprite": "sprites/177.png"
+    "sprite": "editions/pokemon/sprites/177.png"
   },
   {
     "id": "xatu",
     "displayName": "Xatu",
     "dexNumber": 178,
-    "sprite": "sprites/178.png"
+    "sprite": "editions/pokemon/sprites/178.png"
   },
   {
     "id": "mareep",
     "displayName": "Mareep",
     "dexNumber": 179,
-    "sprite": "sprites/179.png"
+    "sprite": "editions/pokemon/sprites/179.png"
   },
   {
     "id": "flaaffy",
     "displayName": "Flaaffy",
     "dexNumber": 180,
-    "sprite": "sprites/180.png"
+    "sprite": "editions/pokemon/sprites/180.png"
   },
   {
     "id": "ampharos",
     "displayName": "Ampharos",
     "dexNumber": 181,
-    "sprite": "sprites/181.png"
+    "sprite": "editions/pokemon/sprites/181.png"
   },
   {
     "id": "bellossom",
     "displayName": "Bellossom",
     "dexNumber": 182,
-    "sprite": "sprites/182.png"
+    "sprite": "editions/pokemon/sprites/182.png"
   },
   {
     "id": "marill",
     "displayName": "Marill",
     "dexNumber": 183,
-    "sprite": "sprites/183.png"
+    "sprite": "editions/pokemon/sprites/183.png"
   },
   {
     "id": "azumarill",
     "displayName": "Azumarill",
     "dexNumber": 184,
-    "sprite": "sprites/184.png"
+    "sprite": "editions/pokemon/sprites/184.png"
   },
   {
     "id": "sudowoodo",
     "displayName": "Sudowoodo",
     "dexNumber": 185,
-    "sprite": "sprites/185.png"
+    "sprite": "editions/pokemon/sprites/185.png"
   },
   {
     "id": "politoed",
     "displayName": "Politoed",
     "dexNumber": 186,
-    "sprite": "sprites/186.png"
+    "sprite": "editions/pokemon/sprites/186.png"
   },
   {
     "id": "hoppip",
     "displayName": "Hoppip",
     "dexNumber": 187,
-    "sprite": "sprites/187.png"
+    "sprite": "editions/pokemon/sprites/187.png"
   },
   {
     "id": "skiploom",
     "displayName": "Skiploom",
     "dexNumber": 188,
-    "sprite": "sprites/188.png"
+    "sprite": "editions/pokemon/sprites/188.png"
   },
   {
     "id": "jumpluff",
     "displayName": "Jumpluff",
     "dexNumber": 189,
-    "sprite": "sprites/189.png"
+    "sprite": "editions/pokemon/sprites/189.png"
   },
   {
     "id": "aipom",
     "displayName": "Aipom",
     "dexNumber": 190,
-    "sprite": "sprites/190.png"
+    "sprite": "editions/pokemon/sprites/190.png"
   },
   {
     "id": "sunkern",
     "displayName": "Sunkern",
     "dexNumber": 191,
-    "sprite": "sprites/191.png"
+    "sprite": "editions/pokemon/sprites/191.png"
   },
   {
     "id": "sunflora",
     "displayName": "Sunflora",
     "dexNumber": 192,
-    "sprite": "sprites/192.png"
+    "sprite": "editions/pokemon/sprites/192.png"
   },
   {
     "id": "yanma",
     "displayName": "Yanma",
     "dexNumber": 193,
-    "sprite": "sprites/193.png"
+    "sprite": "editions/pokemon/sprites/193.png"
   },
   {
     "id": "wooper",
     "displayName": "Wooper",
     "dexNumber": 194,
-    "sprite": "sprites/194.png"
+    "sprite": "editions/pokemon/sprites/194.png"
   },
   {
     "id": "quagsire",
     "displayName": "Quagsire",
     "dexNumber": 195,
-    "sprite": "sprites/195.png"
+    "sprite": "editions/pokemon/sprites/195.png"
   },
   {
     "id": "espeon",
     "displayName": "Espeon",
     "dexNumber": 196,
-    "sprite": "sprites/196.png"
+    "sprite": "editions/pokemon/sprites/196.png"
   },
   {
     "id": "umbreon",
     "displayName": "Umbreon",
     "dexNumber": 197,
-    "sprite": "sprites/197.png"
+    "sprite": "editions/pokemon/sprites/197.png"
   },
   {
     "id": "murkrow",
     "displayName": "Murkrow",
     "dexNumber": 198,
-    "sprite": "sprites/198.png"
+    "sprite": "editions/pokemon/sprites/198.png"
   },
   {
     "id": "slowking",
     "displayName": "Slowking",
     "dexNumber": 199,
-    "sprite": "sprites/199.png"
+    "sprite": "editions/pokemon/sprites/199.png"
   },
   {
     "id": "misdreavus",
     "displayName": "Misdreavus",
     "dexNumber": 200,
-    "sprite": "sprites/200.png"
+    "sprite": "editions/pokemon/sprites/200.png"
   },
   {
     "id": "unown",
     "displayName": "Unown",
     "dexNumber": 201,
-    "sprite": "sprites/201.png"
+    "sprite": "editions/pokemon/sprites/201.png"
   },
   {
     "id": "wobbuffet",
     "displayName": "Wobbuffet",
     "dexNumber": 202,
-    "sprite": "sprites/202.png"
+    "sprite": "editions/pokemon/sprites/202.png"
   },
   {
     "id": "girafarig",
     "displayName": "Girafarig",
     "dexNumber": 203,
-    "sprite": "sprites/203.png"
+    "sprite": "editions/pokemon/sprites/203.png"
   },
   {
     "id": "pineco",
     "displayName": "Pineco",
     "dexNumber": 204,
-    "sprite": "sprites/204.png"
+    "sprite": "editions/pokemon/sprites/204.png"
   },
   {
     "id": "forretress",
     "displayName": "Forretress",
     "dexNumber": 205,
-    "sprite": "sprites/205.png"
+    "sprite": "editions/pokemon/sprites/205.png"
   },
   {
     "id": "dunsparce",
     "displayName": "Dunsparce",
     "dexNumber": 206,
-    "sprite": "sprites/206.png"
+    "sprite": "editions/pokemon/sprites/206.png"
   },
   {
     "id": "gligar",
     "displayName": "Gligar",
     "dexNumber": 207,
-    "sprite": "sprites/207.png"
+    "sprite": "editions/pokemon/sprites/207.png"
   },
   {
     "id": "steelix",
     "displayName": "Steelix",
     "dexNumber": 208,
-    "sprite": "sprites/208.png"
+    "sprite": "editions/pokemon/sprites/208.png"
   },
   {
     "id": "snubbull",
     "displayName": "Snubbull",
     "dexNumber": 209,
-    "sprite": "sprites/209.png"
+    "sprite": "editions/pokemon/sprites/209.png"
   },
   {
     "id": "granbull",
     "displayName": "Granbull",
     "dexNumber": 210,
-    "sprite": "sprites/210.png"
+    "sprite": "editions/pokemon/sprites/210.png"
   },
   {
     "id": "qwilfish",
     "displayName": "Qwilfish",
     "dexNumber": 211,
-    "sprite": "sprites/211.png"
+    "sprite": "editions/pokemon/sprites/211.png"
   },
   {
     "id": "scizor",
     "displayName": "Scizor",
     "dexNumber": 212,
-    "sprite": "sprites/212.png"
+    "sprite": "editions/pokemon/sprites/212.png"
   },
   {
     "id": "shuckle",
     "displayName": "Shuckle",
     "dexNumber": 213,
-    "sprite": "sprites/213.png"
+    "sprite": "editions/pokemon/sprites/213.png"
   },
   {
     "id": "heracross",
     "displayName": "Heracross",
     "dexNumber": 214,
-    "sprite": "sprites/214.png"
+    "sprite": "editions/pokemon/sprites/214.png"
   },
   {
     "id": "sneasel",
     "displayName": "Sneasel",
     "dexNumber": 215,
-    "sprite": "sprites/215.png"
+    "sprite": "editions/pokemon/sprites/215.png"
   },
   {
     "id": "teddiursa",
     "displayName": "Teddiursa",
     "dexNumber": 216,
-    "sprite": "sprites/216.png"
+    "sprite": "editions/pokemon/sprites/216.png"
   },
   {
     "id": "ursaring",
     "displayName": "Ursaring",
     "dexNumber": 217,
-    "sprite": "sprites/217.png"
+    "sprite": "editions/pokemon/sprites/217.png"
   },
   {
     "id": "slugma",
     "displayName": "Slugma",
     "dexNumber": 218,
-    "sprite": "sprites/218.png"
+    "sprite": "editions/pokemon/sprites/218.png"
   },
   {
     "id": "magcargo",
     "displayName": "Magcargo",
     "dexNumber": 219,
-    "sprite": "sprites/219.png"
+    "sprite": "editions/pokemon/sprites/219.png"
   },
   {
     "id": "swinub",
     "displayName": "Swinub",
     "dexNumber": 220,
-    "sprite": "sprites/220.png"
+    "sprite": "editions/pokemon/sprites/220.png"
   },
   {
     "id": "piloswine",
     "displayName": "Piloswine",
     "dexNumber": 221,
-    "sprite": "sprites/221.png"
+    "sprite": "editions/pokemon/sprites/221.png"
   },
   {
     "id": "corsola",
     "displayName": "Corsola",
     "dexNumber": 222,
-    "sprite": "sprites/222.png"
+    "sprite": "editions/pokemon/sprites/222.png"
   },
   {
     "id": "remoraid",
     "displayName": "Remoraid",
     "dexNumber": 223,
-    "sprite": "sprites/223.png"
+    "sprite": "editions/pokemon/sprites/223.png"
   },
   {
     "id": "octillery",
     "displayName": "Octillery",
     "dexNumber": 224,
-    "sprite": "sprites/224.png"
+    "sprite": "editions/pokemon/sprites/224.png"
   },
   {
     "id": "delibird",
     "displayName": "Delibird",
     "dexNumber": 225,
-    "sprite": "sprites/225.png"
+    "sprite": "editions/pokemon/sprites/225.png"
   },
   {
     "id": "mantine",
     "displayName": "Mantine",
     "dexNumber": 226,
-    "sprite": "sprites/226.png"
+    "sprite": "editions/pokemon/sprites/226.png"
   },
   {
     "id": "skarmory",
     "displayName": "Skarmory",
     "dexNumber": 227,
-    "sprite": "sprites/227.png"
+    "sprite": "editions/pokemon/sprites/227.png"
   },
   {
     "id": "houndour",
     "displayName": "Houndour",
     "dexNumber": 228,
-    "sprite": "sprites/228.png"
+    "sprite": "editions/pokemon/sprites/228.png"
   },
   {
     "id": "houndoom",
     "displayName": "Houndoom",
     "dexNumber": 229,
-    "sprite": "sprites/229.png"
+    "sprite": "editions/pokemon/sprites/229.png"
   },
   {
     "id": "kingdra",
     "displayName": "Kingdra",
     "dexNumber": 230,
-    "sprite": "sprites/230.png"
+    "sprite": "editions/pokemon/sprites/230.png"
   },
   {
     "id": "phanpy",
     "displayName": "Phanpy",
     "dexNumber": 231,
-    "sprite": "sprites/231.png"
+    "sprite": "editions/pokemon/sprites/231.png"
   },
   {
     "id": "donphan",
     "displayName": "Donphan",
     "dexNumber": 232,
-    "sprite": "sprites/232.png"
+    "sprite": "editions/pokemon/sprites/232.png"
   },
   {
     "id": "porygon2",
     "displayName": "Porygon2",
     "dexNumber": 233,
-    "sprite": "sprites/233.png"
+    "sprite": "editions/pokemon/sprites/233.png"
   },
   {
     "id": "stantler",
     "displayName": "Stantler",
     "dexNumber": 234,
-    "sprite": "sprites/234.png"
+    "sprite": "editions/pokemon/sprites/234.png"
   },
   {
     "id": "smeargle",
     "displayName": "Smeargle",
     "dexNumber": 235,
-    "sprite": "sprites/235.png"
+    "sprite": "editions/pokemon/sprites/235.png"
   },
   {
     "id": "tyrogue",
     "displayName": "Tyrogue",
     "dexNumber": 236,
-    "sprite": "sprites/236.png"
+    "sprite": "editions/pokemon/sprites/236.png"
   },
   {
     "id": "hitmontop",
     "displayName": "Hitmontop",
     "dexNumber": 237,
-    "sprite": "sprites/237.png"
+    "sprite": "editions/pokemon/sprites/237.png"
   },
   {
     "id": "smoochum",
     "displayName": "Smoochum",
     "dexNumber": 238,
-    "sprite": "sprites/238.png"
+    "sprite": "editions/pokemon/sprites/238.png"
   },
   {
     "id": "elekid",
     "displayName": "Elekid",
     "dexNumber": 239,
-    "sprite": "sprites/239.png"
+    "sprite": "editions/pokemon/sprites/239.png"
   },
   {
     "id": "magby",
     "displayName": "Magby",
     "dexNumber": 240,
-    "sprite": "sprites/240.png"
+    "sprite": "editions/pokemon/sprites/240.png"
   },
   {
     "id": "miltank",
     "displayName": "Miltank",
     "dexNumber": 241,
-    "sprite": "sprites/241.png"
+    "sprite": "editions/pokemon/sprites/241.png"
   },
   {
     "id": "blissey",
     "displayName": "Blissey",
     "dexNumber": 242,
-    "sprite": "sprites/242.png"
+    "sprite": "editions/pokemon/sprites/242.png"
   },
   {
     "id": "raikou",
     "displayName": "Raikou",
     "dexNumber": 243,
-    "sprite": "sprites/243.png"
+    "sprite": "editions/pokemon/sprites/243.png"
   },
   {
     "id": "entei",
     "displayName": "Entei",
     "dexNumber": 244,
-    "sprite": "sprites/244.png"
+    "sprite": "editions/pokemon/sprites/244.png"
   },
   {
     "id": "suicune",
     "displayName": "Suicune",
     "dexNumber": 245,
-    "sprite": "sprites/245.png"
+    "sprite": "editions/pokemon/sprites/245.png"
   },
   {
     "id": "larvitar",
     "displayName": "Larvitar",
     "dexNumber": 246,
-    "sprite": "sprites/246.png"
+    "sprite": "editions/pokemon/sprites/246.png"
   },
   {
     "id": "pupitar",
     "displayName": "Pupitar",
     "dexNumber": 247,
-    "sprite": "sprites/247.png"
+    "sprite": "editions/pokemon/sprites/247.png"
   },
   {
     "id": "tyranitar",
     "displayName": "Tyranitar",
     "dexNumber": 248,
-    "sprite": "sprites/248.png"
+    "sprite": "editions/pokemon/sprites/248.png"
   },
   {
     "id": "lugia",
     "displayName": "Lugia",
     "dexNumber": 249,
-    "sprite": "sprites/249.png"
+    "sprite": "editions/pokemon/sprites/249.png"
   },
   {
     "id": "ho-oh",
     "displayName": "Ho-Oh",
     "dexNumber": 250,
-    "sprite": "sprites/250.png"
+    "sprite": "editions/pokemon/sprites/250.png"
   },
   {
     "id": "celebi",
     "displayName": "Celebi",
     "dexNumber": 251,
-    "sprite": "sprites/251.png"
+    "sprite": "editions/pokemon/sprites/251.png"
   },
   {
     "id": "treecko",
     "displayName": "Treecko",
     "dexNumber": 252,
-    "sprite": "sprites/252.png"
+    "sprite": "editions/pokemon/sprites/252.png"
   },
   {
     "id": "grovyle",
     "displayName": "Grovyle",
     "dexNumber": 253,
-    "sprite": "sprites/253.png"
+    "sprite": "editions/pokemon/sprites/253.png"
   },
   {
     "id": "sceptile",
     "displayName": "Sceptile",
     "dexNumber": 254,
-    "sprite": "sprites/254.png"
+    "sprite": "editions/pokemon/sprites/254.png"
   },
   {
     "id": "torchic",
     "displayName": "Torchic",
     "dexNumber": 255,
-    "sprite": "sprites/255.png"
+    "sprite": "editions/pokemon/sprites/255.png"
   },
   {
     "id": "combusken",
     "displayName": "Combusken",
     "dexNumber": 256,
-    "sprite": "sprites/256.png"
+    "sprite": "editions/pokemon/sprites/256.png"
   },
   {
     "id": "blaziken",
     "displayName": "Blaziken",
     "dexNumber": 257,
-    "sprite": "sprites/257.png"
+    "sprite": "editions/pokemon/sprites/257.png"
   },
   {
     "id": "mudkip",
     "displayName": "Mudkip",
     "dexNumber": 258,
-    "sprite": "sprites/258.png"
+    "sprite": "editions/pokemon/sprites/258.png"
   },
   {
     "id": "marshtomp",
     "displayName": "Marshtomp",
     "dexNumber": 259,
-    "sprite": "sprites/259.png"
+    "sprite": "editions/pokemon/sprites/259.png"
   },
   {
     "id": "swampert",
     "displayName": "Swampert",
     "dexNumber": 260,
-    "sprite": "sprites/260.png"
+    "sprite": "editions/pokemon/sprites/260.png"
   },
   {
     "id": "poochyena",
     "displayName": "Poochyena",
     "dexNumber": 261,
-    "sprite": "sprites/261.png"
+    "sprite": "editions/pokemon/sprites/261.png"
   },
   {
     "id": "mightyena",
     "displayName": "Mightyena",
     "dexNumber": 262,
-    "sprite": "sprites/262.png"
+    "sprite": "editions/pokemon/sprites/262.png"
   },
   {
     "id": "zigzagoon",
     "displayName": "Zigzagoon",
     "dexNumber": 263,
-    "sprite": "sprites/263.png"
+    "sprite": "editions/pokemon/sprites/263.png"
   },
   {
     "id": "linoone",
     "displayName": "Linoone",
     "dexNumber": 264,
-    "sprite": "sprites/264.png"
+    "sprite": "editions/pokemon/sprites/264.png"
   },
   {
     "id": "wurmple",
     "displayName": "Wurmple",
     "dexNumber": 265,
-    "sprite": "sprites/265.png"
+    "sprite": "editions/pokemon/sprites/265.png"
   },
   {
     "id": "silcoon",
     "displayName": "Silcoon",
     "dexNumber": 266,
-    "sprite": "sprites/266.png"
+    "sprite": "editions/pokemon/sprites/266.png"
   },
   {
     "id": "beautifly",
     "displayName": "Beautifly",
     "dexNumber": 267,
-    "sprite": "sprites/267.png"
+    "sprite": "editions/pokemon/sprites/267.png"
   },
   {
     "id": "cascoon",
     "displayName": "Cascoon",
     "dexNumber": 268,
-    "sprite": "sprites/268.png"
+    "sprite": "editions/pokemon/sprites/268.png"
   },
   {
     "id": "dustox",
     "displayName": "Dustox",
     "dexNumber": 269,
-    "sprite": "sprites/269.png"
+    "sprite": "editions/pokemon/sprites/269.png"
   },
   {
     "id": "lotad",
     "displayName": "Lotad",
     "dexNumber": 270,
-    "sprite": "sprites/270.png"
+    "sprite": "editions/pokemon/sprites/270.png"
   },
   {
     "id": "lombre",
     "displayName": "Lombre",
     "dexNumber": 271,
-    "sprite": "sprites/271.png"
+    "sprite": "editions/pokemon/sprites/271.png"
   },
   {
     "id": "ludicolo",
     "displayName": "Ludicolo",
     "dexNumber": 272,
-    "sprite": "sprites/272.png"
+    "sprite": "editions/pokemon/sprites/272.png"
   },
   {
     "id": "seedot",
     "displayName": "Seedot",
     "dexNumber": 273,
-    "sprite": "sprites/273.png"
+    "sprite": "editions/pokemon/sprites/273.png"
   },
   {
     "id": "nuzleaf",
     "displayName": "Nuzleaf",
     "dexNumber": 274,
-    "sprite": "sprites/274.png"
+    "sprite": "editions/pokemon/sprites/274.png"
   },
   {
     "id": "shiftry",
     "displayName": "Shiftry",
     "dexNumber": 275,
-    "sprite": "sprites/275.png"
+    "sprite": "editions/pokemon/sprites/275.png"
   },
   {
     "id": "taillow",
     "displayName": "Taillow",
     "dexNumber": 276,
-    "sprite": "sprites/276.png"
+    "sprite": "editions/pokemon/sprites/276.png"
   },
   {
     "id": "swellow",
     "displayName": "Swellow",
     "dexNumber": 277,
-    "sprite": "sprites/277.png"
+    "sprite": "editions/pokemon/sprites/277.png"
   },
   {
     "id": "wingull",
     "displayName": "Wingull",
     "dexNumber": 278,
-    "sprite": "sprites/278.png"
+    "sprite": "editions/pokemon/sprites/278.png"
   },
   {
     "id": "pelipper",
     "displayName": "Pelipper",
     "dexNumber": 279,
-    "sprite": "sprites/279.png"
+    "sprite": "editions/pokemon/sprites/279.png"
   },
   {
     "id": "ralts",
     "displayName": "Ralts",
     "dexNumber": 280,
-    "sprite": "sprites/280.png"
+    "sprite": "editions/pokemon/sprites/280.png"
   },
   {
     "id": "kirlia",
     "displayName": "Kirlia",
     "dexNumber": 281,
-    "sprite": "sprites/281.png"
+    "sprite": "editions/pokemon/sprites/281.png"
   },
   {
     "id": "gardevoir",
     "displayName": "Gardevoir",
     "dexNumber": 282,
-    "sprite": "sprites/282.png"
+    "sprite": "editions/pokemon/sprites/282.png"
   },
   {
     "id": "surskit",
     "displayName": "Surskit",
     "dexNumber": 283,
-    "sprite": "sprites/283.png"
+    "sprite": "editions/pokemon/sprites/283.png"
   },
   {
     "id": "masquerain",
     "displayName": "Masquerain",
     "dexNumber": 284,
-    "sprite": "sprites/284.png"
+    "sprite": "editions/pokemon/sprites/284.png"
   },
   {
     "id": "shroomish",
     "displayName": "Shroomish",
     "dexNumber": 285,
-    "sprite": "sprites/285.png"
+    "sprite": "editions/pokemon/sprites/285.png"
   },
   {
     "id": "breloom",
     "displayName": "Breloom",
     "dexNumber": 286,
-    "sprite": "sprites/286.png"
+    "sprite": "editions/pokemon/sprites/286.png"
   },
   {
     "id": "slakoth",
     "displayName": "Slakoth",
     "dexNumber": 287,
-    "sprite": "sprites/287.png"
+    "sprite": "editions/pokemon/sprites/287.png"
   },
   {
     "id": "vigoroth",
     "displayName": "Vigoroth",
     "dexNumber": 288,
-    "sprite": "sprites/288.png"
+    "sprite": "editions/pokemon/sprites/288.png"
   },
   {
     "id": "slaking",
     "displayName": "Slaking",
     "dexNumber": 289,
-    "sprite": "sprites/289.png"
+    "sprite": "editions/pokemon/sprites/289.png"
   },
   {
     "id": "nincada",
     "displayName": "Nincada",
     "dexNumber": 290,
-    "sprite": "sprites/290.png"
+    "sprite": "editions/pokemon/sprites/290.png"
   },
   {
     "id": "ninjask",
     "displayName": "Ninjask",
     "dexNumber": 291,
-    "sprite": "sprites/291.png"
+    "sprite": "editions/pokemon/sprites/291.png"
   },
   {
     "id": "shedinja",
     "displayName": "Shedinja",
     "dexNumber": 292,
-    "sprite": "sprites/292.png"
+    "sprite": "editions/pokemon/sprites/292.png"
   },
   {
     "id": "whismur",
     "displayName": "Whismur",
     "dexNumber": 293,
-    "sprite": "sprites/293.png"
+    "sprite": "editions/pokemon/sprites/293.png"
   },
   {
     "id": "loudred",
     "displayName": "Loudred",
     "dexNumber": 294,
-    "sprite": "sprites/294.png"
+    "sprite": "editions/pokemon/sprites/294.png"
   },
   {
     "id": "exploud",
     "displayName": "Exploud",
     "dexNumber": 295,
-    "sprite": "sprites/295.png"
+    "sprite": "editions/pokemon/sprites/295.png"
   },
   {
     "id": "makuhita",
     "displayName": "Makuhita",
     "dexNumber": 296,
-    "sprite": "sprites/296.png"
+    "sprite": "editions/pokemon/sprites/296.png"
   },
   {
     "id": "hariyama",
     "displayName": "Hariyama",
     "dexNumber": 297,
-    "sprite": "sprites/297.png"
+    "sprite": "editions/pokemon/sprites/297.png"
   },
   {
     "id": "azurill",
     "displayName": "Azurill",
     "dexNumber": 298,
-    "sprite": "sprites/298.png"
+    "sprite": "editions/pokemon/sprites/298.png"
   },
   {
     "id": "nosepass",
     "displayName": "Nosepass",
     "dexNumber": 299,
-    "sprite": "sprites/299.png"
+    "sprite": "editions/pokemon/sprites/299.png"
   },
   {
     "id": "skitty",
     "displayName": "Skitty",
     "dexNumber": 300,
-    "sprite": "sprites/300.png"
+    "sprite": "editions/pokemon/sprites/300.png"
   },
   {
     "id": "delcatty",
     "displayName": "Delcatty",
     "dexNumber": 301,
-    "sprite": "sprites/301.png"
+    "sprite": "editions/pokemon/sprites/301.png"
   },
   {
     "id": "sableye",
     "displayName": "Sableye",
     "dexNumber": 302,
-    "sprite": "sprites/302.png"
+    "sprite": "editions/pokemon/sprites/302.png"
   },
   {
     "id": "mawile",
     "displayName": "Mawile",
     "dexNumber": 303,
-    "sprite": "sprites/303.png"
+    "sprite": "editions/pokemon/sprites/303.png"
   },
   {
     "id": "aron",
     "displayName": "Aron",
     "dexNumber": 304,
-    "sprite": "sprites/304.png"
+    "sprite": "editions/pokemon/sprites/304.png"
   },
   {
     "id": "lairon",
     "displayName": "Lairon",
     "dexNumber": 305,
-    "sprite": "sprites/305.png"
+    "sprite": "editions/pokemon/sprites/305.png"
   },
   {
     "id": "aggron",
     "displayName": "Aggron",
     "dexNumber": 306,
-    "sprite": "sprites/306.png"
+    "sprite": "editions/pokemon/sprites/306.png"
   },
   {
     "id": "meditite",
     "displayName": "Meditite",
     "dexNumber": 307,
-    "sprite": "sprites/307.png"
+    "sprite": "editions/pokemon/sprites/307.png"
   },
   {
     "id": "medicham",
     "displayName": "Medicham",
     "dexNumber": 308,
-    "sprite": "sprites/308.png"
+    "sprite": "editions/pokemon/sprites/308.png"
   },
   {
     "id": "electrike",
     "displayName": "Electrike",
     "dexNumber": 309,
-    "sprite": "sprites/309.png"
+    "sprite": "editions/pokemon/sprites/309.png"
   },
   {
     "id": "manectric",
     "displayName": "Manectric",
     "dexNumber": 310,
-    "sprite": "sprites/310.png"
+    "sprite": "editions/pokemon/sprites/310.png"
   },
   {
     "id": "plusle",
     "displayName": "Plusle",
     "dexNumber": 311,
-    "sprite": "sprites/311.png"
+    "sprite": "editions/pokemon/sprites/311.png"
   },
   {
     "id": "minun",
     "displayName": "Minun",
     "dexNumber": 312,
-    "sprite": "sprites/312.png"
+    "sprite": "editions/pokemon/sprites/312.png"
   },
   {
     "id": "volbeat",
     "displayName": "Volbeat",
     "dexNumber": 313,
-    "sprite": "sprites/313.png"
+    "sprite": "editions/pokemon/sprites/313.png"
   },
   {
     "id": "illumise",
     "displayName": "Illumise",
     "dexNumber": 314,
-    "sprite": "sprites/314.png"
+    "sprite": "editions/pokemon/sprites/314.png"
   },
   {
     "id": "roselia",
     "displayName": "Roselia",
     "dexNumber": 315,
-    "sprite": "sprites/315.png"
+    "sprite": "editions/pokemon/sprites/315.png"
   },
   {
     "id": "gulpin",
     "displayName": "Gulpin",
     "dexNumber": 316,
-    "sprite": "sprites/316.png"
+    "sprite": "editions/pokemon/sprites/316.png"
   },
   {
     "id": "swalot",
     "displayName": "Swalot",
     "dexNumber": 317,
-    "sprite": "sprites/317.png"
+    "sprite": "editions/pokemon/sprites/317.png"
   },
   {
     "id": "carvanha",
     "displayName": "Carvanha",
     "dexNumber": 318,
-    "sprite": "sprites/318.png"
+    "sprite": "editions/pokemon/sprites/318.png"
   },
   {
     "id": "sharpedo",
     "displayName": "Sharpedo",
     "dexNumber": 319,
-    "sprite": "sprites/319.png"
+    "sprite": "editions/pokemon/sprites/319.png"
   },
   {
     "id": "wailmer",
     "displayName": "Wailmer",
     "dexNumber": 320,
-    "sprite": "sprites/320.png"
+    "sprite": "editions/pokemon/sprites/320.png"
   },
   {
     "id": "wailord",
     "displayName": "Wailord",
     "dexNumber": 321,
-    "sprite": "sprites/321.png"
+    "sprite": "editions/pokemon/sprites/321.png"
   },
   {
     "id": "numel",
     "displayName": "Numel",
     "dexNumber": 322,
-    "sprite": "sprites/322.png"
+    "sprite": "editions/pokemon/sprites/322.png"
   },
   {
     "id": "camerupt",
     "displayName": "Camerupt",
     "dexNumber": 323,
-    "sprite": "sprites/323.png"
+    "sprite": "editions/pokemon/sprites/323.png"
   },
   {
     "id": "torkoal",
     "displayName": "Torkoal",
     "dexNumber": 324,
-    "sprite": "sprites/324.png"
+    "sprite": "editions/pokemon/sprites/324.png"
   },
   {
     "id": "spoink",
     "displayName": "Spoink",
     "dexNumber": 325,
-    "sprite": "sprites/325.png"
+    "sprite": "editions/pokemon/sprites/325.png"
   },
   {
     "id": "grumpig",
     "displayName": "Grumpig",
     "dexNumber": 326,
-    "sprite": "sprites/326.png"
+    "sprite": "editions/pokemon/sprites/326.png"
   },
   {
     "id": "spinda",
     "displayName": "Spinda",
     "dexNumber": 327,
-    "sprite": "sprites/327.png"
+    "sprite": "editions/pokemon/sprites/327.png"
   },
   {
     "id": "trapinch",
     "displayName": "Trapinch",
     "dexNumber": 328,
-    "sprite": "sprites/328.png"
+    "sprite": "editions/pokemon/sprites/328.png"
   },
   {
     "id": "vibrava",
     "displayName": "Vibrava",
     "dexNumber": 329,
-    "sprite": "sprites/329.png"
+    "sprite": "editions/pokemon/sprites/329.png"
   },
   {
     "id": "flygon",
     "displayName": "Flygon",
     "dexNumber": 330,
-    "sprite": "sprites/330.png"
+    "sprite": "editions/pokemon/sprites/330.png"
   },
   {
     "id": "cacnea",
     "displayName": "Cacnea",
     "dexNumber": 331,
-    "sprite": "sprites/331.png"
+    "sprite": "editions/pokemon/sprites/331.png"
   },
   {
     "id": "cacturne",
     "displayName": "Cacturne",
     "dexNumber": 332,
-    "sprite": "sprites/332.png"
+    "sprite": "editions/pokemon/sprites/332.png"
   },
   {
     "id": "swablu",
     "displayName": "Swablu",
     "dexNumber": 333,
-    "sprite": "sprites/333.png"
+    "sprite": "editions/pokemon/sprites/333.png"
   },
   {
     "id": "altaria",
     "displayName": "Altaria",
     "dexNumber": 334,
-    "sprite": "sprites/334.png"
+    "sprite": "editions/pokemon/sprites/334.png"
   },
   {
     "id": "zangoose",
     "displayName": "Zangoose",
     "dexNumber": 335,
-    "sprite": "sprites/335.png"
+    "sprite": "editions/pokemon/sprites/335.png"
   },
   {
     "id": "seviper",
     "displayName": "Seviper",
     "dexNumber": 336,
-    "sprite": "sprites/336.png"
+    "sprite": "editions/pokemon/sprites/336.png"
   },
   {
     "id": "lunatone",
     "displayName": "Lunatone",
     "dexNumber": 337,
-    "sprite": "sprites/337.png"
+    "sprite": "editions/pokemon/sprites/337.png"
   },
   {
     "id": "solrock",
     "displayName": "Solrock",
     "dexNumber": 338,
-    "sprite": "sprites/338.png"
+    "sprite": "editions/pokemon/sprites/338.png"
   },
   {
     "id": "barboach",
     "displayName": "Barboach",
     "dexNumber": 339,
-    "sprite": "sprites/339.png"
+    "sprite": "editions/pokemon/sprites/339.png"
   },
   {
     "id": "whiscash",
     "displayName": "Whiscash",
     "dexNumber": 340,
-    "sprite": "sprites/340.png"
+    "sprite": "editions/pokemon/sprites/340.png"
   },
   {
     "id": "corphish",
     "displayName": "Corphish",
     "dexNumber": 341,
-    "sprite": "sprites/341.png"
+    "sprite": "editions/pokemon/sprites/341.png"
   },
   {
     "id": "crawdaunt",
     "displayName": "Crawdaunt",
     "dexNumber": 342,
-    "sprite": "sprites/342.png"
+    "sprite": "editions/pokemon/sprites/342.png"
   },
   {
     "id": "baltoy",
     "displayName": "Baltoy",
     "dexNumber": 343,
-    "sprite": "sprites/343.png"
+    "sprite": "editions/pokemon/sprites/343.png"
   },
   {
     "id": "claydol",
     "displayName": "Claydol",
     "dexNumber": 344,
-    "sprite": "sprites/344.png"
+    "sprite": "editions/pokemon/sprites/344.png"
   },
   {
     "id": "lileep",
     "displayName": "Lileep",
     "dexNumber": 345,
-    "sprite": "sprites/345.png"
+    "sprite": "editions/pokemon/sprites/345.png"
   },
   {
     "id": "cradily",
     "displayName": "Cradily",
     "dexNumber": 346,
-    "sprite": "sprites/346.png"
+    "sprite": "editions/pokemon/sprites/346.png"
   },
   {
     "id": "anorith",
     "displayName": "Anorith",
     "dexNumber": 347,
-    "sprite": "sprites/347.png"
+    "sprite": "editions/pokemon/sprites/347.png"
   },
   {
     "id": "armaldo",
     "displayName": "Armaldo",
     "dexNumber": 348,
-    "sprite": "sprites/348.png"
+    "sprite": "editions/pokemon/sprites/348.png"
   },
   {
     "id": "feebas",
     "displayName": "Feebas",
     "dexNumber": 349,
-    "sprite": "sprites/349.png"
+    "sprite": "editions/pokemon/sprites/349.png"
   },
   {
     "id": "milotic",
     "displayName": "Milotic",
     "dexNumber": 350,
-    "sprite": "sprites/350.png"
+    "sprite": "editions/pokemon/sprites/350.png"
   },
   {
     "id": "castform",
     "displayName": "Castform",
     "dexNumber": 351,
-    "sprite": "sprites/351.png"
+    "sprite": "editions/pokemon/sprites/351.png"
   },
   {
     "id": "kecleon",
     "displayName": "Kecleon",
     "dexNumber": 352,
-    "sprite": "sprites/352.png"
+    "sprite": "editions/pokemon/sprites/352.png"
   },
   {
     "id": "shuppet",
     "displayName": "Shuppet",
     "dexNumber": 353,
-    "sprite": "sprites/353.png"
+    "sprite": "editions/pokemon/sprites/353.png"
   },
   {
     "id": "banette",
     "displayName": "Banette",
     "dexNumber": 354,
-    "sprite": "sprites/354.png"
+    "sprite": "editions/pokemon/sprites/354.png"
   },
   {
     "id": "duskull",
     "displayName": "Duskull",
     "dexNumber": 355,
-    "sprite": "sprites/355.png"
+    "sprite": "editions/pokemon/sprites/355.png"
   },
   {
     "id": "dusclops",
     "displayName": "Dusclops",
     "dexNumber": 356,
-    "sprite": "sprites/356.png"
+    "sprite": "editions/pokemon/sprites/356.png"
   },
   {
     "id": "tropius",
     "displayName": "Tropius",
     "dexNumber": 357,
-    "sprite": "sprites/357.png"
+    "sprite": "editions/pokemon/sprites/357.png"
   },
   {
     "id": "chimecho",
     "displayName": "Chimecho",
     "dexNumber": 358,
-    "sprite": "sprites/358.png"
+    "sprite": "editions/pokemon/sprites/358.png"
   },
   {
     "id": "absol",
     "displayName": "Absol",
     "dexNumber": 359,
-    "sprite": "sprites/359.png"
+    "sprite": "editions/pokemon/sprites/359.png"
   },
   {
     "id": "wynaut",
     "displayName": "Wynaut",
     "dexNumber": 360,
-    "sprite": "sprites/360.png"
+    "sprite": "editions/pokemon/sprites/360.png"
   },
   {
     "id": "snorunt",
     "displayName": "Snorunt",
     "dexNumber": 361,
-    "sprite": "sprites/361.png"
+    "sprite": "editions/pokemon/sprites/361.png"
   },
   {
     "id": "glalie",
     "displayName": "Glalie",
     "dexNumber": 362,
-    "sprite": "sprites/362.png"
+    "sprite": "editions/pokemon/sprites/362.png"
   },
   {
     "id": "spheal",
     "displayName": "Spheal",
     "dexNumber": 363,
-    "sprite": "sprites/363.png"
+    "sprite": "editions/pokemon/sprites/363.png"
   },
   {
     "id": "sealeo",
     "displayName": "Sealeo",
     "dexNumber": 364,
-    "sprite": "sprites/364.png"
+    "sprite": "editions/pokemon/sprites/364.png"
   },
   {
     "id": "walrein",
     "displayName": "Walrein",
     "dexNumber": 365,
-    "sprite": "sprites/365.png"
+    "sprite": "editions/pokemon/sprites/365.png"
   },
   {
     "id": "clamperl",
     "displayName": "Clamperl",
     "dexNumber": 366,
-    "sprite": "sprites/366.png"
+    "sprite": "editions/pokemon/sprites/366.png"
   },
   {
     "id": "huntail",
     "displayName": "Huntail",
     "dexNumber": 367,
-    "sprite": "sprites/367.png"
+    "sprite": "editions/pokemon/sprites/367.png"
   },
   {
     "id": "gorebyss",
     "displayName": "Gorebyss",
     "dexNumber": 368,
-    "sprite": "sprites/368.png"
+    "sprite": "editions/pokemon/sprites/368.png"
   },
   {
     "id": "relicanth",
     "displayName": "Relicanth",
     "dexNumber": 369,
-    "sprite": "sprites/369.png"
+    "sprite": "editions/pokemon/sprites/369.png"
   },
   {
     "id": "luvdisc",
     "displayName": "Luvdisc",
     "dexNumber": 370,
-    "sprite": "sprites/370.png"
+    "sprite": "editions/pokemon/sprites/370.png"
   },
   {
     "id": "bagon",
     "displayName": "Bagon",
     "dexNumber": 371,
-    "sprite": "sprites/371.png"
+    "sprite": "editions/pokemon/sprites/371.png"
   },
   {
     "id": "shelgon",
     "displayName": "Shelgon",
     "dexNumber": 372,
-    "sprite": "sprites/372.png"
+    "sprite": "editions/pokemon/sprites/372.png"
   },
   {
     "id": "salamence",
     "displayName": "Salamence",
     "dexNumber": 373,
-    "sprite": "sprites/373.png"
+    "sprite": "editions/pokemon/sprites/373.png"
   },
   {
     "id": "beldum",
     "displayName": "Beldum",
     "dexNumber": 374,
-    "sprite": "sprites/374.png"
+    "sprite": "editions/pokemon/sprites/374.png"
   },
   {
     "id": "metang",
     "displayName": "Metang",
     "dexNumber": 375,
-    "sprite": "sprites/375.png"
+    "sprite": "editions/pokemon/sprites/375.png"
   },
   {
     "id": "metagross",
     "displayName": "Metagross",
     "dexNumber": 376,
-    "sprite": "sprites/376.png"
+    "sprite": "editions/pokemon/sprites/376.png"
   },
   {
     "id": "regirock",
     "displayName": "Regirock",
     "dexNumber": 377,
-    "sprite": "sprites/377.png"
+    "sprite": "editions/pokemon/sprites/377.png"
   },
   {
     "id": "regice",
     "displayName": "Regice",
     "dexNumber": 378,
-    "sprite": "sprites/378.png"
+    "sprite": "editions/pokemon/sprites/378.png"
   },
   {
     "id": "registeel",
     "displayName": "Registeel",
     "dexNumber": 379,
-    "sprite": "sprites/379.png"
+    "sprite": "editions/pokemon/sprites/379.png"
   },
   {
     "id": "latias",
     "displayName": "Latias",
     "dexNumber": 380,
-    "sprite": "sprites/380.png"
+    "sprite": "editions/pokemon/sprites/380.png"
   },
   {
     "id": "latios",
     "displayName": "Latios",
     "dexNumber": 381,
-    "sprite": "sprites/381.png"
+    "sprite": "editions/pokemon/sprites/381.png"
   },
   {
     "id": "kyogre",
     "displayName": "Kyogre",
     "dexNumber": 382,
-    "sprite": "sprites/382.png"
+    "sprite": "editions/pokemon/sprites/382.png"
   },
   {
     "id": "groudon",
     "displayName": "Groudon",
     "dexNumber": 383,
-    "sprite": "sprites/383.png"
+    "sprite": "editions/pokemon/sprites/383.png"
   },
   {
     "id": "rayquaza",
     "displayName": "Rayquaza",
     "dexNumber": 384,
-    "sprite": "sprites/384.png"
+    "sprite": "editions/pokemon/sprites/384.png"
   },
   {
     "id": "jirachi",
     "displayName": "Jirachi",
     "dexNumber": 385,
-    "sprite": "sprites/385.png"
+    "sprite": "editions/pokemon/sprites/385.png"
   },
   {
     "id": "deoxys",
     "displayName": "Deoxys",
     "dexNumber": 386,
-    "sprite": "sprites/386.png"
+    "sprite": "editions/pokemon/sprites/386.png"
   },
   {
     "id": "turtwig",
     "displayName": "Turtwig",
     "dexNumber": 387,
-    "sprite": "sprites/387.png"
+    "sprite": "editions/pokemon/sprites/387.png"
   },
   {
     "id": "grotle",
     "displayName": "Grotle",
     "dexNumber": 388,
-    "sprite": "sprites/388.png"
+    "sprite": "editions/pokemon/sprites/388.png"
   },
   {
     "id": "torterra",
     "displayName": "Torterra",
     "dexNumber": 389,
-    "sprite": "sprites/389.png"
+    "sprite": "editions/pokemon/sprites/389.png"
   },
   {
     "id": "chimchar",
     "displayName": "Chimchar",
     "dexNumber": 390,
-    "sprite": "sprites/390.png"
+    "sprite": "editions/pokemon/sprites/390.png"
   },
   {
     "id": "monferno",
     "displayName": "Monferno",
     "dexNumber": 391,
-    "sprite": "sprites/391.png"
+    "sprite": "editions/pokemon/sprites/391.png"
   },
   {
     "id": "infernape",
     "displayName": "Infernape",
     "dexNumber": 392,
-    "sprite": "sprites/392.png"
+    "sprite": "editions/pokemon/sprites/392.png"
   },
   {
     "id": "piplup",
     "displayName": "Piplup",
     "dexNumber": 393,
-    "sprite": "sprites/393.png"
+    "sprite": "editions/pokemon/sprites/393.png"
   },
   {
     "id": "prinplup",
     "displayName": "Prinplup",
     "dexNumber": 394,
-    "sprite": "sprites/394.png"
+    "sprite": "editions/pokemon/sprites/394.png"
   },
   {
     "id": "empoleon",
     "displayName": "Empoleon",
     "dexNumber": 395,
-    "sprite": "sprites/395.png"
+    "sprite": "editions/pokemon/sprites/395.png"
   },
   {
     "id": "starly",
     "displayName": "Starly",
     "dexNumber": 396,
-    "sprite": "sprites/396.png"
+    "sprite": "editions/pokemon/sprites/396.png"
   },
   {
     "id": "staravia",
     "displayName": "Staravia",
     "dexNumber": 397,
-    "sprite": "sprites/397.png"
+    "sprite": "editions/pokemon/sprites/397.png"
   },
   {
     "id": "staraptor",
     "displayName": "Staraptor",
     "dexNumber": 398,
-    "sprite": "sprites/398.png"
+    "sprite": "editions/pokemon/sprites/398.png"
   },
   {
     "id": "bidoof",
     "displayName": "Bidoof",
     "dexNumber": 399,
-    "sprite": "sprites/399.png"
+    "sprite": "editions/pokemon/sprites/399.png"
   },
   {
     "id": "bibarel",
     "displayName": "Bibarel",
     "dexNumber": 400,
-    "sprite": "sprites/400.png"
+    "sprite": "editions/pokemon/sprites/400.png"
   },
   {
     "id": "kricketot",
     "displayName": "Kricketot",
     "dexNumber": 401,
-    "sprite": "sprites/401.png"
+    "sprite": "editions/pokemon/sprites/401.png"
   },
   {
     "id": "kricketune",
     "displayName": "Kricketune",
     "dexNumber": 402,
-    "sprite": "sprites/402.png"
+    "sprite": "editions/pokemon/sprites/402.png"
   },
   {
     "id": "shinx",
     "displayName": "Shinx",
     "dexNumber": 403,
-    "sprite": "sprites/403.png"
+    "sprite": "editions/pokemon/sprites/403.png"
   },
   {
     "id": "luxio",
     "displayName": "Luxio",
     "dexNumber": 404,
-    "sprite": "sprites/404.png"
+    "sprite": "editions/pokemon/sprites/404.png"
   },
   {
     "id": "luxray",
     "displayName": "Luxray",
     "dexNumber": 405,
-    "sprite": "sprites/405.png"
+    "sprite": "editions/pokemon/sprites/405.png"
   },
   {
     "id": "budew",
     "displayName": "Budew",
     "dexNumber": 406,
-    "sprite": "sprites/406.png"
+    "sprite": "editions/pokemon/sprites/406.png"
   },
   {
     "id": "roserade",
     "displayName": "Roserade",
     "dexNumber": 407,
-    "sprite": "sprites/407.png"
+    "sprite": "editions/pokemon/sprites/407.png"
   },
   {
     "id": "cranidos",
     "displayName": "Cranidos",
     "dexNumber": 408,
-    "sprite": "sprites/408.png"
+    "sprite": "editions/pokemon/sprites/408.png"
   },
   {
     "id": "rampardos",
     "displayName": "Rampardos",
     "dexNumber": 409,
-    "sprite": "sprites/409.png"
+    "sprite": "editions/pokemon/sprites/409.png"
   },
   {
     "id": "shieldon",
     "displayName": "Shieldon",
     "dexNumber": 410,
-    "sprite": "sprites/410.png"
+    "sprite": "editions/pokemon/sprites/410.png"
   },
   {
     "id": "bastiodon",
     "displayName": "Bastiodon",
     "dexNumber": 411,
-    "sprite": "sprites/411.png"
+    "sprite": "editions/pokemon/sprites/411.png"
   },
   {
     "id": "burmy",
     "displayName": "Burmy",
     "dexNumber": 412,
-    "sprite": "sprites/412.png"
+    "sprite": "editions/pokemon/sprites/412.png"
   },
   {
     "id": "wormadam",
     "displayName": "Wormadam",
     "dexNumber": 413,
-    "sprite": "sprites/413.png"
+    "sprite": "editions/pokemon/sprites/413.png"
   },
   {
     "id": "mothim",
     "displayName": "Mothim",
     "dexNumber": 414,
-    "sprite": "sprites/414.png"
+    "sprite": "editions/pokemon/sprites/414.png"
   },
   {
     "id": "combee",
     "displayName": "Combee",
     "dexNumber": 415,
-    "sprite": "sprites/415.png"
+    "sprite": "editions/pokemon/sprites/415.png"
   },
   {
     "id": "vespiquen",
     "displayName": "Vespiquen",
     "dexNumber": 416,
-    "sprite": "sprites/416.png"
+    "sprite": "editions/pokemon/sprites/416.png"
   },
   {
     "id": "pachirisu",
     "displayName": "Pachirisu",
     "dexNumber": 417,
-    "sprite": "sprites/417.png"
+    "sprite": "editions/pokemon/sprites/417.png"
   },
   {
     "id": "buizel",
     "displayName": "Buizel",
     "dexNumber": 418,
-    "sprite": "sprites/418.png"
+    "sprite": "editions/pokemon/sprites/418.png"
   },
   {
     "id": "floatzel",
     "displayName": "Floatzel",
     "dexNumber": 419,
-    "sprite": "sprites/419.png"
+    "sprite": "editions/pokemon/sprites/419.png"
   },
   {
     "id": "cherubi",
     "displayName": "Cherubi",
     "dexNumber": 420,
-    "sprite": "sprites/420.png"
+    "sprite": "editions/pokemon/sprites/420.png"
   },
   {
     "id": "cherrim",
     "displayName": "Cherrim",
     "dexNumber": 421,
-    "sprite": "sprites/421.png"
+    "sprite": "editions/pokemon/sprites/421.png"
   },
   {
     "id": "shellos",
     "displayName": "Shellos",
     "dexNumber": 422,
-    "sprite": "sprites/422.png"
+    "sprite": "editions/pokemon/sprites/422.png"
   },
   {
     "id": "gastrodon",
     "displayName": "Gastrodon",
     "dexNumber": 423,
-    "sprite": "sprites/423.png"
+    "sprite": "editions/pokemon/sprites/423.png"
   },
   {
     "id": "ambipom",
     "displayName": "Ambipom",
     "dexNumber": 424,
-    "sprite": "sprites/424.png"
+    "sprite": "editions/pokemon/sprites/424.png"
   },
   {
     "id": "drifloon",
     "displayName": "Drifloon",
     "dexNumber": 425,
-    "sprite": "sprites/425.png"
+    "sprite": "editions/pokemon/sprites/425.png"
   },
   {
     "id": "drifblim",
     "displayName": "Drifblim",
     "dexNumber": 426,
-    "sprite": "sprites/426.png"
+    "sprite": "editions/pokemon/sprites/426.png"
   },
   {
     "id": "buneary",
     "displayName": "Buneary",
     "dexNumber": 427,
-    "sprite": "sprites/427.png"
+    "sprite": "editions/pokemon/sprites/427.png"
   },
   {
     "id": "lopunny",
     "displayName": "Lopunny",
     "dexNumber": 428,
-    "sprite": "sprites/428.png"
+    "sprite": "editions/pokemon/sprites/428.png"
   },
   {
     "id": "mismagius",
     "displayName": "Mismagius",
     "dexNumber": 429,
-    "sprite": "sprites/429.png"
+    "sprite": "editions/pokemon/sprites/429.png"
   },
   {
     "id": "honchkrow",
     "displayName": "Honchkrow",
     "dexNumber": 430,
-    "sprite": "sprites/430.png"
+    "sprite": "editions/pokemon/sprites/430.png"
   },
   {
     "id": "glameow",
     "displayName": "Glameow",
     "dexNumber": 431,
-    "sprite": "sprites/431.png"
+    "sprite": "editions/pokemon/sprites/431.png"
   },
   {
     "id": "purugly",
     "displayName": "Purugly",
     "dexNumber": 432,
-    "sprite": "sprites/432.png"
+    "sprite": "editions/pokemon/sprites/432.png"
   },
   {
     "id": "chingling",
     "displayName": "Chingling",
     "dexNumber": 433,
-    "sprite": "sprites/433.png"
+    "sprite": "editions/pokemon/sprites/433.png"
   },
   {
     "id": "stunky",
     "displayName": "Stunky",
     "dexNumber": 434,
-    "sprite": "sprites/434.png"
+    "sprite": "editions/pokemon/sprites/434.png"
   },
   {
     "id": "skuntank",
     "displayName": "Skuntank",
     "dexNumber": 435,
-    "sprite": "sprites/435.png"
+    "sprite": "editions/pokemon/sprites/435.png"
   },
   {
     "id": "bronzor",
     "displayName": "Bronzor",
     "dexNumber": 436,
-    "sprite": "sprites/436.png"
+    "sprite": "editions/pokemon/sprites/436.png"
   },
   {
     "id": "bronzong",
     "displayName": "Bronzong",
     "dexNumber": 437,
-    "sprite": "sprites/437.png"
+    "sprite": "editions/pokemon/sprites/437.png"
   },
   {
     "id": "bonsly",
     "displayName": "Bonsly",
     "dexNumber": 438,
-    "sprite": "sprites/438.png"
+    "sprite": "editions/pokemon/sprites/438.png"
   },
   {
     "id": "mime-jr",
     "displayName": "Mime Jr.",
     "dexNumber": 439,
-    "sprite": "sprites/439.png"
+    "sprite": "editions/pokemon/sprites/439.png"
   },
   {
     "id": "happiny",
     "displayName": "Happiny",
     "dexNumber": 440,
-    "sprite": "sprites/440.png"
+    "sprite": "editions/pokemon/sprites/440.png"
   },
   {
     "id": "chatot",
     "displayName": "Chatot",
     "dexNumber": 441,
-    "sprite": "sprites/441.png"
+    "sprite": "editions/pokemon/sprites/441.png"
   },
   {
     "id": "spiritomb",
     "displayName": "Spiritomb",
     "dexNumber": 442,
-    "sprite": "sprites/442.png"
+    "sprite": "editions/pokemon/sprites/442.png"
   },
   {
     "id": "gible",
     "displayName": "Gible",
     "dexNumber": 443,
-    "sprite": "sprites/443.png"
+    "sprite": "editions/pokemon/sprites/443.png"
   },
   {
     "id": "gabite",
     "displayName": "Gabite",
     "dexNumber": 444,
-    "sprite": "sprites/444.png"
+    "sprite": "editions/pokemon/sprites/444.png"
   },
   {
     "id": "garchomp",
     "displayName": "Garchomp",
     "dexNumber": 445,
-    "sprite": "sprites/445.png"
+    "sprite": "editions/pokemon/sprites/445.png"
   },
   {
     "id": "munchlax",
     "displayName": "Munchlax",
     "dexNumber": 446,
-    "sprite": "sprites/446.png"
+    "sprite": "editions/pokemon/sprites/446.png"
   },
   {
     "id": "riolu",
     "displayName": "Riolu",
     "dexNumber": 447,
-    "sprite": "sprites/447.png"
+    "sprite": "editions/pokemon/sprites/447.png"
   },
   {
     "id": "lucario",
     "displayName": "Lucario",
     "dexNumber": 448,
-    "sprite": "sprites/448.png"
+    "sprite": "editions/pokemon/sprites/448.png"
   },
   {
     "id": "hippopotas",
     "displayName": "Hippopotas",
     "dexNumber": 449,
-    "sprite": "sprites/449.png"
+    "sprite": "editions/pokemon/sprites/449.png"
   },
   {
     "id": "hippowdon",
     "displayName": "Hippowdon",
     "dexNumber": 450,
-    "sprite": "sprites/450.png"
+    "sprite": "editions/pokemon/sprites/450.png"
   },
   {
     "id": "skorupi",
     "displayName": "Skorupi",
     "dexNumber": 451,
-    "sprite": "sprites/451.png"
+    "sprite": "editions/pokemon/sprites/451.png"
   },
   {
     "id": "drapion",
     "displayName": "Drapion",
     "dexNumber": 452,
-    "sprite": "sprites/452.png"
+    "sprite": "editions/pokemon/sprites/452.png"
   },
   {
     "id": "croagunk",
     "displayName": "Croagunk",
     "dexNumber": 453,
-    "sprite": "sprites/453.png"
+    "sprite": "editions/pokemon/sprites/453.png"
   },
   {
     "id": "toxicroak",
     "displayName": "Toxicroak",
     "dexNumber": 454,
-    "sprite": "sprites/454.png"
+    "sprite": "editions/pokemon/sprites/454.png"
   },
   {
     "id": "carnivine",
     "displayName": "Carnivine",
     "dexNumber": 455,
-    "sprite": "sprites/455.png"
+    "sprite": "editions/pokemon/sprites/455.png"
   },
   {
     "id": "finneon",
     "displayName": "Finneon",
     "dexNumber": 456,
-    "sprite": "sprites/456.png"
+    "sprite": "editions/pokemon/sprites/456.png"
   },
   {
     "id": "lumineon",
     "displayName": "Lumineon",
     "dexNumber": 457,
-    "sprite": "sprites/457.png"
+    "sprite": "editions/pokemon/sprites/457.png"
   },
   {
     "id": "mantyke",
     "displayName": "Mantyke",
     "dexNumber": 458,
-    "sprite": "sprites/458.png"
+    "sprite": "editions/pokemon/sprites/458.png"
   },
   {
     "id": "snover",
     "displayName": "Snover",
     "dexNumber": 459,
-    "sprite": "sprites/459.png"
+    "sprite": "editions/pokemon/sprites/459.png"
   },
   {
     "id": "abomasnow",
     "displayName": "Abomasnow",
     "dexNumber": 460,
-    "sprite": "sprites/460.png"
+    "sprite": "editions/pokemon/sprites/460.png"
   },
   {
     "id": "weavile",
     "displayName": "Weavile",
     "dexNumber": 461,
-    "sprite": "sprites/461.png"
+    "sprite": "editions/pokemon/sprites/461.png"
   },
   {
     "id": "magnezone",
     "displayName": "Magnezone",
     "dexNumber": 462,
-    "sprite": "sprites/462.png"
+    "sprite": "editions/pokemon/sprites/462.png"
   },
   {
     "id": "lickilicky",
     "displayName": "Lickilicky",
     "dexNumber": 463,
-    "sprite": "sprites/463.png"
+    "sprite": "editions/pokemon/sprites/463.png"
   },
   {
     "id": "rhyperior",
     "displayName": "Rhyperior",
     "dexNumber": 464,
-    "sprite": "sprites/464.png"
+    "sprite": "editions/pokemon/sprites/464.png"
   },
   {
     "id": "tangrowth",
     "displayName": "Tangrowth",
     "dexNumber": 465,
-    "sprite": "sprites/465.png"
+    "sprite": "editions/pokemon/sprites/465.png"
   },
   {
     "id": "electivire",
     "displayName": "Electivire",
     "dexNumber": 466,
-    "sprite": "sprites/466.png"
+    "sprite": "editions/pokemon/sprites/466.png"
   },
   {
     "id": "magmortar",
     "displayName": "Magmortar",
     "dexNumber": 467,
-    "sprite": "sprites/467.png"
+    "sprite": "editions/pokemon/sprites/467.png"
   },
   {
     "id": "togekiss",
     "displayName": "Togekiss",
     "dexNumber": 468,
-    "sprite": "sprites/468.png"
+    "sprite": "editions/pokemon/sprites/468.png"
   },
   {
     "id": "yanmega",
     "displayName": "Yanmega",
     "dexNumber": 469,
-    "sprite": "sprites/469.png"
+    "sprite": "editions/pokemon/sprites/469.png"
   },
   {
     "id": "leafeon",
     "displayName": "Leafeon",
     "dexNumber": 470,
-    "sprite": "sprites/470.png"
+    "sprite": "editions/pokemon/sprites/470.png"
   },
   {
     "id": "glaceon",
     "displayName": "Glaceon",
     "dexNumber": 471,
-    "sprite": "sprites/471.png"
+    "sprite": "editions/pokemon/sprites/471.png"
   },
   {
     "id": "gliscor",
     "displayName": "Gliscor",
     "dexNumber": 472,
-    "sprite": "sprites/472.png"
+    "sprite": "editions/pokemon/sprites/472.png"
   },
   {
     "id": "mamoswine",
     "displayName": "Mamoswine",
     "dexNumber": 473,
-    "sprite": "sprites/473.png"
+    "sprite": "editions/pokemon/sprites/473.png"
   },
   {
     "id": "porygon-z",
     "displayName": "Porygon-Z",
     "dexNumber": 474,
-    "sprite": "sprites/474.png"
+    "sprite": "editions/pokemon/sprites/474.png"
   },
   {
     "id": "gallade",
     "displayName": "Gallade",
     "dexNumber": 475,
-    "sprite": "sprites/475.png"
+    "sprite": "editions/pokemon/sprites/475.png"
   },
   {
     "id": "probopass",
     "displayName": "Probopass",
     "dexNumber": 476,
-    "sprite": "sprites/476.png"
+    "sprite": "editions/pokemon/sprites/476.png"
   },
   {
     "id": "dusknoir",
     "displayName": "Dusknoir",
     "dexNumber": 477,
-    "sprite": "sprites/477.png"
+    "sprite": "editions/pokemon/sprites/477.png"
   },
   {
     "id": "froslass",
     "displayName": "Froslass",
     "dexNumber": 478,
-    "sprite": "sprites/478.png"
+    "sprite": "editions/pokemon/sprites/478.png"
   },
   {
     "id": "rotom",
     "displayName": "Rotom",
     "dexNumber": 479,
-    "sprite": "sprites/479.png"
+    "sprite": "editions/pokemon/sprites/479.png"
   },
   {
     "id": "uxie",
     "displayName": "Uxie",
     "dexNumber": 480,
-    "sprite": "sprites/480.png"
+    "sprite": "editions/pokemon/sprites/480.png"
   },
   {
     "id": "mesprit",
     "displayName": "Mesprit",
     "dexNumber": 481,
-    "sprite": "sprites/481.png"
+    "sprite": "editions/pokemon/sprites/481.png"
   },
   {
     "id": "azelf",
     "displayName": "Azelf",
     "dexNumber": 482,
-    "sprite": "sprites/482.png"
+    "sprite": "editions/pokemon/sprites/482.png"
   },
   {
     "id": "dialga",
     "displayName": "Dialga",
     "dexNumber": 483,
-    "sprite": "sprites/483.png"
+    "sprite": "editions/pokemon/sprites/483.png"
   },
   {
     "id": "palkia",
     "displayName": "Palkia",
     "dexNumber": 484,
-    "sprite": "sprites/484.png"
+    "sprite": "editions/pokemon/sprites/484.png"
   },
   {
     "id": "heatran",
     "displayName": "Heatran",
     "dexNumber": 485,
-    "sprite": "sprites/485.png"
+    "sprite": "editions/pokemon/sprites/485.png"
   },
   {
     "id": "regigigas",
     "displayName": "Regigigas",
     "dexNumber": 486,
-    "sprite": "sprites/486.png"
+    "sprite": "editions/pokemon/sprites/486.png"
   },
   {
     "id": "giratina",
     "displayName": "Giratina",
     "dexNumber": 487,
-    "sprite": "sprites/487.png"
+    "sprite": "editions/pokemon/sprites/487.png"
   },
   {
     "id": "cresselia",
     "displayName": "Cresselia",
     "dexNumber": 488,
-    "sprite": "sprites/488.png"
+    "sprite": "editions/pokemon/sprites/488.png"
   },
   {
     "id": "phione",
     "displayName": "Phione",
     "dexNumber": 489,
-    "sprite": "sprites/489.png"
+    "sprite": "editions/pokemon/sprites/489.png"
   },
   {
     "id": "manaphy",
     "displayName": "Manaphy",
     "dexNumber": 490,
-    "sprite": "sprites/490.png"
+    "sprite": "editions/pokemon/sprites/490.png"
   },
   {
     "id": "darkrai",
     "displayName": "Darkrai",
     "dexNumber": 491,
-    "sprite": "sprites/491.png"
+    "sprite": "editions/pokemon/sprites/491.png"
   },
   {
     "id": "shaymin",
     "displayName": "Shaymin",
     "dexNumber": 492,
-    "sprite": "sprites/492.png"
+    "sprite": "editions/pokemon/sprites/492.png"
   },
   {
     "id": "arceus",
     "displayName": "Arceus",
     "dexNumber": 493,
-    "sprite": "sprites/493.png"
+    "sprite": "editions/pokemon/sprites/493.png"
   },
   {
     "id": "victini",
     "displayName": "Victini",
     "dexNumber": 494,
-    "sprite": "sprites/494.png"
+    "sprite": "editions/pokemon/sprites/494.png"
   },
   {
     "id": "snivy",
     "displayName": "Snivy",
     "dexNumber": 495,
-    "sprite": "sprites/495.png"
+    "sprite": "editions/pokemon/sprites/495.png"
   },
   {
     "id": "servine",
     "displayName": "Servine",
     "dexNumber": 496,
-    "sprite": "sprites/496.png"
+    "sprite": "editions/pokemon/sprites/496.png"
   },
   {
     "id": "serperior",
     "displayName": "Serperior",
     "dexNumber": 497,
-    "sprite": "sprites/497.png"
+    "sprite": "editions/pokemon/sprites/497.png"
   },
   {
     "id": "tepig",
     "displayName": "Tepig",
     "dexNumber": 498,
-    "sprite": "sprites/498.png"
+    "sprite": "editions/pokemon/sprites/498.png"
   },
   {
     "id": "pignite",
     "displayName": "Pignite",
     "dexNumber": 499,
-    "sprite": "sprites/499.png"
+    "sprite": "editions/pokemon/sprites/499.png"
   },
   {
     "id": "emboar",
     "displayName": "Emboar",
     "dexNumber": 500,
-    "sprite": "sprites/500.png"
+    "sprite": "editions/pokemon/sprites/500.png"
   },
   {
     "id": "oshawott",
     "displayName": "Oshawott",
     "dexNumber": 501,
-    "sprite": "sprites/501.png"
+    "sprite": "editions/pokemon/sprites/501.png"
   },
   {
     "id": "dewott",
     "displayName": "Dewott",
     "dexNumber": 502,
-    "sprite": "sprites/502.png"
+    "sprite": "editions/pokemon/sprites/502.png"
   },
   {
     "id": "samurott",
     "displayName": "Samurott",
     "dexNumber": 503,
-    "sprite": "sprites/503.png"
+    "sprite": "editions/pokemon/sprites/503.png"
   },
   {
     "id": "patrat",
     "displayName": "Patrat",
     "dexNumber": 504,
-    "sprite": "sprites/504.png"
+    "sprite": "editions/pokemon/sprites/504.png"
   },
   {
     "id": "watchog",
     "displayName": "Watchog",
     "dexNumber": 505,
-    "sprite": "sprites/505.png"
+    "sprite": "editions/pokemon/sprites/505.png"
   },
   {
     "id": "lillipup",
     "displayName": "Lillipup",
     "dexNumber": 506,
-    "sprite": "sprites/506.png"
+    "sprite": "editions/pokemon/sprites/506.png"
   },
   {
     "id": "herdier",
     "displayName": "Herdier",
     "dexNumber": 507,
-    "sprite": "sprites/507.png"
+    "sprite": "editions/pokemon/sprites/507.png"
   },
   {
     "id": "stoutland",
     "displayName": "Stoutland",
     "dexNumber": 508,
-    "sprite": "sprites/508.png"
+    "sprite": "editions/pokemon/sprites/508.png"
   },
   {
     "id": "purrloin",
     "displayName": "Purrloin",
     "dexNumber": 509,
-    "sprite": "sprites/509.png"
+    "sprite": "editions/pokemon/sprites/509.png"
   },
   {
     "id": "liepard",
     "displayName": "Liepard",
     "dexNumber": 510,
-    "sprite": "sprites/510.png"
+    "sprite": "editions/pokemon/sprites/510.png"
   },
   {
     "id": "pansage",
     "displayName": "Pansage",
     "dexNumber": 511,
-    "sprite": "sprites/511.png"
+    "sprite": "editions/pokemon/sprites/511.png"
   },
   {
     "id": "simisage",
     "displayName": "Simisage",
     "dexNumber": 512,
-    "sprite": "sprites/512.png"
+    "sprite": "editions/pokemon/sprites/512.png"
   },
   {
     "id": "pansear",
     "displayName": "Pansear",
     "dexNumber": 513,
-    "sprite": "sprites/513.png"
+    "sprite": "editions/pokemon/sprites/513.png"
   },
   {
     "id": "simisear",
     "displayName": "Simisear",
     "dexNumber": 514,
-    "sprite": "sprites/514.png"
+    "sprite": "editions/pokemon/sprites/514.png"
   },
   {
     "id": "panpour",
     "displayName": "Panpour",
     "dexNumber": 515,
-    "sprite": "sprites/515.png"
+    "sprite": "editions/pokemon/sprites/515.png"
   },
   {
     "id": "simipour",
     "displayName": "Simipour",
     "dexNumber": 516,
-    "sprite": "sprites/516.png"
+    "sprite": "editions/pokemon/sprites/516.png"
   },
   {
     "id": "munna",
     "displayName": "Munna",
     "dexNumber": 517,
-    "sprite": "sprites/517.png"
+    "sprite": "editions/pokemon/sprites/517.png"
   },
   {
     "id": "musharna",
     "displayName": "Musharna",
     "dexNumber": 518,
-    "sprite": "sprites/518.png"
+    "sprite": "editions/pokemon/sprites/518.png"
   },
   {
     "id": "pidove",
     "displayName": "Pidove",
     "dexNumber": 519,
-    "sprite": "sprites/519.png"
+    "sprite": "editions/pokemon/sprites/519.png"
   },
   {
     "id": "tranquill",
     "displayName": "Tranquill",
     "dexNumber": 520,
-    "sprite": "sprites/520.png"
+    "sprite": "editions/pokemon/sprites/520.png"
   },
   {
     "id": "unfezant",
     "displayName": "Unfezant",
     "dexNumber": 521,
-    "sprite": "sprites/521.png"
+    "sprite": "editions/pokemon/sprites/521.png"
   },
   {
     "id": "blitzle",
     "displayName": "Blitzle",
     "dexNumber": 522,
-    "sprite": "sprites/522.png"
+    "sprite": "editions/pokemon/sprites/522.png"
   },
   {
     "id": "zebstrika",
     "displayName": "Zebstrika",
     "dexNumber": 523,
-    "sprite": "sprites/523.png"
+    "sprite": "editions/pokemon/sprites/523.png"
   },
   {
     "id": "roggenrola",
     "displayName": "Roggenrola",
     "dexNumber": 524,
-    "sprite": "sprites/524.png"
+    "sprite": "editions/pokemon/sprites/524.png"
   },
   {
     "id": "boldore",
     "displayName": "Boldore",
     "dexNumber": 525,
-    "sprite": "sprites/525.png"
+    "sprite": "editions/pokemon/sprites/525.png"
   },
   {
     "id": "gigalith",
     "displayName": "Gigalith",
     "dexNumber": 526,
-    "sprite": "sprites/526.png"
+    "sprite": "editions/pokemon/sprites/526.png"
   },
   {
     "id": "woobat",
     "displayName": "Woobat",
     "dexNumber": 527,
-    "sprite": "sprites/527.png"
+    "sprite": "editions/pokemon/sprites/527.png"
   },
   {
     "id": "swoobat",
     "displayName": "Swoobat",
     "dexNumber": 528,
-    "sprite": "sprites/528.png"
+    "sprite": "editions/pokemon/sprites/528.png"
   },
   {
     "id": "drilbur",
     "displayName": "Drilbur",
     "dexNumber": 529,
-    "sprite": "sprites/529.png"
+    "sprite": "editions/pokemon/sprites/529.png"
   },
   {
     "id": "excadrill",
     "displayName": "Excadrill",
     "dexNumber": 530,
-    "sprite": "sprites/530.png"
+    "sprite": "editions/pokemon/sprites/530.png"
   },
   {
     "id": "audino",
     "displayName": "Audino",
     "dexNumber": 531,
-    "sprite": "sprites/531.png"
+    "sprite": "editions/pokemon/sprites/531.png"
   },
   {
     "id": "timburr",
     "displayName": "Timburr",
     "dexNumber": 532,
-    "sprite": "sprites/532.png"
+    "sprite": "editions/pokemon/sprites/532.png"
   },
   {
     "id": "gurdurr",
     "displayName": "Gurdurr",
     "dexNumber": 533,
-    "sprite": "sprites/533.png"
+    "sprite": "editions/pokemon/sprites/533.png"
   },
   {
     "id": "conkeldurr",
     "displayName": "Conkeldurr",
     "dexNumber": 534,
-    "sprite": "sprites/534.png"
+    "sprite": "editions/pokemon/sprites/534.png"
   },
   {
     "id": "tympole",
     "displayName": "Tympole",
     "dexNumber": 535,
-    "sprite": "sprites/535.png"
+    "sprite": "editions/pokemon/sprites/535.png"
   },
   {
     "id": "palpitoad",
     "displayName": "Palpitoad",
     "dexNumber": 536,
-    "sprite": "sprites/536.png"
+    "sprite": "editions/pokemon/sprites/536.png"
   },
   {
     "id": "seismitoad",
     "displayName": "Seismitoad",
     "dexNumber": 537,
-    "sprite": "sprites/537.png"
+    "sprite": "editions/pokemon/sprites/537.png"
   },
   {
     "id": "throh",
     "displayName": "Throh",
     "dexNumber": 538,
-    "sprite": "sprites/538.png"
+    "sprite": "editions/pokemon/sprites/538.png"
   },
   {
     "id": "sawk",
     "displayName": "Sawk",
     "dexNumber": 539,
-    "sprite": "sprites/539.png"
+    "sprite": "editions/pokemon/sprites/539.png"
   },
   {
     "id": "sewaddle",
     "displayName": "Sewaddle",
     "dexNumber": 540,
-    "sprite": "sprites/540.png"
+    "sprite": "editions/pokemon/sprites/540.png"
   },
   {
     "id": "swadloon",
     "displayName": "Swadloon",
     "dexNumber": 541,
-    "sprite": "sprites/541.png"
+    "sprite": "editions/pokemon/sprites/541.png"
   },
   {
     "id": "leavanny",
     "displayName": "Leavanny",
     "dexNumber": 542,
-    "sprite": "sprites/542.png"
+    "sprite": "editions/pokemon/sprites/542.png"
   },
   {
     "id": "venipede",
     "displayName": "Venipede",
     "dexNumber": 543,
-    "sprite": "sprites/543.png"
+    "sprite": "editions/pokemon/sprites/543.png"
   },
   {
     "id": "whirlipede",
     "displayName": "Whirlipede",
     "dexNumber": 544,
-    "sprite": "sprites/544.png"
+    "sprite": "editions/pokemon/sprites/544.png"
   },
   {
     "id": "scolipede",
     "displayName": "Scolipede",
     "dexNumber": 545,
-    "sprite": "sprites/545.png"
+    "sprite": "editions/pokemon/sprites/545.png"
   },
   {
     "id": "cottonee",
     "displayName": "Cottonee",
     "dexNumber": 546,
-    "sprite": "sprites/546.png"
+    "sprite": "editions/pokemon/sprites/546.png"
   },
   {
     "id": "whimsicott",
     "displayName": "Whimsicott",
     "dexNumber": 547,
-    "sprite": "sprites/547.png"
+    "sprite": "editions/pokemon/sprites/547.png"
   },
   {
     "id": "petilil",
     "displayName": "Petilil",
     "dexNumber": 548,
-    "sprite": "sprites/548.png"
+    "sprite": "editions/pokemon/sprites/548.png"
   },
   {
     "id": "lilligant",
     "displayName": "Lilligant",
     "dexNumber": 549,
-    "sprite": "sprites/549.png"
+    "sprite": "editions/pokemon/sprites/549.png"
   },
   {
     "id": "basculin",
     "displayName": "Basculin",
     "dexNumber": 550,
-    "sprite": "sprites/550.png"
+    "sprite": "editions/pokemon/sprites/550.png"
   },
   {
     "id": "sandile",
     "displayName": "Sandile",
     "dexNumber": 551,
-    "sprite": "sprites/551.png"
+    "sprite": "editions/pokemon/sprites/551.png"
   },
   {
     "id": "krokorok",
     "displayName": "Krokorok",
     "dexNumber": 552,
-    "sprite": "sprites/552.png"
+    "sprite": "editions/pokemon/sprites/552.png"
   },
   {
     "id": "krookodile",
     "displayName": "Krookodile",
     "dexNumber": 553,
-    "sprite": "sprites/553.png"
+    "sprite": "editions/pokemon/sprites/553.png"
   },
   {
     "id": "darumaka",
     "displayName": "Darumaka",
     "dexNumber": 554,
-    "sprite": "sprites/554.png"
+    "sprite": "editions/pokemon/sprites/554.png"
   },
   {
     "id": "darmanitan",
     "displayName": "Darmanitan",
     "dexNumber": 555,
-    "sprite": "sprites/555.png"
+    "sprite": "editions/pokemon/sprites/555.png"
   },
   {
     "id": "maractus",
     "displayName": "Maractus",
     "dexNumber": 556,
-    "sprite": "sprites/556.png"
+    "sprite": "editions/pokemon/sprites/556.png"
   },
   {
     "id": "dwebble",
     "displayName": "Dwebble",
     "dexNumber": 557,
-    "sprite": "sprites/557.png"
+    "sprite": "editions/pokemon/sprites/557.png"
   },
   {
     "id": "crustle",
     "displayName": "Crustle",
     "dexNumber": 558,
-    "sprite": "sprites/558.png"
+    "sprite": "editions/pokemon/sprites/558.png"
   },
   {
     "id": "scraggy",
     "displayName": "Scraggy",
     "dexNumber": 559,
-    "sprite": "sprites/559.png"
+    "sprite": "editions/pokemon/sprites/559.png"
   },
   {
     "id": "scrafty",
     "displayName": "Scrafty",
     "dexNumber": 560,
-    "sprite": "sprites/560.png"
+    "sprite": "editions/pokemon/sprites/560.png"
   },
   {
     "id": "sigilyph",
     "displayName": "Sigilyph",
     "dexNumber": 561,
-    "sprite": "sprites/561.png"
+    "sprite": "editions/pokemon/sprites/561.png"
   },
   {
     "id": "yamask",
     "displayName": "Yamask",
     "dexNumber": 562,
-    "sprite": "sprites/562.png"
+    "sprite": "editions/pokemon/sprites/562.png"
   },
   {
     "id": "cofagrigus",
     "displayName": "Cofagrigus",
     "dexNumber": 563,
-    "sprite": "sprites/563.png"
+    "sprite": "editions/pokemon/sprites/563.png"
   },
   {
     "id": "tirtouga",
     "displayName": "Tirtouga",
     "dexNumber": 564,
-    "sprite": "sprites/564.png"
+    "sprite": "editions/pokemon/sprites/564.png"
   },
   {
     "id": "carracosta",
     "displayName": "Carracosta",
     "dexNumber": 565,
-    "sprite": "sprites/565.png"
+    "sprite": "editions/pokemon/sprites/565.png"
   },
   {
     "id": "archen",
     "displayName": "Archen",
     "dexNumber": 566,
-    "sprite": "sprites/566.png"
+    "sprite": "editions/pokemon/sprites/566.png"
   },
   {
     "id": "archeops",
     "displayName": "Archeops",
     "dexNumber": 567,
-    "sprite": "sprites/567.png"
+    "sprite": "editions/pokemon/sprites/567.png"
   },
   {
     "id": "trubbish",
     "displayName": "Trubbish",
     "dexNumber": 568,
-    "sprite": "sprites/568.png"
+    "sprite": "editions/pokemon/sprites/568.png"
   },
   {
     "id": "garbodor",
     "displayName": "Garbodor",
     "dexNumber": 569,
-    "sprite": "sprites/569.png"
+    "sprite": "editions/pokemon/sprites/569.png"
   },
   {
     "id": "zorua",
     "displayName": "Zorua",
     "dexNumber": 570,
-    "sprite": "sprites/570.png"
+    "sprite": "editions/pokemon/sprites/570.png"
   },
   {
     "id": "zoroark",
     "displayName": "Zoroark",
     "dexNumber": 571,
-    "sprite": "sprites/571.png"
+    "sprite": "editions/pokemon/sprites/571.png"
   },
   {
     "id": "minccino",
     "displayName": "Minccino",
     "dexNumber": 572,
-    "sprite": "sprites/572.png"
+    "sprite": "editions/pokemon/sprites/572.png"
   },
   {
     "id": "cinccino",
     "displayName": "Cinccino",
     "dexNumber": 573,
-    "sprite": "sprites/573.png"
+    "sprite": "editions/pokemon/sprites/573.png"
   },
   {
     "id": "gothita",
     "displayName": "Gothita",
     "dexNumber": 574,
-    "sprite": "sprites/574.png"
+    "sprite": "editions/pokemon/sprites/574.png"
   },
   {
     "id": "gothorita",
     "displayName": "Gothorita",
     "dexNumber": 575,
-    "sprite": "sprites/575.png"
+    "sprite": "editions/pokemon/sprites/575.png"
   },
   {
     "id": "gothitelle",
     "displayName": "Gothitelle",
     "dexNumber": 576,
-    "sprite": "sprites/576.png"
+    "sprite": "editions/pokemon/sprites/576.png"
   },
   {
     "id": "solosis",
     "displayName": "Solosis",
     "dexNumber": 577,
-    "sprite": "sprites/577.png"
+    "sprite": "editions/pokemon/sprites/577.png"
   },
   {
     "id": "duosion",
     "displayName": "Duosion",
     "dexNumber": 578,
-    "sprite": "sprites/578.png"
+    "sprite": "editions/pokemon/sprites/578.png"
   },
   {
     "id": "reuniclus",
     "displayName": "Reuniclus",
     "dexNumber": 579,
-    "sprite": "sprites/579.png"
+    "sprite": "editions/pokemon/sprites/579.png"
   },
   {
     "id": "ducklett",
     "displayName": "Ducklett",
     "dexNumber": 580,
-    "sprite": "sprites/580.png"
+    "sprite": "editions/pokemon/sprites/580.png"
   },
   {
     "id": "swanna",
     "displayName": "Swanna",
     "dexNumber": 581,
-    "sprite": "sprites/581.png"
+    "sprite": "editions/pokemon/sprites/581.png"
   },
   {
     "id": "vanillite",
     "displayName": "Vanillite",
     "dexNumber": 582,
-    "sprite": "sprites/582.png"
+    "sprite": "editions/pokemon/sprites/582.png"
   },
   {
     "id": "vanillish",
     "displayName": "Vanillish",
     "dexNumber": 583,
-    "sprite": "sprites/583.png"
+    "sprite": "editions/pokemon/sprites/583.png"
   },
   {
     "id": "vanilluxe",
     "displayName": "Vanilluxe",
     "dexNumber": 584,
-    "sprite": "sprites/584.png"
+    "sprite": "editions/pokemon/sprites/584.png"
   },
   {
     "id": "deerling",
     "displayName": "Deerling",
     "dexNumber": 585,
-    "sprite": "sprites/585.png"
+    "sprite": "editions/pokemon/sprites/585.png"
   },
   {
     "id": "sawsbuck",
     "displayName": "Sawsbuck",
     "dexNumber": 586,
-    "sprite": "sprites/586.png"
+    "sprite": "editions/pokemon/sprites/586.png"
   },
   {
     "id": "emolga",
     "displayName": "Emolga",
     "dexNumber": 587,
-    "sprite": "sprites/587.png"
+    "sprite": "editions/pokemon/sprites/587.png"
   },
   {
     "id": "karrablast",
     "displayName": "Karrablast",
     "dexNumber": 588,
-    "sprite": "sprites/588.png"
+    "sprite": "editions/pokemon/sprites/588.png"
   },
   {
     "id": "escavalier",
     "displayName": "Escavalier",
     "dexNumber": 589,
-    "sprite": "sprites/589.png"
+    "sprite": "editions/pokemon/sprites/589.png"
   },
   {
     "id": "foongus",
     "displayName": "Foongus",
     "dexNumber": 590,
-    "sprite": "sprites/590.png"
+    "sprite": "editions/pokemon/sprites/590.png"
   },
   {
     "id": "amoonguss",
     "displayName": "Amoonguss",
     "dexNumber": 591,
-    "sprite": "sprites/591.png"
+    "sprite": "editions/pokemon/sprites/591.png"
   },
   {
     "id": "frillish",
     "displayName": "Frillish",
     "dexNumber": 592,
-    "sprite": "sprites/592.png"
+    "sprite": "editions/pokemon/sprites/592.png"
   },
   {
     "id": "jellicent",
     "displayName": "Jellicent",
     "dexNumber": 593,
-    "sprite": "sprites/593.png"
+    "sprite": "editions/pokemon/sprites/593.png"
   },
   {
     "id": "alomomola",
     "displayName": "Alomomola",
     "dexNumber": 594,
-    "sprite": "sprites/594.png"
+    "sprite": "editions/pokemon/sprites/594.png"
   },
   {
     "id": "joltik",
     "displayName": "Joltik",
     "dexNumber": 595,
-    "sprite": "sprites/595.png"
+    "sprite": "editions/pokemon/sprites/595.png"
   },
   {
     "id": "galvantula",
     "displayName": "Galvantula",
     "dexNumber": 596,
-    "sprite": "sprites/596.png"
+    "sprite": "editions/pokemon/sprites/596.png"
   },
   {
     "id": "ferroseed",
     "displayName": "Ferroseed",
     "dexNumber": 597,
-    "sprite": "sprites/597.png"
+    "sprite": "editions/pokemon/sprites/597.png"
   },
   {
     "id": "ferrothorn",
     "displayName": "Ferrothorn",
     "dexNumber": 598,
-    "sprite": "sprites/598.png"
+    "sprite": "editions/pokemon/sprites/598.png"
   },
   {
     "id": "klink",
     "displayName": "Klink",
     "dexNumber": 599,
-    "sprite": "sprites/599.png"
+    "sprite": "editions/pokemon/sprites/599.png"
   },
   {
     "id": "klang",
     "displayName": "Klang",
     "dexNumber": 600,
-    "sprite": "sprites/600.png"
+    "sprite": "editions/pokemon/sprites/600.png"
   },
   {
     "id": "klinklang",
     "displayName": "Klinklang",
     "dexNumber": 601,
-    "sprite": "sprites/601.png"
+    "sprite": "editions/pokemon/sprites/601.png"
   },
   {
     "id": "tynamo",
     "displayName": "Tynamo",
     "dexNumber": 602,
-    "sprite": "sprites/602.png"
+    "sprite": "editions/pokemon/sprites/602.png"
   },
   {
     "id": "eelektrik",
     "displayName": "Eelektrik",
     "dexNumber": 603,
-    "sprite": "sprites/603.png"
+    "sprite": "editions/pokemon/sprites/603.png"
   },
   {
     "id": "eelektross",
     "displayName": "Eelektross",
     "dexNumber": 604,
-    "sprite": "sprites/604.png"
+    "sprite": "editions/pokemon/sprites/604.png"
   },
   {
     "id": "elgyem",
     "displayName": "Elgyem",
     "dexNumber": 605,
-    "sprite": "sprites/605.png"
+    "sprite": "editions/pokemon/sprites/605.png"
   },
   {
     "id": "beheeyem",
     "displayName": "Beheeyem",
     "dexNumber": 606,
-    "sprite": "sprites/606.png"
+    "sprite": "editions/pokemon/sprites/606.png"
   },
   {
     "id": "litwick",
     "displayName": "Litwick",
     "dexNumber": 607,
-    "sprite": "sprites/607.png"
+    "sprite": "editions/pokemon/sprites/607.png"
   },
   {
     "id": "lampent",
     "displayName": "Lampent",
     "dexNumber": 608,
-    "sprite": "sprites/608.png"
+    "sprite": "editions/pokemon/sprites/608.png"
   },
   {
     "id": "chandelure",
     "displayName": "Chandelure",
     "dexNumber": 609,
-    "sprite": "sprites/609.png"
+    "sprite": "editions/pokemon/sprites/609.png"
   },
   {
     "id": "axew",
     "displayName": "Axew",
     "dexNumber": 610,
-    "sprite": "sprites/610.png"
+    "sprite": "editions/pokemon/sprites/610.png"
   },
   {
     "id": "fraxure",
     "displayName": "Fraxure",
     "dexNumber": 611,
-    "sprite": "sprites/611.png"
+    "sprite": "editions/pokemon/sprites/611.png"
   },
   {
     "id": "haxorus",
     "displayName": "Haxorus",
     "dexNumber": 612,
-    "sprite": "sprites/612.png"
+    "sprite": "editions/pokemon/sprites/612.png"
   },
   {
     "id": "cubchoo",
     "displayName": "Cubchoo",
     "dexNumber": 613,
-    "sprite": "sprites/613.png"
+    "sprite": "editions/pokemon/sprites/613.png"
   },
   {
     "id": "beartic",
     "displayName": "Beartic",
     "dexNumber": 614,
-    "sprite": "sprites/614.png"
+    "sprite": "editions/pokemon/sprites/614.png"
   },
   {
     "id": "cryogonal",
     "displayName": "Cryogonal",
     "dexNumber": 615,
-    "sprite": "sprites/615.png"
+    "sprite": "editions/pokemon/sprites/615.png"
   },
   {
     "id": "shelmet",
     "displayName": "Shelmet",
     "dexNumber": 616,
-    "sprite": "sprites/616.png"
+    "sprite": "editions/pokemon/sprites/616.png"
   },
   {
     "id": "accelgor",
     "displayName": "Accelgor",
     "dexNumber": 617,
-    "sprite": "sprites/617.png"
+    "sprite": "editions/pokemon/sprites/617.png"
   },
   {
     "id": "stunfisk",
     "displayName": "Stunfisk",
     "dexNumber": 618,
-    "sprite": "sprites/618.png"
+    "sprite": "editions/pokemon/sprites/618.png"
   },
   {
     "id": "mienfoo",
     "displayName": "Mienfoo",
     "dexNumber": 619,
-    "sprite": "sprites/619.png"
+    "sprite": "editions/pokemon/sprites/619.png"
   },
   {
     "id": "mienshao",
     "displayName": "Mienshao",
     "dexNumber": 620,
-    "sprite": "sprites/620.png"
+    "sprite": "editions/pokemon/sprites/620.png"
   },
   {
     "id": "druddigon",
     "displayName": "Druddigon",
     "dexNumber": 621,
-    "sprite": "sprites/621.png"
+    "sprite": "editions/pokemon/sprites/621.png"
   },
   {
     "id": "golett",
     "displayName": "Golett",
     "dexNumber": 622,
-    "sprite": "sprites/622.png"
+    "sprite": "editions/pokemon/sprites/622.png"
   },
   {
     "id": "golurk",
     "displayName": "Golurk",
     "dexNumber": 623,
-    "sprite": "sprites/623.png"
+    "sprite": "editions/pokemon/sprites/623.png"
   },
   {
     "id": "pawniard",
     "displayName": "Pawniard",
     "dexNumber": 624,
-    "sprite": "sprites/624.png"
+    "sprite": "editions/pokemon/sprites/624.png"
   },
   {
     "id": "bisharp",
     "displayName": "Bisharp",
     "dexNumber": 625,
-    "sprite": "sprites/625.png"
+    "sprite": "editions/pokemon/sprites/625.png"
   },
   {
     "id": "bouffalant",
     "displayName": "Bouffalant",
     "dexNumber": 626,
-    "sprite": "sprites/626.png"
+    "sprite": "editions/pokemon/sprites/626.png"
   },
   {
     "id": "rufflet",
     "displayName": "Rufflet",
     "dexNumber": 627,
-    "sprite": "sprites/627.png"
+    "sprite": "editions/pokemon/sprites/627.png"
   },
   {
     "id": "braviary",
     "displayName": "Braviary",
     "dexNumber": 628,
-    "sprite": "sprites/628.png"
+    "sprite": "editions/pokemon/sprites/628.png"
   },
   {
     "id": "vullaby",
     "displayName": "Vullaby",
     "dexNumber": 629,
-    "sprite": "sprites/629.png"
+    "sprite": "editions/pokemon/sprites/629.png"
   },
   {
     "id": "mandibuzz",
     "displayName": "Mandibuzz",
     "dexNumber": 630,
-    "sprite": "sprites/630.png"
+    "sprite": "editions/pokemon/sprites/630.png"
   },
   {
     "id": "heatmor",
     "displayName": "Heatmor",
     "dexNumber": 631,
-    "sprite": "sprites/631.png"
+    "sprite": "editions/pokemon/sprites/631.png"
   },
   {
     "id": "durant",
     "displayName": "Durant",
     "dexNumber": 632,
-    "sprite": "sprites/632.png"
+    "sprite": "editions/pokemon/sprites/632.png"
   },
   {
     "id": "deino",
     "displayName": "Deino",
     "dexNumber": 633,
-    "sprite": "sprites/633.png"
+    "sprite": "editions/pokemon/sprites/633.png"
   },
   {
     "id": "zweilous",
     "displayName": "Zweilous",
     "dexNumber": 634,
-    "sprite": "sprites/634.png"
+    "sprite": "editions/pokemon/sprites/634.png"
   },
   {
     "id": "hydreigon",
     "displayName": "Hydreigon",
     "dexNumber": 635,
-    "sprite": "sprites/635.png"
+    "sprite": "editions/pokemon/sprites/635.png"
   },
   {
     "id": "larvesta",
     "displayName": "Larvesta",
     "dexNumber": 636,
-    "sprite": "sprites/636.png"
+    "sprite": "editions/pokemon/sprites/636.png"
   },
   {
     "id": "volcarona",
     "displayName": "Volcarona",
     "dexNumber": 637,
-    "sprite": "sprites/637.png"
+    "sprite": "editions/pokemon/sprites/637.png"
   },
   {
     "id": "cobalion",
     "displayName": "Cobalion",
     "dexNumber": 638,
-    "sprite": "sprites/638.png"
+    "sprite": "editions/pokemon/sprites/638.png"
   },
   {
     "id": "terrakion",
     "displayName": "Terrakion",
     "dexNumber": 639,
-    "sprite": "sprites/639.png"
+    "sprite": "editions/pokemon/sprites/639.png"
   },
   {
     "id": "virizion",
     "displayName": "Virizion",
     "dexNumber": 640,
-    "sprite": "sprites/640.png"
+    "sprite": "editions/pokemon/sprites/640.png"
   },
   {
     "id": "tornadus",
     "displayName": "Tornadus",
     "dexNumber": 641,
-    "sprite": "sprites/641.png"
+    "sprite": "editions/pokemon/sprites/641.png"
   },
   {
     "id": "thundurus",
     "displayName": "Thundurus",
     "dexNumber": 642,
-    "sprite": "sprites/642.png"
+    "sprite": "editions/pokemon/sprites/642.png"
   },
   {
     "id": "reshiram",
     "displayName": "Reshiram",
     "dexNumber": 643,
-    "sprite": "sprites/643.png"
+    "sprite": "editions/pokemon/sprites/643.png"
   },
   {
     "id": "zekrom",
     "displayName": "Zekrom",
     "dexNumber": 644,
-    "sprite": "sprites/644.png"
+    "sprite": "editions/pokemon/sprites/644.png"
   },
   {
     "id": "landorus",
     "displayName": "Landorus",
     "dexNumber": 645,
-    "sprite": "sprites/645.png"
+    "sprite": "editions/pokemon/sprites/645.png"
   },
   {
     "id": "kyurem",
     "displayName": "Kyurem",
     "dexNumber": 646,
-    "sprite": "sprites/646.png"
+    "sprite": "editions/pokemon/sprites/646.png"
   },
   {
     "id": "keldeo",
     "displayName": "Keldeo",
     "dexNumber": 647,
-    "sprite": "sprites/647.png"
+    "sprite": "editions/pokemon/sprites/647.png"
   },
   {
     "id": "meloetta",
     "displayName": "Meloetta",
     "dexNumber": 648,
-    "sprite": "sprites/648.png"
+    "sprite": "editions/pokemon/sprites/648.png"
   },
   {
     "id": "genesect",
     "displayName": "Genesect",
     "dexNumber": 649,
-    "sprite": "sprites/649.png"
+    "sprite": "editions/pokemon/sprites/649.png"
   },
   {
     "id": "chespin",
     "displayName": "Chespin",
     "dexNumber": 650,
-    "sprite": "sprites/650.png"
+    "sprite": "editions/pokemon/sprites/650.png"
   },
   {
     "id": "quilladin",
     "displayName": "Quilladin",
     "dexNumber": 651,
-    "sprite": "sprites/651.png"
+    "sprite": "editions/pokemon/sprites/651.png"
   },
   {
     "id": "chesnaught",
     "displayName": "Chesnaught",
     "dexNumber": 652,
-    "sprite": "sprites/652.png"
+    "sprite": "editions/pokemon/sprites/652.png"
   },
   {
     "id": "fennekin",
     "displayName": "Fennekin",
     "dexNumber": 653,
-    "sprite": "sprites/653.png"
+    "sprite": "editions/pokemon/sprites/653.png"
   },
   {
     "id": "braixen",
     "displayName": "Braixen",
     "dexNumber": 654,
-    "sprite": "sprites/654.png"
+    "sprite": "editions/pokemon/sprites/654.png"
   },
   {
     "id": "delphox",
     "displayName": "Delphox",
     "dexNumber": 655,
-    "sprite": "sprites/655.png"
+    "sprite": "editions/pokemon/sprites/655.png"
   },
   {
     "id": "froakie",
     "displayName": "Froakie",
     "dexNumber": 656,
-    "sprite": "sprites/656.png"
+    "sprite": "editions/pokemon/sprites/656.png"
   },
   {
     "id": "frogadier",
     "displayName": "Frogadier",
     "dexNumber": 657,
-    "sprite": "sprites/657.png"
+    "sprite": "editions/pokemon/sprites/657.png"
   },
   {
     "id": "greninja",
     "displayName": "Greninja",
     "dexNumber": 658,
-    "sprite": "sprites/658.png"
+    "sprite": "editions/pokemon/sprites/658.png"
   },
   {
     "id": "bunnelby",
     "displayName": "Bunnelby",
     "dexNumber": 659,
-    "sprite": "sprites/659.png"
+    "sprite": "editions/pokemon/sprites/659.png"
   },
   {
     "id": "diggersby",
     "displayName": "Diggersby",
     "dexNumber": 660,
-    "sprite": "sprites/660.png"
+    "sprite": "editions/pokemon/sprites/660.png"
   },
   {
     "id": "fletchling",
     "displayName": "Fletchling",
     "dexNumber": 661,
-    "sprite": "sprites/661.png"
+    "sprite": "editions/pokemon/sprites/661.png"
   },
   {
     "id": "fletchinder",
     "displayName": "Fletchinder",
     "dexNumber": 662,
-    "sprite": "sprites/662.png"
+    "sprite": "editions/pokemon/sprites/662.png"
   },
   {
     "id": "talonflame",
     "displayName": "Talonflame",
     "dexNumber": 663,
-    "sprite": "sprites/663.png"
+    "sprite": "editions/pokemon/sprites/663.png"
   },
   {
     "id": "scatterbug",
     "displayName": "Scatterbug",
     "dexNumber": 664,
-    "sprite": "sprites/664.png"
+    "sprite": "editions/pokemon/sprites/664.png"
   },
   {
     "id": "spewpa",
     "displayName": "Spewpa",
     "dexNumber": 665,
-    "sprite": "sprites/665.png"
+    "sprite": "editions/pokemon/sprites/665.png"
   },
   {
     "id": "vivillon",
     "displayName": "Vivillon",
     "dexNumber": 666,
-    "sprite": "sprites/666.png"
+    "sprite": "editions/pokemon/sprites/666.png"
   },
   {
     "id": "litleo",
     "displayName": "Litleo",
     "dexNumber": 667,
-    "sprite": "sprites/667.png"
+    "sprite": "editions/pokemon/sprites/667.png"
   },
   {
     "id": "pyroar",
     "displayName": "Pyroar",
     "dexNumber": 668,
-    "sprite": "sprites/668.png"
+    "sprite": "editions/pokemon/sprites/668.png"
   },
   {
     "id": "flabebe",
     "displayName": "Flabebe",
     "dexNumber": 669,
-    "sprite": "sprites/669.png"
+    "sprite": "editions/pokemon/sprites/669.png"
   },
   {
     "id": "floette",
     "displayName": "Floette",
     "dexNumber": 670,
-    "sprite": "sprites/670.png"
+    "sprite": "editions/pokemon/sprites/670.png"
   },
   {
     "id": "florges",
     "displayName": "Florges",
     "dexNumber": 671,
-    "sprite": "sprites/671.png"
+    "sprite": "editions/pokemon/sprites/671.png"
   },
   {
     "id": "skiddo",
     "displayName": "Skiddo",
     "dexNumber": 672,
-    "sprite": "sprites/672.png"
+    "sprite": "editions/pokemon/sprites/672.png"
   },
   {
     "id": "gogoat",
     "displayName": "Gogoat",
     "dexNumber": 673,
-    "sprite": "sprites/673.png"
+    "sprite": "editions/pokemon/sprites/673.png"
   },
   {
     "id": "pancham",
     "displayName": "Pancham",
     "dexNumber": 674,
-    "sprite": "sprites/674.png"
+    "sprite": "editions/pokemon/sprites/674.png"
   },
   {
     "id": "pangoro",
     "displayName": "Pangoro",
     "dexNumber": 675,
-    "sprite": "sprites/675.png"
+    "sprite": "editions/pokemon/sprites/675.png"
   },
   {
     "id": "furfrou",
     "displayName": "Furfrou",
     "dexNumber": 676,
-    "sprite": "sprites/676.png"
+    "sprite": "editions/pokemon/sprites/676.png"
   },
   {
     "id": "espurr",
     "displayName": "Espurr",
     "dexNumber": 677,
-    "sprite": "sprites/677.png"
+    "sprite": "editions/pokemon/sprites/677.png"
   },
   {
     "id": "meowstic",
     "displayName": "Meowstic",
     "dexNumber": 678,
-    "sprite": "sprites/678.png"
+    "sprite": "editions/pokemon/sprites/678.png"
   },
   {
     "id": "honedge",
     "displayName": "Honedge",
     "dexNumber": 679,
-    "sprite": "sprites/679.png"
+    "sprite": "editions/pokemon/sprites/679.png"
   },
   {
     "id": "doublade",
     "displayName": "Doublade",
     "dexNumber": 680,
-    "sprite": "sprites/680.png"
+    "sprite": "editions/pokemon/sprites/680.png"
   },
   {
     "id": "aegislash",
     "displayName": "Aegislash",
     "dexNumber": 681,
-    "sprite": "sprites/681.png"
+    "sprite": "editions/pokemon/sprites/681.png"
   },
   {
     "id": "spritzee",
     "displayName": "Spritzee",
     "dexNumber": 682,
-    "sprite": "sprites/682.png"
+    "sprite": "editions/pokemon/sprites/682.png"
   },
   {
     "id": "aromatisse",
     "displayName": "Aromatisse",
     "dexNumber": 683,
-    "sprite": "sprites/683.png"
+    "sprite": "editions/pokemon/sprites/683.png"
   },
   {
     "id": "swirlix",
     "displayName": "Swirlix",
     "dexNumber": 684,
-    "sprite": "sprites/684.png"
+    "sprite": "editions/pokemon/sprites/684.png"
   },
   {
     "id": "slurpuff",
     "displayName": "Slurpuff",
     "dexNumber": 685,
-    "sprite": "sprites/685.png"
+    "sprite": "editions/pokemon/sprites/685.png"
   },
   {
     "id": "inkay",
     "displayName": "Inkay",
     "dexNumber": 686,
-    "sprite": "sprites/686.png"
+    "sprite": "editions/pokemon/sprites/686.png"
   },
   {
     "id": "malamar",
     "displayName": "Malamar",
     "dexNumber": 687,
-    "sprite": "sprites/687.png"
+    "sprite": "editions/pokemon/sprites/687.png"
   },
   {
     "id": "binacle",
     "displayName": "Binacle",
     "dexNumber": 688,
-    "sprite": "sprites/688.png"
+    "sprite": "editions/pokemon/sprites/688.png"
   },
   {
     "id": "barbaracle",
     "displayName": "Barbaracle",
     "dexNumber": 689,
-    "sprite": "sprites/689.png"
+    "sprite": "editions/pokemon/sprites/689.png"
   },
   {
     "id": "skrelp",
     "displayName": "Skrelp",
     "dexNumber": 690,
-    "sprite": "sprites/690.png"
+    "sprite": "editions/pokemon/sprites/690.png"
   },
   {
     "id": "dragalge",
     "displayName": "Dragalge",
     "dexNumber": 691,
-    "sprite": "sprites/691.png"
+    "sprite": "editions/pokemon/sprites/691.png"
   },
   {
     "id": "clauncher",
     "displayName": "Clauncher",
     "dexNumber": 692,
-    "sprite": "sprites/692.png"
+    "sprite": "editions/pokemon/sprites/692.png"
   },
   {
     "id": "clawitzer",
     "displayName": "Clawitzer",
     "dexNumber": 693,
-    "sprite": "sprites/693.png"
+    "sprite": "editions/pokemon/sprites/693.png"
   },
   {
     "id": "helioptile",
     "displayName": "Helioptile",
     "dexNumber": 694,
-    "sprite": "sprites/694.png"
+    "sprite": "editions/pokemon/sprites/694.png"
   },
   {
     "id": "heliolisk",
     "displayName": "Heliolisk",
     "dexNumber": 695,
-    "sprite": "sprites/695.png"
+    "sprite": "editions/pokemon/sprites/695.png"
   },
   {
     "id": "tyrunt",
     "displayName": "Tyrunt",
     "dexNumber": 696,
-    "sprite": "sprites/696.png"
+    "sprite": "editions/pokemon/sprites/696.png"
   },
   {
     "id": "tyrantrum",
     "displayName": "Tyrantrum",
     "dexNumber": 697,
-    "sprite": "sprites/697.png"
+    "sprite": "editions/pokemon/sprites/697.png"
   },
   {
     "id": "amaura",
     "displayName": "Amaura",
     "dexNumber": 698,
-    "sprite": "sprites/698.png"
+    "sprite": "editions/pokemon/sprites/698.png"
   },
   {
     "id": "aurorus",
     "displayName": "Aurorus",
     "dexNumber": 699,
-    "sprite": "sprites/699.png"
+    "sprite": "editions/pokemon/sprites/699.png"
   },
   {
     "id": "sylveon",
     "displayName": "Sylveon",
     "dexNumber": 700,
-    "sprite": "sprites/700.png"
+    "sprite": "editions/pokemon/sprites/700.png"
   },
   {
     "id": "hawlucha",
     "displayName": "Hawlucha",
     "dexNumber": 701,
-    "sprite": "sprites/701.png"
+    "sprite": "editions/pokemon/sprites/701.png"
   },
   {
     "id": "dedenne",
     "displayName": "Dedenne",
     "dexNumber": 702,
-    "sprite": "sprites/702.png"
+    "sprite": "editions/pokemon/sprites/702.png"
   },
   {
     "id": "carbink",
     "displayName": "Carbink",
     "dexNumber": 703,
-    "sprite": "sprites/703.png"
+    "sprite": "editions/pokemon/sprites/703.png"
   },
   {
     "id": "goomy",
     "displayName": "Goomy",
     "dexNumber": 704,
-    "sprite": "sprites/704.png"
+    "sprite": "editions/pokemon/sprites/704.png"
   },
   {
     "id": "sliggoo",
     "displayName": "Sliggoo",
     "dexNumber": 705,
-    "sprite": "sprites/705.png"
+    "sprite": "editions/pokemon/sprites/705.png"
   },
   {
     "id": "goodra",
     "displayName": "Goodra",
     "dexNumber": 706,
-    "sprite": "sprites/706.png"
+    "sprite": "editions/pokemon/sprites/706.png"
   },
   {
     "id": "klefki",
     "displayName": "Klefki",
     "dexNumber": 707,
-    "sprite": "sprites/707.png"
+    "sprite": "editions/pokemon/sprites/707.png"
   },
   {
     "id": "phantump",
     "displayName": "Phantump",
     "dexNumber": 708,
-    "sprite": "sprites/708.png"
+    "sprite": "editions/pokemon/sprites/708.png"
   },
   {
     "id": "trevenant",
     "displayName": "Trevenant",
     "dexNumber": 709,
-    "sprite": "sprites/709.png"
+    "sprite": "editions/pokemon/sprites/709.png"
   },
   {
     "id": "pumpkaboo",
     "displayName": "Pumpkaboo",
     "dexNumber": 710,
-    "sprite": "sprites/710.png"
+    "sprite": "editions/pokemon/sprites/710.png"
   },
   {
     "id": "gourgeist",
     "displayName": "Gourgeist",
     "dexNumber": 711,
-    "sprite": "sprites/711.png"
+    "sprite": "editions/pokemon/sprites/711.png"
   },
   {
     "id": "bergmite",
     "displayName": "Bergmite",
     "dexNumber": 712,
-    "sprite": "sprites/712.png"
+    "sprite": "editions/pokemon/sprites/712.png"
   },
   {
     "id": "avalugg",
     "displayName": "Avalugg",
     "dexNumber": 713,
-    "sprite": "sprites/713.png"
+    "sprite": "editions/pokemon/sprites/713.png"
   },
   {
     "id": "noibat",
     "displayName": "Noibat",
     "dexNumber": 714,
-    "sprite": "sprites/714.png"
+    "sprite": "editions/pokemon/sprites/714.png"
   },
   {
     "id": "noivern",
     "displayName": "Noivern",
     "dexNumber": 715,
-    "sprite": "sprites/715.png"
+    "sprite": "editions/pokemon/sprites/715.png"
   },
   {
     "id": "xerneas",
     "displayName": "Xerneas",
     "dexNumber": 716,
-    "sprite": "sprites/716.png"
+    "sprite": "editions/pokemon/sprites/716.png"
   },
   {
     "id": "yveltal",
     "displayName": "Yveltal",
     "dexNumber": 717,
-    "sprite": "sprites/717.png"
+    "sprite": "editions/pokemon/sprites/717.png"
   },
   {
     "id": "zygarde",
     "displayName": "Zygarde",
     "dexNumber": 718,
-    "sprite": "sprites/718.png"
+    "sprite": "editions/pokemon/sprites/718.png"
   },
   {
     "id": "diancie",
     "displayName": "Diancie",
     "dexNumber": 719,
-    "sprite": "sprites/719.png"
+    "sprite": "editions/pokemon/sprites/719.png"
   },
   {
     "id": "hoopa",
     "displayName": "Hoopa",
     "dexNumber": 720,
-    "sprite": "sprites/720.png"
+    "sprite": "editions/pokemon/sprites/720.png"
   },
   {
     "id": "volcanion",
     "displayName": "Volcanion",
     "dexNumber": 721,
-    "sprite": "sprites/721.png"
+    "sprite": "editions/pokemon/sprites/721.png"
   },
   {
     "id": "rowlet",
     "displayName": "Rowlet",
     "dexNumber": 722,
-    "sprite": "sprites/722.png"
+    "sprite": "editions/pokemon/sprites/722.png"
   },
   {
     "id": "dartrix",
     "displayName": "Dartrix",
     "dexNumber": 723,
-    "sprite": "sprites/723.png"
+    "sprite": "editions/pokemon/sprites/723.png"
   },
   {
     "id": "decidueye",
     "displayName": "Decidueye",
     "dexNumber": 724,
-    "sprite": "sprites/724.png"
+    "sprite": "editions/pokemon/sprites/724.png"
   },
   {
     "id": "litten",
     "displayName": "Litten",
     "dexNumber": 725,
-    "sprite": "sprites/725.png"
+    "sprite": "editions/pokemon/sprites/725.png"
   },
   {
     "id": "torracat",
     "displayName": "Torracat",
     "dexNumber": 726,
-    "sprite": "sprites/726.png"
+    "sprite": "editions/pokemon/sprites/726.png"
   },
   {
     "id": "incineroar",
     "displayName": "Incineroar",
     "dexNumber": 727,
-    "sprite": "sprites/727.png"
+    "sprite": "editions/pokemon/sprites/727.png"
   },
   {
     "id": "popplio",
     "displayName": "Popplio",
     "dexNumber": 728,
-    "sprite": "sprites/728.png"
+    "sprite": "editions/pokemon/sprites/728.png"
   },
   {
     "id": "brionne",
     "displayName": "Brionne",
     "dexNumber": 729,
-    "sprite": "sprites/729.png"
+    "sprite": "editions/pokemon/sprites/729.png"
   },
   {
     "id": "primarina",
     "displayName": "Primarina",
     "dexNumber": 730,
-    "sprite": "sprites/730.png"
+    "sprite": "editions/pokemon/sprites/730.png"
   },
   {
     "id": "pikipek",
     "displayName": "Pikipek",
     "dexNumber": 731,
-    "sprite": "sprites/731.png"
+    "sprite": "editions/pokemon/sprites/731.png"
   },
   {
     "id": "trumbeak",
     "displayName": "Trumbeak",
     "dexNumber": 732,
-    "sprite": "sprites/732.png"
+    "sprite": "editions/pokemon/sprites/732.png"
   },
   {
     "id": "toucannon",
     "displayName": "Toucannon",
     "dexNumber": 733,
-    "sprite": "sprites/733.png"
+    "sprite": "editions/pokemon/sprites/733.png"
   },
   {
     "id": "yungoos",
     "displayName": "Yungoos",
     "dexNumber": 734,
-    "sprite": "sprites/734.png"
+    "sprite": "editions/pokemon/sprites/734.png"
   },
   {
     "id": "gumshoos",
     "displayName": "Gumshoos",
     "dexNumber": 735,
-    "sprite": "sprites/735.png"
+    "sprite": "editions/pokemon/sprites/735.png"
   },
   {
     "id": "grubbin",
     "displayName": "Grubbin",
     "dexNumber": 736,
-    "sprite": "sprites/736.png"
+    "sprite": "editions/pokemon/sprites/736.png"
   },
   {
     "id": "charjabug",
     "displayName": "Charjabug",
     "dexNumber": 737,
-    "sprite": "sprites/737.png"
+    "sprite": "editions/pokemon/sprites/737.png"
   },
   {
     "id": "vikavolt",
     "displayName": "Vikavolt",
     "dexNumber": 738,
-    "sprite": "sprites/738.png"
+    "sprite": "editions/pokemon/sprites/738.png"
   },
   {
     "id": "crabrawler",
     "displayName": "Crabrawler",
     "dexNumber": 739,
-    "sprite": "sprites/739.png"
+    "sprite": "editions/pokemon/sprites/739.png"
   },
   {
     "id": "crabominable",
     "displayName": "Crabominable",
     "dexNumber": 740,
-    "sprite": "sprites/740.png"
+    "sprite": "editions/pokemon/sprites/740.png"
   },
   {
     "id": "oricorio",
     "displayName": "Oricorio",
     "dexNumber": 741,
-    "sprite": "sprites/741.png"
+    "sprite": "editions/pokemon/sprites/741.png"
   },
   {
     "id": "cutiefly",
     "displayName": "Cutiefly",
     "dexNumber": 742,
-    "sprite": "sprites/742.png"
+    "sprite": "editions/pokemon/sprites/742.png"
   },
   {
     "id": "ribombee",
     "displayName": "Ribombee",
     "dexNumber": 743,
-    "sprite": "sprites/743.png"
+    "sprite": "editions/pokemon/sprites/743.png"
   },
   {
     "id": "rockruff",
     "displayName": "Rockruff",
     "dexNumber": 744,
-    "sprite": "sprites/744.png"
+    "sprite": "editions/pokemon/sprites/744.png"
   },
   {
     "id": "lycanroc",
     "displayName": "Lycanroc",
     "dexNumber": 745,
-    "sprite": "sprites/745.png"
+    "sprite": "editions/pokemon/sprites/745.png"
   },
   {
     "id": "wishiwashi",
     "displayName": "Wishiwashi",
     "dexNumber": 746,
-    "sprite": "sprites/746.png"
+    "sprite": "editions/pokemon/sprites/746.png"
   },
   {
     "id": "mareanie",
     "displayName": "Mareanie",
     "dexNumber": 747,
-    "sprite": "sprites/747.png"
+    "sprite": "editions/pokemon/sprites/747.png"
   },
   {
     "id": "toxapex",
     "displayName": "Toxapex",
     "dexNumber": 748,
-    "sprite": "sprites/748.png"
+    "sprite": "editions/pokemon/sprites/748.png"
   },
   {
     "id": "mudbray",
     "displayName": "Mudbray",
     "dexNumber": 749,
-    "sprite": "sprites/749.png"
+    "sprite": "editions/pokemon/sprites/749.png"
   },
   {
     "id": "mudsdale",
     "displayName": "Mudsdale",
     "dexNumber": 750,
-    "sprite": "sprites/750.png"
+    "sprite": "editions/pokemon/sprites/750.png"
   },
   {
     "id": "dewpider",
     "displayName": "Dewpider",
     "dexNumber": 751,
-    "sprite": "sprites/751.png"
+    "sprite": "editions/pokemon/sprites/751.png"
   },
   {
     "id": "araquanid",
     "displayName": "Araquanid",
     "dexNumber": 752,
-    "sprite": "sprites/752.png"
+    "sprite": "editions/pokemon/sprites/752.png"
   },
   {
     "id": "fomantis",
     "displayName": "Fomantis",
     "dexNumber": 753,
-    "sprite": "sprites/753.png"
+    "sprite": "editions/pokemon/sprites/753.png"
   },
   {
     "id": "lurantis",
     "displayName": "Lurantis",
     "dexNumber": 754,
-    "sprite": "sprites/754.png"
+    "sprite": "editions/pokemon/sprites/754.png"
   },
   {
     "id": "morelull",
     "displayName": "Morelull",
     "dexNumber": 755,
-    "sprite": "sprites/755.png"
+    "sprite": "editions/pokemon/sprites/755.png"
   },
   {
     "id": "shiinotic",
     "displayName": "Shiinotic",
     "dexNumber": 756,
-    "sprite": "sprites/756.png"
+    "sprite": "editions/pokemon/sprites/756.png"
   },
   {
     "id": "salandit",
     "displayName": "Salandit",
     "dexNumber": 757,
-    "sprite": "sprites/757.png"
+    "sprite": "editions/pokemon/sprites/757.png"
   },
   {
     "id": "salazzle",
     "displayName": "Salazzle",
     "dexNumber": 758,
-    "sprite": "sprites/758.png"
+    "sprite": "editions/pokemon/sprites/758.png"
   },
   {
     "id": "stufful",
     "displayName": "Stufful",
     "dexNumber": 759,
-    "sprite": "sprites/759.png"
+    "sprite": "editions/pokemon/sprites/759.png"
   },
   {
     "id": "bewear",
     "displayName": "Bewear",
     "dexNumber": 760,
-    "sprite": "sprites/760.png"
+    "sprite": "editions/pokemon/sprites/760.png"
   },
   {
     "id": "bounsweet",
     "displayName": "Bounsweet",
     "dexNumber": 761,
-    "sprite": "sprites/761.png"
+    "sprite": "editions/pokemon/sprites/761.png"
   },
   {
     "id": "steenee",
     "displayName": "Steenee",
     "dexNumber": 762,
-    "sprite": "sprites/762.png"
+    "sprite": "editions/pokemon/sprites/762.png"
   },
   {
     "id": "tsareena",
     "displayName": "Tsareena",
     "dexNumber": 763,
-    "sprite": "sprites/763.png"
+    "sprite": "editions/pokemon/sprites/763.png"
   },
   {
     "id": "comfey",
     "displayName": "Comfey",
     "dexNumber": 764,
-    "sprite": "sprites/764.png"
+    "sprite": "editions/pokemon/sprites/764.png"
   },
   {
     "id": "oranguru",
     "displayName": "Oranguru",
     "dexNumber": 765,
-    "sprite": "sprites/765.png"
+    "sprite": "editions/pokemon/sprites/765.png"
   },
   {
     "id": "passimian",
     "displayName": "Passimian",
     "dexNumber": 766,
-    "sprite": "sprites/766.png"
+    "sprite": "editions/pokemon/sprites/766.png"
   },
   {
     "id": "wimpod",
     "displayName": "Wimpod",
     "dexNumber": 767,
-    "sprite": "sprites/767.png"
+    "sprite": "editions/pokemon/sprites/767.png"
   },
   {
     "id": "golisopod",
     "displayName": "Golisopod",
     "dexNumber": 768,
-    "sprite": "sprites/768.png"
+    "sprite": "editions/pokemon/sprites/768.png"
   },
   {
     "id": "sandygast",
     "displayName": "Sandygast",
     "dexNumber": 769,
-    "sprite": "sprites/769.png"
+    "sprite": "editions/pokemon/sprites/769.png"
   },
   {
     "id": "palossand",
     "displayName": "Palossand",
     "dexNumber": 770,
-    "sprite": "sprites/770.png"
+    "sprite": "editions/pokemon/sprites/770.png"
   },
   {
     "id": "pyukumuku",
     "displayName": "Pyukumuku",
     "dexNumber": 771,
-    "sprite": "sprites/771.png"
+    "sprite": "editions/pokemon/sprites/771.png"
   },
   {
     "id": "type-null",
     "displayName": "Type: Null",
     "dexNumber": 772,
-    "sprite": "sprites/772.png"
+    "sprite": "editions/pokemon/sprites/772.png"
   },
   {
     "id": "silvally",
     "displayName": "Silvally",
     "dexNumber": 773,
-    "sprite": "sprites/773.png"
+    "sprite": "editions/pokemon/sprites/773.png"
   },
   {
     "id": "minior",
     "displayName": "Minior",
     "dexNumber": 774,
-    "sprite": "sprites/774.png"
+    "sprite": "editions/pokemon/sprites/774.png"
   },
   {
     "id": "komala",
     "displayName": "Komala",
     "dexNumber": 775,
-    "sprite": "sprites/775.png"
+    "sprite": "editions/pokemon/sprites/775.png"
   },
   {
     "id": "turtonator",
     "displayName": "Turtonator",
     "dexNumber": 776,
-    "sprite": "sprites/776.png"
+    "sprite": "editions/pokemon/sprites/776.png"
   },
   {
     "id": "togedemaru",
     "displayName": "Togedemaru",
     "dexNumber": 777,
-    "sprite": "sprites/777.png"
+    "sprite": "editions/pokemon/sprites/777.png"
   },
   {
     "id": "mimikyu",
     "displayName": "Mimikyu",
     "dexNumber": 778,
-    "sprite": "sprites/778.png"
+    "sprite": "editions/pokemon/sprites/778.png"
   },
   {
     "id": "bruxish",
     "displayName": "Bruxish",
     "dexNumber": 779,
-    "sprite": "sprites/779.png"
+    "sprite": "editions/pokemon/sprites/779.png"
   },
   {
     "id": "drampa",
     "displayName": "Drampa",
     "dexNumber": 780,
-    "sprite": "sprites/780.png"
+    "sprite": "editions/pokemon/sprites/780.png"
   },
   {
     "id": "dhelmise",
     "displayName": "Dhelmise",
     "dexNumber": 781,
-    "sprite": "sprites/781.png"
+    "sprite": "editions/pokemon/sprites/781.png"
   },
   {
     "id": "jangmo-o",
     "displayName": "Jangmo-o",
     "dexNumber": 782,
-    "sprite": "sprites/782.png"
+    "sprite": "editions/pokemon/sprites/782.png"
   },
   {
     "id": "hakamo-o",
     "displayName": "Hakamo-o",
     "dexNumber": 783,
-    "sprite": "sprites/783.png"
+    "sprite": "editions/pokemon/sprites/783.png"
   },
   {
     "id": "kommo-o",
     "displayName": "Kommo-o",
     "dexNumber": 784,
-    "sprite": "sprites/784.png"
+    "sprite": "editions/pokemon/sprites/784.png"
   },
   {
     "id": "tapu-koko",
     "displayName": "Tapu Koko",
     "dexNumber": 785,
-    "sprite": "sprites/785.png"
+    "sprite": "editions/pokemon/sprites/785.png"
   },
   {
     "id": "tapu-lele",
     "displayName": "Tapu Lele",
     "dexNumber": 786,
-    "sprite": "sprites/786.png"
+    "sprite": "editions/pokemon/sprites/786.png"
   },
   {
     "id": "tapu-bulu",
     "displayName": "Tapu Bulu",
     "dexNumber": 787,
-    "sprite": "sprites/787.png"
+    "sprite": "editions/pokemon/sprites/787.png"
   },
   {
     "id": "tapu-fini",
     "displayName": "Tapu Fini",
     "dexNumber": 788,
-    "sprite": "sprites/788.png"
+    "sprite": "editions/pokemon/sprites/788.png"
   },
   {
     "id": "cosmog",
     "displayName": "Cosmog",
     "dexNumber": 789,
-    "sprite": "sprites/789.png"
+    "sprite": "editions/pokemon/sprites/789.png"
   },
   {
     "id": "cosmoem",
     "displayName": "Cosmoem",
     "dexNumber": 790,
-    "sprite": "sprites/790.png"
+    "sprite": "editions/pokemon/sprites/790.png"
   },
   {
     "id": "solgaleo",
     "displayName": "Solgaleo",
     "dexNumber": 791,
-    "sprite": "sprites/791.png"
+    "sprite": "editions/pokemon/sprites/791.png"
   },
   {
     "id": "lunala",
     "displayName": "Lunala",
     "dexNumber": 792,
-    "sprite": "sprites/792.png"
+    "sprite": "editions/pokemon/sprites/792.png"
   },
   {
     "id": "nihilego",
     "displayName": "Nihilego",
     "dexNumber": 793,
-    "sprite": "sprites/793.png"
+    "sprite": "editions/pokemon/sprites/793.png"
   },
   {
     "id": "buzzwole",
     "displayName": "Buzzwole",
     "dexNumber": 794,
-    "sprite": "sprites/794.png"
+    "sprite": "editions/pokemon/sprites/794.png"
   },
   {
     "id": "pheromosa",
     "displayName": "Pheromosa",
     "dexNumber": 795,
-    "sprite": "sprites/795.png"
+    "sprite": "editions/pokemon/sprites/795.png"
   },
   {
     "id": "xurkitree",
     "displayName": "Xurkitree",
     "dexNumber": 796,
-    "sprite": "sprites/796.png"
+    "sprite": "editions/pokemon/sprites/796.png"
   },
   {
     "id": "celesteela",
     "displayName": "Celesteela",
     "dexNumber": 797,
-    "sprite": "sprites/797.png"
+    "sprite": "editions/pokemon/sprites/797.png"
   },
   {
     "id": "kartana",
     "displayName": "Kartana",
     "dexNumber": 798,
-    "sprite": "sprites/798.png"
+    "sprite": "editions/pokemon/sprites/798.png"
   },
   {
     "id": "guzzlord",
     "displayName": "Guzzlord",
     "dexNumber": 799,
-    "sprite": "sprites/799.png"
+    "sprite": "editions/pokemon/sprites/799.png"
   },
   {
     "id": "necrozma",
     "displayName": "Necrozma",
     "dexNumber": 800,
-    "sprite": "sprites/800.png"
+    "sprite": "editions/pokemon/sprites/800.png"
   },
   {
     "id": "magearna",
     "displayName": "Magearna",
     "dexNumber": 801,
-    "sprite": "sprites/801.png"
+    "sprite": "editions/pokemon/sprites/801.png"
   },
   {
     "id": "marshadow",
     "displayName": "Marshadow",
     "dexNumber": 802,
-    "sprite": "sprites/802.png"
+    "sprite": "editions/pokemon/sprites/802.png"
   },
   {
     "id": "poipole",
     "displayName": "Poipole",
     "dexNumber": 803,
-    "sprite": "sprites/803.png"
+    "sprite": "editions/pokemon/sprites/803.png"
   },
   {
     "id": "naganadel",
     "displayName": "Naganadel",
     "dexNumber": 804,
-    "sprite": "sprites/804.png"
+    "sprite": "editions/pokemon/sprites/804.png"
   },
   {
     "id": "stakataka",
     "displayName": "Stakataka",
     "dexNumber": 805,
-    "sprite": "sprites/805.png"
+    "sprite": "editions/pokemon/sprites/805.png"
   },
   {
     "id": "blacephalon",
     "displayName": "Blacephalon",
     "dexNumber": 806,
-    "sprite": "sprites/806.png"
+    "sprite": "editions/pokemon/sprites/806.png"
   },
   {
     "id": "zeraora",
     "displayName": "Zeraora",
     "dexNumber": 807,
-    "sprite": "sprites/807.png"
+    "sprite": "editions/pokemon/sprites/807.png"
   },
   {
     "id": "meltan",
     "displayName": "Meltan",
     "dexNumber": 808,
-    "sprite": "sprites/808.png"
+    "sprite": "editions/pokemon/sprites/808.png"
   },
   {
     "id": "melmetal",
     "displayName": "Melmetal",
     "dexNumber": 809,
-    "sprite": "sprites/809.png"
+    "sprite": "editions/pokemon/sprites/809.png"
   },
   {
     "id": "grookey",
     "displayName": "Grookey",
     "dexNumber": 810,
-    "sprite": "sprites/810.png"
+    "sprite": "editions/pokemon/sprites/810.png"
   },
   {
     "id": "thwackey",
     "displayName": "Thwackey",
     "dexNumber": 811,
-    "sprite": "sprites/811.png"
+    "sprite": "editions/pokemon/sprites/811.png"
   },
   {
     "id": "rillaboom",
     "displayName": "Rillaboom",
     "dexNumber": 812,
-    "sprite": "sprites/812.png"
+    "sprite": "editions/pokemon/sprites/812.png"
   },
   {
     "id": "scorbunny",
     "displayName": "Scorbunny",
     "dexNumber": 813,
-    "sprite": "sprites/813.png"
+    "sprite": "editions/pokemon/sprites/813.png"
   },
   {
     "id": "raboot",
     "displayName": "Raboot",
     "dexNumber": 814,
-    "sprite": "sprites/814.png"
+    "sprite": "editions/pokemon/sprites/814.png"
   },
   {
     "id": "cinderace",
     "displayName": "Cinderace",
     "dexNumber": 815,
-    "sprite": "sprites/815.png"
+    "sprite": "editions/pokemon/sprites/815.png"
   },
   {
     "id": "sobble",
     "displayName": "Sobble",
     "dexNumber": 816,
-    "sprite": "sprites/816.png"
+    "sprite": "editions/pokemon/sprites/816.png"
   },
   {
     "id": "drizzile",
     "displayName": "Drizzile",
     "dexNumber": 817,
-    "sprite": "sprites/817.png"
+    "sprite": "editions/pokemon/sprites/817.png"
   },
   {
     "id": "inteleon",
     "displayName": "Inteleon",
     "dexNumber": 818,
-    "sprite": "sprites/818.png"
+    "sprite": "editions/pokemon/sprites/818.png"
   },
   {
     "id": "skwovet",
     "displayName": "Skwovet",
     "dexNumber": 819,
-    "sprite": "sprites/819.png"
+    "sprite": "editions/pokemon/sprites/819.png"
   },
   {
     "id": "greedent",
     "displayName": "Greedent",
     "dexNumber": 820,
-    "sprite": "sprites/820.png"
+    "sprite": "editions/pokemon/sprites/820.png"
   },
   {
     "id": "rookidee",
     "displayName": "Rookidee",
     "dexNumber": 821,
-    "sprite": "sprites/821.png"
+    "sprite": "editions/pokemon/sprites/821.png"
   },
   {
     "id": "corvisquire",
     "displayName": "Corvisquire",
     "dexNumber": 822,
-    "sprite": "sprites/822.png"
+    "sprite": "editions/pokemon/sprites/822.png"
   },
   {
     "id": "corviknight",
     "displayName": "Corviknight",
     "dexNumber": 823,
-    "sprite": "sprites/823.png"
+    "sprite": "editions/pokemon/sprites/823.png"
   },
   {
     "id": "blipbug",
     "displayName": "Blipbug",
     "dexNumber": 824,
-    "sprite": "sprites/824.png"
+    "sprite": "editions/pokemon/sprites/824.png"
   },
   {
     "id": "dottler",
     "displayName": "Dottler",
     "dexNumber": 825,
-    "sprite": "sprites/825.png"
+    "sprite": "editions/pokemon/sprites/825.png"
   },
   {
     "id": "orbeetle",
     "displayName": "Orbeetle",
     "dexNumber": 826,
-    "sprite": "sprites/826.png"
+    "sprite": "editions/pokemon/sprites/826.png"
   },
   {
     "id": "nickit",
     "displayName": "Nickit",
     "dexNumber": 827,
-    "sprite": "sprites/827.png"
+    "sprite": "editions/pokemon/sprites/827.png"
   },
   {
     "id": "thievul",
     "displayName": "Thievul",
     "dexNumber": 828,
-    "sprite": "sprites/828.png"
+    "sprite": "editions/pokemon/sprites/828.png"
   },
   {
     "id": "gossifleur",
     "displayName": "Gossifleur",
     "dexNumber": 829,
-    "sprite": "sprites/829.png"
+    "sprite": "editions/pokemon/sprites/829.png"
   },
   {
     "id": "eldegoss",
     "displayName": "Eldegoss",
     "dexNumber": 830,
-    "sprite": "sprites/830.png"
+    "sprite": "editions/pokemon/sprites/830.png"
   },
   {
     "id": "wooloo",
     "displayName": "Wooloo",
     "dexNumber": 831,
-    "sprite": "sprites/831.png"
+    "sprite": "editions/pokemon/sprites/831.png"
   },
   {
     "id": "dubwool",
     "displayName": "Dubwool",
     "dexNumber": 832,
-    "sprite": "sprites/832.png"
+    "sprite": "editions/pokemon/sprites/832.png"
   },
   {
     "id": "chewtle",
     "displayName": "Chewtle",
     "dexNumber": 833,
-    "sprite": "sprites/833.png"
+    "sprite": "editions/pokemon/sprites/833.png"
   },
   {
     "id": "drednaw",
     "displayName": "Drednaw",
     "dexNumber": 834,
-    "sprite": "sprites/834.png"
+    "sprite": "editions/pokemon/sprites/834.png"
   },
   {
     "id": "yamper",
     "displayName": "Yamper",
     "dexNumber": 835,
-    "sprite": "sprites/835.png"
+    "sprite": "editions/pokemon/sprites/835.png"
   },
   {
     "id": "boltund",
     "displayName": "Boltund",
     "dexNumber": 836,
-    "sprite": "sprites/836.png"
+    "sprite": "editions/pokemon/sprites/836.png"
   },
   {
     "id": "rolycoly",
     "displayName": "Rolycoly",
     "dexNumber": 837,
-    "sprite": "sprites/837.png"
+    "sprite": "editions/pokemon/sprites/837.png"
   },
   {
     "id": "carkol",
     "displayName": "Carkol",
     "dexNumber": 838,
-    "sprite": "sprites/838.png"
+    "sprite": "editions/pokemon/sprites/838.png"
   },
   {
     "id": "coalossal",
     "displayName": "Coalossal",
     "dexNumber": 839,
-    "sprite": "sprites/839.png"
+    "sprite": "editions/pokemon/sprites/839.png"
   },
   {
     "id": "applin",
     "displayName": "Applin",
     "dexNumber": 840,
-    "sprite": "sprites/840.png"
+    "sprite": "editions/pokemon/sprites/840.png"
   },
   {
     "id": "flapple",
     "displayName": "Flapple",
     "dexNumber": 841,
-    "sprite": "sprites/841.png"
+    "sprite": "editions/pokemon/sprites/841.png"
   },
   {
     "id": "appletun",
     "displayName": "Appletun",
     "dexNumber": 842,
-    "sprite": "sprites/842.png"
+    "sprite": "editions/pokemon/sprites/842.png"
   },
   {
     "id": "silicobra",
     "displayName": "Silicobra",
     "dexNumber": 843,
-    "sprite": "sprites/843.png"
+    "sprite": "editions/pokemon/sprites/843.png"
   },
   {
     "id": "sandaconda",
     "displayName": "Sandaconda",
     "dexNumber": 844,
-    "sprite": "sprites/844.png"
+    "sprite": "editions/pokemon/sprites/844.png"
   },
   {
     "id": "cramorant",
     "displayName": "Cramorant",
     "dexNumber": 845,
-    "sprite": "sprites/845.png"
+    "sprite": "editions/pokemon/sprites/845.png"
   },
   {
     "id": "arrokuda",
     "displayName": "Arrokuda",
     "dexNumber": 846,
-    "sprite": "sprites/846.png"
+    "sprite": "editions/pokemon/sprites/846.png"
   },
   {
     "id": "barraskewda",
     "displayName": "Barraskewda",
     "dexNumber": 847,
-    "sprite": "sprites/847.png"
+    "sprite": "editions/pokemon/sprites/847.png"
   },
   {
     "id": "toxel",
     "displayName": "Toxel",
     "dexNumber": 848,
-    "sprite": "sprites/848.png"
+    "sprite": "editions/pokemon/sprites/848.png"
   },
   {
     "id": "toxtricity",
     "displayName": "Toxtricity",
     "dexNumber": 849,
-    "sprite": "sprites/849.png"
+    "sprite": "editions/pokemon/sprites/849.png"
   },
   {
     "id": "sizzlipede",
     "displayName": "Sizzlipede",
     "dexNumber": 850,
-    "sprite": "sprites/850.png"
+    "sprite": "editions/pokemon/sprites/850.png"
   },
   {
     "id": "centiskorch",
     "displayName": "Centiskorch",
     "dexNumber": 851,
-    "sprite": "sprites/851.png"
+    "sprite": "editions/pokemon/sprites/851.png"
   },
   {
     "id": "clobbopus",
     "displayName": "Clobbopus",
     "dexNumber": 852,
-    "sprite": "sprites/852.png"
+    "sprite": "editions/pokemon/sprites/852.png"
   },
   {
     "id": "grapploct",
     "displayName": "Grapploct",
     "dexNumber": 853,
-    "sprite": "sprites/853.png"
+    "sprite": "editions/pokemon/sprites/853.png"
   },
   {
     "id": "sinistea",
     "displayName": "Sinistea",
     "dexNumber": 854,
-    "sprite": "sprites/854.png"
+    "sprite": "editions/pokemon/sprites/854.png"
   },
   {
     "id": "polteageist",
     "displayName": "Polteageist",
     "dexNumber": 855,
-    "sprite": "sprites/855.png"
+    "sprite": "editions/pokemon/sprites/855.png"
   },
   {
     "id": "hatenna",
     "displayName": "Hatenna",
     "dexNumber": 856,
-    "sprite": "sprites/856.png"
+    "sprite": "editions/pokemon/sprites/856.png"
   },
   {
     "id": "hattrem",
     "displayName": "Hattrem",
     "dexNumber": 857,
-    "sprite": "sprites/857.png"
+    "sprite": "editions/pokemon/sprites/857.png"
   },
   {
     "id": "hatterene",
     "displayName": "Hatterene",
     "dexNumber": 858,
-    "sprite": "sprites/858.png"
+    "sprite": "editions/pokemon/sprites/858.png"
   },
   {
     "id": "impidimp",
     "displayName": "Impidimp",
     "dexNumber": 859,
-    "sprite": "sprites/859.png"
+    "sprite": "editions/pokemon/sprites/859.png"
   },
   {
     "id": "morgrem",
     "displayName": "Morgrem",
     "dexNumber": 860,
-    "sprite": "sprites/860.png"
+    "sprite": "editions/pokemon/sprites/860.png"
   },
   {
     "id": "grimmsnarl",
     "displayName": "Grimmsnarl",
     "dexNumber": 861,
-    "sprite": "sprites/861.png"
+    "sprite": "editions/pokemon/sprites/861.png"
   },
   {
     "id": "obstagoon",
     "displayName": "Obstagoon",
     "dexNumber": 862,
-    "sprite": "sprites/862.png"
+    "sprite": "editions/pokemon/sprites/862.png"
   },
   {
     "id": "perrserker",
     "displayName": "Perrserker",
     "dexNumber": 863,
-    "sprite": "sprites/863.png"
+    "sprite": "editions/pokemon/sprites/863.png"
   },
   {
     "id": "cursola",
     "displayName": "Cursola",
     "dexNumber": 864,
-    "sprite": "sprites/864.png"
+    "sprite": "editions/pokemon/sprites/864.png"
   },
   {
     "id": "sirfetchd",
     "displayName": "Sirfetch’d",
     "dexNumber": 865,
-    "sprite": "sprites/865.png"
+    "sprite": "editions/pokemon/sprites/865.png"
   },
   {
     "id": "mr-rime",
     "displayName": "Mr. Rime",
     "dexNumber": 866,
-    "sprite": "sprites/866.png"
+    "sprite": "editions/pokemon/sprites/866.png"
   },
   {
     "id": "runerigus",
     "displayName": "Runerigus",
     "dexNumber": 867,
-    "sprite": "sprites/867.png"
+    "sprite": "editions/pokemon/sprites/867.png"
   },
   {
     "id": "milcery",
     "displayName": "Milcery",
     "dexNumber": 868,
-    "sprite": "sprites/868.png"
+    "sprite": "editions/pokemon/sprites/868.png"
   },
   {
     "id": "alcremie",
     "displayName": "Alcremie",
     "dexNumber": 869,
-    "sprite": "sprites/869.png"
+    "sprite": "editions/pokemon/sprites/869.png"
   },
   {
     "id": "falinks",
     "displayName": "Falinks",
     "dexNumber": 870,
-    "sprite": "sprites/870.png"
+    "sprite": "editions/pokemon/sprites/870.png"
   },
   {
     "id": "pincurchin",
     "displayName": "Pincurchin",
     "dexNumber": 871,
-    "sprite": "sprites/871.png"
+    "sprite": "editions/pokemon/sprites/871.png"
   },
   {
     "id": "snom",
     "displayName": "Snom",
     "dexNumber": 872,
-    "sprite": "sprites/872.png"
+    "sprite": "editions/pokemon/sprites/872.png"
   },
   {
     "id": "frosmoth",
     "displayName": "Frosmoth",
     "dexNumber": 873,
-    "sprite": "sprites/873.png"
+    "sprite": "editions/pokemon/sprites/873.png"
   },
   {
     "id": "stonjourner",
     "displayName": "Stonjourner",
     "dexNumber": 874,
-    "sprite": "sprites/874.png"
+    "sprite": "editions/pokemon/sprites/874.png"
   },
   {
     "id": "eiscue",
     "displayName": "Eiscue",
     "dexNumber": 875,
-    "sprite": "sprites/875.png"
+    "sprite": "editions/pokemon/sprites/875.png"
   },
   {
     "id": "indeedee",
     "displayName": "Indeedee",
     "dexNumber": 876,
-    "sprite": "sprites/876.png"
+    "sprite": "editions/pokemon/sprites/876.png"
   },
   {
     "id": "morpeko",
     "displayName": "Morpeko",
     "dexNumber": 877,
-    "sprite": "sprites/877.png"
+    "sprite": "editions/pokemon/sprites/877.png"
   },
   {
     "id": "cufant",
     "displayName": "Cufant",
     "dexNumber": 878,
-    "sprite": "sprites/878.png"
+    "sprite": "editions/pokemon/sprites/878.png"
   },
   {
     "id": "copperajah",
     "displayName": "Copperajah",
     "dexNumber": 879,
-    "sprite": "sprites/879.png"
+    "sprite": "editions/pokemon/sprites/879.png"
   },
   {
     "id": "dracozolt",
     "displayName": "Dracozolt",
     "dexNumber": 880,
-    "sprite": "sprites/880.png"
+    "sprite": "editions/pokemon/sprites/880.png"
   },
   {
     "id": "arctozolt",
     "displayName": "Arctozolt",
     "dexNumber": 881,
-    "sprite": "sprites/881.png"
+    "sprite": "editions/pokemon/sprites/881.png"
   },
   {
     "id": "dracovish",
     "displayName": "Dracovish",
     "dexNumber": 882,
-    "sprite": "sprites/882.png"
+    "sprite": "editions/pokemon/sprites/882.png"
   },
   {
     "id": "arctovish",
     "displayName": "Arctovish",
     "dexNumber": 883,
-    "sprite": "sprites/883.png"
+    "sprite": "editions/pokemon/sprites/883.png"
   },
   {
     "id": "duraludon",
     "displayName": "Duraludon",
     "dexNumber": 884,
-    "sprite": "sprites/884.png"
+    "sprite": "editions/pokemon/sprites/884.png"
   },
   {
     "id": "dreepy",
     "displayName": "Dreepy",
     "dexNumber": 885,
-    "sprite": "sprites/885.png"
+    "sprite": "editions/pokemon/sprites/885.png"
   },
   {
     "id": "drakloak",
     "displayName": "Drakloak",
     "dexNumber": 886,
-    "sprite": "sprites/886.png"
+    "sprite": "editions/pokemon/sprites/886.png"
   },
   {
     "id": "dragapult",
     "displayName": "Dragapult",
     "dexNumber": 887,
-    "sprite": "sprites/887.png"
+    "sprite": "editions/pokemon/sprites/887.png"
   },
   {
     "id": "zacian",
     "displayName": "Zacian",
     "dexNumber": 888,
-    "sprite": "sprites/888.png"
+    "sprite": "editions/pokemon/sprites/888.png"
   },
   {
     "id": "zamazenta",
     "displayName": "Zamazenta",
     "dexNumber": 889,
-    "sprite": "sprites/889.png"
+    "sprite": "editions/pokemon/sprites/889.png"
   },
   {
     "id": "eternatus",
     "displayName": "Eternatus",
     "dexNumber": 890,
-    "sprite": "sprites/890.png"
+    "sprite": "editions/pokemon/sprites/890.png"
   },
   {
     "id": "kubfu",
     "displayName": "Kubfu",
     "dexNumber": 891,
-    "sprite": "sprites/891.png"
+    "sprite": "editions/pokemon/sprites/891.png"
   },
   {
     "id": "urshifu",
     "displayName": "Urshifu",
     "dexNumber": 892,
-    "sprite": "sprites/892.png"
+    "sprite": "editions/pokemon/sprites/892.png"
   },
   {
     "id": "zarude",
     "displayName": "Zarude",
     "dexNumber": 893,
-    "sprite": "sprites/893.png"
+    "sprite": "editions/pokemon/sprites/893.png"
   },
   {
     "id": "regieleki",
     "displayName": "Regieleki",
     "dexNumber": 894,
-    "sprite": "sprites/894.png"
+    "sprite": "editions/pokemon/sprites/894.png"
   },
   {
     "id": "regidrago",
     "displayName": "Regidrago",
     "dexNumber": 895,
-    "sprite": "sprites/895.png"
+    "sprite": "editions/pokemon/sprites/895.png"
   },
   {
     "id": "glastrier",
     "displayName": "Glastrier",
     "dexNumber": 896,
-    "sprite": "sprites/896.png"
+    "sprite": "editions/pokemon/sprites/896.png"
   },
   {
     "id": "spectrier",
     "displayName": "Spectrier",
     "dexNumber": 897,
-    "sprite": "sprites/897.png"
+    "sprite": "editions/pokemon/sprites/897.png"
   },
   {
     "id": "calyrex",
     "displayName": "Calyrex",
     "dexNumber": 898,
-    "sprite": "sprites/898.png"
+    "sprite": "editions/pokemon/sprites/898.png"
   },
   {
     "id": "wyrdeer",
     "displayName": "Wyrdeer",
     "dexNumber": 899,
-    "sprite": "sprites/899.png"
+    "sprite": "editions/pokemon/sprites/899.png"
   },
   {
     "id": "kleavor",
     "displayName": "Kleavor",
     "dexNumber": 900,
-    "sprite": "sprites/900.png"
+    "sprite": "editions/pokemon/sprites/900.png"
   },
   {
     "id": "ursaluna",
     "displayName": "Ursaluna",
     "dexNumber": 901,
-    "sprite": "sprites/901.png"
+    "sprite": "editions/pokemon/sprites/901.png"
   },
   {
     "id": "basculegion",
     "displayName": "Basculegion",
     "dexNumber": 902,
-    "sprite": "sprites/902.png"
+    "sprite": "editions/pokemon/sprites/902.png"
   },
   {
     "id": "sneasler",
     "displayName": "Sneasler",
     "dexNumber": 903,
-    "sprite": "sprites/903.png"
+    "sprite": "editions/pokemon/sprites/903.png"
   },
   {
     "id": "overqwil",
     "displayName": "Overqwil",
     "dexNumber": 904,
-    "sprite": "sprites/904.png"
+    "sprite": "editions/pokemon/sprites/904.png"
   },
   {
     "id": "enamorus",
     "displayName": "Enamorus",
     "dexNumber": 905,
-    "sprite": "sprites/905.png"
+    "sprite": "editions/pokemon/sprites/905.png"
   },
   {
     "id": "sprigatito",
     "displayName": "Sprigatito",
     "dexNumber": 906,
-    "sprite": "sprites/906.png"
+    "sprite": "editions/pokemon/sprites/906.png"
   },
   {
     "id": "floragato",
     "displayName": "Floragato",
     "dexNumber": 907,
-    "sprite": "sprites/907.png"
+    "sprite": "editions/pokemon/sprites/907.png"
   },
   {
     "id": "meowscarada",
     "displayName": "Meowscarada",
     "dexNumber": 908,
-    "sprite": "sprites/908.png"
+    "sprite": "editions/pokemon/sprites/908.png"
   },
   {
     "id": "fuecoco",
     "displayName": "Fuecoco",
     "dexNumber": 909,
-    "sprite": "sprites/909.png"
+    "sprite": "editions/pokemon/sprites/909.png"
   },
   {
     "id": "crocalor",
     "displayName": "Crocalor",
     "dexNumber": 910,
-    "sprite": "sprites/910.png"
+    "sprite": "editions/pokemon/sprites/910.png"
   },
   {
     "id": "skeledirge",
     "displayName": "Skeledirge",
     "dexNumber": 911,
-    "sprite": "sprites/911.png"
+    "sprite": "editions/pokemon/sprites/911.png"
   },
   {
     "id": "quaxly",
     "displayName": "Quaxly",
     "dexNumber": 912,
-    "sprite": "sprites/912.png"
+    "sprite": "editions/pokemon/sprites/912.png"
   },
   {
     "id": "quaxwell",
     "displayName": "Quaxwell",
     "dexNumber": 913,
-    "sprite": "sprites/913.png"
+    "sprite": "editions/pokemon/sprites/913.png"
   },
   {
     "id": "quaquaval",
     "displayName": "Quaquaval",
     "dexNumber": 914,
-    "sprite": "sprites/914.png"
+    "sprite": "editions/pokemon/sprites/914.png"
   },
   {
     "id": "lechonk",
     "displayName": "Lechonk",
     "dexNumber": 915,
-    "sprite": "sprites/915.png"
+    "sprite": "editions/pokemon/sprites/915.png"
   },
   {
     "id": "oinkologne",
     "displayName": "Oinkologne",
     "dexNumber": 916,
-    "sprite": "sprites/916.png"
+    "sprite": "editions/pokemon/sprites/916.png"
   },
   {
     "id": "tarountula",
     "displayName": "Tarountula",
     "dexNumber": 917,
-    "sprite": "sprites/917.png"
+    "sprite": "editions/pokemon/sprites/917.png"
   },
   {
     "id": "spidops",
     "displayName": "Spidops",
     "dexNumber": 918,
-    "sprite": "sprites/918.png"
+    "sprite": "editions/pokemon/sprites/918.png"
   },
   {
     "id": "nymble",
     "displayName": "Nymble",
     "dexNumber": 919,
-    "sprite": "sprites/919.png"
+    "sprite": "editions/pokemon/sprites/919.png"
   },
   {
     "id": "lokix",
     "displayName": "Lokix",
     "dexNumber": 920,
-    "sprite": "sprites/920.png"
+    "sprite": "editions/pokemon/sprites/920.png"
   },
   {
     "id": "pawmi",
     "displayName": "Pawmi",
     "dexNumber": 921,
-    "sprite": "sprites/921.png"
+    "sprite": "editions/pokemon/sprites/921.png"
   },
   {
     "id": "pawmo",
     "displayName": "Pawmo",
     "dexNumber": 922,
-    "sprite": "sprites/922.png"
+    "sprite": "editions/pokemon/sprites/922.png"
   },
   {
     "id": "pawmot",
     "displayName": "Pawmot",
     "dexNumber": 923,
-    "sprite": "sprites/923.png"
+    "sprite": "editions/pokemon/sprites/923.png"
   },
   {
     "id": "tandemaus",
     "displayName": "Tandemaus",
     "dexNumber": 924,
-    "sprite": "sprites/924.png"
+    "sprite": "editions/pokemon/sprites/924.png"
   },
   {
     "id": "maushold",
     "displayName": "Maushold",
     "dexNumber": 925,
-    "sprite": "sprites/925.png"
+    "sprite": "editions/pokemon/sprites/925.png"
   },
   {
     "id": "fidough",
     "displayName": "Fidough",
     "dexNumber": 926,
-    "sprite": "sprites/926.png"
+    "sprite": "editions/pokemon/sprites/926.png"
   },
   {
     "id": "dachsbun",
     "displayName": "Dachsbun",
     "dexNumber": 927,
-    "sprite": "sprites/927.png"
+    "sprite": "editions/pokemon/sprites/927.png"
   },
   {
     "id": "smoliv",
     "displayName": "Smoliv",
     "dexNumber": 928,
-    "sprite": "sprites/928.png"
+    "sprite": "editions/pokemon/sprites/928.png"
   },
   {
     "id": "dolliv",
     "displayName": "Dolliv",
     "dexNumber": 929,
-    "sprite": "sprites/929.png"
+    "sprite": "editions/pokemon/sprites/929.png"
   },
   {
     "id": "arboliva",
     "displayName": "Arboliva",
     "dexNumber": 930,
-    "sprite": "sprites/930.png"
+    "sprite": "editions/pokemon/sprites/930.png"
   },
   {
     "id": "squawkabilly",
     "displayName": "Squawkabilly",
     "dexNumber": 931,
-    "sprite": "sprites/931.png"
+    "sprite": "editions/pokemon/sprites/931.png"
   },
   {
     "id": "nacli",
     "displayName": "Nacli",
     "dexNumber": 932,
-    "sprite": "sprites/932.png"
+    "sprite": "editions/pokemon/sprites/932.png"
   },
   {
     "id": "naclstack",
     "displayName": "Naclstack",
     "dexNumber": 933,
-    "sprite": "sprites/933.png"
+    "sprite": "editions/pokemon/sprites/933.png"
   },
   {
     "id": "garganacl",
     "displayName": "Garganacl",
     "dexNumber": 934,
-    "sprite": "sprites/934.png"
+    "sprite": "editions/pokemon/sprites/934.png"
   },
   {
     "id": "charcadet",
     "displayName": "Charcadet",
     "dexNumber": 935,
-    "sprite": "sprites/935.png"
+    "sprite": "editions/pokemon/sprites/935.png"
   },
   {
     "id": "armarouge",
     "displayName": "Armarouge",
     "dexNumber": 936,
-    "sprite": "sprites/936.png"
+    "sprite": "editions/pokemon/sprites/936.png"
   },
   {
     "id": "ceruledge",
     "displayName": "Ceruledge",
     "dexNumber": 937,
-    "sprite": "sprites/937.png"
+    "sprite": "editions/pokemon/sprites/937.png"
   },
   {
     "id": "tadbulb",
     "displayName": "Tadbulb",
     "dexNumber": 938,
-    "sprite": "sprites/938.png"
+    "sprite": "editions/pokemon/sprites/938.png"
   },
   {
     "id": "bellibolt",
     "displayName": "Bellibolt",
     "dexNumber": 939,
-    "sprite": "sprites/939.png"
+    "sprite": "editions/pokemon/sprites/939.png"
   },
   {
     "id": "wattrel",
     "displayName": "Wattrel",
     "dexNumber": 940,
-    "sprite": "sprites/940.png"
+    "sprite": "editions/pokemon/sprites/940.png"
   },
   {
     "id": "kilowattrel",
     "displayName": "Kilowattrel",
     "dexNumber": 941,
-    "sprite": "sprites/941.png"
+    "sprite": "editions/pokemon/sprites/941.png"
   },
   {
     "id": "maschiff",
     "displayName": "Maschiff",
     "dexNumber": 942,
-    "sprite": "sprites/942.png"
+    "sprite": "editions/pokemon/sprites/942.png"
   },
   {
     "id": "mabosstiff",
     "displayName": "Mabosstiff",
     "dexNumber": 943,
-    "sprite": "sprites/943.png"
+    "sprite": "editions/pokemon/sprites/943.png"
   },
   {
     "id": "shroodle",
     "displayName": "Shroodle",
     "dexNumber": 944,
-    "sprite": "sprites/944.png"
+    "sprite": "editions/pokemon/sprites/944.png"
   },
   {
     "id": "grafaiai",
     "displayName": "Grafaiai",
     "dexNumber": 945,
-    "sprite": "sprites/945.png"
+    "sprite": "editions/pokemon/sprites/945.png"
   },
   {
     "id": "bramblin",
     "displayName": "Bramblin",
     "dexNumber": 946,
-    "sprite": "sprites/946.png"
+    "sprite": "editions/pokemon/sprites/946.png"
   },
   {
     "id": "brambleghast",
     "displayName": "Brambleghast",
     "dexNumber": 947,
-    "sprite": "sprites/947.png"
+    "sprite": "editions/pokemon/sprites/947.png"
   },
   {
     "id": "toedscool",
     "displayName": "Toedscool",
     "dexNumber": 948,
-    "sprite": "sprites/948.png"
+    "sprite": "editions/pokemon/sprites/948.png"
   },
   {
     "id": "toedscruel",
     "displayName": "Toedscruel",
     "dexNumber": 949,
-    "sprite": "sprites/949.png"
+    "sprite": "editions/pokemon/sprites/949.png"
   },
   {
     "id": "klawf",
     "displayName": "Klawf",
     "dexNumber": 950,
-    "sprite": "sprites/950.png"
+    "sprite": "editions/pokemon/sprites/950.png"
   },
   {
     "id": "capsakid",
     "displayName": "Capsakid",
     "dexNumber": 951,
-    "sprite": "sprites/951.png"
+    "sprite": "editions/pokemon/sprites/951.png"
   },
   {
     "id": "scovillain",
     "displayName": "Scovillain",
     "dexNumber": 952,
-    "sprite": "sprites/952.png"
+    "sprite": "editions/pokemon/sprites/952.png"
   },
   {
     "id": "rellor",
     "displayName": "Rellor",
     "dexNumber": 953,
-    "sprite": "sprites/953.png"
+    "sprite": "editions/pokemon/sprites/953.png"
   },
   {
     "id": "rabsca",
     "displayName": "Rabsca",
     "dexNumber": 954,
-    "sprite": "sprites/954.png"
+    "sprite": "editions/pokemon/sprites/954.png"
   },
   {
     "id": "flittle",
     "displayName": "Flittle",
     "dexNumber": 955,
-    "sprite": "sprites/955.png"
+    "sprite": "editions/pokemon/sprites/955.png"
   },
   {
     "id": "espathra",
     "displayName": "Espathra",
     "dexNumber": 956,
-    "sprite": "sprites/956.png"
+    "sprite": "editions/pokemon/sprites/956.png"
   },
   {
     "id": "tinkatink",
     "displayName": "Tinkatink",
     "dexNumber": 957,
-    "sprite": "sprites/957.png"
+    "sprite": "editions/pokemon/sprites/957.png"
   },
   {
     "id": "tinkatuff",
     "displayName": "Tinkatuff",
     "dexNumber": 958,
-    "sprite": "sprites/958.png"
+    "sprite": "editions/pokemon/sprites/958.png"
   },
   {
     "id": "tinkaton",
     "displayName": "Tinkaton",
     "dexNumber": 959,
-    "sprite": "sprites/959.png"
+    "sprite": "editions/pokemon/sprites/959.png"
   },
   {
     "id": "wiglett",
     "displayName": "Wiglett",
     "dexNumber": 960,
-    "sprite": "sprites/960.png"
+    "sprite": "editions/pokemon/sprites/960.png"
   },
   {
     "id": "wugtrio",
     "displayName": "Wugtrio",
     "dexNumber": 961,
-    "sprite": "sprites/961.png"
+    "sprite": "editions/pokemon/sprites/961.png"
   },
   {
     "id": "bombirdier",
     "displayName": "Bombirdier",
     "dexNumber": 962,
-    "sprite": "sprites/962.png"
+    "sprite": "editions/pokemon/sprites/962.png"
   },
   {
     "id": "finizen",
     "displayName": "Finizen",
     "dexNumber": 963,
-    "sprite": "sprites/963.png"
+    "sprite": "editions/pokemon/sprites/963.png"
   },
   {
     "id": "palafin",
     "displayName": "Palafin",
     "dexNumber": 964,
-    "sprite": "sprites/964.png"
+    "sprite": "editions/pokemon/sprites/964.png"
   },
   {
     "id": "varoom",
     "displayName": "Varoom",
     "dexNumber": 965,
-    "sprite": "sprites/965.png"
+    "sprite": "editions/pokemon/sprites/965.png"
   },
   {
     "id": "revavroom",
     "displayName": "Revavroom",
     "dexNumber": 966,
-    "sprite": "sprites/966.png"
+    "sprite": "editions/pokemon/sprites/966.png"
   },
   {
     "id": "cyclizar",
     "displayName": "Cyclizar",
     "dexNumber": 967,
-    "sprite": "sprites/967.png"
+    "sprite": "editions/pokemon/sprites/967.png"
   },
   {
     "id": "orthworm",
     "displayName": "Orthworm",
     "dexNumber": 968,
-    "sprite": "sprites/968.png"
+    "sprite": "editions/pokemon/sprites/968.png"
   },
   {
     "id": "glimmet",
     "displayName": "Glimmet",
     "dexNumber": 969,
-    "sprite": "sprites/969.png"
+    "sprite": "editions/pokemon/sprites/969.png"
   },
   {
     "id": "glimmora",
     "displayName": "Glimmora",
     "dexNumber": 970,
-    "sprite": "sprites/970.png"
+    "sprite": "editions/pokemon/sprites/970.png"
   },
   {
     "id": "greavard",
     "displayName": "Greavard",
     "dexNumber": 971,
-    "sprite": "sprites/971.png"
+    "sprite": "editions/pokemon/sprites/971.png"
   },
   {
     "id": "houndstone",
     "displayName": "Houndstone",
     "dexNumber": 972,
-    "sprite": "sprites/972.png"
+    "sprite": "editions/pokemon/sprites/972.png"
   },
   {
     "id": "flamigo",
     "displayName": "Flamigo",
     "dexNumber": 973,
-    "sprite": "sprites/973.png"
+    "sprite": "editions/pokemon/sprites/973.png"
   },
   {
     "id": "cetoddle",
     "displayName": "Cetoddle",
     "dexNumber": 974,
-    "sprite": "sprites/974.png"
+    "sprite": "editions/pokemon/sprites/974.png"
   },
   {
     "id": "cetitan",
     "displayName": "Cetitan",
     "dexNumber": 975,
-    "sprite": "sprites/975.png"
+    "sprite": "editions/pokemon/sprites/975.png"
   },
   {
     "id": "veluza",
     "displayName": "Veluza",
     "dexNumber": 976,
-    "sprite": "sprites/976.png"
+    "sprite": "editions/pokemon/sprites/976.png"
   },
   {
     "id": "dondozo",
     "displayName": "Dondozo",
     "dexNumber": 977,
-    "sprite": "sprites/977.png"
+    "sprite": "editions/pokemon/sprites/977.png"
   },
   {
     "id": "tatsugiri",
     "displayName": "Tatsugiri",
     "dexNumber": 978,
-    "sprite": "sprites/978.png"
+    "sprite": "editions/pokemon/sprites/978.png"
   },
   {
     "id": "annihilape",
     "displayName": "Annihilape",
     "dexNumber": 979,
-    "sprite": "sprites/979.png"
+    "sprite": "editions/pokemon/sprites/979.png"
   },
   {
     "id": "clodsire",
     "displayName": "Clodsire",
     "dexNumber": 980,
-    "sprite": "sprites/980.png"
+    "sprite": "editions/pokemon/sprites/980.png"
   },
   {
     "id": "farigiraf",
     "displayName": "Farigiraf",
     "dexNumber": 981,
-    "sprite": "sprites/981.png"
+    "sprite": "editions/pokemon/sprites/981.png"
   },
   {
     "id": "dudunsparce",
     "displayName": "Dudunsparce",
     "dexNumber": 982,
-    "sprite": "sprites/982.png"
+    "sprite": "editions/pokemon/sprites/982.png"
   },
   {
     "id": "kingambit",
     "displayName": "Kingambit",
     "dexNumber": 983,
-    "sprite": "sprites/983.png"
+    "sprite": "editions/pokemon/sprites/983.png"
   },
   {
     "id": "great-tusk",
     "displayName": "Great Tusk",
     "dexNumber": 984,
-    "sprite": "sprites/984.png"
+    "sprite": "editions/pokemon/sprites/984.png"
   },
   {
     "id": "scream-tail",
     "displayName": "Scream Tail",
     "dexNumber": 985,
-    "sprite": "sprites/985.png"
+    "sprite": "editions/pokemon/sprites/985.png"
   },
   {
     "id": "brute-bonnet",
     "displayName": "Brute Bonnet",
     "dexNumber": 986,
-    "sprite": "sprites/986.png"
+    "sprite": "editions/pokemon/sprites/986.png"
   },
   {
     "id": "flutter-mane",
     "displayName": "Flutter Mane",
     "dexNumber": 987,
-    "sprite": "sprites/987.png"
+    "sprite": "editions/pokemon/sprites/987.png"
   },
   {
     "id": "slither-wing",
     "displayName": "Slither Wing",
     "dexNumber": 988,
-    "sprite": "sprites/988.png"
+    "sprite": "editions/pokemon/sprites/988.png"
   },
   {
     "id": "sandy-shocks",
     "displayName": "Sandy Shocks",
     "dexNumber": 989,
-    "sprite": "sprites/989.png"
+    "sprite": "editions/pokemon/sprites/989.png"
   },
   {
     "id": "iron-treads",
     "displayName": "Iron Treads",
     "dexNumber": 990,
-    "sprite": "sprites/990.png"
+    "sprite": "editions/pokemon/sprites/990.png"
   },
   {
     "id": "iron-bundle",
     "displayName": "Iron Bundle",
     "dexNumber": 991,
-    "sprite": "sprites/991.png"
+    "sprite": "editions/pokemon/sprites/991.png"
   },
   {
     "id": "iron-hands",
     "displayName": "Iron Hands",
     "dexNumber": 992,
-    "sprite": "sprites/992.png"
+    "sprite": "editions/pokemon/sprites/992.png"
   },
   {
     "id": "iron-jugulis",
     "displayName": "Iron Jugulis",
     "dexNumber": 993,
-    "sprite": "sprites/993.png"
+    "sprite": "editions/pokemon/sprites/993.png"
   },
   {
     "id": "iron-moth",
     "displayName": "Iron Moth",
     "dexNumber": 994,
-    "sprite": "sprites/994.png"
+    "sprite": "editions/pokemon/sprites/994.png"
   },
   {
     "id": "iron-thorns",
     "displayName": "Iron Thorns",
     "dexNumber": 995,
-    "sprite": "sprites/995.png"
+    "sprite": "editions/pokemon/sprites/995.png"
   },
   {
     "id": "frigibax",
     "displayName": "Frigibax",
     "dexNumber": 996,
-    "sprite": "sprites/996.png"
+    "sprite": "editions/pokemon/sprites/996.png"
   },
   {
     "id": "arctibax",
     "displayName": "Arctibax",
     "dexNumber": 997,
-    "sprite": "sprites/997.png"
+    "sprite": "editions/pokemon/sprites/997.png"
   },
   {
     "id": "baxcalibur",
     "displayName": "Baxcalibur",
     "dexNumber": 998,
-    "sprite": "sprites/998.png"
+    "sprite": "editions/pokemon/sprites/998.png"
   },
   {
     "id": "gimmighoul",
     "displayName": "Gimmighoul",
     "dexNumber": 999,
-    "sprite": "sprites/999.png"
+    "sprite": "editions/pokemon/sprites/999.png"
   },
   {
     "id": "gholdengo",
     "displayName": "Gholdengo",
     "dexNumber": 1000,
-    "sprite": "sprites/1000.png"
+    "sprite": "editions/pokemon/sprites/1000.png"
   },
   {
     "id": "wo-chien",
     "displayName": "Wo-Chien",
     "dexNumber": 1001,
-    "sprite": "sprites/1001.png"
+    "sprite": "editions/pokemon/sprites/1001.png"
   },
   {
     "id": "chien-pao",
     "displayName": "Chien-Pao",
     "dexNumber": 1002,
-    "sprite": "sprites/1002.png"
+    "sprite": "editions/pokemon/sprites/1002.png"
   },
   {
     "id": "ting-lu",
     "displayName": "Ting-Lu",
     "dexNumber": 1003,
-    "sprite": "sprites/1003.png"
+    "sprite": "editions/pokemon/sprites/1003.png"
   },
   {
     "id": "chi-yu",
     "displayName": "Chi-Yu",
     "dexNumber": 1004,
-    "sprite": "sprites/1004.png"
+    "sprite": "editions/pokemon/sprites/1004.png"
   },
   {
     "id": "roaring-moon",
     "displayName": "Roaring Moon",
     "dexNumber": 1005,
-    "sprite": "sprites/1005.png"
+    "sprite": "editions/pokemon/sprites/1005.png"
   },
   {
     "id": "iron-valiant",
     "displayName": "Iron Valiant",
     "dexNumber": 1006,
-    "sprite": "sprites/1006.png"
+    "sprite": "editions/pokemon/sprites/1006.png"
   },
   {
     "id": "koraidon",
     "displayName": "Koraidon",
     "dexNumber": 1007,
-    "sprite": "sprites/1007.png"
+    "sprite": "editions/pokemon/sprites/1007.png"
   },
   {
     "id": "miraidon",
     "displayName": "Miraidon",
     "dexNumber": 1008,
-    "sprite": "sprites/1008.png"
+    "sprite": "editions/pokemon/sprites/1008.png"
   },
   {
     "id": "walking-wake",
     "displayName": "Walking Wake",
     "dexNumber": 1009,
-    "sprite": "sprites/1009.png"
+    "sprite": "editions/pokemon/sprites/1009.png"
   },
   {
     "id": "iron-leaves",
     "displayName": "Iron Leaves",
     "dexNumber": 1010,
-    "sprite": "sprites/1010.png"
+    "sprite": "editions/pokemon/sprites/1010.png"
   },
   {
     "id": "dipplin",
     "displayName": "Dipplin",
     "dexNumber": 1011,
-    "sprite": "sprites/1011.png"
+    "sprite": "editions/pokemon/sprites/1011.png"
   },
   {
     "id": "poltchageist",
     "displayName": "Poltchageist",
     "dexNumber": 1012,
-    "sprite": "sprites/1012.png"
+    "sprite": "editions/pokemon/sprites/1012.png"
   },
   {
     "id": "sinistcha",
     "displayName": "Sinistcha",
     "dexNumber": 1013,
-    "sprite": "sprites/1013.png"
+    "sprite": "editions/pokemon/sprites/1013.png"
   },
   {
     "id": "okidogi",
     "displayName": "Okidogi",
     "dexNumber": 1014,
-    "sprite": "sprites/1014.png"
+    "sprite": "editions/pokemon/sprites/1014.png"
   },
   {
     "id": "munkidori",
     "displayName": "Munkidori",
     "dexNumber": 1015,
-    "sprite": "sprites/1015.png"
+    "sprite": "editions/pokemon/sprites/1015.png"
   },
   {
     "id": "fezandipiti",
     "displayName": "Fezandipiti",
     "dexNumber": 1016,
-    "sprite": "sprites/1016.png"
+    "sprite": "editions/pokemon/sprites/1016.png"
   },
   {
     "id": "ogerpon",
     "displayName": "Ogerpon",
     "dexNumber": 1017,
-    "sprite": "sprites/1017.png"
+    "sprite": "editions/pokemon/sprites/1017.png"
   },
   {
     "id": "archaludon",
     "displayName": "Archaludon",
     "dexNumber": 1018,
-    "sprite": "sprites/1018.png"
+    "sprite": "editions/pokemon/sprites/1018.png"
   },
   {
     "id": "hydrapple",
     "displayName": "Hydrapple",
     "dexNumber": 1019,
-    "sprite": "sprites/1019.png"
+    "sprite": "editions/pokemon/sprites/1019.png"
   },
   {
     "id": "gouging-fire",
     "displayName": "Gouging Fire",
     "dexNumber": 1020,
-    "sprite": "sprites/1020.png"
+    "sprite": "editions/pokemon/sprites/1020.png"
   },
   {
     "id": "raging-bolt",
     "displayName": "Raging Bolt",
     "dexNumber": 1021,
-    "sprite": "sprites/1021.png"
+    "sprite": "editions/pokemon/sprites/1021.png"
   },
   {
     "id": "iron-boulder",
     "displayName": "Iron Boulder",
     "dexNumber": 1022,
-    "sprite": "sprites/1022.png"
+    "sprite": "editions/pokemon/sprites/1022.png"
   },
   {
     "id": "iron-crown",
     "displayName": "Iron Crown",
     "dexNumber": 1023,
-    "sprite": "sprites/1023.png"
+    "sprite": "editions/pokemon/sprites/1023.png"
   },
   {
     "id": "terapagos",
     "displayName": "Terapagos",
     "dexNumber": 1024,
-    "sprite": "sprites/1024.png"
+    "sprite": "editions/pokemon/sprites/1024.png"
   },
   {
     "id": "pecharunt",
     "displayName": "Pecharunt",
     "dexNumber": 1025,
-    "sprite": "sprites/1025.png"
+    "sprite": "editions/pokemon/sprites/1025.png"
   }
 ]

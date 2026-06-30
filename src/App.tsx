@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react'
+import Menu from './screens/Menu'
 import Setup, { cutoffFor } from './screens/Setup'
 import PassToHinter from './screens/PassToHinter'
 import HinterPlay from './screens/HinterPlay'
@@ -23,6 +24,7 @@ import {
   type SessionState,
 } from './engine'
 import { CATEGORIES } from './data/categories'
+import { editionById } from './editions'
 import type { Player } from './types'
 import styles from './App.module.css'
 
@@ -51,6 +53,11 @@ function buildDeck(categoryIds: string[], deckSize: number): string[] {
 }
 
 export default function App() {
+  // The active edition, the new top of the flow. null means the menu is showing;
+  // an id means that edition is chosen and the Setup -> game flow runs inside it.
+  // Stored as the id (never an index or the object) so a URL scheme is a clean
+  // later addition: the menu sets an id, and the edition is looked up by id.
+  const [activeEditionId, setActiveEditionId] = useState<string | null>(null)
   const [phase, setPhase] = useState<Phase>('setup')
   const [roster, setRoster] = useState<Player[]>([])
   const [session, setSession] = useState<SessionState | null>(null)
@@ -68,10 +75,25 @@ export default function App() {
   // Confirm before the title returns to Setup mid-game.
   const [confirmReturn, setConfirmReturn] = useState(false)
 
+  const edition = activeEditionId ? editionById(activeEditionId) : null
+
   const hinter = useMemo(() => {
     if (!session) return null
     return roster.find((p) => p.id === currentHinter(session)) ?? null
   }, [session, roster])
+
+  // Enter an edition from the menu. Takes the id, looks the edition up by id, and
+  // drops into the existing Setup flow with the current setup choices intact.
+  function selectEdition(id: string) {
+    setActiveEditionId(id)
+    setPhase('setup')
+  }
+
+  // Leave the active edition and return to the menu. Reached from the Setup title,
+  // where no game is in progress, so nothing is lost and no confirm is needed.
+  function backToMenu() {
+    setActiveEditionId(null)
+  }
 
   function handleStart(
     players: Player[],
@@ -149,37 +171,48 @@ export default function App() {
     setPhase('setup')
   }
 
-  // The title returns to Setup during a game, but on Setup there is nowhere to go.
-  const canReturn = phase !== 'setup'
+  // The title walks one step back up the flow: from Setup to the menu, and during
+  // a game to Setup (with a confirm, since the game would be lost). On the menu
+  // itself there is nowhere above, so it is not clickable.
+  const onMenu = !edition
+  const titleBack = () => {
+    if (phase === 'setup') backToMenu()
+    else setConfirmReturn(true)
+  }
 
   return (
     <div className={styles.app}>
       <ThemeToggle />
       <header className={styles.header}>
-        {canReturn ? (
+        {onMenu ? (
+          <h1>Hint Bank</h1>
+        ) : (
           <h1
             className={styles.titleAction}
             role="button"
             tabIndex={0}
-            onClick={() => setConfirmReturn(true)}
+            onClick={titleBack}
             onKeyDown={(e) => {
               if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault()
-                setConfirmReturn(true)
+                titleBack()
               }
             }}
           >
             Hint Bank
           </h1>
-        ) : (
-          <h1>Hint Bank</h1>
         )}
-        <p className={styles.edition}>Pokémon Edition</p>
+        {/* Same tag treatment across the app: each edition's name in-game, and
+            "Complete" on the menu, the product that sits over all editions. */}
+        <p className={styles.edition}>{edition ? `${edition.displayName} Edition` : 'Complete'}</p>
       </header>
       <main className={styles.main}>
-        {phase === 'setup' && (
+        {!edition && <Menu onSelect={selectEdition} />}
+
+        {edition && phase === 'setup' && (
           <Setup
             onStart={handleStart}
+            credits={edition.credits}
             initialPlayers={roster.length ? roster : undefined}
             initialMode={mode}
             initialCategoryIds={categoryIds}
