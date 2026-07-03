@@ -45,7 +45,7 @@ const POKEMON: PlayerAvatar[] = (
     [448, 'Lucario'],
     [573, `Cinccino`],
     [658, 'Greninja'],
-    [670, 'Doublade'],
+    [680, 'Doublade'],
     [909, 'Fuecoco']
   ] as [number, string][]
 ).map(([dex, label]) => ({ kind: 'image', src: `${base}editions/pokemon/sprites/${dex}.png`, label, zoom: 1.3, bare: true }))
