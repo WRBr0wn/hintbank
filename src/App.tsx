@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import Menu from './screens/Menu'
-import Setup, { cutoffFor } from './screens/Setup'
+import Setup from './screens/Setup'
 import PassToHinter from './screens/PassToHinter'
 import HinterPlay from './screens/HinterPlay'
 import Leaderboard from './screens/Leaderboard'
@@ -11,11 +11,11 @@ import {
   ANSWERS_PER_GAME,
   BANK_CAP,
   HINTER_BASE,
-  canEditMode,
   continueSession,
   createGame,
   createSession,
   currentHinter,
+  cutoffFor,
   gameScores,
   isRotationComplete,
   recordGame,
@@ -198,19 +198,10 @@ export default function App() {
         {onMenu ? (
           <h1>Hint Bank</h1>
         ) : (
-          <h1
-            className={styles.titleAction}
-            role="button"
-            tabIndex={0}
-            onClick={titleBack}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault()
-                titleBack()
-              }
-            }}
-          >
-            Hint Bank
+          <h1>
+            <button type="button" className={styles.titleAction} onClick={titleBack}>
+              Hint Bank
+            </button>
           </h1>
         )}
         {/* Same tag treatment across the app: each edition's name in-game, and
@@ -255,7 +246,6 @@ export default function App() {
             game={game}
             roster={roster}
             mode={session.mode}
-            canEdit={canEditMode(session.mode)}
             randomizerUrl={randomizerUrl}
             onChange={setGame}
             onComplete={finishTurn}

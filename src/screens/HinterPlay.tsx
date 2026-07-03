@@ -6,6 +6,7 @@ import {
   BANK_CAP,
   addWord,
   canAddWord,
+  canEditMode,
   canEndTurn,
   canReroll,
   currentAnswer,
@@ -26,9 +27,6 @@ interface Props {
   game: GameState
   roster: Player[]
   mode: GameMode
-  // Whether typo-fixing is reachable, derived from the mode via canEditMode in App.
-  // False in untrusted multiplayer; when false every edit affordance below is absent.
-  canEdit: boolean
   // The active edition's randomizer page, kept reachable in randomizer mode.
   randomizerUrl: string
   onChange: (next: GameState) => void
@@ -43,7 +41,10 @@ type EditTarget =
   | { kind: 'word'; index: number; value: string }
   | { kind: 'result'; index: number; value: string }
 
-export default function HinterPlay({ game, roster, mode, canEdit, randomizerUrl, onChange, onComplete }: Props) {
+export default function HinterPlay({ game, roster, mode, randomizerUrl, onChange, onComplete }: Props) {
+  // Whether typo-fixing is reachable. False in untrusted multiplayer; when false
+  // every edit affordance below is absent.
+  const canEdit = canEditMode(mode)
   const [selection, setSelection] = useState<number[]>([])
   const [draft, setDraft] = useState('')
   const [overguess, setOverguess] = useState<Record<string, number>>({})
@@ -124,6 +125,14 @@ export default function HinterPlay({ game, roster, mode, canEdit, randomizerUrl,
     setEditMode(false)
   }
 
+  // Clears the per-hint state once a hint resolves, either way it resolves.
+  function resetHint() {
+    setOverguess({})
+    setSelection([])
+    setLanded('')
+    setResolving(false)
+  }
+
   function handleCorrect(pid: string) {
     // Randomizer: host types the answer. Deck modes: engine reads it from the
     // deck, so answer stays undefined.
@@ -136,18 +145,12 @@ export default function HinterPlay({ game, roster, mode, canEdit, randomizerUrl,
         answer: randomizer ? typed : undefined,
       }),
     )
-    setOverguess({})
-    setSelection([])
-    setLanded('')
-    setResolving(false)
+    resetHint()
   }
 
   function handleNoOne() {
     onChange(resolveHint(game, { overguesses: overguess }))
-    setOverguess({})
-    setSelection([])
-    setLanded('')
-    setResolving(false)
+    resetHint()
   }
 
   function handleReroll() {

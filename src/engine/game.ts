@@ -60,11 +60,14 @@ export const currentAnswer = (s: GameState): Answer | null =>
 export const usableWords = (s: GameState): number[] =>
   s.bank.flatMap((entry, i) => (entry.kind === 'word' ? [i] : []))
 
-export const canAddWord = (s: GameState): boolean =>
+// Adding a word and rerolling both append a bank entry, so they share one gate:
+// game live, hinting phase, free slot. Exported under both names so the two
+// questions still read distinctly at the call sites.
+const canBankEntry = (s: GameState): boolean =>
   s.status === 'playing' && s.phase === 'hinting' && !isBankFull(s)
 
-export const canReroll = (s: GameState): boolean =>
-  s.status === 'playing' && s.phase === 'hinting' && !isBankFull(s)
+export const canAddWord = canBankEntry
+export const canReroll = canBankEntry
 
 export const canEndTurn = (s: GameState): boolean =>
   s.status === 'playing' && s.phase === 'hinting' && s.bank.length === BANK_CAP

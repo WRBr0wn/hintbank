@@ -7,7 +7,14 @@ import { CATEGORIES, type Category } from './pokemon/data/categories'
 // Re-exported so the platform refers to category types through the edition module
 // rather than reaching into an edition's data folder.
 export type { Category, Term } from './pokemon/data/categories'
-export { termPasses } from './terms'
+export { activeTagValues, tagValueOptions, termPasses } from './terms'
+
+// Kept as an object rather than a bare string: the object's presence is what
+// signals the edition has a secondary axis (Boolean(secondaryTag) gates the
+// selectors).
+export interface SecondaryTag {
+  label: string
+}
 
 export interface CreditLink {
   label: string
@@ -50,7 +57,7 @@ export interface Edition {
   // Optional secondary tag that subsets categories at setup. The edition supplies
   // only the label (Pokémon: Generation, geography later: Region); the values live
   // in the term data as gens. Omitted means the edition has no secondary filter.
-  secondaryTag?: { label: string }
+  secondaryTag?: SecondaryTag
   credits: EditionCredits
 }
 

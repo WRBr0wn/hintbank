@@ -1,8 +1,9 @@
 import { useMemo, useState } from 'react'
 import Avatar from '../components/Avatar'
 import Footer from '../components/Footer'
-import type { Category, EditionCredits } from '../editions'
+import { activeTagValues, tagValueOptions, type Category, type EditionCredits, type SecondaryTag } from '../editions'
 import { ANSWERS_PER_GAME, HINTER_BASE, type GameMode } from '../engine'
+import { toggled, toggledKeepOne } from '../sets'
 import type { Player, PlayerAvatar } from '../types'
 import styles from './Setup.module.css'
 
@@ -21,7 +22,7 @@ const CREATORS: PlayerAvatar[] = [
   { kind: 'image', src: `${base}avatars/zenvolka.png`, label: 'ZenVolka' },
 ]
 // A handful of recognizable mascots. The full sprite set is bundled in
-// public/sprites (see scripts/scrape-sprites.js). This is just the picker subset.
+// public/editions/pokemon/sprites; this is just the picker subset.
 const POKEMON: PlayerAvatar[] = (
   [
     [1, 'Bulbasaur'],
@@ -36,14 +37,14 @@ const POKEMON: PlayerAvatar[] = (
     [133, 'Eevee'],
     [143, 'Snorlax'],
     [150, 'Mewtwo'],
-    [155, `Cyndaquil`],
-    [196, `Espeon`],
-    [197, `Umbreon`],
+    [155, 'Cyndaquil'],
+    [196, 'Espeon'],
+    [197, 'Umbreon'],
     [390, 'Chimchar'],
     [393, 'Piplup'],
     [724, 'Decidueye'],
     [448, 'Lucario'],
-    [573, `Cinccino`],
+    [573, 'Cinccino'],
     [658, 'Greninja'],
     [680, 'Doublade'],
     [909, 'Fuecoco']
@@ -78,11 +79,6 @@ const DIFFICULTIES: { id: string; label: string; base: number }[] = [
 const MIN_ANSWERS = 5
 const MAX_ANSWERS = 10
 const clampAnswers = (n: number) => Math.max(MIN_ANSWERS, Math.min(MAX_ANSWERS, n))
-
-// The cutoff scales with answer count: the base is the cutoff for a full 10-answer
-// game, and a shorter game scales it down in proportion (round-half-up). A full
-// game leaves the base unchanged, so the defaults still pass 25.
-export const cutoffFor = (base: number, answers: number) => Math.round(base * (answers / ANSWERS_PER_GAME))
 
 function makePlayer(used: string[]): Player {
   const avatar = AVATARS.find((a) => !used.includes(avatarKey(a))) ?? AVATARS[0]
@@ -120,7 +116,7 @@ export default function Setup({
   categories: Category[]
   // The edition's secondary tag, if it has one. Just a label; the values come from
   // the selected categories' term data. Absent means no secondary selector.
-  secondaryTag?: { label: string }
+  secondaryTag?: SecondaryTag
   // The active edition's randomizer page, linked from randomizer mode.
   randomizerUrl: string
   // Seeds the roster when returning to Setup mid-game, so the same players carry
@@ -161,22 +157,10 @@ export default function Setup({
     () => new Set(initialSecondaryValues ?? []),
   )
 
-  // The values offered by the chosen categories: the union of gens across their
-  // terms. Data-driven, so only generations actually present show, and the selector
-  // hides entirely when nothing tagged is selected.
-  const secondaryOptions = useMemo(() => {
-    const values = new Set<number>()
-    for (const c of categories) {
-      if (!selected.has(c.id)) continue
-      for (const t of c.terms) {
-        if (t.gens) for (const g of t.gens) values.add(g)
-      }
-    }
-    return [...values].sort((a, b) => a - b)
-  }, [categories, selected])
+  const secondaryOptions = useMemo(() => tagValueOptions(categories, selected), [categories, selected])
 
   // What is both picked and still on offer. Passed to onStart and shown as active.
-  const secondaryValues = secondaryOptions.filter((v) => secondaryPicks.has(v))
+  const secondaryValues = activeTagValues(secondaryOptions, secondaryPicks)
   const showSecondary = Boolean(secondaryTag) && secondaryOptions.length > 0
 
   function update(id: string, patch: Partial<Player>) {
@@ -194,24 +178,11 @@ export default function Setup({
   }
 
   function toggleCategory(id: string) {
-    setSelected((s) => {
-      const next = new Set(s)
-      if (next.has(id)) {
-        if (next.size > 1) next.delete(id)
-      } else {
-        next.add(id)
-      }
-      return next
-    })
+    setSelected((s) => toggledKeepOne(s, id))
   }
 
   function toggleSecondary(value: number) {
-    setSecondaryPicks((s) => {
-      const next = new Set(s)
-      if (next.has(value)) next.delete(value)
-      else next.add(value)
-      return next
-    })
+    setSecondaryPicks((s) => toggled(s, value))
   }
 
   const names = players.map((p) => p.name.trim())
@@ -253,7 +224,7 @@ export default function Setup({
                 className={cls}
                 disabled={!m.ready}
                 aria-pressed={on}
-                onClick={() => m.ready && setMode(m.id)}
+                onClick={() => setMode(m.id)}
               >
                 {m.label}
                 {!m.ready && <span className={styles.soon}>soon</span>}
@@ -426,7 +397,7 @@ export default function Setup({
                     className={cls}
                     disabled={!c.ready}
                     aria-pressed={on}
-                    onClick={() => c.ready && toggleCategory(c.id)}
+                    onClick={() => toggleCategory(c.id)}
                   >
                     {c.label}
                     {!c.ready && <span className={styles.soon}>soon</span>}
