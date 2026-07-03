@@ -34,9 +34,8 @@ type Phase = 'setup' | 'pass' | 'hinter' | 'leaderboard'
 // and slice naturally caps it at the pool size when a category is short.
 const deckSizeFor = (answersPerGame: number) => answersPerGame + BANK_CAP
 
-// Combine the selected categories into one shuffled pool, then take the deck off
-// the front. Categories come from the active edition, so the platform holds no
-// global list. The deck is names only; the board renders them verbatim.
+// Categories come from the active edition, so the platform holds no global list.
+// The deck is names only; the board renders them verbatim.
 function buildDeck(categories: Category[], categoryIds: string[], tagValues: number[], deckSize: number): string[] {
   const pool: string[] = []
   for (const id of categoryIds) {
@@ -54,35 +53,31 @@ function buildDeck(categories: Category[], categoryIds: string[], tagValues: num
 }
 
 export default function App() {
-  // The active edition, the new top of the flow. null means the menu is showing;
-  // an id means that edition is chosen and the Setup -> game flow runs inside it.
-  // Stored as the id (never an index or the object) so a URL scheme is a clean
-  // later addition: the menu sets an id, and the edition is looked up by id.
+  // null means the menu is showing. Stored as the id, never an index or the
+  // object, so a URL scheme is a clean later addition.
   const [activeEditionId, setActiveEditionId] = useState<string | null>(null)
   const [phase, setPhase] = useState<Phase>('setup')
   const [roster, setRoster] = useState<Player[]>([])
   const [session, setSession] = useState<SessionState | null>(null)
   const [game, setGame] = useState<GameState | null>(null)
-  // Selected answer categories, locked at setup. The engine never sees these; they
-  // only decide which terms buildDeck pools. Empty means no choice made yet: Setup
-  // then defaults to the active edition's first ready category.
+  // The engine never sees these; they only decide which terms buildDeck pools.
+  // Empty means no choice made yet: Setup then defaults to the active edition's
+  // first ready category.
   const [categoryIds, setCategoryIds] = useState<string[]>([])
-  // The rest of the raw setup choices, kept so return-to-setup can pre-fill every
-  // control. difficultyBase is the raw preset (30/25/20), not the derived cutoff:
-  // the session only stores the cutoff, so this is what lets the difficulty button
-  // round-trip without reverse-deriving it.
+  // Raw setup choices, kept so return-to-setup can pre-fill every control.
+  // difficultyBase is the raw preset, not the derived cutoff: the session only
+  // stores the cutoff, so this is what lets the difficulty button round-trip
+  // without reverse-deriving it.
   const [mode, setMode] = useState<GameMode>('in-person')
   const [difficultyBase, setDifficultyBase] = useState(HINTER_BASE)
   const [answers, setAnswers] = useState(ANSWERS_PER_GAME)
-  // Selected secondary-tag values (generations), locked at setup. Empty means no
-  // filter, deal from all. Like the other choices, kept so return-to-setup pre-fills.
+  // Empty means no filter, deal from all.
   const [secondaryValues, setSecondaryValues] = useState<number[]>([])
-  // Confirm before the title returns to Setup mid-game.
   const [confirmReturn, setConfirmReturn] = useState(false)
 
   const edition = activeEditionId ? editionById(activeEditionId) : null
-  // The active edition's randomizer page, handed to the in-game launch links so they
-  // open the right edition directly with no reselect.
+  // Handed to the in-game launch links so they open the right edition's
+  // randomizer directly, no reselect.
   const randomizerUrl = edition ? randomizerPath(edition.id) : ''
 
   const hinter = useMemo(() => {
@@ -90,15 +85,13 @@ export default function App() {
     return roster.find((p) => p.id === currentHinter(session)) ?? null
   }, [session, roster])
 
-  // Enter an edition from the menu. Takes the id, looks the edition up by id, and
-  // drops into the existing Setup flow with the current setup choices intact.
   function selectEdition(id: string) {
     setActiveEditionId(id)
     setPhase('setup')
   }
 
-  // Leave the active edition and return to the menu. Reached from the Setup title,
-  // where no game is in progress, so nothing is lost and no confirm is needed.
+  // Reached from the Setup title, where no game is in progress, so nothing is
+  // lost and no confirm is needed.
   function backToMenu() {
     setActiveEditionId(null)
   }
@@ -169,12 +162,9 @@ export default function App() {
     setPhase('setup')
   }
 
-  // Shared by the title return and the leaderboard's "Play again": keep the roster
-  // and every prior setup choice (mode, categories, difficulty, answers all persist
-  // in state and round-trip back into Setup), but drop the in-progress session,
-  // game, and scores. Unlike startOver, nothing resets to defaults: it restarts this
-  // group with their settings, ready to tweak. The next Start builds a fresh session,
-  // so totals reset to zero.
+  // Unlike startOver, nothing resets to defaults: the roster and every setup
+  // choice round-trip back into Setup. The next Start builds a fresh session, so
+  // totals still reset to zero.
   function returnToSetup() {
     setSession(null)
     setGame(null)
@@ -182,9 +172,8 @@ export default function App() {
     setPhase('setup')
   }
 
-  // The title walks one step back up the flow: from Setup to the menu, and during
-  // a game to Setup (with a confirm, since the game would be lost). On the menu
-  // itself there is nowhere above, so it is not clickable.
+  // The title walks one step back up the flow, with a confirm during a game since
+  // the game would be lost. On the menu there is nowhere above, so no button.
   const onMenu = !edition
   const titleBack = () => {
     if (phase === 'setup') backToMenu()
@@ -239,9 +228,8 @@ export default function App() {
         )}
 
         {phase === 'hinter' && game && session && (
-          // The board stays up after the 10th answer lands (game.status === 'complete')
-          // so the group can review it as the turn recap. Continue records the turn
-          // and routes straight to the next pass, or the leaderboard at rotation end.
+          // The board stays up after the final answer lands so the group can
+          // review it as the turn recap.
           <HinterPlay
             game={game}
             roster={roster}
@@ -264,8 +252,7 @@ export default function App() {
       </main>
 
       {session && phase !== 'leaderboard' && (
-        // Shown through play and on the completed board so the group can review
-        // scores. Hidden on the leaderboard, which shows totals itself.
+        // Hidden on the leaderboard, which shows totals itself.
         <ScoreBar roster={roster} totals={session.totals} hinterId={hinter?.id ?? null} game={game} />
       )}
 

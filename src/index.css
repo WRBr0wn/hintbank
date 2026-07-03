@@ -1,7 +1,6 @@
-/* Theme tokens. Dark is the default (these values are the original palette, so
-   dark mode is unchanged), and the light block below overrides them. Colors are
-   referenced as var(--token) throughout the CSS modules so a single attribute on
-   <html> flips the whole app. Status hues (green correct, the bank-grid bands)
+/* Theme tokens. Dark is the default; the light block below overrides it. Colors
+   are referenced as var(--token) throughout the CSS modules so a single attribute
+   on <html> flips the whole app. Status hues (green correct, the bank-grid bands)
    stay literal in the modules because they read on either background. */
 :root {
   --bg: #1a1a2e;

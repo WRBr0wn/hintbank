@@ -84,10 +84,11 @@
   border: 1px solid var(--surface-bar);
 }
 
-/* Slot-index bands map to the hinter's score: 25 minus bank.length is healthy at the
-   start (green), escalates yellow -> orange -> red as it nears 0 at slot 25, and
-   goes neutral grey for the negative-score slots beyond. Each tints the cell's
-   left edge and washes the background so an empty slot still reads as its zone. */
+/* Slot-index bands map to the hinter's score: the cutoff minus bank.length is
+   healthy at the start (green), escalates yellow -> orange -> red as it nears 0
+   at the cutoff slot, and goes neutral grey for the negative-score slots beyond.
+   Each tints the cell's left edge and washes the background so an empty slot
+   still reads as its zone. */
 .bandGreen {
   border-left: 3px solid #4caf7d;
   background: linear-gradient(90deg, rgba(76, 175, 125, 0.18), transparent 60%), var(--surface-empty);

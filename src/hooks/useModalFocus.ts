@@ -3,10 +3,9 @@ import { useEffect, useRef } from 'react'
 const FOCUSABLE =
   'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
 
-// Focus management shared by the modals. On mount it moves focus into the dialog,
-// keeps Tab and Shift+Tab cycling within it, and on unmount returns focus to the
-// element that opened it. Escape is folded in here so each modal does not repeat the
-// listener; it calls onCancel, same as before.
+// Focus management shared by the modals: moves focus in on mount, traps Tab
+// cycling, restores the opener's focus on unmount. Escape is folded in here so
+// each modal does not repeat the listener.
 export function useModalFocus(onCancel: () => void) {
   const ref = useRef<HTMLDivElement>(null)
 
@@ -27,8 +26,6 @@ export function useModalFocus(onCancel: () => void) {
     // confirm button) is counted correctly at the moment Tab is pressed.
     const focusable = () => Array.from(dialog?.querySelectorAll<HTMLElement>(FOCUSABLE) ?? [])
 
-    // Move focus in: the first focusable element (the text input in EditModal, the
-    // cancel button in ConfirmModal), or the container itself if there is none.
     const first = focusable()[0]
     if (first) first.focus()
     else dialog?.focus()

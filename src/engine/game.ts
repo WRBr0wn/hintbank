@@ -12,8 +12,7 @@ interface NewGame {
   // Deck modes pass a shuffled deck. Host-driven modes pass nothing: the host
   // supplies each answer instead, so the game runs with an empty deck.
   deck?: Answer[]
-  // Per-session settings, locked into the game. Omitted by callers and tests that
-  // want the defaults (a Regular cutoff and 10 answers).
+  // Per-session settings, locked into the game; omitted callers get the defaults.
   hinterBase?: number
   answersPerGame?: number
 }
@@ -28,8 +27,8 @@ export function createGame({
   if (!players.includes(hinterId)) {
     throw new Error('hinter must be one of the players')
   }
-  // A dealt deck needs enough cards to land every answer even after a bank's worth
-  // of rerolls. An empty deck means a host mode, where there is nothing to draw.
+  // An empty deck means a host mode, where there is nothing to draw. A dealt deck
+  // must at least cover every answer; reroll headroom is the caller's concern.
   if (deck.length > 0 && deck.length < answersPerGame) {
     throw new Error(`deck needs at least ${answersPerGame} answers`)
   }

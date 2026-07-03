@@ -55,9 +55,8 @@ const AVATARS: PlayerAvatar[] = [...EMOJI, ...CREATORS, ...POKEMON]
 
 const avatarKey = (a: PlayerAvatar) => (a.kind === 'emoji' ? a.value : a.src)
 
-// Single-select. Multiplayer ships later and shows as "soon". The online modes
-// keep the answer off a shared screen: one-device hides it behind hold-to-reveal,
-// randomizer is the host-driven board. In-person is the original private game.
+// The online modes keep the answer off a shared screen: one-device hides it
+// behind hold-to-reveal, randomizer is the host-driven board.
 const MODES: { id: GameMode; label: string; ready: boolean }[] = [
   { id: 'in-person', label: 'In Person: One Device', ready: true },
   { id: 'online-one-device', label: 'Online: One Device', ready: true },
@@ -68,8 +67,8 @@ const MODES: { id: GameMode; label: string; ready: boolean }[] = [
 const MIN_PLAYERS = 2
 const MAX_PLAYERS = 8
 
-// Difficulty picks a base: the clue cutoff for a full 10-answer game. The player
-// picks a preset, not a raw number; Regular is the default and the original 25.
+// A preset picks a base: the clue cutoff for a full 10-answer game. The actual
+// cutoff is derived from base and answer count at start.
 const DIFFICULTIES: { id: string; label: string; base: number }[] = [
   { id: 'easy', label: 'Easy', base: 30 },
   { id: 'regular', label: 'Regular', base: 25 },
@@ -98,9 +97,8 @@ export default function Setup({
   initialAnswers,
   initialSecondaryValues,
 }: {
-  // Setup hands back the player's raw choices. The difficulty base is the raw
-  // preset (30/25/20), not the derived cutoff; App derives the cutoff and remembers
-  // the raw base so it can round-trip on return.
+  // Hands back raw choices: the difficulty base, not the derived cutoff. App
+  // derives the cutoff and remembers the base so it can round-trip on return.
   onStart: (
     players: Player[],
     mode: GameMode,
@@ -109,23 +107,16 @@ export default function Setup({
     answersPerGame: number,
     secondaryValues: number[],
   ) => void
-  // The active edition's footer credits, passed straight through to the Footer.
   credits: EditionCredits
-  // The active edition's answer categories, rendered as the picker. Passed in so
-  // Setup never reaches into edition data itself.
+  // Passed in so Setup never reaches into edition data itself.
   categories: Category[]
-  // The edition's secondary tag, if it has one. Just a label; the values come from
-  // the selected categories' term data. Absent means no secondary selector.
+  // Absent means no secondary selector; the values come from the term data.
   secondaryTag?: SecondaryTag
-  // The active edition's randomizer page, linked from randomizer mode.
   randomizerUrl: string
-  // Seeds the roster when returning to Setup mid-game, so the same players carry
-  // over (names and avatars intact) and stay fully editable. Omitted on a fresh
-  // start, which falls back to two blank players.
+  // The initial* props seed the controls on return-to-setup so every prior choice
+  // restores. All omitted on a fresh start, where each falls back to its default
+  // (two blank players for the roster).
   initialPlayers?: Player[]
-  // The rest of the prior choices, seeded the same way on return-to-setup so every
-  // control restores to what was picked. All omitted on a fresh start, where each
-  // falls back to the default below.
   initialMode?: GameMode
   initialCategoryIds?: string[]
   initialDifficultyBase?: number
@@ -145,21 +136,17 @@ export default function Setup({
     return new Set(first ? [first] : [])
   })
   const [mode, setMode] = useState<GameMode>(initialMode ?? 'in-person')
-  // Difficulty is stored as its base (the full-game cutoff), so a preset is "on"
-  // when its base matches. The actual cutoff is derived from base and answer count
-  // at start. Both lock into the session then, like mode.
+  // Stored as the base (the full-game cutoff), so a preset is "on" when its base
+  // matches; the actual cutoff is derived at start.
   const [difficultyBase, setDifficultyBase] = useState(initialDifficultyBase ?? HINTER_BASE)
   const [answers, setAnswers] = useState(initialAnswers ?? ANSWERS_PER_GAME)
-  // Chosen secondary-tag values. Held as a set; what actually applies is the
-  // intersection with the values currently available (see secondaryValues below),
-  // so deselecting a category drops its values without losing the rest.
+  // What applies is the intersection with the values currently on offer, so
+  // deselecting a category drops its values without losing the rest of the picks.
   const [secondaryPicks, setSecondaryPicks] = useState<Set<number>>(
     () => new Set(initialSecondaryValues ?? []),
   )
 
   const secondaryOptions = useMemo(() => tagValueOptions(categories, selected), [categories, selected])
-
-  // What is both picked and still on offer. Passed to onStart and shown as active.
   const secondaryValues = activeTagValues(secondaryOptions, secondaryPicks)
   const showSecondary = Boolean(secondaryTag) && secondaryOptions.length > 0
 
@@ -202,8 +189,6 @@ export default function Setup({
 
   function start() {
     if (!ready) return
-    // Hand over the raw difficulty base; App derives the cutoff (and remembers the
-    // raw base for round-tripping on return-to-setup).
     onStart(players.map((p) => ({ ...p, name: p.name.trim() })), mode, [...selected], difficultyBase, answers, secondaryValues)
   }
 

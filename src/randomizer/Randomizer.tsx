@@ -4,9 +4,7 @@ import { toggled, toggledKeepOne } from '../sets'
 import ThemeToggle from '../components/ThemeToggle'
 import styles from './Randomizer.module.css'
 
-// A standalone draw tool with no link to the game's session state. It draws from
-// one edition's categories and reads everything edition-specific (categories, the
-// generation tag, sprites) off that edition.
+// A standalone draw tool with no link to the game's session state.
 type Entry = { name: string; sprite?: string }
 
 const base = import.meta.env.BASE_URL
@@ -19,12 +17,12 @@ const MAX_TARGET = 10
 // Truncate toward zero first so the target is a whole count, then clamp the range.
 const clampTarget = (n: number) => Math.max(MIN_TARGET, Math.min(MAX_TARGET, Math.trunc(n)))
 
-// The edition is supplied by the page entry, so this component is reusable across
-// editions and reads everything edition-specific off the one it is given.
 // Stable fallback so a missing edition does not make categories a fresh array
 // every render (it is a dependency of the memos below).
 const NO_CATEGORIES: Category[] = []
 
+// The edition is supplied by the page entry, so the component is reusable across
+// editions; everything edition-specific is read off the one it is given.
 export default function Randomizer({ editionId }: { editionId: string }) {
   const edition = editionById(editionId)
   const categories = edition?.categories ?? NO_CATEGORIES
@@ -47,8 +45,6 @@ export default function Randomizer({ editionId }: { editionId: string }) {
   const secondaryValues = useMemo(() => activeTagValues(secondaryOptions, gens), [secondaryOptions, gens])
   const showSecondary = Boolean(secondaryTag) && secondaryOptions.length > 0
 
-  // Combined, generation-filtered pool of the selected categories. Rebuilt when the
-  // category or generation selection changes.
   const pool = useMemo(() => {
     const out: Entry[] = []
     for (const cat of categories) {

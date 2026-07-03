@@ -5,9 +5,9 @@ export default defineConfig({
   plugins: [react()],
   base: '/hintbank/',
   build: {
-    // Static pages, one input each: the game, the randomizer edition selector, and
-    // each edition's own randomizer. A new edition adds one HTML file plus one line
-    // here. Paths are relative to the project root, so no node imports are needed.
+    // Hand-declared, one input per static page; a new edition adds one HTML file
+    // plus one line here. Paths are relative to the project root, so no node
+    // imports are needed.
     rollupOptions: {
       input: {
         main: 'index.html',

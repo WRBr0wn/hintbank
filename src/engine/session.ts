@@ -8,8 +8,6 @@ export const cutoffFor = (base: number, answers: number) => Math.round(base * (a
 export function createSession(
   players: string[],
   mode: GameMode = 'in-person',
-  // Difficulty cutoff and answers per turn, chosen at setup. Default to a Regular
-  // cutoff and 10 answers, the original behavior, when a caller omits them.
   hinterBase: number = HINTER_BASE,
   answersPerGame: number = ANSWERS_PER_GAME,
 ): SessionState {

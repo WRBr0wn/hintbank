@@ -35,15 +35,12 @@ interface Props {
   onComplete: () => void
 }
 
-// What the edit modal is fixing: a hint word in the bank, or a landed answer. Both
-// carry the slot index and the current text to pre-fill the field.
 type EditTarget =
   | { kind: 'word'; index: number; value: string }
   | { kind: 'result'; index: number; value: string }
 
 export default function HinterPlay({ game, roster, mode, randomizerUrl, onChange, onComplete }: Props) {
-  // Whether typo-fixing is reachable. False in untrusted multiplayer; when false
-  // every edit affordance below is absent.
+  // False in untrusted multiplayer; when false every edit affordance is absent.
   const canEdit = canEditMode(mode)
   const [selection, setSelection] = useState<number[]>([])
   const [draft, setDraft] = useState('')
@@ -54,8 +51,6 @@ export default function HinterPlay({ game, roster, mode, randomizerUrl, onChange
   // The player list and the -1 overguess controls stay hidden until the hinter
   // opts into resolving, so the penalty is never telegraphed on a shared screen.
   const [resolving, setResolving] = useState(false)
-  // Pencil-driven edit mode for fixing a banked word, and the open edit modal (a
-  // word or a landed answer). Both are inert unless canEdit is true.
   const [editMode, setEditMode] = useState(false)
   const [editTarget, setEditTarget] = useState<EditTarget | null>(null)
 
@@ -77,8 +72,6 @@ export default function HinterPlay({ game, roster, mode, randomizerUrl, onChange
   const answer = currentAnswer(game)
   const full = isBankFull(game)
   const hinting = game.phase === 'hinting'
-  // Turn is over once the 10th answer lands. The board stays read-only and shows
-  // a continue control instead of play actions.
   const complete = game.status === 'complete'
   const avatarFor = (id: string) => roster.find((p) => p.id === id)?.avatar
 
@@ -125,7 +118,6 @@ export default function HinterPlay({ game, roster, mode, randomizerUrl, onChange
     setEditMode(false)
   }
 
-  // Clears the per-hint state once a hint resolves, either way it resolves.
   function resetHint() {
     setOverguess({})
     setSelection([])
@@ -220,7 +212,6 @@ export default function HinterPlay({ game, roster, mode, randomizerUrl, onChange
           <h2>{editing ? 'Tap a word to fix it' : 'Hint Bank'}</h2>
           <div className={styles.bankHeadRight}>
             {canEdit && hinting && !complete && (
-              // Pencil toggles edit mode. Tapping it again leaves without editing.
               <button
                 type="button"
                 className={editMode ? styles.pencilOn : styles.pencil}
