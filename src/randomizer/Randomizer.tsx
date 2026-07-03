@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react'
-import { editionById, termPasses } from '../editions'
+import { editionById, termPasses, type Category } from '../editions'
 import ThemeToggle from '../components/ThemeToggle'
 import styles from './Randomizer.module.css'
 
@@ -20,9 +20,13 @@ const clampTarget = (n: number) => Math.max(MIN_TARGET, Math.min(MAX_TARGET, Mat
 
 // The edition is supplied by the page entry, so this component is reusable across
 // editions and reads everything edition-specific off the one it is given.
+// Stable fallback so a missing edition does not make categories a fresh array
+// every render (it is a dependency of the memos below).
+const NO_CATEGORIES: Category[] = []
+
 export default function Randomizer({ editionId }: { editionId: string }) {
   const edition = editionById(editionId)
-  const categories = edition?.categories ?? []
+  const categories = edition?.categories ?? NO_CATEGORIES
   const secondaryTag = edition?.secondaryTag
 
   const [selected, setSelected] = useState<Set<string>>(() => {
@@ -49,7 +53,7 @@ export default function Randomizer({ editionId }: { editionId: string }) {
       }
     }
     return [...values].sort((a, b) => a - b)
-  }, [selected])
+  }, [categories, selected])
 
   // What is both picked and still on offer, so deselecting a category drops its
   // generations without filtering on a value the hinter can no longer see.
@@ -73,7 +77,7 @@ export default function Randomizer({ editionId }: { editionId: string }) {
       }
     }
     return out
-  }, [selected, secondaryValues])
+  }, [categories, selected, secondaryValues])
 
   // Pick a term not already in the list. Dedup keys on name so it works across
   // categories, where only Pokemon have a dexNumber.
@@ -135,7 +139,7 @@ export default function Randomizer({ editionId }: { editionId: string }) {
     <div className={styles.page}>
       <ThemeToggle />
       <header className={styles.header}>
-        <h1>Hint Bank · Pokémon Edition</h1>
+        <h1>Hint Bank{edition ? ` · ${edition.displayName} Edition` : ''}</h1>
         <p className={styles.kicker}>Randomizer</p>
       </header>
 

@@ -10,6 +10,14 @@ const FOCUSABLE =
 export function useModalFocus(onCancel: () => void) {
   const ref = useRef<HTMLDivElement>(null)
 
+  // Callers pass onCancel as an inline arrow. Reading it through a ref keeps the
+  // trap effect from tearing down on every parent render, which would re-focus the
+  // first field and re-capture the trigger as an element inside the dialog.
+  const onCancelRef = useRef(onCancel)
+  useEffect(() => {
+    onCancelRef.current = onCancel
+  })
+
   useEffect(() => {
     const dialog = ref.current
     // The element focused before the modal opened, restored when it closes.
@@ -27,7 +35,7 @@ export function useModalFocus(onCancel: () => void) {
 
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
-        onCancel()
+        onCancelRef.current()
         return
       }
       if (e.key !== 'Tab') return
@@ -57,7 +65,7 @@ export function useModalFocus(onCancel: () => void) {
       document.removeEventListener('keydown', onKey)
       trigger?.focus()
     }
-  }, [onCancel])
+  }, [])
 
   return ref
 }

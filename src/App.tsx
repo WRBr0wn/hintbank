@@ -64,8 +64,9 @@ export default function App() {
   const [session, setSession] = useState<SessionState | null>(null)
   const [game, setGame] = useState<GameState | null>(null)
   // Selected answer categories, locked at setup. The engine never sees these; they
-  // only decide which terms buildDeck pools.
-  const [categoryIds, setCategoryIds] = useState<string[]>(['pokemon'])
+  // only decide which terms buildDeck pools. Empty means no choice made yet: Setup
+  // then defaults to the active edition's first ready category.
+  const [categoryIds, setCategoryIds] = useState<string[]>([])
   // The rest of the raw setup choices, kept so return-to-setup can pre-fill every
   // control. difficultyBase is the raw preset (30/25/20), not the derived cutoff:
   // the session only stores the cutoff, so this is what lets the difficulty button
@@ -160,7 +161,7 @@ export default function App() {
     setSession(null)
     setRoster([])
     setGame(null)
-    setCategoryIds(['pokemon'])
+    setCategoryIds([])
     setMode('in-person')
     setDifficultyBase(HINTER_BASE)
     setAnswers(ANSWERS_PER_GAME)

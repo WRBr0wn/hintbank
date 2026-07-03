@@ -142,9 +142,12 @@ export default function Setup({
       : [makePlayer([]), makePlayer([avatarKey(AVATARS[0])])],
   )
   const [pickerFor, setPickerFor] = useState<string | null>(null)
-  const [selected, setSelected] = useState<Set<string>>(() =>
-    new Set(initialCategoryIds && initialCategoryIds.length > 0 ? initialCategoryIds : ['pokemon']),
-  )
+  const [selected, setSelected] = useState<Set<string>>(() => {
+    if (initialCategoryIds && initialCategoryIds.length > 0) return new Set(initialCategoryIds)
+    // Same default as the randomizer: the edition's first ready category.
+    const first = categories.find((c) => c.ready)?.id
+    return new Set(first ? [first] : [])
+  })
   const [mode, setMode] = useState<GameMode>(initialMode ?? 'in-person')
   // Difficulty is stored as its base (the full-game cutoff), so a preset is "on"
   // when its base matches. The actual cutoff is derived from base and answer count
