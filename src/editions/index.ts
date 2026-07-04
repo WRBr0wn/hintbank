@@ -1,32 +1,34 @@
-// Single source of truth for the editions. Each entry is keyed by a stable id and
-// drops in the same way the category manifest does: add the object here and it
-// shows up in the menu. Access is always by id (editionById), never by index, so
+// The edition manifest. Access is always by id (editionById), never by index, so
 // per-edition URLs can be added later without reworking callers.
 import { CATEGORIES, type Category } from './pokemon/data/categories'
 
 // Re-exported so the platform refers to category types through the edition module
 // rather than reaching into an edition's data folder.
 export type { Category, Term } from './pokemon/data/categories'
-export { termPasses } from './terms'
+export { activeTagValues, tagValueOptions, termPasses } from './terms'
+
+// Kept as an object rather than a bare string: the object's presence is what
+// signals the edition has a secondary axis (Boolean(secondaryTag) gates the
+// selectors).
+export interface SecondaryTag {
+  label: string
+}
 
 export interface CreditLink {
   label: string
   href: string
 }
 
-// One footer paragraph, written as lead text, an optional link, then trail text.
-// Any part may be empty. The wording lives here so the footer holds no edition
-// text of its own: a link's visible label is its own string, and the words around
-// it travel with the edition.
+// One footer paragraph. The wording lives here so the footer component holds no
+// edition text of its own.
 export interface CreditLine {
   lead: string
   link: CreditLink | null
   trail: string
 }
 
-// The footer block for an edition. Only live editions need real values; soon
-// editions leave these empty, and since a soon edition is never entered its credits
-// never render.
+// Soon editions leave these empty; a soon edition is never entered, so its
+// credits never render.
 export interface EditionCredits {
   disclaimer: string | null
   attribution: CreditLine[]
@@ -36,21 +38,20 @@ export interface EditionCredits {
 export interface Edition {
   id: string
   displayName: string
-  // Menu tile subtitle. For a soon edition this is the teaser line.
+  // Menu tile subtitle.
   tagline: string
   status: 'live' | 'soon'
-  // Whether the edition's content is someone else's IP. Declarative this release;
-  // nothing reads it yet. It marks which editions can take the IP-free path later.
+  // Whether the content is someone else's IP. Declarative; nothing reads it yet.
+  // It marks which editions can take the IP-free path later.
   hasIP: boolean
-  // Audience marker, e.g. 'everyone'. Declarative; no gating logic consumes it yet.
+  // Audience marker. Declarative; no gating logic consumes it yet.
   contentRating: string
-  // The edition's answer categories. The platform reads these off the active
-  // edition, so each edition owns its own content. Soon editions have none yet.
+  // The platform reads these off the active edition, so each edition owns its
+  // own content.
   categories: Category[]
-  // Optional secondary tag that subsets categories at setup. The edition supplies
-  // only the label (Pokémon: Generation, geography later: Region); the values live
-  // in the term data as gens. Omitted means the edition has no secondary filter.
-  secondaryTag?: { label: string }
+  // The edition supplies only the label; the values live in the term data as
+  // gens. Omitted means the edition has no secondary filter.
+  secondaryTag?: SecondaryTag
   credits: EditionCredits
 }
 
@@ -120,8 +121,7 @@ export function editionById(id: string): Edition | undefined {
 }
 
 // The randomizer page path for an edition, e.g. /hintbank/pokemon-edition/randomizer/.
-// One convention, shared by the selector and the in-game launch links, so adding an
-// edition's randomizer is just its HTML entry plus a tile that lands here.
+// One convention, shared by the selector tiles and the in-game launch links.
 export function randomizerPath(editionId: string): string {
   return `${import.meta.env.BASE_URL}${editionId}-edition/randomizer/`
 }

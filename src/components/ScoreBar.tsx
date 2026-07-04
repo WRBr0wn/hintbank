@@ -22,8 +22,8 @@ export default function ScoreBar({ roster, totals, hinterId, game }: Props) {
         const total = isHinter || !game ? base : base + guesserScore(game, p.id)
         // The hinter's turn delta is unknown during play (shown as "+ ?") and
         // resolves on the completed board into the actual score this turn
-        // (hinterScore: 25 minus bank entries, can be negative). Guessers score
-        // live, so they have no pending unknown.
+        // (hinterScore: the cutoff minus bank entries, can be negative). Guessers
+        // score live, so they have no pending unknown.
         const showPending = isHinter && game?.status === 'playing'
         const delta = isHinter && game?.status === 'complete' ? hinterScore(game) : null
         return (

@@ -3,9 +3,8 @@
 // apart.
 
 // BANK_CAP is fixed for every game and is never a setting. HINTER_BASE and
-// ANSWERS_PER_GAME are the defaults for the two per-session settings (the
-// difficulty cutoff and the answers-per-turn count); callers that omit them, and
-// the existing tests, fall back to these values.
+// ANSWERS_PER_GAME are only the defaults for the two per-session settings (the
+// difficulty cutoff and the answers-per-turn count).
 export const BANK_CAP = 40
 export const ANSWERS_PER_GAME = 10
 export const HINTER_BASE = 25
@@ -33,14 +32,9 @@ export type GameMode =
   | 'online-randomizer'
   | 'online-multiplayer'
 
-// Editing hint words and landed answers is a trusted-context capability: it lets
-// the operator fix a typo without ever changing bank size, score, or rotation.
-// Every mode today runs on a single trusted device, so editing is safe and this
-// returns true. Online multiplayer will run across untrusted devices, where
-// retroactively editing a hint or answer is a cheating vector, so it returns false
-// there. This single seam gates every edit affordance in the UI; a future setup
-// "Allow edits" toggle can be folded in here (e.g. an override argument) without
-// rearchitecting the screens.
+// Typo-editing is a trusted-context capability. Every mode today runs on a single
+// trusted device, so it is allowed; online multiplayer will run across untrusted
+// devices, where retroactive edits are a cheating vector, so it is not.
 export function canEditMode(mode: GameMode): boolean {
   return mode !== 'online-multiplayer'
 }
@@ -66,10 +60,8 @@ export interface GameState {
   endedEarly: boolean
   phase: GamePhase
   status: GameStatus
-  // Copied from the session at createGame and locked for the game. Every score and
-  // completion check reads these instead of the module-level defaults. hinterBase
-  // is the clue cutoff (the hinter's starting score); answersPerGame is how many
-  // answers land before the turn ends.
+  // Copied from the session at createGame and locked for the game. Scoring and
+  // completion read these, not the module-level defaults.
   hinterBase: number
   answersPerGame: number
 }
@@ -79,9 +71,8 @@ export interface SessionState {
   totals: Record<string, number>
   // Locked for the whole session. Set once at createSession.
   mode: GameMode
-  // Also locked for the session, chosen at setup. hinterBase is the difficulty
-  // cutoff (Easy 30 / Regular 25 / Hard 20); answersPerGame is the per-turn answer
-  // count (5 to 15). Passed into each createGame.
+  // Also locked for the session, chosen at setup: the difficulty cutoff and the
+  // per-turn answer count. Passed into each createGame.
   hinterBase: number
   answersPerGame: number
   // Index into players for the current hinter. Reaches players.length once

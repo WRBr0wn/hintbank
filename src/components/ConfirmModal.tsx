@@ -10,9 +10,8 @@ interface Props {
   onCancel: () => void
 }
 
-// The app's first modal: a centered dialog over a dimming backdrop. The backdrop,
-// the cancel button, and Esc all dismiss without acting; only confirm runs the
-// action. Self-contained and themed through the CSS tokens.
+// Backdrop, cancel, and Esc all dismiss without acting; only confirm runs the
+// action.
 export default function ConfirmModal({ message, confirmLabel, cancelLabel, onConfirm, onCancel }: Props) {
   const dialogRef = useModalFocus(onCancel)
   const messageId = useId()

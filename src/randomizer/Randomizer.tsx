@@ -1,11 +1,10 @@
 import { useMemo, useState } from 'react'
-import { editionById, termPasses } from '../editions'
+import { activeTagValues, editionById, tagValueOptions, termPasses, type Category } from '../editions'
+import { toggled, toggledKeepOne } from '../sets'
 import ThemeToggle from '../components/ThemeToggle'
 import styles from './Randomizer.module.css'
 
-// A standalone draw tool with no link to the game's session state. It draws from
-// one edition's categories and reads everything edition-specific (categories, the
-// generation tag, sprites) off that edition.
+// A standalone draw tool with no link to the game's session state.
 type Entry = { name: string; sprite?: string }
 
 const base = import.meta.env.BASE_URL
@@ -18,11 +17,15 @@ const MAX_TARGET = 10
 // Truncate toward zero first so the target is a whole count, then clamp the range.
 const clampTarget = (n: number) => Math.max(MIN_TARGET, Math.min(MAX_TARGET, Math.trunc(n)))
 
-// The edition is supplied by the page entry, so this component is reusable across
-// editions and reads everything edition-specific off the one it is given.
+// Stable fallback so a missing edition does not make categories a fresh array
+// every render (it is a dependency of the memos below).
+const NO_CATEGORIES: Category[] = []
+
+// The edition is supplied by the page entry, so the component is reusable across
+// editions; everything edition-specific is read off the one it is given.
 export default function Randomizer({ editionId }: { editionId: string }) {
   const edition = editionById(editionId)
-  const categories = edition?.categories ?? []
+  const categories = edition?.categories ?? NO_CATEGORIES
   const secondaryTag = edition?.secondaryTag
 
   const [selected, setSelected] = useState<Set<string>>(() => {
@@ -38,29 +41,10 @@ export default function Randomizer({ editionId }: { editionId: string }) {
   const full = list.length >= target
   const current = list[list.length - 1] ?? null
 
-  // Generation options offered by the chosen categories: the union of gens across
-  // their terms. Data-driven, so the selector only shows what is actually present.
-  const secondaryOptions = useMemo(() => {
-    const values = new Set<number>()
-    for (const cat of categories) {
-      if (!selected.has(cat.id)) continue
-      for (const t of cat.terms) {
-        if (t.gens) for (const g of t.gens) values.add(g)
-      }
-    }
-    return [...values].sort((a, b) => a - b)
-  }, [selected])
-
-  // What is both picked and still on offer, so deselecting a category drops its
-  // generations without filtering on a value the hinter can no longer see.
-  const secondaryValues = useMemo(
-    () => secondaryOptions.filter((v) => gens.has(v)),
-    [secondaryOptions, gens],
-  )
+  const secondaryOptions = useMemo(() => tagValueOptions(categories, selected), [categories, selected])
+  const secondaryValues = useMemo(() => activeTagValues(secondaryOptions, gens), [secondaryOptions, gens])
   const showSecondary = Boolean(secondaryTag) && secondaryOptions.length > 0
 
-  // Combined, generation-filtered pool of the selected categories. Rebuilt when the
-  // category or generation selection changes.
   const pool = useMemo(() => {
     const out: Entry[] = []
     for (const cat of categories) {
@@ -73,7 +57,7 @@ export default function Randomizer({ editionId }: { editionId: string }) {
       }
     }
     return out
-  }, [selected, secondaryValues])
+  }, [categories, selected, secondaryValues])
 
   // Pick a term not already in the list. Dedup keys on name so it works across
   // categories, where only Pokemon have a dexNumber.
@@ -85,24 +69,11 @@ export default function Randomizer({ editionId }: { editionId: string }) {
   }
 
   function toggleCategory(id: string) {
-    setSelected((s) => {
-      const next = new Set(s)
-      if (next.has(id)) {
-        if (next.size > 1) next.delete(id)
-      } else {
-        next.add(id)
-      }
-      return next
-    })
+    setSelected((s) => toggledKeepOne(s, id))
   }
 
   function toggleGen(value: number) {
-    setGens((s) => {
-      const next = new Set(s)
-      if (next.has(value)) next.delete(value)
-      else next.add(value)
-      return next
-    })
+    setGens((s) => toggled(s, value))
   }
 
   function draw() {
@@ -135,7 +106,7 @@ export default function Randomizer({ editionId }: { editionId: string }) {
     <div className={styles.page}>
       <ThemeToggle />
       <header className={styles.header}>
-        <h1>Hint Bank · Pokémon Edition</h1>
+        <h1>Hint Bank{edition ? ` · ${edition.displayName} Edition` : ''}</h1>
         <p className={styles.kicker}>Randomizer</p>
       </header>
 
@@ -152,7 +123,7 @@ export default function Randomizer({ editionId }: { editionId: string }) {
               className={cls}
               disabled={!c.ready}
               aria-pressed={on}
-              onClick={() => c.ready && toggleCategory(c.id)}
+              onClick={() => toggleCategory(c.id)}
             >
               {c.label}
               {!c.ready && <span className={styles.soon}>soon</span>}

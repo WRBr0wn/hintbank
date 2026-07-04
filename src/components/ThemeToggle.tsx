@@ -2,8 +2,8 @@ import { useState } from 'react'
 import { getTheme, toggleTheme, type Theme } from '../theme'
 import styles from './ThemeToggle.module.css'
 
-// A small floating button. Used by both the game and the standalone randomizer,
-// so it depends only on the theme helper, nothing game-specific.
+// Used by both the game and the standalone randomizer, so it depends only on the
+// theme helper, nothing game-specific.
 export default function ThemeToggle() {
   const [theme, setThemeState] = useState<Theme>(() => getTheme())
   const next = theme === 'dark' ? 'light' : 'dark'

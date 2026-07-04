@@ -1,10 +1,13 @@
 import { ANSWERS_PER_GAME, HINTER_BASE, type GameMode, type SessionState } from './types'
 
+// The clue cutoff scales with answer count: the base is the cutoff for a full
+// 10-answer game, and a shorter game scales it down in proportion (round-half-up).
+// A full game leaves the base unchanged.
+export const cutoffFor = (base: number, answers: number) => Math.round(base * (answers / ANSWERS_PER_GAME))
+
 export function createSession(
   players: string[],
   mode: GameMode = 'in-person',
-  // Difficulty cutoff and answers per turn, chosen at setup. Default to a Regular
-  // cutoff and 10 answers, the original behavior, when a caller omits them.
   hinterBase: number = HINTER_BASE,
   answersPerGame: number = ANSWERS_PER_GAME,
 ): SessionState {

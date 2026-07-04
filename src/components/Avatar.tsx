@@ -3,9 +3,8 @@ import styles from './Avatar.module.css'
 
 interface Props {
   avatar: PlayerAvatar
-  // Fixed pixel size for a square avatar. Omit it to fill the parent box, which
-  // is what the pass-screen plate does: it sets its own size and scales
-  // responsively.
+  // Omit to fill the parent box, which is what the pass-screen plate does: it
+  // sets its own size and scales responsively.
   size?: number
   className?: string
 }

@@ -16,8 +16,14 @@
   letter-spacing: -0.02em;
 }
 
-/* During a game the title doubles as a "return to setup" control. */
+/* During a game the title doubles as a "return to setup" control. A real button
+   inside the h1, restyled to look like the heading text. */
 .titleAction {
+  font: inherit;
+  letter-spacing: inherit;
+  color: inherit;
+  background: none;
+  border: none;
   cursor: pointer;
   transition: color 0.15s ease;
 }

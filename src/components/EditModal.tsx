@@ -12,9 +12,8 @@ interface Props {
   onCancel: () => void
 }
 
-// Same dialog pattern as ConfirmModal, with one pre-filled text input for fixing a
-// typo. Confirm passes the edited text; backdrop, cancel, and Esc dismiss without
-// saving. Empty text cannot be confirmed (the engine would reject it anyway).
+// Backdrop, cancel, and Esc dismiss without saving. Empty text cannot be
+// confirmed (the engine would reject it anyway).
 export default function EditModal({
   label,
   initialValue,

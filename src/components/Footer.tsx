@@ -1,9 +1,8 @@
 import type { CreditLine, EditionCredits } from '../editions'
 import styles from './Footer.module.css'
 
-// One footer paragraph: the line's lead text, its link if it has one, then the
-// trail text. All wording comes from the edition, so the footer carries no
-// edition-specific text of its own.
+// All wording comes from the edition, so the footer carries no edition-specific
+// text of its own.
 function Line({ line, className }: { line: CreditLine; className: string }) {
   return (
     <p className={className}>
@@ -18,9 +17,6 @@ function Line({ line, className }: { line: CreditLine; className: string }) {
   )
 }
 
-// Site footer, driven by the active edition's credits. A soon edition has empty
-// credits and is never entered, so nothing renders for it. Themes through the CSS
-// tokens like the rest of the app.
 export default function Footer({ credits }: { credits: EditionCredits }) {
   return (
     <footer className={styles.footer}>

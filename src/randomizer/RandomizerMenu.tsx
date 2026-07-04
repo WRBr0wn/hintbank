@@ -1,7 +1,7 @@
 import { EDITIONS, randomizerPath } from '../editions'
 import ThemeToggle from '../components/ThemeToggle'
 import page from './Randomizer.module.css'
-import menu from '../screens/Menu.module.css'
+import tiles from '../components/EditionTiles.module.css'
 
 // The bare /randomizer/ page: an edition selector that mirrors the main menu. Live
 // editions link to their own randomizer page; soon editions render disabled, the
@@ -15,23 +15,23 @@ export default function RandomizerMenu() {
         <p className={page.kicker}>Choose an edition</p>
       </header>
 
-      <div className={menu.grid}>
+      <div className={tiles.grid}>
         {EDITIONS.map((e) => {
           if (e.status !== 'live') {
             return (
-              <div key={e.id} className={menu.tileSoon} aria-disabled="true">
-                <span className={menu.name}>
+              <div key={e.id} className={tiles.tileSoon} aria-disabled="true">
+                <span className={tiles.name}>
                   {e.displayName}
-                  <span className={menu.soon}>soon</span>
+                  <span className={tiles.soon}>soon</span>
                 </span>
-                <span className={menu.tagline}>{e.tagline}</span>
+                <span className={tiles.tagline}>{e.tagline}</span>
               </div>
             )
           }
           return (
-            <a key={e.id} className={menu.tile} href={randomizerPath(e.id)}>
-              <span className={menu.name}>{e.displayName}</span>
-              <span className={menu.tagline}>{e.tagline}</span>
+            <a key={e.id} className={tiles.tile} href={randomizerPath(e.id)}>
+              <span className={tiles.name}>{e.displayName}</span>
+              <span className={tiles.tagline}>{e.tagline}</span>
             </a>
           )
         })}
