@@ -2,7 +2,15 @@ import { useMemo, useState } from 'react'
 import Avatar from '../components/Avatar'
 import Footer from '../components/Footer'
 import { activeTagValues, tagValueOptions, type Category, type EditionCredits, type SecondaryTag } from '../editions'
-import { ANSWERS_PER_GAME, HINTER_BASE, type GameMode } from '../engine'
+import {
+  ANSWERS_PER_GAME,
+  HINTER_BASE,
+  HINTER_BASE_EASY,
+  HINTER_BASE_HARD,
+  MAX_ANSWERS,
+  MIN_ANSWERS,
+  type GameMode,
+} from '../engine'
 import { toggled, toggledKeepOne } from '../sets'
 import type { Player, PlayerAvatar } from '../types'
 import pokemonData from '../editions/pokemon/data/pokemon.json'
@@ -78,15 +86,14 @@ const MIN_PLAYERS = 2
 const MAX_PLAYERS = 8
 
 // A preset picks a base: the clue cutoff for a full 10-answer game. The actual
-// cutoff is derived from base and answer count at start.
+// cutoff is derived from base and answer count at start. The bases are engine
+// constants; only the labels live here.
 const DIFFICULTIES: { id: string; label: string; base: number }[] = [
-  { id: 'easy', label: 'Easy', base: 30 },
-  { id: 'regular', label: 'Regular', base: 25 },
-  { id: 'hard', label: 'Hard', base: 20 },
+  { id: 'easy', label: 'Easy', base: HINTER_BASE_EASY },
+  { id: 'regular', label: 'Regular', base: HINTER_BASE },
+  { id: 'hard', label: 'Hard', base: HINTER_BASE_HARD },
 ]
 
-const MIN_ANSWERS = 5
-const MAX_ANSWERS = 10
 const clampAnswers = (n: number) => Math.max(MIN_ANSWERS, Math.min(MAX_ANSWERS, n))
 
 function makePlayer(used: string[]): Player {

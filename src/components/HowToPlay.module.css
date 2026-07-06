@@ -1,0 +1,126 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.dialog {
+  width: 100%;
+  max-width: 34rem;
+  max-height: min(85dvh, 42rem);
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+}
+
+.dialog:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Full-height sheet on small screens; the body scrolls either way. */
+@media (max-width: 40rem) {
+  .backdrop {
+    padding: 0;
+  }
+
+  .dialog {
+    max-width: none;
+    height: 100dvh;
+    max-height: none;
+    border-radius: 0;
+    border: none;
+  }
+}
+
+.top {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem 0.75rem;
+  border-bottom: 1px solid var(--divider);
+}
+
+.title {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.close {
+  width: 2.2rem;
+  height: 2.2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  line-height: 1;
+  color: var(--text-muted);
+  background: none;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: var(--text);
+  background: var(--surface-2);
+}
+
+.body {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  padding: 1.25rem 1.5rem 1.75rem;
+}
+
+.heading {
+  margin-bottom: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent-ink);
+}
+
+.body p {
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--text-2);
+}
+
+.body p + p {
+  margin-top: 0.6rem;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  padding-left: 1.2rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--text-2);
+}
+
+/* The in-turn quick reference leads the modal and reads as its own card. */
+.quick {
+  padding: 1rem 1.1rem;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 0.8rem;
+}
+
+.quick .list {
+  list-style: disc;
+}

@@ -52,6 +52,7 @@ export default function HinterPlay({ game, roster, mode, randomizerUrl, onChange
   // opts into resolving, so the penalty is never telegraphed on a shared screen.
   const [resolving, setResolving] = useState(false)
   const [editMode, setEditMode] = useState(false)
+  const [resultEditMode, setResultEditMode] = useState(false)
   const [editTarget, setEditTarget] = useState<EditTarget | null>(null)
 
   // Randomizer is the host-driven board: no dealt deck, nothing secret on screen.
@@ -97,9 +98,10 @@ export default function HinterPlay({ game, roster, mode, randomizerUrl, onChange
         ? editWord(game, editTarget.index, value)
         : editResult(game, editTarget.index, value),
     )
+    // Confirming a fix exits the section's edit mode; same grammar both sections.
+    if (editTarget.kind === 'word') setEditMode(false)
+    else setResultEditMode(false)
     setEditTarget(null)
-    // Confirming a word fix exits edit mode; a landed-answer fix never turned it on.
-    setEditMode(false)
   }
 
   function handleAdd() {
@@ -347,7 +349,24 @@ export default function HinterPlay({ game, roster, mode, randomizerUrl, onChange
       </div>
 
       <aside className={styles.results}>
-        <h2 className={styles.resultsHead}>Landed</h2>
+        <div className={styles.resultsHeadRow}>
+          <h2 className={styles.resultsHead}>{resultEditMode ? 'Tap an answer to fix it' : 'Landed'}</h2>
+          {canEdit && randomizer && (
+            // Randomizer answers are host-typed, so let the host fix one after
+            // the fact. Deck-mode answers come from the dataset, so no pencil.
+            // Same toggle grammar as the bank's.
+            <button
+              type="button"
+              className={resultEditMode ? styles.pencilOn : styles.pencil}
+              onClick={() => setResultEditMode((v) => !v)}
+              aria-pressed={resultEditMode}
+              aria-label={resultEditMode ? 'Done fixing answers' : 'Fix an answer'}
+              title={resultEditMode ? 'Done fixing answers' : 'Fix an answer'}
+            >
+              ✏️
+            </button>
+          )}
+        </div>
         <ol className={styles.resultList}>
           {Array.from({ length: game.answersPerGame }, (_, i) => {
             const result = game.results[i]
@@ -357,9 +376,7 @@ export default function HinterPlay({ game, roster, mode, randomizerUrl, onChange
                 <span className={styles.resultNum}>{i + 1}</span>
                 <span className={styles.resultName}>{result ? result.answer : ''}</span>
                 <span className={styles.resultAvatar}>{winner && <Avatar avatar={winner} size={20} />}</span>
-                {canEdit && randomizer && result && (
-                  // Randomizer answers are host-typed, so let the host fix one after
-                  // the fact. Deck-mode answers come from the dataset, so no pencil.
+                {resultEditMode && result && (
                   <button
                     type="button"
                     className={styles.resultEdit}

@@ -4,6 +4,32 @@
   min-height: 100dvh;
 }
 
+/* The rules opener, sat left of the theme toggle; sizing and look match
+   ThemeToggle.module.css .toggle. */
+.help {
+  position: fixed;
+  top: 0.9rem;
+  right: 3.9rem;
+  z-index: 20;
+  width: 2.4rem;
+  height: 2.4rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  line-height: 1;
+  font-weight: 700;
+  color: var(--text);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.help:hover {
+  border-color: var(--accent);
+}
+
 .header {
   padding: 2rem;
   text-align: center;

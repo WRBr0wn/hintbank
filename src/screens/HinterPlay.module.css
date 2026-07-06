@@ -26,6 +26,13 @@
   top: 1.25rem;
 }
 
+/* Header row mirrors .bankHead: title left, pencil right. */
+.resultsHeadRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
 .resultsHead {
   font-size: 1.05rem;
   font-weight: 600;

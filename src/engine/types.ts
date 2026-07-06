@@ -4,10 +4,16 @@
 
 // BANK_CAP is fixed for every game and is never a setting. HINTER_BASE and
 // ANSWERS_PER_GAME are only the defaults for the two per-session settings (the
-// difficulty cutoff and the answers-per-turn count).
+// difficulty cutoff and the answers-per-turn count); the easy/hard bases and
+// the answers range bound those settings. Every number the rules cite lives
+// here, so the setup controls and the rules copy read one source.
 export const BANK_CAP = 40
 export const ANSWERS_PER_GAME = 10
 export const HINTER_BASE = 25
+export const HINTER_BASE_EASY = 30
+export const HINTER_BASE_HARD = 20
+export const MIN_ANSWERS = 5
+export const MAX_ANSWERS = 10
 
 // An answer is an opaque token. The engine never inspects it. The UI maps it to
 // whatever the edition bundles (a Pokemon name, an item, a town). That's what
