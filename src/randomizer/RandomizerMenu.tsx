@@ -20,8 +20,9 @@ export default function RandomizerMenu() {
           Hint <span className={page.brandAccent}>Bank</span>
         </h1>
         <p className={page.complete}>Complete</p>
-        <p className={page.kicker}>Randomizer · Choose an edition</p>
       </header>
+      <p className={page.pageTitle}>Randomizer</p>
+      <p className={page.lead}>Choose an edition</p>
 
       <div className={tiles.grid}>
         {EDITIONS.map((e) => {
