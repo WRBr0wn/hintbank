@@ -17,6 +17,8 @@
   color: var(--text-muted);
 }
 
+/* The plate clips its contents: a scaled sprite must be impossible to draw
+   past the circle's edge. */
 .avatar {
   width: 6rem;
   height: 6rem;
@@ -27,6 +29,7 @@
   background: var(--surface-2);
   border: 1px solid var(--border);
   border-radius: 50%;
+  overflow: hidden;
 }
 
 .name {

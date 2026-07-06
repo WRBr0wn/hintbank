@@ -5,6 +5,7 @@ import { activeTagValues, tagValueOptions, type Category, type EditionCredits, t
 import { ANSWERS_PER_GAME, HINTER_BASE, type GameMode } from '../engine'
 import { toggled, toggledKeepOne } from '../sets'
 import type { Player, PlayerAvatar } from '../types'
+import pokemonData from '../editions/pokemon/data/pokemon.json'
 import styles from './Setup.module.css'
 
 const base = import.meta.env.BASE_URL
@@ -22,7 +23,10 @@ const CREATORS: PlayerAvatar[] = [
   { kind: 'image', src: `${base}avatars/zenvolka.png`, label: 'ZenVolka' },
 ]
 // A handful of recognizable mascots. The full sprite set is bundled in
-// public/editions/pokemon/sprites; this is just the picker subset.
+// public/editions/pokemon/sprites; this is just the picker subset. Each carries
+// its measured artwork box from the edition data, so small mascots render at
+// the same visual size as big ones instead of a flat crop.
+const boxByDex = new Map(pokemonData.map((p) => [p.dexNumber, p.box]))
 const POKEMON: PlayerAvatar[] = (
   [
     [1, 'Bulbasaur'],
@@ -49,7 +53,13 @@ const POKEMON: PlayerAvatar[] = (
     [680, 'Doublade'],
     [909, 'Fuecoco']
   ] as [number, string][]
-).map(([dex, label]) => ({ kind: 'image', src: `${base}editions/pokemon/sprites/${dex}.png`, label, zoom: 1.3, bare: true }))
+).map(([dex, label]) => ({
+  kind: 'image',
+  src: `${base}editions/pokemon/sprites/${dex}.png`,
+  label,
+  box: boxByDex.get(dex),
+  bare: true,
+}))
 
 const AVATARS: PlayerAvatar[] = [...EMOJI, ...CREATORS, ...POKEMON]
 

@@ -8,10 +8,14 @@ import badges from './badges.json'
 
 // gens and sprite are optional so a category drops in tagged or untagged, with or
 // without sprites, with no config; the presence of the data is the only switch.
+// box is the sprite artwork's measured bounding box, [x, y, w, h] in pixels on
+// the 96x96 canvas (see scripts/measure-sprites.mjs); renderers use it to show
+// sprites at a consistent visual size. Absent means render the file as-is.
 export interface Term {
   name: string
   gens?: number[]
   sprite?: string
+  box?: number[]
 }
 
 export interface Category {
@@ -32,7 +36,7 @@ const terms = (entries: { name: string; gens?: number[]; sprite?: string }[]): T
   })
 
 export const CATEGORIES: Category[] = [
-  { id: 'pokemon', label: 'Pokémon', ready: true, terms: pokemon.map((p) => ({ name: p.displayName, gens: p.gens, sprite: p.sprite })) },
+  { id: 'pokemon', label: 'Pokémon', ready: true, terms: pokemon.map((p) => ({ name: p.displayName, gens: p.gens, sprite: p.sprite, box: p.box })) },
   { id: 'leaders', label: 'Gym Leaders', ready: true, terms: terms(leaders) },
   { id: 'towns', label: 'Towns & Cities', ready: true, terms: terms(towns) },
   { id: 'games', label: 'Games', ready: true, terms: terms(games) },
