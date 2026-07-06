@@ -8,13 +8,47 @@
   gap: 1rem;
 }
 
+/* The edition selector composes like the main menu: wider than the working
+   randomizer page, so two square covers fit per row, and near-centered in the
+   viewport. Auto block margins give way when the content is taller. */
+.selector {
+  max-width: 48rem;
+  margin-block: auto;
+  gap: 1.5rem;
+}
+
 .header {
   text-align: center;
 }
 
+/* The wordmark renders in the display face on every surface, at this page's
+   chrome size. The menu-only halo and scale stay on the menu. */
 .header h1 {
+  font-family: var(--font-display);
   font-size: 1.6rem;
-  font-weight: 800;
+  font-weight: 600;
+}
+
+/* The edition selector's lockup runs slightly larger. */
+.header .brand {
+  font-size: 1.7rem;
+}
+
+/* The two-tone wordmark color, on every surface where the title renders. */
+.brandAccent {
+  color: var(--accent-ink);
+}
+
+/* The collection name in the selector's lockup; the working randomizer is
+   inside one edition and never shows it. */
+.header .complete {
+  margin-top: 0.15rem;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  color: var(--accent-ink);
 }
 
 .kicker {

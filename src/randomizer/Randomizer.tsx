@@ -106,7 +106,10 @@ export default function Randomizer({ editionId }: { editionId: string }) {
     <div className={styles.page}>
       <ThemeToggle />
       <header className={styles.header}>
-        <h1>Hint Bank{edition ? ` · ${edition.displayName} Edition` : ''}</h1>
+        <h1>
+          Hint <span className={styles.brandAccent}>Bank</span>
+          {edition ? ` · ${edition.displayName} Edition` : ''}
+        </h1>
         <p className={styles.kicker}>Randomizer</p>
       </header>
 

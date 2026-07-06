@@ -183,19 +183,25 @@ export default function App() {
   return (
     <div className={styles.app}>
       <ThemeToggle />
-      <header className={styles.header}>
+      <header className={onMenu ? `${styles.header} ${styles.headerMenu}` : styles.header}>
         {onMenu ? (
-          <h1>Hint Bank</h1>
+          <h1 className={styles.wordmark}>
+            Hint <span className={styles.wordmarkAccent}>Bank</span>
+          </h1>
         ) : (
           <h1>
             <button type="button" className={styles.titleAction} onClick={titleBack}>
-              Hint Bank
+              Hint <span className={styles.wordmarkAccent}>Bank</span>
             </button>
           </h1>
         )}
-        {/* Same tag treatment across the app: each edition's name in-game, and
-            "Complete" on the menu, the product that sits over all editions. */}
-        <p className={styles.edition}>{edition ? `${edition.displayName} Edition` : 'Complete'}</p>
+        {/* Under the wordmark: the edition's name in-game; on the menu the
+            collection name, since all editions together are Hint Bank Complete. */}
+        {edition ? (
+          <p className={styles.edition}>{`${edition.displayName} Edition`}</p>
+        ) : (
+          <p className={styles.complete}>Complete</p>
+        )}
       </header>
       <main className={styles.main}>
         {!edition && <Menu onSelect={selectEdition} />}

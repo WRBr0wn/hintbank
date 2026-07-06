@@ -10,10 +10,33 @@
   border-bottom: 1px solid var(--divider);
 }
 
+/* On the menu the glow provides the separation, so the divider would read as
+   tool chrome cutting through it. Breathing room above the wordmark, tight
+   below so the lockup and the menu stack read as one composition. */
+.headerMenu {
+  padding: 2.75rem 2rem 0.75rem;
+  border-bottom-color: transparent;
+}
+
+/* The h1 is the wordmark on every screen, so it carries the identity face;
+   everything else in a gameplay screen stays on the system stack. */
 .header h1 {
+  font-family: var(--font-display);
   font-size: 2.5rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+/* The menu's box-cover treatment: bigger, two-tone, with a soft halo in the
+   same gold as the background glow. */
+.header .wordmark {
+  font-size: clamp(3rem, 9vw, 3.75rem);
+  line-height: 1.05;
+  text-shadow: 0 0 2.5rem var(--menu-glow);
+}
+
+.wordmarkAccent {
+  color: var(--accent-ink);
 }
 
 /* During a game the title doubles as a "return to setup" control. A real button
@@ -32,12 +55,29 @@
   color: var(--accent);
 }
 
+/* On hover the whole title goes hover-gold together, two-tone set aside. */
+.titleAction:hover .wordmarkAccent {
+  color: inherit;
+}
+
 .edition {
   margin-top: 0.25rem;
   font-size: 0.9rem;
   color: var(--text-soft);
   text-transform: uppercase;
   letter-spacing: 0.08em;
+}
+
+/* The collection name, part of the wordmark lockup: all editions together are
+   "Hint Bank Complete", the compilation box. Collection surfaces only. */
+.complete {
+  margin-top: 0.4rem;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: var(--accent-ink);
 }
 
 .main {
