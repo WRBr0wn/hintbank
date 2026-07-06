@@ -371,22 +371,33 @@ export default function HinterPlay({ game, roster, mode, randomizerUrl, onChange
           {Array.from({ length: game.answersPerGame }, (_, i) => {
             const result = game.results[i]
             const winner = result ? avatarFor(result.guesserId) : undefined
-            return (
-              <li key={i} className={result ? styles.resultRow : styles.resultPending}>
+            const content = (
+              <>
                 <span className={styles.resultNum}>{i + 1}</span>
                 <span className={styles.resultName}>{result ? result.answer : ''}</span>
                 <span className={styles.resultAvatar}>{winner && <Avatar avatar={winner} size={20} />}</span>
-                {resultEditMode && result && (
+              </>
+            )
+            // In edit mode the landed box itself is the tap target, like the
+            // bank's words; there are no per-item controls.
+            if (resultEditMode && result) {
+              return (
+                <li key={i} className={`${styles.resultRow} ${styles.resultRowEdit}`}>
                   <button
                     type="button"
-                    className={styles.resultEdit}
+                    className={styles.resultFix}
                     onClick={() => setEditTarget({ kind: 'result', index: i, value: result.answer })}
                     aria-label={`Fix answer ${i + 1}`}
                     title="Fix this answer"
                   >
-                    ✏️
+                    {content}
                   </button>
-                )}
+                </li>
+              )
+            }
+            return (
+              <li key={i} className={result ? styles.resultRow : styles.resultPending}>
+                {content}
               </li>
             )
           })}

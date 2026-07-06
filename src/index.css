@@ -1,9 +1,10 @@
 /* The identity face: wordmark, menu headers, edition tile names. Gameplay UI
-   stays on the system stack. Self-hosted (src/assets/fonts, OFL) so no page
-   makes a runtime font request to a CDN. */
+   stays on the system stack. Self-hosted (public/fonts, OFL) so no page makes
+   a runtime font request to a CDN. It lives in public/ unhashed so each HTML
+   entry can preload it by a stable URL; keep the preload links in sync. */
 @font-face {
   font-family: 'Fredoka';
-  src: url('./assets/fonts/fredoka-latin.woff2') format('woff2');
+  src: url('/fonts/fredoka-latin.woff2') format('woff2');
   font-weight: 300 700;
   font-style: normal;
   font-display: swap;
