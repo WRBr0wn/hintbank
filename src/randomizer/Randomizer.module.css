@@ -22,16 +22,18 @@
 }
 
 /* The wordmark renders in the display face on every surface, at this page's
-   chrome size. The menu-only halo and scale stay on the menu. */
+   chrome size. Declared larger than the old system-font 1.6rem because the
+   display face's metrics run smaller; this holds the same visual presence.
+   The menu-only halo and scale stay on the menu. */
 .header h1 {
   font-family: var(--font-display);
-  font-size: 1.6rem;
+  font-size: 1.75rem;
   font-weight: 600;
 }
 
 /* The edition selector's lockup runs slightly larger. */
 .header .brand {
-  font-size: 1.7rem;
+  font-size: 1.8rem;
 }
 
 /* The two-tone wordmark color, on every surface where the title renders. */

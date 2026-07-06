@@ -19,10 +19,12 @@
 }
 
 /* The h1 is the wordmark on every screen, so it carries the identity face;
-   everything else in a gameplay screen stays on the system stack. */
+   everything else in a gameplay screen stays on the system stack. Declared
+   larger than the old system-font 2.5rem because the display face's metrics
+   run smaller; this holds the same visual presence. */
 .header h1 {
   font-family: var(--font-display);
-  font-size: 2.5rem;
+  font-size: 2.7rem;
   font-weight: 600;
   letter-spacing: -0.01em;
 }
