@@ -7,6 +7,7 @@ import Leaderboard from './screens/Leaderboard'
 import ScoreBar from './components/ScoreBar'
 import ThemeToggle from './components/ThemeToggle'
 import ConfirmModal from './components/ConfirmModal'
+import HowToPlay from './components/HowToPlay'
 import {
   ANSWERS_PER_GAME,
   BANK_CAP,
@@ -74,6 +75,7 @@ export default function App() {
   // Empty means no filter, deal from all.
   const [secondaryValues, setSecondaryValues] = useState<number[]>([])
   const [confirmReturn, setConfirmReturn] = useState(false)
+  const [showHelp, setShowHelp] = useState(false)
 
   const edition = activeEditionId ? editionById(activeEditionId) : null
   // Handed to the in-game launch links so they open the right edition's
@@ -180,22 +182,40 @@ export default function App() {
     else setConfirmReturn(true)
   }
 
+  // Mid-turn the modal leads with the quick reference instead of the overview.
+  const helpInTurn = Boolean(edition) && (phase === 'pass' || phase === 'hinter')
+
   return (
     <div className={styles.app}>
       <ThemeToggle />
-      <header className={styles.header}>
+      <button
+        type="button"
+        className={styles.help}
+        onClick={() => setShowHelp(true)}
+        aria-label="How to play"
+        title="How to play"
+      >
+        ?
+      </button>
+      <header className={onMenu ? `${styles.header} ${styles.headerMenu}` : styles.header}>
         {onMenu ? (
-          <h1>Hint Bank</h1>
+          <h1 className={styles.wordmark}>
+            Hint <span className={styles.wordmarkAccent}>Bank</span>
+          </h1>
         ) : (
           <h1>
             <button type="button" className={styles.titleAction} onClick={titleBack}>
-              Hint Bank
+              Hint <span className={styles.wordmarkAccent}>Bank</span>
             </button>
           </h1>
         )}
-        {/* Same tag treatment across the app: each edition's name in-game, and
-            "Complete" on the menu, the product that sits over all editions. */}
-        <p className={styles.edition}>{edition ? `${edition.displayName} Edition` : 'Complete'}</p>
+        {/* Under the wordmark: the edition's name in-game; on the menu the
+            collection name, since all editions together are Hint Bank Complete. */}
+        {edition ? (
+          <p className={styles.edition}>{`${edition.displayName} Edition`}</p>
+        ) : (
+          <p className={styles.complete}>Complete</p>
+        )}
       </header>
       <main className={styles.main}>
         {!edition && <Menu onSelect={selectEdition} />}
@@ -255,6 +275,8 @@ export default function App() {
         // Hidden on the leaderboard, which shows totals itself.
         <ScoreBar roster={roster} totals={session.totals} hinterId={hinter?.id ?? null} game={game} />
       )}
+
+      {showHelp && <HowToPlay inTurn={helpInTurn} onClose={() => setShowHelp(false)} />}
 
       {confirmReturn && (
         <ConfirmModal

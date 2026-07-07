@@ -1,11 +1,48 @@
+/* One top-anchored stack under the wordmark lockup: tagline, kicker, grid,
+   with leftover viewport space falling below the grid, never in the middle.
+   Wide enough for two square covers per row. */
 .menu {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1.4rem;
+  width: min(100%, 46rem);
+  padding: 0.25rem 1.25rem 2.5rem;
+}
+
+/* Box-cover atmosphere: a full-viewport gold glow behind the header and tiles,
+   with a faint grain over it. Fixed pseudo-elements at negative z-index, so
+   they cost nothing to lay out and leave with the menu. */
+.menu::before,
+.menu::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.menu::before {
+  background: radial-gradient(ellipse 75% 55% at 50% -5%, var(--menu-glow), transparent 70%);
+}
+
+.menu::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.05;
+}
+
+.tagline {
+  max-width: 26rem;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  color: var(--text-2);
+  text-align: center;
+  line-height: 1.5;
 }
 
 .lead {
-  font-size: 0.95rem;
-  color: var(--text-muted);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--accent-ink);
   text-align: center;
 }

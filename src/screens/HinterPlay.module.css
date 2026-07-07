@@ -26,6 +26,13 @@
   top: 1.25rem;
 }
 
+/* Header row mirrors .bankHead: title left, pencil right. */
+.resultsHeadRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
 .resultsHead {
   font-size: 1.05rem;
   font-weight: 600;
@@ -84,21 +91,26 @@
   font-size: 1.15rem;
 }
 
-/* Per-row pencil to fix a host-typed randomizer answer. Quiet so it sits behind
-   the answer text until the host reaches for it. */
-.resultEdit {
-  flex: 0 0 auto;
-  padding: 0.15rem 0.35rem;
-  font-size: 0.8rem;
-  line-height: 1;
-  border-radius: 0.4rem;
-  cursor: pointer;
-  background: transparent;
-  border: 1px solid var(--border);
+/* In edit mode the whole landed box is the tap target, like the bank's words:
+   the row wraps a full-width button that keeps the row's layout. */
+.resultRowEdit:hover,
+.resultRowEdit:focus-within {
+  border-color: var(--accent);
 }
 
-.resultEdit:hover {
-  border-color: var(--accent);
+.resultFix {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 @media (max-width: 720px) {

@@ -1,8 +1,22 @@
+/* The identity face: wordmark, menu headers, edition tile names. Gameplay UI
+   stays on the system stack. Self-hosted (public/fonts, OFL) so no page makes
+   a runtime font request to a CDN. It lives in public/ unhashed so each HTML
+   entry can preload it by a stable URL; keep the preload links in sync. */
+@font-face {
+  font-family: 'Fredoka';
+  src: url('/fonts/fredoka-latin.woff2') format('woff2');
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Theme tokens. Dark is the default; the light block below overrides it. Colors
    are referenced as var(--token) throughout the CSS modules so a single attribute
    on <html> flips the whole app. Status hues (green correct, the bank-grid bands)
    stay literal in the modules because they read on either background. */
 :root {
+  --font-display: 'Fredoka', system-ui, -apple-system, sans-serif;
+
   --bg: #1a1a2e;
   --surface: #232342;
   --surface-2: #2a2a4a;
@@ -34,6 +48,9 @@
   --danger-soft-bg: #3a2430;
   --danger-soft-bg-hover: #4a2c3c;
   --warn-text: #e0a45a;
+
+  /* Menu atmosphere: the accent-gold glow behind the main menu. */
+  --menu-glow: rgba(245, 197, 66, 0.13);
 
   color-scheme: dark;
 }
@@ -70,6 +87,8 @@
   --danger-soft-bg: #f7e1e1;
   --danger-soft-bg-hover: #f0cfcf;
   --warn-text: #b06a1f;
+
+  --menu-glow: rgba(236, 194, 63, 0.2);
 
   color-scheme: light;
 }

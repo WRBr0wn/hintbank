@@ -1,11 +1,12 @@
 import { useMemo, useState } from 'react'
 import { activeTagValues, editionById, tagValueOptions, termPasses, type Category } from '../editions'
 import { toggled, toggledKeepOne } from '../sets'
+import { spriteZoom } from '../sprites'
 import ThemeToggle from '../components/ThemeToggle'
 import styles from './Randomizer.module.css'
 
 // A standalone draw tool with no link to the game's session state.
-type Entry = { name: string; sprite?: string }
+type Entry = { name: string; sprite?: string; box?: number[] }
 
 const base = import.meta.env.BASE_URL
 const spriteUrl = (e: Entry) => (e.sprite ? `${base}${e.sprite}` : undefined)
@@ -53,7 +54,7 @@ export default function Randomizer({ editionId }: { editionId: string }) {
         if (!termPasses(t, secondaryValues)) continue
         // Sprite comes straight off the term, so an edition without sprite data
         // just yields a name and the draw panel shows no image.
-        out.push({ name: t.name, sprite: t.sprite })
+        out.push({ name: t.name, sprite: t.sprite, box: t.box })
       }
     }
     return out
@@ -106,7 +107,10 @@ export default function Randomizer({ editionId }: { editionId: string }) {
     <div className={styles.page}>
       <ThemeToggle />
       <header className={styles.header}>
-        <h1>Hint Bank{edition ? ` · ${edition.displayName} Edition` : ''}</h1>
+        <h1>
+          Hint <span className={styles.brandAccent}>Bank</span>
+          {edition ? ` · ${edition.displayName} Edition` : ''}
+        </h1>
         <p className={styles.kicker}>Randomizer</p>
       </header>
 
@@ -158,9 +162,19 @@ export default function Randomizer({ editionId }: { editionId: string }) {
       <div className={styles.current}>
         {current ? (
           <>
+            {/* The img is keyed so each draw mounts a fresh element: mutating
+                src in place leaves the old sprite painted under the new draw's
+                zoom until the new file decodes. */}
             <div className={styles.spriteSlot}>
               {spriteUrl(current) && (
-                <img className={styles.currentSprite} src={spriteUrl(current)} alt="" draggable={false} />
+                <img
+                  key={current.name}
+                  className={styles.currentSprite}
+                  style={spriteZoom(current.box)}
+                  src={spriteUrl(current)}
+                  alt=""
+                  draggable={false}
+                />
               )}
             </div>
             <span className={styles.currentName}>{current.name}</span>
@@ -200,7 +214,9 @@ export default function Randomizer({ editionId }: { editionId: string }) {
         {list.map((e, i) => (
           <li key={e.name} className={styles.row}>
             <span className={styles.index}>{i + 1}</span>
-            {spriteUrl(e) && <img className={styles.rowSprite} src={spriteUrl(e)} alt="" draggable={false} />}
+            {spriteUrl(e) && (
+              <img className={styles.rowSprite} style={spriteZoom(e.box)} src={spriteUrl(e)} alt="" draggable={false} />
+            )}
             <span className={styles.rowName}>{e.name}</span>
           </li>
         ))}

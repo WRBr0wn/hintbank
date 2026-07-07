@@ -28,7 +28,7 @@ export default function PassToHinter({ hinter, position, total, mode, randomizer
         Hinter {position} of {total}
       </p>
       <div className={styles.avatar}>
-        <Avatar avatar={hinter.avatar} />
+        <Avatar avatar={hinter.avatar} round />
       </div>
       {hosted ? (
         <>

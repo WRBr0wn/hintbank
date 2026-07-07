@@ -14,6 +14,15 @@ export interface SecondaryTag {
   label: string
 }
 
+// Per-tile visual identity, read by the menu tiles. The accent must read on
+// both themes; it colors the tile's edges, wash, and monogram. icon is a
+// public path like the sprites ("editions/<id>/..."), owned by the edition;
+// omitted, the tile shows a monogram of the display name's first letter.
+export interface EditionLook {
+  accent: string
+  icon?: string
+}
+
 export interface CreditLink {
   label: string
   href: string
@@ -52,6 +61,8 @@ export interface Edition {
   // The edition supplies only the label; the values live in the term data as
   // gens. Omitted means the edition has no secondary filter.
   secondaryTag?: SecondaryTag
+  // Omitted means the tile falls back to the platform accent.
+  look?: EditionLook
   credits: EditionCredits
 }
 
@@ -71,6 +82,7 @@ export const EDITIONS: Edition[] = [
     contentRating: 'everyone',
     categories: CATEGORIES,
     secondaryTag: { label: 'Generation' },
+    look: { accent: '#ef5350' },
     credits: {
       disclaimer:
         'Hint Bank: Pokémon Edition is an unofficial fan project, not affiliated with Nintendo, Game Freak, or The Pokémon Company. Pokémon names and sprites are property of their respective owners.',

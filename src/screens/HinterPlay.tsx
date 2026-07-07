@@ -52,6 +52,7 @@ export default function HinterPlay({ game, roster, mode, randomizerUrl, onChange
   // opts into resolving, so the penalty is never telegraphed on a shared screen.
   const [resolving, setResolving] = useState(false)
   const [editMode, setEditMode] = useState(false)
+  const [resultEditMode, setResultEditMode] = useState(false)
   const [editTarget, setEditTarget] = useState<EditTarget | null>(null)
 
   // Randomizer is the host-driven board: no dealt deck, nothing secret on screen.
@@ -97,9 +98,10 @@ export default function HinterPlay({ game, roster, mode, randomizerUrl, onChange
         ? editWord(game, editTarget.index, value)
         : editResult(game, editTarget.index, value),
     )
+    // Confirming a fix exits the section's edit mode; same grammar both sections.
+    if (editTarget.kind === 'word') setEditMode(false)
+    else setResultEditMode(false)
     setEditTarget(null)
-    // Confirming a word fix exits edit mode; a landed-answer fix never turned it on.
-    setEditMode(false)
   }
 
   function handleAdd() {
@@ -347,29 +349,55 @@ export default function HinterPlay({ game, roster, mode, randomizerUrl, onChange
       </div>
 
       <aside className={styles.results}>
-        <h2 className={styles.resultsHead}>Landed</h2>
+        <div className={styles.resultsHeadRow}>
+          <h2 className={styles.resultsHead}>{resultEditMode ? 'Tap an answer to fix it' : 'Landed'}</h2>
+          {canEdit && randomizer && (
+            // Randomizer answers are host-typed, so let the host fix one after
+            // the fact. Deck-mode answers come from the dataset, so no pencil.
+            // Same toggle grammar as the bank's.
+            <button
+              type="button"
+              className={resultEditMode ? styles.pencilOn : styles.pencil}
+              onClick={() => setResultEditMode((v) => !v)}
+              aria-pressed={resultEditMode}
+              aria-label={resultEditMode ? 'Done fixing answers' : 'Fix an answer'}
+              title={resultEditMode ? 'Done fixing answers' : 'Fix an answer'}
+            >
+              ✏️
+            </button>
+          )}
+        </div>
         <ol className={styles.resultList}>
           {Array.from({ length: game.answersPerGame }, (_, i) => {
             const result = game.results[i]
             const winner = result ? avatarFor(result.guesserId) : undefined
-            return (
-              <li key={i} className={result ? styles.resultRow : styles.resultPending}>
+            const content = (
+              <>
                 <span className={styles.resultNum}>{i + 1}</span>
                 <span className={styles.resultName}>{result ? result.answer : ''}</span>
                 <span className={styles.resultAvatar}>{winner && <Avatar avatar={winner} size={20} />}</span>
-                {canEdit && randomizer && result && (
-                  // Randomizer answers are host-typed, so let the host fix one after
-                  // the fact. Deck-mode answers come from the dataset, so no pencil.
+              </>
+            )
+            // In edit mode the landed box itself is the tap target, like the
+            // bank's words; there are no per-item controls.
+            if (resultEditMode && result) {
+              return (
+                <li key={i} className={`${styles.resultRow} ${styles.resultRowEdit}`}>
                   <button
                     type="button"
-                    className={styles.resultEdit}
+                    className={styles.resultFix}
                     onClick={() => setEditTarget({ kind: 'result', index: i, value: result.answer })}
                     aria-label={`Fix answer ${i + 1}`}
                     title="Fix this answer"
                   >
-                    ✏️
+                    {content}
                   </button>
-                )}
+                </li>
+              )
+            }
+            return (
+              <li key={i} className={result ? styles.resultRow : styles.resultPending}>
+                {content}
               </li>
             )
           })}

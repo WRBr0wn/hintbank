@@ -8,13 +8,98 @@
   gap: 1rem;
 }
 
+/* The edition selector composes like the main menu: wider than the working
+   randomizer page, so two square covers fit per row, and one top-anchored
+   stack with the menu's spacing rhythm, breathing room above the lockup, and
+   leftover viewport space falling below the grid. */
+.selector {
+  max-width: 48rem;
+  gap: 1.4rem;
+  padding-top: 2.75rem;
+}
+
+/* Box-cover atmosphere, same treatment as the menu's (Menu.module.css; keep
+   the two in sync). The working randomizer page stays flat. */
+.selector::before,
+.selector::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.selector::before {
+  background: radial-gradient(ellipse 75% 55% at 50% -5%, var(--menu-glow), transparent 70%);
+}
+
+.selector::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.05;
+}
+
 .header {
   text-align: center;
 }
 
+/* The wordmark renders in the display face on every surface, at this page's
+   chrome size. Declared larger than the old system-font 1.6rem because the
+   display face's metrics run smaller; this holds the same visual presence.
+   The menu-only halo and scale stay on the menu. */
 .header h1 {
-  font-size: 1.6rem;
-  font-weight: 800;
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+
+/* The selector's wordmark at the menu's full scale, halo included, identical
+   to the menu lockup (App.module.css .header .wordmark; keep in sync). */
+.header .brand {
+  font-size: clamp(3rem, 9vw, 3.75rem);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  text-shadow: 0 0 2.5rem var(--menu-glow);
+}
+
+/* The two-tone wordmark color, on every surface where the title renders. */
+.brandAccent {
+  color: var(--accent-ink);
+}
+
+/* The collection name in the selector's lockup, identical to the menu's
+   (App.module.css .complete; keep in sync). The working randomizer is inside
+   one edition and never shows it. */
+.header .complete {
+  margin-top: 0.4rem;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: var(--accent-ink);
+}
+
+/* This surface's name, in the slot the menu gives its tagline: subordinate to
+   the wordmark but with real presence. Ink, not gold, so it stands out
+   between the gold COMPLETE line and the gold kicker. */
+.pageTitle {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  color: var(--text);
+  text-align: center;
+}
+
+/* The selector's kicker above the grid, same treatment as the menu's
+   (Menu.module.css .lead). The working randomizer keeps .kicker. */
+.lead {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--accent-ink);
+  text-align: center;
 }
 
 .kicker {

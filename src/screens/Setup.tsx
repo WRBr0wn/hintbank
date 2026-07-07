@@ -2,9 +2,18 @@ import { useMemo, useState } from 'react'
 import Avatar from '../components/Avatar'
 import Footer from '../components/Footer'
 import { activeTagValues, tagValueOptions, type Category, type EditionCredits, type SecondaryTag } from '../editions'
-import { ANSWERS_PER_GAME, HINTER_BASE, type GameMode } from '../engine'
+import {
+  ANSWERS_PER_GAME,
+  HINTER_BASE,
+  HINTER_BASE_EASY,
+  HINTER_BASE_HARD,
+  MAX_ANSWERS,
+  MIN_ANSWERS,
+  type GameMode,
+} from '../engine'
 import { toggled, toggledKeepOne } from '../sets'
 import type { Player, PlayerAvatar } from '../types'
+import pokemonData from '../editions/pokemon/data/pokemon.json'
 import styles from './Setup.module.css'
 
 const base = import.meta.env.BASE_URL
@@ -22,7 +31,10 @@ const CREATORS: PlayerAvatar[] = [
   { kind: 'image', src: `${base}avatars/zenvolka.png`, label: 'ZenVolka' },
 ]
 // A handful of recognizable mascots. The full sprite set is bundled in
-// public/editions/pokemon/sprites; this is just the picker subset.
+// public/editions/pokemon/sprites; this is just the picker subset. Each carries
+// its measured artwork box from the edition data, so small mascots render at
+// the same visual size as big ones instead of a flat crop.
+const boxByDex = new Map(pokemonData.map((p) => [p.dexNumber, p.box]))
 const POKEMON: PlayerAvatar[] = (
   [
     [1, 'Bulbasaur'],
@@ -49,7 +61,13 @@ const POKEMON: PlayerAvatar[] = (
     [680, 'Doublade'],
     [909, 'Fuecoco']
   ] as [number, string][]
-).map(([dex, label]) => ({ kind: 'image', src: `${base}editions/pokemon/sprites/${dex}.png`, label, zoom: 1.3, bare: true }))
+).map(([dex, label]) => ({
+  kind: 'image',
+  src: `${base}editions/pokemon/sprites/${dex}.png`,
+  label,
+  box: boxByDex.get(dex),
+  bare: true,
+}))
 
 const AVATARS: PlayerAvatar[] = [...EMOJI, ...CREATORS, ...POKEMON]
 
@@ -68,15 +86,14 @@ const MIN_PLAYERS = 2
 const MAX_PLAYERS = 8
 
 // A preset picks a base: the clue cutoff for a full 10-answer game. The actual
-// cutoff is derived from base and answer count at start.
+// cutoff is derived from base and answer count at start. The bases are engine
+// constants; only the labels live here.
 const DIFFICULTIES: { id: string; label: string; base: number }[] = [
-  { id: 'easy', label: 'Easy', base: 30 },
-  { id: 'regular', label: 'Regular', base: 25 },
-  { id: 'hard', label: 'Hard', base: 20 },
+  { id: 'easy', label: 'Easy', base: HINTER_BASE_EASY },
+  { id: 'regular', label: 'Regular', base: HINTER_BASE },
+  { id: 'hard', label: 'Hard', base: HINTER_BASE_HARD },
 ]
 
-const MIN_ANSWERS = 5
-const MAX_ANSWERS = 10
 const clampAnswers = (n: number) => Math.max(MIN_ANSWERS, Math.min(MAX_ANSWERS, n))
 
 function makePlayer(used: string[]): Player {

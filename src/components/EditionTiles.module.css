@@ -1,32 +1,75 @@
 /* The edition tile grid, shared by the main menu and the randomizer's edition
-   selector so the two cannot drift apart. */
+   selector so the two cannot drift apart. A tile may carry --tile-accent inline
+   from its edition's manifest look; everything falls back to the platform
+   accent, so soon editions need to declare nothing. */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
-  gap: 0.85rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.1rem;
 }
 
-/* Live and soon share the card shape; soon is dashed and dimmed, matching the
-   category picker's soon tiles. */
+/* Below one comfortable row of two, a single centered column of the same
+   square-ish covers. Never wide list rows. */
+@media (max-width: 40rem) {
+  .grid {
+    grid-template-columns: minmax(0, 22rem);
+    justify-content: center;
+  }
+}
+
+/* Live and soon share the cover shape; soon is dashed and dimmed, matching the
+   category picker's soon tiles. Being saturated and interactive is what marks
+   a tile live; soon carries the whole "not yet" grammar. */
 .tile,
 .tileSoon {
+  position: relative;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 0.4rem;
-  padding: 1.1rem 1.15rem;
-  text-align: left;
-  border-radius: 0.9rem;
+  aspect-ratio: 10 / 9;
+  padding: 1.5rem 1.4rem;
+  text-align: center;
+  font-family: inherit;
+  border-radius: 1.1rem;
   border: 1px solid var(--border);
-  cursor: pointer;
 }
 
 .tile {
   background: var(--surface);
   color: var(--text);
+  text-decoration: none;
+  cursor: pointer;
+  transition: border-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-.tile:hover {
-  border-color: var(--accent);
+/* The edition's color, carried two ways until real tile art exists: a solid
+   strip along the top edge and a faint wash fading down from it. */
+.tile::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--tile-accent, var(--accent)) 9%, transparent), transparent 55%);
+}
+
+.tile::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--tile-accent, var(--accent));
+}
+
+.tile:hover,
+.tile:focus-visible {
+  border-color: var(--tile-accent, var(--accent));
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.22);
 }
 
 .tileSoon {
@@ -36,23 +79,80 @@
   cursor: not-allowed;
 }
 
+/* The cover's visual anchor. Holds the edition's icon when the manifest
+   declares one, the monogram otherwise. */
+.art {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5rem;
+  height: 5rem;
+  margin-bottom: 0.5rem;
+}
+
+.icon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.monogram {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  font-family: var(--font-display);
+  font-size: 2.6rem;
+  font-weight: 600;
+  color: var(--tile-accent, var(--accent));
+  background: color-mix(in srgb, var(--tile-accent, var(--accent)) 14%, transparent);
+}
+
+.tileSoon .monogram {
+  color: var(--text-faint);
+  background: color-mix(in srgb, var(--text-faint) 10%, transparent);
+}
+
 .name {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 1.05rem;
-  font-weight: 700;
+  gap: 0.55rem;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 600;
 }
 
 .tagline {
+  max-width: 17rem;
   font-size: 0.85rem;
   color: var(--text-muted);
   line-height: 1.4;
 }
 
+.tileSoon .tagline {
+  color: var(--text-faint);
+}
+
 .soon {
-  font-size: 0.65rem;
+  font-size: 0.6rem;
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  opacity: 0.8;
+  letter-spacing: 0.08em;
+  padding: 0.15rem 0.5rem;
+  border: 1px solid var(--border-dashed);
+  border-radius: 999px;
+  color: var(--text-faint);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tile {
+    transition: none;
+  }
+
+  .tile:hover,
+  .tile:focus-visible {
+    transform: none;
+  }
 }
