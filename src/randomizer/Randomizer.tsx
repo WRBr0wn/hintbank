@@ -61,13 +61,21 @@ export default function Randomizer({ editionId }: { editionId: string }) {
   }, [categories, selected, secondaryValues])
 
   // Pick a term not already in the list. Dedup keys on name so it works across
-  // categories, where only Pokemon have a dexNumber.
+  // categories, where only Pokemon have a dexNumber. A rerolled-away name can
+  // return on a later pick, which is what keeps small pools workable.
   function pickUndrawn(): Entry | null {
     const drawn = new Set(list.map((e) => e.name))
     const options = pool.filter((e) => !drawn.has(e.name))
     if (options.length === 0) return null
     return options[Math.floor(Math.random() * options.length)]
   }
+
+  // A pool smaller than the target runs out before the list fills; Draw and
+  // Reroll disable instead of sitting live with nothing to serve.
+  const exhausted = useMemo(() => {
+    const drawn = new Set(list.map((e) => e.name))
+    return pool.every((e) => drawn.has(e.name))
+  }, [pool, list])
 
   function toggleCategory(id: string) {
     setSelected((s) => toggledKeepOne(s, id))
@@ -196,10 +204,10 @@ export default function Randomizer({ editionId }: { editionId: string }) {
       </div>
 
       <div className={styles.controls}>
-        <button type="button" className={styles.draw} onClick={draw} disabled={full}>
+        <button type="button" className={styles.draw} onClick={draw} disabled={full || exhausted}>
           Draw
         </button>
-        <button type="button" className={styles.reroll} onClick={reroll} disabled={list.length === 0}>
+        <button type="button" className={styles.reroll} onClick={reroll} disabled={list.length === 0 || exhausted}>
           Reroll
         </button>
         <button type="button" className={styles.reset} onClick={reset} disabled={list.length === 0}>
@@ -220,6 +228,10 @@ export default function Randomizer({ editionId }: { editionId: string }) {
           />
         </span>
       </div>
+
+      {exhausted && !full && (
+        <p className={styles.note}>Every answer in this selection is drawn.</p>
+      )}
 
       <ol className={styles.list}>
         {list.map((e, i) => (

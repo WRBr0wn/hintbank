@@ -52,7 +52,7 @@ export default function HowToPlay({ inTurn, onClose }: Props) {
                 <li>Hints use only Hint Bank words. Add new words first if there is room; the bank holds {BANK_CAP} for the whole turn.</li>
                 <li>Bank words can be reused and recombined on any hint.</li>
                 <li>Every other player gets one guess per hint. Extra guesses on the same hint cost that player 1 point each.</li>
-                <li>A reroll swaps the answer for a fresh one but permanently burns one bank slot.</li>
+                <li>A reroll swaps the answer for a different one but permanently burns one bank slot.</li>
                 <li>The hinter scores the cutoff minus the bank size, so every entry counts.</li>
               </ul>
             </section>
@@ -99,10 +99,11 @@ export default function HowToPlay({ inTurn, onClose }: Props) {
           <section>
             <h3 className={styles.heading}>Rerolls and ending a turn</h3>
             <p>
-              Stuck on an answer? The hinter can reroll it for a fresh random one, but each reroll permanently
-              burns one of the {BANK_CAP} bank slots. Once the bank is full, the hinter can end the turn and
-              forfeit the rest. A full bank already scores the cutoff minus {BANK_CAP}, so a stalled turn is
-              its own penalty.
+              Stuck on an answer? The hinter can reroll it for a different random one, but each reroll
+              permanently burns one of the {BANK_CAP} bank slots. In a small answer pool a rerolled answer can
+              come back around; the answer card marks it. Once the bank is full, the hinter can end the turn
+              and forfeit the rest. A full bank already scores the cutoff minus {BANK_CAP}, so a stalled turn
+              is its own penalty.
             </p>
           </section>
         </div>

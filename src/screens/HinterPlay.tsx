@@ -5,6 +5,7 @@ import EditModal from '../components/EditModal'
 import {
   BANK_CAP,
   addWord,
+  answerIsRecycled,
   canAddWord,
   canEditMode,
   canEndTurn,
@@ -71,6 +72,9 @@ export default function HinterPlay({ game, roster, mode, randomizerUrl, onChange
 
   const guessers = roster.filter((p) => p.id !== game.hinterId)
   const answer = currentAnswer(game)
+  // Small pools recycle rerolled answers once the fresh deck is spent; the label
+  // suffix is the tell that the repeat is deliberate, not a bug.
+  const recycled = answerIsRecycled(game)
   const full = isBankFull(game)
   const hinting = game.phase === 'hinting'
   const complete = game.status === 'complete'
@@ -184,7 +188,7 @@ export default function HinterPlay({ game, roster, mode, randomizerUrl, onChange
 
       {answerPanel === 'plain' && !complete && (
         <div className={styles.answer}>
-          <span className={styles.answerLabel}>Secret answer</span>
+          <span className={styles.answerLabel}>Secret answer{recycled && ' · rerolled earlier'}</span>
           <span className={styles.answerName}>{answer ?? ''}</span>
         </div>
       )}
@@ -200,7 +204,9 @@ export default function HinterPlay({ game, roster, mode, randomizerUrl, onChange
           onPointerLeave={() => setRevealed(false)}
           onPointerCancel={() => setRevealed(false)}
         >
-          <span className={styles.answerLabel}>{revealed ? 'Secret answer' : 'Hidden'}</span>
+          <span className={styles.answerLabel}>
+            {revealed ? `Secret answer${recycled ? ' · rerolled earlier' : ''}` : 'Hidden'}
+          </span>
           {revealed ? (
             <span className={styles.answerName}>{answer ?? ''}</span>
           ) : (

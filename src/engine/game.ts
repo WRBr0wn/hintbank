@@ -27,16 +27,19 @@ export function createGame({
   if (!players.includes(hinterId)) {
     throw new Error('hinter must be one of the players')
   }
-  // An empty deck means a host mode, where there is nothing to draw. A dealt deck
-  // must at least cover every answer; reroll headroom is the caller's concern.
-  if (deck.length > 0 && deck.length < answersPerGame) {
-    throw new Error(`deck needs at least ${answersPerGame} answers`)
-  }
+  // An empty deck means a host mode, where there is nothing to draw. A dealt
+  // deck smaller than the requested turn clamps the turn to the pool: a
+  // filtered pool of 6 deals a 6-answer turn. The caller derives the cutoff
+  // from the clamped count (cutoffFor), so scoring follows the actual length.
+  const dealt = deck.length
+  if (dealt > 0 && dealt < answersPerGame) answersPerGame = dealt
   return {
     players,
     hinterId,
     deck,
     cursor: 0,
+    rerolled: [],
+    dealt,
     resolved: 0,
     bank: [],
     hintCount: 0,
@@ -60,13 +63,18 @@ export const usableWords = (s: GameState): number[] =>
   s.bank.flatMap((entry, i) => (entry.kind === 'word' ? [i] : []))
 
 // Adding a word and rerolling both append a bank entry, so they share one gate:
-// game live, hinting phase, free slot. Exported under both names so the two
-// questions still read distinctly at the call sites.
+// game live, hinting phase, free slot.
 const canBankEntry = (s: GameState): boolean =>
   s.status === 'playing' && s.phase === 'hinting' && !isBankFull(s)
 
 export const canAddWord = canBankEntry
-export const canReroll = canBankEntry
+
+// Reroll additionally needs an answer to swap to: a fresh card, or a rerolled
+// one that is not the current answer (small pools recycle; see reroll). Host
+// modes have no deck and nothing to swap, so the bank gate is the whole test.
+export const canReroll = (s: GameState): boolean =>
+  canBankEntry(s) &&
+  (s.deck.length === 0 || s.cursor + 1 < s.deck.length || s.rerolled.some((a) => a !== s.deck[s.cursor]))
 
 export const canEndTurn = (s: GameState): boolean =>
   s.status === 'playing' && s.phase === 'hinting' && s.bank.length === BANK_CAP
@@ -126,7 +134,24 @@ export function resolveHint(s: GameState, outcome: Resolution = {}): GameState {
 
   const answer = outcome.answer ?? s.deck[s.cursor]
   const resolved = s.resolved + 1
-  const done = resolved >= s.answersPerGame
+  const cursor = s.cursor + 1
+  let done = resolved >= s.answersPerGame
+  let deck = s.deck
+  let rerolled = s.rerolled
+  let endedEarly = s.endedEarly
+  // Deck modes: when the fresh deck is spent, the next answer comes from the
+  // rerolled pile. With nothing there either, the turn completes cleanly (like
+  // an End Turn, no penalty) rather than stranding the game without an answer.
+  // Clamped deals make this end unreachable in practice; it is the backstop.
+  if (!done && deck.length > 0 && cursor >= deck.length) {
+    if (rerolled.length > 0) {
+      deck = [...deck, rerolled[0]]
+      rerolled = rerolled.slice(1)
+    } else {
+      done = true
+      endedEarly = true
+    }
+  }
   return {
     ...s,
     overguesses,
@@ -136,11 +161,21 @@ export function resolveHint(s: GameState, outcome: Resolution = {}): GameState {
     },
     results: [...s.results, { answer, guesserId: correctGuesserId }],
     resolved,
-    cursor: s.cursor + 1,
+    cursor,
+    deck,
+    rerolled,
+    endedEarly,
     phase: 'hinting',
     status: done ? 'complete' : 'playing',
   }
 }
+
+// Deck modes: whether the current answer came back from the rerolled pile
+// rather than the dealt deck. Recycled serves sit past the dealt length, so
+// the cursor position is the whole test. The UI uses this as the small tell
+// that a repeat is deliberate.
+export const answerIsRecycled = (s: GameState): boolean =>
+  s.status === 'playing' && s.deck.length > 0 && s.cursor >= s.dealt
 
 // Pure text fixes for typos. Both keep the array length and every score-bearing
 // field identical, so bank size, scores, and rotation are untouched (the
@@ -166,16 +201,25 @@ export function editResult(s: GameState, index: number, text: string): GameState
 }
 
 export function reroll(s: GameState): GameState {
-  if (!canReroll(s)) throw new Error('cannot reroll: bank is full or a hint is awaiting resolution')
-  const marker = { kind: 'reroll' as const }
+  if (!canReroll(s)) {
+    throw new Error('cannot reroll: bank is full, a hint is awaiting resolution, or no other answer is left')
+  }
+  const bank = [...s.bank, { kind: 'reroll' as const }]
   // Host modes have no deck. The hinter rerolls against their own source, so this
   // only drops the marker (still costs the slot, same -1) and leaves the cursor be.
   if (s.deck.length === 0) {
-    return { ...s, bank: [...s.bank, marker] }
+    return { ...s, bank }
   }
-  const next = s.cursor + 1
-  if (next >= s.deck.length) throw new Error('deck exhausted; cannot reroll')
-  return { ...s, bank: [...s.bank, marker], cursor: next }
+  const current = s.deck[s.cursor]
+  if (s.cursor + 1 < s.deck.length) {
+    return { ...s, bank, rerolled: [...s.rerolled, current], cursor: s.cursor + 1 }
+  }
+  // Fresh deck spent: recycle the oldest rerolled answer that is not the current
+  // one, serving it by appending it to the deck. A rerolled answer coming back
+  // is expected in small pools.
+  const i = s.rerolled.findIndex((a) => a !== current)
+  const rerolled = [...s.rerolled.slice(0, i), ...s.rerolled.slice(i + 1), current]
+  return { ...s, bank, deck: [...s.deck, s.rerolled[i]], rerolled, cursor: s.cursor + 1 }
 }
 
 export function endTurn(s: GameState): GameState {

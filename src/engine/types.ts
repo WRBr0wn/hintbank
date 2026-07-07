@@ -57,6 +57,13 @@ export interface GameState {
   // answer, which keeps randomness out of the pure engine.
   deck: Answer[]
   cursor: number
+  // Answers rerolled away this turn, oldest first. Once the fresh deck is spent
+  // they are served again (appended to the deck), so a small pool never strands
+  // the game.
+  rerolled: Answer[]
+  // The dealt deck length. Recycled serves grow the deck past it, so a cursor at
+  // or beyond this marks a recycled answer (answerIsRecycled, the UI's tell).
+  dealt: number
   resolved: number
   bank: BankEntry[]
   hintCount: number
