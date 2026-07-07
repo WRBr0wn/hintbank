@@ -118,7 +118,9 @@ export const EDITIONS: Edition[] = [
     look: { accent: '#42a5f5' },
     credits: {
       disclaimer: null,
-      attribution: [],
+      attribution: [
+        { lead: 'Flag avatars drawn with ', link: { label: 'Twemoji', href: 'https://github.com/twitter/twemoji' }, trail: ' artwork (CC BY 4.0).' },
+      ],
       production: {
         lead: 'Hint Bank · Geography Edition · A ',
         link: { label: 'ZenVolka', href: 'https://discord.gg/DtzNtgwqjf' },

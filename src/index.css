@@ -10,6 +10,20 @@
   font-display: swap;
 }
 
+/* Country-flag emoji, self-hosted like Fredoka (Twemoji artwork, CC BY 4.0, via
+   the TalkJS country-flag-emoji-polyfill distribution). Windows ships no flag
+   glyphs, so without this a flag pair renders as letter pairs ("BR"); with it
+   flags draw the same on every platform. The unicode-range pins the face to the
+   regional-indicator codepoints, so sitting first in the body stack it can never
+   touch ordinary text, and the browser only fetches the file on pages that
+   actually render a flag. */
+@font-face {
+  font-family: 'Twemoji Country Flags';
+  src: url('/fonts/TwemojiCountryFlags.woff2') format('woff2');
+  unicode-range: U+1F1E6-1F1FF;
+  font-display: swap;
+}
+
 /* Theme tokens. Dark is the default; the light block below overrides it. Colors
    are referenced as var(--token) throughout the CSS modules so a single attribute
    on <html> flips the whole app. Status hues (green correct, the bank-grid bands)
@@ -102,7 +116,7 @@
 }
 
 body {
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: 'Twemoji Country Flags', system-ui, -apple-system, sans-serif;
   background: var(--bg);
   color: var(--text);
   min-height: 100dvh;
