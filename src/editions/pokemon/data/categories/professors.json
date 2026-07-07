@@ -18,15 +18,15 @@
   { "name": "Professor Willow", "region": "Pokémon GO" },
   { "name": "Professor Grand Oak", "region": "Pokémon HOME" },
   { "name": "Professor Bellis", "region": "Pasio" },
-  { "name": "Professor Krane", "region": "Orre" },
+  { "name": "Professor Krane", "gens": [3], "region": "Orre" },
   { "name": "Professor Neroli", "region": "Pokémon Sleep" },
   { "name": "Professor Tangrowth", "region": "Pokémon Pokopia" },
   { "name": "Professor Fuji", "gens": [1], "region": "Kanto" },
-  { "name": "Professor Lund" },
-  { "name": "Professor Akihabara" },
-  { "name": "Professor Ivy", "region": "Orange Islands" },
-  { "name": "Professor Cerise", "region": "Kanto" },
-  { "name": "Professor Friede" },
-  { "name": "Professor Yanase Berlitz" },
-  { "name": "Mr. Berlitz" }
+  { "name": "Professor Lund", "gens": [3] },
+  { "name": "Professor Akihabara", "gens": [1] },
+  { "name": "Professor Ivy", "gens": [1], "region": "Orange Islands" },
+  { "name": "Professor Cerise", "gens": [8], "region": "Kanto" },
+  { "name": "Professor Friede", "gens": [9] },
+  { "name": "Professor Yanase Berlitz", "gens": [4] },
+  { "name": "Mr. Berlitz", "gens": [4] }
 ]

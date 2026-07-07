@@ -5,8 +5,9 @@ import { spriteZoom } from '../sprites'
 import ThemeToggle from '../components/ThemeToggle'
 import styles from './Randomizer.module.css'
 
-// A standalone draw tool with no link to the game's session state.
-type Entry = { name: string; sprite?: string; box?: number[] }
+// A standalone draw tool with no link to the game's session state. recycled
+// marks a draw that came back after being rerolled away (small pools only).
+type Entry = { name: string; sprite?: string; box?: number[]; recycled?: boolean }
 
 const base = import.meta.env.BASE_URL
 const spriteUrl = (e: Entry) => (e.sprite ? `${base}${e.sprite}` : undefined)
@@ -39,6 +40,10 @@ export default function Randomizer({ editionId }: { editionId: string }) {
   const [target, setTarget] = useState(MAX_TARGET)
   const [targetInput, setTargetInput] = useState(String(MAX_TARGET))
   const [list, setList] = useState<Entry[]>([])
+  // Names rerolled away this session. Held back from draws until the fresh
+  // names run out, matching the game's reroll recycling; cleared with the list
+  // on reset and whenever the pool changes under it.
+  const [rerolledAway, setRerolledAway] = useState<Set<string>>(() => new Set())
   const full = list.length >= target
   const current = list[list.length - 1] ?? null
 
@@ -60,21 +65,34 @@ export default function Randomizer({ editionId }: { editionId: string }) {
     return out
   }, [categories, selected, secondaryValues])
 
-  // Pick a term not already in the list. Dedup keys on name so it works across
-  // categories, where only Pokemon have a dexNumber.
+  // Pick a term not already in the list, never-seen names first. Dedup keys on
+  // name so it works across categories, where only Pokemon have a dexNumber.
+  // Rerolled-away names only become drawable again once the fresh names are
+  // exhausted, and such a pick is marked recycled, mirroring the game's reroll.
   function pickUndrawn(): Entry | null {
     const drawn = new Set(list.map((e) => e.name))
-    const options = pool.filter((e) => !drawn.has(e.name))
-    if (options.length === 0) return null
-    return options[Math.floor(Math.random() * options.length)]
+    const fresh = pool.filter((e) => !drawn.has(e.name) && !rerolledAway.has(e.name))
+    if (fresh.length > 0) return fresh[Math.floor(Math.random() * fresh.length)]
+    const recycled = pool.filter((e) => !drawn.has(e.name))
+    if (recycled.length === 0) return null
+    return { ...recycled[Math.floor(Math.random() * recycled.length)], recycled: true }
   }
+
+  // A pool smaller than the target runs out before the list fills; Draw and
+  // Reroll disable instead of sitting live with nothing to serve.
+  const exhausted = useMemo(() => {
+    const drawn = new Set(list.map((e) => e.name))
+    return pool.every((e) => drawn.has(e.name))
+  }, [pool, list])
 
   function toggleCategory(id: string) {
     setSelected((s) => toggledKeepOne(s, id))
+    setRerolledAway(new Set())
   }
 
   function toggleTag(value: TagValue) {
     setTagPicks((s) => toggled(s, value))
+    setRerolledAway(new Set())
   }
 
   function draw() {
@@ -85,13 +103,19 @@ export default function Randomizer({ editionId }: { editionId: string }) {
 
   function reroll() {
     if (list.length === 0) return
-    // Swap the latest draw for a different one, like the game's reroll.
+    // Swap the latest draw for a different one, like the game's reroll. The
+    // outgoing name is still on the list while picking, so it cannot come
+    // straight back; it joins the held-back set once swapped out.
     const pick = pickUndrawn()
-    if (pick) setList((l) => [...l.slice(0, -1), pick])
+    if (!pick) return
+    const out = list[list.length - 1].name
+    setRerolledAway((s) => new Set(s).add(out))
+    setList((l) => [...l.slice(0, -1), pick])
   }
 
   function reset() {
     setList([])
+    setRerolledAway(new Set())
   }
 
   // Clamp only when editing finishes. Empty or non-numeric falls back to the
@@ -189,6 +213,7 @@ export default function Randomizer({ editionId }: { editionId: string }) {
               )}
             </div>
             <span className={styles.currentName}>{current.name}</span>
+            {current.recycled && <span className={styles.recycledTag}>rerolled earlier</span>}
           </>
         ) : (
           <span className={styles.placeholder}>Press Draw for your first answer</span>
@@ -196,10 +221,10 @@ export default function Randomizer({ editionId }: { editionId: string }) {
       </div>
 
       <div className={styles.controls}>
-        <button type="button" className={styles.draw} onClick={draw} disabled={full}>
+        <button type="button" className={styles.draw} onClick={draw} disabled={full || exhausted}>
           Draw
         </button>
-        <button type="button" className={styles.reroll} onClick={reroll} disabled={list.length === 0}>
+        <button type="button" className={styles.reroll} onClick={reroll} disabled={list.length === 0 || exhausted}>
           Reroll
         </button>
         <button type="button" className={styles.reset} onClick={reset} disabled={list.length === 0}>
@@ -220,6 +245,10 @@ export default function Randomizer({ editionId }: { editionId: string }) {
           />
         </span>
       </div>
+
+      {exhausted && !full && (
+        <p className={styles.note}>Every answer in this selection is drawn.</p>
+      )}
 
       <ol className={styles.list}>
         {list.map((e, i) => (

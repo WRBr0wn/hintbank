@@ -26,6 +26,9 @@
   height: 100%;
 }
 
+/* The stack is declared here, not inherited: avatars sit inside buttons (the
+   Setup picker), and the UA form-control font would otherwise sidestep the
+   body stack and lose the flag face on Windows. */
 .emoji {
   flex: 0 0 auto;
   display: inline-flex;
@@ -33,4 +36,5 @@
   justify-content: center;
   line-height: 1;
   vertical-align: middle;
+  font-family: 'Twemoji Country Flags', system-ui, -apple-system, sans-serif;
 }

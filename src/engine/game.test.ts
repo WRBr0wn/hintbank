@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import {
   addWord,
+  answerIsRecycled,
   canAddWord,
   canEndTurn,
   canReroll,
@@ -18,6 +19,7 @@ import {
   resolveHint,
   usableWords,
 } from './game'
+import { cutoffFor } from './session'
 import { BANK_CAP } from './types'
 
 const deck = (n = 60) => Array.from({ length: n }, (_, i) => `a${i}`)
@@ -255,10 +257,122 @@ describe('per-game settings (difficulty and answers per turn)', () => {
     expect(hinterScore(s)).toBe(20 - 1) // base 20 minus the one banked word
   })
 
-  it('sizes the deck guard to the custom answer count', () => {
-    // answersPerGame 7 needs at least 7 cards; 6 is too few, 7 is enough.
-    expect(() => createGame({ players: ['g', 'b'], hinterId: 'g', deck: deck(6), answersPerGame: 7 })).toThrow(/at least 7/)
-    expect(() => createGame({ players: ['g', 'b'], hinterId: 'g', deck: deck(7), answersPerGame: 7 })).not.toThrow()
+  it('clamps the turn to the pool when the deck is shorter than the answer count', () => {
+    // A 6-card pool cannot host a 10-answer turn; the deal takes the pool size.
+    const s = createGame({ players: ['g', 'b'], hinterId: 'g', deck: deck(6), answersPerGame: 10 })
+    expect(s.answersPerGame).toBe(6)
+    // A deck that covers the turn is not touched.
+    expect(createGame({ players: ['g', 'b'], hinterId: 'g', deck: deck(7), answersPerGame: 7 }).answersPerGame).toBe(7)
+  })
+
+  it('scores a clamped turn against the cutoff derived from the dealt count', () => {
+    // The caller derives the cutoff from what was actually dealt: a 6-answer
+    // clamped turn on Regular plays to round(25 * 6/10) = 15, not 25.
+    const dealtCutoff = cutoffFor(25, 6)
+    expect(dealtCutoff).toBe(15)
+    let s = createGame({ players: ['g', 'b'], hinterId: 'g', deck: deck(6), answersPerGame: 10, hinterBase: dealtCutoff })
+    s = addWord(s, 'spark')
+    for (let i = 0; i < 6; i++) {
+      expect(s.status).toBe('playing')
+      s = giveHint(s, [0])
+      s = resolveHint(s, { correctGuesserId: 'b' })
+    }
+    expect(s.status).toBe('complete') // done at the clamped 6, not 10
+    expect(s.resolved).toBe(6)
+    expect(hinterScore(s)).toBe(15 - 1) // dealt-count cutoff minus the one word
+  })
+})
+
+describe('small pools (deck exhaustion)', () => {
+  const tiny = (n: number, answersPerGame = n) =>
+    createGame({ players: ['g', 'b'], hinterId: 'g', deck: deck(n), answersPerGame })
+
+  it('recycles a rerolled answer once the fresh deck is spent', () => {
+    let s = tiny(2)
+    s = reroll(s) // a0 rerolled away, a1 current; fresh deck now spent
+    expect(currentAnswer(s)).toBe('a1')
+    expect(s.rerolled).toEqual(['a0'])
+    expect(canReroll(s)).toBe(true) // a0 is available to come back
+    s = reroll(s)
+    expect(currentAnswer(s)).toBe('a0') // the rerolled answer returns
+    expect(answerIsRecycled(s)).toBe(true)
+    expect(s.bank).toEqual([{ kind: 'reroll' }, { kind: 'reroll' }]) // both rerolls cost a slot
+  })
+
+  it('lands a recycled answer like any other', () => {
+    let s = tiny(2)
+    s = reroll(s)
+    s = reroll(s) // back to a0, recycled
+    s = addWord(s, 'w')
+    s = giveHint(s, [2])
+    s = resolveHint(s, { correctGuesserId: 'b' })
+    expect(s.results).toEqual([{ answer: 'a0', guesserId: 'b' }])
+    expect(s.resolved).toBe(1)
+  })
+
+  it('disables reroll when only the current answer is left', () => {
+    // Pool of 1: nothing to swap to, ever.
+    const solo = tiny(1)
+    expect(canReroll(solo)).toBe(false)
+    expect(() => reroll(solo)).toThrow(/no other answer/)
+
+    // Pool of 2 with one landed: the current answer is the whole pool.
+    let s = addWord(tiny(2), 'w')
+    s = giveHint(s, [0])
+    s = resolveHint(s, { correctGuesserId: 'b' })
+    expect(currentAnswer(s)).toBe('a1')
+    expect(canReroll(s)).toBe(false)
+  })
+
+  it('serves the next answer from the rerolled pile after a resolve spends the deck', () => {
+    let s = tiny(2)
+    s = reroll(s) // a0 to the pile, a1 current, fresh deck spent
+    s = addWord(s, 'w')
+    s = giveHint(s, [1])
+    s = resolveHint(s, { correctGuesserId: 'b' }) // a1 lands; a0 must come back
+    expect(s.status).toBe('playing')
+    expect(currentAnswer(s)).toBe('a0')
+    expect(answerIsRecycled(s)).toBe(true)
+    s = giveHint(s, [1])
+    s = resolveHint(s, { correctGuesserId: 'b' })
+    expect(s.status).toBe('complete') // the clamped 2-answer turn ran its full length
+    expect(s.resolved).toBe(2)
+  })
+
+  it('completes the turn cleanly, like an End Turn, if a resolve finds nothing at all', () => {
+    // Clamped deals make this state unreachable through createGame, so build it
+    // by hand: a 2-card deck owing 5 answers with an empty rerolled pile.
+    let s = { ...tiny(2), answersPerGame: 5 }
+    s = addWord(s, 'w')
+    s = giveHint(s, [0])
+    s = resolveHint(s, { correctGuesserId: 'b' })
+    expect(s.status).toBe('playing') // one card left
+    s = giveHint(s, [0])
+    s = resolveHint(s, { correctGuesserId: 'b' })
+    expect(s.status).toBe('complete') // no next answer: clean end, not a strand
+    expect(s.endedEarly).toBe(true) // recorded like an End Turn
+    expect(hinterScore(s)).toBe(25 - 1) // and, like one, not penalized
+  })
+
+  it('never reaches a playing state without a current answer or a legal action', () => {
+    // The incident shape: a pool barely above the turn length, rerolled hard.
+    // Walk it with rerolls whenever allowed, landing in between; at every step
+    // a playing game must have an answer up and something legal to do.
+    let s = createGame({ players: ['g', 'b'], hinterId: 'g', deck: deck(4), answersPerGame: 3 })
+    s = addWord(s, 'w')
+    let steps = 0
+    while (s.status === 'playing') {
+      expect(currentAnswer(s)).not.toBeNull()
+      expect(canAddWord(s) || canReroll(s) || canEndTurn(s) || s.phase === 'resolving').toBe(true)
+      if (canReroll(s) && steps % 2 === 0) {
+        s = reroll(s)
+      } else {
+        s = giveHint(s, [0])
+        s = resolveHint(s, { correctGuesserId: 'b' })
+      }
+      if (++steps > 200) throw new Error('turn did not terminate')
+    }
+    expect(s.resolved).toBe(3) // the full clamped turn landed despite the rerolls
   })
 })
 

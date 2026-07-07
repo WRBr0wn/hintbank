@@ -110,13 +110,17 @@ export default function App({ editionId }: { editionId: string }) {
       session.mode === 'online-randomizer'
         ? []
         : buildDeck(edition.categories, settings.categoryIds, settings.secondaryValues, deckSizeFor(session.answersPerGame))
+    // A filtered pool smaller than the chosen turn clamps the deal, and the
+    // cutoff derives from what is actually dealt, so a short turn scores in
+    // proportion. The stored setting keeps the player's choice untouched.
+    const answers = deck.length > 0 ? Math.min(session.answersPerGame, deck.length) : session.answersPerGame
     setGame(
       createGame({
         players: roster.map((p) => p.id),
         hinterId: hinter.id,
         deck,
-        hinterBase: session.hinterBase,
-        answersPerGame: session.answersPerGame,
+        hinterBase: cutoffFor(settings.difficultyBase, answers),
+        answersPerGame: answers,
       }),
     )
     setPhase('hinter')

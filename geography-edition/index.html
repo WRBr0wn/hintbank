@@ -7,6 +7,9 @@
     <!-- Start the identity-font fetch at document parse, not at CSS application,
          so display-face titles do not paint at fallback size and then shrink. -->
     <link rel="preload" href="/fonts/fredoka-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <!-- Flag-emoji face for the avatar picker; this is the only page whose
+         avatars are flags, so only it preloads the font. -->
+    <link rel="preload" href="/fonts/TwemojiCountryFlags.woff2" as="font" type="font/woff2" crossorigin />
     <title>Hint Bank - Geography Edition</title>
     <!-- Set the theme before paint so there is no dark/light flash on load. -->
     <script>

@@ -235,6 +235,13 @@
   color: var(--text-faint);
 }
 
+/* The tell on a draw that came back after being rerolled away; same language
+   as the game's answer card, so a repeat never reads as a bug. */
+.recycledTag {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
 .controls {
   display: flex;
   align-items: center;

@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react'
 import Avatar from '../components/Avatar'
 import Footer from '../components/Footer'
-import { activeTagValues, tagValueOptions, type Category, type EditionCredits, type SecondaryTag, type TagValue } from '../editions'
+import { activeTagValues, tagValueOptions, termPasses, type Category, type EditionCredits, type SecondaryTag, type TagValue } from '../editions'
 import {
   ANSWERS_PER_GAME,
   HINTER_BASE,
@@ -105,8 +105,23 @@ export default function Setup({
   )
 
   const secondaryOptions = useMemo(() => tagValueOptions(categories, selected), [categories, selected])
-  const secondaryValues = activeTagValues(secondaryOptions, secondaryPicks)
+  const secondaryValues = useMemo(
+    () => activeTagValues(secondaryOptions, secondaryPicks),
+    [secondaryOptions, secondaryPicks],
+  )
   const showSecondary = Boolean(secondaryTag) && secondaryOptions.length > 0
+
+  // How many answers the current categories + tag filter can actually deal,
+  // the same include rule the deal uses. Only surfaced when it undercuts the
+  // chosen turn length; the deal clamps to it at start.
+  const poolSize = useMemo(() => {
+    let n = 0
+    for (const c of categories) {
+      if (!selected.has(c.id)) continue
+      for (const t of c.terms) if (termPasses(t, secondaryValues)) n++
+    }
+    return n
+  }, [categories, selected, secondaryValues])
 
   function update(id: string, patch: Partial<Player>) {
     setPlayers((ps) => ps.map((p) => (p.id === id ? { ...p, ...patch } : p)))
@@ -239,6 +254,13 @@ export default function Setup({
               </div>
               <span className={styles.note}>{MIN_ANSWERS}–{MAX_ANSWERS} answers to land per turn.</span>
             </div>
+            {mode !== 'online-randomizer' && poolSize < answers && (
+              // The setting itself is never clamped: the choice stays put and
+              // full turns come back the moment the selection can fill them.
+              <p className={styles.note}>
+                This selection has {poolSize} {poolSize === 1 ? 'answer' : 'answers'} - turns will run {poolSize}.
+              </p>
+            )}
           </div>
         </div>
       </section>
