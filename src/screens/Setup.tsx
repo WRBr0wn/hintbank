@@ -96,6 +96,19 @@ const DIFFICULTIES: { id: string; label: string; base: number }[] = [
 
 const clampAnswers = (n: number) => Math.max(MIN_ANSWERS, Math.min(MAX_ANSWERS, n))
 
+// Every choice made on this screen, as one object: handed out on start and back
+// in to re-seed the controls on return-to-setup. difficultyBase is the raw
+// preset (the full-game cutoff), not the derived cutoff, so the difficulty
+// button round-trips without reverse-deriving it.
+export interface GameSettings {
+  players: Player[]
+  mode: GameMode
+  categoryIds: string[]
+  difficultyBase: number
+  answersPerGame: number
+  secondaryValues: TagValue[]
+}
+
 function makePlayer(used: string[]): Player {
   const avatar = AVATARS.find((a) => !used.includes(avatarKey(a))) ?? AVATARS[0]
   return { id: crypto.randomUUID(), name: '', avatar }
@@ -107,60 +120,42 @@ export default function Setup({
   categories,
   secondaryTag,
   randomizerUrl,
-  initialPlayers,
-  initialMode,
-  initialCategoryIds,
-  initialDifficultyBase,
-  initialAnswers,
-  initialSecondaryValues,
+  initial,
 }: {
-  // Hands back raw choices: the difficulty base, not the derived cutoff. App
-  // derives the cutoff and remembers the base so it can round-trip on return.
-  onStart: (
-    players: Player[],
-    mode: GameMode,
-    categoryIds: string[],
-    difficultyBase: number,
-    answersPerGame: number,
-    secondaryValues: TagValue[],
-  ) => void
+  // Hands back the raw choices as one settings object; App derives the cutoff.
+  onStart: (settings: GameSettings) => void
   credits: EditionCredits
   // Passed in so Setup never reaches into edition data itself.
   categories: Category[]
   // Absent means no secondary selector; the values come from the term data.
   secondaryTag?: SecondaryTag
   randomizerUrl: string
-  // The initial* props seed the controls on return-to-setup so every prior choice
-  // restores. All omitted on a fresh start, where each falls back to its default
+  // Seeds the controls on return-to-setup so every prior choice restores.
+  // Omitted on a fresh start, where each control falls back to its default
   // (two blank players for the roster).
-  initialPlayers?: Player[]
-  initialMode?: GameMode
-  initialCategoryIds?: string[]
-  initialDifficultyBase?: number
-  initialAnswers?: number
-  initialSecondaryValues?: TagValue[]
+  initial?: GameSettings
 }) {
   const [players, setPlayers] = useState<Player[]>(() =>
-    initialPlayers && initialPlayers.length > 0
-      ? initialPlayers
+    initial && initial.players.length > 0
+      ? initial.players
       : [makePlayer([]), makePlayer([avatarKey(AVATARS[0])])],
   )
   const [pickerFor, setPickerFor] = useState<string | null>(null)
   const [selected, setSelected] = useState<Set<string>>(() => {
-    if (initialCategoryIds && initialCategoryIds.length > 0) return new Set(initialCategoryIds)
+    if (initial && initial.categoryIds.length > 0) return new Set(initial.categoryIds)
     // Same default as the randomizer: the edition's first ready category.
     const first = categories.find((c) => c.ready)?.id
     return new Set(first ? [first] : [])
   })
-  const [mode, setMode] = useState<GameMode>(initialMode ?? 'in-person')
+  const [mode, setMode] = useState<GameMode>(initial?.mode ?? 'in-person')
   // Stored as the base (the full-game cutoff), so a preset is "on" when its base
   // matches; the actual cutoff is derived at start.
-  const [difficultyBase, setDifficultyBase] = useState(initialDifficultyBase ?? HINTER_BASE)
-  const [answers, setAnswers] = useState(initialAnswers ?? ANSWERS_PER_GAME)
+  const [difficultyBase, setDifficultyBase] = useState(initial?.difficultyBase ?? HINTER_BASE)
+  const [answers, setAnswers] = useState(initial?.answersPerGame ?? ANSWERS_PER_GAME)
   // What applies is the intersection with the values currently on offer, so
   // deselecting a category drops its values without losing the rest of the picks.
   const [secondaryPicks, setSecondaryPicks] = useState<Set<TagValue>>(
-    () => new Set(initialSecondaryValues ?? []),
+    () => new Set(initial?.secondaryValues ?? []),
   )
 
   const secondaryOptions = useMemo(() => tagValueOptions(categories, selected), [categories, selected])
@@ -206,7 +201,14 @@ export default function Setup({
 
   function start() {
     if (!ready) return
-    onStart(players.map((p) => ({ ...p, name: p.name.trim() })), mode, [...selected], difficultyBase, answers, secondaryValues)
+    onStart({
+      players: players.map((p) => ({ ...p, name: p.name.trim() })),
+      mode,
+      categoryIds: [...selected],
+      difficultyBase,
+      answersPerGame: answers,
+      secondaryValues,
+    })
   }
 
   return (

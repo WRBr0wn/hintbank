@@ -143,6 +143,12 @@ export function editionById(id: string): Edition | undefined {
   return EDITIONS.find((e) => e.id === id)
 }
 
+// The game page path for an edition, e.g. /hintbank/pokemon-edition/. The menu
+// tiles link through it.
+export function gamePath(editionId: string): string {
+  return `${import.meta.env.BASE_URL}${editionId}-edition/`
+}
+
 // The randomizer page path for an edition, e.g. /hintbank/pokemon-edition/randomizer/.
 // One convention, shared by the selector tiles and the in-game launch links.
 export function randomizerPath(editionId: string): string {
