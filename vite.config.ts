@@ -13,6 +13,7 @@ export default defineConfig({
         main: 'index.html',
         randomizer: 'randomizer/index.html',
         'pokemon-randomizer': 'pokemon-edition/randomizer/index.html',
+        'geography-randomizer': 'geography-edition/randomizer/index.html',
       },
     },
   },

@@ -1,4 +1,4 @@
-import type { TagValue } from '../../../terms'
+import type { Category, Term } from '../../../terms'
 import pokemon from '../pokemon.json'
 import leaders from './leaders.json'
 import towns from './towns.json'
@@ -7,29 +7,10 @@ import items from './items.json'
 import routes from './routes.json'
 import badges from './badges.json'
 
-// tags and sprite are optional so a category drops in tagged or untagged, with or
-// without sprites, with no config; the presence of the data is the only switch.
-// tags is the neutral secondary-tag field; this edition's source JSONs store it
-// as gens (numbers), mapped here at extraction.
-// box is the sprite artwork's measured bounding box, [x, y, w, h] in pixels on
-// the 96x96 canvas (see scripts/measure-sprites.mjs); renderers use it to show
-// sprites at a consistent visual size. Absent means render the file as-is.
-export interface Term {
-  name: string
-  tags?: TagValue[]
-  sprite?: string
-  box?: number[]
-}
-
-export interface Category {
-  id: string
-  label: string
-  ready: boolean
-  terms: Term[]
-}
-
 // Source entries may carry extra fields (type, city, ...); only the dealt fields
-// come through, and tags/sprite only when the entry has them.
+// come through, and tags/sprite only when the entry has them. This edition's
+// source JSONs store the tag values as gens (numbers), mapped to the neutral
+// tags field here at extraction.
 const terms = (entries: { name: string; gens?: number[]; sprite?: string }[]): Term[] =>
   entries.map((e) => {
     const t: Term = { name: e.name }

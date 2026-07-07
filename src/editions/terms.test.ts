@@ -2,8 +2,7 @@
 // handle any tag value type (Pokemon generations are numbers, Geography
 // regions will be strings) and keep the untagged pass-through semantics.
 import { describe, expect, it } from 'vitest'
-import type { Category, Term } from './pokemon/data/categories'
-import { activeTagValues, tagValueOptions, termPasses } from './terms'
+import { activeTagValues, tagValueOptions, termPasses, type Category, type Term } from './terms'
 
 const tagged = (name: string, ...tags: (string | number)[]): Term => ({ name, tags })
 const untagged = (name: string): Term => ({ name })

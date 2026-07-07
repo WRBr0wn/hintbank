@@ -1,9 +1,27 @@
-import type { Category, Term } from './pokemon/data/categories'
-
 // A secondary-tag value is whatever an edition groups by: Pokemon generations
-// are numbers, Geography regions are strings. Everything downstream (predicate,
-// derivation, both pickers) handles either.
+// are numbers, Geography continents are strings. Everything downstream
+// (predicate, derivation, both pickers) handles either.
 export type TagValue = string | number
+
+// One drawable item. Everything past name is optional so a category drops in
+// tagged or untagged, with or without sprites; the presence of the data is the
+// only switch. sprite is a public path owned by the edition; box is the sprite
+// artwork's measured bounding box, [x, y, w, h] in pixels on its canvas (see
+// scripts/measure-sprites.mjs), used to render sprites at a consistent visual
+// size. Absent means render the file as-is.
+export interface Term {
+  name: string
+  tags?: TagValue[]
+  sprite?: string
+  box?: number[]
+}
+
+export interface Category {
+  id: string
+  label: string
+  ready: boolean
+  terms: Term[]
+}
 
 // Numbers order numerically (10 after 2, not after 1), strings alphabetically,
 // numbers before strings when an edition mixes them.

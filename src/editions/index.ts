@@ -1,11 +1,12 @@
 // The edition manifest. Access is always by id (editionById), never by index, so
 // per-edition URLs can be added later without reworking callers.
-import { CATEGORIES, type Category } from './pokemon/data/categories'
+import type { Category } from './terms'
+import { CATEGORIES as POKEMON_CATEGORIES } from './pokemon/data/categories'
+import { CATEGORIES as GEOGRAPHY_CATEGORIES } from './geography/data/categories'
 
-// Re-exported so the platform refers to category types through the edition module
-// rather than reaching into an edition's data folder.
-export type { Category, Term } from './pokemon/data/categories'
-export { activeTagValues, tagValueOptions, termPasses, type TagValue } from './terms'
+// Re-exported so the platform refers to the term types and helpers through the
+// edition module.
+export { activeTagValues, tagValueOptions, termPasses, type Category, type TagValue, type Term } from './terms'
 
 // Kept as an object rather than a bare string: the object's presence is what
 // signals the edition has a secondary axis (Boolean(secondaryTag) gates the
@@ -80,7 +81,7 @@ export const EDITIONS: Edition[] = [
     status: 'live',
     hasIP: true,
     contentRating: 'everyone',
-    categories: CATEGORIES,
+    categories: POKEMON_CATEGORIES,
     secondaryTag: { label: 'Generation' },
     look: { accent: '#ef5350' },
     credits: {
@@ -99,12 +100,22 @@ export const EDITIONS: Edition[] = [
   {
     id: 'geography',
     displayName: 'Geography',
-    tagline: 'Countries, capitals, and landmarks of the real world.',
-    status: 'soon',
+    tagline: 'Countries, capitals, landmarks, and more from around the world.',
+    status: 'live',
     hasIP: false,
     contentRating: 'everyone',
-    categories: [],
-    credits: EMPTY_CREDITS,
+    categories: GEOGRAPHY_CATEGORIES,
+    secondaryTag: { label: 'Continent' },
+    look: { accent: '#42a5f5' },
+    credits: {
+      disclaimer: null,
+      attribution: [],
+      production: {
+        lead: 'Hint Bank · Geography Edition · A ',
+        link: { label: 'ZenVolka', href: 'https://discord.gg/DtzNtgwqjf' },
+        trail: ' production',
+      },
+    },
   },
   {
     id: 'books',
