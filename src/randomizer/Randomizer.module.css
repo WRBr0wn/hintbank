@@ -54,8 +54,8 @@
   font-size: 1.75rem;
   font-weight: 600;
   text-shadow:
-    0 0 1rem color-mix(in srgb, var(--edition-accent, transparent) 60%, transparent),
-    0 0 2.5rem color-mix(in srgb, var(--edition-accent, transparent) 45%, transparent);
+    0 0 1rem color-mix(in srgb, var(--edition-accent, transparent) 40%, transparent),
+    0 0 2.5rem color-mix(in srgb, var(--edition-accent, transparent) 25%, transparent);
 }
 
 /* The selector's wordmark at the menu's full scale, halo included, identical

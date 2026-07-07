@@ -59,11 +59,11 @@
   letter-spacing: -0.01em;
   /* The edition halo. Two layers, tight and wide: a single wide blur on text
      this size spreads too thin to see (there is no background radial backing it
-     up like on the menu). Keep in sync with the working randomizer's h1 in
-     Randomizer.module.css. */
+     up like on the menu). Soft, not neon; keep the values in sync with the
+     working randomizer's h1 in Randomizer.module.css. */
   text-shadow:
-    0 0 1rem color-mix(in srgb, var(--edition-accent, transparent) 60%, transparent),
-    0 0 2.5rem color-mix(in srgb, var(--edition-accent, transparent) 45%, transparent);
+    0 0 1rem color-mix(in srgb, var(--edition-accent, transparent) 40%, transparent),
+    0 0 2.5rem color-mix(in srgb, var(--edition-accent, transparent) 25%, transparent);
 }
 
 /* The menu's box-cover treatment: bigger, two-tone, with a soft halo in the
@@ -79,10 +79,14 @@
 }
 
 /* During a game the title doubles as a "return to setup" control. A real button
-   inside the h1, restyled to look like the heading text. */
+   inside the h1, restyled to look like the heading text. The UA stylesheet
+   resets inherited text properties on form controls (letter-spacing here, and
+   text-shadow: none, which was silently eating the edition halo), so both are
+   re-inherited explicitly. */
 .titleAction {
   font: inherit;
   letter-spacing: inherit;
+  text-shadow: inherit;
   color: inherit;
   background: none;
   border: none;
