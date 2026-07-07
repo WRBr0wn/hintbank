@@ -240,7 +240,10 @@
     ]
   },
   {
-    "name": "Aurora Ticket"
+    "name": "Aurora Ticket",
+    "gens": [
+      3
+    ]
   },
   {
     "name": "AuroraTicket",
@@ -381,7 +384,10 @@
     ]
   },
   {
-    "name": "Basement Key"
+    "name": "Basement Key",
+    "gens": [
+      2
+    ]
   },
   {
     "name": "Basil",
@@ -666,7 +672,10 @@
     ]
   },
   {
-    "name": "BlueSky Mail"
+    "name": "BlueSky Mail",
+    "gens": [
+      2
+    ]
   },
   {
     "name": "Blueberry Chairs",
@@ -807,19 +816,34 @@
     ]
   },
   {
-    "name": "BridgeMail D"
+    "name": "BridgeMail D",
+    "gens": [
+      5
+    ]
   },
   {
-    "name": "BridgeMail M"
+    "name": "BridgeMail M",
+    "gens": [
+      5
+    ]
   },
   {
-    "name": "BridgeMail S"
+    "name": "BridgeMail S",
+    "gens": [
+      5
+    ]
   },
   {
-    "name": "BridgeMail T"
+    "name": "BridgeMail T",
+    "gens": [
+      5
+    ]
   },
   {
-    "name": "BridgeMail V"
+    "name": "BridgeMail V",
+    "gens": [
+      5
+    ]
   },
   {
     "name": "Brittle Bones",
@@ -1056,7 +1080,10 @@
     ]
   },
   {
-    "name": "Chilan Berry"
+    "name": "Chilan Berry",
+    "gens": [
+      4
+    ]
   },
   {
     "name": "Chili Sauce",
@@ -1185,7 +1212,10 @@
     ]
   },
   {
-    "name": "Colress MCHN"
+    "name": "Colress MCHN",
+    "gens": [
+      5
+    ]
   },
   {
     "name": "Colress Machine",
@@ -1416,85 +1446,166 @@
     ]
   },
   {
-    "name": "Data Card 1"
+    "name": "Data Card 1",
+    "gens": [
+      4
+    ]
   },
   {
-    "name": "Data Card 10"
+    "name": "Data Card 10",
+    "gens": [
+      4
+    ]
   },
   {
-    "name": "Data Card 11"
+    "name": "Data Card 11",
+    "gens": [
+      4
+    ]
   },
   {
-    "name": "Data Card 12"
+    "name": "Data Card 12",
+    "gens": [
+      4
+    ]
   },
   {
-    "name": "Data Card 13"
+    "name": "Data Card 13",
+    "gens": [
+      4
+    ]
   },
   {
-    "name": "Data Card 14"
+    "name": "Data Card 14",
+    "gens": [
+      4
+    ]
   },
   {
-    "name": "Data Card 15"
+    "name": "Data Card 15",
+    "gens": [
+      4
+    ]
   },
   {
-    "name": "Data Card 16"
+    "name": "Data Card 16",
+    "gens": [
+      4
+    ]
   },
   {
-    "name": "Data Card 17"
+    "name": "Data Card 17",
+    "gens": [
+      4
+    ]
   },
   {
-    "name": "Data Card 18"
+    "name": "Data Card 18",
+    "gens": [
+      4
+    ]
   },
   {
-    "name": "Data Card 19"
+    "name": "Data Card 19",
+    "gens": [
+      4
+    ]
   },
   {
-    "name": "Data Card 2"
+    "name": "Data Card 2",
+    "gens": [
+      4
+    ]
   },
   {
-    "name": "Data Card 20"
+    "name": "Data Card 20",
+    "gens": [
+      4
+    ]
   },
   {
-    "name": "Data Card 21"
+    "name": "Data Card 21",
+    "gens": [
+      4
+    ]
   },
   {
-    "name": "Data Card 22"
+    "name": "Data Card 22",
+    "gens": [
+      4
+    ]
   },
   {
-    "name": "Data Card 23"
+    "name": "Data Card 23",
+    "gens": [
+      4
+    ]
   },
   {
-    "name": "Data Card 24"
+    "name": "Data Card 24",
+    "gens": [
+      4
+    ]
   },
   {
-    "name": "Data Card 25"
+    "name": "Data Card 25",
+    "gens": [
+      4
+    ]
   },
   {
-    "name": "Data Card 26"
+    "name": "Data Card 26",
+    "gens": [
+      4
+    ]
   },
   {
-    "name": "Data Card 27"
+    "name": "Data Card 27",
+    "gens": [
+      4
+    ]
   },
   {
-    "name": "Data Card 3"
+    "name": "Data Card 3",
+    "gens": [
+      4
+    ]
   },
   {
-    "name": "Data Card 4"
+    "name": "Data Card 4",
+    "gens": [
+      4
+    ]
   },
   {
-    "name": "Data Card 5"
+    "name": "Data Card 5",
+    "gens": [
+      4
+    ]
   },
   {
-    "name": "Data Card 6"
+    "name": "Data Card 6",
+    "gens": [
+      4
+    ]
   },
   {
-    "name": "Data Card 7"
+    "name": "Data Card 7",
+    "gens": [
+      4
+    ]
   },
   {
-    "name": "Data Card 8"
+    "name": "Data Card 8",
+    "gens": [
+      4
+    ]
   },
   {
-    "name": "Data Card 9"
+    "name": "Data Card 9",
+    "gens": [
+      4
+    ]
   },
   {
     "name": "Data Cards",
@@ -1533,7 +1644,10 @@
     ]
   },
   {
-    "name": "Devon Goods"
+    "name": "Devon Goods",
+    "gens": [
+      3
+    ]
   },
   {
     "name": "Devon Parts",
@@ -1668,7 +1782,10 @@
     ]
   },
   {
-    "name": "Dowsing MCHN"
+    "name": "Dowsing MCHN",
+    "gens": [
+      4
+    ]
   },
   {
     "name": "Dowsing Machine",
@@ -1797,7 +1914,10 @@
     ]
   },
   {
-    "name": "EXP. All"
+    "name": "EXP. All",
+    "gens": [
+      1
+    ]
   },
   {
     "name": "Earth Plate",
@@ -1836,7 +1956,10 @@
     ]
   },
   {
-    "name": "Egg Card"
+    "name": "Egg Card",
+    "gens": [
+      4
+    ]
   },
   {
     "name": "Egg Ticket",
@@ -1935,7 +2058,10 @@
     ]
   },
   {
-    "name": "Elevator Key"
+    "name": "Elevator Key",
+    "gens": [
+      5
+    ]
   },
   {
     "name": "Emboarite",
@@ -3546,7 +3672,10 @@
     ]
   },
   {
-    "name": "Journal"
+    "name": "Journal",
+    "gens": [
+      4
+    ]
   },
   {
     "name": "Joy Scent",
@@ -3693,7 +3822,10 @@
     ]
   },
   {
-    "name": "Koraidon's Poke Ball"
+    "name": "Koraidon's Poke Ball",
+    "gens": [
+      9
+    ]
   },
   {
     "name": "Koraidon's Poké Ball",
@@ -3909,7 +4041,10 @@
     ]
   },
   {
-    "name": "Legendary Clue"
+    "name": "Legendary Clue",
+    "gens": [
+      8
+    ]
   },
   {
     "name": "Legendary Clue 1",
@@ -4014,7 +4149,10 @@
     ]
   },
   {
-    "name": "LiteBlue Mail"
+    "name": "LiteBlue Mail",
+    "gens": [
+      2
+    ]
   },
   {
     "name": "Litebluemail",
@@ -4155,7 +4293,10 @@
     ]
   },
   {
-    "name": "Lunar Wing"
+    "name": "Lunar Wing",
+    "gens": [
+      4
+    ]
   },
   {
     "name": "Lure",
@@ -4182,7 +4323,10 @@
     ]
   },
   {
-    "name": "Machine Part"
+    "name": "Machine Part",
+    "gens": [
+      2
+    ]
   },
   {
     "name": "Macho Brace",
@@ -4275,7 +4419,10 @@
     ]
   },
   {
-    "name": "Make-Up Bag"
+    "name": "Make-Up Bag",
+    "gens": [
+      4
+    ]
   },
   {
     "name": "Makeup Bag",
@@ -4644,7 +4791,10 @@
     ]
   },
   {
-    "name": "Miraidon's Poke Ball"
+    "name": "Miraidon's Poke Ball",
+    "gens": [
+      9
+    ]
   },
   {
     "name": "Miraidon's Poké Ball",
@@ -4887,10 +5037,16 @@
     ]
   },
   {
-    "name": "NidoranF Candy"
+    "name": "NidoranF Candy",
+    "gens": [
+      7
+    ]
   },
   {
-    "name": "NidoranM Candy"
+    "name": "NidoranM Candy",
+    "gens": [
+      7
+    ]
   },
   {
     "name": "Nidoran♀ Candy",
@@ -5019,64 +5175,124 @@
     ]
   },
   {
-    "name": "Old Verse 1"
+    "name": "Old Verse 1",
+    "gens": [
+      9
+    ]
   },
   {
-    "name": "Old Verse 10"
+    "name": "Old Verse 10",
+    "gens": [
+      9
+    ]
   },
   {
-    "name": "Old Verse 11"
+    "name": "Old Verse 11",
+    "gens": [
+      9
+    ]
   },
   {
-    "name": "Old Verse 12"
+    "name": "Old Verse 12",
+    "gens": [
+      9
+    ]
   },
   {
-    "name": "Old Verse 13"
+    "name": "Old Verse 13",
+    "gens": [
+      9
+    ]
   },
   {
-    "name": "Old Verse 14"
+    "name": "Old Verse 14",
+    "gens": [
+      9
+    ]
   },
   {
-    "name": "Old Verse 15"
+    "name": "Old Verse 15",
+    "gens": [
+      9
+    ]
   },
   {
-    "name": "Old Verse 16"
+    "name": "Old Verse 16",
+    "gens": [
+      9
+    ]
   },
   {
-    "name": "Old Verse 17"
+    "name": "Old Verse 17",
+    "gens": [
+      9
+    ]
   },
   {
-    "name": "Old Verse 18"
+    "name": "Old Verse 18",
+    "gens": [
+      9
+    ]
   },
   {
-    "name": "Old Verse 19"
+    "name": "Old Verse 19",
+    "gens": [
+      9
+    ]
   },
   {
-    "name": "Old Verse 2"
+    "name": "Old Verse 2",
+    "gens": [
+      9
+    ]
   },
   {
-    "name": "Old Verse 20"
+    "name": "Old Verse 20",
+    "gens": [
+      9
+    ]
   },
   {
-    "name": "Old Verse 3"
+    "name": "Old Verse 3",
+    "gens": [
+      9
+    ]
   },
   {
-    "name": "Old Verse 4"
+    "name": "Old Verse 4",
+    "gens": [
+      9
+    ]
   },
   {
-    "name": "Old Verse 5"
+    "name": "Old Verse 5",
+    "gens": [
+      9
+    ]
   },
   {
-    "name": "Old Verse 6"
+    "name": "Old Verse 6",
+    "gens": [
+      9
+    ]
   },
   {
-    "name": "Old Verse 7"
+    "name": "Old Verse 7",
+    "gens": [
+      9
+    ]
   },
   {
-    "name": "Old Verse 8"
+    "name": "Old Verse 8",
+    "gens": [
+      9
+    ]
   },
   {
-    "name": "Old Verse 9"
+    "name": "Old Verse 9",
+    "gens": [
+      9
+    ]
   },
   {
     "name": "Old Verses",
@@ -5316,7 +5532,10 @@
     ]
   },
   {
-    "name": "Photo Album"
+    "name": "Photo Album",
+    "gens": [
+      4
+    ]
   },
   {
     "name": "Pickle",
@@ -5553,31 +5772,34 @@
     ]
   },
   {
-    "name": "Poke Ball"
+    "name": "Poke Toy",
+    "gens": [
+      5
+    ]
   },
   {
-    "name": "Poke Doll"
+    "name": "PokeBlock Kit",
+    "gens": [
+      6
+    ]
   },
   {
-    "name": "Poke Radar"
+    "name": "PokeBlock case",
+    "gens": [
+      3
+    ]
   },
   {
-    "name": "Poke Toy"
+    "name": "Pokemon Box Link",
+    "gens": [
+      8
+    ]
   },
   {
-    "name": "PokeBlock Kit"
-  },
-  {
-    "name": "PokeBlock case"
-  },
-  {
-    "name": "Pokeflute"
-  },
-  {
-    "name": "Pokemon Box Link"
-  },
-  {
-    "name": "Pokeshi Doll"
+    "name": "Pokeshi Doll",
+    "gens": [
+      8
+    ]
   },
   {
     "name": "Poké Snack",
@@ -5682,7 +5904,10 @@
     ]
   },
   {
-    "name": "Portrait Mail"
+    "name": "Portrait Mail",
+    "gens": [
+      2
+    ]
   },
   {
     "name": "Portraitmail",
@@ -5829,10 +6054,16 @@
     ]
   },
   {
-    "name": "PrzCureBerry"
+    "name": "PrzCureBerry",
+    "gens": [
+      2
+    ]
   },
   {
-    "name": "PsnCureBerry"
+    "name": "PsnCureBerry",
+    "gens": [
+      2
+    ]
   },
   {
     "name": "Psychic Gem",
@@ -6447,10 +6678,16 @@
     ]
   },
   {
-    "name": "Rotom Bike Black"
+    "name": "Rotom Bike Black",
+    "gens": [
+      8
+    ]
   },
   {
-    "name": "Rotom Bike White"
+    "name": "Rotom Bike White",
+    "gens": [
+      8
+    ]
   },
   {
     "name": "Rotom Catalog",
@@ -6471,7 +6708,10 @@
     ]
   },
   {
-    "name": "Rule Book"
+    "name": "Rule Book",
+    "gens": [
+      4
+    ]
   },
   {
     "name": "Running Shoes",
@@ -6648,16 +6888,25 @@
     ]
   },
   {
-    "name": "Seal Bag"
+    "name": "Seal Bag",
+    "gens": [
+      4
+    ]
   },
   {
-    "name": "Seal Case"
+    "name": "Seal Case",
+    "gens": [
+      4
+    ]
   },
   {
     "name": "Secret Medicine"
   },
   {
-    "name": "SecretPotion"
+    "name": "SecretPotion",
+    "gens": [
+      2
+    ]
   },
   {
     "name": "Seed of Mastery",
@@ -6864,7 +7113,10 @@
     ]
   },
   {
-    "name": "Slowpoketail"
+    "name": "Slowpoketail",
+    "gens": [
+      2
+    ]
   },
   {
     "name": "Small Bouquet",
@@ -6957,7 +7209,10 @@
     ]
   },
   {
-    "name": "Snowball"
+    "name": "Snowball",
+    "gens": [
+      6
+    ]
   },
   {
     "name": "Soft Sand",
@@ -7128,7 +7383,10 @@
     ]
   },
   {
-    "name": "Squirtbottle"
+    "name": "Squirtbottle",
+    "gens": [
+      2
+    ]
   },
   {
     "name": "Squirtle Candy",
@@ -7275,7 +7533,10 @@
     ]
   },
   {
-    "name": "Storage Key"
+    "name": "Storage Key",
+    "gens": [
+      3
+    ]
   },
   {
     "name": "Strange Ball",
@@ -7818,7 +8079,10 @@
     ]
   },
   {
-    "name": "Tri Pass"
+    "name": "Tri Pass",
+    "gens": [
+      3
+    ]
   },
   {
     "name": "Tri-Pass",

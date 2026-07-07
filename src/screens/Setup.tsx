@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react'
 import Avatar from '../components/Avatar'
 import Footer from '../components/Footer'
-import { activeTagValues, tagValueOptions, type Category, type EditionCredits, type SecondaryTag } from '../editions'
+import { activeTagValues, tagValueOptions, type Category, type EditionCredits, type SecondaryTag, type TagValue } from '../editions'
 import {
   ANSWERS_PER_GAME,
   HINTER_BASE,
@@ -12,66 +12,9 @@ import {
   type GameMode,
 } from '../engine'
 import { toggled, toggledKeepOne } from '../sets'
+import { avatarKey } from '../avatars'
 import type { Player, PlayerAvatar } from '../types'
-import pokemonData from '../editions/pokemon/data/pokemon.json'
 import styles from './Setup.module.css'
-
-const base = import.meta.env.BASE_URL
-const EMOJI: PlayerAvatar[] = ['🦊', '🐢', '🐉', '🦉', '🐱', '🐰', '🐼', '🐧', '🦄', '🐸', '🦁', '🐙'].map(
-  (value) => ({ kind: 'emoji', value }),
-)
-const CREATORS: PlayerAvatar[] = [
-  { kind: 'image', src: `${base}avatars/zanegames.jpg`, label: 'ZaneGames' },
-  { kind: 'image', src: `${base}avatars/peebr.jpg`, label: 'Peebr' },
-  { kind: 'image', src: `${base}avatars/cush.jpg`, label: 'Cush' },
-  { kind: 'image', src: `${base}avatars/bailey.jpg`, label: 'Bailey' },
-  { kind: 'image', src: `${base}avatars/chrispiche.jpg`, label: 'Chris Piché' },
-  { kind: 'image', src: `${base}avatars/deliciousjames.jpg`, label: 'Delicious James' },
-  { kind: 'image', src: `${base}avatars/scarecrow.jpg`, label: 'Scarecrow' },
-  { kind: 'image', src: `${base}avatars/zenvolka.png`, label: 'ZenVolka' },
-]
-// A handful of recognizable mascots. The full sprite set is bundled in
-// public/editions/pokemon/sprites; this is just the picker subset. Each carries
-// its measured artwork box from the edition data, so small mascots render at
-// the same visual size as big ones instead of a flat crop.
-const boxByDex = new Map(pokemonData.map((p) => [p.dexNumber, p.box]))
-const POKEMON: PlayerAvatar[] = (
-  [
-    [1, 'Bulbasaur'],
-    [3, 'Venusaur'],
-    [4, 'Charmander'],
-    [6, 'Charizard'],
-    [7, 'Squirtle'],
-    [9, 'Blastoise'],
-    [25, 'Pikachu'],
-    [39, 'Jigglypuff'],
-    [94, 'Gengar'],
-    [133, 'Eevee'],
-    [143, 'Snorlax'],
-    [150, 'Mewtwo'],
-    [155, 'Cyndaquil'],
-    [196, 'Espeon'],
-    [197, 'Umbreon'],
-    [390, 'Chimchar'],
-    [393, 'Piplup'],
-    [724, 'Decidueye'],
-    [448, 'Lucario'],
-    [573, 'Cinccino'],
-    [658, 'Greninja'],
-    [680, 'Doublade'],
-    [909, 'Fuecoco']
-  ] as [number, string][]
-).map(([dex, label]) => ({
-  kind: 'image',
-  src: `${base}editions/pokemon/sprites/${dex}.png`,
-  label,
-  box: boxByDex.get(dex),
-  bare: true,
-}))
-
-const AVATARS: PlayerAvatar[] = [...EMOJI, ...CREATORS, ...POKEMON]
-
-const avatarKey = (a: PlayerAvatar) => (a.kind === 'emoji' ? a.value : a.src)
 
 // The online modes keep the answer off a shared screen: one-device hides it
 // behind hold-to-reveal, randomizer is the host-driven board.
@@ -96,8 +39,21 @@ const DIFFICULTIES: { id: string; label: string; base: number }[] = [
 
 const clampAnswers = (n: number) => Math.max(MIN_ANSWERS, Math.min(MAX_ANSWERS, n))
 
-function makePlayer(used: string[]): Player {
-  const avatar = AVATARS.find((a) => !used.includes(avatarKey(a))) ?? AVATARS[0]
+// Every choice made on this screen, as one object: handed out on start and back
+// in to re-seed the controls on return-to-setup. difficultyBase is the raw
+// preset (the full-game cutoff), not the derived cutoff, so the difficulty
+// button round-trips without reverse-deriving it.
+export interface GameSettings {
+  players: Player[]
+  mode: GameMode
+  categoryIds: string[]
+  difficultyBase: number
+  answersPerGame: number
+  secondaryValues: TagValue[]
+}
+
+function makePlayer(avatars: PlayerAvatar[], used: string[]): Player {
+  const avatar = avatars.find((a) => !used.includes(avatarKey(a))) ?? avatars[0]
   return { id: crypto.randomUUID(), name: '', avatar }
 }
 
@@ -106,61 +62,46 @@ export default function Setup({
   credits,
   categories,
   secondaryTag,
+  avatars,
   randomizerUrl,
-  initialPlayers,
-  initialMode,
-  initialCategoryIds,
-  initialDifficultyBase,
-  initialAnswers,
-  initialSecondaryValues,
+  initial,
 }: {
-  // Hands back raw choices: the difficulty base, not the derived cutoff. App
-  // derives the cutoff and remembers the base so it can round-trip on return.
-  onStart: (
-    players: Player[],
-    mode: GameMode,
-    categoryIds: string[],
-    difficultyBase: number,
-    answersPerGame: number,
-    secondaryValues: number[],
-  ) => void
+  // Hands back the raw choices as one settings object; App derives the cutoff.
+  onStart: (settings: GameSettings) => void
   credits: EditionCredits
   // Passed in so Setup never reaches into edition data itself.
   categories: Category[]
   // Absent means no secondary selector; the values come from the term data.
   secondaryTag?: SecondaryTag
+  // The picker set, composed by App from the edition's manifest (avatarsFor).
+  avatars: PlayerAvatar[]
   randomizerUrl: string
-  // The initial* props seed the controls on return-to-setup so every prior choice
-  // restores. All omitted on a fresh start, where each falls back to its default
+  // Seeds the controls on return-to-setup so every prior choice restores.
+  // Omitted on a fresh start, where each control falls back to its default
   // (two blank players for the roster).
-  initialPlayers?: Player[]
-  initialMode?: GameMode
-  initialCategoryIds?: string[]
-  initialDifficultyBase?: number
-  initialAnswers?: number
-  initialSecondaryValues?: number[]
+  initial?: GameSettings
 }) {
   const [players, setPlayers] = useState<Player[]>(() =>
-    initialPlayers && initialPlayers.length > 0
-      ? initialPlayers
-      : [makePlayer([]), makePlayer([avatarKey(AVATARS[0])])],
+    initial && initial.players.length > 0
+      ? initial.players
+      : [makePlayer(avatars, []), makePlayer(avatars, [avatarKey(avatars[0])])],
   )
   const [pickerFor, setPickerFor] = useState<string | null>(null)
   const [selected, setSelected] = useState<Set<string>>(() => {
-    if (initialCategoryIds && initialCategoryIds.length > 0) return new Set(initialCategoryIds)
+    if (initial && initial.categoryIds.length > 0) return new Set(initial.categoryIds)
     // Same default as the randomizer: the edition's first ready category.
     const first = categories.find((c) => c.ready)?.id
     return new Set(first ? [first] : [])
   })
-  const [mode, setMode] = useState<GameMode>(initialMode ?? 'in-person')
+  const [mode, setMode] = useState<GameMode>(initial?.mode ?? 'in-person')
   // Stored as the base (the full-game cutoff), so a preset is "on" when its base
   // matches; the actual cutoff is derived at start.
-  const [difficultyBase, setDifficultyBase] = useState(initialDifficultyBase ?? HINTER_BASE)
-  const [answers, setAnswers] = useState(initialAnswers ?? ANSWERS_PER_GAME)
+  const [difficultyBase, setDifficultyBase] = useState(initial?.difficultyBase ?? HINTER_BASE)
+  const [answers, setAnswers] = useState(initial?.answersPerGame ?? ANSWERS_PER_GAME)
   // What applies is the intersection with the values currently on offer, so
   // deselecting a category drops its values without losing the rest of the picks.
-  const [secondaryPicks, setSecondaryPicks] = useState<Set<number>>(
-    () => new Set(initialSecondaryValues ?? []),
+  const [secondaryPicks, setSecondaryPicks] = useState<Set<TagValue>>(
+    () => new Set(initial?.secondaryValues ?? []),
   )
 
   const secondaryOptions = useMemo(() => tagValueOptions(categories, selected), [categories, selected])
@@ -173,7 +114,7 @@ export default function Setup({
 
   function add() {
     if (players.length >= MAX_PLAYERS) return
-    setPlayers((ps) => [...ps, makePlayer(ps.map((p) => avatarKey(p.avatar)))])
+    setPlayers((ps) => [...ps, makePlayer(avatars, ps.map((p) => avatarKey(p.avatar)))])
   }
 
   function remove(id: string) {
@@ -185,7 +126,7 @@ export default function Setup({
     setSelected((s) => toggledKeepOne(s, id))
   }
 
-  function toggleSecondary(value: number) {
+  function toggleSecondary(value: TagValue) {
     setSecondaryPicks((s) => toggled(s, value))
   }
 
@@ -206,7 +147,14 @@ export default function Setup({
 
   function start() {
     if (!ready) return
-    onStart(players.map((p) => ({ ...p, name: p.name.trim() })), mode, [...selected], difficultyBase, answers, secondaryValues)
+    onStart({
+      players: players.map((p) => ({ ...p, name: p.name.trim() })),
+      mode,
+      categoryIds: [...selected],
+      difficultyBase,
+      answersPerGame: answers,
+      secondaryValues,
+    })
   }
 
   return (
@@ -334,7 +282,7 @@ export default function Setup({
               </div>
               {pickerFor === p.id && (
                 <div className={styles.picker}>
-                  {AVATARS.map((a) => {
+                  {avatars.map((a) => {
                     const key = avatarKey(a)
                     return (
                       <button

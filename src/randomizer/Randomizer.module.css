@@ -45,11 +45,17 @@
 /* The wordmark renders in the display face on every surface, at this page's
    chrome size. Declared larger than the old system-font 1.6rem because the
    display face's metrics run smaller; this holds the same visual presence.
-   The menu-only halo and scale stay on the menu. */
+   The edition-accent halo matches the game page's (App.module.css .header h1;
+   keep in sync): this is an edition surface, so it carries the edition
+   identity. Unset (no look), the shadow computes to transparent. The selector's
+   .brand overrides it with the menu gold. */
 .header h1 {
   font-family: var(--font-display);
   font-size: 1.75rem;
   font-weight: 600;
+  text-shadow:
+    0 0 1rem color-mix(in srgb, var(--edition-accent, transparent) 40%, transparent),
+    0 0 2.5rem color-mix(in srgb, var(--edition-accent, transparent) 25%, transparent);
 }
 
 /* The selector's wordmark at the menu's full scale, halo included, identical
@@ -64,6 +70,12 @@
 /* The two-tone wordmark color, on every surface where the title renders. */
 .brandAccent {
   color: var(--accent-ink);
+}
+
+/* The edition's own name in the edition accent; the words around it stay in
+   text color. A lookless edition falls back to the surrounding color. */
+.editionName {
+  color: var(--edition-accent, currentColor);
 }
 
 /* The collection name in the selector's lockup, identical to the menu's

@@ -10,9 +10,12 @@ export default defineConfig({
     // imports are needed.
     rollupOptions: {
       input: {
-        main: 'index.html',
+        menu: 'index.html',
+        'pokemon-game': 'pokemon-edition/index.html',
+        'geography-game': 'geography-edition/index.html',
         randomizer: 'randomizer/index.html',
         'pokemon-randomizer': 'pokemon-edition/randomizer/index.html',
+        'geography-randomizer': 'geography-edition/randomizer/index.html',
       },
     },
   },

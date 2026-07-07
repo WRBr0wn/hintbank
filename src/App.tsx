@@ -1,6 +1,5 @@
-import { useMemo, useState } from 'react'
-import Menu from './screens/Menu'
-import Setup from './screens/Setup'
+import { useMemo, useState, type CSSProperties } from 'react'
+import Setup, { type GameSettings } from './screens/Setup'
 import PassToHinter from './screens/PassToHinter'
 import HinterPlay from './screens/HinterPlay'
 import Leaderboard from './screens/Leaderboard'
@@ -9,9 +8,7 @@ import ThemeToggle from './components/ThemeToggle'
 import ConfirmModal from './components/ConfirmModal'
 import HowToPlay from './components/HowToPlay'
 import {
-  ANSWERS_PER_GAME,
   BANK_CAP,
-  HINTER_BASE,
   continueSession,
   createGame,
   createSession,
@@ -20,12 +17,11 @@ import {
   gameScores,
   isRotationComplete,
   recordGame,
-  type GameMode,
   type GameState,
   type SessionState,
 } from './engine'
-import { editionById, randomizerPath, termPasses, type Category } from './editions'
-import type { Player } from './types'
+import { editionById, randomizerPath, termPasses, type Category, type TagValue } from './editions'
+import { avatarsFor } from './avatars'
 import styles from './App.module.css'
 
 type Phase = 'setup' | 'pass' | 'hinter' | 'leaderboard'
@@ -37,7 +33,7 @@ const deckSizeFor = (answersPerGame: number) => answersPerGame + BANK_CAP
 
 // Categories come from the active edition, so the platform holds no global list.
 // The deck is names only; the board renders them verbatim.
-function buildDeck(categories: Category[], categoryIds: string[], tagValues: number[], deckSize: number): string[] {
+function buildDeck(categories: Category[], categoryIds: string[], tagValues: TagValue[], deckSize: number): string[] {
   const pool: string[] = []
   for (const id of categoryIds) {
     const category = categories.find((c) => c.id === id)
@@ -53,79 +49,67 @@ function buildDeck(categories: Category[], categoryIds: string[], tagValues: num
   return pool.slice(0, deckSize)
 }
 
-export default function App() {
-  // null means the menu is showing. Stored as the id, never an index or the
-  // object, so a URL scheme is a clean later addition.
-  const [activeEditionId, setActiveEditionId] = useState<string | null>(null)
+// One edition's game page, Setup through Leaderboard. The edition is fixed by
+// which HTML page this runs on (its entry passes the id); the menu is its own
+// page, so leaving for it is a real navigation and the session is let go.
+export default function App({ editionId }: { editionId: string }) {
+  const edition = editionById(editionId)
   const [phase, setPhase] = useState<Phase>('setup')
-  const [roster, setRoster] = useState<Player[]>([])
+  // Every setup choice as one object; null means a fresh start, where Setup
+  // falls back to its defaults. The engine never sees it; categoryIds and
+  // secondaryValues only decide which terms buildDeck pools.
+  const [settings, setSettings] = useState<GameSettings | null>(null)
   const [session, setSession] = useState<SessionState | null>(null)
   const [game, setGame] = useState<GameState | null>(null)
-  // The engine never sees these; they only decide which terms buildDeck pools.
-  // Empty means no choice made yet: Setup then defaults to the active edition's
-  // first ready category.
-  const [categoryIds, setCategoryIds] = useState<string[]>([])
-  // Raw setup choices, kept so return-to-setup can pre-fill every control.
-  // difficultyBase is the raw preset, not the derived cutoff: the session only
-  // stores the cutoff, so this is what lets the difficulty button round-trip
-  // without reverse-deriving it.
-  const [mode, setMode] = useState<GameMode>('in-person')
-  const [difficultyBase, setDifficultyBase] = useState(HINTER_BASE)
-  const [answers, setAnswers] = useState(ANSWERS_PER_GAME)
-  // Empty means no filter, deal from all.
-  const [secondaryValues, setSecondaryValues] = useState<number[]>([])
   const [confirmReturn, setConfirmReturn] = useState(false)
   const [showHelp, setShowHelp] = useState(false)
 
-  const edition = activeEditionId ? editionById(activeEditionId) : null
-  // Handed to the in-game launch links so they open the right edition's
-  // randomizer directly, no reselect.
-  const randomizerUrl = edition ? randomizerPath(edition.id) : ''
+  const roster = settings?.players ?? []
+  // Handed to the in-game launch links so they open this edition's randomizer
+  // directly, no reselect.
+  const randomizerUrl = randomizerPath(editionId)
 
   const hinter = useMemo(() => {
-    if (!session) return null
-    return roster.find((p) => p.id === currentHinter(session)) ?? null
-  }, [session, roster])
+    if (!session || !settings) return null
+    return settings.players.find((p) => p.id === currentHinter(session)) ?? null
+  }, [session, settings])
 
-  function selectEdition(id: string) {
-    setActiveEditionId(id)
-    setPhase('setup')
-  }
+  // The entries are hand-declared, so a missing edition is a wiring mistake,
+  // not a runtime state.
+  if (!edition) return null
+
+  // The edition's accent tints the game chrome (header divider, wordmark halo),
+  // the same manifest value and inline-variable pattern the menu tiles use.
+  const accent = edition.look
+    ? ({ '--edition-accent': edition.look.accent } as CSSProperties)
+    : undefined
+
+  // The picker set: the edition's declared avatars (or the neutral default)
+  // plus the platform-level ZenVolka.
+  const avatars = avatarsFor(edition.avatars)
 
   // Reached from the Setup title, where no game is in progress, so nothing is
   // lost and no confirm is needed.
   function backToMenu() {
-    setActiveEditionId(null)
+    window.location.assign(import.meta.env.BASE_URL)
   }
 
-  function handleStart(
-    players: Player[],
-    chosenMode: GameMode,
-    ids: string[],
-    chosenDifficultyBase: number,
-    answersPerGame: number,
-    chosenSecondaryValues: number[],
-  ) {
-    setRoster(players)
-    setCategoryIds(ids)
-    setMode(chosenMode)
-    setDifficultyBase(chosenDifficultyBase)
-    setAnswers(answersPerGame)
-    setSecondaryValues(chosenSecondaryValues)
-    // The session stores the derived cutoff; App keeps the raw base above for return.
-    const hinterBase = cutoffFor(chosenDifficultyBase, answersPerGame)
-    setSession(createSession(players.map((p) => p.id), chosenMode, hinterBase, answersPerGame))
+  function handleStart(next: GameSettings) {
+    setSettings(next)
+    // The session stores the derived cutoff; settings keep the raw base for return.
+    const hinterBase = cutoffFor(next.difficultyBase, next.answersPerGame)
+    setSession(createSession(next.players.map((p) => p.id), next.mode, hinterBase, next.answersPerGame))
     setPhase('pass')
   }
 
   function reveal() {
-    if (!hinter || !session || !edition) return
+    if (!hinter || !session || !edition || !settings) return
     // Randomizer is host-driven with no dealt deck. The host supplies each answer,
     // so the game runs deckless and nothing secret is ever put on the board.
     const deck =
       session.mode === 'online-randomizer'
         ? []
-        : buildDeck(edition.categories, categoryIds, secondaryValues, deckSizeFor(session.answersPerGame))
+        : buildDeck(edition.categories, settings.categoryIds, settings.secondaryValues, deckSizeFor(session.answersPerGame))
     setGame(
       createGame({
         players: roster.map((p) => p.id),
@@ -154,18 +138,13 @@ export default function App() {
 
   function startOver() {
     setSession(null)
-    setRoster([])
     setGame(null)
-    setCategoryIds([])
-    setMode('in-person')
-    setDifficultyBase(HINTER_BASE)
-    setAnswers(ANSWERS_PER_GAME)
-    setSecondaryValues([])
+    setSettings(null)
     setPhase('setup')
   }
 
-  // Unlike startOver, nothing resets to defaults: the roster and every setup
-  // choice round-trip back into Setup. The next Start builds a fresh session, so
+  // Unlike startOver, the settings stay: the roster and every setup choice
+  // round-trip back into Setup. The next Start builds a fresh session, so
   // totals still reset to zero.
   function returnToSetup() {
     setSession(null)
@@ -175,15 +154,14 @@ export default function App() {
   }
 
   // The title walks one step back up the flow, with a confirm during a game since
-  // the game would be lost. On the menu there is nowhere above, so no button.
-  const onMenu = !edition
+  // the game would be lost.
   const titleBack = () => {
     if (phase === 'setup') backToMenu()
     else setConfirmReturn(true)
   }
 
   // Mid-turn the modal leads with the quick reference instead of the overview.
-  const helpInTurn = Boolean(edition) && (phase === 'pass' || phase === 'hinter')
+  const helpInTurn = phase === 'pass' || phase === 'hinter'
 
   return (
     <div className={styles.app}>
@@ -197,42 +175,26 @@ export default function App() {
       >
         ?
       </button>
-      <header className={onMenu ? `${styles.header} ${styles.headerMenu}` : styles.header}>
-        {onMenu ? (
-          <h1 className={styles.wordmark}>
+      <header className={styles.header} style={accent}>
+        <h1>
+          <button type="button" className={styles.titleAction} onClick={titleBack}>
             Hint <span className={styles.wordmarkAccent}>Bank</span>
-          </h1>
-        ) : (
-          <h1>
-            <button type="button" className={styles.titleAction} onClick={titleBack}>
-              Hint <span className={styles.wordmarkAccent}>Bank</span>
-            </button>
-          </h1>
-        )}
-        {/* Under the wordmark: the edition's name in-game; on the menu the
-            collection name, since all editions together are Hint Bank Complete. */}
-        {edition ? (
-          <p className={styles.edition}>{`${edition.displayName} Edition`}</p>
-        ) : (
-          <p className={styles.complete}>Complete</p>
-        )}
+          </button>
+        </h1>
+        <p className={styles.edition}>
+          <span className={styles.editionName}>{edition.displayName}</span> Edition
+        </p>
       </header>
       <main className={styles.main}>
-        {!edition && <Menu onSelect={selectEdition} />}
-
-        {edition && phase === 'setup' && (
+        {phase === 'setup' && (
           <Setup
             onStart={handleStart}
             credits={edition.credits}
             categories={edition.categories}
             secondaryTag={edition.secondaryTag}
+            avatars={avatars}
             randomizerUrl={randomizerUrl}
-            initialPlayers={roster.length ? roster : undefined}
-            initialMode={mode}
-            initialCategoryIds={categoryIds}
-            initialDifficultyBase={difficultyBase}
-            initialAnswers={answers}
-            initialSecondaryValues={secondaryValues}
+            initial={settings ?? undefined}
           />
         )}
 

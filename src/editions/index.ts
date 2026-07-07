@@ -1,11 +1,15 @@
 // The edition manifest. Access is always by id (editionById), never by index, so
 // per-edition URLs can be added later without reworking callers.
-import { CATEGORIES, type Category } from './pokemon/data/categories'
+import type { Category } from './terms'
+import type { PlayerAvatar } from '../types'
+import { CATEGORIES as POKEMON_CATEGORIES } from './pokemon/data/categories'
+import { CATEGORIES as GEOGRAPHY_CATEGORIES } from './geography/data/categories'
+import { AVATARS as POKEMON_AVATARS } from './pokemon/avatars'
+import { AVATARS as GEOGRAPHY_AVATARS } from './geography/avatars'
 
-// Re-exported so the platform refers to category types through the edition module
-// rather than reaching into an edition's data folder.
-export type { Category, Term } from './pokemon/data/categories'
-export { activeTagValues, tagValueOptions, termPasses } from './terms'
+// Re-exported so the platform refers to the term types and helpers through the
+// edition module.
+export { activeTagValues, tagValueOptions, termPasses, type Category, type TagValue, type Term } from './terms'
 
 // Kept as an object rather than a bare string: the object's presence is what
 // signals the edition has a secondary axis (Boolean(secondaryTag) gates the
@@ -59,8 +63,12 @@ export interface Edition {
   // own content.
   categories: Category[]
   // The edition supplies only the label; the values live in the term data as
-  // gens. Omitted means the edition has no secondary filter.
+  // tags. Omitted means the edition has no secondary filter.
   secondaryTag?: SecondaryTag
+  // The edition's avatar picker set. Omitted falls back to the platform's
+  // neutral emoji set; either way avatarsFor (src/avatars.ts) appends the
+  // platform-level ZenVolka avatar.
+  avatars?: PlayerAvatar[]
   // Omitted means the tile falls back to the platform accent.
   look?: EditionLook
   credits: EditionCredits
@@ -80,8 +88,9 @@ export const EDITIONS: Edition[] = [
     status: 'live',
     hasIP: true,
     contentRating: 'everyone',
-    categories: CATEGORIES,
+    categories: POKEMON_CATEGORIES,
     secondaryTag: { label: 'Generation' },
+    avatars: POKEMON_AVATARS,
     look: { accent: '#ef5350' },
     credits: {
       disclaimer:
@@ -99,12 +108,23 @@ export const EDITIONS: Edition[] = [
   {
     id: 'geography',
     displayName: 'Geography',
-    tagline: 'Countries, capitals, and landmarks of the real world.',
-    status: 'soon',
+    tagline: 'Countries, capitals, landmarks, and more from around the world.',
+    status: 'live',
     hasIP: false,
     contentRating: 'everyone',
-    categories: [],
-    credits: EMPTY_CREDITS,
+    categories: GEOGRAPHY_CATEGORIES,
+    secondaryTag: { label: 'Continent' },
+    avatars: GEOGRAPHY_AVATARS,
+    look: { accent: '#42a5f5' },
+    credits: {
+      disclaimer: null,
+      attribution: [],
+      production: {
+        lead: 'Hint Bank · Geography Edition · A ',
+        link: { label: 'ZenVolka', href: 'https://discord.gg/DtzNtgwqjf' },
+        trail: ' production',
+      },
+    },
   },
   {
     id: 'books',
@@ -130,6 +150,12 @@ export const EDITIONS: Edition[] = [
 
 export function editionById(id: string): Edition | undefined {
   return EDITIONS.find((e) => e.id === id)
+}
+
+// The game page path for an edition, e.g. /hintbank/pokemon-edition/. The menu
+// tiles link through it.
+export function gamePath(editionId: string): string {
+  return `${import.meta.env.BASE_URL}${editionId}-edition/`
 }
 
 // The randomizer page path for an edition, e.g. /hintbank/pokemon-edition/randomizer/.

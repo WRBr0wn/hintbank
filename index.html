@@ -18,9 +18,16 @@
         document.documentElement.dataset.theme = t
       } catch (e) {}
     </script>
+    <!-- Pre-CSS background matching the theme the script above just set, so
+         navigating between pages does not flash white before the stylesheet
+         loads. Keep the colors in sync with the --bg tokens in src/index.css. -->
+    <style>
+      html { background: #1a1a2e }
+      html[data-theme='light'] { background: #eef0f7 }
+    </style>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <script type="module" src="/src/menuMain.tsx"></script>
   </body>
 </html>

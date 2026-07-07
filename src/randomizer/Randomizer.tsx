@@ -1,5 +1,5 @@
-import { useMemo, useState } from 'react'
-import { activeTagValues, editionById, tagValueOptions, termPasses, type Category } from '../editions'
+import { useMemo, useState, type CSSProperties } from 'react'
+import { activeTagValues, editionById, tagValueOptions, termPasses, type Category, type TagValue } from '../editions'
 import { toggled, toggledKeepOne } from '../sets'
 import { spriteZoom } from '../sprites'
 import ThemeToggle from '../components/ThemeToggle'
@@ -33,7 +33,7 @@ export default function Randomizer({ editionId }: { editionId: string }) {
     const first = categories.find((c) => c.ready)?.id
     return new Set(first ? [first] : [])
   })
-  const [gens, setGens] = useState<Set<number>>(() => new Set())
+  const [tagPicks, setTagPicks] = useState<Set<TagValue>>(() => new Set())
   // The committed target drives full and the count; the raw input string is what
   // the field edits, so typing and backspacing are not clamped mid-entry.
   const [target, setTarget] = useState(MAX_TARGET)
@@ -43,7 +43,7 @@ export default function Randomizer({ editionId }: { editionId: string }) {
   const current = list[list.length - 1] ?? null
 
   const secondaryOptions = useMemo(() => tagValueOptions(categories, selected), [categories, selected])
-  const secondaryValues = useMemo(() => activeTagValues(secondaryOptions, gens), [secondaryOptions, gens])
+  const secondaryValues = useMemo(() => activeTagValues(secondaryOptions, tagPicks), [secondaryOptions, tagPicks])
   const showSecondary = Boolean(secondaryTag) && secondaryOptions.length > 0
 
   const pool = useMemo(() => {
@@ -73,8 +73,8 @@ export default function Randomizer({ editionId }: { editionId: string }) {
     setSelected((s) => toggledKeepOne(s, id))
   }
 
-  function toggleGen(value: number) {
-    setGens((s) => toggled(s, value))
+  function toggleTag(value: TagValue) {
+    setTagPicks((s) => toggled(s, value))
   }
 
   function draw() {
@@ -103,13 +103,24 @@ export default function Randomizer({ editionId }: { editionId: string }) {
     setTargetInput(String(next))
   }
 
+  // The edition's accent carries its identity here like on the game page
+  // (wordmark halo, edition name), the same inline-variable pattern throughout.
+  const accent = edition?.look
+    ? ({ '--edition-accent': edition.look.accent } as CSSProperties)
+    : undefined
+
   return (
     <div className={styles.page}>
       <ThemeToggle />
-      <header className={styles.header}>
+      <header className={styles.header} style={accent}>
         <h1>
           Hint <span className={styles.brandAccent}>Bank</span>
-          {edition ? ` · ${edition.displayName} Edition` : ''}
+          {edition && (
+            <>
+              {' · '}
+              <span className={styles.editionName}>{edition.displayName}</span> Edition
+            </>
+          )}
         </h1>
         <p className={styles.kicker}>Randomizer</p>
       </header>
@@ -141,14 +152,14 @@ export default function Randomizer({ editionId }: { editionId: string }) {
           <div className={styles.subLabel}>{secondaryTag.label}</div>
           <div className={styles.categories}>
             {secondaryOptions.map((v) => {
-              const on = gens.has(v)
+              const on = tagPicks.has(v)
               return (
                 <button
                   key={v}
                   type="button"
                   className={on ? styles.catOn : styles.cat}
                   aria-pressed={on}
-                  onClick={() => toggleGen(v)}
+                  onClick={() => toggleTag(v)}
                 >
                   {v}
                 </button>
