@@ -2,7 +2,7 @@
 
 A hint-giving party game for **2–8 players**, played on one shared screen.
 
-Hint Bank is a **general party game that ships as editions.** You pick an edition from the main menu, then play. The **Pokémon Edition** is the one that's built out today, covering the full National Dex and other assorted categories; more editions are on the way behind the same engine.
+Hint Bank is a **general party game that ships as editions.** You pick an edition from the main menu, then play. Two editions are live today: **Pokémon**, covering the full National Dex and other assorted categories, and **Geography**, covering the real world from countries to mountain ranges. More are on the way behind the same engine.
 
 ## The idea
 
@@ -12,10 +12,11 @@ However you play, the app is the board, the rulekeeper, and the scoreboard. Hint
 
 ## Editions
 
-The app opens on a main menu where you pick an edition. An edition is a self-contained set of answers and identity - its categories, its display name, and its own credits and disclaimers. The engine underneath stays the same; only the content changes.
+The app opens on a main menu where you pick an edition. An edition is a self-contained bundle - its categories and answers, its display name and accent color, its avatar picks, and its own credits and disclaimers. Every edition has its own address (`/<edition>-edition/`), with its randomizer nested underneath, so you can link straight to the one you play. The engine underneath stays the same; only the content changes.
 
-- **Pokémon** - live, the full edition described below.
-- **Geography**, **Books**, **Marvel** - listed as "soon" placeholders for now.
+- **Pokémon** - live, the original edition.
+- **Geography** - live, the first from-scratch edition: the real world, filtered by continent.
+- **Books**, **Marvel** - listed as "soon" placeholders for now.
 
 ## Ways to play
 
@@ -23,23 +24,18 @@ Pick a mode at setup. It locks for the session.
 
 - **In Person: One Device** - the group is in the same room and the hinter holds the phone or tablet. They see the secret answer right on screen.
 - **Online: One Device** - built for simple, all included Discord screen-share. The app still deals the answers on the main screen, but the secret one stays covered until the hinter presses and holds to peek.
-- **Online: One Device + Randomizer** - the best for streaming. The shared screen is a fully public board (Hint Bank, results, scores), the hinter pulls answers from somewhere private, and types each one in once it's guessed. Nothing secret ever touches the broadcast. A built-in [randomizer](https://wrbr0wn.github.io/hintbank/pokemon-edition/randomizer/), with its own category picker, can draw answers for the hinter in a separate tab or different device.
+- **Online: One Device + Randomizer** - the best for streaming. The shared screen is a fully public board (Hint Bank, results, scores), the hinter pulls answers from somewhere private, and types each one in once it's guessed. Nothing secret ever touches the broadcast. Each edition has a built-in randomizer (like the [Pokémon one](https://wrbr0wn.github.io/hintbank/pokemon-edition/randomizer/)), with its own category picker, that can draw answers for the hinter in a separate tab or different device.
 
 Online multiplayer (one device per player) is on the roadmap.
 
-## Categories (Pokémon edition)
+## Categories
 
-Within the Pokémon edition, pick one or more answer categories at setup. They mix into a single pool, so a turn can pull from any of them. Live now:
+Within an edition, pick one or more answer categories at setup. They mix into a single pool, so a turn can pull from any of them. When the categories you pick carry a tag, a filter appears to narrow the pool - by Generation in Pokémon, by Continent in Geography.
 
-- **Pokémon** - the full National Dex.
-- **Gym Leaders**
-- **Towns & Cities**
-- **Games**
-- **Items**
-- **Routes & Areas**
-- **Badges**
+- **Pokémon edition** - Pokémon (the full National Dex), Gym Leaders, Towns & Cities, Games, Items, Routes & Areas, and Badges. Professors are coming.
+- **Geography edition** - Countries and Capitals (the whole map, all the way down to the capitals nobody remembers), plus Landmarks, Rivers & Lakes, and Mountains & Ranges (kept to the recognizable side).
 
-Professors are coming. In Randomizer mode, categories are picked on the randomizer page instead of at setup.
+In Randomizer mode, categories are picked on the randomizer page instead of at setup.
 
 ## Difficulty & turn length
 
@@ -73,8 +69,9 @@ The hinter rotates so everyone hints once per **session**, and totals carry acro
 - **React + Vite + TypeScript**, plain CSS Modules, no backend.
 - Light and dark themes, following your system setting by default and remembering your choice after that. The toggle works on every screen, including the randomizer.
 - The rules live in a small, self-contained engine (`src/engine/`) that's edition-agnostic; it knows nothing about Pokémon or any other content.
-- Editions are self-contained bundles: each declares its own categories, identity, and credits in `src/editions/`, with assets under `public/editions/<id>/`. Adding an edition is a drop-in, the same way adding a category is.
-- Pokémon names and sprites are bundled locally under `public/editions/pokemon/`; the other categories are hand-curated bundled data.
+- Editions are self-contained bundles: each declares its own categories, identity, avatars, and credits in `src/editions/`, with assets under `public/editions/<id>/`. Adding an edition is a drop-in, the same way adding a category is.
+- Every page is its own entry: the menu, each edition's game, and each edition's randomizer.
+- Pokémon names and sprites are bundled locally under `public/editions/pokemon/`; Geography and the non-Dex categories are hand-curated bundled data.
 - Static build, deployed via GitHub Pages.
 
 ## Running it
@@ -87,8 +84,8 @@ Run `npm install` first on a fresh checkout, then:
 
 ## Roadmap
 
-The Pokémon edition is fully playable across three modes (In Person, Online: One Device, Online + Randomizer) and seven categories. The edition architecture is in place, with Geography, Books, and Marvel listed as "soon." Still ahead: building out those editions, full per-device online multiplayer (one screen per player, no passing), and more Pokémon categories (Professors and beyond).
+Two editions are fully playable across three modes (In Person, Online: One Device, Online + Randomizer): Pokémon with seven categories and Geography with five. The editions architecture is proven, with Books and Marvel listed as "soon." Still ahead: building out those editions, full per-device online multiplayer (one screen per player, no passing), and more Pokémon categories (Professors and beyond).
 
 ## Credit
 
-Credits are per-edition. The Pokémon edition is an unofficial, fan-made adaptation, not affiliated with Nintendo, Game Freak, or The Pokémon Company; its names and sprites belong to their respective owners, with data and sprites via PokéAPI. It began from a one-off video, "Guess The Pokemon But Use The FEWEST Hints!", which invited anyone to build a web version. Editions built from scratch (geography, books) carry their own credits, or none.
+Credits are per-edition. The Pokémon edition is an unofficial, fan-made adaptation, not affiliated with Nintendo, Game Freak, or The Pokémon Company; its names and sprites belong to their respective owners, with data and sprites via PokéAPI. It began from a one-off video, "Guess The Pokemon But Use The FEWEST Hints!", which invited anyone to build a web version. Editions built from scratch, like Geography, carry their own credits, or none.
