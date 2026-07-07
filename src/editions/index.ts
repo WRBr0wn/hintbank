@@ -1,8 +1,11 @@
 // The edition manifest. Access is always by id (editionById), never by index, so
 // per-edition URLs can be added later without reworking callers.
 import type { Category } from './terms'
+import type { PlayerAvatar } from '../types'
 import { CATEGORIES as POKEMON_CATEGORIES } from './pokemon/data/categories'
 import { CATEGORIES as GEOGRAPHY_CATEGORIES } from './geography/data/categories'
+import { AVATARS as POKEMON_AVATARS } from './pokemon/avatars'
+import { AVATARS as GEOGRAPHY_AVATARS } from './geography/avatars'
 
 // Re-exported so the platform refers to the term types and helpers through the
 // edition module.
@@ -62,6 +65,10 @@ export interface Edition {
   // The edition supplies only the label; the values live in the term data as
   // tags. Omitted means the edition has no secondary filter.
   secondaryTag?: SecondaryTag
+  // The edition's avatar picker set. Omitted falls back to the platform's
+  // neutral emoji set; either way avatarsFor (src/avatars.ts) appends the
+  // platform-level ZenVolka avatar.
+  avatars?: PlayerAvatar[]
   // Omitted means the tile falls back to the platform accent.
   look?: EditionLook
   credits: EditionCredits
@@ -83,6 +90,7 @@ export const EDITIONS: Edition[] = [
     contentRating: 'everyone',
     categories: POKEMON_CATEGORIES,
     secondaryTag: { label: 'Generation' },
+    avatars: POKEMON_AVATARS,
     look: { accent: '#ef5350' },
     credits: {
       disclaimer:
@@ -106,6 +114,7 @@ export const EDITIONS: Edition[] = [
     contentRating: 'everyone',
     categories: GEOGRAPHY_CATEGORIES,
     secondaryTag: { label: 'Continent' },
+    avatars: GEOGRAPHY_AVATARS,
     look: { accent: '#42a5f5' },
     credits: {
       disclaimer: null,

@@ -12,66 +12,9 @@ import {
   type GameMode,
 } from '../engine'
 import { toggled, toggledKeepOne } from '../sets'
+import { avatarKey } from '../avatars'
 import type { Player, PlayerAvatar } from '../types'
-import pokemonData from '../editions/pokemon/data/pokemon.json'
 import styles from './Setup.module.css'
-
-const base = import.meta.env.BASE_URL
-const EMOJI: PlayerAvatar[] = ['🦊', '🐢', '🐉', '🦉', '🐱', '🐰', '🐼', '🐧', '🦄', '🐸', '🦁', '🐙'].map(
-  (value) => ({ kind: 'emoji', value }),
-)
-const CREATORS: PlayerAvatar[] = [
-  { kind: 'image', src: `${base}avatars/zanegames.jpg`, label: 'ZaneGames' },
-  { kind: 'image', src: `${base}avatars/peebr.jpg`, label: 'Peebr' },
-  { kind: 'image', src: `${base}avatars/cush.jpg`, label: 'Cush' },
-  { kind: 'image', src: `${base}avatars/bailey.jpg`, label: 'Bailey' },
-  { kind: 'image', src: `${base}avatars/chrispiche.jpg`, label: 'Chris Piché' },
-  { kind: 'image', src: `${base}avatars/deliciousjames.jpg`, label: 'Delicious James' },
-  { kind: 'image', src: `${base}avatars/scarecrow.jpg`, label: 'Scarecrow' },
-  { kind: 'image', src: `${base}avatars/zenvolka.png`, label: 'ZenVolka' },
-]
-// A handful of recognizable mascots. The full sprite set is bundled in
-// public/editions/pokemon/sprites; this is just the picker subset. Each carries
-// its measured artwork box from the edition data, so small mascots render at
-// the same visual size as big ones instead of a flat crop.
-const boxByDex = new Map(pokemonData.map((p) => [p.dexNumber, p.box]))
-const POKEMON: PlayerAvatar[] = (
-  [
-    [1, 'Bulbasaur'],
-    [3, 'Venusaur'],
-    [4, 'Charmander'],
-    [6, 'Charizard'],
-    [7, 'Squirtle'],
-    [9, 'Blastoise'],
-    [25, 'Pikachu'],
-    [39, 'Jigglypuff'],
-    [94, 'Gengar'],
-    [133, 'Eevee'],
-    [143, 'Snorlax'],
-    [150, 'Mewtwo'],
-    [155, 'Cyndaquil'],
-    [196, 'Espeon'],
-    [197, 'Umbreon'],
-    [390, 'Chimchar'],
-    [393, 'Piplup'],
-    [724, 'Decidueye'],
-    [448, 'Lucario'],
-    [573, 'Cinccino'],
-    [658, 'Greninja'],
-    [680, 'Doublade'],
-    [909, 'Fuecoco']
-  ] as [number, string][]
-).map(([dex, label]) => ({
-  kind: 'image',
-  src: `${base}editions/pokemon/sprites/${dex}.png`,
-  label,
-  box: boxByDex.get(dex),
-  bare: true,
-}))
-
-const AVATARS: PlayerAvatar[] = [...EMOJI, ...CREATORS, ...POKEMON]
-
-const avatarKey = (a: PlayerAvatar) => (a.kind === 'emoji' ? a.value : a.src)
 
 // The online modes keep the answer off a shared screen: one-device hides it
 // behind hold-to-reveal, randomizer is the host-driven board.
@@ -109,8 +52,8 @@ export interface GameSettings {
   secondaryValues: TagValue[]
 }
 
-function makePlayer(used: string[]): Player {
-  const avatar = AVATARS.find((a) => !used.includes(avatarKey(a))) ?? AVATARS[0]
+function makePlayer(avatars: PlayerAvatar[], used: string[]): Player {
+  const avatar = avatars.find((a) => !used.includes(avatarKey(a))) ?? avatars[0]
   return { id: crypto.randomUUID(), name: '', avatar }
 }
 
@@ -119,6 +62,7 @@ export default function Setup({
   credits,
   categories,
   secondaryTag,
+  avatars,
   randomizerUrl,
   initial,
 }: {
@@ -129,6 +73,8 @@ export default function Setup({
   categories: Category[]
   // Absent means no secondary selector; the values come from the term data.
   secondaryTag?: SecondaryTag
+  // The picker set, composed by App from the edition's manifest (avatarsFor).
+  avatars: PlayerAvatar[]
   randomizerUrl: string
   // Seeds the controls on return-to-setup so every prior choice restores.
   // Omitted on a fresh start, where each control falls back to its default
@@ -138,7 +84,7 @@ export default function Setup({
   const [players, setPlayers] = useState<Player[]>(() =>
     initial && initial.players.length > 0
       ? initial.players
-      : [makePlayer([]), makePlayer([avatarKey(AVATARS[0])])],
+      : [makePlayer(avatars, []), makePlayer(avatars, [avatarKey(avatars[0])])],
   )
   const [pickerFor, setPickerFor] = useState<string | null>(null)
   const [selected, setSelected] = useState<Set<string>>(() => {
@@ -168,7 +114,7 @@ export default function Setup({
 
   function add() {
     if (players.length >= MAX_PLAYERS) return
-    setPlayers((ps) => [...ps, makePlayer(ps.map((p) => avatarKey(p.avatar)))])
+    setPlayers((ps) => [...ps, makePlayer(avatars, ps.map((p) => avatarKey(p.avatar)))])
   }
 
   function remove(id: string) {
@@ -336,7 +282,7 @@ export default function Setup({
               </div>
               {pickerFor === p.id && (
                 <div className={styles.picker}>
-                  {AVATARS.map((a) => {
+                  {avatars.map((a) => {
                     const key = avatarKey(a)
                     return (
                       <button

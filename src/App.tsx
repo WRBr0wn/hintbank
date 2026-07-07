@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useMemo, useState, type CSSProperties } from 'react'
 import Setup, { type GameSettings } from './screens/Setup'
 import PassToHinter from './screens/PassToHinter'
 import HinterPlay from './screens/HinterPlay'
@@ -21,6 +21,7 @@ import {
   type SessionState,
 } from './engine'
 import { editionById, randomizerPath, termPasses, type Category, type TagValue } from './editions'
+import { avatarsFor } from './avatars'
 import styles from './App.module.css'
 
 type Phase = 'setup' | 'pass' | 'hinter' | 'leaderboard'
@@ -76,6 +77,16 @@ export default function App({ editionId }: { editionId: string }) {
   // The entries are hand-declared, so a missing edition is a wiring mistake,
   // not a runtime state.
   if (!edition) return null
+
+  // The edition's accent tints the game chrome (header divider, wordmark halo),
+  // the same manifest value and inline-variable pattern the menu tiles use.
+  const accent = edition.look
+    ? ({ '--edition-accent': edition.look.accent } as CSSProperties)
+    : undefined
+
+  // The picker set: the edition's declared avatars (or the neutral default)
+  // plus the platform-level ZenVolka.
+  const avatars = avatarsFor(edition.avatars)
 
   // Reached from the Setup title, where no game is in progress, so nothing is
   // lost and no confirm is needed.
@@ -164,7 +175,7 @@ export default function App({ editionId }: { editionId: string }) {
       >
         ?
       </button>
-      <header className={styles.header}>
+      <header className={styles.header} style={accent}>
         <h1>
           <button type="button" className={styles.titleAction} onClick={titleBack}>
             Hint <span className={styles.wordmarkAccent}>Bank</span>
@@ -179,6 +190,7 @@ export default function App({ editionId }: { editionId: string }) {
             credits={edition.credits}
             categories={edition.categories}
             secondaryTag={edition.secondaryTag}
+            avatars={avatars}
             randomizerUrl={randomizerUrl}
             initial={settings ?? undefined}
           />

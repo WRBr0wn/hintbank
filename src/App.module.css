@@ -30,10 +30,14 @@
   border-color: var(--accent);
 }
 
+/* Game pages set --edition-accent inline from the manifest (the same value and
+   custom-property pattern as the menu tiles' --tile-accent): the divider and the
+   wordmark halo take the edition's color. Unset (menu page, or an edition with
+   no look), the divider falls back to platform chrome and the halo vanishes. */
 .header {
   padding: 2rem;
   text-align: center;
-  border-bottom: 1px solid var(--divider);
+  border-bottom: 1px solid var(--edition-accent, var(--divider));
 }
 
 /* On the menu the glow provides the separation, so the divider would read as
@@ -53,6 +57,7 @@
   font-size: 2.7rem;
   font-weight: 600;
   letter-spacing: -0.01em;
+  text-shadow: 0 0 2.5rem color-mix(in srgb, var(--edition-accent, transparent) 30%, transparent);
 }
 
 /* The menu's box-cover treatment: bigger, two-tone, with a soft halo in the
