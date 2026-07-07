@@ -181,7 +181,9 @@ export default function App({ editionId }: { editionId: string }) {
             Hint <span className={styles.wordmarkAccent}>Bank</span>
           </button>
         </h1>
-        <p className={styles.edition}>{`${edition.displayName} Edition`}</p>
+        <p className={styles.edition}>
+          <span className={styles.editionName}>{edition.displayName}</span> Edition
+        </p>
       </header>
       <main className={styles.main}>
         {phase === 'setup' && (

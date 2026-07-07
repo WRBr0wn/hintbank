@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useMemo, useState, type CSSProperties } from 'react'
 import { activeTagValues, editionById, tagValueOptions, termPasses, type Category, type TagValue } from '../editions'
 import { toggled, toggledKeepOne } from '../sets'
 import { spriteZoom } from '../sprites'
@@ -103,13 +103,24 @@ export default function Randomizer({ editionId }: { editionId: string }) {
     setTargetInput(String(next))
   }
 
+  // The edition's accent carries its identity here like on the game page
+  // (wordmark halo, edition name), the same inline-variable pattern throughout.
+  const accent = edition?.look
+    ? ({ '--edition-accent': edition.look.accent } as CSSProperties)
+    : undefined
+
   return (
     <div className={styles.page}>
       <ThemeToggle />
-      <header className={styles.header}>
+      <header className={styles.header} style={accent}>
         <h1>
           Hint <span className={styles.brandAccent}>Bank</span>
-          {edition ? ` · ${edition.displayName} Edition` : ''}
+          {edition && (
+            <>
+              {' · '}
+              <span className={styles.editionName}>{edition.displayName}</span> Edition
+            </>
+          )}
         </h1>
         <p className={styles.kicker}>Randomizer</p>
       </header>
