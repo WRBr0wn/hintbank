@@ -32,8 +32,14 @@ Online multiplayer (one device per player) is on the roadmap.
 
 Within an edition, pick one or more answer categories at setup. They mix into a single pool, so a turn can pull from any of them. When the categories you pick carry a tag, a filter appears to narrow the pool - by Generation in Pokémon, by Continent in Geography.
 
-- **Pokémon edition** - Pokémon (the full National Dex), Gym Leaders, Towns & Cities, Games, Items, Routes & Areas, and Badges. Professors are coming.
-- **Geography edition** - Countries and Capitals (the whole map, all the way down to the capitals nobody remembers), plus Landmarks, Rivers & Lakes, and Mountains & Ranges (kept to the recognizable side).
+- **Pokémon** - the full National Dex.
+- **Gym Leaders** - every leader and kahuna across the generations.
+- **Towns & Cities** - every mainline settlement.
+- **Games**
+- **Items** - the recognizable picks.
+- **Items: Deep Cuts** - everything else, for completionists.
+- **Badges**
+- **Professors**
 
 In Randomizer mode, categories are picked on the randomizer page instead of at setup.
 

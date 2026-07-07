@@ -1,107 +1,1193 @@
 [
   {
-    "name": "Poké Ball"
+    "name": "Poké Ball",
+    "gens": [
+      1
+    ]
   },
   {
-    "name": "Master Ball"
+    "name": "Master Ball",
+    "gens": [
+      1
+    ]
   },
   {
-    "name": "Potion"
+    "name": "Potion",
+    "gens": [
+      1
+    ]
   },
   {
-    "name": "Antidote"
+    "name": "Antidote",
+    "gens": [
+      1
+    ]
   },
   {
-    "name": "Revive"
+    "name": "Revive",
+    "gens": [
+      1
+    ]
   },
   {
-    "name": "Rare Candy"
+    "name": "Rare Candy",
+    "gens": [
+      1
+    ]
   },
   {
-    "name": "Moon Stone"
+    "name": "Moon Stone",
+    "gens": [
+      1
+    ]
   },
   {
-    "name": "Thunder Stone"
+    "name": "Thunder Stone",
+    "gens": [
+      1
+    ]
   },
   {
-    "name": "Leftovers"
+    "name": "Leftovers",
+    "gens": [
+      2
+    ]
   },
   {
-    "name": "Choice Band"
+    "name": "Choice Band",
+    "gens": [
+      3
+    ]
   },
   {
-    "name": "Focus Sash"
+    "name": "Focus Sash",
+    "gens": [
+      4
+    ]
   },
   {
-    "name": "Lucky Egg"
+    "name": "Lucky Egg",
+    "gens": [
+      2
+    ]
   },
   {
-    "name": "Exp. Share"
+    "name": "Exp. Share",
+    "gens": [
+      1
+    ]
   },
   {
-    "name": "Bicycle"
+    "name": "Bicycle",
+    "gens": [
+      1
+    ]
   },
   {
-    "name": "Town Map"
+    "name": "Town Map",
+    "gens": [
+      1
+    ]
   },
   {
-    "name": "Escape Rope"
+    "name": "Escape Rope",
+    "gens": [
+      1
+    ]
   },
   {
-    "name": "Repel"
+    "name": "Repel",
+    "gens": [
+      1
+    ]
   },
   {
-    "name": "Full Restore"
+    "name": "Full Restore",
+    "gens": [
+      1
+    ]
   },
   {
-    "name": "Berry Juice"
+    "name": "Berry Juice",
+    "gens": [
+      2
+    ]
   },
   {
-    "name": "Amulet Coin"
+    "name": "Amulet Coin",
+    "gens": [
+      2
+    ]
   },
   {
-    "name": "Soothe Bell"
+    "name": "Soothe Bell",
+    "gens": [
+      2
+    ]
   },
   {
-    "name": "X Speed"
+    "name": "X Speed",
+    "gens": [
+      1
+    ]
   },
   {
-    "name": "TM"
+    "name": "TM",
+    "gens": [
+      1
+    ]
   },
   {
-    "name": "Fishing Rod"
+    "name": "Fishing Rod",
+    "gens": [
+      7
+    ]
   },
   {
-    "name": "Silph Scope"
+    "name": "Silph Scope",
+    "gens": [
+      1
+    ]
   },
   {
-    "name": "Old Rod"
+    "name": "Old Rod",
+    "gens": [
+      1
+    ]
   },
   {
-    "name": "Bike Voucher"
+    "name": "Bike Voucher",
+    "gens": [
+      1
+    ]
   },
   {
-    "name": "HM Cut"
+    "name": "HM Cut",
+    "gens": [
+      1
+    ]
   },
   {
-    "name": "Pokédex"
+    "name": "Pokédex",
+    "gens": [
+      8
+    ]
   },
   {
     "name": "Egg Incubator"
   },
   {
-    "name": "Z-Crystal"
+    "name": "Z-Crystal",
+    "gens": [
+      7
+    ]
   },
   {
-    "name": "Dynamax Band"
+    "name": "Dynamax Band",
+    "gens": [
+      8
+    ]
   },
   {
-    "name": "Rotom Phone"
+    "name": "Rotom Phone",
+    "gens": [
+      9
+    ]
   },
   {
-    "name": "PP Up"
+    "name": "PP Up",
+    "gens": [
+      1
+    ]
   },
   {
-    "name": "Heart Scale"
+    "name": "Heart Scale",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Great Ball",
+    "gens": [
+      1
+    ]
+  },
+  {
+    "name": "Ultra Ball",
+    "gens": [
+      1
+    ]
+  },
+  {
+    "name": "Premier Ball",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Luxury Ball",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Quick Ball",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Dusk Ball",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Timer Ball",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Repeat Ball",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Net Ball",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Dive Ball",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Nest Ball",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Heal Ball",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Dream Ball",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Beast Ball",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Cherish Ball",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Safari Ball",
+    "gens": [
+      1
+    ]
+  },
+  {
+    "name": "Fast Ball",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Friend Ball",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Heavy Ball",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Level Ball",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Love Ball",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Lure Ball",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Moon Ball",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Sport Ball",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Super Potion",
+    "gens": [
+      1
+    ]
+  },
+  {
+    "name": "Hyper Potion",
+    "gens": [
+      1
+    ]
+  },
+  {
+    "name": "Max Potion",
+    "gens": [
+      1
+    ]
+  },
+  {
+    "name": "Max Revive",
+    "gens": [
+      1
+    ]
+  },
+  {
+    "name": "Awakening",
+    "gens": [
+      1
+    ]
+  },
+  {
+    "name": "Burn Heal",
+    "gens": [
+      1
+    ]
+  },
+  {
+    "name": "Ice Heal",
+    "gens": [
+      1
+    ]
+  },
+  {
+    "name": "Paralyze Heal",
+    "gens": [
+      1
+    ]
+  },
+  {
+    "name": "Full Heal",
+    "gens": [
+      1
+    ]
+  },
+  {
+    "name": "Ether",
+    "gens": [
+      1
+    ]
+  },
+  {
+    "name": "Max Ether",
+    "gens": [
+      1
+    ]
+  },
+  {
+    "name": "Elixir",
+    "gens": [
+      1
+    ]
+  },
+  {
+    "name": "Max Elixir",
+    "gens": [
+      1
+    ]
+  },
+  {
+    "name": "Casteliacone",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Big Malasada",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Rage Candy Bar",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Lava Cookie",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Moomoo Milk",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Fresh Water",
+    "gens": [
+      1
+    ]
+  },
+  {
+    "name": "Soda Pop",
+    "gens": [
+      1
+    ]
+  },
+  {
+    "name": "Lemonade",
+    "gens": [
+      1
+    ]
+  },
+  {
+    "name": "Sacred Ash",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Fire Stone",
+    "gens": [
+      1
+    ]
+  },
+  {
+    "name": "Water Stone",
+    "gens": [
+      1
+    ]
+  },
+  {
+    "name": "Leaf Stone",
+    "gens": [
+      1
+    ]
+  },
+  {
+    "name": "Sun Stone",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Dusk Stone",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Dawn Stone",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Shiny Stone",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Ice Stone",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Oval Stone",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "King's Rock",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Metal Coat",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Dragon Scale",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Electirizer",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Magmarizer",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Upgrade",
+    "gens": [
+      1
+    ]
+  },
+  {
+    "name": "Dubious Disc",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Deep Sea Scale",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Deep Sea Tooth",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Everstone",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Protector",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Reaper Cloth",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Razor Claw",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Razor Fang",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Cracked Pot",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Sweet Apple",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Tart Apple",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Black Augurite",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Auspicious Armor",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Malicious Armor",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Helix Fossil",
+    "gens": [
+      1
+    ]
+  },
+  {
+    "name": "Dome Fossil",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Old Amber",
+    "gens": [
+      1
+    ]
+  },
+  {
+    "name": "Claw Fossil",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Root Fossil",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Skull Fossil",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Armor Fossil",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Cover Fossil",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Plume Fossil",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Jaw Fossil",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Sail Fossil",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Fossilized Bird",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Fossilized Fish",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Fossilized Drake",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Fossilized Dino",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Life Orb",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Choice Specs",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Choice Scarf",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Focus Band",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Eviolite",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Assault Vest",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Rocky Helmet",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Light Ball",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Thick Club",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Quick Claw",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Expert Belt",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Shell Bell",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Air Balloon",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Black Sludge",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Bright Powder",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Weakness Policy",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Scope Lens",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Metronome",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Red Card",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Safety Goggles",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Oran Berry",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Sitrus Berry",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Lum Berry",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Cheri Berry",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Pecha Berry",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Leppa Berry",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Enigma Berry",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Acro Bike",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Mach Bike",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Good Rod",
+    "gens": [
+      1
+    ]
+  },
+  {
+    "name": "Super Rod",
+    "gens": [
+      1
+    ]
+  },
+  {
+    "name": "Poké Flute",
+    "gens": [
+      1
+    ]
+  },
+  {
+    "name": "Coin Case",
+    "gens": [
+      1
+    ]
+  },
+  {
+    "name": "Card Key",
+    "gens": [
+      1
+    ]
+  },
+  {
+    "name": "S.S. Ticket",
+    "gens": [
+      1
+    ]
+  },
+  {
+    "name": "Secret Key",
+    "gens": [
+      1
+    ]
+  },
+  {
+    "name": "Lift Key",
+    "gens": [
+      1
+    ]
+  },
+  {
+    "name": "GS Ball",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Rainbow Wing",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Silver Wing",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Red Orb",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Blue Orb",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Azure Flute",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Griseous Orb",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Pokégear",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "PokéNav",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Poké Radar",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Itemfinder",
+    "gens": [
+      1
+    ]
+  },
+  {
+    "name": "Devon Scope",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Go-Goggles",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Oak's Parcel",
+    "gens": [
+      1
+    ]
+  },
+  {
+    "name": "Mega Ring",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Z-Ring",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Eon Ticket",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "HP Up",
+    "gens": [
+      1
+    ]
+  },
+  {
+    "name": "Protein",
+    "gens": [
+      1
+    ]
+  },
+  {
+    "name": "Iron",
+    "gens": [
+      1
+    ]
+  },
+  {
+    "name": "Calcium",
+    "gens": [
+      1
+    ]
+  },
+  {
+    "name": "Zinc",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Carbos",
+    "gens": [
+      1
+    ]
+  },
+  {
+    "name": "PP Max",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Ability Capsule",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Ability Patch",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "X Attack",
+    "gens": [
+      1
+    ]
+  },
+  {
+    "name": "X Defense",
+    "gens": [
+      1
+    ]
+  },
+  {
+    "name": "Dire Hit",
+    "gens": [
+      1
+    ]
+  },
+  {
+    "name": "Guard Spec.",
+    "gens": [
+      1
+    ]
+  },
+  {
+    "name": "Poké Doll",
+    "gens": [
+      1
+    ]
+  },
+  {
+    "name": "Nugget",
+    "gens": [
+      1
+    ]
+  },
+  {
+    "name": "Big Nugget",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Pearl",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Big Pearl",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Star Piece",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Honey",
+    "gens": [
+      4
+    ]
   }
 ]

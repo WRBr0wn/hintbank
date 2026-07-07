@@ -1,107 +1,239 @@
 [
   {
-    "name": "Red"
+    "name": "Red",
+    "gens": [
+      1
+    ]
   },
   {
-    "name": "Blue"
+    "name": "Blue",
+    "gens": [
+      1
+    ]
   },
   {
-    "name": "Yellow"
+    "name": "Yellow",
+    "gens": [
+      1
+    ]
   },
   {
-    "name": "Gold"
+    "name": "Gold",
+    "gens": [
+      2
+    ]
   },
   {
-    "name": "Silver"
+    "name": "Silver",
+    "gens": [
+      2
+    ]
   },
   {
-    "name": "Crystal"
+    "name": "Crystal",
+    "gens": [
+      2
+    ]
   },
   {
-    "name": "Ruby"
+    "name": "Ruby",
+    "gens": [
+      3
+    ]
   },
   {
-    "name": "Sapphire"
+    "name": "Sapphire",
+    "gens": [
+      3
+    ]
   },
   {
-    "name": "Emerald"
+    "name": "Emerald",
+    "gens": [
+      3
+    ]
   },
   {
-    "name": "FireRed"
+    "name": "FireRed",
+    "gens": [
+      3
+    ]
   },
   {
-    "name": "LeafGreen"
+    "name": "LeafGreen",
+    "gens": [
+      3
+    ]
   },
   {
-    "name": "Diamond"
+    "name": "Diamond",
+    "gens": [
+      4
+    ]
   },
   {
-    "name": "Pearl"
+    "name": "Pearl",
+    "gens": [
+      4
+    ]
   },
   {
-    "name": "Platinum"
+    "name": "Platinum",
+    "gens": [
+      4
+    ]
   },
   {
-    "name": "HeartGold"
+    "name": "HeartGold",
+    "gens": [
+      4
+    ]
   },
   {
-    "name": "SoulSilver"
+    "name": "SoulSilver",
+    "gens": [
+      4
+    ]
   },
   {
-    "name": "Black"
+    "name": "Black",
+    "gens": [
+      5
+    ]
   },
   {
-    "name": "White"
+    "name": "White",
+    "gens": [
+      5
+    ]
   },
   {
-    "name": "X"
+    "name": "Black 2",
+    "gens": [
+      5
+    ]
   },
   {
-    "name": "Y"
+    "name": "White 2",
+    "gens": [
+      5
+    ]
   },
   {
-    "name": "Sun"
+    "name": "X",
+    "gens": [
+      6
+    ]
   },
   {
-    "name": "Moon"
+    "name": "Y",
+    "gens": [
+      6
+    ]
   },
   {
-    "name": "Ultra Sun"
+    "name": "Sun",
+    "gens": [
+      7
+    ]
   },
   {
-    "name": "Let's Go Pikachu"
+    "name": "Moon",
+    "gens": [
+      7
+    ]
   },
   {
-    "name": "Sword"
+    "name": "Ultra Sun",
+    "gens": [
+      7
+    ]
   },
   {
-    "name": "Shield"
+    "name": "Ultra Moon",
+    "gens": [
+      7
+    ]
   },
   {
-    "name": "Brilliant Diamond"
+    "name": "Let's Go Pikachu",
+    "gens": [
+      7
+    ]
   },
   {
-    "name": "Legends Arceus"
+    "name": "Let's Go Eevee",
+    "gens": [
+      7
+    ]
   },
   {
-    "name": "Scarlet"
+    "name": "Sword",
+    "gens": [
+      8
+    ]
   },
   {
-    "name": "Violet"
+    "name": "Shield",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Brilliant Diamond",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Shining Pearl",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Legends Arceus",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Scarlet",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Violet",
+    "gens": [
+      9
+    ]
   },
   {
     "name": "Pokémon Go"
   },
   {
-    "name": "Pokémon Snap"
+    "name": "Pokémon Snap",
+    "gens": [
+      1
+    ]
   },
   {
-    "name": "Pokémon Stadium"
+    "name": "Pokémon Stadium",
+    "gens": [
+      1
+    ]
   },
   {
-    "name": "Pokémon Colosseum"
+    "name": "Pokémon Colosseum",
+    "gens": [
+      3
+    ]
   },
   {
-    "name": "Pokémon XD"
+    "name": "Pokémon XD",
+    "gens": [
+      3
+    ]
   }
 ]
