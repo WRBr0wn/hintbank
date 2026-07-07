@@ -76,6 +76,8 @@
 
 .wordmarkAccent {
   color: var(--accent-ink);
+  /* Matches .titleAction so the two tones ease together on the game title. */
+  transition: color 0.15s ease;
 }
 
 /* During a game the title doubles as a "return to setup" control. A real button
@@ -98,9 +100,12 @@
   color: var(--accent);
 }
 
-/* On hover the whole title goes hover-gold together, two-tone set aside. */
+/* On hover the whole title goes hover-gold together, two-tone set aside. The
+   span gets the gold declared directly, not via inherit: inheriting rides the
+   button's mid-transition color, which starts at text color and flashed "Bank"
+   white for a frame. */
 .titleAction:hover .wordmarkAccent {
-  color: inherit;
+  color: var(--accent);
 }
 
 .edition {
