@@ -3,8 +3,9 @@ import leaders from './leaders.json'
 import towns from './towns.json'
 import games from './games.json'
 import items from './items.json'
-import routes from './routes.json'
+import itemsDeep from './items-deep.json'
 import badges from './badges.json'
+import professors from './professors.json'
 
 // gens and sprite are optional so a category drops in tagged or untagged, with or
 // without sprites, with no config; the presence of the data is the only switch.
@@ -41,7 +42,9 @@ export const CATEGORIES: Category[] = [
   { id: 'towns', label: 'Towns & Cities', ready: true, terms: terms(towns) },
   { id: 'games', label: 'Games', ready: true, terms: terms(games) },
   { id: 'items', label: 'Items', ready: true, terms: terms(items) },
-  { id: 'routes', label: 'Routes & Areas', ready: true, terms: terms(routes) },
+  // Disjoint from Items by construction: the curated set holds the recognizable
+  // picks, this holds everything else, so selecting both never duplicates a term.
+  { id: 'items-deep', label: 'Items: Deep Cuts', ready: true, terms: terms(itemsDeep) },
   { id: 'badges', label: 'Badges', ready: true, terms: terms(badges) },
-  { id: 'professors', label: 'Professors', ready: false, terms: [] },
+  { id: 'professors', label: 'Professors', ready: true, terms: terms(professors) },
 ]
