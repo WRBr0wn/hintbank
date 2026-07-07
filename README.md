@@ -32,14 +32,8 @@ Online multiplayer (one device per player) is on the roadmap.
 
 Within an edition, pick one or more answer categories at setup. They mix into a single pool, so a turn can pull from any of them. When the categories you pick carry a tag, a filter appears to narrow the pool - by Generation in Pokémon, by Continent in Geography.
 
-- **Pokémon** - the full National Dex.
-- **Gym Leaders** - every leader and kahuna across the generations.
-- **Towns & Cities** - every mainline settlement.
-- **Games**
-- **Items** - the recognizable picks.
-- **Items: Deep Cuts** - everything else, for completionists.
-- **Badges**
-- **Professors**
+- **Pokémon edition** - Pokémon (the full National Dex), Gym Leaders (every leader and kahuna), Towns & Cities (every mainline settlement), Games, Items (the recognizable picks), Items: Deep Cuts (everything else, for completionists), Badges, and Professors.
+- **Geography edition** - Countries and Capitals (the whole map, all the way down to the capitals nobody remembers), plus Landmarks, Rivers & Lakes, and Mountains & Ranges (kept to the recognizable side).
 
 In Randomizer mode, categories are picked on the randomizer page instead of at setup.
 
@@ -90,7 +84,7 @@ Run `npm install` first on a fresh checkout, then:
 
 ## Roadmap
 
-Two editions are fully playable across three modes (In Person, Online: One Device, Online + Randomizer): Pokémon with seven categories and Geography with five. The editions architecture is proven, with Books and Marvel listed as "soon." Still ahead: building out those editions, full per-device online multiplayer (one screen per player, no passing), and more Pokémon categories (Professors and beyond).
+Two editions are fully playable across three modes (In Person, Online: One Device, Online + Randomizer): Pokémon with eight categories and Geography with five. The editions architecture is proven, with Books and Marvel listed as "soon." Still ahead: building out those editions and full per-device online multiplayer (one screen per player, no passing).
 
 ## Credit
 
