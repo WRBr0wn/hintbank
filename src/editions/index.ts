@@ -5,7 +5,7 @@ import { CATEGORIES, type Category } from './pokemon/data/categories'
 // Re-exported so the platform refers to category types through the edition module
 // rather than reaching into an edition's data folder.
 export type { Category, Term } from './pokemon/data/categories'
-export { activeTagValues, tagValueOptions, termPasses } from './terms'
+export { activeTagValues, tagValueOptions, termPasses, type TagValue } from './terms'
 
 // Kept as an object rather than a bare string: the object's presence is what
 // signals the edition has a secondary axis (Boolean(secondaryTag) gates the
@@ -59,7 +59,7 @@ export interface Edition {
   // own content.
   categories: Category[]
   // The edition supplies only the label; the values live in the term data as
-  // gens. Omitted means the edition has no secondary filter.
+  // tags. Omitted means the edition has no secondary filter.
   secondaryTag?: SecondaryTag
   // Omitted means the tile falls back to the platform accent.
   look?: EditionLook

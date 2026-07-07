@@ -24,7 +24,7 @@ import {
   type GameState,
   type SessionState,
 } from './engine'
-import { editionById, randomizerPath, termPasses, type Category } from './editions'
+import { editionById, randomizerPath, termPasses, type Category, type TagValue } from './editions'
 import type { Player } from './types'
 import styles from './App.module.css'
 
@@ -37,7 +37,7 @@ const deckSizeFor = (answersPerGame: number) => answersPerGame + BANK_CAP
 
 // Categories come from the active edition, so the platform holds no global list.
 // The deck is names only; the board renders them verbatim.
-function buildDeck(categories: Category[], categoryIds: string[], tagValues: number[], deckSize: number): string[] {
+function buildDeck(categories: Category[], categoryIds: string[], tagValues: TagValue[], deckSize: number): string[] {
   const pool: string[] = []
   for (const id of categoryIds) {
     const category = categories.find((c) => c.id === id)
@@ -73,7 +73,7 @@ export default function App() {
   const [difficultyBase, setDifficultyBase] = useState(HINTER_BASE)
   const [answers, setAnswers] = useState(ANSWERS_PER_GAME)
   // Empty means no filter, deal from all.
-  const [secondaryValues, setSecondaryValues] = useState<number[]>([])
+  const [secondaryValues, setSecondaryValues] = useState<TagValue[]>([])
   const [confirmReturn, setConfirmReturn] = useState(false)
   const [showHelp, setShowHelp] = useState(false)
 
@@ -104,7 +104,7 @@ export default function App() {
     ids: string[],
     chosenDifficultyBase: number,
     answersPerGame: number,
-    chosenSecondaryValues: number[],
+    chosenSecondaryValues: TagValue[],
   ) {
     setRoster(players)
     setCategoryIds(ids)

@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react'
 import Avatar from '../components/Avatar'
 import Footer from '../components/Footer'
-import { activeTagValues, tagValueOptions, type Category, type EditionCredits, type SecondaryTag } from '../editions'
+import { activeTagValues, tagValueOptions, type Category, type EditionCredits, type SecondaryTag, type TagValue } from '../editions'
 import {
   ANSWERS_PER_GAME,
   HINTER_BASE,
@@ -122,7 +122,7 @@ export default function Setup({
     categoryIds: string[],
     difficultyBase: number,
     answersPerGame: number,
-    secondaryValues: number[],
+    secondaryValues: TagValue[],
   ) => void
   credits: EditionCredits
   // Passed in so Setup never reaches into edition data itself.
@@ -138,7 +138,7 @@ export default function Setup({
   initialCategoryIds?: string[]
   initialDifficultyBase?: number
   initialAnswers?: number
-  initialSecondaryValues?: number[]
+  initialSecondaryValues?: TagValue[]
 }) {
   const [players, setPlayers] = useState<Player[]>(() =>
     initialPlayers && initialPlayers.length > 0
@@ -159,7 +159,7 @@ export default function Setup({
   const [answers, setAnswers] = useState(initialAnswers ?? ANSWERS_PER_GAME)
   // What applies is the intersection with the values currently on offer, so
   // deselecting a category drops its values without losing the rest of the picks.
-  const [secondaryPicks, setSecondaryPicks] = useState<Set<number>>(
+  const [secondaryPicks, setSecondaryPicks] = useState<Set<TagValue>>(
     () => new Set(initialSecondaryValues ?? []),
   )
 
@@ -185,7 +185,7 @@ export default function Setup({
     setSelected((s) => toggledKeepOne(s, id))
   }
 
-  function toggleSecondary(value: number) {
+  function toggleSecondary(value: TagValue) {
     setSecondaryPicks((s) => toggled(s, value))
   }
 
