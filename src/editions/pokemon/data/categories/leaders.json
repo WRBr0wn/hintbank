@@ -144,6 +144,23 @@
     "city": "Goldenrod City"
   },
   {
+    "name": "Janine",
+    "gens": [
+      2
+    ],
+    "type": "Poison",
+    "badge": "Soul Badge",
+    "city": "Fuchsia City"
+  },
+  {
+    "name": "Blue",
+    "gens": [
+      2
+    ],
+    "badge": "Earth Badge",
+    "city": "Viridian City"
+  },
+  {
     "name": "Brawly",
     "gens": [
       3
@@ -214,6 +231,15 @@
     "type": "Flying",
     "badge": "Feather Badge",
     "city": "Fortree City"
+  },
+  {
+    "name": "Juan",
+    "gens": [
+      3
+    ],
+    "type": "Water",
+    "badge": "Rain Badge",
+    "city": "Sootopolis City"
   },
   {
     "name": "Byron",
@@ -486,6 +512,37 @@
     "city": "Snowbelle City"
   },
   {
+    "name": "Hala",
+    "gens": [
+      7
+    ],
+    "type": "Fighting",
+    "city": "Iki Town"
+  },
+  {
+    "name": "Olivia",
+    "gens": [
+      7
+    ],
+    "type": "Rock",
+    "city": "Konikoni City"
+  },
+  {
+    "name": "Nanu",
+    "gens": [
+      7
+    ],
+    "type": "Dark",
+    "city": "Malie City"
+  },
+  {
+    "name": "Hapu",
+    "gens": [
+      7
+    ],
+    "type": "Ground"
+  },
+  {
     "name": "Allister",
     "gens": [
       8
@@ -574,6 +631,24 @@
     "type": "Dragon",
     "badge": "Dragon Badge",
     "city": "Hammerlocke"
+  },
+  {
+    "name": "Bede",
+    "gens": [
+      8
+    ],
+    "type": "Fairy",
+    "badge": "Fairy Badge",
+    "city": "Ballonlea"
+  },
+  {
+    "name": "Marnie",
+    "gens": [
+      8
+    ],
+    "type": "Dark",
+    "badge": "Dark Badge",
+    "city": "Spikemuth"
   },
   {
     "name": "Brassius",

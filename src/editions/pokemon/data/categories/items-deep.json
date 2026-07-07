@@ -1,0 +1,8573 @@
+[
+  {
+    "name": "Ability Shield",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Ability Urge",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Abomasite",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Abra Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Absolite",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Absolite Z",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Absorb Bulb",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Academy Ball",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Academy Bottle",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Academy Chairs",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Academy Cup",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Academy Tablecloth",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Adamant Crystal",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Adamant Mint",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Adamant Orb",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Adrenaline Orb",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Adventure Guide",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Aerodactyl Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Aerodactylite",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Aggronite",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Aguav Berry",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Air Mail",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Alakazite",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Aloraichium Z",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Altarianite",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Amaze Mulch",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Amazing Butter",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Ampharosite",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Apicot Berry",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Apple",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Apricorn",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Apricorn Box",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Aqua Suit",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Arboliva Oil",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Armor Pass",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Armorite Ore",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Articuno Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Articuno Treat",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Aspear Berry",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Audinite",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Aurora Ticket"
+  },
+  {
+    "name": "AuroraTicket",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Autograph",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Autographed Plush",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Aux Evasion",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Aux Guard",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Aux Power",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Aux Powerguard",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Avocado",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Azelf's Fang",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "B&W Grass Chairs",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "B&W Grass Tablecloth",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Babiri Berry",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Bach's Food Tin",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Bacon",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Baguette",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Ball of Mud",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Balm Mushroom",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Banana",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Band Autograph",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Banettite",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Barbaracite",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Barred Cup",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Basculegion Food",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Basement Key"
+  },
+  {
+    "name": "Basil",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Battle Chairs",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Battle Tablecloth",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Baxcalibrite",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Beach Glass",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Bead Mail",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Bean Cake",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Beedrillite",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Bellsprout Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Belue Berry",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Berry",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Berry Pots",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Berry Pouch",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Berry Sweet",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Berserk Gene",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Big Bamboo Shoot",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Big Mushroom",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Big Root",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Binding Band",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Bitter Berry",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Bitter Herba Mystica",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Black Apricorn",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Black Belt",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Black Flute",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Black Glasses",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Black Mane Hair",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Black Tumblestone",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Blank Plate",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Blastoisinite",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Blazikenite",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Bloom Mail",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Blu ID Badge",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Blue Apricorn",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Blue Bottle",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Blue Canari Plush",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Blue Card",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Blue Chairs",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Blue Cup",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Blue Dish",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Blue Flute",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Blue Petal",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Blue Poké Ball Pick",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Blue Scarf",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Blue Shard",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Blue Tablecloth",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Blue-Flag Pick",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Blue-Sky Flower Pick",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "BlueSky Mail"
+  },
+  {
+    "name": "Blueberry Chairs",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Blueberry Tablecloth",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Bluesky Mail",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Bluk Berry",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Blunder Policy",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Bob's Food Tin",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Boiled Egg",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Bold Mint",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Bonsly Card",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Bonsly Photo",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Boost Mulch",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Booster Energy",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Bottle Cap",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Brave Mint",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Bread",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Briar's Book",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Brick Mail",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Brick Piece",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Bridge Mail D",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Bridge Mail M",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Bridge Mail S",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Bridge Mail T",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Bridge Mail V",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "BridgeMail D"
+  },
+  {
+    "name": "BridgeMail M"
+  },
+  {
+    "name": "BridgeMail S"
+  },
+  {
+    "name": "BridgeMail T"
+  },
+  {
+    "name": "BridgeMail V"
+  },
+  {
+    "name": "Brittle Bones",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Bronze Bottle",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Bronze Cup",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Bubble Mail",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Bug Gem",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Bug Memory",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Bug Tera Shard",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Buginium Z",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Bugwort",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Bulbasaur Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Burn Drive",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Burnt Berry",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Butter",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Cake-Lure Base",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Calm Mint",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Cameruptite",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Camping Gear",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Canari Bread",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Candy Truffle",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Careful Mint",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Carrot Seeds",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Caster Fern",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Catching Charm",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Caterpie Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Celestica Flute",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Cell Battery",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Chalky Stone",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Chandelurite",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Chansey Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Charcoal",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Charizardite X",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Charizardite Y",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Charmander Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Charti Berry",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Cheese",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Cherished Ring",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Cherry Tomatoes",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Chesnaughtite",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Chesto Berry",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Chilan Berry"
+  },
+  {
+    "name": "Chili Sauce",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Chill Drive",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Chimechite",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Chipped Pot",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Choice Dumpling",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Chople Berry",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Chorizo",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Cleanse Tag",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Clear Amulet",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Clear Bell",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Clefablite",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Clefairy Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Clever Feather",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Clever Mochi",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Clover Sweet",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Coba Berry",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Cobalion Treat",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Coconut Milk",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Colbur Berry",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Cologne Case",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Colorful Screw",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Colress MCHN"
+  },
+  {
+    "name": "Colress Machine",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Comet Shard",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Common Stone",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Contest Costume",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Contest Pass",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Cornerstone Mask",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Cornn Berry",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Coupon 1",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Coupon 2",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Coupon 3",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Courage Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Courage Candy L",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Courage Candy XL",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Covert Cloak",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Crabominite",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Crafting Kit",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Cream Cheese",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Crown Pass",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Crunchy Salt",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Cry Analyzer",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Crystal Cluster",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Cubone Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Cucumber",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Curry Powder",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Custap Berry",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Cyber Ball",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "D-Disk",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "DNA Sample",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "DNA Splicers",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "DS Sounds",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Damp Mulch",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Damp Rock",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Dark Gem",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Dark Memory",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Dark Stone",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Dark Tera Shard",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Darkinium Z",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Darkranite",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Data Card 1"
+  },
+  {
+    "name": "Data Card 10"
+  },
+  {
+    "name": "Data Card 11"
+  },
+  {
+    "name": "Data Card 12"
+  },
+  {
+    "name": "Data Card 13"
+  },
+  {
+    "name": "Data Card 14"
+  },
+  {
+    "name": "Data Card 15"
+  },
+  {
+    "name": "Data Card 16"
+  },
+  {
+    "name": "Data Card 17"
+  },
+  {
+    "name": "Data Card 18"
+  },
+  {
+    "name": "Data Card 19"
+  },
+  {
+    "name": "Data Card 2"
+  },
+  {
+    "name": "Data Card 20"
+  },
+  {
+    "name": "Data Card 21"
+  },
+  {
+    "name": "Data Card 22"
+  },
+  {
+    "name": "Data Card 23"
+  },
+  {
+    "name": "Data Card 24"
+  },
+  {
+    "name": "Data Card 25"
+  },
+  {
+    "name": "Data Card 26"
+  },
+  {
+    "name": "Data Card 27"
+  },
+  {
+    "name": "Data Card 3"
+  },
+  {
+    "name": "Data Card 4"
+  },
+  {
+    "name": "Data Card 5"
+  },
+  {
+    "name": "Data Card 6"
+  },
+  {
+    "name": "Data Card 7"
+  },
+  {
+    "name": "Data Card 8"
+  },
+  {
+    "name": "Data Card 9"
+  },
+  {
+    "name": "Data Cards",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Data ROM",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Dazzling Honey",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Decidium Z",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Delphoxite",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Destiny Knot",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Devon Goods"
+  },
+  {
+    "name": "Devon Parts",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Devon Scuba Gear",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Diamond Bottle",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Diamond Chairs",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Diamond Pattern Cup",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Diamond Tablecloth",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Diancite",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Digger Drill",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Diglett Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Dire Hit 2",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Dire Hit 3",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Direshroom",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Dirty Scarf",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Disc Case",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Discount Coupon",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Discovery Slate",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Distortion Slate",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Ditto Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Doduo Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Doppel Bonnets",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Douse Drive",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Down St. Key",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Dowsing MCHN"
+  },
+  {
+    "name": "Dowsing Machine",
+    "gens": [
+      1
+    ]
+  },
+  {
+    "name": "Draco Plate",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Dragalgite",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Dragon Fang",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Dragon Gem",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Dragon Memory",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Dragon Skull",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Dragon Tera Shard",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Dragoninite",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Dragonium Z",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Drampanite",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Drash Berry",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Dratini Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Dread Plate",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Dream Mail",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Dropped Item",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Drowzee Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Durin Berry",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Dynamax Candy",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Dynamax Crystals",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Dynite Ore",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "EXP. All"
+  },
+  {
+    "name": "Earth Plate",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Eelektrossite",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Eevee Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Eevee Cup",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Eevium Z",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Egg",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Egg Card"
+  },
+  {
+    "name": "Egg Ticket",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Eggant Berry",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Ein File C",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Ein File F",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Ein File H",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Ein File P",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Ein File S",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Eject Button",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Eject Pack",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Ekans Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Electabuzz Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Electric Gem",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Electric Memory",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Electric Seed",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Electric Tera Shard",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Electrium Z",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Elevator Key"
+  },
+  {
+    "name": "Emboarite",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Endorsement",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Energy Powder",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Energy Root",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Enigma Stone",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Enigmatic Card",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Entei Treat",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Eon Flute",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Eon Mail",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Eternal Ice",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Excadrite",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Excite Scent",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Exeggcute Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Exercise Ball",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Exp. Candy L",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Exp. Candy M",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Exp. Candy S",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Exp. Candy XL",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Exp. Candy XS",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Exp. Charm",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Explorer Kit",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "F-Disk",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Fab Mail",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Fairium Z",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Fairy Feather",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Fairy Gem",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Fairy Memory",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Fairy Tera Shard",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Falinksite",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Fame Checker",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Fancy Apple",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Farfetch'd Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Fashion Case",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Favored Mail",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Feather Ball",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Feraligite",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Festival Ticket",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Fiery Pick",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Fighting Gem",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Fighting Memory",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Fighting Tera Shard",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Fightinium Z",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Figy Berry",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Fine Remedy",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Fire Gem",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Fire Memory",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Fire Pattern Cup",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Fire Tera Shard",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Firium Z",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Fist Plate",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Flame Mail",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Flame Orb",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Flame Plate",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Float Stone",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Floettite",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Flower Mail",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Flower Pattern Cup",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Flower Sweet",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Fluffy Tail",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Flying Gem",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Flying Memory",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Flying Tera Shard",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Flyinium Z",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Forage Bag",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Forest Balm",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Fresh Cream",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Fresh-Start Mochi",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Fried Fillet",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Fried Food",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Froslassite",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Fruit Bunch",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Full Incense",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "GB Sounds",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Galactic Key",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Galarica Cuff",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Galarica Twig",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Galarica Wreath",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Galladite",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Ganlon Berry",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Garchompite",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Garchompite Z",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Gardevoirite",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Gastly Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Gear",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Gengarite",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Genius Feather",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Genius Mochi",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Genome Slate",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Gentle Mint",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Geodude Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Ghost Gem",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Ghost Memory",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Ghost Tera Shard",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Ghostium Z",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Gigantamix",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Gigaton Ball",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Gimmighoul Coin",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Ginema Berry",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Glalitite",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Glastrier Treat",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Glimmering Charm",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Glimmoranite",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Glitter Mail",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "God Stone",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Gold Berry",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Gold Bottle",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Gold Bottle Cap",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Gold Canari Plush",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Gold Cup",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Gold Leaf",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Gold Pick",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Gold Teeth",
+    "gens": [
+      1
+    ]
+  },
+  {
+    "name": "Goldeen Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Golden Nanab Berry",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Golden Pinap Berry",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Golden Razz Berry",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Golisopite",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Golurkite",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Gonzap's Key",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Gooey Mulch",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Gorgeous Box",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Gracidea",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Grain Cake",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Gram 1",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Gram 2",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Gram 3",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Grass Gem",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Grass Mail",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Grass Memory",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Grass Tera Shard",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Grassium Z",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Grassy Seed",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Great Butter",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Green Apricorn",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Green Bell Pepper",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Green Canari Plush",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Green Dish",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Green Petal",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Green Poké Ball Pick",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Green Scarf",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Green Shard",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Greet Mail",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Greninjite",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Grepa Berry",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Grimer Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Grip Claw",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Griseous Core",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Grit Dust",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Grit Gravel",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Grit Pebble",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Grit Rock",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Grn ID Badge",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Groudon Treat",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Ground Gem",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Ground Memory",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Ground Tera Shard",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Groundium Z",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Growlithe Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Growth Mulch",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Grubby Hanky",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Guidebook",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Gyaradosite",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "HMs",
+    "gens": [
+      1
+    ]
+  },
+  {
+    "name": "Haban Berry",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Ham",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Hamburger",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Harbor Mail",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Hard Stone",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Hasty Mint",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Hawluchanite",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Heal Powder",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Health Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Health Candy L",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Health Candy XL",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Health Feather",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Health Mochi",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Heart Mail",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Hearthflame Mask",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Hearty Grains",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Heat Rock",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Heatranite",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Heavy-Duty Boots",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Heracronite",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Herbed Sausage",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Heroic Sword Pick",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Hi-tech Earbuds",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Hitmonchan Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Hitmonlee Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Ho-Oh Treat",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Hoennian Salt",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Holo Caster",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Hometown Muffin",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Hondew Berry",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Honey Cake",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Honor of Kalos",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Hopo Berry",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Horsea Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Horseradish",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Houndoominite",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Hyper Aspear Berry",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Hyper Babiri Berry",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Hyper Charti Berry",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Hyper Cheri Berry",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Hyper Chesto Berry",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Hyper Chilan Berry",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Hyper Chople Berry",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Hyper Coba Berry",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Hyper Colbur Berry",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Hyper Grepa Berry",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Hyper Haban Berry",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Hyper Hondew Berry",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Hyper Kasib Berry",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Hyper Kebia Berry",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Hyper Kelpsy Berry",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Hyper Lum Berry",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Hyper Occa Berry",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Hyper Oran Berry",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Hyper Passho Berry",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Hyper Payapa Berry",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Hyper Pecha Berry",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Hyper Persim Berry",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Hyper Pomeg Berry",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Hyper Qualot Berry",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Hyper Rawst Berry",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Hyper Rindo Berry",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Hyper Roseli Berry",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Hyper Shuca Berry",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Hyper Sitrus Berry",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Hyper Tamato Berry",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Hyper Tanga Berry",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Hyper Wacan Berry",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Hyper Yache Berry",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Hyperspace Butter",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "ID Card",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Iapapa Berry",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Ice Berry",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Ice Gem",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Ice Memory",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Ice Tera Shard",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Iceroot Carrot",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Icicle Plate",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Icium Z",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Icy Rock",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Ilima's Normalium Z",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Impish Mint",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Important Letter",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Incinium Z",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Indigo Disk",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Indigo Style Card",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Inquiry Mail",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Insect Plate",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Instant Noodles",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Intriguing Stone",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Iron Ball",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Iron Barktongue",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Iron Chunk",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Iron Plate",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Item Drop",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Item Urge",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Jaboca Berry",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Jade Orb",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Jail Key",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Jalapeño",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Jam",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Jet Ball",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Jigglypuff Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Johto Slate",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Jolly Mint",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Journal"
+  },
+  {
+    "name": "Joy Scent",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Jubilife Muffin",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Jynx Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Kabuto Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Kangaskhan Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Kangaskhanite",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Kanto Slate",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Kasib Berry",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Kebia Berry",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Kee Berry",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Kelpsy Berry",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Ketchup",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Key Stone",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Key to Room 1",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Key to Room 2",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Key to Room 202",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Key to Room 4",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Key to Room 6",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "King's Leaf",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Kiwi",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Klawf Stick",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Koffing Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Kofu's Wallet",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Kommonium Z",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Koraidon's Poke Ball"
+  },
+  {
+    "name": "Koraidon's Poké Ball",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Krabby Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Krane Memo 1",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Krane Memo 2",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Krane Memo 3",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Krane Memo 4",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Krane Memo 5",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Kubfu Treat",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Kuo Berry",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Kyogre Treat",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Kyurem Treat",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "L-Disk",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Lab Key Card A",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Lab Key Card B",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Lab Key Card C",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Lab Key Card M",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Lab Key Card X",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Lagging Tail",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Lansat Berry",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Lapras Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Large Leek",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Latias Treat",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Latiasite",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Latios Treat",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Latiosite",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Lax Incense",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Lax Mint",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Leaden Ball",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Leader's Crest",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Leaf Letter",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Leafy Chairs",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Leafy Tablecloth",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Leek",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Left Poke Ball"
+  },
+  {
+    "name": "Left Poké Ball",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Legend Plate",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Legendary Clue"
+  },
+  {
+    "name": "Legendary Clue 1",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Legendary Clue 2",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Legendary Clue 3",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Legendary Clue?",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Lens Case",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Letter",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Lettuce",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Liberty Pass",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Lickitung Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Lida's Things",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Liechi Berry",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Light Clay",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Light Stone",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Like Mail",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Lilac Chairs",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Lilac Tablecloth",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Linking Cord",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "LiteBlue Mail"
+  },
+  {
+    "name": "Litebluemail",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Loaded Dice",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Lock Capsule",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Lone Earring",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Lonely Mint",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Looker Ticket",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Loot Sack",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Lopunnite",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Lost Item",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Lost Satchel",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Love Sweet",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Lovely Mail",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Lucarionite",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Lucarionite Z",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Luck Incense",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Lucky Punch",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Lugia Treat",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Luminous Moss",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Lumiose Galette",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Lumiosian Butter",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Lunala Treat",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Lunalium Z",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Lunar Feather",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Lunar Wing"
+  },
+  {
+    "name": "Lure",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Lustrous Globe",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Lustrous Orb",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Lycanium Z",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Machine Part"
+  },
+  {
+    "name": "Macho Brace",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Machop Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Magearnite",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Magical Heart Pick",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Magical Star Pick",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Magikarp Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Magma Emblem",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Magma Stone",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Magma Suit",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Magmar Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Magnemite Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Magnet",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Mago Berry",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Magost Berry",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Maingate Key",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Make-Up Bag"
+  },
+  {
+    "name": "Makeup Bag",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Malamarite",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Manectite",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Mankey Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Maranga Berry",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Marble",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Marill Ball",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Mark Charm",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Marmalade",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Marsh Balm",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Marshadium Z",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Masterpiece Teacup",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Mawilite",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Max Honey",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Max Lure",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Max Mushrooms",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Max Repel",
+    "gens": [
+      1
+    ]
+  },
+  {
+    "name": "Mayonnaise",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Mayor's Note",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Meadow Plate",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Mech Mail",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Mechanical Box",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Mechanical Cabinet",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Mechanical Circular Saw",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Mechanical Pinwheel",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Mechanical Tub",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Medal Box",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Medichamite",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Medicinal Leek",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Mega Bracelet",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Mega Shard",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Meganiumite",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Meltan Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Member Card",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Mental Herb",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Meowsticite",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Meowth Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Mesprit's Plume",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Metagrossite",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Metal Alloy",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Metal Powder",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Meteorite",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Meteorite Shard",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Mew Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Mewnium Z",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Mewtwo Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Mewtwonite X",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Mewtwonite Y",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Micle Berry",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Mighty Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Mighty Candy L",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Mighty Candy XL",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Mild Mint",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Mimikium Z",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Mind Plate",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Mint Berry",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Mint Chairs",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Mint Tablecloth",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Miracle Seed",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "MiracleBerry",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Mirage Mail",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Miraidon's Poke Ball"
+  },
+  {
+    "name": "Miraidon's Poké Ball",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Miror Radar",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Mirror Herb",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Misty Seed",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Mixed Mushrooms",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Modest Mint",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Moltres Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Moltres Treat",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Monstrous Chairs",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Monstrous Tablecloth",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Moomoo Cheese",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Moon Flute",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Moon Shard",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Morph Mail",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Mosaic Mail",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Mountain Balm",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Mr. Mime Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Muscle Band",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Muscle Feather",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Muscle Mochi",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Mushroom Cake",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Music Disc",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Music Mail",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Mustard",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Mysterious Balm",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Mysterious Shard L",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Mysterious Shard S",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Mystery Egg",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "MysteryBerry",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Mystic Water",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "MysticTicket",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Mythical Pecha Berry",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "N-Lunarizer",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "N-Solarizer",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Naive Mint",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Nanab Berry",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Naughty Mint",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Necrozma Treat",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Never-Melt Ice",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Nice Butter",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "NidoranF Candy"
+  },
+  {
+    "name": "NidoranM Candy"
+  },
+  {
+    "name": "Nidoran♀ Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Nidoran♂ Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Niniku Berry",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Nomel Berry",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Noodles",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Normal Box",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Normal Gem",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Normal Tera Shard",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Normalium Z",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Nutpea Berry",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Oak's Letter",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Occa Berry",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Oceanic Slate",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Odd Incense",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Odd Keystone",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Oddish Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Old Charm",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Old Gateau",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Old Journal",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Old Letter",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Old Sea Map",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Old Verse 1"
+  },
+  {
+    "name": "Old Verse 10"
+  },
+  {
+    "name": "Old Verse 11"
+  },
+  {
+    "name": "Old Verse 12"
+  },
+  {
+    "name": "Old Verse 13"
+  },
+  {
+    "name": "Old Verse 14"
+  },
+  {
+    "name": "Old Verse 15"
+  },
+  {
+    "name": "Old Verse 16"
+  },
+  {
+    "name": "Old Verse 17"
+  },
+  {
+    "name": "Old Verse 18"
+  },
+  {
+    "name": "Old Verse 19"
+  },
+  {
+    "name": "Old Verse 2"
+  },
+  {
+    "name": "Old Verse 20"
+  },
+  {
+    "name": "Old Verse 3"
+  },
+  {
+    "name": "Old Verse 4"
+  },
+  {
+    "name": "Old Verse 5"
+  },
+  {
+    "name": "Old Verse 6"
+  },
+  {
+    "name": "Old Verse 7"
+  },
+  {
+    "name": "Old Verse 8"
+  },
+  {
+    "name": "Old Verse 9"
+  },
+  {
+    "name": "Old Verses",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Olive Oil",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Omanyte Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Onion",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Onix Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Orange Dish",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Orange Mail",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Orange Petal",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Origin Ball",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Origin Ore",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Oval Charm",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "PRZCureBerry",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "PSNCureBerry",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Pack of Potatoes",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Packaged Curry",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Pair of Tickets",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Pal Pad",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Pamtre Berry",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Paras Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Parasol Pick",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Parcel"
+  },
+  {
+    "name": "Park Ball",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Party Sparkler Pick",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Pass",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Pass Orb",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Passho Berry",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Pasta",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Payapa Berry",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Peach Chairs",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Peach Tablecloth",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Peanut Butter",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Pearl String",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Peat Block",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Pebble",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Pep-Up Plant",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Pepper",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Permit",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Persim Berry",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Petaya Berry",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Pewter Crunchies",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Photo Album"
+  },
+  {
+    "name": "Pickle",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Picnic Set",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Pidgeotite",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Pidgey Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Pika-Pika Pick",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Pikachu Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Pikachu Cup",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Pikanium Z",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Pikashunium Z",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Pinap Berry",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Pineapple",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Pink Apricorn",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Pink Bottle",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Pink Bow",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Pink Canari Plush",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Pink Chairs",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Pink Cup",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Pink Nectar",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Pink Petal",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Pink Scarf",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Pink Tablecloth",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Pinsir Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Pinsirite",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Pixie Plate",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Plaid Chairs (B)",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Plaid Chairs (R)",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Plaid Chairs (Y)",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Plaid Tablecloth (B)",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Plaid Tablecloth (R)",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Plaid Tablecloth (Y)",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Plasma Card",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Plump Beans",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Poffin Case",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Point Card",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Poison Barb",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Poison Gem",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Poison Memory",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Poison Tera Shard",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Poisonium Z",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Poke Ball"
+  },
+  {
+    "name": "Poke Doll"
+  },
+  {
+    "name": "Poke Radar"
+  },
+  {
+    "name": "Poke Toy"
+  },
+  {
+    "name": "PokeBlock Kit"
+  },
+  {
+    "name": "PokeBlock case"
+  },
+  {
+    "name": "Pokeflute"
+  },
+  {
+    "name": "Pokemon Box Link"
+  },
+  {
+    "name": "Pokeshi Doll"
+  },
+  {
+    "name": "Poké Snack",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Poké Toy",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Pokéblock Case",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Pokéblock Kit",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Pokémon Box Link",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Pokéshi Doll",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Polished Mud Ball",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Poliwag Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Polka-Dot Bottle",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Polka-Dot Chairs",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Polka-Dot Cup",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Polka-Dot Tablecloth",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Polkadot Bow",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Pomeg Berry",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Ponyta Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Pop Pod",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Popping Candy",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Portrait Mail"
+  },
+  {
+    "name": "Portraitmail",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Porygon Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Potato Salad",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Potato Tortilla",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Powder Jar",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Power Anklet",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Power Band",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Power Belt",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Power Bracer",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Power Herb",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Power Lens",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Power Plant Pass",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Power Weight",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Powerup Part",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Precooked Burger",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Pretty Feather",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Primarium Z",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Prism Scale",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Prison Bottle",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Prof's Letter",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Professor's Mask",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Prop Case",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Prosciutto",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Protective Pads",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "PrzCureBerry"
+  },
+  {
+    "name": "PsnCureBerry"
+  },
+  {
+    "name": "Psychic Gem",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Psychic Memory",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Psychic Seed",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Psychic Tera Shard",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Psychium Z",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Psyduck Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Pumkin Berry",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Punching Glove",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Pungent Root",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Pure Incense",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Purple Nectar",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Purple Petal",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Pyroarite",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Qualot Berry",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Quick Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Quick Candy L",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Quick Candy XL",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Quick Powder",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Quiet Mint",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "R-Disk",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "RSVP Mail",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Rabuta Berry",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Radiant Petal",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Raichunite X",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Raichunite Y",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Raikou Treat",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Rainbow Feather",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Rainbow Flower",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Rainbow Pass",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Rainbow Slate",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Rare Bone",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Rash Mint",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Rattata Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Rawst Berry",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Rayquaza Treat",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Razz Berry",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Recipes",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Red Apricorn",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Red Bell Pepper",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Red Canari Plush",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Red Chain",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Red Dish",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Red Flute",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Red ID Badge",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Red Nectar",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Red Onion",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Red Petal",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Red Poké Ball Pick",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Red Scale",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Red Scarf",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Red Shard",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Red-Flag Pick",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Reins of Unity",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Relaxed Mint",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Relic Band",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Relic Copper",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Relic Crown",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Relic Gold",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Relic Silver",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Relic Statue",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Relic Vase",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Remedy",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Reply Mail",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Reset Urge",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Reshiram Treat",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Resist Feather",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Resist Mochi",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Retro Mail",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Reveal Glass",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Revitalizing Twig",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Revival Herb",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Rhyhorn Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Ribbon Sweet",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Rice",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Rich Mulch",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Ride Pager",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Rindo Berry",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Ring Target",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Rm. 1 Key"
+  },
+  {
+    "name": "Rm. 2 Key"
+  },
+  {
+    "name": "Rm. 4 Key"
+  },
+  {
+    "name": "Rm. 6 Key"
+  },
+  {
+    "name": "Rock Gem",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Rock Incense",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Rock Memory",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Rock Tera Shard",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Rockium Z",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Roller Skates",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Room Service",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Rose Incense",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Roseli Berry",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Roto Bargain",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Roto Boost",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Roto Catch",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Roto Encounter",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Roto Exp. Points",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Roto Friendship",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Roto HP Restore",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Roto Hatch",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Roto PP Restore",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Roto Prize Money",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Roto Stealth",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Roto-Stick",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Rotom Bike",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Rotom Bike Black"
+  },
+  {
+    "name": "Rotom Bike White"
+  },
+  {
+    "name": "Rotom Catalog",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Rowap Berry",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Ruby",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Rule Book"
+  },
+  {
+    "name": "Running Shoes",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Rusted Shield",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Rusted Sword",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Sablenite",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Sachet",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Salac Berry",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Salad Mix",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Salamencite",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Salt",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Salt Cake",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Salty Herba Mystica",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Sand Radish",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Sandshrew Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Sandwich",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Sapphire",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Sassy Mint",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Sausages",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Scanner",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Scarlet Book",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Scatter Bang",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Sceptilite",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Scizorite",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Scolipite",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Scovillainite",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Scraftinite",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Scroll of Darkness",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Scroll of Waters",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Scyther Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Sea Incense",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Seal Bag"
+  },
+  {
+    "name": "Seal Case"
+  },
+  {
+    "name": "Secret Medicine"
+  },
+  {
+    "name": "SecretPotion"
+  },
+  {
+    "name": "Seed of Mastery",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Seel Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Serious Mint",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Shaderoot Carrot",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Shadow Mail",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Shalour Sable",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Sharp Beak",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Sharpedonite",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Shed Shell",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Shellder Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Shiny Charm",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Shiny Leaf",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Shoal Salt",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Shoal Shell",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Shock Drive",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Shuca Berry",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Silk Scarf",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Silver Bottle",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Silver Cup",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Silver Feather",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Silver Leaf",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Silver Nanab Berry",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Silver Pick",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Silver Pinap Berry",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Silver Powder",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Silver Razz Berry",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Simple Chairs",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Skarmorite",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Sky Plate",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Sky Tumblestone",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Slowbronite",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Slowpoke Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Slowpoke Cup",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Slowpoke Tail",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Slowpoketail"
+  },
+  {
+    "name": "Small Bouquet",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Small Tablet",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Smart Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Smart Candy L",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Smart Candy XL",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Smiling Vee Pick",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Smoke Ball",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Smoke Bomb",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Smoke-Poke Tail",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Smoked Fillet",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Smooth Rock",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Snorlax Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Snorlium Z",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Snow Balm",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Snow Mail",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Snowball"
+  },
+  {
+    "name": "Soft Sand",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Solgaleo Treat",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Solganium Z",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Sonia's Book",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Soot Sack",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Sootfoot Root",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Soul Dew",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Soul Slate",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Sour Herba Mystica",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Space Balm",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Space Mail",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Sparkling Stone",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Spearow Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Spectrier Treat",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Spell Tag",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Spelon Berry",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Spice Mix",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Spicy Herba Mystica",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Splash Plate",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Spoiled Apricorn",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Spooky Chairs",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Spooky Plate",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Spooky Tablecloth",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Sprayduck",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Springy Mushroom",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Sprinklotad",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Squall Slate",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Squirt Bottle",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Squirtbottle"
+  },
+  {
+    "name": "Squirtle Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Stable Mulch",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Star Sweet",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Staraptite",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Stardust",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Starf Berry",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Starminite",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Staryu Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Stealth Spray",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Steel Bottle (B)",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Steel Bottle (R)",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Steel Bottle (Y)",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Steel Gem",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Steel Mail",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Steel Memory",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Steel Teeth",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Steel Tera Shard",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Steelium Z",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Steelixite",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Stellar Tera Shard",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Sticker Case",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Sticky Barb",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Sticky Glob",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Stone Plate",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Storage Key"
+  },
+  {
+    "name": "Strange Ball",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Strange Souvenir",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Stratospheric Slate",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Strawberry",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Strawberry Sweet",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Stretchy Spring",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Strib Berry",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Striped Bottle",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Striped Chairs",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Striped Cup",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Striped Tablecloth",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Style Card",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Subway Key",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Suicune Treat",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Suite Key",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Sun Flute",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Sun Shard",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Sunrise Flower Pick",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Sunset Flower Pick",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Super Lumiose Galette",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Super Lure",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Super Repel",
+    "gens": [
+      1
+    ]
+  },
+  {
+    "name": "Superb Remedy",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Supreme Butter",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Surf Mail",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Surfboard",
+    "gens": [
+      1
+    ]
+  },
+  {
+    "name": "Surge Badge",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Surprise Mulch",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Survival Charm B",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Survival Charm P",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Survival Charm R",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Survival Charm T",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Survival Charm Y",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Swampertite",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Swap Snack",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Sweet Heart",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Sweet Herba Mystica",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Swift Feather",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Swift Mochi",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Swordcap",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Synchro Machine",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Syrupy Apple",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "System Lever",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "TM Case",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "TM Materials",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "TMV Pass",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "TMs",
+    "gens": [
+      1
+    ]
+  },
+  {
+    "name": "TRs",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Tamato Berry",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Tanga Berry",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Tangela Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Tapunium Z",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Tasty Trash",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Tatsugirinite",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Tauros Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Tea",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Teachy TV",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Teal Mask",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Teal Style Card",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Tectonic Slate",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Tempting Charm B",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Tempting Charm P",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Tempting Charm R",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Tempting Charm T",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Tempting Charm Y",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Tentacool Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Tera Orb",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Terrain Extender",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Terrakion Treat",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Teru-sama",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Thanks Mail",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Throat Spray",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Tidal Bell",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Time Balm",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Time Flute",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Timid Mint",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Tin of Beans",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Tiny Bamboo Shoot",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Tiny Mushroom",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Tofu",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Tomato",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Topo Berry",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Torn Journal",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Touga Berry",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Tough Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Tough Candy L",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Tough Candy XL",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Toxic Orb",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Toxic Plate",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Travel Trunk",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Tri Pass"
+  },
+  {
+    "name": "Tri-Pass",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Tropic Mail",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Tropical Shell",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Tumblestone",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Tunnel Mail",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Twice-Spiced Radish",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Twisted Spoon",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Tyranitarite",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "U-Disk",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Ultranecrozium Z",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Unown Report",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Unremarkable Teacup",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Unusual Shoes",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Utility Umbrella",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Uxie's Claw",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Vee-Vee Pick",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Venonat Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Venusaurite",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Victreebelite",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Vinegar",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Violet Book",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Virizion Treat",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Vivichoke",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Vivid Scent",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Voice Case 1",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Voice Case 2",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Voice Case 3",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Voice Case 4",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Voice Case 5",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Volcano Balm",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Voltorb Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Vs. Recorder",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Vs. Seeker",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Vulpix Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Wacan Berry",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Wailmer Pail",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Wall Fragment",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Warding Charm B",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Warding Charm P",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Warding Charm R",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Warding Charm T",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Warding Charm Y",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Wasabi",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Water Gem",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Water Memory",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Water Tera Shard",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Watercress",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Waterium Z",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Watmel Berry",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Wave Incense",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Wave Mail",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Weedle Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Wellspring Mask",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Wepear Berry",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Whimsical Chairs",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Whimsical Tablecloth",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Whipped Cream",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Whipped Dream",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "White Apricorn",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "White Dish",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "White Flute",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "White Herb",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "White Mane Hair",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Wide Lens",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Wiki Berry",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Wing Ball",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Winking Pika Pick",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Wise Glasses",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Wishing Chip",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Wishing Piece",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Wishing Star",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Wood",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Wood Mail",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Wooden Crown",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Works Key",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "X Accuracy",
+    "gens": [
+      1
+    ]
+  },
+  {
+    "name": "X Accuracy 2",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "X Accuracy 3",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "X Accuracy 6",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "X Attack 2",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "X Attack 3",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "X Attack 6",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "X Defense 2",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "X Defense 3",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "X Defense 6",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "X Sp. Atk",
+    "gens": [
+      1
+    ]
+  },
+  {
+    "name": "X Sp. Atk 2",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "X Sp. Atk 3",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "X Sp. Atk 6",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "X Sp. Def",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "X Sp. Def 2",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "X Sp. Def 3",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "X Sp. Def 6",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "X Speed 2",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "X Speed 3",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "X Speed 6",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Xtransceiver",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Yache Berry",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Yago Berry",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Yarn Ball",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Yellow Apricorn",
+    "gens": [
+      2
+    ]
+  },
+  {
+    "name": "Yellow Bell Pepper",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Yellow Bottle",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Yellow Chairs",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Yellow Cup",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Yellow Dish",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Yellow Flute",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Yellow Nectar",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Yellow Petal",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Yellow Scarf",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Yellow Shard",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Yellow Tablecloth",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Ylw ID Badge",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Yogurt",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Z-Power Ring",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Zap Plate",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Zapdos Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Zapdos Treat",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Zekrom Treat",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Zeraorite",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Zoom Lens",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Zubat Candy",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Zygarde Cube",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Zygardite",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Épice Noire",
+    "gens": [
+      9
+    ]
+  }
+]
