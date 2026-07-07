@@ -32,14 +32,15 @@ Online multiplayer (one device per player) is on the roadmap.
 Within the Pokémon edition, pick one or more answer categories at setup. They mix into a single pool, so a turn can pull from any of them. Live now:
 
 - **Pokémon** - the full National Dex.
-- **Gym Leaders**
-- **Towns & Cities**
+- **Gym Leaders** - every leader and kahuna across the generations.
+- **Towns & Cities** - every mainline settlement.
 - **Games**
-- **Items**
-- **Routes & Areas**
+- **Items** - the recognizable picks.
+- **Items: Deep Cuts** - everything else, for completionists.
 - **Badges**
+- **Professors**
 
-Professors are coming. In Randomizer mode, categories are picked on the randomizer page instead of at setup.
+In Randomizer mode, categories are picked on the randomizer page instead of at setup.
 
 ## Difficulty & turn length
 

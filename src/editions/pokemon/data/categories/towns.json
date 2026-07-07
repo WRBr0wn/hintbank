@@ -1,6 +1,9 @@
 [
   {
-    "name": "Pallet Town"
+    "name": "Pallet Town",
+    "gens": [
+      1
+    ]
   },
   {
     "name": "Viridian City",
@@ -27,7 +30,10 @@
     ]
   },
   {
-    "name": "Lavender Town"
+    "name": "Lavender Town",
+    "gens": [
+      1
+    ]
   },
   {
     "name": "Celadon City",
@@ -54,10 +60,16 @@
     ]
   },
   {
-    "name": "New Bark Town"
+    "name": "New Bark Town",
+    "gens": [
+      2
+    ]
   },
   {
-    "name": "Cherrygrove City"
+    "name": "Cherrygrove City",
+    "gens": [
+      2
+    ]
   },
   {
     "name": "Violet City",
@@ -90,10 +102,16 @@
     ]
   },
   {
-    "name": "Littleroot Town"
+    "name": "Littleroot Town",
+    "gens": [
+      3
+    ]
   },
   {
-    "name": "Oldale Town"
+    "name": "Oldale Town",
+    "gens": [
+      3
+    ]
   },
   {
     "name": "Petalburg City",
@@ -114,10 +132,16 @@
     ]
   },
   {
-    "name": "Slateport City"
+    "name": "Slateport City",
+    "gens": [
+      3
+    ]
   },
   {
-    "name": "Lilycove City"
+    "name": "Lilycove City",
+    "gens": [
+      3
+    ]
   },
   {
     "name": "Fortree City",
@@ -132,13 +156,22 @@
     ]
   },
   {
-    "name": "Twinleaf Town"
+    "name": "Twinleaf Town",
+    "gens": [
+      4
+    ]
   },
   {
-    "name": "Jubilife City"
+    "name": "Jubilife City",
+    "gens": [
+      4
+    ]
   },
   {
-    "name": "Sandgem Town"
+    "name": "Sandgem Town",
+    "gens": [
+      4
+    ]
   },
   {
     "name": "Eterna City",
@@ -183,10 +216,16 @@
     ]
   },
   {
-    "name": "Hau'oli City"
+    "name": "Hau'oli City",
+    "gens": [
+      7
+    ]
   },
   {
-    "name": "Iki Town"
+    "name": "Iki Town",
+    "gens": [
+      7
+    ]
   },
   {
     "name": "Alfornada",
@@ -357,6 +396,30 @@
     ]
   },
   {
+    "name": "Verdanturf Town",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Fallarbor Town",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Pacifidlog Town",
+    "gens": [
+      3
+    ]
+  },
+  {
+    "name": "Ever Grande City",
+    "gens": [
+      3
+    ]
+  },
+  {
     "name": "Motostoke",
     "gens": [
       8
@@ -435,9 +498,237 @@
     ]
   },
   {
+    "name": "Floaroma Town",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Solaceon Town",
+    "gens": [
+      4
+    ]
+  },
+  {
+    "name": "Celestic Town",
+    "gens": [
+      4
+    ]
+  },
+  {
     "name": "Virbank City",
     "gens": [
       5
+    ]
+  },
+  {
+    "name": "Nuvema Town",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Accumula Town",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Anville Town",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Lacunosa Town",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Undella Town",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Black City",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "White Forest",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Floccesy Town",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Lentimas Town",
+    "gens": [
+      5
+    ]
+  },
+  {
+    "name": "Vaniville Town",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Aquacorde Town",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Camphrier Town",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Ambrette Town",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Geosenge Town",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Dendemille Town",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Couriway Town",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Kiloude City",
+    "gens": [
+      6
+    ]
+  },
+  {
+    "name": "Heahea City",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Paniola Town",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Konikoni City",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Malie City",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Tapu Village",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Po Town",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Seafolk Village",
+    "gens": [
+      7
+    ]
+  },
+  {
+    "name": "Postwick",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Wedgehurst",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Wyndon",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Freezington",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Jubilife Village",
+    "gens": [
+      8
+    ]
+  },
+  {
+    "name": "Mesagoza",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Los Platos",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Zapapico",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Porto Marinada",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Cabo Poco",
+    "gens": [
+      9
+    ]
+  },
+  {
+    "name": "Mossui Town",
+    "gens": [
+      9
     ]
   }
 ]
