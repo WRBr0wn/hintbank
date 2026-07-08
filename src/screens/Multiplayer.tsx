@@ -1,9 +1,14 @@
 import { useState } from 'react'
 import MultiplayerEntry from './MultiplayerEntry'
 import Lobby from './Lobby'
+import Interstitial from './Interstitial'
+import HinterBoard from './HinterBoard'
+import GuesserBoard from './GuesserBoard'
+import MpLeaderboard from './MpLeaderboard'
 import { avatarKey } from '../avatars'
 import { useRoom } from '../net'
 import type { Edition } from '../editions'
+import type { ScreenProps } from './roomScreen'
 import type { PlayerAvatar } from '../types'
 import styles from './Multiplayer.module.css'
 
@@ -40,28 +45,36 @@ export default function Multiplayer({
   const identity = { name: name.trim(), avatar: avatarKey(avatar) }
   const create = () => room.create(identity)
   const join = () => room.join(code.trim(), identity)
+  // Leaving a room returns to the entry with the mode still chosen and the name
+  // and avatar retained (they live above the connection), ready to create or
+  // join again, rather than resetting to In Person.
+  const backToEntry = () => room.leave()
 
-  // Terminal states drop out of the room entirely.
+  // Terminal states drop out of the room, back to the entry (identity kept).
   if (state.status === 'kicked' || state.status === 'room-closed' || state.status === 'version') {
-    return <Ended status={state.status} onDone={onExit} />
+    return <Ended status={state.status} onDone={backToEntry} />
   }
 
   if (joinedHere && state.view) {
-    if (state.view.phase !== 'lobby') return <Started />
-    return (
-      <Lobby
-        view={state.view}
-        seatId={state.seatId!}
-        connection={state.status}
-        avatars={avatars}
-        edition={edition}
-        onSend={room.send}
-        onLeave={() => {
-          room.leave()
-          onExit()
-        }}
-      />
-    )
+    const screen: ScreenProps = {
+      view: state.view,
+      seatId: state.seatId!,
+      connection: state.status,
+      avatars,
+      edition,
+      onSend: room.send,
+      onLeave: backToEntry,
+    }
+    switch (state.view.phase) {
+      case 'lobby':
+        return <Lobby {...screen} />
+      case 'interstitial':
+        return <Interstitial {...screen} />
+      case 'turn':
+        return state.view.game?.hinterId === state.seatId ? <HinterBoard {...screen} /> : <GuesserBoard {...screen} />
+      case 'leaderboard':
+        return <MpLeaderboard {...screen} />
+    }
   }
 
   const busy = state.status === 'connecting' || state.status === 'joining'
@@ -89,17 +102,6 @@ export default function Multiplayer({
   )
 }
 
-// Phase beyond the lobby: the game has started, but gameplay screens land in
-// phase 3b. A plain holding card so the app never renders a blank.
-function Started() {
-  return (
-    <div className={styles.notice}>
-      <p>The game is starting.</p>
-      <p className={styles.noticeSub}>Gameplay screens arrive in the next update.</p>
-    </div>
-  )
-}
-
 function Ended({ status, onDone }: { status: 'kicked' | 'room-closed' | 'version'; onDone: () => void }) {
   const message =
     status === 'kicked'
@@ -112,7 +114,7 @@ function Ended({ status, onDone }: { status: 'kicked' | 'room-closed' | 'version
       <p>{message}</p>
       {status !== 'version' && (
         <button type="button" className={styles.noticeBtn} onClick={onDone}>
-          Back to setup
+          Back
         </button>
       )}
     </div>

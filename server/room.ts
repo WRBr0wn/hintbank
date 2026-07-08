@@ -15,44 +15,51 @@ import {
   RoomError,
   applyIntent,
   createRoom as createRoomState,
+  deckSizeFor,
   defaultRoomSettings,
   disconnected,
+  filterPool,
   join as joinRoom,
   leave as leaveRoom,
   parseClientMessage,
   reconnected,
   viewFor,
   type ClientMessage,
+  type IntentDeps,
   type RoomErrorCode,
+  type RoomSettings,
   type RoomState,
   type SeatId,
   type ServerMessage,
 } from '../src/protocol'
-
-// Phase 2 stops at the lobby. Gameplay intents parse and validate but are
-// refused here until phase 3 wires the engine through; the reducer already
-// knows them, so this is a worker-side gate, not missing logic.
-const LOBBY_INTENTS: ReadonlySet<ClientMessage['type']> = new Set([
-  'updateSettings',
-  'setLocked',
-  'kick',
-  'leave',
-  'requestSnapshot',
-  'closeRoom',
-])
+import { categoriesFor } from './editions'
 
 interface RoomMeta {
   code: string
   editionId: string
 }
 
-// Everything the reducer never touches: dealing a deck. Phase 2 has no turns,
-// so a stray gameplay intent that slips the gate fails loudly instead of
-// dealing.
-const NO_DEAL = {
-  dealDeck: (): string[] => {
-    throw new RoomError('unsupported', 'dealing is not available yet')
-  },
+// A uniform random in [0, 1) from the worker's CSPRNG.
+function randomUnit(): number {
+  return crypto.getRandomValues(new Uint32Array(1))[0] / 2 ** 32
+}
+
+// The deck the reducer's startTurn asks for: the room's filtered pool (the same
+// termPasses filter as local play, via filterPool), shuffled and sliced. The
+// shuffle lives here, not in the shared deck helper, which stays names-only and
+// unshuffled by contract. deckSizeFor and the reducer's clamp mirror the local
+// game page, so a short pool deals a short turn.
+function dealerFor(editionId: string): IntentDeps {
+  return {
+    dealDeck: (settings: RoomSettings): string[] => {
+      const pool = filterPool(categoriesFor(editionId), settings.categoryIds, settings.tagValues)
+      for (let i = pool.length - 1; i > 0; i--) {
+        const j = Math.floor(randomUnit() * (i + 1))
+        ;[pool[i], pool[j]] = [pool[j], pool[i]]
+      }
+      return pool.slice(0, deckSizeFor(settings.answersPerGame))
+    },
+  }
 }
 
 // One room. The Durable Object is the room's authoritative home; the reducer in
@@ -223,16 +230,12 @@ export class RoomDurableObject extends DurableObject<Env> {
     await this.broadcast()
   }
 
-  // ---- lobby intents ----
+  // ---- intents ----
 
   private async handleIntent(ws: WebSocket, seatId: SeatId, msg: ClientMessage): Promise<void> {
     if (msg.type === 'requestSnapshot') {
       const room = await this.load()
       if (room) this.send(ws, { v: PROTOCOL_VERSION, type: 'snapshot', view: viewFor(room, seatId) })
-      return
-    }
-    if (!LOBBY_INTENTS.has(msg.type)) {
-      this.send(ws, this.errorMsg(new RoomError('unsupported', 'not available yet')))
       return
     }
 
@@ -241,7 +244,10 @@ export class RoomDurableObject extends DurableObject<Env> {
 
     let after: RoomState
     try {
-      after = applyIntent(before, seatId, msg, NO_DEAL)
+      // The reducer owns every transition, including the deal; the worker only
+      // supplies the shuffle through the dealer and the role/phase checks live
+      // in the reducer.
+      after = applyIntent(before, seatId, msg, dealerFor(before.editionId))
     } catch (e) {
       if (e instanceof RoomError) this.send(ws, this.errorMsg(e))
       return
