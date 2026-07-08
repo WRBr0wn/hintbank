@@ -2,6 +2,10 @@ name = "hintbank-rooms"
 main = "index.ts"
 compatibility_date = "2024-11-01"
 
+# Serve the worker at its *.workers.dev URL (explicit, so the deploy does not
+# rely on wrangler's fallback default and warn each time).
+workers_dev = true
+
 # One SQLite-backed Durable Object per room, plus a per-key rate-limit counter.
 # SQLite-backed classes run on the Workers Free plan.
 [[durable_objects.bindings]]
