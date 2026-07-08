@@ -19,6 +19,7 @@ new_sqlite_classes = ["RoomDurableObject", "RateLimiterDurableObject"]
 [vars]
 # Kill switch: set to "false" to stop new rooms during sustained abuse.
 ROOMS_ENABLED = "true"
-# Comma-separated origin allow list for the WebSocket upgrade. The deployed
-# GitHub Pages origin; localhost dev is always allowed in code.
+# Comma-separated origin allow list, one list for both the WebSocket upgrade
+# Origin check and the create-path CORS grant. The deployed GitHub Pages origin;
+# localhost dev is always allowed in code.
 ALLOWED_ORIGINS = "https://wrbr0wn.github.io"

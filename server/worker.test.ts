@@ -171,6 +171,62 @@ describe('room creation', () => {
   })
 })
 
+// ---- create-path CORS (cross-origin deploy) ----
+
+describe('create CORS', () => {
+  it('answers the preflight for an allowed origin with a scoped grant', async () => {
+    const res = await SELF.fetch('https://rooms.test/rooms', {
+      method: 'OPTIONS',
+      headers: {
+        Origin: ORIGIN,
+        'Access-Control-Request-Method': 'POST',
+        'Access-Control-Request-Headers': 'content-type',
+      },
+    })
+    expect(res.status).toBe(204)
+    expect(res.headers.get('Access-Control-Allow-Origin')).toBe(ORIGIN) // the matched origin, not *
+    expect(res.headers.get('Access-Control-Allow-Methods')).toContain('POST')
+    expect((res.headers.get('Access-Control-Allow-Headers') ?? '').toLowerCase()).toContain('content-type')
+  })
+
+  it('allows a localhost dev origin, echoing it back', async () => {
+    const res = await SELF.fetch('https://rooms.test/rooms', {
+      method: 'OPTIONS',
+      headers: { Origin: 'http://localhost:5173', 'Access-Control-Request-Method': 'POST' },
+    })
+    expect(res.headers.get('Access-Control-Allow-Origin')).toBe('http://localhost:5173')
+  })
+
+  it('grants no preflight to a disallowed origin', async () => {
+    const res = await SELF.fetch('https://rooms.test/rooms', {
+      method: 'OPTIONS',
+      headers: { Origin: 'https://evil.example', 'Access-Control-Request-Method': 'POST' },
+    })
+    expect(res.headers.get('Access-Control-Allow-Origin')).toBeNull()
+  })
+
+  it('echoes the allowed origin on the create response', async () => {
+    const res = await SELF.fetch('https://rooms.test/rooms', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json', Origin: ORIGIN, 'CF-Connecting-IP': '198.51.100.5' },
+      body: JSON.stringify({ editionId: 'geography' }),
+    })
+    expect(res.status).toBe(200)
+    expect(res.headers.get('Access-Control-Allow-Origin')).toBe(ORIGIN)
+  })
+
+  it('creates but sends no CORS grant to a disallowed origin', async () => {
+    const res = await SELF.fetch('https://rooms.test/rooms', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json', Origin: 'https://evil.example', 'CF-Connecting-IP': '198.51.100.6' },
+      body: JSON.stringify({ editionId: 'geography' }),
+    })
+    // CORS is browser-enforced: the POST still processes, but with no grant the
+    // browser blocks the response from a disallowed page.
+    expect(res.headers.get('Access-Control-Allow-Origin')).toBeNull()
+  })
+})
+
 // ---- origin and code guards ----
 
 describe('join guards', () => {

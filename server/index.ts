@@ -1,5 +1,5 @@
 import type { Env } from './env'
-import { allowedOrigins, originAllowed } from './origin'
+import { allowedOrigins, corsHeaders, originAllowed } from './origin'
 import {
   CREATE_CODE_ATTEMPTS,
   CREATE_LIMIT,
@@ -20,8 +20,13 @@ export default {
   async fetch(request: Request, env: Env): Promise<Response> {
     const url = new URL(request.url)
 
-    if (request.method === 'POST' && url.pathname === '/rooms') {
-      return createRoom(request, env)
+    // The create call is cross-origin in production (GitHub Pages -> workers.
+    // dev), so it needs CORS. The grant reuses the WebSocket Origin allow list.
+    if (url.pathname === '/rooms') {
+      const cors = corsHeaders(request.headers.get('Origin'), allowedOrigins(env.ALLOWED_ORIGINS))
+      if (request.method === 'OPTIONS') return new Response(null, { status: 204, headers: cors })
+      if (request.method === 'POST') return createRoom(request, env, cors)
+      return new Response('method not allowed', { status: 405, headers: cors })
     }
 
     const joinMatch = url.pathname.match(/^\/rooms\/([^/]+)\/?$/)
@@ -33,19 +38,19 @@ export default {
   },
 }
 
-async function createRoom(request: Request, env: Env): Promise<Response> {
+async function createRoom(request: Request, env: Env, cors: Record<string, string>): Promise<Response> {
   if (env.ROOMS_ENABLED === 'false') {
-    return json(503, { error: 'multiplayer is off right now' })
+    return json(503, { error: 'multiplayer is off right now' }, cors)
   }
   const ip = clientIp(request)
   if (!(await rateOk(env, `create:${ip}`, CREATE_LIMIT, CREATE_WINDOW_MS))) {
-    return json(429, { error: 'too many rooms, try again later' })
+    return json(429, { error: 'too many rooms, try again later' }, cors)
   }
 
   const body = (await request.json().catch(() => null)) as { editionId?: unknown } | null
   const editionId = body?.editionId
   if (typeof editionId !== 'string' || !editionId) {
-    return json(400, { error: 'editionId is required' })
+    return json(400, { error: 'editionId is required' }, cors)
   }
 
   // Retry a fresh code on the vanishingly rare Durable Object name collision.
@@ -53,10 +58,10 @@ async function createRoom(request: Request, env: Env): Promise<Response> {
     const code = newCode()
     const stub = env.HINT_ROOM.get(env.HINT_ROOM.idFromName(code))
     if (await stub.createRoom(code, editionId)) {
-      return json(200, { code })
+      return json(200, { code }, cors)
     }
   }
-  return json(500, { error: 'could not allocate a room, try again' })
+  return json(500, { error: 'could not allocate a room, try again' }, cors)
 }
 
 async function joinRoom(request: Request, env: Env, rawCode: string): Promise<Response> {
@@ -97,9 +102,9 @@ function clientIp(request: Request): string {
   return request.headers.get('CF-Connecting-IP') ?? 'anon'
 }
 
-function json(status: number, body: unknown): Response {
+function json(status: number, body: unknown, extra: Record<string, string> = {}): Response {
   return new Response(JSON.stringify(body), {
     status,
-    headers: { 'content-type': 'application/json' },
+    headers: { 'content-type': 'application/json', ...extra },
   })
 }
