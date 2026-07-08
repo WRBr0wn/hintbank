@@ -19,54 +19,59 @@ export default function GuesserBoard({ view, seatId, avatars, onSend, onLeave }:
   const complete = game.status === 'complete'
 
   return (
-    <div className={hp.play}>
-      <div className={hp.main}>
-        <div className={g.whoseTurn}>
-          <span className={g.turnName}>
-            {hinter ? hinter.name : 'Someone'} <span className={g.hinting}>is hinting</span>
-          </span>
-          <span className={hp.bankCount}>
-            {game.bank.length} / {BANK_CAP}
-          </span>
-        </div>
-        <div className={hp.progress}>
-          <span>{complete ? 'Turn complete' : `Answer ${game.resolved + 1} of ${game.answersPerGame}`}</span>
-          <span>{game.hintCount} {game.hintCount === 1 ? 'hint' : 'hints'}</span>
-        </div>
-        <div className={hp.bar}>
-          <div className={hp.barFill} style={{ width: `${(game.resolved / game.answersPerGame) * 100}%` }} />
-        </div>
+    <div className={g.screen}>
+      <div className={g.scroll}>
+        <div className={hp.play}>
+          <div className={hp.main}>
+            <div className={g.whoseTurn}>
+              <span className={g.turnName}>
+                {hinter ? hinter.name : 'Someone'} <span className={g.hinting}>is hinting</span>
+              </span>
+              <span className={hp.bankCount}>
+                {game.bank.length} / {BANK_CAP}
+              </span>
+            </div>
+            <div className={hp.progress}>
+              <span>{complete ? 'Turn complete' : `Answer ${game.resolved + 1} of ${game.answersPerGame}`}</span>
+              <span>{game.hintCount} {game.hintCount === 1 ? 'hint' : 'hints'}</span>
+            </div>
+            <div className={hp.bar}>
+              <div className={hp.barFill} style={{ width: `${(game.resolved / game.answersPerGame) * 100}%` }} />
+            </div>
 
-        {hinterDropped && (
-          <div className={g.banner}>
-            <span className={g.bannerText}>{hinter?.name} is reconnecting…</span>
-            {isHost && (
-              <button type="button" className={g.endBtn} onClick={() => onSend({ type: 'forceEndTurn' })}>
-                End their turn
-              </button>
+            {hinterDropped && (
+              <div className={g.banner}>
+                <span className={g.bannerText}>{hinter?.name} is reconnecting…</span>
+                {isHost && (
+                  <button type="button" className={g.endBtn} onClick={() => onSend({ type: 'forceEndTurn' })}>
+                    End their turn
+                  </button>
+                )}
+              </div>
             )}
-          </div>
-        )}
 
-        <section className={hp.bankSection}>
-          <div className={hp.bankHead}>
-            <h2>Hint Bank</h2>
-          </div>
-          <BankGrid bank={game.bank} cap={BANK_CAP} cutoff={game.cutoff} selected={[]} interactive={false} onToggle={() => {}} />
-          <p className={hp.fullNote}>Guess out loud from these words. First correct guess lands the answer.</p>
-        </section>
+            <section className={hp.bankSection}>
+              <div className={hp.bankHead}>
+                <h2>Hint Bank</h2>
+              </div>
+              <BankGrid bank={game.bank} cap={BANK_CAP} cutoff={game.cutoff} selected={[]} interactive={false} onToggle={() => {}} />
+              <p className={hp.fullNote}>Guess out loud from these words. First correct guess lands the answer.</p>
+            </section>
 
-        <div className={g.leaveRow}>
-          <button type="button" className={g.leave} onClick={onLeave}>
-            Leave room
-          </button>
+            <div className={g.leaveRow}>
+              <button type="button" className={g.leave} onClick={onLeave}>
+                Leave room
+              </button>
+            </div>
+          </div>
+
+          <div className={hp.results}>
+            <MpLanded view={view} game={game} avatars={avatars} />
+          </div>
         </div>
       </div>
 
-      <div className={hp.results}>
-        <MpScoreStrip view={view} avatars={avatars} game={game} />
-        <MpLanded view={view} game={game} avatars={avatars} />
-      </div>
+      <MpScoreStrip view={view} avatars={avatars} game={game} />
     </div>
   )
 }

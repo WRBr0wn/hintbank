@@ -62,127 +62,132 @@ export default function HinterBoard({ view, avatars, onSend, onLeave }: ScreenPr
   }
 
   return (
-    <div className={hp.play}>
-      <div className={hp.main}>
-        <div className={g.whoseTurn}>
-          <span className={g.turnName}>Your turn to hint</span>
-          <span className={hp.bankCount}>
-            {game.bank.length} / {BANK_CAP}
-            {full && ' · full'}
-          </span>
-        </div>
-        <div className={hp.progress}>
-          <span>{complete ? 'Turn complete' : `Answer ${game.resolved + 1} of ${game.answersPerGame}`}</span>
-          <span>{game.hintCount} {game.hintCount === 1 ? 'hint' : 'hints'}</span>
-        </div>
-        <div className={hp.bar}>
-          <div className={hp.barFill} style={{ width: `${(game.resolved / game.answersPerGame) * 100}%` }} />
-        </div>
+    <div className={g.screen}>
+      <div className={g.scroll}>
+        <div className={hp.play}>
+          <div className={hp.main}>
+            <div className={g.whoseTurn}>
+              <span className={g.turnName}>Your turn to hint</span>
+              <span className={hp.bankCount}>
+                {game.bank.length} / {BANK_CAP}
+                {full && ' · full'}
+              </span>
+            </div>
+            <div className={hp.progress}>
+              <span>{complete ? 'Turn complete' : `Answer ${game.resolved + 1} of ${game.answersPerGame}`}</span>
+              <span>{game.hintCount} {game.hintCount === 1 ? 'hint' : 'hints'}</span>
+            </div>
+            <div className={hp.bar}>
+              <div className={hp.barFill} style={{ width: `${(game.resolved / game.answersPerGame) * 100}%` }} />
+            </div>
 
-        {!complete && (
-          <div className={hp.answer}>
-            <span className={hp.answerLabel}>Secret answer{hinter.answerIsRecycled && ' · rerolled earlier'}</span>
-            <span className={hp.answerName}>{hinter.currentAnswer ?? ''}</span>
-          </div>
-        )}
+            {!complete && (
+              <div className={hp.answer}>
+                <span className={hp.answerLabel}>Secret answer{hinter.answerIsRecycled && ' · rerolled earlier'}</span>
+                <span className={hp.answerName}>{hinter.currentAnswer ?? ''}</span>
+              </div>
+            )}
 
-        <section className={hp.bankSection}>
-          <div className={hp.bankHead}>
-            <h2>Hint Bank</h2>
-          </div>
-          <BankGrid
-            bank={game.bank}
-            cap={BANK_CAP}
-            cutoff={game.cutoff}
-            selected={selection}
-            interactive={hinting && !complete}
-            onToggle={toggleWord}
-          />
-          {!complete &&
-            (full ? (
-              <p className={hp.fullNote}>The bank is full. Give hints from these words, or end the turn.</p>
-            ) : (
-              <div className={hp.addRow}>
-                <input
-                  className={hp.addInput}
-                  value={draft}
-                  maxLength={24}
-                  placeholder="Add a word to the bank"
-                  disabled={!hinting}
-                  onChange={(e) => setDraft(e.target.value)}
-                  onKeyDown={(e) => e.key === 'Enter' && handleAdd()}
-                />
-                <button type="button" className={hp.add} onClick={handleAdd} disabled={!hinter.canAddWord || draft.trim() === ''}>
-                  Add
+            <section className={hp.bankSection}>
+              <div className={hp.bankHead}>
+                <h2>Hint Bank</h2>
+              </div>
+              <BankGrid
+                bank={game.bank}
+                cap={BANK_CAP}
+                cutoff={game.cutoff}
+                selected={selection}
+                interactive={hinting && !complete}
+                onToggle={toggleWord}
+              />
+              {!complete &&
+                (full ? (
+                  <p className={hp.fullNote}>The bank is full. Give hints from these words, or end the turn.</p>
+                ) : (
+                  <div className={hp.addRow}>
+                    <input
+                      className={hp.addInput}
+                      value={draft}
+                      maxLength={24}
+                      placeholder="Add a word to the bank"
+                      disabled={!hinting}
+                      onChange={(e) => setDraft(e.target.value)}
+                      onKeyDown={(e) => e.key === 'Enter' && handleAdd()}
+                    />
+                    <button type="button" className={hp.add} onClick={handleAdd} disabled={!hinter.canAddWord || draft.trim() === ''}>
+                      Add
+                    </button>
+                  </div>
+                ))}
+            </section>
+
+            {complete ? (
+              <div className={hp.actions}>
+                <p className={hp.resolvePrompt}>All {game.answersPerGame} answers are in. Review the board, then continue.</p>
+                <button type="button" className={hp.primary} onClick={() => onSend({ type: 'finishTurn' })}>
+                  Continue
                 </button>
               </div>
-            ))}
-        </section>
+            ) : hinting ? (
+              <div className={hp.actions}>
+                <button type="button" className={hp.primary} onClick={handleGive} disabled={selection.length === 0}>
+                  Give hint
+                </button>
+                <div className={hp.escapes}>
+                  <button type="button" className={hp.secondary} onClick={handleReroll} disabled={!hinter.canReroll}>
+                    Reroll
+                  </button>
+                  <button type="button" className={hp.danger} onClick={handleEndTurn} disabled={!hinter.canEndTurn}>
+                    Bank full? End turn
+                  </button>
+                </div>
+              </div>
+            ) : resolving ? (
+              <div className={hp.resolve}>
+                <p className={hp.resolvePrompt}>Who guessed it?</p>
+                <ul className={guessers.length >= 5 ? `${hp.guessers} ${hp.guessersGrid}` : hp.guessers}>
+                  {guessers.map((seat) => (
+                    <li key={seat.id} className={hp.guesser}>
+                      <span className={hp.guesserName}>
+                        <Avatar avatar={avatarOf(avatars, seat)} size={22} /> {seat.name}
+                        {overguess[seat.id] ? <span className={hp.penalty}> −{overguess[seat.id]}</span> : null}
+                      </span>
+                      <span className={hp.guesserBtns}>
+                        <button
+                          type="button"
+                          className={hp.minus}
+                          onClick={() => setOverguess((o) => ({ ...o, [seat.id]: (o[seat.id] ?? 0) + 1 }))}
+                          aria-label={`Overguess for ${seat.name}`}
+                        >
+                          x2 (−1)
+                        </button>
+                        <button type="button" className={hp.correct} onClick={() => resolveWith(seat.id)}>
+                          Correct
+                        </button>
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+                <button type="button" className={hp.secondary} onClick={() => resolveWith()}>
+                  Keep Hinting!
+                </button>
+              </div>
+            ) : null}
 
-        {complete ? (
-          <div className={hp.actions}>
-            <p className={hp.resolvePrompt}>All {game.answersPerGame} answers are in. Review the board, then continue.</p>
-            <button type="button" className={hp.primary} onClick={() => onSend({ type: 'finishTurn' })}>
-              Continue
-            </button>
-          </div>
-        ) : hinting ? (
-          <div className={hp.actions}>
-            <button type="button" className={hp.primary} onClick={handleGive} disabled={selection.length === 0}>
-              Give hint
-            </button>
-            <div className={hp.escapes}>
-              <button type="button" className={hp.secondary} onClick={handleReroll} disabled={!hinter.canReroll}>
-                Reroll
-              </button>
-              <button type="button" className={hp.danger} onClick={handleEndTurn} disabled={!hinter.canEndTurn}>
-                Bank full? End turn
+            <div className={g.leaveRow}>
+              <button type="button" className={g.leave} onClick={onLeave}>
+                Leave room
               </button>
             </div>
           </div>
-        ) : resolving ? (
-          <div className={hp.resolve}>
-            <p className={hp.resolvePrompt}>Who guessed it?</p>
-            <ul className={guessers.length >= 5 ? `${hp.guessers} ${hp.guessersGrid}` : hp.guessers}>
-              {guessers.map((seat) => (
-                <li key={seat.id} className={hp.guesser}>
-                  <span className={hp.guesserName}>
-                    <Avatar avatar={avatarOf(avatars, seat)} size={22} /> {seat.name}
-                    {overguess[seat.id] ? <span className={hp.penalty}> −{overguess[seat.id]}</span> : null}
-                  </span>
-                  <span className={hp.guesserBtns}>
-                    <button
-                      type="button"
-                      className={hp.minus}
-                      onClick={() => setOverguess((o) => ({ ...o, [seat.id]: (o[seat.id] ?? 0) + 1 }))}
-                      aria-label={`Overguess for ${seat.name}`}
-                    >
-                      x2 (−1)
-                    </button>
-                    <button type="button" className={hp.correct} onClick={() => resolveWith(seat.id)}>
-                      Correct
-                    </button>
-                  </span>
-                </li>
-              ))}
-            </ul>
-            <button type="button" className={hp.secondary} onClick={() => resolveWith()}>
-              Keep Hinting!
-            </button>
-          </div>
-        ) : null}
 
-        <div className={g.leaveRow}>
-          <button type="button" className={g.leave} onClick={onLeave}>
-            Leave room
-          </button>
+          <div className={hp.results}>
+            <MpLanded view={view} game={game} avatars={avatars} />
+          </div>
         </div>
       </div>
 
-      <div className={hp.results}>
-        <MpScoreStrip view={view} avatars={avatars} game={game} />
-        <MpLanded view={view} game={game} avatars={avatars} />
-      </div>
+      <MpScoreStrip view={view} avatars={avatars} game={game} />
     </div>
   )
 }

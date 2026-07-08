@@ -79,8 +79,9 @@ export interface RoomState {
   hostId: SeatId | null
   locked: boolean
   settings: RoomSettings
-  // The cross-session scoreboard, room-owned so Play Again keeps totals and
-  // Reset Session zeroes them. Players only; spectators never appear.
+  // The cross-session scoreboard, room-owned so Continue keeps totals across a
+  // fresh rotation while Play Again and Change Settings both zero them. Players
+  // only; spectators never appear.
   totals: Record<SeatId, number>
   phase: RoomPhase
   session: RoomSession | null

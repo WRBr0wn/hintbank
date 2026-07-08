@@ -3,9 +3,10 @@ import { avatarOf, playerSeats, type ScreenProps } from './roomScreen'
 import board from './Leaderboard.module.css'
 import g from './Game.module.css'
 
-// The synced end-of-session leaderboard. Continue / Play Again / Reset Session
-// are host controls; every screen follows the host's choice through the next
-// snapshot. Reuses the local Leaderboard styling.
+// The synced end-of-session leaderboard. Continue / Play Again / Change
+// Settings are host controls; every screen follows the host's choice through the
+// next snapshot. Same three meanings and labels as single-device play. Reuses
+// the local Leaderboard styling.
 export default function MpLeaderboard({ view, seatId, avatars, onSend, onLeave }: ScreenProps) {
   const isHost = view.hostId === seatId
   const players = playerSeats(view)
@@ -39,15 +40,24 @@ export default function MpLeaderboard({ view, seatId, avatars, onSend, onLeave }
 
       {isHost ? (
         <div className={board.actions}>
-          <button type="button" className={board.continue} onClick={() => onSend({ type: 'continueSession' })}>
-            Continue
-          </button>
-          <button type="button" className={board.playAgain} onClick={() => onSend({ type: 'playAgain' })}>
-            Play Again
-          </button>
-          <button type="button" className={board.startOver} onClick={() => onSend({ type: 'resetSession' })}>
-            Reset Session
-          </button>
+          <div className={board.action}>
+            <button type="button" className={board.continue} onClick={() => onSend({ type: 'continueSession' })}>
+              Continue
+            </button>
+            <p className={board.actionDesc}>Keep the scores and play another rotation.</p>
+          </div>
+          <div className={board.action}>
+            <button type="button" className={board.playAgain} onClick={() => onSend({ type: 'playAgain' })}>
+              Play Again
+            </button>
+            <p className={board.actionDesc}>New game now, same players and settings, scores back to 0.</p>
+          </div>
+          <div className={board.action}>
+            <button type="button" className={board.startOver} onClick={() => onSend({ type: 'resetSession' })}>
+              Change Settings
+            </button>
+            <p className={board.actionDesc}>Back to the lobby to change players or settings, scores back to 0.</p>
+          </div>
         </div>
       ) : (
         <p className={g.waiting}>Waiting for the host to choose what's next…</p>

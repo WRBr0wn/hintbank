@@ -387,20 +387,36 @@ export function continueRotation(room: RoomState, seatId: SeatId): RoomState {
   }
 }
 
-// Back to the lobby with roster, settings, and totals intact; the next start
-// rolls a fresh rotation on the standing scoreboard.
+// Play Again: an instant rematch. A fresh rotation on the same roster and
+// settings, the scoreboard zeroed, straight into the first turn's interstitial
+// with no stop at the lobby. The worker deals when the first hinter readies,
+// same as any turn start.
 export function playAgain(room: RoomState, seatId: SeatId): RoomState {
   requireHost(room, seatId)
   requirePhase(room, 'leaderboard', 'play again is a leaderboard action')
-  return { ...room, phase: 'lobby', session: null, game: null }
+  const players = playerSeats(room)
+  if (players.length < 2) fail('need-more-players', 'need one more player')
+  const totals: Record<SeatId, number> = {}
+  for (const id of Object.keys(room.totals)) totals[id] = 0
+  return {
+    ...room,
+    phase: 'interstitial',
+    totals,
+    session: { queue: players.map((s) => s.id), completedRotations: 0 },
+    game: null,
+  }
 }
 
-// Play Again with the scoreboard zeroed.
+// Change Settings: back to the lobby to adjust the roster or settings, the
+// scoreboard zeroed. Same zeroed reset as Play Again, but it stops at the lobby
+// to change things first instead of dealing straight in. The wire type stays
+// `resetSession` (this is the button now labeled "Change Settings").
 export function resetSession(room: RoomState, seatId: SeatId): RoomState {
-  const next = playAgain(room, seatId)
+  requireHost(room, seatId)
+  requirePhase(room, 'leaderboard', 'change settings is a leaderboard action')
   const totals: Record<SeatId, number> = {}
-  for (const id of Object.keys(next.totals)) totals[id] = 0
-  return { ...next, totals }
+  for (const id of Object.keys(room.totals)) totals[id] = 0
+  return { ...room, phase: 'lobby', session: null, game: null, totals }
 }
 
 export interface IntentDeps {

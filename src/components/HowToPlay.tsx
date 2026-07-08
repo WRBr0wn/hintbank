@@ -106,6 +106,16 @@ export default function HowToPlay({ inTurn, onClose }: Props) {
               is its own penalty.
             </p>
           </section>
+
+          <section>
+            <h3 className={styles.heading}>End of a session</h3>
+            <p>
+              A session is one rotation, everyone hinting once. When it wraps, the leaderboard offers three
+              ways on. Continue keeps the scores and plays another rotation. Play Again starts a brand-new game
+              right away with the same players and settings, scores back to zero. Change Settings makes the same
+              fresh start but stops first so you can swap players or change settings.
+            </p>
+          </section>
         </div>
       </div>
     </div>

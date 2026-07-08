@@ -147,16 +147,20 @@ export default function App({ editionId }: { editionId: string }) {
     setPhase('pass')
   }
 
-  function startOver() {
-    setSession(null)
+  // Play Again from the leaderboard: an instant rematch on the same roster and
+  // settings, scores reset to zero (a fresh session), straight into the first
+  // turn with no stop at setup.
+  function playAgain() {
+    if (!settings) return
+    const hinterBase = cutoffFor(settings.difficultyBase, settings.answersPerGame)
+    setSession(createSession(settings.players.map((p) => p.id), settings.mode, hinterBase, settings.answersPerGame))
     setGame(null)
-    setSettings(null)
-    setPhase('setup')
+    setPhase('pass')
   }
 
-  // Unlike startOver, the settings stay: the roster and every setup choice
-  // round-trip back into Setup. The next Start builds a fresh session, so
-  // totals still reset to zero.
+  // Change Settings from the leaderboard (and the mid-game title back): the
+  // roster and every setup choice round-trip into Setup, prefilled and editable.
+  // The next Start builds a fresh session, so totals reset to zero.
   function returnToSetup() {
     setSession(null)
     setGame(null)
@@ -256,8 +260,8 @@ export default function App({ editionId }: { editionId: string }) {
             session={session}
             roster={roster}
             onContinue={continueRotation}
-            onPlayAgain={returnToSetup}
-            onStartOver={startOver}
+            onPlayAgain={playAgain}
+            onChangeSettings={returnToSetup}
           />
         )}
       </main>

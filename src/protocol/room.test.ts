@@ -329,19 +329,20 @@ describe('end of session keeps the room', () => {
     expect(room.totals).toEqual(kept)
   })
 
-  it('play again returns to the lobby with totals intact', () => {
+  it('play again starts a fresh game immediately with totals zeroed', () => {
     let room = toLeaderboard()
-    const kept = { ...room.totals }
     room = playAgain(room, 'a')
-    expect(room.phase).toBe('lobby')
-    expect(room.session).toBeNull()
-    expect(room.totals).toEqual(kept)
+    expect(room.phase).toBe('interstitial')
+    expect(room.session?.queue).toEqual(['a', 'b', 'c'])
+    expect(room.session?.completedRotations).toBe(0)
+    expect(Object.values(room.totals).every((n) => n === 0)).toBe(true)
   })
 
-  it('reset session returns to the lobby with totals zeroed', () => {
+  it('change settings returns to the lobby with totals zeroed', () => {
     let room = toLeaderboard()
     room = resetSession(room, 'a')
     expect(room.phase).toBe('lobby')
+    expect(room.session).toBeNull()
     expect(Object.values(room.totals).every((n) => n === 0)).toBe(true)
   })
 })

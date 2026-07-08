@@ -478,18 +478,21 @@ describe('gameplay: host escapes and the leaderboard', () => {
     const cont = await until(host.ws, (m) => m.type === 'snapshot' && m.view.phase === 'interstitial')
     expect(cont.view.totals[host.seatId] + cont.view.totals[guest.seatId]).toBe(keptTotal)
 
-    // Empty the queue back to the leaderboard with two cheap skips, then Play Again.
+    // Empty the queue back to the leaderboard with two cheap skips, then Play
+    // Again: an instant fresh game, same roster, totals zeroed, straight into
+    // the first interstitial with no stop at the lobby.
     await act(host.ws, { v: 1, type: 'skipHinter' })
     await until(host.ws, (m) => m.type === 'snapshot' && m.view.phase === 'interstitial')
     await act(host.ws, { v: 1, type: 'skipHinter' })
     await until(host.ws, (m) => m.type === 'snapshot' && m.view.phase === 'leaderboard')
     await act(host.ws, { v: 1, type: 'playAgain' })
-    const lobby = await until(host.ws, (m) => m.type === 'snapshot' && m.view.phase === 'lobby')
-    expect(lobby.view.totals[host.seatId] + lobby.view.totals[guest.seatId]).toBe(keptTotal)
+    const again = await until(host.ws, (m) => m.type === 'snapshot' && m.view.phase === 'interstitial')
+    expect(again.view.totals[host.seatId]).toBe(0)
+    expect(again.view.totals[guest.seatId]).toBe(0)
+    expect(again.view.session?.completedRotations).toBe(0)
 
-    // Reset Session zeroes the totals.
-    await act(host.ws, { v: 1, type: 'start' })
-    await until(host.ws, (m) => m.type === 'snapshot' && m.view.phase === 'interstitial')
+    // Change Settings (resetSession on the wire) stops at the lobby with the
+    // scoreboard zeroed. Empty the fresh rotation's queue to reach the board.
     await act(host.ws, { v: 1, type: 'skipHinter' })
     await until(host.ws, (m) => m.type === 'snapshot' && m.view.phase === 'interstitial')
     await act(host.ws, { v: 1, type: 'skipHinter' })

@@ -3,6 +3,24 @@
    the leave control. The board grid, bank, answer card, and results list all
    come from HinterPlay.module.css so the networked boards match local play. */
 
+/* The play board columns scroll above a persistent full-width score bar, the
+   same shape as single-device play (its ScoreBar sits below the scrolling main).
+   .screen fills the app main; .scroll takes the board, the bar stays pinned
+   below it. */
+.screen {
+  align-self: stretch;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.scroll {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+}
+
 .whoseTurn {
   display: flex;
   align-items: baseline;
@@ -52,15 +70,23 @@
   background: var(--danger-soft-bg);
 }
 
-/* The live score row, an analogue of the local ScoreBar built from the view. */
+/* The live score row as a full-width bottom bar, matching the persistent
+   single-device ScoreBar: chips centered as a group, scrolling horizontally if
+   the row overflows rather than wrapping and growing tall. */
 .scoreStrip {
+  flex: 0 0 auto;
   display: flex;
-  flex-wrap: wrap;
+  justify-content: safe center;
   gap: 0.5rem;
+  padding: 0.7rem 1rem;
+  border-top: 1px solid var(--border);
+  background: var(--surface-sunken);
+  overflow-x: auto;
 }
 
 .scoreChip,
 .scoreHinter {
+  flex: 0 0 auto;
   display: flex;
   align-items: center;
   gap: 0.5rem;
