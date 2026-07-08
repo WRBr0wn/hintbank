@@ -3,6 +3,7 @@ import Setup, { type GameSettings } from './screens/Setup'
 import PassToHinter from './screens/PassToHinter'
 import HinterPlay from './screens/HinterPlay'
 import Leaderboard from './screens/Leaderboard'
+import Multiplayer from './screens/Multiplayer'
 import ScoreBar from './components/ScoreBar'
 import ThemeToggle from './components/ThemeToggle'
 import ConfirmModal from './components/ConfirmModal'
@@ -63,6 +64,12 @@ export default function App({ editionId }: { editionId: string }) {
   const [game, setGame] = useState<GameState | null>(null)
   const [confirmReturn, setConfirmReturn] = useState(false)
   const [showHelp, setShowHelp] = useState(false)
+  // The multiplayer flow replaces Setup and its downstream screens. Entered by
+  // picking Online: Multiplayer, or by arriving on a share link (?room=CODE),
+  // read once at first render.
+  const initialRoom = () => new URLSearchParams(window.location.search).get('room')?.toUpperCase() ?? null
+  const [roomPrefill, setRoomPrefill] = useState<string | null>(initialRoom)
+  const [multiplayer, setMultiplayer] = useState<boolean>(() => initialRoom() !== null)
 
   const roster = settings?.players ?? []
   // Handed to the in-game launch links so they open this edition's randomizer
@@ -157,10 +164,17 @@ export default function App({ editionId }: { editionId: string }) {
     setPhase('setup')
   }
 
+  function exitMultiplayer() {
+    setMultiplayer(false)
+    setRoomPrefill(null)
+  }
+
   // The title walks one step back up the flow, with a confirm during a game since
-  // the game would be lost.
+  // the game would be lost. In the multiplayer flow it steps back to Setup;
+  // leaving the room is handled by the multiplayer screen unmounting.
   const titleBack = () => {
-    if (phase === 'setup') backToMenu()
+    if (multiplayer) exitMultiplayer()
+    else if (phase === 'setup') backToMenu()
     else setConfirmReturn(true)
   }
 
@@ -190,9 +204,20 @@ export default function App({ editionId }: { editionId: string }) {
         </p>
       </header>
       <main className={styles.main}>
-        {phase === 'setup' && (
+        {multiplayer && (
+          <Multiplayer
+            editionId={editionId}
+            edition={edition}
+            avatars={avatars}
+            prefillCode={roomPrefill}
+            onExit={exitMultiplayer}
+          />
+        )}
+
+        {!multiplayer && phase === 'setup' && (
           <Setup
             onStart={handleStart}
+            onChooseMultiplayer={() => setMultiplayer(true)}
             credits={edition.credits}
             categories={edition.categories}
             secondaryTag={edition.secondaryTag}

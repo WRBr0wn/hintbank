@@ -17,6 +17,14 @@ const ZENVOLKA: PlayerAvatar = {
 
 export const avatarKey = (a: PlayerAvatar) => (a.kind === 'emoji' ? a.value : a.src)
 
+// Resolve an avatar key (what a seat carries over the wire) back to a full
+// avatar for rendering, against this edition's picker set. A key from another
+// edition or an old build falls back to a neutral face rather than breaking the
+// roster.
+export function avatarByKey(avatars: PlayerAvatar[], key: string): PlayerAvatar {
+  return avatars.find((a) => avatarKey(a) === key) ?? { kind: 'emoji', value: '🙂' }
+}
+
 // The picker set for an edition: what its manifest declares, or the neutral
 // default when it declares nothing.
 export function avatarsFor(declared?: PlayerAvatar[]): PlayerAvatar[] {
