@@ -39,7 +39,7 @@ export default function HowToPlay({ lead, onClose }: Props) {
         </li>
         <li>
           <strong>Online: One Device.</strong> One screen shared over a call. The answer stays hidden until
-          the hinter holds to peek, so it never lands on the stream.
+          the hinter holds to peek, giving them the chance to hide the screen or have guessers look away.
         </li>
         <li>
           <strong>Online: One Device + Randomizer.</strong> The shared screen is a public board. The hinter
