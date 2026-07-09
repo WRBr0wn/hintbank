@@ -71,6 +71,24 @@ export interface RoomSession {
   completedRotations: number
 }
 
+// A guess in the public feed: who picked what and whether it landed the current
+// answer. Safe for every seat and for streaming by the same construction as the
+// guesser board: a wrong pick is not the answer, and a correct pick only enters
+// the feed as it lands (public through results too), so the current unresolved
+// answer never appears here.
+export interface GuessFeedEntry {
+  guesserId: SeatId
+  term: string
+  correct: boolean
+}
+
+// The room's record of a guess: the public entry plus the bank size it was made
+// against. bankCount stays server-side; it attributes an overguess to the hint
+// it answered (per MULTIPLAYER.md) and is dropped from the view.
+export interface RecordedGuess extends GuessFeedEntry {
+  bankCount: number
+}
+
 export interface RoomState {
   editionId: string
   code: string
@@ -86,6 +104,10 @@ export interface RoomState {
   phase: RoomPhase
   session: RoomSession | null
   game: GameState | null
+  // Typed-guess mode's public guess feed for the current turn, reset each turn.
+  // Empty in voice mode. The reducer derives overguesses from this stream; the
+  // view exposes it without bankCount.
+  guessFeed: RecordedGuess[]
 }
 
 // ---- Role-filtered views ----
@@ -118,6 +140,10 @@ export interface PublicGameView {
   endedEarly: boolean
   phase: GamePhase
   status: GameStatus
+  // Typed-guess mode's public guess feed for this turn: who picked what and how
+  // it resolved. Empty in voice mode. Streamable by construction (see
+  // GuessFeedEntry).
+  feed: GuessFeedEntry[]
 }
 
 // The hinter's private extras. The capability flags ride here because they

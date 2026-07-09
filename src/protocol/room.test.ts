@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { cutoffFor } from '../engine'
+import { cutoffFor, guesserScore } from '../engine'
 import {
   applyIntent,
   continueRotation,
@@ -22,13 +22,15 @@ import {
   skipHinter,
   start,
   startTurn,
+  submitGuess,
   updateSettings,
   upNext,
   type IntentDeps,
 } from './room'
-import { RoomError, type RoomState } from './types'
+import { RoomError, type RoomSettings, type RoomState } from './types'
 
 const settings = () => defaultRoomSettings(['countries'])
+const typedSettings = (): RoomSettings => ({ ...defaultRoomSettings(['countries']), onlineMode: 'typed' })
 
 function lobbyOfThree(): RoomState {
   let room = createRoom({
@@ -43,6 +45,28 @@ function lobbyOfThree(): RoomState {
 }
 
 const deckOf = (n: number) => Array.from({ length: n }, (_, i) => `ANS-${i}`)
+
+// A typed-mode pool: every answer that could be dealt plus a few wrong picks to
+// guess. Guess validation is pool membership, so both must live here.
+const POOL = [...deckOf(10), 'WRONG-A', 'WRONG-B', 'WRONG-C']
+const poolFor = () => POOL
+const typedDeps = (n: number): IntentDeps => ({ dealDeck: () => deckOf(n), poolFor })
+
+// A typed-mode room in a live turn, seat 'a' hinting, with one banked hint word
+// (bankCount 1) so guesses have a hint to answer.
+function typedTurn(answers = 3): RoomState {
+  let room = createRoom({
+    code: 'ABC234',
+    editionId: 'geography',
+    host: { seatId: 'a', name: 'Ann', avatar: 'fox' },
+    settings: typedSettings(),
+  })
+  room = join(room, { seatId: 'b', name: 'Bob', avatar: 'turtle' })
+  room = join(room, { seatId: 'c', name: 'Cal', avatar: 'dragon' })
+  room = start(room, 'a')
+  room = startTurn(room, 'a', deckOf(answers))
+  return hinterAddWord(room, 'a', 'clue')
+}
 
 // Land every answer with one banked word, all credited to guesserId.
 function playTurnToEnd(room: RoomState, hinterId: string, guesserId: string): RoomState {
@@ -348,7 +372,7 @@ describe('end of session keeps the room', () => {
 })
 
 describe('applyIntent dispatch', () => {
-  const noDeck: IntentDeps = { dealDeck: () => deckOf(4) }
+  const noDeck: IntentDeps = { dealDeck: () => deckOf(4), poolFor }
 
   it('routes a host intent and rejects a non-host one', () => {
     let room = lobbyOfThree()
@@ -373,13 +397,114 @@ describe('applyIntent dispatch', () => {
     expect(() => applyIntent(room, 'zzz', { v: 1, type: 'reroll' }, noDeck)).toThrow(/no such seat/)
   })
 
-  it('reserves typed guessing without resolving it', () => {
+  it('rejects a guess in voice mode as unsupported', () => {
     let room = lobbyOfThree()
     room = start(room, 'a')
     room = startTurn(room, 'a', deckOf(5))
     expect(() =>
-      applyIntent(room, 'b', { v: 1, type: 'guess', term: 'France', bankCount: 0 }, noDeck),
-    ).toThrow(/not available/)
+      applyIntent(room, 'b', { v: 1, type: 'guess', term: 'ANS-0', bankCount: 0 }, noDeck),
+    ).toThrow(/typed guessing is off/)
+  })
+
+  it('routes a typed guess through submitGuess', () => {
+    const room = applyIntent(typedTurn(3), 'b', { v: 1, type: 'guess', term: 'ANS-0', bankCount: 1 }, typedDeps(3))
+    expect(room.game?.resolved).toBe(1)
+    expect(room.game?.correctGuesses.b).toBe(1)
+  })
+})
+
+describe('typed-guess resolution', () => {
+  it('lands the current answer on the first correct pick and credits that guesser', () => {
+    const room = submitGuess(typedTurn(3), 'b', 'ANS-0', 1, poolFor)
+    expect(room.game?.resolved).toBe(1)
+    expect(room.game?.correctGuesses.b).toBe(1)
+    expect(room.game?.results[0]).toEqual({ answer: 'ANS-0', guesserId: 'b' })
+    // The pick is public in the feed, marked as it resolved.
+    expect(room.guessFeed).toEqual([{ guesserId: 'b', term: 'ANS-0', correct: true, bankCount: 1 }])
+  })
+
+  it('credits only the first correct arrival when two race the same answer', () => {
+    let room = typedTurn(3)
+    room = submitGuess(room, 'b', 'ANS-0', 1, poolFor) // b lands it first
+    // c's pick for the now-resolved answer arrives late and is dropped, not
+    // scored against ANS-1.
+    const after = submitGuess(room, 'c', 'ANS-0', 1, poolFor)
+    expect(after).toBe(room)
+    expect(after.game?.correctGuesses.c).toBeUndefined()
+  })
+
+  it('scores wrong picks at the same bank size as overguesses past the first', () => {
+    let room = typedTurn(3)
+    room = submitGuess(room, 'b', 'WRONG-A', 1, poolFor) // first pick at bank 1: free
+    room = submitGuess(room, 'b', 'WRONG-B', 1, poolFor) // second at bank 1: an overguess
+    room = submitGuess(room, 'b', 'ANS-0', 1, poolFor) // lands it
+    expect(room.game?.overguesses.b).toBe(1)
+    // Net score matches the engine: one landed, one overguess.
+    expect(guesserScore(room.game!, 'b')).toBe(0)
+  })
+
+  it('attributes wrong picks by bank count, so picks at different banks each go free', () => {
+    let room = typedTurn(3)
+    room = submitGuess(room, 'b', 'WRONG-A', 1, poolFor) // first at bank 1
+    room = hinterAddWord(room, 'a', 'clue2') // bank grows to 2, a new hint
+    room = submitGuess(room, 'b', 'WRONG-B', 2, poolFor) // first at bank 2
+    room = submitGuess(room, 'b', 'ANS-0', 2, poolFor)
+    // Two wrong picks, but each the first at its bank size: no overguess.
+    expect(room.game?.overguesses.b ?? 0).toBe(0)
+    expect(guesserScore(room.game!, 'b')).toBe(1)
+  })
+
+  it('attributes a late pick to the bank it was made against, not the current bank', () => {
+    let room = typedTurn(3)
+    room = submitGuess(room, 'b', 'WRONG-A', 1, poolFor) // in flight against bank 1
+    room = hinterAddWord(room, 'a', 'clue2') // bank is now 2
+    // A second pick that was also made against bank 1 (bankCount 1) is the second
+    // at bank 1 and so an overguess, even though the current bank is 2.
+    room = submitGuess(room, 'b', 'WRONG-B', 1, poolFor)
+    room = submitGuess(room, 'b', 'ANS-0', 2, poolFor)
+    expect(room.game?.overguesses.b).toBe(1)
+  })
+
+  it('clamps a bankCount claimed larger than the bank that exists', () => {
+    let room = typedTurn(3)
+    room = submitGuess(room, 'b', 'WRONG-A', 999, poolFor) // clamped to bank length 1
+    room = submitGuess(room, 'b', 'WRONG-B', 999, poolFor) // clamped to 1 too: same bank, overguess
+    room = submitGuess(room, 'b', 'ANS-0', 1, poolFor)
+    expect(room.game?.overguesses.b).toBe(1)
+  })
+
+  it('carries the whole turn of picks in the feed, wrong and correct', () => {
+    let room = typedTurn(3)
+    room = submitGuess(room, 'b', 'WRONG-A', 1, poolFor)
+    room = submitGuess(room, 'c', 'ANS-0', 1, poolFor)
+    expect(room.guessFeed).toEqual([
+      { guesserId: 'b', term: 'WRONG-A', correct: false, bankCount: 1 },
+      { guesserId: 'c', term: 'ANS-0', correct: true, bankCount: 1 },
+    ])
+  })
+
+  it('rejects a hinter manual-resolve and manual hint in typed mode', () => {
+    const room = typedTurn(3)
+    expect(() =>
+      applyIntent(room, 'a', { v: 1, type: 'resolve', outcome: { correctGuesserId: 'b' } }, typedDeps(3)),
+    ).toThrow(/adjudicate/)
+    expect(() => applyIntent(room, 'a', { v: 1, type: 'giveHint', selection: [0] }, typedDeps(3))).toThrow(/adjudicate/)
+  })
+
+  it('refuses a guess from the hinter, a spectator, and a non-pool term', () => {
+    let room = typedTurn(3)
+    room = join(room, { seatId: 's', name: 'Sam', avatar: 'ghost', spectator: true })
+    expect(() => submitGuess(room, 'a', 'ANS-0', 1, poolFor)).toThrow(/hinter/)
+    expect(() => submitGuess(room, 's', 'ANS-0', 1, poolFor)).toThrow(/guesser/)
+    expect(() => submitGuess(room, 'b', 'NOT-A-TERM', 1, poolFor)).toThrow(/not a term/)
+  })
+
+  it('drops a guess once the turn is over', () => {
+    let room = typedTurn(1) // a one-answer turn completes on the first land
+    room = submitGuess(room, 'b', 'ANS-0', 1, poolFor)
+    expect(room.game?.status).toBe('complete')
+    const after = submitGuess(room, 'c', 'ANS-0', 1, poolFor)
+    expect(after).toBe(room)
   })
 })
 

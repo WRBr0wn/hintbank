@@ -4,6 +4,8 @@ import { nameAllowed } from './names'
 import { dueSeats, nextAlarmAt, shouldExpire } from './lifecycle'
 import {
   GRACE_MS,
+  GUESS_BURST,
+  GUESS_REFILL_PER_SEC,
   MAX_MESSAGE_BYTES,
   MSG_BURST,
   MSG_MAX_STRIKES,
@@ -50,15 +52,20 @@ function randomUnit(): number {
 // unshuffled by contract. deckSizeFor and the reducer's clamp mirror the local
 // game page, so a short pool deals a short turn.
 function dealerFor(editionId: string): IntentDeps {
+  const poolFor = (settings: RoomSettings): string[] =>
+    filterPool(categoriesFor(editionId), settings.categoryIds, settings.tagValues)
   return {
     dealDeck: (settings: RoomSettings): string[] => {
-      const pool = filterPool(categoriesFor(editionId), settings.categoryIds, settings.tagValues)
+      const pool = poolFor(settings)
       for (let i = pool.length - 1; i > 0; i--) {
         const j = Math.floor(randomUnit() * (i + 1))
         ;[pool[i], pool[j]] = [pool[j], pool[i]]
       }
       return pool.slice(0, deckSizeFor(settings.answersPerGame))
     },
+    // The full filtered pool a typed-mode guess is validated against. Same
+    // termPasses filter as the deal, unshuffled and complete.
+    poolFor,
   }
 }
 
@@ -71,6 +78,9 @@ export class RoomDurableObject extends DurableObject<Env> {
   // Per-socket message budgets. In-memory only: after a hibernation wake the
   // map is empty, which just means a fresh full bucket, an acceptable leniency.
   private buckets = new Map<WebSocket, { tokens: number; last: number; strikes: number }>()
+
+  // Per-socket typed-guess budgets, the same in-memory-leniency contract.
+  private guessBuckets = new Map<WebSocket, { tokens: number; last: number }>()
 
   // Called once by the worker when a code is allocated, before anyone connects.
   // Returns false if the code is already taken, so the worker can retry.
@@ -127,6 +137,7 @@ export class RoomDurableObject extends DurableObject<Env> {
 
   async webSocketClose(ws: WebSocket): Promise<void> {
     this.buckets.delete(ws)
+    this.guessBuckets.delete(ws)
     const seatId = this.seatOf(ws)
     if (seatId) {
       const room = await this.load()
@@ -142,6 +153,7 @@ export class RoomDurableObject extends DurableObject<Env> {
 
   async webSocketError(ws: WebSocket): Promise<void> {
     this.buckets.delete(ws)
+    this.guessBuckets.delete(ws)
   }
 
   async alarm(): Promise<void> {
@@ -239,6 +251,10 @@ export class RoomDurableObject extends DurableObject<Env> {
       return
     }
 
+    // Typed-guess throttle: a guess over this connection's guess budget is
+    // dropped, a backstop to the overguess pricing. Other intents are unaffected.
+    if (msg.type === 'guess' && !this.allowGuess(ws)) return
+
     const before = await this.load()
     if (!before) return
 
@@ -329,6 +345,24 @@ export class RoomDurableObject extends DurableObject<Env> {
     }
     bucket.tokens -= 1
     bucket.strikes = 0
+    return true
+  }
+
+  // The per-connection guess budget: a small token bucket over guesses alone.
+  // No strikes and no socket close, since a stale client may fire a burst; the
+  // excess is simply dropped.
+  private allowGuess(ws: WebSocket): boolean {
+    const now = Date.now()
+    let bucket = this.guessBuckets.get(ws)
+    if (!bucket) {
+      bucket = { tokens: GUESS_BURST, last: now }
+      this.guessBuckets.set(ws, bucket)
+    }
+    const elapsed = (now - bucket.last) / 1000
+    bucket.tokens = Math.min(GUESS_BURST, bucket.tokens + elapsed * GUESS_REFILL_PER_SEC)
+    bucket.last = now
+    if (bucket.tokens < 1) return false
+    bucket.tokens -= 1
     return true
   }
 

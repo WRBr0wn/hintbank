@@ -30,6 +30,7 @@ const game = (over: Partial<PublicGameView> = {}): PublicGameView => ({
   endedEarly: false,
   phase: 'hinting',
   status: 'playing',
+  feed: [],
   ...over,
 })
 

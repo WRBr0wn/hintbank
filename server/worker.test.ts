@@ -504,6 +504,78 @@ describe('gameplay: host escapes and the leaderboard', () => {
   }, 20000)
 })
 
+// ---- typed-guess mode ----
+
+// Drives a room into a typed-mode live turn (host hinting), the guessers'
+// counterpart to toHostTurn.
+async function toTypedTurn(answers = 5): Promise<{
+  code: string
+  host: { ws: WebSocket; seatId: string }
+  guest: { ws: WebSocket; seatId: string }
+}> {
+  const code = await createRoom('geography')
+  const host = await joinAsHost(code)
+  const guest = await joinGuest(code, 'Bob')
+  await act(host.ws, {
+    v: 1,
+    type: 'updateSettings',
+    settings: { categoryIds: ['countries'], answersPerGame: answers, onlineMode: 'typed' },
+  })
+  await until(host.ws, (m) => m.type === 'snapshot' && m.view.settings.onlineMode === 'typed')
+  await act(host.ws, { v: 1, type: 'start' })
+  await until(host.ws, (m) => m.type === 'snapshot' && m.view.phase === 'interstitial')
+  await act(host.ws, { v: 1, type: 'ready' })
+  await until(host.ws, (m) => m.type === 'snapshot' && m.view.phase === 'turn')
+  return { code, host, guest }
+}
+
+// Known-present country names, so a test can pick a valid wrong guess.
+const COUNTRIES = ['Egypt', 'Chad', 'Angola', 'Benin', 'Botswana', 'Cameroon', 'Comoros', 'Djibouti']
+
+describe('typed-guess mode: the server resolves a guess', () => {
+  it('lands the answer on the first correct pick and credits the guesser', async () => {
+    const { host, guest } = await toTypedTurn(5)
+    await act(host.ws, { v: 1, type: 'addWord', word: 'clue' })
+    const hs = await snapshotOf(host.ws)
+    const answer = hs.view.hinter.currentAnswer // the hinter's own view carries it
+    expect(typeof answer).toBe('string')
+
+    await act(guest.ws, { v: 1, type: 'guess', term: answer, bankCount: 1 })
+    const after = await until(host.ws, (m) => m.type === 'snapshot' && m.view.game?.resolved === 1)
+    expect(after.view.game.correctGuesses[guest.seatId]).toBe(1)
+    // Public through both results and the feed.
+    expect(after.view.game.results[0].answer).toBe(answer)
+    expect(after.view.game.feed.some((f: any) => f.guesserId === guest.seatId && f.term === answer && f.correct)).toBe(
+      true,
+    )
+  })
+
+  it('rejects a hinter manual-resolve in typed mode', async () => {
+    const { host } = await toTypedTurn(5)
+    await act(host.ws, { v: 1, type: 'resolve', outcome: { correctGuesserId: 'nobody' } })
+    const err = await until(host.ws, (m) => m.type === 'error')
+    expect(err.code).toBe('not-allowed')
+  })
+
+  it('throttles a burst of guesses from one connection', async () => {
+    const { host, guest } = await toTypedTurn(5)
+    await act(host.ws, { v: 1, type: 'addWord', word: 'clue' })
+    const hs = await snapshotOf(host.ws)
+    const answer = hs.view.hinter.currentAnswer
+    const wrong = COUNTRIES.find((c) => c !== answer)! // a valid pool term, guaranteed wrong
+
+    // A burst well under the message budget (10) but over the guess budget (5).
+    const burst = 9
+    for (let i = 0; i < burst; i++) send(guest.ws, { v: 1, type: 'guess', term: wrong, bankCount: 1 })
+
+    const snap = await snapshotOf(guest.ws)
+    // Some picks landed in the feed, but the throttle dropped the tail of the
+    // burst, so fewer than were sent.
+    expect(snap.view.game.feed.length).toBeGreaterThan(0)
+    expect(snap.view.game.feed.length).toBeLessThan(burst)
+  }, 20000)
+})
+
 // ---- expiry ----
 
 describe('room expiry', () => {

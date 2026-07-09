@@ -15,12 +15,14 @@ import {
   MIN_ANSWERS,
   addWord,
   createGame,
+  currentAnswer,
   cutoffFor,
   endTurn,
   gameScores,
   giveHint,
   reroll,
   resolveHint,
+  usableWords,
   type GameState,
 } from '../engine'
 import {
@@ -28,6 +30,7 @@ import {
   fail,
   RoomError,
   type ClientMessage,
+  type RecordedGuess,
   type ResolveOutcome,
   type RoomPhase,
   type RoomSettings,
@@ -130,6 +133,7 @@ export function createRoom({ code, editionId, host, settings }: NewRoom): RoomSt
     phase: 'lobby',
     session: null,
     game: null,
+    guessFeed: [],
   }
 }
 
@@ -292,7 +296,9 @@ export function startTurn(room: RoomState, seatId: SeatId, deck: string[]): Room
     hinterBase: cutoffFor(room.settings.difficultyBase, answers),
     answersPerGame: answers,
   })
-  return { ...room, phase: 'turn', game }
+  // A fresh turn starts with an empty guess feed (typed mode fills it; voice
+  // leaves it empty).
+  return { ...room, phase: 'turn', game, guessFeed: [] }
 }
 
 function requireHinterGame(room: RoomState, seatId: SeatId): GameState {
@@ -419,11 +425,102 @@ export function resetSession(room: RoomState, seatId: SeatId): RoomState {
   return { ...room, phase: 'lobby', session: null, game: null, totals }
 }
 
+// The current answer's overguess tally, read off the guess stream. Within the
+// window since the last landed answer, a guesser's first pick at a given bank
+// size is free and each further pick at that same bank size is an overguess,
+// which attributes every wrong pick to the hint it answered by its bankCount
+// (per MULTIPLAYER.md), not to whatever is current on arrival. Correct picks
+// land immediately, so the window holds only wrong picks.
+function windowOverguesses(feed: RecordedGuess[]): Record<SeatId, number> {
+  let start = 0
+  for (let i = feed.length - 1; i >= 0; i--) {
+    if (feed[i].correct) {
+      start = i + 1
+      break
+    }
+  }
+  const seen = new Set<string>()
+  const tally: Record<SeatId, number> = {}
+  for (let i = start; i < feed.length; i++) {
+    const g = feed[i]
+    const key = `${g.guesserId} ${g.bankCount}`
+    if (seen.has(key)) tally[g.guesserId] = (tally[g.guesserId] ?? 0) + 1
+    else seen.add(key)
+  }
+  return tally
+}
+
+// Typed-guess resolution: guessers pick terms and the server adjudicates, with
+// no hinter step. The first correct arrival lands the current answer and credits
+// that guesser; wrong picks accrue on the current answer and, when it lands,
+// become overguesses attributed by the bank size they were made against. The
+// resolution runs through the same engine path voice mode uses (giveHint then
+// resolveHint), so all scoring stays in the engine. Active only in typed mode.
+export function submitGuess(
+  room: RoomState,
+  seatId: SeatId,
+  term: string,
+  bankCount: number,
+  poolFor: (settings: RoomSettings) => string[],
+): RoomState {
+  if (room.settings.onlineMode !== 'typed') fail('unsupported', 'typed guessing is off in this room')
+  const seat = requireSeat(room, seatId)
+  // A seated, active guesser only: not a spectator, not a late joiner still
+  // waiting on the turn boundary.
+  if (seat.role !== 'player' || seat.pending) fail('not-allowed', 'only a seated guesser can guess')
+  // Out of window: with no answer in play there is nothing to resolve against, so
+  // a guess arriving after the turn is over (or between turns) is dropped, not an
+  // error.
+  if (room.phase !== 'turn' || !room.game || room.game.status !== 'playing') return room
+  const game = room.game
+  if (seatId === game.hinterId) fail('not-allowed', 'the hinter does not guess')
+
+  const guess = term.trim()
+  // Selection-only play needs no content filtering: a guess must be a term in the
+  // room's filtered pool (the same termPasses filter as the deal, via poolFor) or
+  // it is rejected.
+  if (!poolFor(room.settings).includes(guess)) fail('not-allowed', 'that is not a term in this room')
+
+  // A pick for an answer that already landed (a late arrival after someone beat
+  // them to it) is dropped, not scored against the current answer.
+  if (game.results.some((r) => r.answer === guess)) return room
+
+  // The bank the guess was made against, never claimed larger than the bank that
+  // exists.
+  const bankAt = Math.min(Math.max(0, Math.trunc(bankCount)), game.bank.length)
+  const entry: RecordedGuess = {
+    guesserId: seatId,
+    term: guess,
+    correct: guess === currentAnswer(game),
+    bankCount: bankAt,
+  }
+
+  if (!entry.correct) {
+    // A wrong pick joins the feed and the current answer's window. Its cost, if
+    // any, is realized as an overguess when the answer lands, matching voice mode
+    // where overguesses count only when the hinter resolves the hint.
+    return { ...room, guessFeed: [...room.guessFeed, entry] }
+  }
+
+  // First correct arrival: land the answer and credit this guesser, applying the
+  // window's accrued overguesses, all through the engine.
+  const overguesses = windowOverguesses(room.guessFeed)
+  const resolved = throughEngine(() => {
+    const hinted = giveHint(game, usableWords(game))
+    return resolveHint(hinted, { correctGuesserId: seatId, overguesses })
+  })
+  return { ...room, game: resolved, guessFeed: [...room.guessFeed, entry] }
+}
+
 export interface IntentDeps {
   // Deals a turn's deck from the room settings: filtered pool, shuffled,
   // sized. Injected so the reducer stays deterministic; the worker supplies
   // filterPool plus a real shuffle, tests supply fixed decks.
   dealDeck: (settings: RoomSettings) => string[]
+  // The room's full filtered pool (unshuffled, complete), the same termPasses
+  // filter as the deal. A typed-mode guess must be a term in this pool;
+  // membership is the only validation selection-based guessing needs.
+  poolFor: (settings: RoomSettings) => string[]
 }
 
 // The wire-facing spine: one validated client message in, the next room state
@@ -452,8 +549,11 @@ export function applyIntent(room: RoomState, seatId: SeatId, msg: ClientMessage,
     case 'addWord':
       return hinterAddWord(room, seatId, msg.word)
     case 'giveHint':
+      // Typed mode has no hinter adjudication; the server resolves guesses.
+      if (room.settings.onlineMode === 'typed') fail('not-allowed', 'the hinter does not adjudicate in typed mode')
       return hinterGiveHint(room, seatId, msg.selection)
     case 'resolve':
+      if (room.settings.onlineMode === 'typed') fail('not-allowed', 'the hinter does not adjudicate in typed mode')
       return hinterResolve(room, seatId, msg.outcome)
     case 'reroll':
       return hinterReroll(room, seatId)
@@ -464,9 +564,7 @@ export function applyIntent(room: RoomState, seatId: SeatId, msg: ClientMessage,
     case 'forceEndTurn':
       return forceEndTurn(room, seatId)
     case 'guess':
-      // Reserved for typed-guess mode; the shape is settled so it lands as an
-      // addition, but nothing resolves guesses yet.
-      return fail('unsupported', 'typed guessing is not available yet')
+      return submitGuess(room, seatId, msg.term, msg.bankCount, deps.poolFor)
     case 'continueSession':
       return continueRotation(room, seatId)
     case 'playAgain':

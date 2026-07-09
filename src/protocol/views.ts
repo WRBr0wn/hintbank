@@ -15,8 +15,10 @@ import {
   type GameState,
 } from '../engine'
 import type {
+  GuessFeedEntry,
   HinterView,
   PublicGameView,
+  RecordedGuess,
   RoomState,
   RoomView,
   SeatId,
@@ -37,7 +39,15 @@ const toSeatView = (s: RoomState['seats'][number]): SeatView => ({
 // guesser board streamable. The deck, the cursor, the rerolled pile, and the
 // current answer never appear; landed answers (results) are public because an
 // answer only reaches guessers after it resolves.
-function publicGame(game: GameState): PublicGameView {
+// The guess feed drops its server-side bankCount; the view carries only who
+// picked what and whether it landed.
+const toFeedEntry = ({ guesserId, term, correct }: RecordedGuess): GuessFeedEntry => ({
+  guesserId,
+  term,
+  correct,
+})
+
+function publicGame(game: GameState, feed: RecordedGuess[]): PublicGameView {
   return {
     hinterId: game.hinterId,
     bank: game.bank,
@@ -51,6 +61,7 @@ function publicGame(game: GameState): PublicGameView {
     endedEarly: game.endedEarly,
     phase: game.phase,
     status: game.status,
+    feed: feed.map(toFeedEntry),
   }
 }
 
@@ -80,7 +91,7 @@ function sessionView(room: RoomState): SessionView | null {
 // this seat IS the current hinter; guessers and spectators get the public
 // view and nothing more.
 export function viewFor(room: RoomState, seatId: SeatId): RoomView {
-  const game = room.game ? publicGame(room.game) : null
+  const game = room.game ? publicGame(room.game, room.guessFeed) : null
   const isHinter = room.game?.hinterId === seatId && room.phase === 'turn'
   return {
     editionId: room.editionId,
