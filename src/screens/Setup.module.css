@@ -239,6 +239,21 @@
   text-decoration: underline;
 }
 
+/* The pointer to the rules' Ways to play, beside the mode picker label. Quiet
+   like .reset but in the accent so it reads as a help nudge, not chrome. */
+.howTo {
+  font-size: 0.85rem;
+  color: var(--accent-ink);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.howTo:hover {
+  text-decoration: underline;
+}
+
 /* The two Game controls sit side-by-side when there is room and wrap to a stack
    when the screen is too narrow, so no fixed breakpoint is needed. flex-start keeps
    the groups top-aligned even when one is taller. */

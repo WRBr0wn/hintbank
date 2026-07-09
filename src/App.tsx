@@ -182,8 +182,15 @@ export default function App({ editionId }: { editionId: string }) {
     else setConfirmReturn(true)
   }
 
-  // Mid-turn the modal leads with the quick reference instead of the overview.
-  const helpInTurn = phase === 'pass' || phase === 'hinter'
+  // The rules modal leads with the section that fits where it was opened: the
+  // mode picker at Setup leads with Ways to play, mid-turn leads with the quick
+  // reference, everything else opens to the overview.
+  const helpLead: 'modes' | 'quick' | 'overview' =
+    phase === 'pass' || phase === 'hinter'
+      ? 'quick'
+      : !multiplayer && phase === 'setup'
+        ? 'modes'
+        : 'overview'
 
   return (
     <div className={styles.app}>
@@ -222,6 +229,7 @@ export default function App({ editionId }: { editionId: string }) {
           <Setup
             onStart={handleStart}
             onChooseMultiplayer={() => setMultiplayer(true)}
+            onHowToPlay={() => setShowHelp(true)}
             credits={edition.credits}
             categories={edition.categories}
             secondaryTag={edition.secondaryTag}
@@ -271,7 +279,7 @@ export default function App({ editionId }: { editionId: string }) {
         <ScoreBar roster={roster} totals={session.totals} hinterId={hinter?.id ?? null} game={game} />
       )}
 
-      {showHelp && <HowToPlay inTurn={helpInTurn} onClose={() => setShowHelp(false)} />}
+      {showHelp && <HowToPlay lead={helpLead} onClose={() => setShowHelp(false)} />}
 
       {confirmReturn && (
         <ConfirmModal

@@ -32,7 +32,7 @@ export default function MenuApp() {
         <Menu />
       </main>
 
-      {showHelp && <HowToPlay inTurn={false} onClose={() => setShowHelp(false)} />}
+      {showHelp && <HowToPlay lead="overview" onClose={() => setShowHelp(false)} />}
     </div>
   )
 }

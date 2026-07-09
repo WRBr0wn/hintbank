@@ -13,18 +13,45 @@ import {
 import styles from './HowToPlay.module.css'
 
 interface Props {
-  // In-turn surfaces (pass screen, play board) lead with the compact quick
-  // reference; everywhere else opens straight to the overview.
-  inTurn: boolean
+  // Which section leads the modal, matching where it was opened from: the mode
+  // picker at Setup leads with Ways to play, in-turn surfaces (pass screen, play
+  // board) lead with the quick reference, everywhere else opens to the overview.
+  lead: 'modes' | 'quick' | 'overview'
   onClose: () => void
 }
 
 // The rules, in-app. Platform content: edition-agnostic, one text for all
 // editions. Every number is read from the engine's constants so a balance
 // change cannot make this screen lie.
-export default function HowToPlay({ inTurn, onClose }: Props) {
+export default function HowToPlay({ lead, onClose }: Props) {
   const dialogRef = useModalFocus(onClose)
   const titleId = useId()
+
+  // The modes section is permanent, but it leads when opened from the Setup
+  // picker and otherwise sits in its normal slot after "The idea".
+  const waysToPlay = (
+    <section>
+      <h3 className={styles.heading}>Ways to play</h3>
+      <ul className={styles.list}>
+        <li>
+          <strong>In Person: One Device.</strong> Everyone is together in one room. The device passes to
+          whoever is hinting; they read their secret answers off it, then hand it on when the turn ends.
+        </li>
+        <li>
+          <strong>Online: One Device.</strong> One screen shared over a call. The answer stays hidden until
+          the hinter holds to peek, so it never lands on the stream.
+        </li>
+        <li>
+          <strong>Online: One Device + Randomizer.</strong> The shared screen is a public board. The hinter
+          pulls answers privately from the randomizer and types each one in as it gets guessed.
+        </li>
+        <li>
+          <strong>Online: Multiplayer.</strong> Everyone plays on their own device, no passing. The hinter
+          runs the board; everyone else follows the live board and guesses out loud.
+        </li>
+      </ul>
+    </section>
+  )
 
   return (
     <div className={styles.backdrop} onClick={onClose}>
@@ -45,7 +72,7 @@ export default function HowToPlay({ inTurn, onClose }: Props) {
         </div>
 
         <div className={styles.body}>
-          {inTurn && (
+          {lead === 'quick' && (
             <section className={styles.quick}>
               <h3 className={styles.heading}>Quick reference</h3>
               <ul className={styles.list}>
@@ -58,6 +85,8 @@ export default function HowToPlay({ inTurn, onClose }: Props) {
             </section>
           )}
 
+          {lead === 'modes' && waysToPlay}
+
           <section>
             <h3 className={styles.heading}>The idea</h3>
             <p>
@@ -69,6 +98,8 @@ export default function HowToPlay({ inTurn, onClose }: Props) {
               they score. Everyone hints once per session, and the highest total takes the crown.
             </p>
           </section>
+
+          {lead !== 'modes' && waysToPlay}
 
           <section>
             <h3 className={styles.heading}>A turn</h3>
