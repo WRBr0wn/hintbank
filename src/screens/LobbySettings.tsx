@@ -18,6 +18,13 @@ const DIFFICULTIES: { id: string; label: string; base: number }[] = [
 
 const clampAnswers = (n: number) => Math.max(MIN_ANSWERS, Math.min(MAX_ANSWERS, n))
 
+// The per-room voice/typed toggle, labeled by how guesses happen. Both play
+// under the one "Online: Multiplayer" mode; this only picks the guess flow.
+const GUESS_MODES: { id: 'voice' | 'typed'; label: string; note: string }[] = [
+  { id: 'voice', label: 'Out loud', note: 'Guessers say answers on a call; the hinter marks who got it.' },
+  { id: 'typed', label: 'Typed', note: 'Guessers pick from the pool on their own screen; the server scores it.' },
+]
+
 // The host-edited room settings, rendered through the same controls Setup uses.
 // Fully driven by the server's RoomSettings: a change sends an intent and the
 // next snapshot updates the controls, so the client never holds settings state
@@ -119,6 +126,28 @@ export default function LobbySettings({
                 This selection has {poolSize} {poolSize === 1 ? 'answer' : 'answers'} - turns will run {poolSize}.
               </p>
             )}
+          </div>
+
+          <div className={setup.controlGroup}>
+            <div className={setup.subLabel}>How guesses happen</div>
+            <div className={setup.categories}>
+              {GUESS_MODES.map((m) => {
+                const on = settings.onlineMode === m.id
+                return (
+                  <button
+                    key={m.id}
+                    type="button"
+                    className={on ? setup.catOn : setup.cat}
+                    aria-pressed={on}
+                    disabled={!editable}
+                    onClick={() => editable && onChange({ onlineMode: m.id })}
+                  >
+                    {m.label}
+                  </button>
+                )
+              })}
+            </div>
+            <p className={setup.note}>{GUESS_MODES.find((m) => m.id === settings.onlineMode)?.note}</p>
           </div>
         </div>
       </section>

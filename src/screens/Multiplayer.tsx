@@ -4,6 +4,8 @@ import Lobby from './Lobby'
 import Interstitial from './Interstitial'
 import HinterBoard from './HinterBoard'
 import GuesserBoard from './GuesserBoard'
+import TypedHinterBoard from './TypedHinterBoard'
+import TypedGuesserBoard from './TypedGuesserBoard'
 import MpLeaderboard from './MpLeaderboard'
 import { avatarKey } from '../avatars'
 import { useRoom } from '../net'
@@ -70,8 +72,14 @@ export default function Multiplayer({
         return <Lobby {...screen} />
       case 'interstitial':
         return <Interstitial {...screen} />
-      case 'turn':
-        return state.view.game?.hinterId === state.seatId ? <HinterBoard {...screen} /> : <GuesserBoard {...screen} />
+      case 'turn': {
+        // Typed and voice share the "Online: Multiplayer" mode; the room's
+        // onlineMode setting picks which pair of boards a turn renders.
+        const typed = state.view.settings.onlineMode === 'typed'
+        const isHinter = state.view.game?.hinterId === state.seatId
+        if (typed) return isHinter ? <TypedHinterBoard {...screen} /> : <TypedGuesserBoard {...screen} />
+        return isHinter ? <HinterBoard {...screen} /> : <GuesserBoard {...screen} />
+      }
       case 'leaderboard':
         return <MpLeaderboard {...screen} />
     }
