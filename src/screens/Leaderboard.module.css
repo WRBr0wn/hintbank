@@ -72,7 +72,25 @@
   margin-top: 1rem;
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: 1rem;
+}
+
+/* Each action is a button with a one-line description under it, always shown
+   (no hover) so a player meeting these controls knows what each one does. */
+.action {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.action button {
+  width: 100%;
+}
+
+.actionDesc {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-muted);
 }
 
 .continue {
@@ -165,6 +183,10 @@
 
   .startOver {
     font-size: 1.05rem;
+  }
+
+  .actionDesc {
+    font-size: 0.9rem;
   }
 }
 

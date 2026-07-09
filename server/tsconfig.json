@@ -1,0 +1,19 @@
+{
+  "comment": "Worker/editor typecheck for server/. Standalone: not part of the client tsc -b build (tsconfig.json references only app + node), so the client build stays green without the Cloudflare types installed. The worker vitest project and wrangler typecheck this.",
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2023"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "types": ["@cloudflare/workers-types/2023-07-01", "@cloudflare/vitest-pool-workers"],
+    "strict": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true
+  },
+  "include": ["**/*.ts", "../src/protocol", "../src/engine", "../src/editions/terms.ts"]
+}

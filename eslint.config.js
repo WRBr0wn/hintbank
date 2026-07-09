@@ -22,4 +22,22 @@ export default tseslint.config(
       'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
     },
   },
+  {
+    // The Cloudflare Worker (server/) is not React and runs on worker globals.
+    files: ['server/**/*.ts'],
+    languageOptions: {
+      globals: { ...globals.worker, WebSocketPair: 'readonly' },
+    },
+    rules: {
+      'react-refresh/only-export-components': 'off',
+    },
+  },
+  {
+    // Worker test frames are decoded JSON asserted against; any is the honest
+    // shape there.
+    files: ['server/**/*.test.ts'],
+    rules: {
+      '@typescript-eslint/no-explicit-any': 'off',
+    },
+  },
 )

@@ -1,20 +1,23 @@
 {
   "name": "hintbank",
   "private": true,
-  "version": "4.1.0",
+  "version": "5.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "test": "vitest"
+    "test": "vitest",
+    "test:worker": "vitest run --config server/vitest.config.ts"
   },
   "dependencies": {
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },
   "devDependencies": {
+    "@cloudflare/vitest-pool-workers": "^0.8.71",
+    "@cloudflare/workers-types": "^4.20250906.0",
     "@eslint/js": "^10.0.1",
     "@types/react": "^19.1.5",
     "@types/react-dom": "^19.1.5",
@@ -26,6 +29,7 @@
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.62.1",
     "vite": "^6.3.5",
-    "vitest": "^3.2.4"
+    "vitest": "^3.2.4",
+    "wrangler": "4.35.0"
   }
 }

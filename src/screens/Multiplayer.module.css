@@ -1,0 +1,208 @@
+.entry {
+  width: 100%;
+  max-width: 440px;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.entryHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.entryHead h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.back {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.back:hover {
+  color: var(--accent-ink);
+  text-decoration: underline;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.subLabel {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+.nameInput {
+  padding: 0.75rem 0.85rem;
+  font-size: 1rem;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.7rem;
+}
+
+.nameInput:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.picker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  padding: 0.55rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.7rem;
+}
+
+.pick,
+.pickActive {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 0.6rem;
+  cursor: pointer;
+}
+
+.pick:hover {
+  background: var(--surface-2);
+}
+
+.pickActive {
+  border-color: var(--accent);
+  background: var(--surface-2);
+}
+
+.error {
+  font-size: 0.9rem;
+  color: var(--warn-text);
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.create {
+  padding: 0.9rem 1rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--on-accent);
+  background: var(--accent);
+  border: none;
+  border-radius: 0.8rem;
+  cursor: pointer;
+}
+
+.create:hover:not(:disabled) {
+  background: var(--accent-hover);
+}
+
+.create:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.or {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.joinRow {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.codeInput {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 0.75rem 0.85rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 1.1rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.7rem;
+}
+
+.codeInput:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.join {
+  flex: 0 0 auto;
+  padding: 0.75rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 0.7rem;
+  cursor: pointer;
+}
+
+.join:hover:not(:disabled) {
+  border-color: var(--accent);
+}
+
+.join:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Holding cards for started / ended states. */
+.notice {
+  max-width: 440px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+.noticeSub {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.noticeBtn {
+  padding: 0.7rem 1.1rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 0.7rem;
+  cursor: pointer;
+}
+
+.noticeBtn:hover {
+  border-color: var(--accent);
+}

@@ -16,3 +16,7 @@ Thumbs.db
 
 # Vite cache
 .vite/
+
+# Wrangler / workerd local cache (server dev and worker tests)
+.wrangler/
+**/.wrangler/

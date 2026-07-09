@@ -8,10 +8,10 @@ interface Props {
   roster: Player[]
   onContinue: () => void
   onPlayAgain: () => void
-  onStartOver: () => void
+  onChangeSettings: () => void
 }
 
-export default function Leaderboard({ session, roster, onContinue, onPlayAgain, onStartOver }: Props) {
+export default function Leaderboard({ session, roster, onContinue, onPlayAgain, onChangeSettings }: Props) {
   const crowned = new Set(leaders(session))
   const ranked = [...roster].sort(
     (a, b) => (session.totals[b.id] ?? 0) - (session.totals[a.id] ?? 0),
@@ -43,15 +43,24 @@ export default function Leaderboard({ session, roster, onContinue, onPlayAgain, 
       </ol>
 
       <div className={styles.actions}>
-        <button type="button" className={styles.continue} onClick={onContinue}>
-          Continue
-        </button>
-        <button type="button" className={styles.playAgain} onClick={onPlayAgain}>
-          Play Again
-        </button>
-        <button type="button" className={styles.startOver} onClick={onStartOver}>
-          Reset Session
-        </button>
+        <div className={styles.action}>
+          <button type="button" className={styles.continue} onClick={onContinue}>
+            Continue
+          </button>
+          <p className={styles.actionDesc}>Keep the scores and play another rotation.</p>
+        </div>
+        <div className={styles.action}>
+          <button type="button" className={styles.playAgain} onClick={onPlayAgain}>
+            Play Again
+          </button>
+          <p className={styles.actionDesc}>New game now, same players and settings, scores back to 0.</p>
+        </div>
+        <div className={styles.action}>
+          <button type="button" className={styles.startOver} onClick={onChangeSettings}>
+            Change Settings
+          </button>
+          <p className={styles.actionDesc}>Back to setup to change players or settings, scores back to 0.</p>
+        </div>
       </div>
     </div>
   )

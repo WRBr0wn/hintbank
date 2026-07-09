@@ -3,6 +3,7 @@ import Setup, { type GameSettings } from './screens/Setup'
 import PassToHinter from './screens/PassToHinter'
 import HinterPlay from './screens/HinterPlay'
 import Leaderboard from './screens/Leaderboard'
+import Multiplayer from './screens/Multiplayer'
 import ScoreBar from './components/ScoreBar'
 import ThemeToggle from './components/ThemeToggle'
 import ConfirmModal from './components/ConfirmModal'
@@ -63,6 +64,12 @@ export default function App({ editionId }: { editionId: string }) {
   const [game, setGame] = useState<GameState | null>(null)
   const [confirmReturn, setConfirmReturn] = useState(false)
   const [showHelp, setShowHelp] = useState(false)
+  // The multiplayer flow replaces Setup and its downstream screens. Entered by
+  // picking Online: Multiplayer, or by arriving on a share link (?room=CODE),
+  // read once at first render.
+  const initialRoom = () => new URLSearchParams(window.location.search).get('room')?.toUpperCase() ?? null
+  const [roomPrefill, setRoomPrefill] = useState<string | null>(initialRoom)
+  const [multiplayer, setMultiplayer] = useState<boolean>(() => initialRoom() !== null)
 
   const roster = settings?.players ?? []
   // Handed to the in-game launch links so they open this edition's randomizer
@@ -140,16 +147,20 @@ export default function App({ editionId }: { editionId: string }) {
     setPhase('pass')
   }
 
-  function startOver() {
-    setSession(null)
+  // Play Again from the leaderboard: an instant rematch on the same roster and
+  // settings, scores reset to zero (a fresh session), straight into the first
+  // turn with no stop at setup.
+  function playAgain() {
+    if (!settings) return
+    const hinterBase = cutoffFor(settings.difficultyBase, settings.answersPerGame)
+    setSession(createSession(settings.players.map((p) => p.id), settings.mode, hinterBase, settings.answersPerGame))
     setGame(null)
-    setSettings(null)
-    setPhase('setup')
+    setPhase('pass')
   }
 
-  // Unlike startOver, the settings stay: the roster and every setup choice
-  // round-trip back into Setup. The next Start builds a fresh session, so
-  // totals still reset to zero.
+  // Change Settings from the leaderboard (and the mid-game title back): the
+  // roster and every setup choice round-trip into Setup, prefilled and editable.
+  // The next Start builds a fresh session, so totals reset to zero.
   function returnToSetup() {
     setSession(null)
     setGame(null)
@@ -157,15 +168,29 @@ export default function App({ editionId }: { editionId: string }) {
     setPhase('setup')
   }
 
+  function exitMultiplayer() {
+    setMultiplayer(false)
+    setRoomPrefill(null)
+  }
+
   // The title walks one step back up the flow, with a confirm during a game since
-  // the game would be lost.
+  // the game would be lost. In the multiplayer flow it steps back to Setup;
+  // leaving the room is handled by the multiplayer screen unmounting.
   const titleBack = () => {
-    if (phase === 'setup') backToMenu()
+    if (multiplayer) exitMultiplayer()
+    else if (phase === 'setup') backToMenu()
     else setConfirmReturn(true)
   }
 
-  // Mid-turn the modal leads with the quick reference instead of the overview.
-  const helpInTurn = phase === 'pass' || phase === 'hinter'
+  // The rules modal leads with the section that fits where it was opened: the
+  // mode picker at Setup leads with Ways to play, mid-turn leads with the quick
+  // reference, everything else opens to the overview.
+  const helpLead: 'modes' | 'quick' | 'overview' =
+    phase === 'pass' || phase === 'hinter'
+      ? 'quick'
+      : !multiplayer && phase === 'setup'
+        ? 'modes'
+        : 'overview'
 
   return (
     <div className={styles.app}>
@@ -190,9 +215,21 @@ export default function App({ editionId }: { editionId: string }) {
         </p>
       </header>
       <main className={styles.main}>
-        {phase === 'setup' && (
+        {multiplayer && (
+          <Multiplayer
+            editionId={editionId}
+            edition={edition}
+            avatars={avatars}
+            prefillCode={roomPrefill}
+            onExit={exitMultiplayer}
+          />
+        )}
+
+        {!multiplayer && phase === 'setup' && (
           <Setup
             onStart={handleStart}
+            onChooseMultiplayer={() => setMultiplayer(true)}
+            onHowToPlay={() => setShowHelp(true)}
             credits={edition.credits}
             categories={edition.categories}
             secondaryTag={edition.secondaryTag}
@@ -231,8 +268,8 @@ export default function App({ editionId }: { editionId: string }) {
             session={session}
             roster={roster}
             onContinue={continueRotation}
-            onPlayAgain={returnToSetup}
-            onStartOver={startOver}
+            onPlayAgain={playAgain}
+            onChangeSettings={returnToSetup}
           />
         )}
       </main>
@@ -242,7 +279,7 @@ export default function App({ editionId }: { editionId: string }) {
         <ScoreBar roster={roster} totals={session.totals} hinterId={hinter?.id ?? null} game={game} />
       )}
 
-      {showHelp && <HowToPlay inTurn={helpInTurn} onClose={() => setShowHelp(false)} />}
+      {showHelp && <HowToPlay lead={helpLead} onClose={() => setShowHelp(false)} />}
 
       {confirmReturn && (
         <ConfirmModal

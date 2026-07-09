@@ -1,0 +1,29 @@
+name = "hintbank-rooms"
+main = "index.ts"
+compatibility_date = "2024-11-01"
+
+# Serve the worker at its *.workers.dev URL (explicit, so the deploy does not
+# rely on wrangler's fallback default and warn each time).
+workers_dev = true
+
+# One SQLite-backed Durable Object per room, plus a per-key rate-limit counter.
+# SQLite-backed classes run on the Workers Free plan.
+[[durable_objects.bindings]]
+name = "HINT_ROOM"
+class_name = "RoomDurableObject"
+
+[[durable_objects.bindings]]
+name = "RATE_LIMITER"
+class_name = "RateLimiterDurableObject"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["RoomDurableObject", "RateLimiterDurableObject"]
+
+[vars]
+# Kill switch: set to "false" to stop new rooms during sustained abuse.
+ROOMS_ENABLED = "true"
+# Comma-separated origin allow list, one list for both the WebSocket upgrade
+# Origin check and the create-path CORS grant. The deployed GitHub Pages origin;
+# localhost dev is always allowed in code.
+ALLOWED_ORIGINS = "https://wrbr0wn.github.io"

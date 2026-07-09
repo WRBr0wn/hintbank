@@ -22,7 +22,7 @@ const MODES: { id: GameMode; label: string; ready: boolean }[] = [
   { id: 'in-person', label: 'In Person: One Device', ready: true },
   { id: 'online-one-device', label: 'Online: One Device', ready: true },
   { id: 'online-randomizer', label: 'Online: One Device + Randomizer', ready: true },
-  { id: 'online-multiplayer', label: 'Online: Multiplayer', ready: false },
+  { id: 'online-multiplayer', label: 'Online: Multiplayer', ready: true },
 ]
 
 const MIN_PLAYERS = 2
@@ -59,6 +59,8 @@ function makePlayer(avatars: PlayerAvatar[], used: string[]): Player {
 
 export default function Setup({
   onStart,
+  onChooseMultiplayer,
+  onHowToPlay,
   credits,
   categories,
   secondaryTag,
@@ -68,6 +70,13 @@ export default function Setup({
 }: {
   // Hands back the raw choices as one settings object; App derives the cutoff.
   onStart: (settings: GameSettings) => void
+  // Online: Multiplayer is not a settings choice; it hands off to the room flow,
+  // which replaces Setup entirely.
+  onChooseMultiplayer: () => void
+  // Opens the How to Play modal, which leads with Ways to play from here: the
+  // discoverable pointer beside the mode picker, which has no room for inline
+  // per-mode copy.
+  onHowToPlay: () => void
   credits: EditionCredits
   // Passed in so Setup never reaches into edition data itself.
   categories: Category[]
@@ -177,6 +186,9 @@ export default function Setup({
       <section className={styles.section}>
         <div className={styles.sectionHead}>
           <h2>Mode</h2>
+          <button type="button" className={styles.howTo} onClick={onHowToPlay}>
+            New here? Ways to play
+          </button>
         </div>
         <div className={styles.categories}>
           {MODES.map((m) => {
@@ -189,7 +201,7 @@ export default function Setup({
                 className={cls}
                 disabled={!m.ready}
                 aria-pressed={on}
-                onClick={() => setMode(m.id)}
+                onClick={() => (m.id === 'online-multiplayer' ? onChooseMultiplayer() : setMode(m.id))}
               >
                 {m.label}
                 {!m.ready && <span className={styles.soon}>soon</span>}
