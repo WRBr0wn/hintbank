@@ -14,6 +14,10 @@ export const HINTER_BASE_EASY = 30
 export const HINTER_BASE_HARD = 20
 export const MIN_ANSWERS = 5
 export const MAX_ANSWERS = 10
+// The designed roster: local Setup bounds its player list with these, and the
+// multiplayer reducer caps player joins at the same MAX_PLAYERS.
+export const MIN_PLAYERS = 2
+export const MAX_PLAYERS = 8
 
 // An answer is an opaque token. The engine never inspects it. The UI maps it to
 // whatever the edition bundles (a Pokemon name, an item, a town). That's what

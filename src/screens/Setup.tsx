@@ -8,7 +8,9 @@ import {
   HINTER_BASE_EASY,
   HINTER_BASE_HARD,
   MAX_ANSWERS,
+  MAX_PLAYERS,
   MIN_ANSWERS,
+  MIN_PLAYERS,
   type GameMode,
 } from '../engine'
 import { toggled, toggledKeepOne } from '../sets'
@@ -24,9 +26,6 @@ const MODES: { id: GameMode; label: string; ready: boolean }[] = [
   { id: 'online-randomizer', label: 'Online: One Device + Randomizer', ready: true },
   { id: 'online-multiplayer', label: 'Online: Multiplayer', ready: true },
 ]
-
-const MIN_PLAYERS = 2
-const MAX_PLAYERS = 8
 
 // A preset picks a base: the clue cutoff for a full 10-answer game. The actual
 // cutoff is derived from base and answer count at start. The bases are engine

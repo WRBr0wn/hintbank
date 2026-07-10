@@ -236,6 +236,7 @@ export type RoomErrorCode =
   | 'unknown-seat'
   | 'seat-taken'
   | 'room-locked'
+  | 'room-full'
   | 'name-taken'
   | 'bad-name'
   | 'bad-settings'

@@ -12,7 +12,9 @@ import {
   HINTER_BASE_EASY,
   HINTER_BASE_HARD,
   MAX_ANSWERS,
+  MAX_PLAYERS,
   MIN_ANSWERS,
+  MIN_PLAYERS,
   addWord,
   createGame,
   currentAnswer,
@@ -148,6 +150,12 @@ export interface JoinRequest {
 export function join(room: RoomState, req: JoinRequest): RoomState {
   if (room.locked) fail('room-locked', 'this room is locked')
   if (seatById(room, req.seatId)) fail('seat-taken', 'that seat already exists')
+  // The designed game is MIN_PLAYERS to MAX_PLAYERS players, the same cap local
+  // Setup enforces. Spectators are display surfaces: uncapped and not counted.
+  // A token reconnect never lands here (the worker restores the existing seat).
+  if (!req.spectator && playerSeats(room).length >= MAX_PLAYERS) {
+    fail('room-full', `this room is full: ${MAX_PLAYERS} players are already in`)
+  }
   const name = cleanName(req.name)
   if (room.seats.some((s) => s.name.toLowerCase() === name.toLowerCase())) {
     fail('name-taken', 'that name is taken, pick another')
@@ -233,7 +241,7 @@ function removeSeat(room: RoomState, seatId: SeatId): RoomState {
     next = settleTurn(next)
   }
   const midSession = next.phase === 'interstitial' || next.phase === 'turn'
-  if (midSession && playerSeats(next).length < 2) {
+  if (midSession && playerSeats(next).length < MIN_PLAYERS) {
     if (next.phase === 'turn') next = settleTurn(next)
     next = { ...next, phase: 'leaderboard', game: null }
   }
@@ -272,7 +280,7 @@ export function updateSettings(room: RoomState, seatId: SeatId, patch: Partial<R
 export function start(room: RoomState, seatId: SeatId): RoomState {
   requireHost(room, seatId)
   requirePhase(room, 'lobby', 'the game can only start from the lobby')
-  if (playerSeats(room).length < 2) fail('need-more-players', 'need one more player')
+  if (playerSeats(room).length < MIN_PLAYERS) fail('need-more-players', 'need one more player')
   if (room.settings.categoryIds.length === 0) fail('no-categories', 'pick at least one category')
   return {
     ...room,
@@ -413,7 +421,7 @@ export function continueRotation(room: RoomState, seatId: SeatId): RoomState {
   requireHost(room, seatId)
   requirePhase(room, 'leaderboard', 'continue is a leaderboard action')
   const players = playerSeats(room)
-  if (players.length < 2) fail('need-more-players', 'need one more player')
+  if (players.length < MIN_PLAYERS) fail('need-more-players', 'need one more player')
   return {
     ...room,
     phase: 'interstitial',
@@ -432,7 +440,7 @@ export function playAgain(room: RoomState, seatId: SeatId): RoomState {
   requireHost(room, seatId)
   requirePhase(room, 'leaderboard', 'play again is a leaderboard action')
   const players = playerSeats(room)
-  if (players.length < 2) fail('need-more-players', 'need one more player')
+  if (players.length < MIN_PLAYERS) fail('need-more-players', 'need one more player')
   const totals: Record<SeatId, number> = {}
   for (const id of Object.keys(room.totals)) totals[id] = 0
   return {

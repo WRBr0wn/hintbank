@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { cutoffFor, guesserScore } from '../engine'
+import { MAX_PLAYERS, cutoffFor, guesserScore } from '../engine'
 import {
   applyIntent,
   continueRotation,
@@ -116,6 +116,31 @@ describe('room creation and lobby', () => {
   it('rejects a duplicate name case-insensitively', () => {
     const room = lobbyOfThree()
     expect(() => join(room, { seatId: 'd', name: 'ann', avatar: 'owl' })).toThrow(/taken/)
+  })
+
+  it('caps players at the designed maximum but keeps admitting spectators', () => {
+    let room = createRoom({
+      code: 'ABC234',
+      editionId: 'geography',
+      host: { seatId: 'p1', name: 'P1', avatar: 'fox' },
+      settings: settings(),
+    })
+    // Fill every remaining player seat; the last of these is seat MAX_PLAYERS.
+    for (let i = 2; i <= MAX_PLAYERS; i++) {
+      room = join(room, { seatId: `p${i}`, name: `P${i}`, avatar: 'owl' })
+    }
+    expect(room.seats.filter((s) => s.role === 'player')).toHaveLength(MAX_PLAYERS)
+    // One more player is refused with its own code; a spectator still gets in.
+    let err: unknown
+    try {
+      join(room, { seatId: 'extra', name: 'Nina', avatar: 'owl' })
+    } catch (e) {
+      err = e
+    }
+    expect(err).toBeInstanceOf(RoomError)
+    expect((err as RoomError).code).toBe('room-full')
+    room = join(room, { seatId: 's', name: 'Sam', avatar: 'ghost', spectator: true })
+    expect(room.seats).toHaveLength(MAX_PLAYERS + 1)
   })
 
   it('refuses joins when the room is locked', () => {
