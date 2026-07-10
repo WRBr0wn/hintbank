@@ -65,7 +65,9 @@ The hinter rotates so everyone hints once per **session**, and totals carry acro
 
 ## Tech
 
-- **React + Vite + TypeScript**, plain CSS Modules. The shared-screen modes need no backend at all; online multiplayer runs on a small Cloudflare Worker (one Durable Object per room) that plays by the same engine and sends each screen only what its player may see. Rooms are anonymous and short-lived - a room's data is deleted when it expires.
+- **React + Vite + TypeScript**, plain CSS Modules. The shared-screen modes need no backend at all.
+- **Multiplayer is server-authoritative, in three layers with one source of truth.** A shared protocol module (`src/protocol/`) is imported by both the client and the server - message types, the room state machine, and the role-filtered view each seat may see - so the two can't disagree about the rules of the wire. A Cloudflare Worker (`server/`, one Durable Object per room) runs the same engine the client does, validates every action, and sends each screen only its own view: guesser screens never receive the secret answer, which is what makes any of them safe to stream. The client's network layer (`src/net/`) holds no game state of its own - every screen is a projection of the latest server snapshot, which is also why reconnecting just works.
+- **Rooms are anonymous and disposable.** A name, an avatar, a room code, and a reconnect token per device - no accounts, no database. A room lives in its Durable Object, idles for free, and deletes everything it knows when it expires.
 - Light and dark themes, following your system setting by default and remembering your choice after that. The toggle works on every screen, including the randomizer.
 - The rules live in a small, self-contained engine (`src/engine/`) that's edition-agnostic; it knows nothing about Pokémon or any other content.
 - Editions are self-contained bundles: each declares its own categories, identity, avatars, and credits in `src/editions/`, with assets under `public/editions/<id>/`. Adding an edition is a drop-in, the same way adding a category is.
@@ -78,9 +80,11 @@ The hinter rotates so everyone hints once per **session**, and totals carry acro
 Run `npm install` first on a fresh checkout, then:
 
 - `npm run dev` — play locally.
-- `npm test` — run the test suite.
-- `npm run test:worker` — run the multiplayer worker's suite.
+- `npm test` — run the client and engine test suite.
+- `npm run test:worker` — run the multiplayer worker's suite, in a real workerd runtime.
 - `npm run build` — produce the static build.
+
+Multiplayer in dev needs the room server running too: `npx wrangler dev` from `server/`, and the Vite dev server proxies to it, so both halves run locally with no config. A production build points at a deployed worker via `VITE_ROOMS_URL`.
 
 ## Roadmap
 
