@@ -3,6 +3,7 @@ import BankGrid from '../components/BankGrid'
 import MpScoreStrip from './MpScoreStrip'
 import MpLanded from './MpLanded'
 import GuessFeed from './GuessFeed'
+import CurrentHint from './CurrentHint'
 import { guessIntent, guessPool, matchTerms, GUESS_QUERY_MIN } from './typedGuess'
 import { seatById, type ScreenProps } from './roomScreen'
 import { BANK_CAP } from '../engine'
@@ -11,21 +12,24 @@ import g from './Game.module.css'
 import styles from './TypedGuess.module.css'
 
 // The typed-guess guesser (and spectator) board: the read-only live board plus,
-// for a seated guesser, a typeahead over the room's pool. A projection of
-// viewFor, which never carries the current answer or the deck. A pick is sent as
-// the guess intent carrying the current bank count; the server resolves it and
-// the next snapshot re-renders. The client does no matching or scoring, and a
-// throttled pick is simply dropped by the server, so sending is fire-and-forget.
+// for a seated guesser while a hint is open, a typeahead over the room's pool. A
+// projection of viewFor, which never carries the current answer or the deck. A
+// pick is sent as the guess intent carrying the current hint index; the server
+// resolves it and the next snapshot re-renders. The client does no matching or
+// scoring, and a throttled pick is simply dropped by the server, so sending is
+// fire-and-forget.
 export default function TypedGuesserBoard({ view, seatId, avatars, edition, onSend, onLeave }: ScreenProps) {
   const game = view.game!
   const hinter = seatById(view, game.hinterId)
   const hinterDropped = hinter?.connection === 'reconnecting'
   const isHost = view.hostId === seatId
   const complete = game.status === 'complete'
+  const hintOpen = game.currentHint != null
 
   const me = seatById(view, seatId)
-  // Only a seated, active guesser picks; spectators and late joiners watch.
-  const canGuess = !complete && me?.role === 'player' && !me.pending
+  // Only a seated, active guesser picks, and only while a hint is open;
+  // spectators and late joiners watch.
+  const canGuess = !complete && hintOpen && me?.role === 'player' && !me.pending
 
   const [query, setQuery] = useState('')
   // The pool is fixed for the turn (settings are locked), so it recomputes only
@@ -70,11 +74,18 @@ export default function TypedGuesserBoard({ view, seatId, avatars, edition, onSe
               </div>
             )}
 
+            {!complete &&
+              (hintOpen ? (
+                <CurrentHint game={game} />
+              ) : (
+                <p className={styles.hintWaiting}>{hinter ? hinter.name : 'The hinter'} is choosing a hint…</p>
+              ))}
+
             <section className={hp.bankSection}>
               <div className={hp.bankHead}>
                 <h2>Hint Bank</h2>
               </div>
-              <BankGrid bank={game.bank} cap={BANK_CAP} cutoff={game.cutoff} selected={[]} interactive={false} onToggle={() => {}} />
+              <BankGrid bank={game.bank} cap={BANK_CAP} cutoff={game.cutoff} selected={game.currentHint ?? []} interactive={false} onToggle={() => {}} />
             </section>
 
             {canGuess ? (
@@ -108,7 +119,8 @@ export default function TypedGuesserBoard({ view, seatId, avatars, edition, onSe
                 <p className={styles.pickNote}>A wrong pick past your first on a hint costs a point. First correct lands it.</p>
               </section>
             ) : (
-              !complete && <p className={hp.fullNote}>Watching this turn. Guessers pick from the pool to land answers.</p>
+              !complete &&
+              me?.role !== 'player' && <p className={hp.fullNote}>Watching this turn. Guessers pick from the pool to land answers.</p>
             )}
 
             <GuessFeed view={view} game={game} avatars={avatars} />

@@ -20,9 +20,9 @@ import {
   endTurn,
   gameScores,
   giveHint,
+  recordOverguess,
   reroll,
   resolveHint,
-  usableWords,
   type GameState,
 } from '../engine'
 import {
@@ -134,6 +134,7 @@ export function createRoom({ code, editionId, host, settings }: NewRoom): RoomSt
     session: null,
     game: null,
     guessFeed: [],
+    currentHint: null,
   }
 }
 
@@ -204,6 +205,7 @@ function settleTurn(room: RoomState): RoomState {
     seats,
     totals,
     game: null,
+    currentHint: null,
     session: { queue, completedRotations: session.completedRotations + (done ? 1 : 0) },
     phase: done ? 'leaderboard' : 'interstitial',
   }
@@ -296,9 +298,9 @@ export function startTurn(room: RoomState, seatId: SeatId, deck: string[]): Room
     hinterBase: cutoffFor(room.settings.difficultyBase, answers),
     answersPerGame: answers,
   })
-  // A fresh turn starts with an empty guess feed (typed mode fills it; voice
-  // leaves it empty).
-  return { ...room, phase: 'turn', game, guessFeed: [] }
+  // A fresh turn starts with an empty guess feed and no hint (typed mode fills
+  // them; voice leaves them empty).
+  return { ...room, phase: 'turn', game, guessFeed: [], currentHint: null }
 }
 
 function requireHinterGame(room: RoomState, seatId: SeatId): GameState {
@@ -307,7 +309,19 @@ function requireHinterGame(room: RoomState, seatId: SeatId): GameState {
   return room.game
 }
 
+// Typed mode: if a hint is open (the engine is resolving), close it back to
+// hinting so the hinter can build the bank or give a new hint, the same way
+// voice mode's "keep hinting" returns from resolving. Closing loses no scoring:
+// overguesses were already applied as each wrong pick arrived (submitGuess). A
+// no-op in voice mode and when no hint is open.
+function closeTypedHint(room: RoomState): RoomState {
+  if (room.settings.onlineMode !== 'typed') return room
+  if (!room.game || room.game.phase !== 'resolving') return room
+  return { ...room, game: throughEngine(() => resolveHint(room.game!, {})), currentHint: null }
+}
+
 export function hinterAddWord(room: RoomState, seatId: SeatId, word: string): RoomState {
+  room = closeTypedHint(room)
   const game = requireHinterGame(room, seatId)
   return { ...room, game: throughEngine(() => addWord(game, word)) }
 }
@@ -315,6 +329,18 @@ export function hinterAddWord(room: RoomState, seatId: SeatId, word: string): Ro
 export function hinterGiveHint(room: RoomState, seatId: SeatId, selection: number[]): RoomState {
   const game = requireHinterGame(room, seatId)
   return { ...room, game: throughEngine(() => giveHint(game, selection)) }
+}
+
+// Typed mode's give-hint: the hinter points at the current answer by selecting
+// bank words in order, the same interaction as voice and local play. It closes
+// any open hint first (a new hint on the same answer, so a fresh free guess per
+// hint), runs the engine's giveHint (which ticks hintCount and moves to
+// resolving), and stores the selection so every board can show the live hint.
+export function typedGiveHint(room: RoomState, seatId: SeatId, selection: number[]): RoomState {
+  room = closeTypedHint(room)
+  const game = requireHinterGame(room, seatId)
+  const next = throughEngine(() => giveHint(game, selection))
+  return { ...room, game: next, currentHint: [...selection] }
 }
 
 export function hinterResolve(room: RoomState, seatId: SeatId, outcome: ResolveOutcome): RoomState {
@@ -329,11 +355,15 @@ export function hinterResolve(room: RoomState, seatId: SeatId, outcome: ResolveO
 }
 
 export function hinterReroll(room: RoomState, seatId: SeatId): RoomState {
+  room = closeTypedHint(room)
   const game = requireHinterGame(room, seatId)
+  // Typed mode: overguesses already applied stay applied; rerolling the answer
+  // away forgives nothing.
   return { ...room, game: throughEngine(() => reroll(game)) }
 }
 
 export function hinterEndTurn(room: RoomState, seatId: SeatId): RoomState {
+  room = closeTypedHint(room)
   const game = requireHinterGame(room, seatId)
   return { ...room, game: throughEngine(() => endTurn(game)) }
 }
@@ -425,42 +455,21 @@ export function resetSession(room: RoomState, seatId: SeatId): RoomState {
   return { ...room, phase: 'lobby', session: null, game: null, totals }
 }
 
-// The current answer's overguess tally, read off the guess stream. Within the
-// window since the last landed answer, a guesser's first pick at a given bank
-// size is free and each further pick at that same bank size is an overguess,
-// which attributes every wrong pick to the hint it answered by its bankCount
-// (per MULTIPLAYER.md), not to whatever is current on arrival. Correct picks
-// land immediately, so the window holds only wrong picks.
-function windowOverguesses(feed: RecordedGuess[]): Record<SeatId, number> {
-  let start = 0
-  for (let i = feed.length - 1; i >= 0; i--) {
-    if (feed[i].correct) {
-      start = i + 1
-      break
-    }
-  }
-  const seen = new Set<string>()
-  const tally: Record<SeatId, number> = {}
-  for (let i = start; i < feed.length; i++) {
-    const g = feed[i]
-    const key = `${g.guesserId} ${g.bankCount}`
-    if (seen.has(key)) tally[g.guesserId] = (tally[g.guesserId] ?? 0) + 1
-    else seen.add(key)
-  }
-  return tally
-}
-
-// Typed-guess resolution: guessers pick terms and the server adjudicates, with
-// no hinter step. The first correct arrival lands the current answer and credits
-// that guesser; wrong picks accrue on the current answer and, when it lands,
-// become overguesses attributed by the bank size they were made against. The
-// resolution runs through the same engine path voice mode uses (giveHint then
-// resolveHint), so all scoring stays in the engine. Active only in typed mode.
+// Typed-guess resolution: guessers pick terms and the server adjudicates the
+// hint the hinter gave, with no "who guessed it" step. A pick is answered only
+// while a hint is open (the engine is resolving). The first correct arrival
+// lands the current answer and credits that guesser through resolveHint. A
+// guesser's first pick on a given hint (by hintIndex, the engine's hintCount)
+// is free; each further wrong pick on that same hint is an overguess applied
+// the moment it happens and it sticks, unaffected by a reroll, the turn
+// ending, or whether the answer ever lands. That matches voice mode, where a
+// hint's overguesses settle when the hint resolves, not when an answer lands.
+// All scoring stays in the engine. Active only in typed mode.
 export function submitGuess(
   room: RoomState,
   seatId: SeatId,
   term: string,
-  bankCount: number,
+  hintIndex: number,
   poolFor: (settings: RoomSettings) => string[],
 ): RoomState {
   if (room.settings.onlineMode !== 'typed') fail('unsupported', 'typed guessing is off in this room')
@@ -468,11 +477,12 @@ export function submitGuess(
   // A seated, active guesser only: not a spectator, not a late joiner still
   // waiting on the turn boundary.
   if (seat.role !== 'player' || seat.pending) fail('not-allowed', 'only a seated guesser can guess')
-  // Out of window: with no answer in play there is nothing to resolve against, so
-  // a guess arriving after the turn is over (or between turns) is dropped, not an
-  // error.
+  // Out of window: a pick lands only while a hint is open. With no live turn, or
+  // between hints (the hinter is still building the bank), there is nothing to
+  // answer, so the pick is dropped, not an error.
   if (room.phase !== 'turn' || !room.game || room.game.status !== 'playing') return room
   const game = room.game
+  if (game.phase !== 'resolving') return room
   if (seatId === game.hinterId) fail('not-allowed', 'the hinter does not guess')
 
   const guess = term.trim()
@@ -485,31 +495,30 @@ export function submitGuess(
   // them to it) is dropped, not scored against the current answer.
   if (game.results.some((r) => r.answer === guess)) return room
 
-  // The bank the guess was made against, never claimed larger than the bank that
-  // exists.
-  const bankAt = Math.min(Math.max(0, Math.trunc(bankCount)), game.bank.length)
+  // The hint the pick answers, never claimed beyond the hints that exist (a hint
+  // is open, so hintCount >= 1).
+  const answeredHint = Math.min(Math.max(1, Math.trunc(hintIndex)), game.hintCount)
   const entry: RecordedGuess = {
     guesserId: seatId,
     term: guess,
     correct: guess === currentAnswer(game),
-    bankCount: bankAt,
+    hintIndex: answeredHint,
   }
+  const guessFeed = [...room.guessFeed, entry]
 
   if (!entry.correct) {
-    // A wrong pick joins the feed and the current answer's window. Its cost, if
-    // any, is realized as an overguess when the answer lands, matching voice mode
-    // where overguesses count only when the hinter resolves the hint.
-    return { ...room, guessFeed: [...room.guessFeed, entry] }
+    // Any earlier pick of theirs on this hint (hintCount is monotonic across
+    // the turn, so the whole feed is scannable) means this one costs a point,
+    // applied now and permanently.
+    const repeat = room.guessFeed.some((g) => g.guesserId === seatId && g.hintIndex === answeredHint)
+    const next = repeat ? throughEngine(() => recordOverguess(game, seatId)) : game
+    return { ...room, game: next, guessFeed }
   }
 
-  // First correct arrival: land the answer and credit this guesser, applying the
-  // window's accrued overguesses, all through the engine.
-  const overguesses = windowOverguesses(room.guessFeed)
-  const resolved = throughEngine(() => {
-    const hinted = giveHint(game, usableWords(game))
-    return resolveHint(hinted, { correctGuesserId: seatId, overguesses })
-  })
-  return { ...room, game: resolved, guessFeed: [...room.guessFeed, entry] }
+  // First correct arrival: land the answer and credit this guesser through the
+  // engine. Overguesses were already applied as the wrong picks arrived.
+  const resolved = throughEngine(() => resolveHint(game, { correctGuesserId: seatId }))
+  return { ...room, game: resolved, guessFeed, currentHint: null }
 }
 
 export interface IntentDeps {
@@ -549,10 +558,13 @@ export function applyIntent(room: RoomState, seatId: SeatId, msg: ClientMessage,
     case 'addWord':
       return hinterAddWord(room, seatId, msg.word)
     case 'giveHint':
-      // Typed mode has no hinter adjudication; the server resolves guesses.
-      if (room.settings.onlineMode === 'typed') fail('not-allowed', 'the hinter does not adjudicate in typed mode')
-      return hinterGiveHint(room, seatId, msg.selection)
+      // Both modes give hints; typed stores the selection and defers scoring to
+      // the server's guess resolution instead of a hinter adjudication.
+      return room.settings.onlineMode === 'typed'
+        ? typedGiveHint(room, seatId, msg.selection)
+        : hinterGiveHint(room, seatId, msg.selection)
     case 'resolve':
+      // The "who guessed it" step; typed mode has none (the server resolves).
       if (room.settings.onlineMode === 'typed') fail('not-allowed', 'the hinter does not adjudicate in typed mode')
       return hinterResolve(room, seatId, msg.outcome)
     case 'reroll':
@@ -564,7 +576,7 @@ export function applyIntent(room: RoomState, seatId: SeatId, msg: ClientMessage,
     case 'forceEndTurn':
       return forceEndTurn(room, seatId)
     case 'guess':
-      return submitGuess(room, seatId, msg.term, msg.bankCount, deps.poolFor)
+      return submitGuess(room, seatId, msg.term, msg.hintIndex, deps.poolFor)
     case 'continueSession':
       return continueRotation(room, seatId)
     case 'playAgain':

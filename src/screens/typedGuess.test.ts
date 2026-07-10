@@ -33,6 +33,7 @@ const game = (over: Partial<PublicGameView> = {}): PublicGameView => ({
   phase: 'hinting',
   status: 'playing',
   feed: [],
+  currentHint: null,
   ...over,
 })
 
@@ -84,6 +85,18 @@ describe('matchTerms', () => {
     expect(matchTerms(['Algeria', 'Germany', 'Georgia'], 'ge')).toEqual(['Germany', 'Georgia', 'Algeria'])
   })
 
+  it('matches a contiguous in-order substring, not scattered letters', () => {
+    // "gmn" is in Germany's letters but not contiguous, so it must not match;
+    // the contiguous "man" does.
+    expect(matchTerms(['Germany'], 'gmn')).toEqual([])
+    expect(matchTerms(['Germany'], 'man')).toEqual(['Germany'])
+  })
+
+  it('respects letter order, so a reversed substring does not match', () => {
+    expect(matchTerms(['France'], 'arf')).toEqual([])
+    expect(matchTerms(['France'], 'fra')).toEqual(['France'])
+  })
+
   it('caps the number of matches', () => {
     const many = Array.from({ length: 50 }, (_, i) => `Term${i}`)
     expect(matchTerms(many, 'term', 5)).toHaveLength(5)
@@ -91,13 +104,13 @@ describe('matchTerms', () => {
 })
 
 describe('guessIntent', () => {
-  it('builds a guess carrying the current bank count', () => {
-    const intent = guessIntent('France', game({ bank: [{ kind: 'word', word: 'a' }, { kind: 'reroll' }] }))
-    expect(intent).toEqual({ type: 'guess', term: 'France', bankCount: 2 })
+  it('builds a guess carrying the current hint index', () => {
+    const intent = guessIntent('France', game({ hintCount: 3 }))
+    expect(intent).toEqual({ type: 'guess', term: 'France', hintIndex: 3 })
   })
 
-  it('reads the bank count off the live view, so a stale count cannot be sent', () => {
-    expect(guessIntent('Japan', game({ bank: [] })).bankCount).toBe(0)
+  it('reads the hint index off the live view, so a stale one cannot be sent', () => {
+    expect(guessIntent('Japan', game({ hintCount: 1 })).hintIndex).toBe(1)
   })
 })
 

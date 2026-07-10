@@ -532,15 +532,24 @@ async function toTypedTurn(answers = 5): Promise<{
 // Known-present country names, so a test can pick a valid wrong guess.
 const COUNTRIES = ['Egypt', 'Chad', 'Angola', 'Benin', 'Botswana', 'Cameroon', 'Comoros', 'Djibouti']
 
+// The hinter banks a word and gives a hint from it, so guesses have a hint to
+// answer. Returns the secret answer (off the hinter's own view) and the hint
+// index guesses carry.
+async function openFirstHint(host: { ws: WebSocket }): Promise<{ answer: string; hintIndex: number }> {
+  await act(host.ws, { v: 1, type: 'addWord', word: 'clue' })
+  await until(host.ws, (m) => m.type === 'snapshot' && m.view.game?.bank.length === 1)
+  await act(host.ws, { v: 1, type: 'giveHint', selection: [0] })
+  const hs = await until(host.ws, (m) => m.type === 'snapshot' && m.view.game?.phase === 'resolving')
+  return { answer: hs.view.hinter.currentAnswer, hintIndex: hs.view.game.hintCount }
+}
+
 describe('typed-guess mode: the server resolves a guess', () => {
   it('lands the answer on the first correct pick and credits the guesser', async () => {
     const { host, guest } = await toTypedTurn(5)
-    await act(host.ws, { v: 1, type: 'addWord', word: 'clue' })
-    const hs = await snapshotOf(host.ws)
-    const answer = hs.view.hinter.currentAnswer // the hinter's own view carries it
+    const { answer, hintIndex } = await openFirstHint(host)
     expect(typeof answer).toBe('string')
 
-    await act(guest.ws, { v: 1, type: 'guess', term: answer, bankCount: 1 })
+    await act(guest.ws, { v: 1, type: 'guess', term: answer, hintIndex })
     const after = await until(host.ws, (m) => m.type === 'snapshot' && m.view.game?.resolved === 1)
     expect(after.view.game.correctGuesses[guest.seatId]).toBe(1)
     // Public through both results and the feed.
@@ -548,6 +557,16 @@ describe('typed-guess mode: the server resolves a guess', () => {
     expect(after.view.game.feed.some((f: any) => f.guesserId === guest.seatId && f.term === answer && f.correct)).toBe(
       true,
     )
+  })
+
+  it('shows the hinter-given hint on the guesser board, never the answer', async () => {
+    const { host, guest } = await toTypedTurn(5)
+    const { answer } = await openFirstHint(host)
+    const snap = await snapshotOf(guest.ws)
+    // The guesser sees the current hint as bank indices, and no answer.
+    expect(snap.view.game.currentHint).toEqual([0])
+    expect(snap.view.hinter).toBeNull()
+    expect(JSON.stringify(snap)).not.toContain(answer)
   })
 
   it('rejects a hinter manual-resolve in typed mode', async () => {
@@ -559,14 +578,12 @@ describe('typed-guess mode: the server resolves a guess', () => {
 
   it('throttles a burst of guesses from one connection', async () => {
     const { host, guest } = await toTypedTurn(5)
-    await act(host.ws, { v: 1, type: 'addWord', word: 'clue' })
-    const hs = await snapshotOf(host.ws)
-    const answer = hs.view.hinter.currentAnswer
+    const { answer, hintIndex } = await openFirstHint(host)
     const wrong = COUNTRIES.find((c) => c !== answer)! // a valid pool term, guaranteed wrong
 
     // A burst well under the message budget (10) but over the guess budget (5).
     const burst = 9
-    for (let i = 0; i < burst; i++) send(guest.ws, { v: 1, type: 'guess', term: wrong, bankCount: 1 })
+    for (let i = 0; i < burst; i++) send(guest.ws, { v: 1, type: 'guess', term: wrong, hintIndex })
 
     const snap = await snapshotOf(guest.ws)
     // Some picks landed in the feed, but the throttle dropped the tail of the

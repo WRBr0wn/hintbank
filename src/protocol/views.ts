@@ -39,7 +39,7 @@ const toSeatView = (s: RoomState['seats'][number]): SeatView => ({
 // guesser board streamable. The deck, the cursor, the rerolled pile, and the
 // current answer never appear; landed answers (results) are public because an
 // answer only reaches guessers after it resolves.
-// The guess feed drops its server-side bankCount; the view carries only who
+// The guess feed drops its server-side hintIndex; the view carries only who
 // picked what and whether it landed.
 const toFeedEntry = ({ guesserId, term, correct }: RecordedGuess): GuessFeedEntry => ({
   guesserId,
@@ -47,7 +47,9 @@ const toFeedEntry = ({ guesserId, term, correct }: RecordedGuess): GuessFeedEntr
   correct,
 })
 
-function publicGame(game: GameState, feed: RecordedGuess[]): PublicGameView {
+// currentHint is bank word indices in the order the hinter selected, never the
+// answer, so it is safe on every seat's board.
+function publicGame(game: GameState, feed: RecordedGuess[], currentHint: number[] | null): PublicGameView {
   return {
     hinterId: game.hinterId,
     bank: game.bank,
@@ -62,19 +64,24 @@ function publicGame(game: GameState, feed: RecordedGuess[]): PublicGameView {
     phase: game.phase,
     status: game.status,
     feed: feed.map(toFeedEntry),
+    currentHint,
   }
 }
 
 // The hinter's private extras, added only to the current hinter's own view.
 // The capability flags live here, not on the public view, because they read
-// deck internals no client is ever sent.
-function hinterExtras(game: GameState): HinterView {
+// deck internals no client is ever sent. In typed mode the hinter builds and
+// rerolls while a hint is open: the server closes the hint first (a no-op
+// resolveHint), so the flags reflect that post-close hinting state, not the
+// transient resolving one, and the board's controls stay live.
+function hinterExtras(game: GameState, typed: boolean): HinterView {
+  const forFlags = typed && game.phase === 'resolving' ? { ...game, phase: 'hinting' as const } : game
   return {
     currentAnswer: currentAnswer(game),
     answerIsRecycled: answerIsRecycled(game),
-    canAddWord: canAddWord(game),
-    canReroll: canReroll(game),
-    canEndTurn: canEndTurn(game),
+    canAddWord: canAddWord(forFlags),
+    canReroll: canReroll(forFlags),
+    canEndTurn: canEndTurn(forFlags),
   }
 }
 
@@ -91,7 +98,7 @@ function sessionView(room: RoomState): SessionView | null {
 // this seat IS the current hinter; guessers and spectators get the public
 // view and nothing more.
 export function viewFor(room: RoomState, seatId: SeatId): RoomView {
-  const game = room.game ? publicGame(room.game, room.guessFeed) : null
+  const game = room.game ? publicGame(room.game, room.guessFeed, room.currentHint) : null
   const isHinter = room.game?.hinterId === seatId && room.phase === 'turn'
   return {
     editionId: room.editionId,
@@ -105,6 +112,6 @@ export function viewFor(room: RoomState, seatId: SeatId): RoomView {
     you: seatId,
     session: sessionView(room),
     game,
-    hinter: isHinter && room.game ? hinterExtras(room.game) : null,
+    hinter: isHinter && room.game ? hinterExtras(room.game, room.settings.onlineMode === 'typed') : null,
   }
 }

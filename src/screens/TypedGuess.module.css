@@ -2,6 +2,65 @@
    feed. Layered on the reused HinterPlay board styles, using the same tokens so
    the typed boards match voice play in both themes. */
 
+/* The live hint, shown on every board: the selected bank words in order. */
+.hint {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 0.7rem 0.8rem;
+  background: var(--surface);
+  border: 1px solid var(--accent);
+  border-radius: 0.8rem;
+}
+
+.hintLabel {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+
+.hintWords {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.hintWord {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.65rem 0.35rem 0.4rem;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 0.6rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.hintNum {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.3rem;
+  height: 1.3rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--on-accent);
+  background: var(--accent);
+  border-radius: 999px;
+}
+
+.hintWaiting {
+  padding: 0.7rem 0.8rem;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  background: var(--surface-sunken);
+  border: 1px dashed var(--border-dashed);
+  border-radius: 0.8rem;
+}
+
 .pick {
   display: flex;
   flex-direction: column;
@@ -90,12 +149,15 @@
   color: var(--text-muted);
 }
 
+/* Capped so a long feed scrolls inside its box and never grows the page: the
+   boards are meant to fit above the bottom scoreboard without page scroll.
+   About five rows. */
 .feedList {
   list-style: none;
   display: flex;
   flex-direction: column;
   gap: 0.3rem;
-  max-height: 18rem;
+  max-height: 12rem;
   overflow-y: auto;
 }
 

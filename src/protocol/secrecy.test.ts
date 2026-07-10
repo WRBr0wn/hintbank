@@ -16,6 +16,7 @@ import {
   start,
   startTurn,
   submitGuess,
+  typedGiveHint,
   type IntentDeps,
 } from './room'
 import { viewFor } from './views'
@@ -168,7 +169,8 @@ describe('typed mode: the guess feed carries no secrets', () => {
     room = join(room, { seatId: 'watcher', name: 'Sam', avatar: 'ghost', spectator: true })
     room = start(room, 'hinter')
     room = startTurn(room, 'hinter', deps.dealDeck(room.settings))
-    return hinterAddWord(room, 'hinter', 'clue')
+    room = hinterAddWord(room, 'hinter', 'clue')
+    return typedGiveHint(room, 'hinter', [0])
   }
 
   it('never leaks an unresolved answer through the feed to a guesser or spectator', () => {
@@ -193,5 +195,16 @@ describe('typed mode: the guess feed carries no secrets', () => {
     const view = viewFor(room, 'guesser')
     expect(view.game?.feed).toEqual([{ guesserId: 'guesser', term: WRONG_PICK, correct: false }])
     assertNoSecrets(view, room)
+  })
+
+  it('shows the current hint as bank indices to every seat, never the answer', () => {
+    const room = typedRoomInTurn()
+    for (const seatId of ['guesser', 'watcher']) {
+      const view = viewFor(room, seatId)
+      // The hint is bank word indices in order, safe on every board.
+      expect(view.game?.currentHint).toEqual([0])
+      expect(view.hinter).toBeNull()
+      assertNoSecrets(view, room)
+    }
   })
 })

@@ -33,12 +33,12 @@ export function matchTerms(pool: string[], query: string, limit = GUESS_MATCH_LI
   return [...prefix, ...contains].slice(0, limit)
 }
 
-// The guess intent for a selected term: the canonical pool term plus the bank
-// size it was made against, which the server scores it against (not whatever is
-// current on arrival). The bank count is read off the current view, so the
-// caller cannot get it wrong.
+// The guess intent for a selected term: the canonical pool term plus the hint it
+// answers (the engine's hintCount it was made against), which the server scores
+// it against, not whatever is current on arrival. The hint index is read off the
+// current view, so the caller cannot get it wrong.
 export function guessIntent(term: string, game: PublicGameView): Extract<Intent, { type: 'guess' }> {
-  return { type: 'guess', term, bankCount: game.bank.length }
+  return { type: 'guess', term, hintIndex: game.hintCount }
 }
 
 // A guess-feed row ready to render: the guesser's display name resolved from the

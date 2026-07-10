@@ -170,6 +170,18 @@ export function resolveHint(s: GameState, outcome: Resolution = {}): GameState {
   }
 }
 
+// One guess past a player's first on a hint, recorded the moment it happens.
+// The batch path (resolveHint's overguesses) settles a whole hint at
+// resolution; this is the single-event form for callers that adjudicate each
+// guess as it arrives. Once recorded it sticks: nothing later (a reroll, an
+// early end) removes it.
+export function recordOverguess(s: GameState, guesserId: string): GameState {
+  if (s.status !== 'playing') throw new Error('the game is over')
+  if (guesserId === s.hinterId) throw new Error('the hinter cannot guess')
+  if (!s.players.includes(guesserId)) throw new Error('unknown guesser')
+  return { ...s, overguesses: { ...s.overguesses, [guesserId]: (s.overguesses[guesserId] ?? 0) + 1 } }
+}
+
 // Deck modes: whether the current answer came back from the rerolled pile
 // rather than the dealt deck. Recycled serves sit past the dealt length, so
 // the cursor position is the whole test. The UI uses this as the small tell

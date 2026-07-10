@@ -68,14 +68,14 @@ describe('shape validation', () => {
   })
 })
 
-describe('typed-guess message reserved from day one', () => {
-  it('carries the term and the bank count it was made against', () => {
-    const msg = parseClientMessage({ v, type: 'guess', term: 'France', bankCount: 4 })
-    expect(msg).toEqual({ v, type: 'guess', term: 'France', bankCount: 4 })
+describe('typed-guess message', () => {
+  it('carries the term and the hint it was made against', () => {
+    const msg = parseClientMessage({ v, type: 'guess', term: 'France', hintIndex: 4 })
+    expect(msg).toEqual({ v, type: 'guess', term: 'France', hintIndex: 4 })
   })
 
-  it('requires a non-negative bank count', () => {
-    expect(() => parseClientMessage({ v, type: 'guess', term: 'France', bankCount: -1 })).toThrow(/bankCount/)
-    expect(() => parseClientMessage({ v, type: 'guess', term: 'France' })).toThrow(/bankCount/)
+  it('requires a non-negative hint index', () => {
+    expect(() => parseClientMessage({ v, type: 'guess', term: 'France', hintIndex: -1 })).toThrow(/hintIndex/)
+    expect(() => parseClientMessage({ v, type: 'guess', term: 'France' })).toThrow(/hintIndex/)
   })
 })
