@@ -496,8 +496,15 @@ export function submitGuess(
   if (game.results.some((r) => r.answer === guess)) return room
 
   // The hint the pick answers, never claimed beyond the hints that exist (a hint
-  // is open, so hintCount >= 1).
-  const answeredHint = Math.min(Math.max(1, Math.trunc(hintIndex)), game.hintCount)
+  // is open, so hintCount >= 1) and never older than the newest hint this guesser
+  // has already claimed this turn. Honest guesses arrive in connection order, so
+  // a claim below that mark can only be a client minting a fresh free pick on a
+  // past hint; it is scored against the newest one instead.
+  const newestClaimed = room.guessFeed.reduce(
+    (n, g) => (g.guesserId === seatId && g.hintIndex > n ? g.hintIndex : n),
+    1,
+  )
+  const answeredHint = Math.min(Math.max(newestClaimed, Math.trunc(hintIndex)), game.hintCount)
   const entry: RecordedGuess = {
     guesserId: seatId,
     term: guess,

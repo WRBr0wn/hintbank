@@ -518,6 +518,18 @@ describe('typed-guess resolution', () => {
     expect(room.game?.overguesses.b).toBe(1)
   })
 
+  it('scores a claim on a hint older than the guesser has already answered against the newer one', () => {
+    let room = typedTurn(3) // hint 1
+    room = typedGiveHint(room, 'a', [0]) // hint 2 now current
+    room = submitGuess(room, 'b', 'WRONG-A', 2, poolFor) // first on hint 2: free
+    // b never guessed on hint 1, and honest picks arrive in order, so a claim on
+    // it now can only be a client fishing for a fresh free pick. It is clamped up
+    // to hint 2, the newest hint b has answered, and is the second pick there.
+    room = submitGuess(room, 'b', 'WRONG-B', 1, poolFor)
+    expect(room.guessFeed[1].hintIndex).toBe(2)
+    expect(room.game?.overguesses.b).toBe(1)
+  })
+
   it('clamps a hintIndex beyond the hints that exist', () => {
     let room = typedTurn(3) // hintCount 1
     room = submitGuess(room, 'b', 'WRONG-A', 999, poolFor) // clamped to hint 1
