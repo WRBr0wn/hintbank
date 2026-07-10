@@ -132,6 +132,10 @@ export function parseClientMessage(raw: unknown): ClientMessage {
     case 'kick':
       if (!isString(raw.seatId)) fail('bad-message', 'seatId must be a string')
       return { v, type: 'kick', seatId: raw.seatId }
+    case 'becomeSpectator':
+      return { v, type: 'becomeSpectator' }
+    case 'becomePlayer':
+      return { v, type: 'becomePlayer' }
     case 'start':
       return { v, type: 'start' }
     case 'ready':

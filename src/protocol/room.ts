@@ -219,21 +219,17 @@ function settleTurn(room: RoomState): RoomState {
   }
 }
 
-// Shared by leave and kick. Handles host migration, the rotation queue, a
-// departing hinter (their turn settles as a forfeit), and a session that can
-// no longer field two players (it ends to the leaderboard; the room
-// survives).
-function removeSeat(room: RoomState, seatId: SeatId): RoomState {
-  const seats = room.seats.filter((s) => s.id !== seatId)
-  const totals = { ...room.totals }
-  delete totals[seatId]
-  let hostId = room.hostId
-  if (hostId === seatId) {
-    // The longest-present player inherits; a spectator only if no player is
-    // left.
-    hostId = (seats.find((s) => s.role === 'player') ?? seats[0])?.id ?? null
-  }
-  let next: RoomState = { ...room, seats, totals, hostId }
+// Host migration: the longest-present player inherits; a spectator only if no
+// player is left.
+const migratedHost = (seats: Seat[]): SeatId | null =>
+  (seats.find((s) => s.role === 'player') ?? seats[0])?.id ?? null
+
+// The consequences of a player seat leaving play, whether the seat is gone
+// (leave, kick) or stays on as a spectator: their rotation slot goes, their own
+// live turn settles as the forfeit it is, and a session that can no longer
+// field MIN_PLAYERS players ends to the leaderboard (the room survives).
+function afterPlayerLeftPlay(room: RoomState, seatId: SeatId): RoomState {
+  let next = room
   if (next.session) {
     next = { ...next, session: { ...next.session, queue: next.session.queue.filter((id) => id !== seatId) } }
   }
@@ -248,11 +244,61 @@ function removeSeat(room: RoomState, seatId: SeatId): RoomState {
   return next
 }
 
+// Shared by leave and kick. Handles host migration, the rotation queue, a
+// departing hinter (their turn settles as a forfeit), and a session that can
+// no longer field two players (it ends to the leaderboard; the room
+// survives).
+function removeSeat(room: RoomState, seatId: SeatId): RoomState {
+  const seats = room.seats.filter((s) => s.id !== seatId)
+  const totals = { ...room.totals }
+  delete totals[seatId]
+  const hostId = room.hostId === seatId ? migratedHost(seats) : room.hostId
+  return afterPlayerLeftPlay({ ...room, seats, totals, hostId }, seatId)
+}
+
 // Idempotent: a socket can close twice, a grace expiry can race an explicit
 // leave.
 export function leave(room: RoomState, seatId: SeatId): RoomState {
   if (!seatById(room, seatId)) return room
   return removeSeat(room, seatId)
+}
+
+// A player seat turns watch-only in place: same seat id, name, avatar, and
+// connection, role flipped, dropped from the totals and the rotation. What
+// that disturbs follows removeSeat's semantics (afterPlayerLeftPlay plus the
+// same host migration): a hinter switching mid-own-turn settles the turn as a
+// forfeit, a session below MIN_PLAYERS collapses to the leaderboard, and a
+// switching host hands the room on.
+export function becomeSpectator(room: RoomState, seatId: SeatId): RoomState {
+  const seat = requireSeat(room, seatId)
+  if (seat.role === 'spectator') fail('not-allowed', 'this seat is already watching')
+  const seats = room.seats.map((s) =>
+    s.id === seatId ? { ...s, role: 'spectator' as const, pending: false } : s,
+  )
+  const totals = { ...room.totals }
+  delete totals[seatId]
+  const hostId = room.hostId === seatId ? migratedHost(seats) : room.hostId
+  return afterPlayerLeftPlay({ ...room, seats, totals, hostId }, seatId)
+}
+
+// The reverse: a spectator takes a player seat in place, entering the totals
+// at zero and riding the late-join mechanics (pending during a live turn,
+// seated at the boundary; straight into the rotation queue at an
+// interstitial; a plain seat otherwise). The player cap applies the same way
+// it does to a join.
+export function becomePlayer(room: RoomState, seatId: SeatId): RoomState {
+  const seat = requireSeat(room, seatId)
+  if (seat.role === 'player') fail('not-allowed', 'this seat is already playing')
+  if (playerSeats(room).length >= MAX_PLAYERS) {
+    fail('room-full', `this room is full: ${MAX_PLAYERS} players are already in`)
+  }
+  const pending = room.phase === 'turn'
+  const seats = room.seats.map((s) => (s.id === seatId ? { ...s, role: 'player' as const, pending } : s))
+  let session = room.session
+  if (session && room.phase === 'interstitial') {
+    session = { ...session, queue: [...session.queue, seatId] }
+  }
+  return { ...room, seats, session, totals: { ...room.totals, [seatId]: 0 } }
 }
 
 export function kick(room: RoomState, hostId: SeatId, targetId: SeatId): RoomState {
@@ -454,11 +500,13 @@ export function playAgain(room: RoomState, seatId: SeatId): RoomState {
 
 // Change Settings: back to the lobby to adjust the roster or settings, the
 // scoreboard zeroed. Same zeroed reset as Play Again, but it stops at the lobby
-// to change things first instead of dealing straight in. The wire type stays
+// to change things first instead of dealing straight in. Available from any
+// in-session phase, not just the leaderboard: a mid-turn reset simply discards
+// the live game, whose points were headed for zero anyway. The wire type stays
 // `resetSession` (this is the button now labeled "Change Settings").
 export function resetSession(room: RoomState, seatId: SeatId): RoomState {
   requireHost(room, seatId)
-  requirePhase(room, 'leaderboard', 'change settings is a leaderboard action')
+  if (room.phase === 'lobby') fail('wrong-phase', 'already in the lobby')
   const totals: Record<SeatId, number> = {}
   for (const id of Object.keys(room.totals)) totals[id] = 0
   return { ...room, phase: 'lobby', session: null, game: null, totals }
@@ -565,6 +613,10 @@ export function applyIntent(room: RoomState, seatId: SeatId, msg: ClientMessage,
       return setLocked(room, seatId, msg.locked)
     case 'kick':
       return kick(room, seatId, msg.seatId)
+    case 'becomeSpectator':
+      return becomeSpectator(room, seatId)
+    case 'becomePlayer':
+      return becomePlayer(room, seatId)
     case 'start':
       return start(room, seatId)
     case 'ready':

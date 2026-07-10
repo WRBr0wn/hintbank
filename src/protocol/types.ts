@@ -208,6 +208,12 @@ export type ClientMessage =
   | { v: number; type: 'updateSettings'; settings: Partial<RoomSettings> }
   | { v: number; type: 'setLocked'; locked: boolean }
   | { v: number; type: 'kick'; seatId: SeatId }
+  // Role changes in place: the same seat (id, name, avatar, connection) flips
+  // between playing and watching. Spectating drops the totals row and the
+  // rotation slot with leave's semantics; playing enters at zero and rides the
+  // late-join mechanics, capped like a join.
+  | { v: number; type: 'becomeSpectator' }
+  | { v: number; type: 'becomePlayer' }
   | { v: number; type: 'start' }
   // The incoming hinter confirms readiness at the interstitial; the server
   // deals on receipt.
