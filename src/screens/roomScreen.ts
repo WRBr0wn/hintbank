@@ -33,6 +33,37 @@ export function openBoardView(editionId: string, code: string): void {
   window.open(`${location.origin}${gamePath(editionId)}?room=${code}&watch=1`, '_blank', 'noopener')
 }
 
+// The Change Settings meaning, worded once: the leaderboard button and the
+// room menu's host option describe the same resetSession, so the two surfaces
+// cannot drift.
+export const CHANGE_SETTINGS_DESC = 'Back to the lobby to change players or settings, scores back to 0.'
+
+export interface RoomMenuOptions {
+  // becomeSpectator: a non-host player in a live session steps out of play,
+  // forfeiting their points this game.
+  switchToWatching: boolean
+  // becomePlayer: a spectator (board views included) takes a player seat.
+  joinGame: boolean
+  // resetSession: the host pulls everyone back to the lobby, any in-session
+  // phase.
+  backToLobby: boolean
+}
+
+// Which room-menu options a seat's view yields; Stay and Leave room are
+// unconditional and not listed. Options appear only when they mean something,
+// so the reducer's refusals (already that role, lobby reset) are unreachable
+// from an honest menu. Pure, so the matrix is unit-tested.
+export function roomMenuOptions(view: RoomView, seatId: string): RoomMenuOptions {
+  const role = seatById(view, seatId)?.role
+  const isHost = view.hostId === seatId
+  const inSession = view.phase !== 'lobby'
+  return {
+    switchToWatching: role === 'player' && !isHost && inSession,
+    joinGame: role === 'spectator',
+    backToLobby: isHost && inSession,
+  }
+}
+
 export interface SeatScore {
   // The seat's total to display now: session total plus any live guesser
   // points this turn.

@@ -1,4 +1,4 @@
-import { useMemo, useState, type CSSProperties } from 'react'
+import { useMemo, useRef, useState, type CSSProperties } from 'react'
 import Setup, { type GameSettings } from './screens/Setup'
 import PassToHinter from './screens/PassToHinter'
 import HinterPlay from './screens/HinterPlay'
@@ -72,6 +72,10 @@ export default function App({ editionId }: { editionId: string }) {
   const [roomPrefill, setRoomPrefill] = useState<string | null>(initialRoom)
   const [watchPrefill] = useState<boolean>(() => new URLSearchParams(window.location.search).get('watch') === '1')
   const [multiplayer, setMultiplayer] = useState<boolean>(() => initialRoom() !== null)
+  // While the multiplayer flow is mounted, its title action lives here: seated
+  // in a room it opens the room menu and claims the tap; on the entry form it
+  // declines and the flow steps back to Setup. Null when the flow is unmounted.
+  const mpTitleActionRef = useRef<(() => boolean) | null>(null)
 
   const roster = settings?.players ?? []
   // Handed to the in-game launch links so they open this edition's randomizer
@@ -176,11 +180,12 @@ export default function App({ editionId }: { editionId: string }) {
   }
 
   // The title walks one step back up the flow, with a confirm during a game since
-  // the game would be lost. In the multiplayer flow it steps back to Setup;
-  // leaving the room is handled by the multiplayer screen unmounting.
+  // the game would be lost. In the multiplayer flow it must never silently leave
+  // a room: seated, it opens the room menu instead of exiting.
   const titleBack = () => {
-    if (multiplayer) exitMultiplayer()
-    else if (phase === 'setup') backToMenu()
+    if (multiplayer) {
+      if (!mpTitleActionRef.current?.()) exitMultiplayer()
+    } else if (phase === 'setup') backToMenu()
     else setConfirmReturn(true)
   }
 
@@ -224,6 +229,7 @@ export default function App({ editionId }: { editionId: string }) {
             avatars={avatars}
             prefillCode={roomPrefill}
             prefillWatch={watchPrefill}
+            titleActionRef={mpTitleActionRef}
             onExit={exitMultiplayer}
           />
         )}
