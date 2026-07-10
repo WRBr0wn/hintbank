@@ -92,6 +92,24 @@ export class RoomDurableObject extends DurableObject<Env> {
     return true
   }
 
+  // The pre-join lookup: what a client may know before the handshake and
+  // nothing more. Edition (to route a menu-box code to the right page),
+  // joinable (locked is the one pre-join refusal; late joins mid-session are
+  // allowed by design), and the player seats' avatar keys (to grey the
+  // picker). Never names: the handshake surfaces duplicates inline, and names
+  // are more than a prober needs. A created room nobody has joined yet is
+  // joinable with nothing taken.
+  async lookup(): Promise<{ editionId: string; joinable: boolean; avatarsTaken: string[] } | null> {
+    const meta = await this.ctx.storage.get<RoomMeta>('meta')
+    if (!meta) return null
+    const room = await this.load()
+    return {
+      editionId: meta.editionId,
+      joinable: !(room?.locked ?? false),
+      avatarsTaken: room?.seats.filter((s) => s.role === 'player').map((s) => s.avatar) ?? [],
+    }
+  }
+
   async fetch(request: Request): Promise<Response> {
     if (request.headers.get('Upgrade') !== 'websocket') {
       return new Response('expected a websocket upgrade', { status: 426 })

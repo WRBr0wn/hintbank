@@ -1,5 +1,7 @@
+import { useEffect, useState } from 'react'
 import Avatar from '../components/Avatar'
 import { avatarKey } from '../avatars'
+import { lookupRoom } from '../net'
 import { MAX_NAME_LENGTH, ROOM_CODE_LENGTH } from '../protocol'
 import type { PlayerAvatar } from '../types'
 import styles from './Multiplayer.module.css'
@@ -42,6 +44,25 @@ export default function MultiplayerEntry({
   const named = name.trim().length > 0
   const codeReady = code.trim().length === ROOM_CODE_LENGTH
 
+  // Once a full-length code is present, the pre-join lookup greys the avatars
+  // already taken in that room. Purely advisory: a failed or slow lookup means
+  // no greying and nothing else, and the join handshake still catches
+  // everything, so this never blocks joining. The result is keyed by the code
+  // it answered, so editing the code drops stale greying by derivation.
+  const [lookedUp, setLookedUp] = useState<{ code: string; taken: string[] } | null>(null)
+  useEffect(() => {
+    const c = code.trim()
+    if (c.length !== ROOM_CODE_LENGTH) return
+    let stale = false
+    lookupRoom(c).then((found) => {
+      if (!stale && found.ok) setLookedUp({ code: c, taken: found.avatarsTaken })
+    })
+    return () => {
+      stale = true
+    }
+  }, [code])
+  const taken: ReadonlySet<string> = lookedUp?.code === code.trim() ? new Set(lookedUp.taken) : new Set()
+
   return (
     <div className={styles.entry}>
       <div className={styles.entryHead}>
@@ -68,12 +89,14 @@ export default function MultiplayerEntry({
           {avatars.map((a) => {
             const key = avatarKey(a)
             const on = avatarKey(avatar) === key
+            const isTaken = !on && taken.has(key)
             return (
               <button
                 key={key}
                 type="button"
-                className={on ? styles.pickActive : styles.pick}
-                title={a.kind === 'image' ? a.label : undefined}
+                className={on ? styles.pickActive : isTaken ? styles.pickTaken : styles.pick}
+                disabled={isTaken}
+                title={isTaken ? 'Taken in this room' : a.kind === 'image' ? a.label : undefined}
                 onClick={() => onAvatar(a)}
               >
                 <Avatar avatar={a} size={34} />

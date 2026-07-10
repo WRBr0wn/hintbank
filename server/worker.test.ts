@@ -4,6 +4,7 @@ import worker from './index'
 import type { Env } from './env'
 import { isRoomCode } from '../src/protocol'
 import { BANK_CAP } from '../src/engine'
+import { LOOKUP_LIMIT } from './config'
 
 const ORIGIN = 'https://wrbr0wn.github.io'
 const bindings = env as unknown as Env
@@ -304,6 +305,54 @@ describe('lobby', () => {
     send(guest, { v: 1, type: 'updateSettings', settings: { answersPerGame: 6 } })
     const err = await until(guest, (m) => m.type === 'error')
     expect(err.code).toBe('not-host')
+  })
+})
+
+// ---- pre-join lookup ----
+
+describe('the pre-join lookup', () => {
+  const lookup = (code: string, ip = freshIp(), origin = ORIGIN) =>
+    SELF.fetch(`https://rooms.test/rooms/${code}`, { headers: { 'CF-Connecting-IP': ip, Origin: origin } })
+
+  it('reports a live room without names: edition, joinable, player avatars only', async () => {
+    const code = await createRoom('geography')
+    await joinAsHost(code) // Ann on the fox avatar
+    // A spectator's avatar is not "taken": greying is about player identity.
+    const watcher = await openSocket(code)
+    send(watcher, { v: 1, type: 'join', name: 'Board 1', avatar: 'ghost', spectator: true })
+    await until(watcher, (m) => m.type === 'welcome')
+    const res = await lookup(code)
+    expect(res.status).toBe(200)
+    expect(res.headers.get('Access-Control-Allow-Origin')).toBe(ORIGIN)
+    const body = (await res.json()) as any
+    expect(body).toEqual({ editionId: 'geography', joinable: true, avatarsTaken: ['fox'] })
+  })
+
+  it('404s an unknown code, 400s a malformed one, and grants no CORS to a stray origin', async () => {
+    const unknown = await lookup('AAAAAA', freshIp(), 'https://evil.example')
+    expect(unknown.status).toBe(404)
+    expect(unknown.headers.get('Access-Control-Allow-Origin')).toBeNull()
+    const malformed = await lookup('AB')
+    expect(malformed.status).toBe(400)
+  })
+
+  it('reports a locked room as not joinable', async () => {
+    const code = await createRoom('geography')
+    const host = await joinAsHost(code)
+    send(host.ws, { v: 1, type: 'setLocked', locked: true })
+    await until(host.ws, (m) => m.type === 'snapshot' && m.view.locked === true)
+    const body = (await (await lookup(code)).json()) as any
+    expect(body.joinable).toBe(false)
+    expect(body.editionId).toBe('geography')
+  })
+
+  it('rate limits lookups per IP', async () => {
+    const code = await createRoom('geography')
+    const ip = freshIp()
+    for (let i = 0; i < LOOKUP_LIMIT; i++) {
+      expect((await lookup(code, ip)).status).toBe(200)
+    }
+    expect((await lookup(code, ip)).status).toBe(429)
   })
 })
 

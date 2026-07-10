@@ -14,6 +14,11 @@ export const CREATE_WINDOW_MS = 60 * 60 * 1000
 export const JOIN_LIMIT = 20
 export const JOIN_WINDOW_MS = 60 * 1000
 
+// Per-IP pre-join lookup limit. The lookup is a code-probe surface, so it gets
+// its own budget, sized like join attempts.
+export const LOOKUP_LIMIT = 20
+export const LOOKUP_WINDOW_MS = 60 * 1000
+
 // Per-connection message budget: a token bucket that refills to a burst cap.
 // Sustained overflow past the strike count closes the socket.
 export const MSG_BURST = 10

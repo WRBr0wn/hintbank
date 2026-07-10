@@ -93,6 +93,21 @@
   background: var(--surface-2);
 }
 
+/* An avatar the pre-join lookup reports as taken in the room the typed code
+   names. Advisory greying only; the join itself never depends on it. */
+.pickTaken {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 0.6rem;
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
 .error {
   font-size: 0.9rem;
   color: var(--warn-text);
