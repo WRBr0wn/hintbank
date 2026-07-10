@@ -38,6 +38,26 @@
   font-weight: 400;
 }
 
+/* Your own connection state on the play boards: the lobby's reconnect pill,
+   centered above the board columns. */
+.reconnect {
+  width: fit-content;
+  margin: 0.75rem auto 0;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.85rem;
+  color: var(--warn-text);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+}
+
+/* Banner text for information (the pending late-joiner explainer), not a
+   warning. */
+.noticeText {
+  font-size: 0.9rem;
+  color: var(--text-2);
+}
+
 .banner {
   display: flex;
   flex-wrap: wrap;

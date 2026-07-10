@@ -175,6 +175,19 @@
   cursor: not-allowed;
 }
 
+.watchRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.watchRow input {
+  accent-color: var(--accent);
+}
+
 /* Holding cards for started / ended states. */
 .notice {
   max-width: 440px;

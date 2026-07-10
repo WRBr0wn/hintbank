@@ -15,7 +15,7 @@ import g from './Game.module.css'
 // every action and the next snapshot re-renders. No typo-editing: canEditMode
 // is false in multiplayer. The hinter's device is private, so the answer shows
 // plainly.
-export default function HinterBoard({ view, avatars, onSend, onLeave }: ScreenProps) {
+export default function HinterBoard({ view, connection, avatars, onSend, onLeave }: ScreenProps) {
   const game = view.game!
   const hinter = view.hinter!
   const [selection, setSelection] = useState<number[]>([])
@@ -64,6 +64,7 @@ export default function HinterBoard({ view, avatars, onSend, onLeave }: ScreenPr
   return (
     <div className={g.screen}>
       <div className={g.scroll}>
+        {connection === 'reconnecting' && <div className={g.reconnect}>Reconnecting…</div>}
         <div className={hp.play}>
           <div className={hp.main}>
             <div className={g.whoseTurn}>

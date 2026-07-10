@@ -13,17 +13,19 @@ import styles from './TypedGuess.module.css'
 // the rerolled pile, so this screen is safe to show and to stream. The hinter
 // itself never renders this (it gets HinterBoard); a guesser who is the host
 // can end the turn if the hinter has dropped.
-export default function GuesserBoard({ view, seatId, avatars, onSend, onLeave }: ScreenProps) {
+export default function GuesserBoard({ view, seatId, connection, avatars, onSend, onLeave }: ScreenProps) {
   const game = view.game!
   const hinter = seatById(view, game.hinterId)
   const hinterDropped = hinter?.connection === 'reconnecting'
   const isHost = view.hostId === seatId
   const complete = game.status === 'complete'
   const hintOpen = game.currentHint != null
+  const pending = seatById(view, seatId)?.pending === true
 
   return (
     <div className={g.screen}>
       <div className={g.scroll}>
+        {connection === 'reconnecting' && <div className={g.reconnect}>Reconnecting…</div>}
         <div className={hp.play}>
           <div className={hp.main}>
             <div className={g.whoseTurn}>
@@ -50,6 +52,14 @@ export default function GuesserBoard({ view, seatId, avatars, onSend, onLeave }:
                     End their turn
                   </button>
                 )}
+              </div>
+            )}
+
+            {pending && (
+              <div className={g.banner}>
+                <span className={g.noticeText}>
+                  You're in. You'll be playing from the next turn; this one was already underway when you joined.
+                </span>
               </div>
             )}
 

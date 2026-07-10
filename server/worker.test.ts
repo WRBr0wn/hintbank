@@ -278,6 +278,15 @@ describe('lobby', () => {
     expect(hostSnap.view.seats.map((s: any) => s.name).sort()).toEqual(['Ann', 'Bob'])
   })
 
+  it('seeds a new room with the edition\'s first ready category selected', async () => {
+    const code = await createRoom('geography')
+    const { ws } = await joinAsHost(code)
+    const snap = await snapshotOf(ws)
+    // The same default as local Setup, so the host can Start without a trip to
+    // the settings.
+    expect(snap.view.settings.categoryIds).toEqual(['countries'])
+  })
+
   it('propagates a host settings change live', async () => {
     const code = await createRoom()
     const host = await joinAsHost(code)
@@ -308,6 +317,22 @@ describe('seat lifecycle', () => {
     send(back, { v: 1, type: 'join', name: 'Ann', avatar: 'fox', token: host.token })
     const reWelcome = await until(back, (m) => m.type === 'welcome')
     expect(reWelcome.seatId).toBe(host.seatId)
+  })
+
+  it('closes the previous socket when a token reconnect takes over the seat', async () => {
+    const code = await createRoom()
+    const host = await joinAsHost(code)
+    const oldClosed = closed(host.ws)
+    const back = await openSocket(code)
+    send(back, { v: 1, type: 'join', name: 'Ann', avatar: 'fox', token: host.token })
+    const reWelcome = await until(back, (m) => m.type === 'welcome')
+    expect(reWelcome.seatId).toBe(host.seatId)
+    // The zombie controller is gone: one seat, one live socket. Its close must
+    // not mark the seat away, since the new socket holds it.
+    await oldClosed
+    const snap = await snapshotOf(back)
+    expect(snap.view.seats).toHaveLength(1)
+    expect(snap.view.seats[0].connection).toBe('connected')
   })
 
   it('kicks a seat, ejecting it and dropping it from the roster', async () => {

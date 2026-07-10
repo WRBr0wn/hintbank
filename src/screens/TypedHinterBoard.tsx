@@ -17,7 +17,7 @@ import g from './Game.module.css'
 // server-side, so the hinting controls stay live while guessers are guessing.
 // Driven by the hinter's own view (which alone holds the current answer and the
 // capability flags); it holds only the word selection and the add-word draft.
-export default function TypedHinterBoard({ view, avatars, onSend, onLeave }: ScreenProps) {
+export default function TypedHinterBoard({ view, connection, avatars, onSend, onLeave }: ScreenProps) {
   const game = view.game!
   const hinter = view.hinter!
   const [selection, setSelection] = useState<number[]>([])
@@ -49,6 +49,7 @@ export default function TypedHinterBoard({ view, avatars, onSend, onLeave }: Scr
   return (
     <div className={g.screen}>
       <div className={g.scroll}>
+        {connection === 'reconnecting' && <div className={g.reconnect}>Reconnecting…</div>}
         <div className={hp.play}>
           <div className={hp.main}>
             <div className={g.whoseTurn}>

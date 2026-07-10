@@ -40,7 +40,10 @@ export default function Interstitial({ view, seatId, avatars, onSend, onLeave }:
       {youAreUp ? (
         <>
           <h2 className={styles.name}>You're hinting next</h2>
-          <p className={styles.note}>Everyone else guesses out loud. Start when you're ready.</p>
+          <p className={styles.note}>
+            Everyone else guesses {view.settings.onlineMode === 'typed' ? 'by typing' : 'out loud'}. Start when
+            you're ready.
+          </p>
           <button type="button" className={styles.ready} onClick={() => onSend({ type: 'ready' })}>
             I'm ready, deal my answers
           </button>

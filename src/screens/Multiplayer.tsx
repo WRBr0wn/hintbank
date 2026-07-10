@@ -36,6 +36,7 @@ export default function Multiplayer({
   const [name, setName] = useState('')
   const [avatar, setAvatar] = useState<PlayerAvatar>(avatars[0])
   const [code, setCode] = useState(prefillCode ?? '')
+  const [watchOnly, setWatchOnly] = useState(false)
 
   const inRoom = state.view != null && (state.status === 'joined' || state.status === 'reconnecting')
   const joinedHere = inRoom && state.view!.editionId === editionId
@@ -45,8 +46,11 @@ export default function Multiplayer({
   const wrongEdition = inRoom && !joinedHere
 
   const identity = { name: name.trim(), avatar: avatarKey(avatar) }
+  // Watch-only applies to joining an existing room. Create stays player-only:
+  // the first join creates the room as host, and a spectator host makes no
+  // sense.
   const create = () => room.create(identity)
-  const join = () => room.join(code.trim(), identity)
+  const join = () => room.join(code.trim(), watchOnly ? { ...identity, spectator: true } : identity)
   // Leaving a room returns to the entry with the mode still chosen and the name
   // and avatar retained (they live above the connection), ready to create or
   // join again, rather than resetting to In Person.
@@ -98,11 +102,13 @@ export default function Multiplayer({
       name={name}
       avatar={avatar}
       code={code}
+      watchOnly={watchOnly}
       busy={busy}
       error={entryError}
       onName={setName}
       onAvatar={setAvatar}
       onCode={setCode}
+      onWatchOnly={setWatchOnly}
       onCreate={create}
       onJoin={join}
       onCancel={onExit}

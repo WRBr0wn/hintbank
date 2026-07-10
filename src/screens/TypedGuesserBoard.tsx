@@ -18,7 +18,7 @@ import styles from './TypedGuess.module.css'
 // resolves it and the next snapshot re-renders. The client does no matching or
 // scoring, and a throttled pick is simply dropped by the server, so sending is
 // fire-and-forget.
-export default function TypedGuesserBoard({ view, seatId, avatars, edition, onSend, onLeave }: ScreenProps) {
+export default function TypedGuesserBoard({ view, seatId, connection, avatars, edition, onSend, onLeave }: ScreenProps) {
   const game = view.game!
   const hinter = seatById(view, game.hinterId)
   const hinterDropped = hinter?.connection === 'reconnecting'
@@ -45,6 +45,7 @@ export default function TypedGuesserBoard({ view, seatId, avatars, edition, onSe
   return (
     <div className={g.screen}>
       <div className={g.scroll}>
+        {connection === 'reconnecting' && <div className={g.reconnect}>Reconnecting…</div>}
         <div className={hp.play}>
           <div className={hp.main}>
             <div className={g.whoseTurn}>
@@ -71,6 +72,14 @@ export default function TypedGuesserBoard({ view, seatId, avatars, edition, onSe
                     End their turn
                   </button>
                 )}
+              </div>
+            )}
+
+            {me?.pending && (
+              <div className={g.banner}>
+                <span className={g.noticeText}>
+                  You're in. You'll be playing from the next turn; this one was already underway when you joined.
+                </span>
               </div>
             )}
 

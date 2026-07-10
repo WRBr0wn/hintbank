@@ -13,11 +13,13 @@ export default function MultiplayerEntry({
   name,
   avatar,
   code,
+  watchOnly,
   busy,
   error,
   onName,
   onAvatar,
   onCode,
+  onWatchOnly,
   onCreate,
   onJoin,
   onCancel,
@@ -26,11 +28,13 @@ export default function MultiplayerEntry({
   name: string
   avatar: PlayerAvatar
   code: string
+  watchOnly: boolean
   busy: boolean
   error: string | null
   onName: (name: string) => void
   onAvatar: (avatar: PlayerAvatar) => void
   onCode: (code: string) => void
+  onWatchOnly: (watchOnly: boolean) => void
   onCreate: () => void
   onJoin: () => void
   onCancel: () => void
@@ -102,6 +106,13 @@ export default function MultiplayerEntry({
             Join
           </button>
         </div>
+
+        {/* Join-only: the first join into a room creates it as host, and a
+            spectator host makes no sense, so Create stays player-only. */}
+        <label className={styles.watchRow}>
+          <input type="checkbox" checked={watchOnly} onChange={(e) => onWatchOnly(e.target.checked)} />
+          Watch only: join as a spectator, with no turns and no score
+        </label>
       </div>
     </div>
   )

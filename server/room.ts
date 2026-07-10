@@ -203,6 +203,17 @@ export class RoomDurableObject extends DurableObject<Env> {
     if (msg.token) {
       const seatId = await this.seatForToken(msg.token)
       if (room && seatId && room.seats.some((s) => s.id === seatId)) {
+        // This socket becomes the seat's only controller: any earlier socket
+        // still bound to it (a zombie connection, or a copied token) is closed
+        // first. Unbinding before the close keeps its close handler from
+        // marking the seat away, and an unbound socket gets no broadcast, so
+        // nothing is sent after the close (the kick ordering hazard).
+        for (const other of this.ctx.getWebSockets()) {
+          if (other !== ws && this.seatOf(other) === seatId) {
+            other.serializeAttachment(null)
+            other.close(1000, 'seat reconnected elsewhere')
+          }
+        }
         room = reconnected(room, seatId)
         await this.save(room)
         this.bindSeat(ws, seatId)
@@ -227,7 +238,7 @@ export class RoomDurableObject extends DurableObject<Env> {
             code: meta.code,
             editionId: meta.editionId,
             host: { seatId, name: msg.name, avatar: msg.avatar },
-            settings: defaultRoomSettings([]),
+            settings: defaultRoomSettings(seedCategoryIds(meta.editionId)),
           })
     } catch (e) {
       if (e instanceof RoomError) this.send(ws, this.errorMsg(e))
@@ -460,6 +471,14 @@ export class RoomDurableObject extends DurableObject<Env> {
   private errorMsg(e: RoomError): ServerMessage {
     return { v: PROTOCOL_VERSION, type: 'error', code: e.code as RoomErrorCode, message: e.message }
   }
+}
+
+// A new room starts with the edition's first ready category selected, the same
+// default local Setup uses, so a host can Start without a trip to the settings.
+// Empty for an unknown edition; the reducer's start still requires a category.
+function seedCategoryIds(editionId: string): string[] {
+  const first = categoriesFor(editionId).find((c) => c.ready)
+  return first ? [first.id] : []
 }
 
 // Seat ids present before an intent but gone after it (a kick or a leave).
