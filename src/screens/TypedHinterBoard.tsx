@@ -4,7 +4,7 @@ import MpScoreStrip from './MpScoreStrip'
 import MpLanded from './MpLanded'
 import GuessFeed from './GuessFeed'
 import CurrentHint from './CurrentHint'
-import { type ScreenProps } from './roomScreen'
+import { openBoardView, type ScreenProps } from './roomScreen'
 import { BANK_CAP } from '../engine'
 import hp from './HinterPlay.module.css'
 import g from './Game.module.css'
@@ -17,7 +17,7 @@ import g from './Game.module.css'
 // server-side, so the hinting controls stay live while guessers are guessing.
 // Driven by the hinter's own view (which alone holds the current answer and the
 // capability flags); it holds only the word selection and the add-word draft.
-export default function TypedHinterBoard({ view, connection, avatars, onSend, onLeave }: ScreenProps) {
+export default function TypedHinterBoard({ view, connection, avatars, edition, onSend, onLeave }: ScreenProps) {
   const game = view.game!
   const hinter = view.hinter!
   const [selection, setSelection] = useState<number[]>([])
@@ -132,6 +132,11 @@ export default function TypedHinterBoard({ view, connection, avatars, onSend, on
             )}
 
             <div className={g.leaveRow}>
+              {/* The streamer case: about to hint, put the neutral board in the
+                  capture. Opens a spectator tab; the code never shows here. */}
+              <button type="button" className={g.boardView} onClick={() => openBoardView(edition.id, view.code)}>
+                Open board view
+              </button>
               <button type="button" className={g.leave} onClick={onLeave}>
                 Leave room
               </button>

@@ -3,7 +3,7 @@ import Avatar from '../components/Avatar'
 import BankGrid from '../components/BankGrid'
 import MpScoreStrip from './MpScoreStrip'
 import MpLanded from './MpLanded'
-import { avatarOf, playerSeats, type ScreenProps } from './roomScreen'
+import { avatarOf, openBoardView, playerSeats, type ScreenProps } from './roomScreen'
 import { BANK_CAP } from '../engine'
 import hp from './HinterPlay.module.css'
 import g from './Game.module.css'
@@ -15,7 +15,7 @@ import g from './Game.module.css'
 // every action and the next snapshot re-renders. No typo-editing: canEditMode
 // is false in multiplayer. The hinter's device is private, so the answer shows
 // plainly.
-export default function HinterBoard({ view, connection, avatars, onSend, onLeave }: ScreenProps) {
+export default function HinterBoard({ view, connection, avatars, edition, onSend, onLeave }: ScreenProps) {
   const game = view.game!
   const hinter = view.hinter!
   const [selection, setSelection] = useState<number[]>([])
@@ -176,6 +176,11 @@ export default function HinterBoard({ view, connection, avatars, onSend, onLeave
             ) : null}
 
             <div className={g.leaveRow}>
+              {/* The streamer case: about to hint, put the neutral board in the
+                  capture. Opens a spectator tab; the code never shows here. */}
+              <button type="button" className={g.boardView} onClick={() => openBoardView(edition.id, view.code)}>
+                Open board view
+              </button>
               <button type="button" className={g.leave} onClick={onLeave}>
                 Leave room
               </button>

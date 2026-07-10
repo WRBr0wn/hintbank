@@ -1,5 +1,5 @@
 import { avatarByKey } from '../avatars'
-import type { Edition } from '../editions'
+import { gamePath, type Edition } from '../editions'
 import type { Intent, NetStatus } from '../net'
 import type { PublicGameView, RoomView, SeatView } from '../protocol'
 import type { PlayerAvatar } from '../types'
@@ -24,6 +24,14 @@ export const seatById = (view: RoomView, id: string | null): SeatView | null =>
 
 export const avatarOf = (avatars: PlayerAvatar[], seat: SeatView): PlayerAvatar =>
   avatarByKey(avatars, seat.avatar)
+
+// Opens the room's board view in a new tab: the share link with the watch
+// flag, which auto-joins as a spectator (the neutral, secret-free board for a
+// stream capture or a shared TV). The code rides the URL, never the screen, so
+// the masking rules hold.
+export function openBoardView(editionId: string, code: string): void {
+  window.open(`${location.origin}${gamePath(editionId)}?room=${code}&watch=1`, '_blank', 'noopener')
+}
 
 export interface SeatScore {
   // The seat's total to display now: session total plus any live guesser

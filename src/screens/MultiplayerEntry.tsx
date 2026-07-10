@@ -107,11 +107,13 @@ export default function MultiplayerEntry({
           </button>
         </div>
 
-        {/* Join-only: the first join into a room creates it as host, and a
-            spectator host makes no sense, so Create stays player-only. */}
+        {/* A board view, not an identity choice: a display surface for a stream
+            capture, a shared TV, or following along. Join-only: the first join
+            into a room creates it as host, and a spectator host makes no sense,
+            so Create stays player-only. */}
         <label className={styles.watchRow}>
           <input type="checkbox" checked={watchOnly} onChange={(e) => onWatchOnly(e.target.checked)} />
-          Watch only: join as a spectator, with no turns and no score
+          Watch only: a board view for a stream, a shared TV, or following along
         </label>
       </div>
     </div>

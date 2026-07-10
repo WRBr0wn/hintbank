@@ -2,7 +2,7 @@ import { PROTOCOL_VERSION } from '../protocol'
 import { roomSocketUrl } from './config'
 import { encodeIntent, parseServerMessage } from './messages'
 import { applyServerMessage, IDLE, type Intent, type NetState } from './state'
-import { clearToken, loadToken, saveToken } from './token'
+import { clearToken, loadToken, saveToken, tokenStoreFor } from './token'
 
 export interface Identity {
   name: string
@@ -28,6 +28,9 @@ const MAX_RECONNECTS = 5
 // reconnects with the saved token, which is the same path as a first join.
 export function openRoom(opts: { code: string; identity: Identity; onState: (state: NetState) => void }): RoomConnection {
   const { code, identity, onState } = opts
+  // Tokens are for players: a spectator connection gets no token store, so it
+  // never reconnects as (or clobbers) the player seat saved in this browser.
+  const tokens = tokenStoreFor(identity.spectator)
   let state: NetState = { ...IDLE, status: 'connecting' }
   let ws: WebSocket | null = null
   let intentional = false
@@ -47,7 +50,7 @@ export function openRoom(opts: { code: string; identity: Identity; onState: (sta
 
     socket.onopen = () => {
       if (!joinedOnce) set({ ...state, status: 'joining' })
-      const token = loadToken(code) ?? undefined
+      const token = loadToken(code, tokens) ?? undefined
       socket.send(
         JSON.stringify({ v: PROTOCOL_VERSION, type: 'join', name: identity.name, avatar: identity.avatar, spectator: identity.spectator, token }),
       )
@@ -59,9 +62,9 @@ export function openRoom(opts: { code: string; identity: Identity; onState: (sta
       if (msg.type === 'welcome') {
         joinedOnce = true
         attempt = 0
-        saveToken(code, msg.token)
+        saveToken(code, msg.token, tokens)
       }
-      if (msg.type === 'kicked' || msg.type === 'roomClosed') clearToken(code)
+      if (msg.type === 'kicked' || msg.type === 'roomClosed') clearToken(code, tokens)
       set(applyServerMessage(state, msg))
     }
 
@@ -113,7 +116,7 @@ export function openRoom(opts: { code: string; identity: Identity; onState: (sta
         ws.send(JSON.stringify({ v: PROTOCOL_VERSION, type: 'leave' }))
       }
       ws?.close()
-      clearToken(code)
+      clearToken(code, tokens)
     },
   }
 }

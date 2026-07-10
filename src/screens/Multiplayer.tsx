@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import MultiplayerEntry from './MultiplayerEntry'
 import Lobby from './Lobby'
 import Interstitial from './Interstitial'
@@ -18,17 +18,29 @@ import styles from './Multiplayer.module.css'
 // form's fields (lifted so a failed attempt keeps them), then hands off to the
 // Lobby once joined. Every screen is a projection of the latest RoomView; this
 // component only routes between them by connection status.
+// A generated spectator name for a board-view tab. The random suffix keeps two
+// board views in one room (a TV and an OBS tab) off the reducer's duplicate-name
+// check, and the whole thing stays inside the name cap.
+function boardViewName(): string {
+  const chars = 'ABCDEFGHJKMNPQRSTUVWXYZ23456789'
+  let suffix = ''
+  for (let i = 0; i < 4; i++) suffix += chars[Math.floor(Math.random() * chars.length)]
+  return `Board ${suffix}`
+}
+
 export default function Multiplayer({
   editionId,
   edition,
   avatars,
   prefillCode,
+  prefillWatch,
   onExit,
 }: {
   editionId: string
   edition: Edition
   avatars: PlayerAvatar[]
   prefillCode: string | null
+  prefillWatch: boolean
   onExit: () => void
 }) {
   const room = useRoom(editionId)
@@ -37,6 +49,19 @@ export default function Multiplayer({
   const [avatar, setAvatar] = useState<PlayerAvatar>(avatars[0])
   const [code, setCode] = useState(prefillCode ?? '')
   const [watchOnly, setWatchOnly] = useState(false)
+
+  // A board-view link (?room=CODE&watch=1) skips the entry form entirely: it
+  // joins as a spectator under a generated name, so a stream capture or a
+  // shared TV opens straight onto the neutral board. Runs once; a failed join
+  // falls back to the entry form with the error shown, and leaving the board
+  // view lands there too.
+  const [boardViewPending, setBoardViewPending] = useState(prefillWatch && prefillCode != null)
+  const autoJoined = useRef(false)
+  useEffect(() => {
+    if (autoJoined.current || !boardViewPending || !prefillCode) return
+    autoJoined.current = true
+    room.join(prefillCode, { name: boardViewName(), avatar: avatarKey(avatars[0]), spectator: true })
+  }, [boardViewPending, prefillCode, room, avatars])
 
   const inRoom = state.view != null && (state.status === 'joined' || state.status === 'reconnecting')
   const joinedHere = inRoom && state.view!.editionId === editionId
@@ -54,7 +79,10 @@ export default function Multiplayer({
   // Leaving a room returns to the entry with the mode still chosen and the name
   // and avatar retained (they live above the connection), ready to create or
   // join again, rather than resetting to In Person.
-  const backToEntry = () => room.leave()
+  const backToEntry = () => {
+    setBoardViewPending(false)
+    room.leave()
+  }
 
   // Terminal states drop out of the room, back to the entry (identity kept).
   if (state.status === 'kicked' || state.status === 'room-closed' || state.status === 'version') {
@@ -90,6 +118,18 @@ export default function Multiplayer({
   }
 
   const busy = state.status === 'connecting' || state.status === 'joining'
+
+  // The board-view auto-join in flight: a holding note, not the entry form. A
+  // failed join (or a link for another edition) drops through to the form so
+  // the error is visible.
+  if (boardViewPending && state.status !== 'join-error' && !wrongEdition) {
+    return (
+      <div className={styles.notice}>
+        <p>Opening the board view…</p>
+      </div>
+    )
+  }
+
   const entryError = wrongEdition
     ? 'That code is for a different edition.'
     : state.status === 'join-error'

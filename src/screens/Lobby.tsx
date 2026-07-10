@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Avatar from '../components/Avatar'
 import LobbySettings from './LobbySettings'
 import { avatarByKey } from '../avatars'
+import { openBoardView } from './roomScreen'
 import { gamePath, type Edition } from '../editions'
 import type { Intent, NetStatus } from '../net'
 import type { RoomSettings, RoomView } from '../protocol'
@@ -80,6 +81,17 @@ export default function Lobby({
           </button>
           <button type="button" className={styles.copyBtn} onClick={() => copy('link')}>
             {copied === 'link' ? 'Copied' : 'Copy link'}
+          </button>
+          {/* Opens a new tab that auto-joins as a spectator: the neutral board
+              for a stream capture or a shared TV. The code stays masked; it
+              rides the opened URL only. */}
+          <button
+            type="button"
+            className={styles.copyBtn}
+            title="Opens a watch-only board in a new tab, for a stream or a shared TV"
+            onClick={() => openBoardView(edition.id, view.code)}
+          >
+            Board view
           </button>
         </div>
       </section>

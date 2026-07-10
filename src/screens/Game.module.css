@@ -179,6 +179,22 @@
   cursor: pointer;
 }
 
+/* The hinter's board-view opener, beside Leave: same muted text button, but
+   its hover is not the danger red. */
+.boardView {
+  padding: 0.5rem 0.9rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.boardView:hover {
+  color: var(--accent-ink);
+  text-decoration: underline;
+}
+
 .leave:hover {
   color: var(--danger-accent);
   text-decoration: underline;
