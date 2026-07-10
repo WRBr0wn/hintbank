@@ -1,10 +1,12 @@
 import BankGrid from '../components/BankGrid'
 import MpScoreStrip from './MpScoreStrip'
 import MpLanded from './MpLanded'
+import CurrentHint from './CurrentHint'
 import { seatById, type ScreenProps } from './roomScreen'
 import { BANK_CAP } from '../engine'
 import hp from './HinterPlay.module.css'
 import g from './Game.module.css'
+import styles from './TypedGuess.module.css'
 
 // The read-only guesser (and spectator) board: the public slice of the turn.
 // A projection of viewFor, which never carries the current answer, the deck, or
@@ -17,6 +19,7 @@ export default function GuesserBoard({ view, seatId, avatars, onSend, onLeave }:
   const hinterDropped = hinter?.connection === 'reconnecting'
   const isHost = view.hostId === seatId
   const complete = game.status === 'complete'
+  const hintOpen = game.currentHint != null
 
   return (
     <div className={g.screen}>
@@ -50,11 +53,21 @@ export default function GuesserBoard({ view, seatId, avatars, onSend, onLeave }:
               </div>
             )}
 
+            {/* The live hint, same presentation as the typed guesser board: the
+                call carries the hint out loud, the strip and the highlighted bank
+                words back it up on which words it used. */}
+            {!complete &&
+              (hintOpen ? (
+                <CurrentHint game={game} />
+              ) : (
+                <p className={styles.hintWaiting}>{hinter ? hinter.name : 'The hinter'} is choosing a hint…</p>
+              ))}
+
             <section className={hp.bankSection}>
               <div className={hp.bankHead}>
                 <h2>Hint Bank</h2>
               </div>
-              <BankGrid bank={game.bank} cap={BANK_CAP} cutoff={game.cutoff} selected={[]} interactive={false} onToggle={() => {}} />
+              <BankGrid bank={game.bank} cap={BANK_CAP} cutoff={game.cutoff} selected={game.currentHint ?? []} interactive={false} onToggle={() => {}} />
               <p className={hp.fullNote}>Guess out loud from these words. First correct guess lands the answer.</p>
             </section>
 

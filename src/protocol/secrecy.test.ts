@@ -102,6 +102,22 @@ describe('guesser and spectator views carry no secrets', () => {
       }
     })
   }
+
+  it('shows the voice-mode hint as bank indices to every seat, never the answer', () => {
+    let room = roomInTurn()
+    room = hinterAddWord(room, 'hinter', 'clue')
+    room = hinterGiveHint(room, 'hinter', [0])
+    for (const seatId of ['guesser', 'watcher']) {
+      const view = viewFor(room, seatId)
+      // The hint is bank word indices in order, safe on every board.
+      expect(view.game?.currentHint).toEqual([0])
+      expect(view.hinter).toBeNull()
+      assertNoSecrets(view, room)
+    }
+    // Resolution closes the hint, so it leaves every later view.
+    room = hinterResolve(room, 'hinter', { correctGuesserId: 'guesser' })
+    expect(viewFor(room, 'guesser').game?.currentHint).toBeNull()
+  })
 })
 
 describe('the hinter view carries the current answer but not the whole deck', () => {

@@ -220,6 +220,21 @@ describe('turns and rotation', () => {
     expect(() => hinterEndTurn(room, 'b')).toThrow(/hinter/)
   })
 
+  it('shows the live hint in voice mode and clears it on either resolution', () => {
+    let room = lobbyOfThree()
+    room = start(room, 'a')
+    room = startTurn(room, 'a', deckOf(3))
+    room = hinterAddWord(room, 'a', 'clue')
+    room = hinterAddWord(room, 'a', 'clue2')
+    room = hinterGiveHint(room, 'a', [1, 0])
+    expect(room.currentHint).toEqual([1, 0]) // selection order kept
+    room = hinterResolve(room, 'a', {}) // nobody guessed it: keep hinting
+    expect(room.currentHint).toBeNull()
+    room = hinterGiveHint(room, 'a', [0])
+    room = hinterResolve(room, 'a', { correctGuesserId: 'b' }) // landed
+    expect(room.currentHint).toBeNull()
+  })
+
   it('finish is refused until the game completes', () => {
     let room = lobbyOfThree()
     room = start(room, 'a')

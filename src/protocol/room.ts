@@ -298,8 +298,8 @@ export function startTurn(room: RoomState, seatId: SeatId, deck: string[]): Room
     hinterBase: cutoffFor(room.settings.difficultyBase, answers),
     answersPerGame: answers,
   })
-  // A fresh turn starts with an empty guess feed and no hint (typed mode fills
-  // them; voice leaves them empty).
+  // A fresh turn starts with an empty guess feed and no hint. Both modes fill
+  // currentHint as hints are given; only typed mode fills the feed.
   return { ...room, phase: 'turn', game, guessFeed: [], currentHint: null }
 }
 
@@ -326,31 +326,32 @@ export function hinterAddWord(room: RoomState, seatId: SeatId, word: string): Ro
   return { ...room, game: throughEngine(() => addWord(game, word)) }
 }
 
+// Give-hint in either mode: runs the engine's giveHint (which ticks hintCount
+// and moves to resolving) and stores the selection as the live hint, so every
+// board can show which bank words the hint used.
 export function hinterGiveHint(room: RoomState, seatId: SeatId, selection: number[]): RoomState {
   const game = requireHinterGame(room, seatId)
-  return { ...room, game: throughEngine(() => giveHint(game, selection)) }
+  return { ...room, game: throughEngine(() => giveHint(game, selection)), currentHint: [...selection] }
 }
 
-// Typed mode's give-hint: the hinter points at the current answer by selecting
-// bank words in order, the same interaction as voice and local play. It closes
-// any open hint first (a new hint on the same answer, so a fresh free guess per
-// hint), runs the engine's giveHint (which ticks hintCount and moves to
-// resolving), and stores the selection so every board can show the live hint.
+// Typed mode's give-hint: the same as voice, except it closes any open hint
+// first (a new hint on the same answer, so a fresh free guess per hint). Voice
+// never has an open hint here; the engine refuses giveHint while resolving.
 export function typedGiveHint(room: RoomState, seatId: SeatId, selection: number[]): RoomState {
-  room = closeTypedHint(room)
-  const game = requireHinterGame(room, seatId)
-  const next = throughEngine(() => giveHint(game, selection))
-  return { ...room, game: next, currentHint: [...selection] }
+  return hinterGiveHint(closeTypedHint(room), seatId, selection)
 }
 
 export function hinterResolve(room: RoomState, seatId: SeatId, outcome: ResolveOutcome): RoomState {
   const game = requireHinterGame(room, seatId)
   // Never a typed answer here: the server's deck is the only answer source.
+  // Either outcome (landed or keep hinting) closes the hint, so the live hint
+  // clears with it.
   return {
     ...room,
     game: throughEngine(() =>
       resolveHint(game, { correctGuesserId: outcome.correctGuesserId, overguesses: outcome.overguesses }),
     ),
+    currentHint: null,
   }
 }
 

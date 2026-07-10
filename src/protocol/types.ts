@@ -111,9 +111,9 @@ export interface RoomState {
   // Empty in voice mode. The reducer scans it to tell a guesser's first pick on
   // a hint from a repeat; the view exposes it without hintIndex.
   guessFeed: RecordedGuess[]
-  // Typed-guess mode: the current hint the hinter gave, as bank word indices in
-  // the order selected. Null when no hint is open (voice mode, or between hints).
-  // Bank indices only, never the answer, so it is safe on every seat's board.
+  // The current hint the hinter gave, both modes, as bank word indices in the
+  // order selected. Null when no hint is open (between hints). Bank indices
+  // only, never the answer, so it is safe on every seat's board.
   currentHint: number[] | null
 }
 
@@ -151,9 +151,9 @@ export interface PublicGameView {
   // it resolved. Empty in voice mode. Streamable by construction (see
   // GuessFeedEntry).
   feed: GuessFeedEntry[]
-  // Typed-guess mode: the current hint, as bank word indices in the order the
-  // hinter selected them, shown on every board so guessers see what they name.
-  // Bank indices only, never the answer. Null when no hint is open.
+  // The current hint, both modes, as bank word indices in the order the hinter
+  // selected them, shown on every board so guessers see which words the hint
+  // used. Bank indices only, never the answer. Null when no hint is open.
   currentHint: number[] | null
 }
 
