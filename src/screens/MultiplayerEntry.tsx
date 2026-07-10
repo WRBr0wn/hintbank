@@ -62,6 +62,11 @@ export default function MultiplayerEntry({
     }
   }, [code])
   const taken: ReadonlySet<string> = lookedUp?.code === code.trim() ? new Set(lookedUp.taken) : new Set()
+  // The manual flow is name, avatar, then code, so the lookup usually resolves
+  // after the avatar was picked; when it marks the current pick taken, say so
+  // instead of silently greying everything else. Advisory only: no auto-switch,
+  // and the join is never blocked (a duplicate avatar is legal).
+  const selectedTaken = taken.has(avatarKey(avatar))
 
   return (
     <div className={styles.entry}>
@@ -89,13 +94,14 @@ export default function MultiplayerEntry({
           {avatars.map((a) => {
             const key = avatarKey(a)
             const on = avatarKey(avatar) === key
-            const isTaken = !on && taken.has(key)
+            const isTaken = taken.has(key)
+            const cls = on ? (isTaken ? styles.pickActiveTaken : styles.pickActive) : isTaken ? styles.pickTaken : styles.pick
             return (
               <button
                 key={key}
                 type="button"
-                className={on ? styles.pickActive : isTaken ? styles.pickTaken : styles.pick}
-                disabled={isTaken}
+                className={cls}
+                disabled={isTaken && !on}
                 title={isTaken ? 'Taken in this room' : a.kind === 'image' ? a.label : undefined}
                 onClick={() => onAvatar(a)}
               >
@@ -104,6 +110,9 @@ export default function MultiplayerEntry({
             )
           })}
         </div>
+        {selectedTaken && (
+          <p className={styles.takenNote}>Your avatar is taken in this room. Pick another, or join with it anyway.</p>
+        )}
       </section>
 
       {error && <p className={styles.error}>{error}</p>}

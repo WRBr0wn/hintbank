@@ -108,6 +108,27 @@
   cursor: not-allowed;
 }
 
+/* The current selection when the lookup reports it taken: the same dimming,
+   but the selected border stays so it still reads as yours. Clickable; the
+   nudge to pick another is the note under the picker, not a lock. */
+.pickActiveTaken {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  background: var(--surface-2);
+  border: 1px solid var(--accent);
+  border-radius: 0.6rem;
+  opacity: 0.3;
+  cursor: pointer;
+}
+
+.takenNote {
+  font-size: 0.85rem;
+  color: var(--warn-text);
+}
+
 .error {
   font-size: 0.9rem;
   color: var(--warn-text);
