@@ -1,6 +1,6 @@
 # Hint Bank
 
-A hint-giving party game for **2–8 players**, played on one shared screen.
+A hint-giving party game for **2–8 players**, played on one shared screen - or in an online multiplayer room, everyone on their own device.
 
 Hint Bank is a **general party game that ships as editions.** You pick an edition from the main menu, then play. Two editions are live today: **Pokémon**, covering the full National Dex and other assorted categories, and **Geography**, covering the real world from countries to mountain ranges. More are on the way behind the same engine.
 
@@ -8,7 +8,7 @@ Hint Bank is a **general party game that ships as editions.** You pick an editio
 
 One player is the **hinter** and holds a set of secret answers (5 to 10, your call), revealed to them one at a time. They have to get everyone else to guess each answer, but they can only give hints using words from a **Hint Bank** capped at **40 words** for their whole turn. Words in the **Hint Bank** can be used as many times as the **Hinter** would like, even reusing the same hint to get the other players to try again.
 
-However you play, the app is the board, the rulekeeper, and the scoreboard. Hints and guesses happen out loud; the app tracks the Hint Bank, the score, and whose turn it is.
+However you play, the app is the board, the rulekeeper, and the scoreboard. Hints and guesses happen out loud - unless a multiplayer room switches guesses to typed picks - and the app tracks the Hint Bank, the score, and whose turn it is.
 
 ## Editions
 
@@ -25,8 +25,7 @@ Pick a mode at setup. It locks for the session.
 - **In Person: One Device** - the group is in the same room and the hinter holds the phone or tablet. They see the secret answer right on screen.
 - **Online: One Device** - built for simple, all included Discord screen-share. The app still deals the answers on the main screen, but the secret one stays covered until the hinter presses and holds to peek.
 - **Online: One Device + Randomizer** - the best for streaming. The shared screen is a fully public board (Hint Bank, results, scores), the hinter pulls answers from somewhere private, and types each one in once it's guessed. Nothing secret ever touches the broadcast. Each edition has a built-in randomizer (like the [Pokémon one](https://wrbr0wn.github.io/hintbank/pokemon-edition/randomizer/)), with its own category picker, that can draw answers for the hinter in a separate tab or different device.
-
-Online multiplayer (one device per player) is on the roadmap.
+- **Online: Multiplayer** - everyone on their own device, no passing. Create a room, share the code or the link (a code typed on the main menu finds the right edition on its own), and every screen stays in sync: the hinter runs the board, everyone else follows a live board that never receives the secret answer, so any guesser's screen is safe to stream. The room picks how guesses happen - out loud on a call, with the hinter marking who got it, or typed, where guessers pick from the pool on their own screen and the game scores it, first correct pick landing the answer. A watch-only board view can sit in a stream capture or on the living room TV. No accounts: a name, an avatar, and a room code.
 
 ## Categories
 
@@ -66,7 +65,9 @@ The hinter rotates so everyone hints once per **session**, and totals carry acro
 
 ## Tech
 
-- **React + Vite + TypeScript**, plain CSS Modules, no backend.
+- **React + Vite + TypeScript**, plain CSS Modules. The shared-screen modes need no backend at all.
+- **Multiplayer is server-authoritative, in three layers with one source of truth.** A shared protocol module (`src/protocol/`) is imported by both the client and the server - message types, the room state machine, and the role-filtered view each seat may see - so the two can't disagree about the rules of the wire. A Cloudflare Worker (`server/`, one Durable Object per room) runs the same engine the client does, validates every action, and sends each screen only its own view: guesser screens never receive the secret answer, which is what makes any of them safe to stream. The client's network layer (`src/net/`) holds no game state of its own - every screen is a projection of the latest server snapshot, which is also why reconnecting just works.
+- **Rooms are anonymous and disposable.** A name, an avatar, a room code, and a reconnect token per device - no accounts, no database. A room lives in its Durable Object, idles for free, and deletes everything it knows when it expires.
 - Light and dark themes, following your system setting by default and remembering your choice after that. The toggle works on every screen, including the randomizer.
 - The rules live in a small, self-contained engine (`src/engine/`) that's edition-agnostic; it knows nothing about Pokémon or any other content.
 - Editions are self-contained bundles: each declares its own categories, identity, avatars, and credits in `src/editions/`, with assets under `public/editions/<id>/`. Adding an edition is a drop-in, the same way adding a category is.
@@ -79,12 +80,15 @@ The hinter rotates so everyone hints once per **session**, and totals carry acro
 Run `npm install` first on a fresh checkout, then:
 
 - `npm run dev` — play locally.
-- `npm test` — run the engine tests.
+- `npm test` — run the client and engine test suite.
+- `npm run test:worker` — run the multiplayer worker's suite, in a real workerd runtime.
 - `npm run build` — produce the static build.
+
+Multiplayer in dev needs the room server running too: `npx wrangler dev` from `server/`, and the Vite dev server proxies to it, so both halves run locally with no config. A production build points at a deployed worker via `VITE_ROOMS_URL`.
 
 ## Roadmap
 
-Two editions are fully playable across three modes (In Person, Online: One Device, Online + Randomizer): Pokémon with eight categories and Geography with five. The editions architecture is proven, with Books and Marvel listed as "soon." Still ahead: building out those editions and full per-device online multiplayer (one screen per player, no passing).
+Two editions are fully playable across all four modes (In Person, Online: One Device, Online + Randomizer, and Online: Multiplayer): Pokémon with eight categories and Geography with five. The editions architecture is proven, with Books and Marvel listed as "soon." Still ahead: building out those editions.
 
 ## Credit
 

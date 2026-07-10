@@ -15,6 +15,7 @@ import {
   hinterScore,
   guesserScore,
   isBankFull,
+  recordOverguess,
   reroll,
   resolveHint,
   usableWords,
@@ -179,6 +180,28 @@ describe('overguess with a correct guess in one call', () => {
     expect(s.overguesses.b).toBe(2)
     expect(guesserScore(s, 'b')).toBe(-1) // +1 correct, -2 overguess
     expect(s.resolved).toBe(1) // the answer still landed
+  })
+})
+
+describe('recording a single overguess as it happens', () => {
+  it('ticks the tally without touching the phase or the answer', () => {
+    let s = addWord(start(), 'volt')
+    s = giveHint(s, [0])
+    s = recordOverguess(s, 'b')
+    s = recordOverguess(s, 'b')
+    expect(s.overguesses.b).toBe(2)
+    expect(s.phase).toBe('resolving') // no resolution happened
+    expect(s.resolved).toBe(0)
+    expect(guesserScore(s, 'b')).toBe(-2)
+  })
+
+  it('refuses the hinter, an unknown guesser, and a finished game', () => {
+    let s = addWord(start(), 'volt')
+    expect(() => recordOverguess(s, 'g')).toThrow(/hinter/)
+    expect(() => recordOverguess(s, 'nobody')).toThrow(/unknown/)
+    s = fillWords(s, BANK_CAP - 1)
+    s = endTurn(s)
+    expect(() => recordOverguess(s, 'b')).toThrow(/over/)
   })
 })
 

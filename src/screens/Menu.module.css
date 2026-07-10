@@ -46,3 +46,67 @@
   color: var(--accent-ink);
   text-align: center;
 }
+
+/* The join-a-room box under the tiles: for a player handed a code without a
+   link. It resolves the code and forwards to the right edition's page. Kept
+   quiet; the tiles are the page. */
+.joinRow {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.joinLabel {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.joinControls {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.joinCode {
+  width: 8.5rem;
+  padding: 0.6rem 0.7rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 1rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.6rem;
+}
+
+.joinCode:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.joinGo {
+  padding: 0.6rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 0.6rem;
+  cursor: pointer;
+}
+
+.joinGo:hover:not(:disabled) {
+  border-color: var(--accent);
+}
+
+.joinGo:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.joinError {
+  font-size: 0.85rem;
+  color: var(--warn-text);
+}

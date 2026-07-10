@@ -71,6 +71,27 @@ export interface RoomSession {
   completedRotations: number
 }
 
+// A guess in the public feed: who picked what and whether it landed the current
+// answer. Safe for every seat and for streaming by the same construction as the
+// guesser board: a wrong pick is not the answer, and a correct pick only enters
+// the feed as it lands (public through results too), so the current unresolved
+// answer never appears here.
+export interface GuessFeedEntry {
+  guesserId: SeatId
+  term: string
+  correct: boolean
+}
+
+// The room's record of a guess: the public entry plus the hint it was made
+// against, keyed by the engine's hintCount (which ticks once per hint, no matter
+// how many words were added). hintIndex stays server-side; it attributes an
+// overguess to the hint it answered (per MULTIPLAYER.md) and is dropped from the
+// view. Bank size cannot be the key: a hinter adds zero or several words per
+// hint, so bank size does not map one-to-one to hints.
+export interface RecordedGuess extends GuessFeedEntry {
+  hintIndex: number
+}
+
 export interface RoomState {
   editionId: string
   code: string
@@ -86,6 +107,14 @@ export interface RoomState {
   phase: RoomPhase
   session: RoomSession | null
   game: GameState | null
+  // Typed-guess mode's public guess feed for the current turn, reset each turn.
+  // Empty in voice mode. The reducer scans it to tell a guesser's first pick on
+  // a hint from a repeat; the view exposes it without hintIndex.
+  guessFeed: RecordedGuess[]
+  // The current hint the hinter gave, both modes, as bank word indices in the
+  // order selected. Null when no hint is open (between hints). Bank indices
+  // only, never the answer, so it is safe on every seat's board.
+  currentHint: number[] | null
 }
 
 // ---- Role-filtered views ----
@@ -118,6 +147,14 @@ export interface PublicGameView {
   endedEarly: boolean
   phase: GamePhase
   status: GameStatus
+  // Typed-guess mode's public guess feed for this turn: who picked what and how
+  // it resolved. Empty in voice mode. Streamable by construction (see
+  // GuessFeedEntry).
+  feed: GuessFeedEntry[]
+  // The current hint, both modes, as bank word indices in the order the hinter
+  // selected them, shown on every board so guessers see which words the hint
+  // used. Bank indices only, never the answer. Null when no hint is open.
+  currentHint: number[] | null
 }
 
 // The hinter's private extras. The capability flags ride here because they
@@ -183,11 +220,11 @@ export type ClientMessage =
   | { v: number; type: 'endTurn' }
   | { v: number; type: 'finishTurn' }
   | { v: number; type: 'forceEndTurn' }
-  // Reserved for typed-guess mode. bankCount is the bank size the guess was
-  // made against: a guess can be in flight while the hinter adds the next
-  // word, and the server must score it against the hint it answered, not
-  // whatever is current on arrival.
-  | { v: number; type: 'guess'; term: string; bankCount: number }
+  // Typed-guess mode. hintIndex is the hint the guess answers, the engine's
+  // hintCount the guess was made against: a guess can be in flight while the
+  // hinter gives the next hint, and the server scores it against the hint it
+  // answered, not whatever is current on arrival.
+  | { v: number; type: 'guess'; term: string; hintIndex: number }
   | { v: number; type: 'continueSession' }
   | { v: number; type: 'playAgain' }
   | { v: number; type: 'resetSession' }
@@ -199,6 +236,7 @@ export type RoomErrorCode =
   | 'unknown-seat'
   | 'seat-taken'
   | 'room-locked'
+  | 'room-full'
   | 'name-taken'
   | 'bad-name'
   | 'bad-settings'

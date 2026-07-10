@@ -66,9 +66,11 @@ export default function App({ editionId }: { editionId: string }) {
   const [showHelp, setShowHelp] = useState(false)
   // The multiplayer flow replaces Setup and its downstream screens. Entered by
   // picking Online: Multiplayer, or by arriving on a share link (?room=CODE),
-  // read once at first render.
+  // read once at first render. The watch flag (&watch=1) marks a board-view
+  // link: the flow skips the entry form and joins as a spectator.
   const initialRoom = () => new URLSearchParams(window.location.search).get('room')?.toUpperCase() ?? null
   const [roomPrefill, setRoomPrefill] = useState<string | null>(initialRoom)
+  const [watchPrefill] = useState<boolean>(() => new URLSearchParams(window.location.search).get('watch') === '1')
   const [multiplayer, setMultiplayer] = useState<boolean>(() => initialRoom() !== null)
 
   const roster = settings?.players ?? []
@@ -221,6 +223,7 @@ export default function App({ editionId }: { editionId: string }) {
             edition={edition}
             avatars={avatars}
             prefillCode={roomPrefill}
+            prefillWatch={watchPrefill}
             onExit={exitMultiplayer}
           />
         )}

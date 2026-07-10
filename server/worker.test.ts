@@ -4,6 +4,7 @@ import worker from './index'
 import type { Env } from './env'
 import { isRoomCode } from '../src/protocol'
 import { BANK_CAP } from '../src/engine'
+import { LOOKUP_LIMIT } from './config'
 
 const ORIGIN = 'https://wrbr0wn.github.io'
 const bindings = env as unknown as Env
@@ -278,6 +279,15 @@ describe('lobby', () => {
     expect(hostSnap.view.seats.map((s: any) => s.name).sort()).toEqual(['Ann', 'Bob'])
   })
 
+  it('seeds a new room with the edition\'s first ready category selected', async () => {
+    const code = await createRoom('geography')
+    const { ws } = await joinAsHost(code)
+    const snap = await snapshotOf(ws)
+    // The same default as local Setup, so the host can Start without a trip to
+    // the settings.
+    expect(snap.view.settings.categoryIds).toEqual(['countries'])
+  })
+
   it('propagates a host settings change live', async () => {
     const code = await createRoom()
     const host = await joinAsHost(code)
@@ -298,6 +308,54 @@ describe('lobby', () => {
   })
 })
 
+// ---- pre-join lookup ----
+
+describe('the pre-join lookup', () => {
+  const lookup = (code: string, ip = freshIp(), origin = ORIGIN) =>
+    SELF.fetch(`https://rooms.test/rooms/${code}`, { headers: { 'CF-Connecting-IP': ip, Origin: origin } })
+
+  it('reports a live room without names: edition, joinable, player avatars only', async () => {
+    const code = await createRoom('geography')
+    await joinAsHost(code) // Ann on the fox avatar
+    // A spectator's avatar is not "taken": greying is about player identity.
+    const watcher = await openSocket(code)
+    send(watcher, { v: 1, type: 'join', name: 'Board 1', avatar: 'ghost', spectator: true })
+    await until(watcher, (m) => m.type === 'welcome')
+    const res = await lookup(code)
+    expect(res.status).toBe(200)
+    expect(res.headers.get('Access-Control-Allow-Origin')).toBe(ORIGIN)
+    const body = (await res.json()) as any
+    expect(body).toEqual({ editionId: 'geography', joinable: true, avatarsTaken: ['fox'] })
+  })
+
+  it('404s an unknown code, 400s a malformed one, and grants no CORS to a stray origin', async () => {
+    const unknown = await lookup('AAAAAA', freshIp(), 'https://evil.example')
+    expect(unknown.status).toBe(404)
+    expect(unknown.headers.get('Access-Control-Allow-Origin')).toBeNull()
+    const malformed = await lookup('AB')
+    expect(malformed.status).toBe(400)
+  })
+
+  it('reports a locked room as not joinable', async () => {
+    const code = await createRoom('geography')
+    const host = await joinAsHost(code)
+    send(host.ws, { v: 1, type: 'setLocked', locked: true })
+    await until(host.ws, (m) => m.type === 'snapshot' && m.view.locked === true)
+    const body = (await (await lookup(code)).json()) as any
+    expect(body.joinable).toBe(false)
+    expect(body.editionId).toBe('geography')
+  })
+
+  it('rate limits lookups per IP', async () => {
+    const code = await createRoom('geography')
+    const ip = freshIp()
+    for (let i = 0; i < LOOKUP_LIMIT; i++) {
+      expect((await lookup(code, ip)).status).toBe(200)
+    }
+    expect((await lookup(code, ip)).status).toBe(429)
+  })
+})
+
 // ---- reconnect, kick, lock ----
 
 describe('seat lifecycle', () => {
@@ -308,6 +366,22 @@ describe('seat lifecycle', () => {
     send(back, { v: 1, type: 'join', name: 'Ann', avatar: 'fox', token: host.token })
     const reWelcome = await until(back, (m) => m.type === 'welcome')
     expect(reWelcome.seatId).toBe(host.seatId)
+  })
+
+  it('closes the previous socket when a token reconnect takes over the seat', async () => {
+    const code = await createRoom()
+    const host = await joinAsHost(code)
+    const oldClosed = closed(host.ws)
+    const back = await openSocket(code)
+    send(back, { v: 1, type: 'join', name: 'Ann', avatar: 'fox', token: host.token })
+    const reWelcome = await until(back, (m) => m.type === 'welcome')
+    expect(reWelcome.seatId).toBe(host.seatId)
+    // The zombie controller is gone: one seat, one live socket. Its close must
+    // not mark the seat away, since the new socket holds it.
+    await oldClosed
+    const snap = await snapshotOf(back)
+    expect(snap.view.seats).toHaveLength(1)
+    expect(snap.view.seats[0].connection).toBe('connected')
   })
 
   it('kicks a seat, ejecting it and dropping it from the roster', async () => {
@@ -501,6 +575,95 @@ describe('gameplay: host escapes and the leaderboard', () => {
     const reset = await until(host.ws, (m) => m.type === 'snapshot' && m.view.phase === 'lobby')
     expect(reset.view.totals[host.seatId]).toBe(0)
     expect(reset.view.totals[guest.seatId]).toBe(0)
+  }, 20000)
+})
+
+// ---- typed-guess mode ----
+
+// Drives a room into a typed-mode live turn (host hinting), the guessers'
+// counterpart to toHostTurn.
+async function toTypedTurn(answers = 5): Promise<{
+  code: string
+  host: { ws: WebSocket; seatId: string }
+  guest: { ws: WebSocket; seatId: string }
+}> {
+  const code = await createRoom('geography')
+  const host = await joinAsHost(code)
+  const guest = await joinGuest(code, 'Bob')
+  await act(host.ws, {
+    v: 1,
+    type: 'updateSettings',
+    settings: { categoryIds: ['countries'], answersPerGame: answers, onlineMode: 'typed' },
+  })
+  await until(host.ws, (m) => m.type === 'snapshot' && m.view.settings.onlineMode === 'typed')
+  await act(host.ws, { v: 1, type: 'start' })
+  await until(host.ws, (m) => m.type === 'snapshot' && m.view.phase === 'interstitial')
+  await act(host.ws, { v: 1, type: 'ready' })
+  await until(host.ws, (m) => m.type === 'snapshot' && m.view.phase === 'turn')
+  return { code, host, guest }
+}
+
+// Known-present country names, so a test can pick a valid wrong guess.
+const COUNTRIES = ['Egypt', 'Chad', 'Angola', 'Benin', 'Botswana', 'Cameroon', 'Comoros', 'Djibouti']
+
+// The hinter banks a word and gives a hint from it, so guesses have a hint to
+// answer. Returns the secret answer (off the hinter's own view) and the hint
+// index guesses carry.
+async function openFirstHint(host: { ws: WebSocket }): Promise<{ answer: string; hintIndex: number }> {
+  await act(host.ws, { v: 1, type: 'addWord', word: 'clue' })
+  await until(host.ws, (m) => m.type === 'snapshot' && m.view.game?.bank.length === 1)
+  await act(host.ws, { v: 1, type: 'giveHint', selection: [0] })
+  const hs = await until(host.ws, (m) => m.type === 'snapshot' && m.view.game?.phase === 'resolving')
+  return { answer: hs.view.hinter.currentAnswer, hintIndex: hs.view.game.hintCount }
+}
+
+describe('typed-guess mode: the server resolves a guess', () => {
+  it('lands the answer on the first correct pick and credits the guesser', async () => {
+    const { host, guest } = await toTypedTurn(5)
+    const { answer, hintIndex } = await openFirstHint(host)
+    expect(typeof answer).toBe('string')
+
+    await act(guest.ws, { v: 1, type: 'guess', term: answer, hintIndex })
+    const after = await until(host.ws, (m) => m.type === 'snapshot' && m.view.game?.resolved === 1)
+    expect(after.view.game.correctGuesses[guest.seatId]).toBe(1)
+    // Public through both results and the feed.
+    expect(after.view.game.results[0].answer).toBe(answer)
+    expect(after.view.game.feed.some((f: any) => f.guesserId === guest.seatId && f.term === answer && f.correct)).toBe(
+      true,
+    )
+  })
+
+  it('shows the hinter-given hint on the guesser board, never the answer', async () => {
+    const { host, guest } = await toTypedTurn(5)
+    const { answer } = await openFirstHint(host)
+    const snap = await snapshotOf(guest.ws)
+    // The guesser sees the current hint as bank indices, and no answer.
+    expect(snap.view.game.currentHint).toEqual([0])
+    expect(snap.view.hinter).toBeNull()
+    expect(JSON.stringify(snap)).not.toContain(answer)
+  })
+
+  it('rejects a hinter manual-resolve in typed mode', async () => {
+    const { host } = await toTypedTurn(5)
+    await act(host.ws, { v: 1, type: 'resolve', outcome: { correctGuesserId: 'nobody' } })
+    const err = await until(host.ws, (m) => m.type === 'error')
+    expect(err.code).toBe('not-allowed')
+  })
+
+  it('throttles a burst of guesses from one connection', async () => {
+    const { host, guest } = await toTypedTurn(5)
+    const { answer, hintIndex } = await openFirstHint(host)
+    const wrong = COUNTRIES.find((c) => c !== answer)! // a valid pool term, guaranteed wrong
+
+    // A burst well under the message budget (10) but over the guess budget (5).
+    const burst = 9
+    for (let i = 0; i < burst; i++) send(guest.ws, { v: 1, type: 'guess', term: wrong, hintIndex })
+
+    const snap = await snapshotOf(guest.ws)
+    // Some picks landed in the feed, but the throttle dropped the tail of the
+    // burst, so fewer than were sent.
+    expect(snap.view.game.feed.length).toBeGreaterThan(0)
+    expect(snap.view.game.feed.length).toBeLessThan(burst)
   }, 20000)
 })
 

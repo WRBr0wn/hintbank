@@ -158,11 +158,11 @@ export function parseClientMessage(raw: unknown): ClientMessage {
       return { v, type: 'forceEndTurn' }
     case 'guess': {
       const term = boundedString(raw.term, MAX_GUESS_LENGTH, 'guess')
-      // The bank count the guess was made against, so an overguess scores
-      // against the hint it answered even if the bank has grown since. Carried
-      // from day one though nothing resolves guesses yet.
-      if (!isInt(raw.bankCount) || raw.bankCount < 0) fail('bad-message', 'bankCount must be a non-negative integer')
-      return { v, type: 'guess', term, bankCount: raw.bankCount }
+      // The hint the guess answers (the engine's hintCount it was made against),
+      // so an overguess scores against that hint even if the hinter has given a
+      // newer one since. The reducer clamps it to the hints that exist.
+      if (!isInt(raw.hintIndex) || raw.hintIndex < 0) fail('bad-message', 'hintIndex must be a non-negative integer')
+      return { v, type: 'guess', term, hintIndex: raw.hintIndex }
     }
     case 'continueSession':
       return { v, type: 'continueSession' }

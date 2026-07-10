@@ -4,6 +4,8 @@ import { nameAllowed } from './names'
 import { dueSeats, nextAlarmAt, shouldExpire } from './lifecycle'
 import {
   GRACE_MS,
+  GUESS_BURST,
+  GUESS_REFILL_PER_SEC,
   MAX_MESSAGE_BYTES,
   MSG_BURST,
   MSG_MAX_STRIKES,
@@ -50,15 +52,20 @@ function randomUnit(): number {
 // unshuffled by contract. deckSizeFor and the reducer's clamp mirror the local
 // game page, so a short pool deals a short turn.
 function dealerFor(editionId: string): IntentDeps {
+  const poolFor = (settings: RoomSettings): string[] =>
+    filterPool(categoriesFor(editionId), settings.categoryIds, settings.tagValues)
   return {
     dealDeck: (settings: RoomSettings): string[] => {
-      const pool = filterPool(categoriesFor(editionId), settings.categoryIds, settings.tagValues)
+      const pool = poolFor(settings)
       for (let i = pool.length - 1; i > 0; i--) {
         const j = Math.floor(randomUnit() * (i + 1))
         ;[pool[i], pool[j]] = [pool[j], pool[i]]
       }
       return pool.slice(0, deckSizeFor(settings.answersPerGame))
     },
+    // The full filtered pool a typed-mode guess is validated against. Same
+    // termPasses filter as the deal, unshuffled and complete.
+    poolFor,
   }
 }
 
@@ -72,6 +79,9 @@ export class RoomDurableObject extends DurableObject<Env> {
   // map is empty, which just means a fresh full bucket, an acceptable leniency.
   private buckets = new Map<WebSocket, { tokens: number; last: number; strikes: number }>()
 
+  // Per-socket typed-guess budgets, the same in-memory-leniency contract.
+  private guessBuckets = new Map<WebSocket, { tokens: number; last: number }>()
+
   // Called once by the worker when a code is allocated, before anyone connects.
   // Returns false if the code is already taken, so the worker can retry.
   async createRoom(code: string, editionId: string): Promise<boolean> {
@@ -80,6 +90,24 @@ export class RoomDurableObject extends DurableObject<Env> {
     // No connections yet, so start the idle-expiry countdown.
     await this.touchIdle(false)
     return true
+  }
+
+  // The pre-join lookup: what a client may know before the handshake and
+  // nothing more. Edition (to route a menu-box code to the right page),
+  // joinable (locked is the one pre-join refusal; late joins mid-session are
+  // allowed by design), and the player seats' avatar keys (to grey the
+  // picker). Never names: the handshake surfaces duplicates inline, and names
+  // are more than a prober needs. A created room nobody has joined yet is
+  // joinable with nothing taken.
+  async lookup(): Promise<{ editionId: string; joinable: boolean; avatarsTaken: string[] } | null> {
+    const meta = await this.ctx.storage.get<RoomMeta>('meta')
+    if (!meta) return null
+    const room = await this.load()
+    return {
+      editionId: meta.editionId,
+      joinable: !(room?.locked ?? false),
+      avatarsTaken: room?.seats.filter((s) => s.role === 'player').map((s) => s.avatar) ?? [],
+    }
   }
 
   async fetch(request: Request): Promise<Response> {
@@ -127,6 +155,7 @@ export class RoomDurableObject extends DurableObject<Env> {
 
   async webSocketClose(ws: WebSocket): Promise<void> {
     this.buckets.delete(ws)
+    this.guessBuckets.delete(ws)
     const seatId = this.seatOf(ws)
     if (seatId) {
       const room = await this.load()
@@ -142,6 +171,7 @@ export class RoomDurableObject extends DurableObject<Env> {
 
   async webSocketError(ws: WebSocket): Promise<void> {
     this.buckets.delete(ws)
+    this.guessBuckets.delete(ws)
   }
 
   async alarm(): Promise<void> {
@@ -191,6 +221,17 @@ export class RoomDurableObject extends DurableObject<Env> {
     if (msg.token) {
       const seatId = await this.seatForToken(msg.token)
       if (room && seatId && room.seats.some((s) => s.id === seatId)) {
+        // This socket becomes the seat's only controller: any earlier socket
+        // still bound to it (a zombie connection, or a copied token) is closed
+        // first. Unbinding before the close keeps its close handler from
+        // marking the seat away, and an unbound socket gets no broadcast, so
+        // nothing is sent after the close (the kick ordering hazard).
+        for (const other of this.ctx.getWebSockets()) {
+          if (other !== ws && this.seatOf(other) === seatId) {
+            other.serializeAttachment(null)
+            other.close(1000, 'seat reconnected elsewhere')
+          }
+        }
         room = reconnected(room, seatId)
         await this.save(room)
         this.bindSeat(ws, seatId)
@@ -215,7 +256,7 @@ export class RoomDurableObject extends DurableObject<Env> {
             code: meta.code,
             editionId: meta.editionId,
             host: { seatId, name: msg.name, avatar: msg.avatar },
-            settings: defaultRoomSettings([]),
+            settings: defaultRoomSettings(seedCategoryIds(meta.editionId)),
           })
     } catch (e) {
       if (e instanceof RoomError) this.send(ws, this.errorMsg(e))
@@ -238,6 +279,10 @@ export class RoomDurableObject extends DurableObject<Env> {
       if (room) this.send(ws, { v: PROTOCOL_VERSION, type: 'snapshot', view: viewFor(room, seatId) })
       return
     }
+
+    // Typed-guess throttle: a guess over this connection's guess budget is
+    // dropped, a backstop to the overguess pricing. Other intents are unaffected.
+    if (msg.type === 'guess' && !this.allowGuess(ws)) return
 
     const before = await this.load()
     if (!before) return
@@ -329,6 +374,24 @@ export class RoomDurableObject extends DurableObject<Env> {
     }
     bucket.tokens -= 1
     bucket.strikes = 0
+    return true
+  }
+
+  // The per-connection guess budget: a small token bucket over guesses alone.
+  // No strikes and no socket close, since a stale client may fire a burst; the
+  // excess is simply dropped.
+  private allowGuess(ws: WebSocket): boolean {
+    const now = Date.now()
+    let bucket = this.guessBuckets.get(ws)
+    if (!bucket) {
+      bucket = { tokens: GUESS_BURST, last: now }
+      this.guessBuckets.set(ws, bucket)
+    }
+    const elapsed = (now - bucket.last) / 1000
+    bucket.tokens = Math.min(GUESS_BURST, bucket.tokens + elapsed * GUESS_REFILL_PER_SEC)
+    bucket.last = now
+    if (bucket.tokens < 1) return false
+    bucket.tokens -= 1
     return true
   }
 
@@ -426,6 +489,14 @@ export class RoomDurableObject extends DurableObject<Env> {
   private errorMsg(e: RoomError): ServerMessage {
     return { v: PROTOCOL_VERSION, type: 'error', code: e.code as RoomErrorCode, message: e.message }
   }
+}
+
+// A new room starts with the edition's first ready category selected, the same
+// default local Setup uses, so a host can Start without a trip to the settings.
+// Empty for an unknown edition; the reducer's start still requires a category.
+function seedCategoryIds(editionId: string): string[] {
+  const first = categoriesFor(editionId).find((c) => c.ready)
+  return first ? [first.id] : []
 }
 
 // Seat ids present before an intent but gone after it (a kick or a leave).

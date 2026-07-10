@@ -47,7 +47,8 @@ export default function HowToPlay({ lead, onClose }: Props) {
         </li>
         <li>
           <strong>Online: Multiplayer.</strong> Everyone plays on their own device, no passing. The hinter
-          runs the board; everyone else follows the live board and guesses out loud.
+          runs the board either way; the room chooses how guesses happen. Out loud, the hinter marks who
+          got it. Typed, guessers pick from the pool on their own screen and the game scores it.
         </li>
       </ul>
     </section>

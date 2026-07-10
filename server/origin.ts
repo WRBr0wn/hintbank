@@ -24,17 +24,19 @@ export function allowedOrigins(configured: string | undefined): string[] {
   return fromEnv.length > 0 ? fromEnv : ['https://wrbr0wn.github.io']
 }
 
-// The methods and request header the create call actually uses. content-type:
+// The methods and request header the HTTP calls actually use. content-type:
 // application/json is not a CORS-safe value, so the browser preflights POST
-// /rooms in production (GitHub Pages -> workers.dev, a cross origin).
-const CORS_METHODS = 'POST, OPTIONS'
+// /rooms in production (GitHub Pages -> workers.dev, a cross origin); the
+// GET lookup is a simple request and needs only the origin grant.
+const CORS_METHODS = 'GET, POST, OPTIONS'
 const CORS_HEADERS = 'content-type'
 
-// The CORS grant for the create path, reusing the same allow list the WebSocket
-// Origin check uses (one allow list, not two). Echoes the matched origin, never
-// a wildcard, and returns nothing for a disallowed origin so it gets no grant
-// and the browser blocks it. No credentials mode: the reconnect token travels
-// in messages, not a cookie, so there is no credentialed CORS surface.
+// The CORS grant for the create and lookup paths, reusing the same allow list
+// the WebSocket Origin check uses (one allow list, not two). Echoes the matched
+// origin, never a wildcard, and returns nothing for a disallowed origin so it
+// gets no grant and the browser blocks it. No credentials mode: the reconnect
+// token travels in messages, not a cookie, so there is no credentialed CORS
+// surface.
 export function corsHeaders(origin: string | null, allowList: string[]): Record<string, string> {
   if (!origin || !originAllowed(origin, allowList)) return {}
   return {

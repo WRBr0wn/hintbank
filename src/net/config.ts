@@ -9,6 +9,12 @@ export function createRoomUrl(): string {
   return `${BASE}/rooms`
 }
 
+// The pre-join lookup URL: the same path the socket uses, but as a plain GET
+// (the worker tells them apart by the Upgrade header).
+export function roomLookupUrl(code: string): string {
+  return `${BASE}/rooms/${encodeURIComponent(code)}`
+}
+
 // The WebSocket URL for a room. Derived from BASE when set, otherwise from the
 // current page origin (the proxy/same-origin case), flipping http(s) to ws(s).
 export function roomSocketUrl(code: string): string {

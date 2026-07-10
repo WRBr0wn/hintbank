@@ -1,5 +1,7 @@
+import { useEffect, useState } from 'react'
 import Avatar from '../components/Avatar'
 import { avatarKey } from '../avatars'
+import { lookupRoom } from '../net'
 import { MAX_NAME_LENGTH, ROOM_CODE_LENGTH } from '../protocol'
 import type { PlayerAvatar } from '../types'
 import styles from './Multiplayer.module.css'
@@ -13,11 +15,13 @@ export default function MultiplayerEntry({
   name,
   avatar,
   code,
+  watchOnly,
   busy,
   error,
   onName,
   onAvatar,
   onCode,
+  onWatchOnly,
   onCreate,
   onJoin,
   onCancel,
@@ -26,17 +30,43 @@ export default function MultiplayerEntry({
   name: string
   avatar: PlayerAvatar
   code: string
+  watchOnly: boolean
   busy: boolean
   error: string | null
   onName: (name: string) => void
   onAvatar: (avatar: PlayerAvatar) => void
   onCode: (code: string) => void
+  onWatchOnly: (watchOnly: boolean) => void
   onCreate: () => void
   onJoin: () => void
   onCancel: () => void
 }) {
   const named = name.trim().length > 0
   const codeReady = code.trim().length === ROOM_CODE_LENGTH
+
+  // Once a full-length code is present, the pre-join lookup greys the avatars
+  // already taken in that room. Purely advisory: a failed or slow lookup means
+  // no greying and nothing else, and the join handshake still catches
+  // everything, so this never blocks joining. The result is keyed by the code
+  // it answered, so editing the code drops stale greying by derivation.
+  const [lookedUp, setLookedUp] = useState<{ code: string; taken: string[] } | null>(null)
+  useEffect(() => {
+    const c = code.trim()
+    if (c.length !== ROOM_CODE_LENGTH) return
+    let stale = false
+    lookupRoom(c).then((found) => {
+      if (!stale && found.ok) setLookedUp({ code: c, taken: found.avatarsTaken })
+    })
+    return () => {
+      stale = true
+    }
+  }, [code])
+  const taken: ReadonlySet<string> = lookedUp?.code === code.trim() ? new Set(lookedUp.taken) : new Set()
+  // The manual flow is name, avatar, then code, so the lookup usually resolves
+  // after the avatar was picked; when it marks the current pick taken, say so
+  // instead of silently greying everything else. Advisory only: no auto-switch,
+  // and the join is never blocked (a duplicate avatar is legal).
+  const selectedTaken = taken.has(avatarKey(avatar))
 
   return (
     <div className={styles.entry}>
@@ -64,12 +94,15 @@ export default function MultiplayerEntry({
           {avatars.map((a) => {
             const key = avatarKey(a)
             const on = avatarKey(avatar) === key
+            const isTaken = taken.has(key)
+            const cls = on ? (isTaken ? styles.pickActiveTaken : styles.pickActive) : isTaken ? styles.pickTaken : styles.pick
             return (
               <button
                 key={key}
                 type="button"
-                className={on ? styles.pickActive : styles.pick}
-                title={a.kind === 'image' ? a.label : undefined}
+                className={cls}
+                disabled={isTaken && !on}
+                title={isTaken ? 'Taken in this room' : a.kind === 'image' ? a.label : undefined}
                 onClick={() => onAvatar(a)}
               >
                 <Avatar avatar={a} size={34} />
@@ -77,6 +110,9 @@ export default function MultiplayerEntry({
             )
           })}
         </div>
+        {selectedTaken && (
+          <p className={styles.takenNote}>Your avatar is taken in this room. Pick another, or join with it anyway.</p>
+        )}
       </section>
 
       {error && <p className={styles.error}>{error}</p>}
@@ -102,6 +138,15 @@ export default function MultiplayerEntry({
             Join
           </button>
         </div>
+
+        {/* A board view, not an identity choice: a display surface for a stream
+            capture, a shared TV, or following along. Join-only: the first join
+            into a room creates it as host, and a spectator host makes no sense,
+            so Create stays player-only. */}
+        <label className={styles.watchRow}>
+          <input type="checkbox" checked={watchOnly} onChange={(e) => onWatchOnly(e.target.checked)} />
+          Watch only: a board view for a stream, a shared TV, or following along
+        </label>
       </div>
     </div>
   )

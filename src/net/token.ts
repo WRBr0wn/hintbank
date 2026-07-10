@@ -21,6 +21,15 @@ function defaultStore(): KeyStore | null {
   }
 }
 
+// Tokens are for players. A spectator connection is a display surface (a board
+// view) with no score or rotation slot to restore, and in the same browser it
+// would otherwise load the player seat's token (taking that seat over) and
+// overwrite it on welcome. Giving it no store makes every token operation
+// inert; a dropped board view rejoins fresh, which loses nothing.
+export function tokenStoreFor(spectator: boolean | undefined, store: KeyStore | null = defaultStore()): KeyStore | null {
+  return spectator ? null : store
+}
+
 export function loadToken(code: string, store: KeyStore | null = defaultStore()): string | null {
   try {
     return store?.getItem(keyFor(code)) ?? null

@@ -15,10 +15,12 @@ import {
   join,
   start,
   startTurn,
+  submitGuess,
+  typedGiveHint,
   type IntentDeps,
 } from './room'
 import { viewFor } from './views'
-import { PROTOCOL_VERSION, type RoomState, type ServerMessage } from './types'
+import { PROTOCOL_VERSION, type RoomSettings, type RoomState, type ServerMessage } from './types'
 
 // Distinctive, greppable answer tokens so a leak is unmistakable in the
 // serialized output. The deck is larger than the turn so several answers stay
@@ -33,7 +35,11 @@ const SECRET_DECK = [
   'SECRET_ANSWER_GOLF',
   'SECRET_ANSWER_HOTEL',
 ]
-const deps: IntentDeps = { dealDeck: () => [...SECRET_DECK] }
+// A wrong pick a guesser can submit in typed mode: in the pool, but not an
+// answer, so its appearance in the feed is safe.
+const WRONG_PICK = 'WRONG_PICK_ZULU'
+const pool = () => [...SECRET_DECK, WRONG_PICK]
+const deps: IntentDeps = { dealDeck: () => [...SECRET_DECK], poolFor: pool }
 
 function roomInTurn(): RoomState {
   let room = createRoom({
@@ -96,6 +102,22 @@ describe('guesser and spectator views carry no secrets', () => {
       }
     })
   }
+
+  it('shows the voice-mode hint as bank indices to every seat, never the answer', () => {
+    let room = roomInTurn()
+    room = hinterAddWord(room, 'hinter', 'clue')
+    room = hinterGiveHint(room, 'hinter', [0])
+    for (const seatId of ['guesser', 'watcher']) {
+      const view = viewFor(room, seatId)
+      // The hint is bank word indices in order, safe on every board.
+      expect(view.game?.currentHint).toEqual([0])
+      expect(view.hinter).toBeNull()
+      assertNoSecrets(view, room)
+    }
+    // Resolution closes the hint, so it leaves every later view.
+    room = hinterResolve(room, 'hinter', { correctGuesserId: 'guesser' })
+    expect(viewFor(room, 'guesser').game?.currentHint).toBeNull()
+  })
 })
 
 describe('the hinter view carries the current answer but not the whole deck', () => {
@@ -142,5 +164,63 @@ describe('server messages bound for a non-hinter carry no secrets', () => {
     // The one resolved answer is public; the rest stay secret.
     expect(view.game?.results.map((r) => r.answer)).toEqual(['SECRET_ANSWER_ALPHA'])
     assertNoSecrets(view, room)
+  })
+})
+
+// Typed mode adds the guess feed to every view. It carries submitted picks, so
+// the secrecy contract is that the current unresolved answer never appears in it
+// before it lands: a wrong pick is not the answer, and a correct pick enters the
+// feed only as it resolves (public through results too).
+describe('typed mode: the guess feed carries no secrets', () => {
+  const typedSettings = (): RoomSettings => ({ ...defaultRoomSettings(['countries']), onlineMode: 'typed' })
+
+  function typedRoomInTurn(): RoomState {
+    let room = createRoom({
+      code: 'ABC234',
+      editionId: 'geography',
+      host: { seatId: 'hinter', name: 'Ann', avatar: 'fox' },
+      settings: typedSettings(),
+    })
+    room = join(room, { seatId: 'guesser', name: 'Bob', avatar: 'turtle' })
+    room = join(room, { seatId: 'watcher', name: 'Sam', avatar: 'ghost', spectator: true })
+    room = start(room, 'hinter')
+    room = startTurn(room, 'hinter', deps.dealDeck(room.settings))
+    room = hinterAddWord(room, 'hinter', 'clue')
+    return typedGiveHint(room, 'hinter', [0])
+  }
+
+  it('never leaks an unresolved answer through the feed to a guesser or spectator', () => {
+    let room = typedRoomInTurn()
+    room = submitGuess(room, 'guesser', WRONG_PICK, 1, pool) // a wrong pick, safe to show
+    room = submitGuess(room, 'guesser', 'SECRET_ANSWER_ALPHA', 1, pool) // lands, now public
+    for (const seatId of ['guesser', 'watcher']) {
+      const view = viewFor(room, seatId)
+      expect(view.hinter).toBeNull()
+      // The feed is present and shows both picks; the current unresolved answer
+      // never appears in it.
+      expect(view.game?.feed).toHaveLength(2)
+      const current = room.game?.deck[room.game.cursor]
+      expect(JSON.stringify(view.game?.feed)).not.toContain(current)
+      assertNoSecrets(view, room)
+    }
+  })
+
+  it('shows a wrong pick without exposing the current answer', () => {
+    let room = typedRoomInTurn()
+    room = submitGuess(room, 'guesser', WRONG_PICK, 1, pool)
+    const view = viewFor(room, 'guesser')
+    expect(view.game?.feed).toEqual([{ guesserId: 'guesser', term: WRONG_PICK, correct: false }])
+    assertNoSecrets(view, room)
+  })
+
+  it('shows the current hint as bank indices to every seat, never the answer', () => {
+    const room = typedRoomInTurn()
+    for (const seatId of ['guesser', 'watcher']) {
+      const view = viewFor(room, seatId)
+      // The hint is bank word indices in order, safe on every board.
+      expect(view.game?.currentHint).toEqual([0])
+      expect(view.hinter).toBeNull()
+      assertNoSecrets(view, room)
+    }
   })
 })

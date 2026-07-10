@@ -1,64 +1,49 @@
 import { useState } from 'react'
-import Avatar from '../components/Avatar'
 import BankGrid from '../components/BankGrid'
 import MpScoreStrip from './MpScoreStrip'
 import MpLanded from './MpLanded'
-import { avatarOf, openBoardView, playerSeats, type ScreenProps } from './roomScreen'
+import GuessFeed from './GuessFeed'
+import CurrentHint from './CurrentHint'
+import { openBoardView, type ScreenProps } from './roomScreen'
 import { BANK_CAP } from '../engine'
 import hp from './HinterPlay.module.css'
 import g from './Game.module.css'
 
-// The networked hinter screen: functionally the local HinterPlay, but driven by
-// the hinter's own view (which carries the current answer and the capability
-// flags) and sending intents. It holds no game state, only ephemeral UI (the
-// word selection, the add-word draft, the overguess tally); the server resolves
-// every action and the next snapshot re-renders. No typo-editing: canEditMode
-// is false in multiplayer. The hinter's device is private, so the answer shows
-// plainly.
-export default function HinterBoard({ view, connection, avatars, edition, onSend, onLeave }: ScreenProps) {
+// The typed-guess hinter board: the same interaction as the voice HinterBoard
+// minus the resolve controls. The hinter builds the bank, rerolls, and gives
+// hints by selecting bank words in order; the server adjudicates each guess
+// (submitGuess), so there is no give-hint-then-resolve "who guessed it" step.
+// Building the bank, rerolling, or giving a new hint each closes any open hint
+// server-side, so the hinting controls stay live while guessers are guessing.
+// Driven by the hinter's own view (which alone holds the current answer and the
+// capability flags); it holds only the word selection and the add-word draft.
+export default function TypedHinterBoard({ view, connection, avatars, edition, onSend, onLeave }: ScreenProps) {
   const game = view.game!
   const hinter = view.hinter!
   const [selection, setSelection] = useState<number[]>([])
   const [draft, setDraft] = useState('')
-  const [overguess, setOverguess] = useState<Record<string, number>>({})
 
-  const hinting = game.phase === 'hinting'
-  const resolving = game.phase === 'resolving'
   const complete = game.status === 'complete'
   const full = game.bank.length >= BANK_CAP
-  const guessers = playerSeats(view).filter((s) => s.id !== game.hinterId)
 
+  // Selecting a word toggles it, appending in tap order so the hint keeps the
+  // order the hinter picked.
   function toggleWord(i: number) {
     setSelection((s) => (s.includes(i) ? s.filter((x) => x !== i) : [...s, i]))
   }
 
   function handleAdd() {
     const word = draft.trim()
-    if (!word || !hinter.canAddWord) return
+    if (!word) return
     onSend({ type: 'addWord', word })
     setDraft('')
+    setSelection([])
   }
 
   function handleGive() {
     if (selection.length === 0) return
     onSend({ type: 'giveHint', selection })
     setSelection([])
-  }
-
-  function resolveWith(correctGuesserId?: string) {
-    onSend({ type: 'resolve', outcome: correctGuesserId ? { correctGuesserId, overguesses: overguess } : { overguesses: overguess } })
-    setOverguess({})
-    setSelection([])
-  }
-
-  function handleReroll() {
-    if (!hinter.canReroll) return
-    onSend({ type: 'reroll' })
-    setSelection([])
-  }
-
-  function handleEndTurn() {
-    if (hinter.canEndTurn) onSend({ type: 'endTurn' })
   }
 
   return (
@@ -89,6 +74,8 @@ export default function HinterBoard({ view, connection, avatars, edition, onSend
               </div>
             )}
 
+            {!complete && <CurrentHint game={game} />}
+
             <section className={hp.bankSection}>
               <div className={hp.bankHead}>
                 <h2>Hint Bank</h2>
@@ -98,12 +85,12 @@ export default function HinterBoard({ view, connection, avatars, edition, onSend
                 cap={BANK_CAP}
                 cutoff={game.cutoff}
                 selected={selection}
-                interactive={hinting && !complete}
+                interactive={!complete}
                 onToggle={toggleWord}
               />
               {!complete &&
                 (full ? (
-                  <p className={hp.fullNote}>The bank is full. Give hints from these words, or end the turn.</p>
+                  <p className={hp.fullNote}>The bank is full. Give a hint from these words, or end the turn.</p>
                 ) : (
                   <div className={hp.addRow}>
                     <input
@@ -111,11 +98,10 @@ export default function HinterBoard({ view, connection, avatars, edition, onSend
                       value={draft}
                       maxLength={24}
                       placeholder="Add a word to the bank"
-                      disabled={!hinting}
                       onChange={(e) => setDraft(e.target.value)}
                       onKeyDown={(e) => e.key === 'Enter' && handleAdd()}
                     />
-                    <button type="button" className={hp.add} onClick={handleAdd} disabled={!hinter.canAddWord || draft.trim() === ''}>
+                    <button type="button" className={hp.add} onClick={handleAdd} disabled={draft.trim() === ''}>
                       Add
                     </button>
                   </div>
@@ -129,51 +115,21 @@ export default function HinterBoard({ view, connection, avatars, edition, onSend
                   Continue
                 </button>
               </div>
-            ) : hinting ? (
+            ) : (
               <div className={hp.actions}>
                 <button type="button" className={hp.primary} onClick={handleGive} disabled={selection.length === 0}>
                   Give hint
                 </button>
                 <div className={hp.escapes}>
-                  <button type="button" className={hp.secondary} onClick={handleReroll} disabled={!hinter.canReroll}>
+                  <button type="button" className={hp.secondary} onClick={() => hinter.canReroll && onSend({ type: 'reroll' })} disabled={!hinter.canReroll}>
                     Reroll
                   </button>
-                  <button type="button" className={hp.danger} onClick={handleEndTurn} disabled={!hinter.canEndTurn}>
+                  <button type="button" className={hp.danger} onClick={() => hinter.canEndTurn && onSend({ type: 'endTurn' })} disabled={!hinter.canEndTurn}>
                     Bank full? End turn
                   </button>
                 </div>
               </div>
-            ) : resolving ? (
-              <div className={hp.resolve}>
-                <p className={hp.resolvePrompt}>Who guessed it?</p>
-                <ul className={guessers.length >= 5 ? `${hp.guessers} ${hp.guessersGrid}` : hp.guessers}>
-                  {guessers.map((seat) => (
-                    <li key={seat.id} className={hp.guesser}>
-                      <span className={hp.guesserName}>
-                        <Avatar avatar={avatarOf(avatars, seat)} size={22} /> {seat.name}
-                        {overguess[seat.id] ? <span className={hp.penalty}> −{overguess[seat.id]}</span> : null}
-                      </span>
-                      <span className={hp.guesserBtns}>
-                        <button
-                          type="button"
-                          className={hp.minus}
-                          onClick={() => setOverguess((o) => ({ ...o, [seat.id]: (o[seat.id] ?? 0) + 1 }))}
-                          aria-label={`Overguess for ${seat.name}`}
-                        >
-                          x2 (−1)
-                        </button>
-                        <button type="button" className={hp.correct} onClick={() => resolveWith(seat.id)}>
-                          Correct
-                        </button>
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-                <button type="button" className={hp.secondary} onClick={() => resolveWith()}>
-                  Keep Hinting!
-                </button>
-              </div>
-            ) : null}
+            )}
 
             <div className={g.leaveRow}>
               {/* The streamer case: about to hint, put the neutral board in the
@@ -187,8 +143,12 @@ export default function HinterBoard({ view, connection, avatars, edition, onSend
             </div>
           </div>
 
+          {/* The feed lives in the sidebar here, not the main column: the hinter's
+              control stack is tall already, and a growing feed under it would push
+              the bottom scoreboard off screen. */}
           <div className={hp.results}>
             <MpLanded view={view} game={game} avatars={avatars} />
+            <GuessFeed view={view} game={game} avatars={avatars} />
           </div>
         </div>
       </div>
