@@ -3,6 +3,7 @@ import Avatar from '../components/Avatar'
 import LobbySettings from './LobbySettings'
 import { avatarByKey } from '../avatars'
 import { openBoardView } from './roomScreen'
+import { inviteMessage, isMobileSharePlatform } from './joinFlow'
 import { gamePath, type Edition } from '../editions'
 import type { Intent, NetStatus } from '../net'
 import type { RoomSettings, RoomView } from '../protocol'
@@ -31,7 +32,7 @@ export default function Lobby({
   onLeave: () => void
 }) {
   const [revealed, setRevealed] = useState(false)
-  const [copied, setCopied] = useState<'code' | 'link' | null>(null)
+  const [copied, setCopied] = useState<'code' | 'invite' | null>(null)
 
   const isHost = view.hostId === seatId
   const players = view.seats.filter((s) => s.role === 'player')
@@ -41,15 +42,42 @@ export default function Lobby({
 
   const shareLink = `${location.origin}${gamePath(edition.id)}?room=${view.code}`
 
-  async function copy(what: 'code' | 'link') {
-    const text = what === 'code' ? view.code : shareLink
+  function markCopied(what: 'code' | 'invite') {
+    setCopied(what)
+    setTimeout(() => setCopied((c) => (c === what ? null : c)), 1500)
+  }
+
+  async function copyCode() {
     try {
-      await navigator.clipboard.writeText(text)
-      setCopied(what)
-      setTimeout(() => setCopied((c) => (c === what ? null : c)), 1500)
+      await navigator.clipboard.writeText(view.code)
+      markCopied('code')
     } catch {
       // Clipboard blocked (insecure context or denied); reveal instead so the
       // code can be copied by hand.
+      setRevealed(true)
+    }
+  }
+
+  // The invite carries the code by design, but it never renders here: it goes
+  // to the OS share sheet on mobile or silently to the clipboard on desktop.
+  // The split is by platform, not feature detection: desktop browsers
+  // implement navigator.share too and their dialogs preview the text, so
+  // desktop must always copy.
+  async function shareInvite() {
+    const inviter = view.seats.find((s) => s.id === seatId)?.name ?? 'Someone'
+    const text = inviteMessage(inviter, edition.displayName, view.code)
+    if (isMobileSharePlatform()) {
+      try {
+        await navigator.share({ text, url: shareLink })
+      } catch {
+        // Cancelled, or no share sheet after all; nothing to clean up.
+      }
+      return
+    }
+    try {
+      await navigator.clipboard.writeText(`${text}\n${shareLink}`)
+      markCopied('invite')
+    } catch {
       setRevealed(true)
     }
   }
@@ -76,11 +104,11 @@ export default function Lobby({
           </button>
         </div>
         <div className={styles.copyRow}>
-          <button type="button" className={styles.copyBtn} onClick={() => copy('code')}>
+          <button type="button" className={styles.copyBtn} onClick={copyCode}>
             {copied === 'code' ? 'Copied' : 'Copy code'}
           </button>
-          <button type="button" className={styles.copyBtn} onClick={() => copy('link')}>
-            {copied === 'link' ? 'Copied' : 'Copy link'}
+          <button type="button" className={styles.copyBtn} onClick={shareInvite}>
+            {copied === 'invite' ? 'Copied' : 'Share invite'}
           </button>
           {/* Opens a new tab that auto-joins as a spectator: the neutral board
               for a stream capture or a shared TV. The code stays masked; it

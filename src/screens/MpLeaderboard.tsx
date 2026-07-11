@@ -1,5 +1,5 @@
 import Avatar from '../components/Avatar'
-import { avatarOf, playerSeats, type ScreenProps } from './roomScreen'
+import { CHANGE_SETTINGS_DESC, avatarOf, playerSeats, type ScreenProps } from './roomScreen'
 import board from './Leaderboard.module.css'
 import g from './Game.module.css'
 
@@ -56,7 +56,7 @@ export default function MpLeaderboard({ view, seatId, avatars, onSend, onLeave }
             <button type="button" className={board.startOver} onClick={() => onSend({ type: 'resetSession' })}>
               Change Settings
             </button>
-            <p className={board.actionDesc}>Back to the lobby to change players or settings, scores back to 0.</p>
+            <p className={board.actionDesc}>{CHANGE_SETTINGS_DESC}</p>
           </div>
         </div>
       ) : (

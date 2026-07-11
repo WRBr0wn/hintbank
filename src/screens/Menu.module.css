@@ -110,3 +110,9 @@
   font-size: 0.85rem;
   color: var(--warn-text);
 }
+
+/* The live lookup verdict; errors take the same slot over via .joinError. */
+.joinVerdict {
+  font-size: 0.85rem;
+  color: var(--text-2);
+}

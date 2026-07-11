@@ -2,6 +2,8 @@ import { describe, expect, it } from 'vitest'
 import { MAX_PLAYERS, cutoffFor, guesserScore } from '../engine'
 import {
   applyIntent,
+  becomePlayer,
+  becomeSpectator,
   continueRotation,
   createRoom,
   defaultRoomSettings,
@@ -376,6 +378,108 @@ describe('leaving and host migration', () => {
   })
 })
 
+describe('role changes in place', () => {
+  it('settles the turn as a forfeit when the hinter turns spectator mid-own-turn', () => {
+    let room = lobbyOfThree()
+    room = start(room, 'a')
+    room = startTurn(room, 'a', deckOf(5))
+    room = hinterAddWord(room, 'a', 'clue')
+    room = becomeSpectator(room, 'a')
+    const ann = room.seats.find((s) => s.id === 'a')
+    // The seat stays, watch-only, same identity; the turn is over.
+    expect(ann).toMatchObject({ role: 'spectator', name: 'Ann', avatar: 'fox', connection: 'connected' })
+    expect('a' in room.totals).toBe(false)
+    expect(room.game).toBeNull()
+    expect(room.phase).toBe('interstitial')
+    expect(room.session?.queue).toEqual(['b', 'c'])
+  })
+
+  it('collapses the session to the leaderboard when players fall below the minimum', () => {
+    let room = createRoom({
+      code: 'ABC234',
+      editionId: 'geography',
+      host: { seatId: 'a', name: 'Ann', avatar: 'fox' },
+      settings: settings(),
+    })
+    room = join(room, { seatId: 'b', name: 'Bob', avatar: 'turtle' })
+    room = start(room, 'a')
+    room = startTurn(room, 'a', deckOf(5))
+    room = becomeSpectator(room, 'b') // the only guesser stops playing
+    expect(room.phase).toBe('leaderboard')
+    expect(room.game).toBeNull()
+    expect(room.seats).toHaveLength(2) // nobody left the room itself
+  })
+
+  it('hands the room to the longest-present player when the host turns spectator', () => {
+    let room = lobbyOfThree()
+    room = becomeSpectator(room, 'a')
+    expect(room.hostId).toBe('b')
+    expect(room.seats.map((s) => s.id)).toEqual(['a', 'b', 'c'])
+  })
+
+  it('seats a mid-turn becomePlayer as pending, then in at the boundary', () => {
+    let room = lobbyOfThree()
+    room = join(room, { seatId: 's', name: 'Sam', avatar: 'ghost', spectator: true })
+    room = start(room, 'a')
+    room = startTurn(room, 'a', deckOf(2))
+    room = becomePlayer(room, 's')
+    const sam = room.seats.find((seat) => seat.id === 's')
+    expect(sam).toMatchObject({ role: 'player', pending: true })
+    expect(room.totals.s).toBe(0)
+    expect(room.game?.players).not.toContain('s')
+    room = playTurnToEnd(room, 'a', 'b')
+    room = finishTurn(room, 'a')
+    expect(room.seats.find((seat) => seat.id === 's')?.pending).toBe(false)
+    expect(room.session?.queue).toEqual(['b', 'c', 's'])
+  })
+
+  it('joins the rotation queue directly at an interstitial', () => {
+    let room = lobbyOfThree()
+    room = join(room, { seatId: 's', name: 'Sam', avatar: 'ghost', spectator: true })
+    room = start(room, 'a')
+    room = becomePlayer(room, 's')
+    expect(room.session?.queue).toEqual(['a', 'b', 'c', 's'])
+    expect(room.seats.find((seat) => seat.id === 's')?.pending).toBe(false)
+  })
+
+  it('refuses becomePlayer at the player cap with room-full', () => {
+    let room = createRoom({
+      code: 'ABC234',
+      editionId: 'geography',
+      host: { seatId: 'p1', name: 'P1', avatar: 'fox' },
+      settings: settings(),
+    })
+    for (let i = 2; i <= MAX_PLAYERS; i++) {
+      room = join(room, { seatId: `p${i}`, name: `P${i}`, avatar: 'owl' })
+    }
+    room = join(room, { seatId: 's', name: 'Sam', avatar: 'ghost', spectator: true })
+    let err: unknown
+    try {
+      becomePlayer(room, 's')
+    } catch (e) {
+      err = e
+    }
+    expect(err).toBeInstanceOf(RoomError)
+    expect((err as RoomError).code).toBe('room-full')
+  })
+
+  it('refuses a switch to the role the seat already has', () => {
+    let room = lobbyOfThree()
+    room = join(room, { seatId: 's', name: 'Sam', avatar: 'ghost', spectator: true })
+    expect(() => becomePlayer(room, 'a')).toThrow(/already playing/)
+    expect(() => becomeSpectator(room, 's')).toThrow(/already watching/)
+  })
+
+  it('routes both intents through applyIntent', () => {
+    let room = lobbyOfThree()
+    room = applyIntent(room, 'c', { v: 1, type: 'becomeSpectator' }, { dealDeck: () => deckOf(4), poolFor })
+    expect(room.seats.find((s) => s.id === 'c')?.role).toBe('spectator')
+    room = applyIntent(room, 'c', { v: 1, type: 'becomePlayer' }, { dealDeck: () => deckOf(4), poolFor })
+    expect(room.seats.find((s) => s.id === 'c')?.role).toBe('player')
+    expect(room.totals.c).toBe(0)
+  })
+})
+
 describe('end of session keeps the room', () => {
   function toLeaderboard(): RoomState {
     let room = lobbyOfThree()
@@ -410,6 +514,24 @@ describe('end of session keeps the room', () => {
     let room = toLeaderboard()
     room = resetSession(room, 'a')
     expect(room.phase).toBe('lobby')
+    expect(room.session).toBeNull()
+    expect(Object.values(room.totals).every((n) => n === 0)).toBe(true)
+  })
+
+  it('change settings also works from the interstitial and mid-turn, but not the lobby', () => {
+    let room = lobbyOfThree()
+    expect(() => resetSession(room, 'a')).toThrow(/already in the lobby/)
+    room = start(room, 'a')
+    const fromInterstitial = resetSession(room, 'a')
+    expect(fromInterstitial.phase).toBe('lobby')
+    expect(fromInterstitial.session).toBeNull()
+    // Mid-turn: the live game is simply discarded; its points were headed for
+    // zero anyway.
+    room = startTurn(room, 'a', deckOf(5))
+    room = hinterAddWord(room, 'a', 'clue')
+    room = resetSession(room, 'a')
+    expect(room.phase).toBe('lobby')
+    expect(room.game).toBeNull()
     expect(room.session).toBeNull()
     expect(Object.values(room.totals).every((n) => n === 0)).toBe(true)
   })

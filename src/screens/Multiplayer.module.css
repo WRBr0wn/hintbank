@@ -134,6 +134,13 @@
   color: var(--warn-text);
 }
 
+/* The live lookup verdict in the code field's status slot: informational, not
+   a warning; errors take the slot over via .error. */
+.verdict {
+  font-size: 0.9rem;
+  color: var(--text-2);
+}
+
 .actions {
   display: flex;
   flex-direction: column;

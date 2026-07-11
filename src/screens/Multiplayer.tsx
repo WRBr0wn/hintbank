@@ -1,5 +1,6 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, type MutableRefObject } from 'react'
 import MultiplayerEntry from './MultiplayerEntry'
+import RoomMenu from './RoomMenu'
 import Lobby from './Lobby'
 import Interstitial from './Interstitial'
 import HinterBoard from './HinterBoard'
@@ -34,6 +35,7 @@ export default function Multiplayer({
   avatars,
   prefillCode,
   prefillWatch,
+  titleActionRef,
   onExit,
 }: {
   editionId: string
@@ -41,6 +43,10 @@ export default function Multiplayer({
   avatars: PlayerAvatar[]
   prefillCode: string | null
   prefillWatch: boolean
+  // App's title tap lands here while this flow is mounted: seated in a room it
+  // opens the room menu and returns true; on the entry form it returns false
+  // and App steps back to Setup. The title never silently leaves a room.
+  titleActionRef: MutableRefObject<(() => boolean) | null>
   onExit: () => void
 }) {
   const room = useRoom(editionId)
@@ -79,8 +85,26 @@ export default function Multiplayer({
   // Leaving a room returns to the entry with the mode still chosen and the name
   // and avatar retained (they live above the connection), ready to create or
   // join again, rather than resetting to In Person.
+  // The room menu, opened by the title while seated: the effect keeps the
+  // title's action tracking the live state each render, and clears it on
+  // unmount so App falls back to stepping out of the flow.
+  const [menuOpen, setMenuOpen] = useState(false)
+  useEffect(() => {
+    titleActionRef.current = () => {
+      if (joinedHere && state.view != null) {
+        setMenuOpen(true)
+        return true
+      }
+      return false
+    }
+    return () => {
+      titleActionRef.current = null
+    }
+  })
+
   const backToEntry = () => {
     setBoardViewPending(false)
+    setMenuOpen(false)
     room.leave()
   }
 
@@ -99,22 +123,39 @@ export default function Multiplayer({
       onSend: room.send,
       onLeave: backToEntry,
     }
-    switch (state.view.phase) {
-      case 'lobby':
-        return <Lobby {...screen} />
-      case 'interstitial':
-        return <Interstitial {...screen} />
-      case 'turn': {
-        // Typed and voice share the "Online: Multiplayer" mode; the room's
-        // onlineMode setting picks which pair of boards a turn renders.
-        const typed = state.view.settings.onlineMode === 'typed'
-        const isHinter = state.view.game?.hinterId === state.seatId
-        if (typed) return isHinter ? <TypedHinterBoard {...screen} /> : <TypedGuesserBoard {...screen} />
-        return isHinter ? <HinterBoard {...screen} /> : <GuesserBoard {...screen} />
+    const board = (() => {
+      switch (state.view!.phase) {
+        case 'lobby':
+          return <Lobby {...screen} />
+        case 'interstitial':
+          return <Interstitial {...screen} />
+        case 'turn': {
+          // Typed and voice share the "Online: Multiplayer" mode; the room's
+          // onlineMode setting picks which pair of boards a turn renders.
+          const typed = state.view!.settings.onlineMode === 'typed'
+          const isHinter = state.view!.game?.hinterId === state.seatId
+          if (typed) return isHinter ? <TypedHinterBoard {...screen} /> : <TypedGuesserBoard {...screen} />
+          return isHinter ? <HinterBoard {...screen} /> : <GuesserBoard {...screen} />
+        }
+        case 'leaderboard':
+          return <MpLeaderboard {...screen} />
       }
-      case 'leaderboard':
-        return <MpLeaderboard {...screen} />
-    }
+    })()
+    return (
+      <>
+        {board}
+        {menuOpen && (
+          <RoomMenu
+            view={state.view}
+            seatId={state.seatId!}
+            error={state.error}
+            onSend={room.send}
+            onLeave={backToEntry}
+            onClose={() => setMenuOpen(false)}
+          />
+        )}
+      </>
+    )
   }
 
   const busy = state.status === 'connecting' || state.status === 'joining'
