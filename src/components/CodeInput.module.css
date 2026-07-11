@@ -1,0 +1,32 @@
+.wrap {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  gap: 0.4rem;
+}
+
+.wrap input {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+/* Press-and-hold only: a hold must not scroll, select, or pop a menu. */
+.peek {
+  flex: 0 0 auto;
+  padding: 0 0.8rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 0.7rem;
+  cursor: pointer;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.peek:active {
+  border-color: var(--accent);
+  color: var(--text);
+}

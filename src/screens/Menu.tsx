@@ -1,8 +1,10 @@
-import { useState, type CSSProperties } from 'react'
+import { useEffect, useState, type CSSProperties } from 'react'
 import { EDITIONS, editionById, gamePath, type Edition } from '../editions'
 import EditionTileBody from '../components/EditionTileBody'
-import { lookupRoom } from '../net'
+import CodeInput from '../components/CodeInput'
+import { lookupRoom, type RoomLookupResult } from '../net'
 import { ROOM_CODE_LENGTH, isRoomCode, normalizeRoomCode } from '../protocol'
+import { badCodeMessage, codeStatus, lookupVerdict, noRoomMessage } from './joinFlow'
 import styles from './Menu.module.css'
 import tiles from '../components/EditionTiles.module.css'
 
@@ -19,18 +21,40 @@ function JoinBox() {
   const [error, setError] = useState<string | null>(null)
   const [busy, setBusy] = useState(false)
 
+  // A full-length code resolves live, same as the multiplayer entry form; the
+  // result is keyed by the code it answered so edits drop stale verdicts by
+  // derivation. Advisory: a failed lookup says nothing and blocks nothing.
+  const [lookedUp, setLookedUp] = useState<{ code: string; result: RoomLookupResult } | null>(null)
+  useEffect(() => {
+    const c = code.trim()
+    if (c.length !== ROOM_CODE_LENGTH || !isRoomCode(c)) return
+    let stale = false
+    lookupRoom(c).then((result) => {
+      if (!stale) setLookedUp({ code: c, result })
+    })
+    return () => {
+      stale = true
+    }
+  }, [code])
+  const resolved = lookedUp?.code === code.trim() ? lookedUp.result : null
+  const verdict = lookupVerdict(code, resolved, (id) => editionById(id)?.displayName ?? null)
+  // Editing the code clears the attempt error directly (below), so the slot
+  // needs no dismissal bookkeeping here.
+  const status = codeStatus(error, null, verdict)
+
   async function go() {
     const c = normalizeRoomCode(code)
     if (!isRoomCode(c)) {
-      setError(`A room code is ${ROOM_CODE_LENGTH} letters and numbers.`)
+      setError(badCodeMessage)
       return
     }
     setBusy(true)
     setError(null)
-    const found = await lookupRoom(c)
+    // The live lookup usually already answered for this exact code.
+    const found = resolved ?? (await lookupRoom(c))
     setBusy(false)
     if (!found.ok) {
-      setError(found.reason === 'not-found' ? 'No room with that code.' : 'Could not reach the server.')
+      setError(found.reason === 'not-found' ? noRoomMessage : 'Could not reach the server.')
       return
     }
     if (!found.joinable) {
@@ -40,7 +64,7 @@ function JoinBox() {
     // An edition this build does not know cannot be routed; treat it like a
     // dead code rather than a broken link.
     if (!editionById(found.editionId)) {
-      setError('No room with that code.')
+      setError(noRoomMessage)
       return
     }
     window.location.href = `${gamePath(found.editionId)}?room=${c}`
@@ -50,24 +74,22 @@ function JoinBox() {
     <div className={styles.joinRow}>
       <p className={styles.joinLabel}>Have a room code?</p>
       <div className={styles.joinControls}>
-        <input
-          className={styles.joinCode}
+        <CodeInput
           value={code}
-          maxLength={ROOM_CODE_LENGTH}
-          placeholder="CODE"
-          autoCapitalize="characters"
-          spellCheck={false}
-          onChange={(e) => {
-            setCode(e.target.value.toUpperCase().replace(/\s+/g, ''))
+          inputClassName={styles.joinCode}
+          onChange={(c) => {
+            setCode(c)
             setError(null)
           }}
-          onKeyDown={(e) => e.key === 'Enter' && !busy && go()}
+          onEnter={() => !busy && go()}
         />
         <button type="button" className={styles.joinGo} disabled={busy || code.length !== ROOM_CODE_LENGTH} onClick={go}>
           {busy ? 'Looking…' : 'Join'}
         </button>
       </div>
-      {error && <p className={styles.joinError}>{error}</p>}
+      {status && (
+        <p className={status.kind === 'error' ? styles.joinError : styles.joinVerdict}>{status.text}</p>
+      )}
     </div>
   )
 }

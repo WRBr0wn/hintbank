@@ -1,8 +1,11 @@
 import { useEffect, useState } from 'react'
 import Avatar from '../components/Avatar'
+import CodeInput from '../components/CodeInput'
 import { avatarKey } from '../avatars'
-import { lookupRoom } from '../net'
-import { MAX_NAME_LENGTH, ROOM_CODE_LENGTH } from '../protocol'
+import { editionById } from '../editions'
+import { lookupRoom, type RoomLookupResult } from '../net'
+import { MAX_NAME_LENGTH, ROOM_CODE_LENGTH, isRoomCode } from '../protocol'
+import { codeStatus, lookupVerdict } from './joinFlow'
 import type { PlayerAvatar } from '../types'
 import styles from './Multiplayer.module.css'
 
@@ -44,24 +47,34 @@ export default function MultiplayerEntry({
   const named = name.trim().length > 0
   const codeReady = code.trim().length === ROOM_CODE_LENGTH
 
-  // Once a full-length code is present, the pre-join lookup greys the avatars
-  // already taken in that room. Purely advisory: a failed or slow lookup means
-  // no greying and nothing else, and the join handshake still catches
-  // everything, so this never blocks joining. The result is keyed by the code
-  // it answered, so editing the code drops stale greying by derivation.
-  const [lookedUp, setLookedUp] = useState<{ code: string; taken: string[] } | null>(null)
+  // Once a full-length code is present, the pre-join lookup resolves it: the
+  // result greys taken avatars and fills the live verdict line. Purely
+  // advisory: a failed or slow lookup means no greying, no verdict, and
+  // nothing else; the join handshake still catches everything, so this never
+  // blocks joining. The result is keyed by the code it answered, so editing
+  // the code drops stale state by derivation.
+  const [lookedUp, setLookedUp] = useState<{ code: string; result: RoomLookupResult } | null>(null)
   useEffect(() => {
     const c = code.trim()
-    if (c.length !== ROOM_CODE_LENGTH) return
+    // A full-length code outside the alphabet gets its verdict client-side.
+    if (c.length !== ROOM_CODE_LENGTH || !isRoomCode(c)) return
     let stale = false
-    lookupRoom(c).then((found) => {
-      if (!stale && found.ok) setLookedUp({ code: c, taken: found.avatarsTaken })
+    lookupRoom(c).then((result) => {
+      if (!stale) setLookedUp({ code: c, result })
     })
     return () => {
       stale = true
     }
   }, [code])
-  const taken: ReadonlySet<string> = lookedUp?.code === code.trim() ? new Set(lookedUp.taken) : new Set()
+  const resolved = lookedUp?.code === code.trim() ? lookedUp.result : null
+  const taken: ReadonlySet<string> = resolved?.ok ? new Set(resolved.avatarsTaken) : new Set()
+  const verdict = lookupVerdict(code, resolved, (id) => editionById(id)?.displayName ?? null)
+
+  // The one status slot under the code field: a join attempt's error fills it
+  // until the code is edited, then the live verdict resumes. A fresh attempt
+  // clears the dismissal so its error always shows.
+  const [dismissedError, setDismissedError] = useState<string | null>(null)
+  const status = codeStatus(error, dismissedError, verdict)
   // The manual flow is name, avatar, then code, so the lookup usually resolves
   // after the avatar was picked; when it marks the current pick taken, say so
   // instead of silently greying everything else. Advisory only: no auto-switch,
@@ -115,29 +128,46 @@ export default function MultiplayerEntry({
         )}
       </section>
 
-      {error && <p className={styles.error}>{error}</p>}
-
       <div className={styles.actions}>
-        <button type="button" className={styles.create} disabled={!named || busy} onClick={onCreate}>
+        <button
+          type="button"
+          className={styles.create}
+          disabled={!named || busy}
+          onClick={() => {
+            setDismissedError(null)
+            onCreate()
+          }}
+        >
           {busy ? 'Connecting…' : 'Create room'}
         </button>
 
         <div className={styles.or}>or join with a code</div>
 
         <div className={styles.joinRow}>
-          <input
-            className={styles.codeInput}
+          <CodeInput
             value={code}
-            maxLength={ROOM_CODE_LENGTH}
-            placeholder="CODE"
-            autoCapitalize="characters"
-            spellCheck={false}
-            onChange={(e) => onCode(e.target.value.toUpperCase().replace(/\s+/g, ''))}
+            inputClassName={styles.codeInput}
+            onChange={(c) => {
+              if (error) setDismissedError(error)
+              onCode(c)
+            }}
           />
-          <button type="button" className={styles.join} disabled={!named || !codeReady || busy} onClick={onJoin}>
+          <button
+            type="button"
+            className={styles.join}
+            disabled={!named || !codeReady || busy}
+            onClick={() => {
+              setDismissedError(null)
+              onJoin()
+            }}
+          >
             Join
           </button>
         </div>
+
+        {status && (
+          <p className={status.kind === 'error' ? styles.error : styles.verdict}>{status.text}</p>
+        )}
 
         {/* A board view, not an identity choice: a display surface for a stream
             capture, a shared TV, or following along. Join-only: the first join
